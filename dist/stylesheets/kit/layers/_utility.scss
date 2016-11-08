@@ -1,0 +1,141 @@
+/**
+ * Utility layer.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Utility
+// =============================================================================
+
+// =============================================================================
+// Layout
+// =============================================================================
+
+/**
+ * Display types.
+ */
+
+.u-inline         { display: inline !important; }
+.u-inline-block   { display: inline-block !important; }
+.u-inline-table   { display: inline-table; }
+.u-block          { display: block !important; }
+.u-flex           { display: flex; }
+.u-flex--grow     { flex-grow: 1; }
+.u-flex--shrink   { flex-shrink: 1; }
+.u-none           { display: none; }
+.u-none--printer  {
+    @media print {
+        display: none;
+    }
+}
+
+.u-table      { display: table; }
+.u-row        { display: table-row; }
+.u-row-group  { display: table-row-group; }
+.u-cell       { display: table-cell; }
+
+/**
+ * Floats and clear(s).
+ */
+
+.u-float--left   { float: left; }
+.u-float--right  { float: right; }
+
+.u-clear          { clear: both; }
+.u-clear--left    { clear: left; }
+.u-clear--right   { clear: right; }
+
+.u-group {
+    @extend %group;
+}
+
+/**
+ * Position.
+ */
+
+.u-absolute   { position: absolute !important; }
+.u-relative   { position: relative !important; }
+.u-static     { position: static !important; }
+
+.u-off {
+    left: -100vw;
+    position: absolute;
+    top: -100vh;
+}
+
+.con-off--reader {
+    @extend %reader;
+}
+
+/**
+ * Overflow.
+ */
+
+.u-overflow--visible    { overflow: visible; }
+.u-overflow--hidden     { overflow: hidden; }
+
+
+// =============================================================================
+// Typography
+// =============================================================================
+
+.u-normal {
+    font-style: normal;
+    font-weight: normal;
+}
+
+.u-small { font-size: 0.9em; }
+.u-large { font-size: 1.2em; }
+
+.u-tight {
+    font-size: 0.8em;
+    line-height: 1.4;
+}
+
+.u-bold {
+    font-weight: 600;
+}
+.u-italic { font-style: italic; }
+
+.u-capital { text-transform: capitalize; }
+.u-upper   { text-transform: uppercase; }
+.u-lower   { text-transform: lowercase; }
+
+.u-left   { text-align: left !important; }
+.u-center { text-align: center !important; }
+.u-right  { text-align: right !important; }
+
+.u-top            { vertical-align: top !important; }
+.u-middle         { vertical-align: middle !important; }
+.u-baseline       { vertical-align: baseline !important; }
+.u-text-bottom    { vertical-align: text-bottom !important; }
+.u-bottom         { vertical-align: bottom !important; }
+
+.u-wrap   { @include word-wrap; }
+.u-nowrap { @include word-wrap(false); }
+
+.u-truncate {
+    @include text-truncate;
+}
+
+.u-rhythm {
+    margin-bottom: rhythm() !important;
+}
+
+/**
+ * Heading imitators.
+ * These just mimic heading styles.
+ */
+
+@each $i in (1 2 3 4 5) {
+    .u-h#{$i} {
+        @extend h#{$i};
+    }
+}
+
+/**
+ * Visibility.
+ */
+
+.u-hidden  { visibility: hidden; }
+.u-visible { visibility: visible; }

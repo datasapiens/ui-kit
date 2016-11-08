@@ -1,0 +1,11 @@
+/**
+ * Provides image replacement.
+ *
+ * @link http://goo.gl/8RChP8
+ */
+
+@mixin image-replacement {
+    overflow: hidden;
+    text-indent: 200%;
+    white-space: nowrap;
+}

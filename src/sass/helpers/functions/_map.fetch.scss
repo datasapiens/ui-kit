@@ -1,0 +1,21 @@
+/**
+ * Provides map deep getter.
+ *
+ * @author Hugo Giraudel
+ * @link https://css-tricks.com/snippets/sass/deep-getset-maps/
+ *
+ * @param  {Map}     $map  - Map
+ * @param  {Arglist} $keys - Key chain
+ * @return {*}             - Desired value
+ */
+
+@function map-fetch($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+
+        @if type-of($map) == "null" {
+            @return $map;
+        }
+    }
+    @return $map;
+}

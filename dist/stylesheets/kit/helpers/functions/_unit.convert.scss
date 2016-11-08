@@ -1,0 +1,58 @@
+/**
+ * Converts units.
+ *
+ * @link http://goo.gl/urelJB
+ *
+ * @param  {Number} $input      - Length to convert
+ * @param  {String} $unit-to    - Conversion unit
+ * @param  {Number} $context-from   ($base-font-size)
+ * @param  {Number} $context-to     ($context-from)
+ * @return {Number} $output
+ */
+
+@function unit-convert(
+    $input,
+    $unit-to,
+    $context-from: $base-font-size,
+    $context-to: $context-from
+) {
+    $unit-from: unit($input);
+
+    @if $unit-from == $unit-to {
+        @return $input;
+    }
+
+    // Context values must be in `px` to determine a conversion ratio
+    // for relative units.
+    @if unit($context-from) != "px" or unit($context-to) != "px" {
+        @warn "Context must be set in `px` units.";
+    }
+
+    // Convert input length to pixels.
+    $pixels: $input;
+
+    @if $unit-from != "px" {
+        @if      $unit-from == "em"  { $pixels: $input * $context-from / 1em }
+        @else if $unit-from == "rem" { $pixels: $input * $base-font-size / 1rem }
+        @else if $unit-from == "%"   { $pixels: $input * $context-from / 100% }
+        @else {
+            @warn "#{$unit-from} is an unknown length unit.";
+            @return $input;
+        }
+    }
+
+    // Convert length in pixels to the output unit.
+    $output: $pixels;
+
+    @if $unit-to != "px" {
+        @if      $unit-to == "em"  { $output: $pixels * 1em / $context-to }
+        @else if $unit-to == "rem" { $output: $pixels * 1rem / $base-font-size }
+        @else if $unit-to == "%"   { $output: $pixels * 100% / $context-to }
+        @else {
+            @warn "#{$unit-to} is an unknown length unit.";
+            @return $input;
+        }
+    }
+
+    @return $output;
+}

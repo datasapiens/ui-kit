@@ -1,0 +1,9 @@
+/**
+ * Provides image replacement.
+ *
+ * @requires {Mixin} image-replacement
+ */
+
+%image-replace {
+    @include image-replacement;
+}

@@ -1,0 +1,14 @@
+/**
+ * Provides `IE gte 10` content block.
+ *
+ * @link http://browserhacks.com/#hack-28f493d247a12ab654f6c3637f6978d5
+ *
+ * @param {String} $content
+ */
+
+@mixin ie-gte-10 {
+    @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+        @content;
+    }
+}

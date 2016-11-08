@@ -1,0 +1,136 @@
+/**
+ * Component Page/Sidebar.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// Set page sidebar background.
+$page-sidebar-background: dodgerblue;
+
+// Set page sidebar breakpoints.
+$page-sidebar-breaks: (
+    1000px,
+);
+
+// Set page sidebar indent.
+$page-sidebar-indent: 10px;
+
+// Set page sidebar index.
+$page-sidebar-index: 4;
+
+// Set page sidebar size.
+$page-sidebar-size: (
+    max: 380px,
+    min: 80px,
+);
+
+// Set page sidebar footer background.
+$page-sidebar-footer-background: #777;
+
+
+// =============================================================================
+// Page sidebar
+// =============================================================================
+
+.page-sidebar {
+    @include acceleration;
+
+    background-color: $page-sidebar-background;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: width 0.25s map-get($animation-easing, out-sine);
+    user-select: none;
+    width: map-get($page-sidebar-size, min);
+    z-index: $page-sidebar-index;
+
+    @media (min-width: nth($page-sidebar-breaks, 1)) {
+        width: map-get($page-sidebar-size, max);
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Page sidebar, on.
+ */
+
+// .page-sidebar {
+//     &.is-on {
+//         width: map-get($page-sidebar-size, max);
+
+//         .page-sidebar__body {
+//             overflow: {
+//                 y: auto;
+//             }
+//         }
+//     }
+// }
+
+/**
+ * Page sidebar, off.
+ */
+
+// .page-sidebar {
+//     &.is-off {
+//         width: map-get($page-sidebar-size, min);
+
+//         .page-sidebar__body {
+//             overflow: {
+//                 y: hidden;
+//             }
+//         }
+//     }
+// }
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Page sidebar inset
+// =============================================================================
+
+.page-sidebar__inset {
+    flex: 1;
+    overflow: {
+        y: auto;
+    }
+}
+
+// Page sidebar header
+// =============================================================================
+
+.page-sidebar__head {
+    padding: $page-sidebar-indent;
+}
+
+// =============================================================================
+
+.page-sidebar__body {
+    display: flex;
+    flex: 1;
+
+    padding: $page-sidebar-indent;
+    position: relative;
+}
+
+// Page sidebar footer
+// =============================================================================
+
+.page-sidebar__foot {
+    padding: $page-sidebar-indent;
+}

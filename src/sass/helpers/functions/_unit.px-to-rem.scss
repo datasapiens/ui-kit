@@ -1,0 +1,16 @@
+/**
+ * Converts `px` to `rem` units.
+ *
+ * @param  {Number} $target
+ * @param  {Number} $context  ($base-font-size) - Context `font-size`
+ * @return {String}
+ *
+ * @example scss
+ *  .selector {
+ *      font-size: rem(20);
+ *  }
+ */
+
+@function px-to-rem($target, $context: $base-font-size) {
+    @return unit-convert($target, rem, $context);
+}

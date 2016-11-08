@@ -1,0 +1,11 @@
+/**
+ * Provides `IE lte 9` content block.
+ *
+ * @param {String} $content
+ */
+
+@mixin ie-lte-9 {
+    .ie-lte-9 & {
+        @content;
+    }
+}

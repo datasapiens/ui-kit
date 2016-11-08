@@ -1,0 +1,9 @@
+/**
+ * Provides `microfix` for group of elements.
+ *
+ * @requires {Mixin} microfix
+ */
+
+%group {
+    @include microfix;
+}

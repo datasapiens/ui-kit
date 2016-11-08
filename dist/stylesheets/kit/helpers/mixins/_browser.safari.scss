@@ -1,0 +1,13 @@
+/**
+ * Provides `Safari gte 9` content block.
+ *
+ * @link https://goo.gl/NOCWv5
+ *
+ * @param {String} $content
+ */
+
+@mixin safari {
+    _:-webkit-full-screen:not(:root:root), & {
+        @content;
+    }
+}

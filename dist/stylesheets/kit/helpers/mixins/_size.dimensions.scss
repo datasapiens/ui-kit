@@ -1,0 +1,65 @@
+/**
+ * Provides dimension classes.
+ *
+ * TODO: Use real units in selector, e.g. `.w-50% { width: 50%; }`
+ *
+ * @param {Map} $dimensions
+ *
+ * @example scss
+ *  `.mt--0  { margin-top: 0; }`
+ *  `.w--50p { width: 50%; }`
+ *  `.p--10i { padding: 10px !important; }`
+ */
+
+@mixin dimensions($model: ()) {
+    $property-map: (
+        width:          w,
+        min-width:      minw,
+        max-width:      maxw,
+        height:         h,
+        min-height:     minh,
+        max-height:     maxh,
+        padding:        p,
+        padding-top:    pt,
+        padding-right:  pr,
+        padding-bottom: pb,
+        padding-left:   pl,
+        margin:         m,
+        margin-top:     mt,
+        margin-right:   mr,
+        margin-bottom:  mb,
+        margin-left:    ml,
+    );
+
+    $unit-map: (
+        m:  em,
+        p:  %,
+        r:  rem,
+    );
+
+    @each $property, $values in $model {
+        @each $value in $values {
+            .#{map-get($property-map, $property)}--#{$value} {
+                $flag: "";
+                $unit: "";
+                $unit-key: unit($value);
+
+                @if str-index($unit-key, "i") {
+                    $flag: !important;
+                    $unit-key: str-replace($unit-key, "i");
+                }
+                @if map-has-key($unit-map, $unit-key) {
+                    $unit: map-get($unit-map, $unit-key);
+                } @else {
+                    @if str-length($unit-key) == 0 {
+                        $unit: px;
+                    } @else {
+                        @warn "Unregistered key unit: #{$unit-key}";
+                    }
+                }
+
+                #{$property}: unit-strip($value) + $unit + " " + $flag;
+            }
+        }
+    }
+}

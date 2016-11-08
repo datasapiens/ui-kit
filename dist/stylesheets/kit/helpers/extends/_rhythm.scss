@@ -1,0 +1,9 @@
+/**
+ * Provides common rhythm setting.
+ *
+ * @requires {Function} rhythm-get
+ */
+
+%rhythm {
+    margin: 0 0 rhythm-get();
+}

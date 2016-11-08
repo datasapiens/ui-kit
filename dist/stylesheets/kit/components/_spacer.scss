@@ -1,0 +1,60 @@
+/**
+ * Component Spacer.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// Set spacer border color.
+$spacer-color: #eee;
+
+// Set spacer border width.
+$spacer-size: 1px;
+
+
+// =============================================================================
+// Spacer
+// =============================================================================
+
+.spa {
+    border-bottom: $spacer-size solid $spacer-color;
+    clear: both;
+    display: block;
+    margin: {
+        bottom: rhythm-get();
+        top: rhythm-get();
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     .is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

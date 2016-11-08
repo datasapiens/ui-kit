@@ -1,0 +1,11 @@
+/**
+ * Sets element minimum dimensions.
+ *
+ * @param {Number} $width  (0)
+ * @param {Number} $height (0)
+ */
+
+@mixin min($width: 0, $height: 0) {
+    min-height: $width;
+    min-width: $height;
+}

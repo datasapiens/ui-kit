@@ -1,0 +1,53 @@
+/**
+ * Creates triangle.
+ *
+ * 1. FF diagonal border issue workaround.
+ *      http://www.red-team-design.com/css-diagonal-borders-still-not-rendering-properly-on-firefox
+ *
+ * @link https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_triangle.scss
+ *
+ * @param {Number} $size
+ * @param {Color}  $color
+ * @param {String} $direction
+ * @param {Bool}   $multiple (true)
+ */
+
+@mixin triangle($size, $color, $direction, $multiple: true) {
+    @if (not $multiple) {
+        // height: 0;
+        // width: 0;
+        -moz-transform: scale(0.9999); /* 1 */
+    }
+
+    @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+        border-color: transparent;
+        border-style: solid;
+        border-width: floor($size / 2);
+
+        @if $direction == up {
+            border-bottom-color: $color;
+        } @else if $direction == right {
+            border-left-color: $color;
+        } @else if $direction == down {
+            border-top-color: $color;
+        } @else if $direction == left {
+            border-right-color: $color;
+        }
+    } @else if ($direction == up-right) or ($direction == up-left) {
+        border-top: $size solid $color;
+
+        @if $direction == up-right {
+            border-left: $size solid transparent;
+        } @else if $direction == up-left {
+            border-right: $size solid transparent;
+        }
+    } @else if ($direction == down-right) or ($direction == down-left) {
+        border-bottom: $size solid $color;
+
+        @if $direction == down-right {
+            border-left: $size solid transparent;
+        } @else if $direction == down-left {
+            border-right: $size solid transparent;
+        }
+    }
+}

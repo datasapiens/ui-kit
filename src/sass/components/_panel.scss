@@ -1,0 +1,69 @@
+/**
+ * Component Panel.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// Set panel background.
+$panel-background: #fff;
+
+// Set panel border color.
+$panel-border-color: #ccc;
+
+// Set panel border size.
+$panel-border-size: 1px;
+
+// Set panel indent.
+$panel-indent: 20px;
+
+
+// =============================================================================
+// Panel
+// =============================================================================
+
+.pnl {
+    @extend %ctr;
+
+    background-color: $panel-background;
+    border: $panel-border-size solid $panel-border-color;
+    padding: $panel-indent;
+
+    &,
+    &:last-child {
+        margin-bottom: rhythm-get();
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     .is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

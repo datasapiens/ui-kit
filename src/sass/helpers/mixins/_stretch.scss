@@ -1,0 +1,50 @@
+/**
+ * Stretches element.
+ *
+ * @param  {Arglist} $args... (absolute, 0, 0, 0, 0)
+ */
+
+@mixin stretch($args...) {
+    $coords: ();
+    $location: ();
+    $position: absolute;
+
+    @if length($args) == 0 {
+        $coords: 0 0 0 0;
+
+    } @else {
+        @if type-of(nth($args, 1)) == string {
+            $position: nth($args, 1);
+        }
+        @each $a in $args {
+            @if type-of($a) == number {
+                $coords: append($coords, $a);
+            }
+        }
+    }
+
+    @if length($coords) == 1 {
+        $location: nth($coords, 1) nth($coords, 1) nth($coords, 1) nth($coords, 1);
+    } @else if length($coords) == 2 {
+        $location: nth($coords, 1) nth($coords, 2) nth($coords, 1) nth($coords, 2);
+    } @else if length($coords) == 3 {
+        $location: $coords;
+    } @else {
+        $location: nth($coords, 1) nth($coords, 2) nth($coords, 3) nth($coords, 4);
+    }
+
+    position: $position;
+
+    @if length($location) > 2 {
+        bottom: nth($location, 3);
+    }
+    @if length($location) > 3 {
+        left: nth($location, 4);
+    }
+    @if length($location) > 1 {
+        right: nth($location, 2);
+    }
+    @if length($location) > 0 {
+        top: nth($location, 1);
+    }
+}

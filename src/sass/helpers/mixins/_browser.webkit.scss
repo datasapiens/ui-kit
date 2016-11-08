@@ -1,0 +1,11 @@
+/**
+ * Provides `webkit` content block.
+ *
+ * @param {String} $content
+ */
+
+@mixin webkit {
+    @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        @content;
+    }
+}

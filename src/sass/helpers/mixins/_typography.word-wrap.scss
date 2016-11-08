@@ -1,0 +1,22 @@
+/**
+ * Provides word wrapping.
+ *
+ * @link https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+ *
+ * 1. Word wrapping isn't applied for inline elements in IE.
+ *
+ * @param {Bool}   $wrap (true)
+ * @param {String} $break (word)
+ */
+
+@mixin word-wrap($wrap: true, $break: word) {
+    @if $wrap {
+        hyphens: auto;
+        word: {
+            break: break-#{$break};
+            wrap: break-word;
+        }
+    } @else {
+        white-space: nowrap;
+    }
+}

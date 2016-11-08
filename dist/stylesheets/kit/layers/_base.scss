@@ -1,0 +1,384 @@
+/**
+ * Base layer.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Base
+// =============================================================================
+
+/**
+ * 1. Set all (pseudo)elements `box-sizing` to `border-box`.
+ * 2. Disable the default callout shown on iOS when you touch and hold a touch target.
+ */
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box; /* 1 */
+    outline: none;
+
+    -webkit-touch-callout: none; /* 2 */
+}
+
+/**
+ * 1. Webkit has a bug that prevents line-height being set in `rem` on <html>;
+ *  To work around this and simplify output, we can set initial line-height
+ *  in em's for all relative rhythm units.
+ * 2. Force printer to print background colors and images (override printing setup)
+ *  in Webkit.
+ *  @link https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-print-color-adjust
+ */
+
+html {
+    font: {
+        family: $base-font-stack;
+        size: $base-font-size / $base-font-size--browser * 100%;
+    }
+    line-height: $base-line-height / $base-font-size * 1em; /* 1 */
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: $base-background;
+    color: $base-color;
+    // overflow-y: hidden;
+
+    -webkit-print-color-adjust: exact; /* 2 */
+
+    @media print {
+        background-color: $white;
+        color: $black;
+    }
+}
+
+// =============================================================================
+// Typography
+// =============================================================================
+
+// Headings
+// =============================================================================
+
+%heading {
+    display: block;
+    margin: {
+        bottom: rhythm();
+        top: rhythm(0.5);
+    }
+}
+
+@for $i from 1 through 5 {
+    h#{$i} {
+        @extend %heading;
+    }
+}
+
+h1 {
+    @include font-size(
+        nth($base-type-scale, 1) * $base-font-size,
+        1.8
+    );
+    font-weight: 300;
+    margin-top: 0;
+}
+
+h2 {
+    @include font-size(
+        nth($base-type-scale, 2) * $base-font-size,
+        1.5
+    );
+    font-weight: 400;
+}
+
+h3 {
+    @include font-size(
+        nth($base-type-scale, 3) * $base-font-size,
+        1.25
+    );
+    font-weight: 400;
+}
+
+h4 {
+    @include font-size(
+        nth($base-type-scale, 4) * $base-font-size,
+        1.1
+    );
+}
+
+h5 {
+    @include font-size(
+        nth($base-type-scale, 5) * $base-font-size
+    );
+    text-transform: uppercase;
+}
+
+// Block elements
+// =============================================================================
+
+address,
+p,
+pre {
+    @extend %rhythm;
+}
+
+address {
+    font-style: normal;
+}
+
+hr {
+     @extend %rhythm;
+     border: 0;
+}
+
+// Inline elements
+// =============================================================================
+
+a {
+    @include link-underline;
+
+    color: $base-link;
+    cursor: pointer;
+}
+
+b,
+strong {
+    font-weight: 600;
+}
+
+// =============================================================================
+// Lists
+// =============================================================================
+
+ol,
+ul {
+    @extend %rhythm;
+    padding-left: $base-indent;
+}
+
+li {
+    margin-bottom: rhythm(0.25);
+}
+
+li > ol,
+li > ul {
+    margin: {
+        bottom: 0;
+        top: rhythm(0.25);
+    }
+}
+
+// =============================================================================
+// Embedded content
+// =============================================================================
+
+iframe {
+    border: 0;
+}
+
+// =============================================================================
+// Group elements
+// =============================================================================
+
+// code,
+// kbd,
+// pre,
+// samp {
+//     font: {
+//         family: "#{$font-monospace-family}", monospace;
+//         size: rem($font-monospace-size);
+//     }
+// }
+
+// =============================================================================
+// Form elements
+// =============================================================================
+
+fieldset {
+    @extend %rhythm;
+
+    border: 0;
+    padding: 0;
+}
+
+label {
+    color: map-get($base-label-color, initial);
+    cursor: pointer;
+    display: inline-block;
+
+    &.is-disabled {
+        color: map-get($base-label-color, disable);
+        cursor: not-allowed;
+    }
+}
+
+input,
+// input:not([type="button"]),
+select,
+textarea {
+    @extend %form-element !optional;
+
+    color: inherit;
+    outline: none;
+}
+
+/**
+ * 1. Remove IE10 `clear` button.
+ *  @link https://msdn.microsoft.com/en-us/library/windows/apps/hh465740.aspx
+ * 2. Disable min. content size in favour of `flexbox`.
+ *  @link https://bugzilla.mozilla.org/show_bug.cgi?id=1088586
+ */
+
+input::-ms-clear {
+    display: none; /* 1 */
+}
+
+[type="email"],
+[type="text"] {
+    min-width: 0; /* 2 */
+    text-overflow: ellipsis;
+}
+
+[type="number"] {
+    text-align: right;
+}
+
+:disabled,
+[readonly] {
+    cursor: not-allowed !important;
+}
+
+/**
+ * Checkbox, Radio
+ */
+
+[type="checkbox"],
+[type="radio"] {
+    @include size(auto);
+
+    opacity: 0;
+    position: absolute;
+}
+
+/**
+ * Select
+ */
+
+select {
+    @include ie-gte-10 {
+        padding-right: 0 !important;
+    }
+
+    @include webkit {
+        -webkit-appearance: none;
+    }
+}
+
+/**
+ * Textarea
+ * 1. Allow only vertical resize.
+ * 2. We need to increase specifity.
+ */
+
+textarea {
+    resize: vertical;       /* 1 */
+
+    &[rows] {               /* 2 */
+        height: auto;
+        line-height: inherit;
+        padding: {
+            bottom: rhythm(0.25);
+            top: rhythm(0.25);
+        }
+    }
+}
+
+/**
+ * Placeholder color.
+ * @link http://css-tricks.com/snippets/css/style-placeholder-text/
+ */
+
+// ::placeholder {
+//     color: map-get($form-element-color, initial);
+// }
+
+// :disabled::placeholder {
+//     color: map-get($form-element-color, disable);
+// }
+
+/**
+ * Button
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    line-height: inherit;
+}
+
+[type="reset"],
+[type="submit"] {
+    width: auto;
+}
+
+// =============================================================================
+// Tables
+// =============================================================================
+
+table {
+    @extend %rhythm;
+    border-collapse: separate;
+}
+
+caption {
+    @extend h5;
+
+    display: table-caption;
+    margin-bottom: 0.25em;
+    text-align: left;
+}
+
+th {
+    text-align: left;
+}
+
+// =============================================================================
+// Browser (OS) specific
+// =============================================================================
+
+/**
+ * Overrride OSX general preferences to indicate scrollable content.
+ * @link https://css-tricks.com/custom-scrollbars-in-webkit/
+ */
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+
+    &:horizontal {
+        height: $base-scrollbar-size;
+    }
+
+    &:vertical {
+        width: $base-scrollbar-size;
+    }
+
+    &-thumb {
+        background-color: map-get($base-scrollbar-thumb, initial);
+        border-radius: 0.5 * $base-scrollbar-size;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: map-get($base-scrollbar-thumb, hover);
+        }
+    }
+
+    &-track {
+        background-color: $base-scrollbar-track;
+    }
+}

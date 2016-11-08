@@ -1,0 +1,73 @@
+/**
+ * Component Page/Head.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// Set page header background.
+$page-head-background: slategray;
+
+// Set page header color.
+$page-head-color: #fff;
+
+// Set page header index.
+$page-head-index: 3;
+
+
+// =============================================================================
+// Page header
+// =============================================================================
+
+.page-head {
+    // @include acceleration;
+
+    background-color: $page-head-background;
+    color: $page-head-color;
+    // flex: 1 0 auto;
+    // padding: {
+    //     bottom: $page-indent;
+    //     top: $page-indent;
+    // }
+    position: relative;
+    // white-space: nowrap;
+    z-index: $page-head-index;
+
+    a {
+        @include link-underline($underline: false);
+        color: inherit;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     .is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Page head inset
+// =============================================================================
+
+.page-head__inset {}

@@ -1,0 +1,10 @@
+/**
+ * Strips units.
+ *
+ * @param  {String} $value
+ * @return {Number} - Unitless value
+ */
+
+@function unit-strip($value) {
+    @return $value / ($value * 0 + 1);
+}

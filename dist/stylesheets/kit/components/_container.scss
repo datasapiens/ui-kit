@@ -1,0 +1,132 @@
+/**
+ * Component Container.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// Set component property.
+// $component-property:
+
+
+// =============================================================================
+// Container
+// =============================================================================
+
+%ctr,
+.ctr {
+    @extend %group;
+    position: relative;
+
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Container horizontaly centered to its parent.
+ */
+
+%ctr--center {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+.ctr {
+    &.\--center {
+        @extend %ctr--center;
+    }
+}
+
+/**
+ * Container absolutely centered to its parent.
+ */
+
+%ctr--core {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/**
+ * Container horizontaly centered to its parent.
+ */
+
+%ctr--core-x {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+/**
+ * Container verticaly centered to its parent.
+ */
+
+%ctr--core-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/**
+ * Container with `inline-block` justified ascendants.
+ * @link http://tympanus.net/codrops/2013/07/14/justified-and-vertically-centered-header-elements/
+ */
+
+%ctr--justify {
+    text-align: justify;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+/**
+ * Container with `inline-block` verticaly centered ascendants.
+ * @link http://css-tricks.com/centering-in-the-unknown/
+ */
+
+%ctr--middle {
+    &::before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        width: 0;
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     .is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

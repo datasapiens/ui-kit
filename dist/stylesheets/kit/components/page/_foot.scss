@@ -1,0 +1,72 @@
+/**
+ * Component Page/Foot.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// Set page footer background.
+$page-foot-background: #666;
+
+// Set page footer color.
+$page-foot-color: #fff;
+
+// Set page footer font size.
+$page-foot-font-size: 13px;
+
+// Set page indent.
+$page-indent: 20px;
+
+
+// =============================================================================
+// Page footer
+// =============================================================================
+
+.page-foot {
+    background-color: $page-foot-background;
+    color: $page-foot-color;
+    flex: 1 0 auto;
+    font-size: px-to-rem($page-foot-font-size);
+    padding: {
+        bottom: $page-indent;
+        top: $page-indent;
+    }
+
+    a {
+        @include link-underline($underline: false);
+        color: inherit;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     .is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

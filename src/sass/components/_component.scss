@@ -1,0 +1,49 @@
+/**
+ * Component ComponentName.
+ * @author John Doe <john.doe@datasapiens.co.uk>
+ */
+
+// Set component property.
+// $component-property:
+
+
+// =============================================================================
+// ComponentName
+// =============================================================================
+
+// .component {}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     .is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

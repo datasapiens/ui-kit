@@ -1,0 +1,14 @@
+/**
+ * Provides `IE Edge` content block.
+ * Use carefully!
+ *
+ * @link https://goo.gl/5Dssv8
+ *
+ * @param {String} $content
+ */
+
+@mixin ie-edge {
+    @supports (-ms-accelerator: true) {
+        @content;
+    }
+}

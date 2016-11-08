@@ -1,0 +1,9 @@
+/**
+ * Restores element visibility.
+ *
+ * @requires {Mixin} visibility
+ */
+
+%reader-reset {
+    @include visibility(true);
+}

@@ -1,0 +1,61 @@
+/**
+ * Component Font/Monospace.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+@each $variant in $font-monospace-variant {
+    @include font-face(
+        $family: $font-monospace-family,
+        $file: map-get($variant, filename),
+        $format: ("woff2", "woff"),
+        $weight: map-get($variant, weight)
+    );
+}
+
+// =============================================================================
+// Monospace font
+// =============================================================================
+
+.font-monospace {
+    font: {
+        family: $font-monospace-family;
+        size: rem($font-monospace-size);
+    }
+
+    // -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     .is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent

@@ -1,0 +1,170 @@
+/**
+ * Component Page.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// Set page background.
+$page-background: transparent;
+
+// Set page indent.
+$page-indent: 20px;
+
+// Set page top padding (according to `$page-bar-size`).
+$page-offset: 54px;
+
+// Set page size.
+$page-size: (
+    max: 1100px,
+    min: 320px,
+);
+
+// Set page sidebar breakpoints.
+$page-sidebar-breaks: (
+    1000px,
+);
+
+// Set page sidebar size.
+$page-sidebar-size: (
+    max: 380px,
+    min: 80px,
+);
+
+
+// =============================================================================
+// Page
+// =============================================================================
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Page, wide.
+ */
+
+.page {
+    &.--wide {
+        .page__inset {
+            max-width: 100%;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+/**
+ * Page, has sidebar.
+ */
+
+.page {
+    &.has-sidebar {
+        .page__inset {
+            margin-left: map-get($page-sidebar-size, min);
+
+            @media (min-width: nth($page-sidebar-breaks, 1)) {
+                margin-left: map-get($page-sidebar-size, max);
+            }
+        }
+    }
+}
+
+/**
+ * Page, has sidebar on.
+ */
+
+.page {
+    &.has-sidebar-on {
+        .page__inset {
+            @media (min-width: nth($page-sidebar-breaks, 1)) {
+                margin-left: map-get($page-sidebar-size, max);
+            }
+        }
+    }
+}
+
+/**
+ * Page, has sidebar off.
+ */
+
+.page {
+    &.has-sidebar-off {
+        .page__inset {
+            margin-left: map-get($page-sidebar-size, min);
+        }
+    }
+}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Page inset
+// =============================================================================
+
+.page__inset {
+    max-width: map-get($page-size, max);
+    min-width: map-get($page-size, min);
+    padding: {
+        left: $page-indent;
+        right: $page-indent;
+    }
+    transition: margin 0.3s;
+
+    @media print {
+        max-width: 100%;
+        padding: {
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Page inset, static.
+ */
+
+// .page__inset {
+//     &.is-static {
+//         margin: {
+//             left: 0 !important;
+//             right: 0 !important;
+//         }
+//         max-width: 100%;
+//     }
+// }
+
+// Page row
+// =============================================================================
+
+.page__row {
+    display: flex;
+    flex: 1 0;
+    justify-content: space-between;
+}
+
+// Page cell
+// =============================================================================
+
+.page__cell {
+    align-items: center;
+    display: flex;
+}

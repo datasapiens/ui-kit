@@ -1,0 +1,13 @@
+/**
+ * Handles link decoration.
+ *
+ * @param {Bool} $underline (true)
+ */
+
+@mixin link-underline($underline: true) {
+    text-decoration: if($underline, underline, none);
+    &:focus,
+    &:hover {
+        text-decoration: if($underline, none, underline);
+    }
+}

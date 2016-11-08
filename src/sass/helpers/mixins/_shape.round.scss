@@ -1,0 +1,10 @@
+/**
+ * Makes element rounded via `border`.
+ *
+ * @param {Number} $radius (50%)
+ */
+
+@mixin round($radius: 50%) {
+    background-clip: padding-box;
+    border-radius: $radius;
+}

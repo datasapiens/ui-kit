@@ -1,0 +1,11 @@
+/**
+ * Sets element maximum dimensions.
+ *
+ * @param {Number} $width  (100%)
+ * @param {Number} $height (100%)
+ */
+
+@mixin max($width: 100%,$height: 100%) {
+    max-height: $width;
+    max-width: $height;
+}

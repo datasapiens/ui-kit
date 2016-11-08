@@ -1,0 +1,9 @@
+/**
+ * Sets element dimensions to 100%.
+ *
+ * @requires {Mixin} max
+ */
+
+%maximize {
+    @include max;
+}

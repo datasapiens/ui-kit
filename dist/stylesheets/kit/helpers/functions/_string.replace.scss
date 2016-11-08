@@ -1,0 +1,28 @@
+/**
+ * Provides string replacement.
+ * It replaces `needle` with `replacement` in `haystack`.
+ *
+ * @author Hugo Giraudel
+ * @link https://github.com/HugoGiraudel/SassyStrings
+ *
+ * @param  {String} $haystack
+ * @param  {String} $needle
+ * @param  {String} $replacement     ("")
+ * @return {String}
+ */
+
+@function string-replace($haystack, $needle, $replacement: "") {
+    $index: str-index($haystack, $needle);
+
+    @if $index {
+        @return str-slice($haystack, 1, $index - 1) +
+            $replacement +
+            string-replace(
+                str-slice($haystack, $index + str-length($needle)),
+                $needle,
+                $replacement
+            );
+    }
+
+    @return $haystack;
+}

@@ -1,0 +1,141 @@
+/**
+ * Component Icon.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * NOTE: This component is generated from template by 'grunt-webfont' plugin.
+ */
+
+// Set icon glyphs list.
+$icon-glyphs: <% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
+    "\<%= codepoints[glyphIdx] %>" <%= glyphs[glyphIdx] %><%= ',' %><% } %>
+;
+
+// =============================================================================
+// Icon
+// =============================================================================
+
+@include font-face($family: "<%= fontFamilyName %>", $file: "<%= fontFilename %>");
+
+%ico {
+    display: inline-block;
+    font: {
+        family: "<%= fontFamilyName %>";
+        style: normal;
+        weight: normal;
+    }
+    line-height: 1;
+    speak: none;
+    text: {
+        decoration: none;
+        transform: none;
+    }
+    white-space: normal;
+    width: $icon-size;
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+[class*="ico"] {
+    &::before {
+        @extend %ico;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Icon, glyphs.
+ */
+
+@each $glyph in $icon-glyphs {
+    $modifier: <%= classPrefix %> + "--" + nth($glyph, 2);
+
+    %#{$modifier} {
+        content: "#{nth($glyph, 1)}";
+    }
+
+    .<%= classPrefix %> {
+        &.--#{$modifier} {
+            &::before {
+                @extend %#{$modifier};
+            }
+            &.--after {
+                &::after {
+                    @extend %#{$modifier};
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Icon, before.
+ */
+
+.<%= classPrefix %> {
+    &.--before {
+        &::before {
+            @extend %ico;
+            margin-right: $icon-indent;
+        }
+    }
+}
+
+/**
+ * Icon, after.
+ */
+
+.<%= classPrefix %> {
+    &.--after {
+        &::after {
+            @extend %ico;
+            margin-left: $icon-indent;
+        }
+        &::before {
+            content: none;
+        }
+    }
+}
+
+/**
+ * Icon, large.
+ */
+
+.<%= classPrefix %> {
+    &.--large {
+        &::after,
+        &::before {
+            bottom: (-0.35) * (map-get($icon-font-size, large) - 1rem);
+            font-size: map-get($icon-font-size, large);
+            position: relative;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     .is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

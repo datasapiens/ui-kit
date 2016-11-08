@@ -1,0 +1,16 @@
+/**
+ * Converts `px` to `em` units.
+ *
+ * @param  {Number} $target
+ * @param  {Number} $context - Context `font-size`
+ * @return {String}
+ *
+ * @example scss
+ *  .selector {
+ *      font-size: em(24);
+ *  }
+ */
+
+@function px-to-em($target, $context: $base-font-size) {
+    @return unit-convert($target, em, $context);
+}

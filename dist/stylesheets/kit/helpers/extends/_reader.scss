@@ -1,0 +1,9 @@
+/**
+ * Hides element while preserve its accessibility.
+ *
+ * @requires {Mixin} visibility
+ */
+
+%reader {
+    @include visibility;
+}

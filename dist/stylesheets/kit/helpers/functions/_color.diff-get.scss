@@ -1,0 +1,25 @@
+/**
+ * Gets map of colors operations and their values to pass to transform
+ *  `$b` color from `$a` color.
+ *
+ * @author Hugo Giraudel
+ * @link http://goo.gl/9BRthi
+ *
+ * @param  {Color} $a
+ * @param  {Color} $b
+ * @return {Map} - Map of color operations to do in order to
+ *  transform `$b` from `$a`
+ */
+
+@function color-diff-get($a, $b) {
+    $sat: saturation($a) - saturation($b);
+    $lig: lightness($a) - lightness($b);
+    $fn-sat: if($sat > 0, "desaturate", "saturate");
+    $fn-lig: if($lig > 0, "darken", "lighten");
+
+    @return (
+        adjust-hue: -(hue($a) - hue($b)),
+        #{$fn-sat}: abs($sat),
+        #{$fn-lig}: abs($lig),
+    );
+}

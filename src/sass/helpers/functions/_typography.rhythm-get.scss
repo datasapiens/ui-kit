@@ -1,0 +1,18 @@
+/**
+ * Provides vertical rhythm.
+ *
+ * @link http://goo.gl/urelJB
+ *
+ * @param  {Number} $lines      (1)
+ * @param  {Number} $font-size  ($base-font-size)
+ * @return {Number} $rhythm
+ */
+
+@function rhythm-get($lines: 1, $font-size: $base-font-size) {
+    $rhythm: unit-convert($lines * $base-line-height, "rem", $font-size);
+
+    // @if unit($rhythm) == "px" {
+    //     $rhythm: floor($rhythm);
+    // }
+    @return $rhythm;
+}

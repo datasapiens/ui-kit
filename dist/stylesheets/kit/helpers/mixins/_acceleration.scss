@@ -1,0 +1,7 @@
+/**
+ * Enables hardware accelerated animations. Use carefully!
+ */
+
+@mixin acceleration {
+    backface-visibility: hidden;
+}

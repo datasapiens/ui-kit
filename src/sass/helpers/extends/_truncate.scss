@@ -1,0 +1,9 @@
+/**
+ * Truncates string with ellipsis.
+ *
+ * @requires {Mixin} text-truncate
+ */
+
+%truncate {
+    @include text-truncate;
+}

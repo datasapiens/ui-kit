@@ -1,0 +1,19 @@
+/**
+ * Applies color diff map.
+ *
+ * @author Hugo Giraudel
+ * @link http://goo.gl/9BRthi
+ *
+ * @param  {Color} $color - Color to transform (to apply diff)
+ * @param  {Map}   $diff  - Color diff map
+ * @return {Color}        - Transformed color
+ */
+
+@function color-diff-apply($color, $diff) {
+    // We call the $key (function), passing the $color and the $value as parameters
+    // e.g. `call(adjust-hue, #BADA55, 42)`
+    @each $key, $value in $diff {
+        $color: call($key, $color, $value);
+    }
+    @return $color;
+}

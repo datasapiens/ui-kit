@@ -1,0 +1,14 @@
+/**
+ * Provides `retina` content block.
+ *
+ * @link http://css-tricks.com/snippets/css/retina-display-media-query/
+ *
+ * @param {String} $content
+ */
+
+@mixin retina {
+    @media screen and (-webkit-min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi) {
+        @content;
+    }
+}

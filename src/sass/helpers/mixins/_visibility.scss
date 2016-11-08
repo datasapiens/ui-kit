@@ -1,0 +1,27 @@
+/**
+ * Handles element visibility and preserves accessibility.
+ *
+ * @param {Number} $reset (false)
+ */
+
+@mixin visibility($reset: false) {
+    @if $reset {
+        border: inherit;
+        clip: auto;
+        height: auto;
+        overflow: visible;
+        padding: inherit;
+        position: static;
+        vertical-align: inherit;
+        width: auto;
+    } @else {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        vertical-align: text-top;
+        width: 0;
+    }
+}

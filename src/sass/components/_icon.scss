@@ -1,0 +1,156 @@
+/**
+ * Component Icon.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * NOTE: This component is generated from template by 'grunt-webfont' plugin.
+ */
+
+// Set icon glyphs list.
+$icon-glyphs: 
+    "\f101" account,
+    "\f102" apps,
+    "\f103" arrow-down,
+    "\f104" arrow-left,
+    "\f105" arrow-right,
+    "\f106" arrow-up,
+    "\f107" briefcase,
+    "\f108" caret-down,
+    "\f109" caret-up,
+    "\f10a" check-circle,
+    "\f10b" download,
+    "\f10c" exit,
+    "\f10d" help-outline,
+    "\f10e" language,
+    "\f10f" menu,
+    "\f110" timelapse,
+;
+
+// =============================================================================
+// Icon
+// =============================================================================
+
+@include font-face($family: "Sapiens Icons", $file: "sapiensicons");
+
+%ico {
+    display: inline-block;
+    font: {
+        family: "Sapiens Icons";
+        style: normal;
+        weight: normal;
+    }
+    line-height: 1;
+    speak: none;
+    text: {
+        decoration: none;
+        transform: none;
+    }
+    white-space: normal;
+    width: $icon-size;
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+[class*="ico"] {
+    &::before {
+        @extend %ico;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Icon, glyphs.
+ */
+
+@each $glyph in $icon-glyphs {
+    $modifier: ico + "--" + nth($glyph, 2);
+
+    %#{$modifier} {
+        content: "#{nth($glyph, 1)}";
+    }
+
+    .ico {
+        &.--#{$modifier} {
+            &::before {
+                @extend %#{$modifier};
+            }
+            &.--after {
+                &::after {
+                    @extend %#{$modifier};
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Icon, before.
+ */
+
+.ico {
+    &.--before {
+        &::before {
+            @extend %ico;
+            margin-right: $icon-indent;
+        }
+    }
+}
+
+/**
+ * Icon, after.
+ */
+
+.ico {
+    &.--after {
+        &::after {
+            @extend %ico;
+            margin-left: $icon-indent;
+        }
+        &::before {
+            content: none;
+        }
+    }
+}
+
+/**
+ * Icon, large.
+ */
+
+.ico {
+    &.--large {
+        &::after,
+        &::before {
+            bottom: (-0.35) * (map-get($icon-font-size, large) - 1rem);
+            font-size: map-get($icon-font-size, large);
+            position: relative;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     .is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

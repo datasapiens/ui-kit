@@ -1,0 +1,11 @@
+/**
+ * Sets element dimensions.
+ *
+ * @param {Number} $width
+ * @param {Number} $height
+ */
+
+@mixin size($width, $height: $width) {
+    height: $height;
+    width: $width;
+}
