@@ -3,13 +3,6 @@
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  */
 
-// Set page overlay background (according to `$backdrop-color`).
-$page-overlay-background: #fff;
-
-// Set page overlay offset.
-$page-overlay-offset: 10rem;
-
-
 // =============================================================================
 // Page overlay
 // =============================================================================
@@ -28,7 +21,7 @@ $page-overlay-offset: 10rem;
 // .component--modifier {}
 
 // .component {
-//     &.--modifier {}
+//     &.\--modifier {}
 // }
 
 /**

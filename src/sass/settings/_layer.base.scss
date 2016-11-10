@@ -1,0 +1,76 @@
+/**
+ * Layer Base settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Base settings
+// =============================================================================
+
+// The base background color.
+// $base-background: $gray--athens;
+$base-background: #f8fcff;
+
+// The base text color.
+$base-color: $blue--yonder-700;
+
+// The base font family stack.
+$base-font-stack: ("Open Sans", Helvetica, sans-serif);
+
+// The base font size.
+$base-font-size: 14px;
+
+// Set browser default font size.
+$base-font-size--browser: 16px;
+
+// The base font weight.
+$base-font-weight: 400;
+
+// The amount lists and blockquotes are indented.
+$base-indent: 30px;
+
+// The base line height.
+$base-line-height: 23px;
+
+// Set base link color.
+$base-link: #289be4;
+
+// Set base type scale.
+// 34px, 24px, 20px, 16px, 14px
+$base-type-scale: (
+    2.429,
+    1.714,
+    1.429,
+    1.143,
+    1,
+);
+
+/**
+ * Base `label`.
+ */
+
+$base-label-color: (
+    disable:    $blue--yonder-300,  // disabled
+    initial:    $blue--yonder-500,
+);
+
+// Browser (OS) specific
+// =============================================================================
+
+/**
+ * Base scrollbar
+ */
+
+// Set base scrollbar radius.
+// $base-scrollbar-radius: 4px;
+
+// Set base scrollbar size.
+$base-scrollbar-size: 8px;
+
+$base-scrollbar-thumb: (
+    hover:      rgba($black, 0.6),   // hovered
+    initial:    rgba($black, 0.4),
+);
+
+// Set base scrollbar track color.
+$base-scrollbar-track: rgba($black, 0.1);

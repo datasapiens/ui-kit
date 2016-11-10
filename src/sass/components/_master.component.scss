@@ -1,25 +1,13 @@
 /**
- * Component Page/Overlay.
- * @author David Sklar <david.sklar@datasapiens.co.uk>
+ * Component ComponentName.
+ * @author John Doe <john.doe@datasapiens.co.uk>
  */
 
-// Set page overlay background (according to `$backdrop-color`).
-$page-overlay-background: #fff;
-
-// Set page overlay offset.
-$page-overlay-offset: 10rem;
-
-
 // =============================================================================
-// Page overlay
+// ComponentName
 // =============================================================================
 
-.page-overlay {
-    @include stretch(fixed, 0, 0, 0, 0);
-    background-color: $page-overlay-background;
-    padding-top: $page-overlay-offset;
-    text-align: center;
-}
+// .component {}
 
 /**
  * Modifiers.
@@ -28,7 +16,7 @@ $page-overlay-offset: 10rem;
 // .component--modifier {}
 
 // .component {
-//     &.\--modifier {}
+//     &.--modifier {}
 // }
 
 /**
@@ -45,7 +33,7 @@ $page-overlay-offset: 10rem;
  * Context.
  */
 
-// .has-component
+// .has-component {}
 
 // =============================================================================
 // Subcomponents
@@ -54,4 +42,4 @@ $page-overlay-offset: 10rem;
 // SubcomponentName
 // =============================================================================
 
-// .component__subcomponent
+// .component__subcomponent {}

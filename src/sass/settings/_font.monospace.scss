@@ -1,0 +1,26 @@
+/**
+ * Component Font/Monospace settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Monospace font settings
+// =============================================================================
+
+// Set monospace font family.
+$font-monospace-family: "Inconsolata";
+
+// Set monospace font size.
+$font-monospace-size: 15px;
+
+// Set monospace font variant list.
+$font-monospace-variant: (
+    (
+        filename: "inconsolata-regular",
+        weight: 400,
+    ),
+    // (
+    //     filename: "inconsolata-bold",
+    //     weight: 700,
+    // ),
+);

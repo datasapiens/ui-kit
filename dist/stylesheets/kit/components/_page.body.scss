@@ -1,40 +1,20 @@
 /**
- * Component Page/Head.
+ * Component Page/Body.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  */
 
-// Set page header background.
-$page-head-background: slategray;
-
-// Set page header color.
-$page-head-color: #fff;
-
-// Set page header index.
-$page-head-index: 3;
-
-
 // =============================================================================
-// Page header
+// Page body
 // =============================================================================
 
-.page-head {
-    // @include acceleration;
-
-    background-color: $page-head-background;
-    color: $page-head-color;
-    // flex: 1 0 auto;
-    // padding: {
-    //     bottom: $page-indent;
-    //     top: $page-indent;
-    // }
-    position: relative;
-    // white-space: nowrap;
-    z-index: $page-head-index;
-
-    a {
-        @include link-underline($underline: false);
-        color: inherit;
+.page-body {
+    flex: 100 1 auto;
+    overflow: {
+        x: hidden;
+        y: auto;
     }
+    padding: $page-indent 0;
+    position: relative;
 }
 
 /**
@@ -44,7 +24,7 @@ $page-head-index: 3;
 // .component--modifier {}
 
 // .component {
-//     &.--modifier {}
+//     &.\--modifier {}
 // }
 
 /**
@@ -67,7 +47,7 @@ $page-head-index: 3;
 // Subcomponents
 // =============================================================================
 
-// Page head inset
+// SubcomponentName
 // =============================================================================
 
-.page-head__inset {}
+// .component__subcomponent

@@ -1,17 +1,31 @@
 /**
- * Component ComponentName.
- * @author John Doe <john.doe@datasapiens.co.uk>
+ * Component Page/Header.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
  */
 
-// Set component property.
-// $component-property:
-
-
 // =============================================================================
-// ComponentName
+// Page header
 // =============================================================================
 
-// .component {}
+.page-head {
+    // @include acceleration;
+
+    background-color: $page-head-background;
+    color: $page-head-color;
+    // flex: 1 0 auto;
+    // padding: {
+    //     bottom: $page-indent;
+    //     top: $page-indent;
+    // }
+    position: relative;
+    // white-space: nowrap;
+    z-index: $page-head-index;
+
+    a {
+        @include link-underline($underline: false);
+        color: inherit;
+    }
+}
 
 /**
  * Modifiers.
@@ -20,7 +34,7 @@
 // .component--modifier {}
 
 // .component {
-//     &.--modifier {}
+//     &.\--modifier {}
 // }
 
 /**
@@ -37,13 +51,13 @@
  * Context.
  */
 
-// .has-component {}
+// .has-component
 
 // =============================================================================
 // Subcomponents
 // =============================================================================
 
-// SubcomponentName
+// Page head inset
 // =============================================================================
 
-// .component__subcomponent {}
+.page-head__inset {}

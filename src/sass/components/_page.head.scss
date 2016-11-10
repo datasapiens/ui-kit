@@ -1,17 +1,7 @@
 /**
- * Component Page/Head.
+ * Component Page/Header.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  */
-
-// Set page header background.
-$page-head-background: slategray;
-
-// Set page header color.
-$page-head-color: #fff;
-
-// Set page header index.
-$page-head-index: 3;
-
 
 // =============================================================================
 // Page header
@@ -44,7 +34,7 @@ $page-head-index: 3;
 // .component--modifier {}
 
 // .component {
-//     &.\--modifier {}
+//     &.--modifier {}
 // }
 
 /**

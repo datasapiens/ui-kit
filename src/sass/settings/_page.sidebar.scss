@@ -1,0 +1,31 @@
+/**
+ * Component Page/Sidebar settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Page sidebar settings
+// =============================================================================
+
+// Set page sidebar background.
+$page-sidebar-background: dodgerblue;
+
+// Set page sidebar breakpoints.
+$page-sidebar-breaks: (
+    1000px,
+);
+
+// Set page sidebar indent.
+$page-sidebar-indent: 10px;
+
+// Set page sidebar index.
+$page-sidebar-index: 4;
+
+// Set page sidebar size.
+$page-sidebar-size: (
+    max: 380px,
+    min: 80px,
+);
+
+// Set page sidebar footer background.
+$page-sidebar-footer-background: #777;

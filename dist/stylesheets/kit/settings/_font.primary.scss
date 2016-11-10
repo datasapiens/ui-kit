@@ -1,0 +1,31 @@
+/**
+ * Component Font/Primary settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Primary font settings
+// =============================================================================
+
+// Set primary font family.
+$font-primary-family: "Open Sans";
+
+// Set primary font variant list.
+$font-primary-variant: (
+    (
+        filename: "opensans-light",
+        weight: 300,
+    ),
+    (
+        filename: "opensans-regular",
+        weight: 400,
+    ),
+    (
+        filename: "opensans-semibold",
+        weight: 600,
+    ),
+    // (
+    //     filename: "opensans-bold",
+    //     weight: 700,
+    // ),
+);

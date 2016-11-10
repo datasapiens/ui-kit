@@ -3,33 +3,6 @@
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  */
 
-// Set page background.
-$page-background: transparent;
-
-// Set page indent.
-$page-indent: 20px;
-
-// Set page top padding (according to `$page-bar-size`).
-$page-offset: 54px;
-
-// Set page size.
-$page-size: (
-    max: 1100px,
-    min: 320px,
-);
-
-// Set page sidebar breakpoints.
-$page-sidebar-breaks: (
-    1000px,
-);
-
-// Set page sidebar size.
-$page-sidebar-size: (
-    max: 380px,
-    min: 80px,
-);
-
-
 // =============================================================================
 // Page
 // =============================================================================

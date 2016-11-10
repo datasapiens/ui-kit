@@ -1,0 +1,19 @@
+/**
+ * Component Animation settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Animation settings
+// =============================================================================
+
+/**
+ * @link http://matthewlein.com/ceaser/
+ */
+
+$animation-easing: (
+    in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860),
+    in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1.000),
+    out-back:     cubic-bezier(0.175, 0.885, 0.320, 1.275),
+    out-sine:     cubic-bezier(0.390, 0.575, 0.565, 1.000),
+);

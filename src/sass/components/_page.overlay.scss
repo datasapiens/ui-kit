@@ -1,24 +1,17 @@
 /**
- * Component Page/Body.
+ * Component Page/Overlay.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  */
 
-// Set page indent.
-$page-indent: 20px;
-
-
 // =============================================================================
-// Page body
+// Page overlay
 // =============================================================================
 
-.page-body {
-    flex: 100 1 auto;
-    overflow: {
-        x: hidden;
-        y: auto;
-    }
-    padding: $page-indent 0;
-    position: relative;
+.page-overlay {
+    @include stretch(fixed, 0, 0, 0, 0);
+    background-color: $page-overlay-background;
+    padding-top: $page-overlay-offset;
+    text-align: center;
 }
 
 /**

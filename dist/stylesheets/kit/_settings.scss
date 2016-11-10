@@ -4,198 +4,27 @@
  */
 
 // =============================================================================
-// Libs, Frameworks
+// Layers
 // =============================================================================
 
-// $susy: ();
+// ORDER DOES MATTER!
 
-// =============================================================================
-// Animation timing functions
-// =============================================================================
-
-/**
- * @link http://matthewlein.com/ceaser/
- */
-
-$animation-easing: (
-    in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860),
-    in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1.000),
-    out-back:     cubic-bezier(0.175, 0.885, 0.320, 1.275),
-    out-sine:     cubic-bezier(0.390, 0.575, 0.565, 1.000),
-);
-
-// =============================================================================
-// Colors
-// =============================================================================
-
-$black:             #000;
-$blue--yonder-200:  #eaf4fe;
-$blue--yonder-300:  #c9daeb;
-$blue--yonder-400:  #7396b2;
-$blue--yonder-500:  #5e85a4;
-$blue--yonder-600:  #4f6b86;
-$blue--yonder-700:  #335570;
-$blue--yonder-800:  #33495f;
-$blue--summer:      #289be4;
-$brown--sienna-400: #ea8051;
-$brown--sienna-500: #f06253;
-$green--caribbean:  #0dbc9d;
-$red--cardinal:     #cd3324;
-$white:             #fff;
-
-// Color themes
-// =============================================================================
-
-// Set primary color theme map.
-// @example
-//  modifier: (
-//      background: `background-color`,
-//      color: `color`,
-//      icon: `icon--modifier`,
-//  )
-// $theme--primary: (
-//     danger: (
-//         background: (
-//             primary: $brown--sienna-500,
-//             secondary: #fbe6e4,
-//         ),
-//         border: #ffbcba,
-//         color: $white,
-//         icon: "block",
-//     ),
-//     default: (
-//         background: (
-//             primary: $blue--yonder-700,
-//             secondary: $gray--athens,
-//         ),
-//         border: #bcc3d5,
-//         color: $white,
-//     ),
-//     notice: (
-//         background: (
-//             primary: $blue--summer,
-//             secondary: #dae9fb,
-//         ),
-//         border: #b8d2ff,
-//         color: $white,
-//         icon: "info-outline",
-//     ),
-//     success: (
-//         background: (
-//             primary: $green--caribbean,
-//             secondary: #e2efd5,
-//         ),
-//         border: #c2dfa9,
-//         color: $white,
-//         icon: "check-outline",
-//     ),
-//     warning: (
-//         background: (
-//             primary: $brown--sienna-400,
-//             secondary: #f9ebe1,
-//         ),
-//         border: #fad2a5,
-//         color: $white,
-//         icon: "warning-outline",
-//     ),
-// );
-
-// =============================================================================
-// Base
-// =============================================================================
-
-// The base background color.
-// $base-background: $gray--athens;
-$base-background: #f8fcff;
-
-// The base text color.
-$base-color: $blue--yonder-700;
-
-// The base font family stack.
-$base-font-stack: ("Open Sans", Helvetica, sans-serif);
-
-// The base font size.
-$base-font-size: 14px;
-
-// Set browser default font size.
-$base-font-size--browser: 16px;
-
-// The base font weight.
-$base-font-weight: 400;
-
-// The amount lists and blockquotes are indented.
-$base-indent: 30px;
-
-// The base line height.
-$base-line-height: 23px;
-
-// Set base link color.
-$base-link: #289be4;
-
-// Set base type scale.
-// 34px, 24px, 20px, 16px, 14px
-$base-type-scale: (
-    2.429,
-    1.714,
-    1.429,
-    1.143,
-    1,
-);
-
-/**
- * Base `label`.
- */
-
-$base-label-color: (
-    disable:    $blue--yonder-300,  // disabled
-    initial:    $blue--yonder-500,
-);
-
-/**
- * Browser (OS) specific
- */
-
-// Set base scrollbar radius.
-// $base-scrollbar-radius: 4px;
-
-// Set base scrollbar size.
-$base-scrollbar-size: 8px;
-
-$base-scrollbar-thumb: (
-    hover:      rgba($black, 0.6),   // hovered
-    initial:    rgba($black, 0.4),
-);
-
-// Set base scrollbar track color.
-$base-scrollbar-track: rgba($black, 0.1);
+@import "settings/layer.colors";
+@import "settings/layer.base";
 
 // =============================================================================
 // Components
 // =============================================================================
 
-// $element-state: (
-//     active:     ,   // pressed
-//     disable:    ,   // disabled
-//     focus:      ,   // focused
-//     hover:      ,   // hovered
-//     initial:    ,
-// );
-
-// Set z-Index order (from top to bottom).
-// $components-order: (
-//     ,
-// );
-
-// Component Icon
-// =============================================================================
-
-// Set icon font size.
-$icon-font-size: (
-    large:      1.65rem,
-);
-
-// Set icon size.
-$icon-size: 1em;
-
-// Set icon indent.
-$icon-indent: 0.25 * $icon-size;
+@import "settings/animation.scss";
+@import "settings/font.monospace.scss";
+@import "settings/font.primary.scss";
+@import "settings/icon.scss";
+@import "settings/page.body.scss";
+@import "settings/page.foot.scss";
+@import "settings/page.head.scss";
+@import "settings/page.overlay.scss";
+@import "settings/page.scss";
+@import "settings/page.sidebar.scss";
+@import "settings/panel.scss";
+@import "settings/spacer.scss";
