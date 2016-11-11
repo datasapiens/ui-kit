@@ -18,6 +18,14 @@ module.exports = (grunt) ->
             }
             {
                 expand: true
+                cwd: '<%= path.source %>/tpl'
+                src: [
+                    '**/*.html'
+                ]
+                dest: '<%= path.dist %>/templates'
+            }
+            {
+                expand: true
                 cwd: '<%= path.source %>'
                 src: [
                     'browserconfig.xml'

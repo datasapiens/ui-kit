@@ -8,7 +8,7 @@ module.exports = (grunt) ->
     icon:
         options:
             # codepoints:
-            destHtml: '<%= path.dist %>/templates/partials'
+            destHtml: '<%= path.source %>/tpl/partials'
             font: 'icon'
             fontFamilyName: 'Sapiens Icons'
             fontFilename: 'sapiensicons'
