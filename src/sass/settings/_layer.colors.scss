@@ -21,3 +21,13 @@ $brown--sienna-500: #f06253;
 $green--caribbean:  #0dbc9d;
 $red--cardinal:     #cd3324;
 $white:             #fff;
+
+// Set primary color set map.
+$c-set--primary: (
+    blue--dark:    #005a9a,
+    brown--purple: #856469,
+    cyan:          #009fe3, // primary color
+    green:         #85a056,
+    orange:        #db9a63,
+    purple:        #9469ab,
+);
