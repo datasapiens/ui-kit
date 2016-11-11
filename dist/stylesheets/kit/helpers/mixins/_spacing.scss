@@ -1,9 +1,9 @@
 /**
- * Provides dimension classes.
+ * Provides spacing helper classes.
  *
  * TODO: Use real units in selector, e.g. `.w-50% { width: 50%; }`
  *
- * @param {Map} $dimensions
+ * @param {Map} $model
  *
  * @example scss
  *  `.mt--0  { margin-top: 0; }`
@@ -11,7 +11,7 @@
  *  `.p--10i { padding: 10px !important; }`
  */
 
-@mixin dimensions($model: ()) {
+@mixin spacing($model: ()) {
     $property-map: (
         width:          w,
         min-width:      minw,

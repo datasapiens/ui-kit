@@ -1,0 +1,11 @@
+/**
+ * Layer Spacing.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Spacing
+// =============================================================================
+
+// Generate spacing helpers.
+@include spacing($s-model);

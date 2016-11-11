@@ -1,0 +1,22 @@
+/**
+ * Layer Spacing settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Spacing settings
+// =============================================================================
+
+// Set box model helpers map.
+// Do NOT OVERUSE (keep small number) and use grid system instead.
+//
+// @example
+//      `.mt--0  { margin-top: 0; }`
+//      `.w--50p { width: 50%; }`
+//      `.p--10i { padding: 10px !important; }`
+
+$s-model: (
+    margin:          ( 0 ),
+    margin-bottom:   ( 0 5 10),
+    width:           ( 100p ),
+);

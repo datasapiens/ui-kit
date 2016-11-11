@@ -9,6 +9,7 @@ module.exports = (grunt) ->
         # includePaths: [
         #   '<%= path.vendor %>/susy/sass'
         # ]
+        indentWidth: 4
         outputStyle: 'expanded'
         precision: 5
         sourceMap: true
