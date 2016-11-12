@@ -7,9 +7,8 @@ module.exports = (grunt) ->
 
     options:
         svgoPlugins: [
-            { cleanupEnableBackground: false }
-            { cleanupIDs: false }
-            { removeViewBox: false }
+            { removeAttrs: { attrs: 'data-name' } }
+            { removeTitle: true }
         ]
 
     dist:
