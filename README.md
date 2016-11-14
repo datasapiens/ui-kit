@@ -9,7 +9,7 @@
 
 __UI Kit is Sass components and static assets library.__
 
-![node](http://img.shields.io/badge/node-10.0.x-7FC100.svg?style=flat-square)
+![node](http://img.shields.io/badge/node-7.0.x-7FC100.svg?style=flat-square)
 ![grunt](http://img.shields.io/badge/grunt-1.0.x-E38800.svg?style=flat-square)
 ![libsass](http://img.shields.io/badge/libsass-3.3.x-C44C8D.svg?style=flat-square)
 
@@ -31,7 +31,7 @@ __UI Kit is Sass components and static assets library.__
 ## Requirements
 
 1. [Git](http://git-scm.com/downloads)    
-1. [Node](https://nodejs.org/en/download/) `10.0.x`    
+1. [Node](https://nodejs.org/en/download/) `7.0.x`    
 1. [Grunt CLI](http://gruntjs.com/getting-started)  
 
     ```
