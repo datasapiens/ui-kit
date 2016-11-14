@@ -12,14 +12,16 @@ module.exports = (grunt) ->
             font: 'icon'
             fontFamilyName: 'Sapiens Icons'
             fontFilename: 'sapiensicons'
+            # fontHeight: 24
             hashes: false
             htmlDemoTemplate: 'grunt/webfont/templates/prototype.html'
             # ligatures: true
+            # optimize: false
             stylesheet: 'scss'
             template: 'grunt/webfont/templates/webfont.css'
             types: [
-                'woff2',
                 'woff'
+                'woff2',
             ]
         src: '<%= path.source %>/svg/icons/*.svg'
         dest: '<%= path.source %>/woff'
