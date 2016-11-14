@@ -51,20 +51,21 @@ $icon-glyphs: <% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { 
  */
 
 @each $glyph in $icon-glyphs {
-    $modifier: <%= classPrefix %> + "--" + nth($glyph, 2);
+    $extender: <%= classPrefix %> + "--" + nth($glyph, 2);
+    $modifier: "--" + nth($glyph, 2);
 
-    %#{$modifier} {
+    %#{$extender} {
         content: "#{nth($glyph, 1)}";
     }
 
     .<%= classPrefix %> {
-        &.--#{$modifier} {
+        &.#{$modifier} {
             &::before {
-                @extend %#{$modifier};
+                @extend %#{$extender};
             }
             &.--after {
                 &::after {
-                    @extend %#{$modifier};
+                    @extend %#{$extender};
                 }
             }
         }

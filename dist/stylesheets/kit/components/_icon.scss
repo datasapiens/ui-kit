@@ -66,20 +66,21 @@ $icon-glyphs:
  */
 
 @each $glyph in $icon-glyphs {
-    $modifier: ico + "--" + nth($glyph, 2);
+    $extender: ico + "--" + nth($glyph, 2);
+    $modifier: "--" + nth($glyph, 2);
 
-    %#{$modifier} {
+    %#{$extender} {
         content: "#{nth($glyph, 1)}";
     }
 
     .ico {
-        &.\--#{$modifier} {
+        &.#{$modifier} {
             &::before {
-                @extend %#{$modifier};
+                @extend %#{$extender};
             }
             &.\--after {
                 &::after {
-                    @extend %#{$modifier};
+                    @extend %#{$extender};
                 }
             }
         }

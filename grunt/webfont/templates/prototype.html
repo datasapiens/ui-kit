@@ -1,19 +1,19 @@
-<div class="lay-group">
+<div class="u-group">
 <% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { var glyph = glyphs[glyphIdx] %>
-    <div class="lay-left" style="width: 180px; padding-right: 20px; ">
+    <div class="u-float--left" style="width: 180px; padding-right: 20px; ">
         <p>
-            <label class="form-row --condensed lay-block" for="i-<%= glyph %>">
-                <span class="lay-block">
+            <label class="form-row --condensed u-block" for="i-<%= glyph %>">
+                <span class="u-block">
                     <i class="<%= classPrefix %> --<%= glyph %>" style="font-size: 39px; "></i>
                     <i class="<%= classPrefix %> --<%= glyph %>" style="font-size: 26px; "></i>
                     <i class="<%= classPrefix %> --<%= glyph %>" style="font-size: 13px; "></i>
                 </span>
-                <span class="lay-block" style="line-height: 1.35; margin: 5px 0; ">
-                    <span class="<%= classPrefix %> --<%= glyph %> <%= classPrefix %> --before lay-block con-truncate"><%= glyph %></span>
-                    <span class="<%= classPrefix %> --<%= glyph %> <%= classPrefix %> --before --large lay-block con-truncate"><%= glyph %> (large)</span>
+                <span class="u-block" style="line-height: 1.35; margin: 5px 0; ">
+                    <span class="<%= classPrefix %> --<%= glyph %> --before u-block u-truncate"><%= glyph %></span>
+                    <span class="<%= classPrefix %> --<%= glyph %> --before --large u-block u-truncate"><%= glyph %> (large)</span>
                 </span>
             </label>
-            <input type="text" value="--<%= glyph %>" id="i-<%= glyph %>" readonly />
+            <input type="text" value="--<%= glyph %>" class="font-monospace" id="i-<%= glyph %>" readonly>
         </p>
     </div>
 <% } %>
