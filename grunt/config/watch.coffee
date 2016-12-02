@@ -12,5 +12,6 @@ module.exports = (grunt) ->
         tasks: [
             'copy:preprocess'
             'replace:preprocess'
+            'sass:test'
             'copy:dist'
         ]

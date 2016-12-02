@@ -19,6 +19,6 @@ module.exports = (grunt) ->
             expand: true
             cwd: '<%= path.temp %>/sass'
             src: ['*.scss']
-            dest: '<%= path.test %>/css'
+            dest: '<%= path.test %>/stylesheets'
             ext: '.css'
         ]
