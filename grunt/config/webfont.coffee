@@ -10,8 +10,8 @@ module.exports = (grunt) ->
             # codepoints:
             destHtml: '<%= path.source %>/tpl/partials'
             font: 'icon'
-            fontFamilyName: 'Sapiens Icons'
-            fontFilename: 'sapiensicons'
+            fontFamilyName: 'SimoKucher Icons'
+            fontFilename: 'simokuchericons'
             # fontHeight: 24
             hashes: false
             htmlDemoTemplate: 'grunt/webfont/templates/prototype.html'
