@@ -123,7 +123,7 @@ $icon-glyphs: <% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { 
 // .is-component-state {}
 
 // .component {
-//     .is-state {}
+//     &.is-state {}
 // }
 
 /**
