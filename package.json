@@ -17,7 +17,6 @@
     "url": "https://github.com/datasapiens/ui-kit.git"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.1",
     "grunt": "^1.0.1",
     "grunt-bump": "^0.8.0",
     "grunt-contrib-clean": "^1.0.0",
