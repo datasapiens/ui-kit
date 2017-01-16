@@ -44,43 +44,43 @@
  * Page, has sidebar.
  */
 
-.page {
-    &.has-sidebar {
-        .page__inset {
-            margin-left: map-get($page-sidebar-size, min);
+// .page {
+//     &.has-sidebar {
+//         .page__inset {
+//             margin-left: map-get($page-sidebar-size, min);
 
-            @media (min-width: nth($page-sidebar-breaks, 1)) {
-                margin-left: map-get($page-sidebar-size, max);
-            }
-        }
-    }
-}
+//             @media (min-width: nth($page-sidebar-breaks, 1)) {
+//                 margin-left: map-get($page-sidebar-size, max);
+//             }
+//         }
+//     }
+// }
 
 /**
  * Page, has sidebar on.
  */
 
-.page {
-    &.has-sidebar-on {
-        .page__inset {
-            @media (min-width: nth($page-sidebar-breaks, 1)) {
-                margin-left: map-get($page-sidebar-size, max);
-            }
-        }
-    }
-}
+// .page {
+//     &.has-sidebar-on {
+//         .page__inset {
+//             @media (min-width: nth($page-sidebar-breaks, 1)) {
+//                 margin-left: map-get($page-sidebar-size, max);
+//             }
+//         }
+//     }
+// }
 
 /**
  * Page, has sidebar off.
  */
 
-.page {
-    &.has-sidebar-off {
-        .page__inset {
-            margin-left: map-get($page-sidebar-size, min);
-        }
-    }
-}
+// .page {
+//     &.has-sidebar-off {
+//         .page__inset {
+//             margin-left: map-get($page-sidebar-size, min);
+//         }
+//     }
+// }
 
 // =============================================================================
 // Subcomponents
@@ -90,13 +90,15 @@
 // =============================================================================
 
 .page__inset {
+    @extend %ctr--center;
+
     max-width: map-get($page-size, max);
     min-width: map-get($page-size, min);
     padding: {
         left: $page-indent;
         right: $page-indent;
     }
-    transition: margin 0.3s;
+    position: relative;
 
     @media print {
         max-width: 100%;

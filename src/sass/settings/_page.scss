@@ -7,17 +7,11 @@
 // Page settings
 // =============================================================================
 
-// Set page background.
-$page-background: transparent;
-
 // Set page indent.
 $page-indent: 20px;
 
-// Set page top padding (according to `$page-bar-size`).
-$page-offset: 54px;
-
 // Set page size.
 $page-size: (
-    max: 1100px,
+    max: 1600px,
     min: 320px,
 );

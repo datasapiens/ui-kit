@@ -8,17 +8,11 @@
 // =============================================================================
 
 .page-head {
-    // @include acceleration;
-
     background-color: $page-head-background;
+    box-shadow: $page-head-box-shadow;
     color: $page-head-color;
-    // flex: 1 0 auto;
-    // padding: {
-    //     bottom: $page-indent;
-    //     top: $page-indent;
-    // }
+    line-height: $page-head-line-height-ratio;
     position: relative;
-    // white-space: nowrap;
     z-index: $page-head-index;
 
     a {
@@ -57,7 +51,89 @@
 // Subcomponents
 // =============================================================================
 
-// Page head inset
+.page-head__row {
+    flex-wrap: wrap;
+}
+
+// Page head cell
 // =============================================================================
 
-.page-head__inset {}
+.page__head__cell {
+    flex: 1;
+    min-height: 0.75 * map-get($page-head-logo-size, height);
+
+    &:nth-of-type(1) {
+        @if $page-head-debug {
+            background-color: red;
+        }
+        flex: 2 0 100%;
+        justify-content: center;
+        min-height: 0.5 * map-get($page-head-logo-size, height);
+
+        @media (min-width: nth($page-head-breaks, 1)) {
+            flex: 1;
+            order: 2;
+        }
+    }
+
+    &:nth-of-type(2) {
+        @if $page-head-debug {
+            background-color: orange;
+        }
+        @media (min-width: nth($page-head-breaks, 1)) {
+            order: 1;
+        }
+    }
+
+    &:nth-of-type(3) {
+        @if $page-head-debug {
+            background-color: cyan;
+        }
+        justify-content: flex-end;
+
+        @media (min-width: nth($page-head-breaks, 1)) {
+            order: 3;
+        }
+    }
+}
+
+// Page head logo
+// =============================================================================
+
+.page-head__logo {
+    @include size(
+        map-get($page-head-logo-size, width),
+        0.6 * map-get($page-head-logo-size, height)
+    );
+
+    background: url("../images/logo_datasapiens--white.svg") 50% 100% / 80% auto no-repeat;
+    @if $page-head-debug {
+        background-color: lightgreen;
+    }
+
+    @media (min-width: nth($page-head-breaks, 1)) {
+        background-position-y: 45%;
+        height: map-get($page-head-logo-size, height);
+    }
+}
+
+// Page head title
+// =============================================================================
+
+.page-head__title {
+    color: inherit;
+    font: {
+        size: 1rem;
+        weight: 300;
+    }
+    line-height: inherit;
+    margin: 0;
+    text-decoration: none;
+}
+
+// Page head icon
+// =============================================================================
+
+.page-head__icon {
+    font-size: px-to-rem($page-head-icon-size);
+}

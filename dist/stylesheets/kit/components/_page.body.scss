@@ -47,7 +47,10 @@
 // Subcomponents
 // =============================================================================
 
-// SubcomponentName
+// Page body inset
 // =============================================================================
 
-// .component__subcomponent
+.page-body__inset {
+    position: relative;
+    right: calc(-0.5 * (100vw - 100%));
+}

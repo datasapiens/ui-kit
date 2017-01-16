@@ -9,17 +9,18 @@
 
 .page-foot {
     background-color: $page-foot-background;
-    color: $page-foot-color;
+    color: rgba($page-foot-color, 0.5);
     flex: 1 0 auto;
     font-size: px-to-rem($page-foot-font-size);
     padding: {
-        bottom: $page-indent;
-        top: $page-indent;
+        bottom: 0.5 * $page-indent;
+        top: 0.5 * $page-indent;
     }
 
     a {
-        @include link-underline($underline: false);
-        color: inherit;
+        // @include link-underline($underline: false);
+        color: $page-foot-color;
+        text-decoration: none;
     }
 }
 

@@ -7,11 +7,34 @@
 // Page header settings
 // =============================================================================
 
+// Set page header breakpoints.
+$page-head-breaks: (
+    450px,
+);
+
 // Set page header background.
-$page-head-background: slategray;
+$page-head-background: $blue--cerulean;
+
+// Set page header box shadow.
+$page-head-box-shadow: 0 1px 0 rgba($black, 0.125);
 
 // Set page header color.
-$page-head-color: #fff;
+$page-head-color: $white;
+
+// Set page debug mode.
+$page-head-debug: false;
+
+// Set page header icon size.
+$page-head-icon-size: 20px;
 
 // Set page header index.
 $page-head-index: 3;
+
+// Set page header line height ratio.
+$page-head-line-height-ratio: 1.5;
+
+// Set page header logo size.
+$page-head-logo-size: (
+    height: 50px,
+    width: 50px,
+);
