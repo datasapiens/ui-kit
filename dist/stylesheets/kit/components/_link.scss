@@ -1,0 +1,59 @@
+/**
+ * Component Link.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Link
+// =============================================================================
+
+// .component {}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Link, reverse.
+ */
+
+.lnk {
+    &.\--plain[class] {
+        text-decoration: none;
+    }
+}
+
+/**
+ * Link, reverse.
+ */
+
+.lnk {
+    &.\--reverse {
+        @include link-underline($underline: false);
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
