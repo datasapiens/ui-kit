@@ -1,0 +1,43 @@
+/**
+ * Component Indicator/Progress settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Progress indicator settings
+// =============================================================================
+
+// Set progress indicator border radius (according to `$button-border-radius`).
+$indicator-progress-border-radius: 2px;
+
+// Set progress indicator border size.
+$indicator-progress-border-size: 0px;
+
+// Set progress indicator inde.
+$indicator-progress-indent: 5px;
+
+// Set progress indicator size.
+$indicator-progress-size: (
+    thick:  20px,
+    medium: 10px,
+    thin:  5px,
+);
+
+// Set progress indicator theme.
+$indicator-progress-theme: (
+    default: (
+        background: rgba($green--wildwillow, 0.25),
+        color: rgba($green--wildwillow, 0.85),
+        font: (
+            size:   (
+                figure: 14px,
+                status: 14px,
+
+            ),
+            weight: (
+                figure: 400,
+                status: 300,
+            ),
+        ),
+    ),
+);
