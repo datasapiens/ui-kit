@@ -1,0 +1,104 @@
+/**
+ * Component Animation/Scale.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Scale animation
+// =============================================================================
+
+// .component {}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Scale, from 0 to 1.
+ */
+
+@keyframes scale--0-100 {
+    0% {
+        transform: scale(0, 0);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/**
+ * Scale, from 0.5 to 1.
+ */
+
+@keyframes scale--50-100 {
+    0% {
+        transform: scale(0.5, 0.5);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/**
+ * Scale, from 100 to 50.
+ */
+
+@keyframes scale--100-50 {
+    0% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(0.5, 0.5);
+    }
+}
+
+/**
+ * Scale, from 1 to 0.
+ */
+
+@keyframes scale--100-0 {
+    0% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(0, 0);
+    }
+}
+
+/**
+ * Scale X, from 0 to 1.
+ */
+
+@keyframes scale--x-0-100 {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

@@ -1,0 +1,158 @@
+/**
+ * Component Animation/Slide.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Slide animation
+// =============================================================================
+
+/**
+ * TODO: Consider to drop redundant `reverse` variants.
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction#Browser_compatibility
+ */
+
+// .component {}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Slide.
+ */
+
+@keyframes slide {
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/**
+ * Slide down.
+ */
+
+@keyframes slide--down {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/**
+ * Slide down, reversed.
+ */
+
+@keyframes slide--down-reverse {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/**
+ * Slide left.
+ */
+
+@keyframes slide--left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/**
+ * Slide left, reversed.
+ */
+
+@keyframes slide--left-reverse {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/**
+ * Slide right.
+ */
+
+@keyframes slide--right {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/**
+ * Slide right, reversed.
+ */
+
+@keyframes slide--right-reverse {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/**
+ * Slide up.
+ */
+
+@keyframes slide--up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/**
+ * Slide up, reverse.
+ */
+
+@keyframes slide--up-reverse {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

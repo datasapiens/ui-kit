@@ -1,0 +1,65 @@
+/**
+ * Component Animation/Width.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Width animation
+// =============================================================================
+
+// .component {}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Width, auto.
+ */
+
+@keyframes width {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: auto;
+    }
+}
+
+/**
+ * Width, 100 %.
+ */
+
+@keyframes width--100 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

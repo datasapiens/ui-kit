@@ -42,6 +42,12 @@
 // Components
 // =============================================================================
 
+@import "components/animation.fade";
+@import "components/animation.scale";
+@import "components/animation.slide";
+@import "components/animation.width";
+@import "components/animation.visibility";
+
 @import "components/backdrop";
 @import "components/container";
 

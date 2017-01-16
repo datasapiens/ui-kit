@@ -1,0 +1,59 @@
+/**
+ * Component Animation/Visibility.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Visibility animation
+// =============================================================================
+
+// .component {}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Visibility, show.
+ */
+
+@keyframes visibility--show {
+    100% {
+        visibility: visible;
+    }
+}
+
+/**
+ * Visibility, hide.
+ */
+
+@keyframes visibility--hide {
+    100% {
+        visibility: hidden;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
