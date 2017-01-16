@@ -1,40 +1,22 @@
 /**
  * Component Icon.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
- *
- * NOTE: This component is generated from template by 'grunt-webfont' plugin.
  */
 
-// Set icon glyphs list.
-$icon-glyphs: 
-    "\f101" account,
-    "\f102" apps,
-    "\f103" arrow-down,
-    "\f104" arrow-left,
-    "\f105" arrow-right,
-    "\f106" arrow-up,
-    "\f107" briefcase,
-    "\f108" caret-down,
-    "\f109" caret-up,
-    "\f10a" check-circle,
-    "\f10b" download,
-    "\f10c" exit,
-    "\f10d" help-outline,
-    "\f10e" language,
-    "\f10f" menu,
-    "\f110" timelapse,
-;
+/**
+ * TODO: Investigate `flexbox` solution.
+ */
 
 // =============================================================================
 // Icon
 // =============================================================================
 
-@include font-face($family: "Sapiens Icons", $file: "sapiensicons");
+@include font-face($family: "SimoKucher Icons", $file: "simokuchericons");
 
 %ico {
     display: inline-block;
     font: {
-        family: "Sapiens Icons";
+        family: "SimoKucher Icons";
         style: normal;
         weight: normal;
     }
@@ -78,7 +60,7 @@ $icon-glyphs:
             &::before {
                 @extend %#{$extender};
             }
-            &.--after {
+            &.\--after {
                 &::after {
                     @extend %#{$extender};
                 }
@@ -92,7 +74,7 @@ $icon-glyphs:
  */
 
 .ico {
-    &.--before {
+    &.\--before {
         &::before {
             @extend %ico;
             margin-right: $icon-indent;
@@ -105,7 +87,7 @@ $icon-glyphs:
  */
 
 .ico {
-    &.--after {
+    &.\--after {
         &::after {
             @extend %ico;
             margin-left: $icon-indent;
@@ -121,10 +103,10 @@ $icon-glyphs:
  */
 
 .ico {
-    &.--large {
+    &.\--large {
         &::after,
         &::before {
-            bottom: (-0.35) * (map-get($icon-font-size, large) - 1rem);
+            bottom: (-0.225) * (map-get($icon-font-size, large) - 1em);
             font-size: map-get($icon-font-size, large);
             position: relative;
         }
@@ -138,7 +120,7 @@ $icon-glyphs:
 // .is-component-state {}
 
 // .component {
-//     .is-state {}
+//     &.is-state {}
 // }
 
 /**
