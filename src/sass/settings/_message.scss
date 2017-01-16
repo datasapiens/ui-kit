@@ -1,0 +1,59 @@
+/**
+ * Component Message settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Message settings
+// =============================================================================
+
+// Set message border color.
+$message-border-color: $white;
+
+// Set message border radius (according to `$button-border-radius`).
+$message-border-radius: 3px;
+
+// Set message border size.
+$message-border-size: 1px;
+
+// Set message font size.
+$message-font-size: 13px;
+
+// Set message font weight.
+$message-font-weight: 300;
+
+// Set message color.
+$message-color: $base-color;
+
+// Set message indent.
+$message-indent: 10px;
+
+// Set message line height ratio.
+$message-line-height-ratio: $base-line-height / 16px;
+
+// Set message themes map.
+$message-theme: $color-set--primary;
+
+// Set message title font size.
+$message-title-font-size: 14px; // px-to-rem($base-font-size)
+
+// Set message control color.
+$message-control-color: (
+    hover:      darken($gray, 30%),   // hovered
+    initial:    $gray,
+);
+
+// Set message control size.
+$message-control-size: 22px;
+
+// Set message icon opacity.
+$message-icon-opacity: 0.7;
+
+// Set message icon color.
+$message-icon-color: transparentize($white, 0.3);
+
+// Set message icon region size.
+$message-icon-region-size: 50px;
+
+// Set message icon size.
+$message-icon-size: 30px;

@@ -1,0 +1,223 @@
+/**
+ * Component Message.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Message
+// =============================================================================
+
+.msg {
+    @extend .msg.\--default;
+    @include acceleration;
+
+    animation:
+        slide--down-reverse 0.2s map-get($animation-easing, in-out-circ) forwards,
+        fade--in 0.3s 0.1s both;
+    border: $message-border-size solid $message-border-color;
+    border-radius: $message-border-radius;
+    color: $message-color;
+    font: {
+        size: $message-font-size;
+        weight: $message-font-weight;
+    }
+    line-height: $message-line-height-ratio;
+    margin-bottom: 15px;
+    padding: $message-indent;
+    position: relative;
+
+    &::after {
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: $message-icon-region-size;
+    }
+
+    &::before {
+        @extend %msg__icon;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    // This is not possible, because angular shows/hides elements
+    //  that already exist in DOM tree.
+    // & + &,
+    // p + p {
+    //     margin-top: (-1) * rhythm(0.5);
+    // }
+
+    a {
+        color: inherit;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Message, plain.
+ * Simple message variant without colored text, icon, background and border.
+ *
+ * 1. We need to increase specifity.
+ */
+
+.msg {
+    &.\--plain[class][class] {           /* 1 */
+        background: none;
+        border-color: transparent;
+
+        &::after,
+        &::before {
+            background: none;
+            color: $message-color;
+        }
+
+        .msg__title {
+            color: inherit;
+        }
+    }
+}
+
+/**
+ * Message, primary.
+ */
+
+.msg {
+    &.\--primary {
+        padding-left: $message-icon-region-size + $message-indent;
+    }
+}
+
+/**
+ * Message, secondary.
+ */
+
+.msg {
+    &.\--secondary {
+        padding-left: $message-icon-region-size;
+    }
+}
+
+/**
+ * Message, color themes.
+ */
+
+.msg {
+    @each $modifier, $theme in $message-theme {
+        &.\--#{$modifier} {
+            background-color: lighten(map-get($theme, secondary), 5%);
+            border-color: lighten(
+                desaturate(map-get($theme, primary), 30%),
+                20%
+            );
+
+            &.\--primary {
+                border-color: desaturate(map-get($theme, primary), 10%);
+            }
+
+            @if map-has-key($theme, icon) {
+                &.\--primary::after {
+                    background-color: rgba(map-get($theme, primary), 0.85);
+                }
+
+                &.\--primary::before,
+                &.\--secondary::before {
+                    @extend %ico--#{map-get($theme, icon)} !optional;
+                }
+                &.\--secondary::before {
+                    color: rgba(map-get($theme, primary), 0.75);
+                }
+            }
+
+            .msg__title {
+                color: rgba(map-get($theme, primary), 0.8);
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+/**
+ * Message, with control.
+ */
+
+// .msg {
+//     &.has-control {
+//         padding-right: 2 * $message-indent + $message-control-size;
+//     }
+// }
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Message title
+// =============================================================================
+
+.msg__title {
+    @include font-size($message-title-font-size);
+
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+// Message icon
+// =============================================================================
+
+%msg__icon {
+    @extend %ctr--core-y !optional;
+    @extend %ico !optional;
+
+    color: $message-icon-color;
+    content: "";
+    font-size: px-to-em($message-icon-size);
+    left: 0;
+    text-align: center;
+    width: $message-icon-region-size !important;
+    z-index: 1;
+}
+
+// Message control
+// =============================================================================
+
+// .msg__control {
+//     @extend %ico !optional;
+//     @extend %ico--cancel-outline !optional;
+
+//     color: map-get($message-control-color, initial);
+//     cursor: pointer;
+//     font-size: px-to-em($message-control-size);
+//     opacity: 1;
+//     position: absolute;
+//     right: 0.5 * $message-indent;
+//     top: 0.5 * $message-indent;
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Message control, hovered.
+ */
+
+// .msg__control {
+//     &:hover {
+//         color: map-get($message-control-color, hover);
+//     }
+// }
