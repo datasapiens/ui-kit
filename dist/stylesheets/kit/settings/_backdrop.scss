@@ -1,0 +1,14 @@
+/**
+ * Component Backdrop settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Backdrop settings
+// =============================================================================
+
+// Set backdrop background.
+$backdrop-background: $white;
+
+// Set backdrop z-index (according to `$modal-index`).
+$backdrop-index: 5;

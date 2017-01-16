@@ -1,0 +1,65 @@
+/**
+ * Component Backdrop.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Backdrop
+// =============================================================================
+
+.bad {
+    @include acceleration;
+    @include stretch(fixed, 0);
+
+    background-color: rgba($backdrop-background, 0.8);
+    z-index: $backdrop-index;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Backdrop, turned off.
+ */
+
+.bad {
+    &.is-off {
+        animation: fade--out 0.3s both;
+    }
+}
+
+/**
+ * Backdrop, turned on.
+ */
+
+.bad {
+    &.is-on {
+        animation: fade--in 0.3s both;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
