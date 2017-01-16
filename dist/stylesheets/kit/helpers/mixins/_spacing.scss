@@ -58,7 +58,7 @@
                     }
                 }
 
-                #{$property}: unit-strip($value) + $unit + " " + $flag;
+                #{$property}: unquote(unit-strip($value) + $unit + " " + $flag);
             }
         }
     }

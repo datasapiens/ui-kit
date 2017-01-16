@@ -15,8 +15,12 @@
 //      `.w--50p { width: 50%; }`
 //      `.p--10i { padding: 10px !important; }`
 
-$s-model: (
-    margin:          ( 0 ),
-    margin-bottom:   ( 0 5 10),
-    width:           ( 100p ),
+$spacing-model: (
+    margin:             ( 0 0i ),
+    margin-bottom:      ( 0 0i 5 10 20),
+    margin-top:         ( 0 ),
+    padding:            ( 0 ),
+    padding-left:       ( 5 20 ),
+    padding-right:      ( 5 20 ),
+    width:              ( 100p ),
 );
