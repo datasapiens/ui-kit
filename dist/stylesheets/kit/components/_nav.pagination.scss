@@ -1,0 +1,209 @@
+/**
+ * Component Navigation/Pagination.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Pagination
+// =============================================================================
+
+.nav-pagination {
+    display: inline-block;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Pagination row
+// =============================================================================
+
+// .nav-pagination__row {
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin-bottom: (-1) * $navigation-pagination-item-indent;
+// }
+
+// Pagination cell
+// =============================================================================
+
+// .nav-pagination__cell {
+//     margin-bottom: $navigation-pagination-item-indent;
+// }
+
+// Pagination item
+// =============================================================================
+
+%nav-pagination__item {
+    // color: map-get($navigation-pagination-item-color, initial);
+    border: $navigation-pagination-item-border-size solid transparent;
+    display: inline-block;
+    font: {
+        weight: 400;
+        size: px-to-rem(13px);
+    }
+    height: $navigation-pagination-item-size;
+    line-height: $navigation-pagination-item-size -
+        2 * $navigation-pagination-item-border-size;
+    min-width: $navigation-pagination-item-size;
+    padding: 0 $navigation-pagination-item-indent;
+    text-align: center;
+}
+
+.nav-pagination__item {
+    @extend %nav-pagination__item;
+
+    background-color: map-get($navigation-pagination-item-background, initial);
+    border: {
+        color: map-get($navigation-pagination-item-border, initial);
+        radius: $navigation-pagination-item-border-radius;
+    }
+    cursor: pointer;
+    margin: 0 0.5 * $navigation-pagination-item-indent;
+    text-decoration: none;
+    transition: background-color 0.2s,
+        border-color 0.2s,
+        color 0.2s;
+
+    &:first-of-type {
+        margin-left: 0;
+    }
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+/**
+ * Pagination item, active.
+ */
+
+.nav-pagination__item {
+    &:active,
+    &.is-active {
+        @extend .nav-pagination__item:hover;
+        // background-color: map-get($navigation-pagination-item-background, active);
+        // border-color: map-get($navigation-pagination-item-border, active);
+        // color: map-get($navigation-pagination-item-border, active);
+    }
+}
+
+/**
+ * Pagination item, disabled.
+ */
+
+.nav-pagination__item {
+    &:disabled,
+    &.is-disabled {
+        background-color: map-get($navigation-pagination-item-background, disable) !important;
+        border-color: map-get($navigation-pagination-item-border, disable) !important;
+        color: map-get($navigation-pagination-item-color, disable) !important;
+        cursor: not-allowed;
+    }
+}
+
+/**
+ * Pagination item, focused.
+ */
+
+.nav-pagination__item {
+    &:focus {
+        @extend .nav-pagination__item:hover;
+        // background-color: map-get($navigation-pagination-item-background, focus);
+        // border-color: map-get($navigation-pagination-item-border, focus);
+        // color: map-get($navigation-pagination-item-color, focus);
+    }
+}
+
+/**
+ * Pagination item, hovered.
+ */
+
+.nav-pagination__item {
+    &:hover {
+        background-color: map-get($navigation-pagination-item-background, hover);
+        border-color: map-get($navigation-pagination-item-border, hover);
+        color: map-get($navigation-pagination-item-color, hover);
+    }
+}
+
+// Pagination control
+// =============================================================================
+
+.nav-pagination__control {
+    @extend .nav-pagination__item;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Pagination `previous` control.
+ */
+
+.nav-pagination__control {
+    &.\--prev {
+        @extend .nav-pagination__control;
+
+        &::before {
+            @extend %ico;
+            @extend %ico--arrow-left;
+        }
+    }
+}
+
+/**
+ * Pagination `next` control.
+ */
+
+.nav-pagination__control {
+    &.\--next {
+        @extend .nav-pagination__control;
+
+        &::after {
+            @extend %ico;
+            @extend %ico--arrow-right;
+        }
+    }
+}
+
+// Pagination spacer
+// =============================================================================
+
+.nav-pagination__spacer {
+    @extend %nav-pagination__item;
+
+    min-width: 0;
+    padding: {
+        left: 0.5 * $navigation-pagination-item-indent;
+        right: 0.5 * $navigation-pagination-item-indent;
+    }
+}
