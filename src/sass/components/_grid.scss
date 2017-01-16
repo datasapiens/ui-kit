@@ -1,0 +1,140 @@
+/**
+ * Component Grid.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Grid
+// =============================================================================
+
+/**
+ * Simple grid based on `flexbox`.
+ *
+ * TDDO:
+ *  - Implement grid item vertical alignment.
+ *  - Implement grid items reversed order.
+ *  - Resolve spanned grid items responsibility.
+ *
+ * @link https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+ */
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    margin-left: (-1) * $grid-gutter;
+
+    @media (min-width: nth($grid-breaks, 1)) {
+        flex-flow: row wrap;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+.grid {
+    @each $cols in $grid-columns {
+        $index: 0;
+
+        &.\--#{$cols} {
+            & > .grid__item {
+                flex: 0 0 percentage(1 / $cols);
+
+                @each $break in $grid-breaks {
+                    $index: $index + 1;
+
+                    @if $cols > $index {
+                        @media (min-width: $break) {
+                            flex-basis: percentage(1 / ($index + 1));
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Grid item
+// =============================================================================
+
+.grid__item {
+    flex: 1;
+    display: flex;
+    margin-bottom: $grid-gutter;
+
+    &::before {
+        content: "";
+        flex: 0 0 $grid-gutter;
+    }
+
+    // & > div,
+    // & > span {
+    //     flex: 1 1 auto;
+    // }
+
+    @if $grid-debug {
+        @extend %debug !optional;
+
+        &::before {
+            background: cyan;
+        }
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Grid item, spanned across multiple columns.
+ * FIX: This doesn't compute!
+ */
+
+.grid__item {
+    $max: list-max($grid-columns);
+
+    @for $i from 2 through $max {
+        &.\--span-#{$i}[class] {
+            flex: {
+                basis: 100%;
+                grow: $i;
+            }
+        }
+    }
+}
+
+// Grid content
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.grid__content {
+    flex: 1 1 100%;
+    overflow: hidden;
+
+    & > :last-child[class] {
+        margin-bottom: 0;   /* 1 */
+    }
+}

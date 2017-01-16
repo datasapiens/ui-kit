@@ -1,0 +1,25 @@
+/**
+ * Component Grid settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Grid settings
+// =============================================================================
+
+// Set grid breakpoints.
+$grid-breaks: (
+    900px,
+    1100px,
+    1300px,
+    1500px,
+);
+
+// Set grid columns count list.
+$grid-columns: (2, 3, 4);
+
+// Set grid gutter size.
+$grid-gutter: 20px;
+
+// Set grid debug mode.
+$grid-debug: false;
