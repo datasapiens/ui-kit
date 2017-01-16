@@ -8,7 +8,7 @@
  * @return {Number} $rhythm
  */
 
-@function rhythm-get($lines: 1, $font-size: $base-font-size) {
+@function rhythm-get($lines: $base-rhythm-unit, $font-size: $base-font-size) {
     $rhythm: unit-convert($lines * $base-line-height, "rem", $font-size);
 
     // @if unit($rhythm) == "px" {
