@@ -7,40 +7,49 @@
 // Base settings
 // =============================================================================
 
-// The base background color.
-$base-background: #f8fcff;
+// Set base background color.
+$base-background: #fafafa;
 
-// The base text color.
-$base-color: $blue--yonder-700;
+// Set base text color.
+$base-color: $gray--scorpion;
 
-// The base font family stack.
+// Set base font family stack.
 $base-font-stack: ("Open Sans", Helvetica, sans-serif);
 
-// The base font size.
+// Set base font size.
 $base-font-size: 14px;
 
 // Set browser default font size.
 $base-font-size--browser: 16px;
 
-// The base font weight.
-$base-font-weight: 400;
+// Set base font weight.
+$base-font-weight: 300;
 
-// The amount lists and blockquotes are indented.
+// Set amount lists and blockquotes are indented.
 $base-indent: 30px;
 
-// The base line height.
+// Set base line height.
 $base-line-height: 23px;
 
-// Set base link color.
-$base-link: #289be4;
+// Set base rhythm unit.
+$base-rhythm-unit: 0.5;
 
-// Set base type scale.
-// 34px, 24px, 20px, 16px, 14px
+// Set base link color.
+$base-link-color: (
+    active:     $blue--dodger,       // pressed
+    // focus:      $blue--dodger,       // focused
+    hover:      $blue--dodger,       // hovered
+    initial:    $blue--cerulean,
+    visited:    $red--solidpink,     // visited
+);
+
+// Set base type scale (Major Third - 1.12).
+// @link https://goo.gl/EeDCq2
 $base-type-scale: (
-    2.429,
-    1.714,
-    1.429,
-    1.143,
+    2.074,
+    1.728,
+    1.44,
+    1.2,
     1,
 );
 

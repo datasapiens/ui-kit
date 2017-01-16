@@ -34,6 +34,7 @@ html {
     font: {
         family: $base-font-stack;
         size: $base-font-size / $base-font-size--browser * 100%;
+        weight: $base-font-weight;
     }
     line-height: $base-line-height / $base-font-size * 1em; /* 1 */
 
@@ -66,10 +67,16 @@ body {
 // =============================================================================
 
 %heading {
+    color: desaturate($blue--lochmara, 90%);
+    font-weight: 400;
     display: block;
     margin: {
         bottom: rhythm-get();
         top: rhythm-get(1.25);
+    }
+
+    a {
+        @include link-underline($underline: false);
     }
 }
 
@@ -82,39 +89,55 @@ body {
 h1 {
     @include font-size(
         nth($base-type-scale, 1) * $base-font-size,
-        1.8
+        1.5
     );
-    font-weight: 300;
-    margin-top: 0;
+    // font-weight: 300;
+    margin: {
+        top: 0;
+    }
 }
 
 h2 {
     @include font-size(
         nth($base-type-scale, 2) * $base-font-size,
-        1.5
+        1.25
     );
-    font-weight: 400;
+    // font-weight: 300;
+    margin: {
+        top: rhythm-get(1.125);
+    }
 }
 
 h3 {
     @include font-size(
         nth($base-type-scale, 3) * $base-font-size,
-        1.25
+        1.125
     );
-    font-weight: 400;
+    margin: {
+        bottom: rhythm-get(0.25);
+        top: rhythm-get(1.125);
+    }
 }
 
 h4 {
     @include font-size(
-        nth($base-type-scale, 4) * $base-font-size,
-        1.1
+        nth($base-type-scale, 4) * $base-font-size
     );
+    font-weight: 500;
+    margin: {
+        bottom: rhythm-get(0.125);
+        top: rhythm-get(1);
+    }
 }
 
 h5 {
     @include font-size(
         nth($base-type-scale, 5) * $base-font-size
     );
+    margin: {
+        bottom: rhythm-get(0.125);
+        top: rhythm-get(1);
+    }
     text-transform: uppercase;
 }
 
@@ -142,13 +165,25 @@ hr {
 a {
     @include link-underline;
 
-    color: $base-link;
+    color: map-get($base-link-color, initial);
     cursor: pointer;
+    transition: color 0.2s;
+
+    &:active {
+        color: map-get($base-link-color, active);
+    }
+    &:focus,
+    &:hover {
+        color: map-get($base-link-color, hover);
+    }
+    &:visited {
+        color: map-get($base-link-color, visited);
+    }
 }
 
 b,
 strong {
-    font-weight: 600;
+    font-weight: 400;
 }
 
 // =============================================================================
@@ -185,15 +220,15 @@ iframe {
 // Group elements
 // =============================================================================
 
-// code,
-// kbd,
-// pre,
-// samp {
-//     font: {
-//         family: "#{$font-monospace-family}", monospace;
-//         size: rem($font-monospace-size);
-//     }
-// }
+code,
+kbd,
+pre,
+samp {
+    font: {
+        family: "#{$font-monospace-family}", monospace;
+        size: px-to-rem($font-monospace-size);
+    }
+}
 
 // =============================================================================
 // Form elements
