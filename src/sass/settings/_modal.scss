@@ -1,0 +1,41 @@
+/**
+ * Component Modal settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Modal settings
+// =============================================================================
+
+// Set modal background.
+$modal-background: $white;
+
+// Set modal border radius.
+$modal-border-radius: 3px;
+
+// Set modal box shadow.
+$modal-box-shadow: 0 5px 30px -5px rgba(lighten(desaturate($orange--driftwood, 30%), 30%), 0.75);
+
+// Set modal color.
+$modal-color: $base-color;
+
+// Set modal shadow.
+// $modal-box-shadow: 0 0 5px rgba($black, 0.15);
+
+// Set modal indent.
+$modal-indent: 20px;
+
+// Set modal z-index.
+$modal-index: 5;
+
+// Set modal size.
+$modal-size: 800px;
+
+// Set modal control color.
+$modal-control-color: (
+    hover:      $blue--dodger,   // hovered
+    initial:    $gray,
+);
+
+// Set modal control size.
+$modal-control-size: 4 * $base-font-size;

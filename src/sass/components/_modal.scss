@@ -1,0 +1,194 @@
+/**
+ * Component Modal.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Modal
+// =============================================================================
+
+/**
+ * TODO: Improve vertical position related to modal content and viewport height.
+ * TODO: Implement content gradients.
+ * TODO: Improve close control animation via rotation.
+ */
+
+.mod {
+    @include acceleration;
+    @include stretch(fixed, 0, 0);
+
+    // align-items: flex-start;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: $modal-index;
+
+    @media print {
+        display: none;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Modal, turned off.
+ * 1. We need to increase specifity to beat the `is-on` state.
+ */
+
+.mod {
+    &.is-off[class] {       /* 1 */
+        animation:
+            fade--out 0.4s 0.4s both,
+            visibility--hide 0.3s 0.6s both;
+        pointer-events: none;
+        // visibility: hidden;
+
+        .mod__container {
+            animation:
+                scale--100-50 0.3s 0.2s map-get($animation-easing, in-out-circ) both,
+                fade--out 0.3s both;
+        }
+        .mod__control {
+            animation:
+                slide--right 0.3s map-get($animation-easing, in-out-circ) forwards,
+                fade--out 0.2s both;
+        }
+    }
+}
+
+/**
+ * Modal, turned on.
+ */
+
+.mod {
+    &.is-on {
+        animation: fade--in 0.2s both;
+        pointer-events: initial;
+        visibility: visible;
+
+        .mod__container {
+            animation:
+                scale--50-100 0.3s 0.1s map-get($animation-easing, in-out-circ) both,
+                fade--in 0.3s 0.2s both;
+        }
+        .mod__control {
+            animation:
+                slide--right-reverse 0.3s 0.4s map-get($animation-easing, in-out-circ) forwards,
+                fade--in 0.2s 0.5s both;
+        }
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Modal container
+// =============================================================================
+
+.mod__container {
+    max-width: $modal-size;
+    padding: $modal-indent;
+    // pointer-events: initial;
+    position: relative;
+    z-index: $modal-index + 1;
+
+    /**
+     * Container faux background
+     */
+
+    &::before {
+        @include stretch(
+            absolute,
+            $modal-indent - $modal-border-radius,
+            $modal-indent
+        );
+
+        background-color: $modal-background;
+        border-radius: $modal-border-radius;
+        box-shadow: $modal-box-shadow;
+        content: "";
+    }
+}
+
+// Modal body
+// =============================================================================
+
+.mod__body {
+    max-height: calc(100vh - 2 * #{$modal-indent});
+    overflow-y: auto;
+    padding-right: $modal-indent;
+    position: relative;
+    margin-right: (-1) * $modal-indent;
+
+    // > :last-child {
+    //     margin-bottom: 0;
+    // }
+}
+
+// Modal control
+// =============================================================================
+
+.mod__control {
+    color: map-get($modal-control-color, initial);
+    cursor: pointer;
+    font-size: px-to-rem($modal-control-size);
+    opacity: 0;
+    position: absolute;
+    transition: color 0.2s;
+    z-index: $modal-index + 1;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Modal control, close.
+ */
+
+.mod__control {
+    &.--close {
+        right: $modal-indent;
+        top: $modal-indent;
+
+        &::before {
+            @extend %ico !optional;
+            @extend %ico--cancel-outline !optional;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Modal control, hovered.
+ */
+
+.mod__control {
+    &:hover {
+        color: map-get($modal-control-color, hover);
+    }
+}
