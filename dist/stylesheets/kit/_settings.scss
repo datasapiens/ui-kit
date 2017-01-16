@@ -17,15 +17,13 @@
 // Components
 // =============================================================================
 
-@import "settings/animation.scss";
-@import "settings/font.monospace.scss";
-@import "settings/font.primary.scss";
-@import "settings/icon.scss";
-@import "settings/page.body.scss";
-@import "settings/page.foot.scss";
-@import "settings/page.head.scss";
-@import "settings/page.overlay.scss";
-@import "settings/page.scss";
-@import "settings/page.sidebar.scss";
-@import "settings/panel.scss";
-@import "settings/spacer.scss";
+@import "settings/animation";
+@import "settings/font.monospace";
+@import "settings/font.primary";
+@import "settings/icon";
+@import "settings/page.body";
+@import "settings/page.foot";
+@import "settings/page.head";
+@import "settings/page";
+@import "settings/panel";
+@import "settings/spacer";
