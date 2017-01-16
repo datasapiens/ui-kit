@@ -18,5 +18,5 @@
     }
 
     font-size: unit-convert($to-size, "rem", $from-size);
-    line-height: rhythm($lines, $to-size);
+    line-height: rhythm-get($lines, $to-size);
 }

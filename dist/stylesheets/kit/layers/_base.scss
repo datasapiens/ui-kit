@@ -68,8 +68,8 @@ body {
 %heading {
     display: block;
     margin: {
-        bottom: rhythm();
-        top: rhythm(0.5);
+        bottom: rhythm-get();
+        top: rhythm-get(1.25);
     }
 }
 
@@ -158,18 +158,18 @@ strong {
 ol,
 ul {
     @extend %rhythm;
+
     padding-left: $base-indent;
 }
 
 li {
-    margin-bottom: rhythm(0.25);
+    margin-bottom: rhythm-get(0.125);
 }
 
 li > ol,
 li > ul {
     margin: {
-        bottom: 0;
-        top: rhythm(0.25);
+        top: rhythm-get(0.125);
     }
 }
 
@@ -292,8 +292,8 @@ textarea {
         height: auto;
         line-height: inherit;
         padding: {
-            bottom: rhythm(0.25);
-            top: rhythm(0.25);
+            bottom: rhythm-get(0.25);
+            top: rhythm-get(0.25);
         }
     }
 }

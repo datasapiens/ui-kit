@@ -19,7 +19,7 @@
 .font-monospace {
     font: {
         family: $font-monospace-family;
-        size: rem($font-monospace-size);
+        size: px-to-rem($font-monospace-size);
     }
 
     // -webkit-font-smoothing: subpixel-antialiased;
@@ -42,7 +42,7 @@
 // .is-component-state {}
 
 // .component {
-//     .is-state {}
+//     &.is-state {}
 // }
 
 /**
