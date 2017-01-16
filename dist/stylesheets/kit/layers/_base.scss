@@ -245,10 +245,23 @@ label {
     color: map-get($base-label-color, initial);
     cursor: pointer;
     display: inline-block;
+    transition: color 0.2s;
 
+    &.is-active {
+        color: map-get($base-label-color, active);
+    }
+    &:hover {
+        color: map-get($base-label-color, hover);
+    }
     &.is-disabled {
         color: map-get($base-label-color, disable);
         cursor: not-allowed;
+    }
+    &.is-invalid {
+        color: map-get($base-label-color, invalid);
+    }
+    &.is-required {
+        color: map-get($base-label-color, required);
     }
 }
 
@@ -258,6 +271,7 @@ select,
 textarea {
     @extend %form-element !optional;
 
+    font-weight: inherit;
     color: inherit;
     outline: none;
 }
@@ -338,13 +352,13 @@ textarea {
  * @link http://css-tricks.com/snippets/css/style-placeholder-text/
  */
 
-// ::placeholder {
-//     color: map-get($form-element-color, initial);
-// }
+::placeholder {
+    color: map-get($form-element-placeholder-color, initial);
+}
 
-// :disabled::placeholder {
-//     color: map-get($form-element-color, disable);
-// }
+:disabled::placeholder {
+    color: map-get($form-element-placeholder-color, disable);
+}
 
 /**
  * Button
