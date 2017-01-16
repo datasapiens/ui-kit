@@ -1,0 +1,208 @@
+/**
+ * Component Button settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Button settings
+// =============================================================================
+
+// Set button background.
+$button-background: (
+    active:     unset,                  // pressed
+    disable:    lighten($gray, 33%),    // disabled
+    focus:      unset,                  // focused
+    hover:      unset,                  // hovered
+    initial:    lighten($gray, 43%),
+);
+
+// Set button border color.
+$button-border-color: (
+    active:     $gray,                  // pressed
+    disable:    lighten($gray, 23%),    // disabled
+    focus:      $gray,                  // focused
+    hover:      $gray,                  // hovered
+    initial:    lighten($gray, 23%),
+);
+
+// Set button border radius.
+$button-border-radius: 2px;
+
+// Set button border size.
+$button-border-size: 1px;
+
+// Set button color.
+$button-color: (
+    active:     $gray--mineshaft,       // pressed
+    disable:    $gray,                  // disabled
+    focus:      $gray--mineshaft,       // focused
+    hover:      $gray--mineshaft,       // hovered
+    initial:    initial,
+);
+
+// Set button font size.
+$button-font-size: (
+    large:  17px,
+    medium: 14px,
+    small:  11px,
+);
+
+// Set button font weight.
+$button-font-weight: (
+    large:  300,
+    medium: 300,
+    small:  400,
+);
+
+// Set button indent.
+$button-indent: (
+    long:       2em,
+    mean:       1em,
+    short:      0.5em,
+);
+
+// Set button letter spacing.
+$button-letter-spacing: 0.25px;
+
+// Set button shadow color.
+$button-shadow-color: (
+    active:     initial,            // pressed
+    disable:    $gray,              // disabled
+    focus:      initial,            // focused
+    hover:      initial,            // hovered
+    initial:    $gray--mineshaft,
+);
+
+// Set button height.
+$button-size: (
+    large:  46px,
+    medium: 34px,
+    small:  26px,
+);
+
+// Set button margin.
+$button-space: 10px;
+
+/**
+ * Primary button.
+ */
+
+// Set primary button background.
+// $button--primary-background: (
+//     active:     `color`,    // pressed
+//     disable:    `color`,    // disabled
+//     focus:      `color`,    // focused
+//     hover:      `color`,    // hovered
+//     initial:    `color`,
+// );
+
+// Set primary button properties.
+$button--primary: (
+    background: (
+        active:     $blue--bahama,      // pressed
+        focus:      $blue--dodger,      // focused
+        hover:      $blue--dodger,      // hovered
+        initial:    $blue--cerulean,
+    ),
+    border: (
+        active:     $blue--bahama,      // pressed
+        disable:    initial,            // disabled
+        focus:      $blue--dodger,      // focused
+        hover:      $blue--dodger,      // hovered
+        initial:    $blue--cerulean,
+    ),
+    color: (
+        active:     $white,             // pressed
+        disable:    initial,            // disabled
+        focus:      $white,             // focused
+        hover:      initial,            // hovered
+        initial:    $white,
+    ),
+    letter-spacing: 0.5px,
+    shadow: (
+        active:     $blue--cerulean,    // pressed
+        disable:    initial,            // disabled
+        focus:      $blue--cerulean,    // focused
+        hover:      $blue--cerulean,    // hovered
+        initial:    $blue--cerulean,
+    ),
+);
+
+/**
+ * Secondary button.
+ */
+
+// Set secondary button background.
+// $button--secondary-background: (
+//     active:     `color`,    // pressed
+//     disable:    `color`,    // disabled
+//     focus:      `color`,    // focused
+//     hover:      `color`,    // hovered
+//     initial:    `color`,
+// );
+
+// Set secondary button properties.
+$button--secondary: (
+    background: (
+        active:     lighten($orange--diserria, 15%),    // pressed
+        disable:    initial,                            // disabled
+        focus:      lighten($orange--diserria, 35%),    // focused
+        hover:      lighten($orange--diserria, 35%),    // hovered
+        initial:    lighten($orange--diserria, 30%),
+    ),
+    border: (
+        active:     $orange--driftwood,                 // pressed
+        disable:    initial,                            // disabled
+        focus:      $orange--diserria,                  // focused
+        hover:      $orange--diserria,                  // hovered
+        initial:    $orange--diserria,
+    ),
+    color: (
+        active:     $orange--driftwood,                 // pressed
+        disable:    initial,                            // disabled
+        focus:      darken($orange--diserria, 10%),     // focused
+        hover:      darken($orange--diserria, 10%),     // hovered
+        initial:    darken($orange--diserria, 10%),
+    ),
+    letter-spacing: 0.5px,
+    shadow: (
+        active:     $orange--driftwood,                 // pressed
+        disable:    initial,                            // disabled
+        focus:      $orange--driftwood,                 // focused
+        hover:      $orange--driftwood,                 // hovered
+        initial:    $orange--driftwood,
+    ),
+);
+
+// Set tertiary button properties.
+$button--tertiary: (
+    background: (
+        active:     rgba($white, 0.15),     // pressed
+        disable:    initial,                // disabled
+        focus:      rgba($white, 0.25),     // focused
+        hover:      initial,                // hovered
+        initial:    initial,
+    ),
+    border: (
+        active:     initial,                // pressed
+        disable:    initial,                // disabled
+        focus:      initial,                // focused
+        hover:      initial,                // hovered
+        initial:    initial,
+    ),
+    color: (
+        active:     $white,                 // pressed
+        disable:    initial,                // disabled
+        focus:      $white,                 // focused
+        hover:      initial,                // hovered
+        initial:    $white,
+    ),
+    letter-spacing: 0.5px,
+    shadow: (
+        active:     initial,                // pressed
+        disable:    initial,                // disabled
+        focus:      initial,                // focused
+        hover:      initial,                // hovered
+        initial:    initial,
+    ),
+);
