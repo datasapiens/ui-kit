@@ -7,27 +7,164 @@
 // Colors settings
 // =============================================================================
 
-$black:             #000;
-$blue--yonder-200:  #eaf4fe;
-$blue--yonder-300:  #c9daeb;
-$blue--yonder-400:  #7396b2;
-$blue--yonder-500:  #5e85a4;
-$blue--yonder-600:  #4f6b86;
-$blue--yonder-700:  #335570;
-$blue--yonder-800:  #33495f;
-$blue--summer:      #289be4;
-$brown--sienna-400: #ea8051;
-$brown--sienna-500: #f06253;
-$green--caribbean:  #0dbc9d;
-$red--cardinal:     #cd3324;
-$white:             #fff;
+$black          : #000;
+$white          : #fff;
+
+// datasapiens
+// =============================================================================
+
+/**
+ * Original palette.
+ */
+
+$blue--dark     : #005a9a;
+$brown--purple  : #856469;
+$cyan           : #009fe3; // primary
+$green          : #85a056;
+$orange         : #db9a63;
+$purple         : #9469ab;
+
+/**
+ * colorpedia
+ */
+
+// Blue Cerulean
+// @link http://veli.ee/colorpedia/?c=009fe3
+$blue--cerulean             : #009fe3;  // primary aka cyan
+$gray                       : #818181;
+$green--riogrande           : #9ee200;
+$orange--trinidad           : #e24400;
+$red--cerise                : #e2009e;
+
+// Blue Cerulean
+// @link http://veli.ee/colorpedia/?c=009fe3
+$blue--bahama               : #005a9a; // secondary aka dark blue
+$blue--dodger               : #00b2ff;
+$blue--lochmara             : #0084bc;
+$blue--regal                : #004272;
+
+// Gray
+// @link http://veli.ee/colorpedia/?c=818181
+$gray--mineshaft            : #353535;
+$gray--scorpion             : #5b5b5b;
+$gray--silverchalice        : #a8a8a8;
+
+// Green (Chartreuse) Rio Grande
+// @link http://veli.ee/colorpedia/?c=9EE200
+$green--asparagus           : #85a056; // secondary aka green
+$green--dingley             : #657a42;
+$green--lime                : #b2ff00;
+$green--limeade             : #84bc00;
+$green--wildwillow          : #a5c66b;
+
+// Orange Trinidad
+// @link http://veli.ee/colorpedia/?c=E24400
+$orange--diserria           : #db9a63; // secondary aka orange
+$orange--driftwood          : #b57f51;
+$orange--fire               : #bc3800;
+$orange--macaronicheese     : #ffb472;
+$orange--vermilion          : #ff4c00;
+
+$purple--affair             : #725084;
+$purple--lilacbush          : #b47fd1;
+$purple--wisteria           : #9469ab; // secondary aka purple
+
+// Red (Hollywood) Cerise
+// @link http://veli.ee/colorpedia/?c=E2009E
+$red--donjuan               : #5e464a;
+$red--falcon                : #856469; // secondary aka purple brown
+$red--flirt                 : #bc0084;
+$red--hollywoodcerise       : #ff00b2;
+$red--pharlap               : #aa8086;
+
+// Simon & Kucher
+// =============================================================================
+
+// Solid Pink
+// @link http://veli.ee/colorpedia/?c=95374b
+$blue--chambray     : #364a93;
+// $gray--scorpion     : #5d5d5d;
+$green--apple       : #4a9336;
+$green--lochinvar   : #36937f;
+$red--solidpink     : #95374b; // primary
+
+// Blue Chambray
+// @link http://veli.ee/colorpedia/?c=364a93
+$blue--astronaut    : #28376d;
+$blue--sanmarino    : #445eba;
+
+// Green Apple
+// @link http://veli.ee/colorpedia/?c=4a9336
+$green--applelight  : #5eba44;
+$green--forest      : #376d28;
+
+// Green Lochinvar
+// @link http://veli.ee/colorpedia/?c=36937f
+$green--casal       : #286d5e;
+$green--puertorico  : #44baa0;
+
+// Gray Scorpion
+// @link http://veli.ee/colorpedia/?c=5d5d5d
+// $gray               : #828282;
+$gray--mineshaft    : #353535;
+
+// Solid Pink
+// @link http://veli.ee/colorpedia/?c=95374b
+$red--blush         : #ba445e;
+$red--tawnyport     : #6d2837;
+
+// Yellow Sycamore
+// @link http://veli.ee/colorpedia/?c=937f36
+$yellow--dallas     : #6d5e28;
+$yellow--sycamore   : #937f36;
+$yellow--tussock    : #baa044;
+
+// Material design colors
+// @link http://materialuicolors.co/
+// =============================================================================
+
+$blue-grey--200     : #b0bec5;
+$blue-grey--500     : #607d8b;
+
+$blue-light--a200   : #40c4ff;
+$blue-light--a700   : #0091ea;
+
+$green--a100        : #b9f6ca;
+$green--a700        : #00c853;
+
+$amber--a100        : #ffe57f;
+$amber--800         : #ff8f00;
+
+$red--a100          : #ff8a80;
+$red--600           : #e53935;
+
+// Color sets
+// =============================================================================
 
 // Set primary color set map.
-$c-set--primary: (
-    blue--dark:    #005a9a,
-    brown--purple: #856469,
-    cyan:          #009fe3, // primary color
-    green:         #85a056,
-    orange:        #db9a63,
-    purple:        #9469ab,
+$color-set--primary: (
+    danger: (
+        primary     : $red--600,
+        secondary   : lighten($red--a100, 15%),
+        icon        : "block",
+    ),
+    default: (
+        primary     : $blue-grey--500,
+        secondary   : lighten($blue-grey--200, 10%),
+    ),
+    notice: (
+        primary     : $blue-light--a700,
+        secondary   : lighten($blue-light--a200, 25%),
+        icon        : "info-outline",
+    ),
+    success: (
+        primary     : $green--a700,
+        secondary   : $green--a100,
+        icon        : "check-circle-outline",
+    ),
+    warning: (
+        primary     : $amber--800,
+        secondary   : lighten($amber--a100, 10%),
+        icon        : "error-outline",
+    ),
 );
