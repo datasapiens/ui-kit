@@ -1,0 +1,31 @@
+/**
+ * Component Form/Checkbox settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form checkbox settings
+// =============================================================================
+
+// Set form checkbox background.
+$form-checkbox-background: (
+    initial:    $white,
+);
+
+// Set form checkbox border width (according to `$form-element-border-size`).
+$form-checkbox-border-size: 2px;
+
+// Set form checkbox color.
+$form-checkbox-color: (
+    active:     $blue--dodger,  // pressed aka checked
+    disable:    lighten(desaturate($orange--driftwood, 30%), 30%),  // disabled
+    focus:      $blue--dodger,  // focused
+    hover:      $blue--dodger,  // hovered
+    initial:    $blue--cerulean,
+);
+
+// Set form checkbox size.
+$form-checkbox-size: 16px;
+
+// Set form checkbox indent.
+$form-checkbox-indent: 5px;

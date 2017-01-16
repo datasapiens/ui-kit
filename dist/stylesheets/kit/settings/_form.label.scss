@@ -1,0 +1,26 @@
+/**
+ * Component Form/Label settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form label settings
+// =============================================================================
+
+// Set form label color.
+$form-label-color: $base-label-color;
+
+// Set form label indent.
+$form-label-indent: (
+    horizontal: 5px,
+    vertical:  $base-line-height, // according to `$form-row-indent`
+);
+
+// Set form label push (according to `$form-element-border-size`).
+$form-label-push: 1px;
+
+// Set form label font size.
+$form-label-font-size: 13px;
+
+// Set form label font weight.
+$form-label-font-weight: 400;

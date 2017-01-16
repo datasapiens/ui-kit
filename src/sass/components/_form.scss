@@ -1,0 +1,72 @@
+/**
+ * Component Form.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form
+// =============================================================================
+
+// .component {}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+.form__row {
+    @extend %group;
+
+    display: block;
+    margin-bottom: px-to-rem(0.5 * $form-row-indent);
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Form row, condesed.
+ */
+
+.form__row {
+    &.--compact {
+        margin-bottom: px-to-rem(1/8 * $form-row-indent);
+    }
+}
+
+/**
+ * Form row, grid.
+ */
+
+.form__row {
+    &.--grid {
+        align-items: baseline;
+        display: flex;
+    }
+}

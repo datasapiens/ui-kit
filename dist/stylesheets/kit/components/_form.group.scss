@@ -1,0 +1,101 @@
+/**
+ * Component Form/Group.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form group
+// =============================================================================
+
+.form-group {
+    align-items: center;
+    display: inline-flex;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Form group, block.
+ */
+
+.form-group {
+    &.\--block {
+        display: flex;
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form group item
+// =============================================================================
+
+.form-group__item {
+    margin: 0;
+    position: relative;
+    width: auto;
+    z-index: 1;
+
+    & + & {
+        margin-left: (-1) * $form-element-border-size;
+    }
+
+    &:first-child {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+    &:last-child {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+    &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+
+    @include ie-gte-10 {
+        flex: 0 1 auto;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Form group item, focused.
+ */
+
+.form-group__item {
+    &:focus {
+        @extend .form-group__item:hover;
+    }
+}
+
+/**
+ * Form group item, hovered.
+ */
+
+.form-group__item {
+    &:hover {
+        z-index: 2;
+    }
+}

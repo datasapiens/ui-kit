@@ -1,0 +1,149 @@
+/**
+ * Component Form/Checkbox.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// form checkbox
+// =============================================================================
+
+.form-checkbox {
+    @extend %form-element !optional;
+    @include size($form-checkbox-size);
+
+    background: map-get($form-checkbox-background, initial);
+    border-color: currentColor;
+    color: map-get($form-checkbox-color, initial);
+    display: inline-block;
+    margin-right: $form-checkbox-indent;
+    padding: 0;
+    position: relative;
+    top: floor(0.5 * ($base-line-height - $form-checkbox-size));
+
+    &::before {
+        @extend %form-checkbox__control;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Form checkbox, disabled.
+ */
+
+.form-checkbox {
+    :disabled + & {
+        border-color: currentColor !important;
+        color: map-get($form-checkbox-color, disable) !important;
+        cursor: not-allowed;
+    }
+}
+
+/**
+ * Form checkbox, focused.
+ */
+
+.form-checkbox {
+    :focus:not(:disabled):not([readonly]) + &,
+    .is-focused:not(:disabled):not([readonly]) + & {
+        border-color: currentColor;
+        color: map-get($form-checkbox-color, focus);
+    }
+}
+
+/**
+ * Form checkbox, hovered.
+ */
+
+.form-checkbox {
+    :not(:disabled):not([readonly]) + &:hover,
+    :hover:not(:disabled):not([readonly]) + & {
+        border-color: currentColor;
+        color: map-get($form-checkbox-color, hover);
+    }
+}
+
+/**
+ * Form checkbox, checked.
+ */
+
+.form-checkbox {
+    :checked + & {
+        color: map-get($form-checkbox-color, active);
+
+        &::before,
+        .form-checkbox__control {
+            @extend %form-checkbox__control:active;
+        }
+    }
+}
+
+/**
+ * Form checkbox, read-only.
+ */
+
+.form-checkbox {
+    [readonly] + & {
+        border-color: currentColor !important;
+        color: map-get($form-checkbox-color, disable) !important;
+        cursor: not-allowed;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form checkbox control
+// =============================================================================
+
+%form-checkbox__control {
+    @extend %ico !optional;
+    @extend %ico--check !optional;
+
+    $size: $form-checkbox-size - 2 * $form-checkbox-border-size;
+
+    font-size: 1rem;
+    height: $size;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(1.5, 1.5);
+    transition: opacity 0.2s 0.1s,
+        transform map-get($animation-easing, in-out-circ) 0.3s;
+    width: $size !important;
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Form checkbox control, active.
+ */
+
+%form-checkbox__control {
+    &:active {
+        opacity: 1;
+        transform: scale(1.0, 1.0);
+    }
+}

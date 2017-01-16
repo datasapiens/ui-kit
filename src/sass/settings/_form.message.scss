@@ -1,0 +1,24 @@
+/**
+ * Component Form/Message settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form message settings
+// =============================================================================
+
+// Set form message color.
+$form-message-color: $orange--fire;
+
+// Set form message font size.
+$form-message-font-size: 13px;
+
+// Set form message indent.
+$form-message-indent: (
+    horizontal: $form-element-indent + $form-element-border-size,
+    vertical:  $base-line-height, // according to `$form-row-indent`
+);
+
+// Set form message themes map.
+// $form-message-theme: $color-set--primary;
+$form-message-theme: ();

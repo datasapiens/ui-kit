@@ -1,0 +1,22 @@
+/**
+ * Component Form/Radio settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form radio settings
+// =============================================================================
+
+// Set form radio background (according to `$form-checkbox-background`).
+$form-radio-background: (
+    initial:    $white,
+);
+
+// Set form radio color (according to `$form-checkbox-color`).
+$form-radio-color: $form-checkbox-color;
+
+// Set form radio size (according to `$form-checkbox-size`).
+$form-radio-size: $form-checkbox-size;
+
+// Set form radio indent (according to `$form-checkbox-size`).
+$form-radio-indent: $form-checkbox-indent;

@@ -1,0 +1,73 @@
+/**
+ * Component Form/Label.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form label
+// =============================================================================
+
+.form-label {
+    color: map-get($form-label-color, initial);
+    font: {
+        size: px-to-rem($form-label-font-size);
+        weight: $form-label-font-weight;
+    }
+    text-transform: uppercase;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Form label, inline.
+ */
+
+.form-label {
+    &.\--inline {
+        margin-right: map-get($form-label-indent, horizontal);
+    }
+}
+
+/**
+ * Form label, stacked.
+ */
+
+.form-label {
+    &.\--stack {
+        display: block;
+        margin-bottom: px-to-rem(1/8 * map-get($form-label-indent, vertical));
+        padding-left: $form-label-push;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Form label, disabled.
+ */
+
+.form-label {
+    &.is-disabled {
+        color: map-get($form-label-color, disable);
+        cursor: not-allowed;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

@@ -1,0 +1,117 @@
+/**
+ * Component Form/Element settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form element settings
+// =============================================================================
+
+// Set form element background.
+$form-element-background: (
+    disable:    transparent,                  // disabled
+    focus:      rgba($white, 1),              // focused
+    hover:      rgba($white, 1),              // hovered
+    initial:    rgba($white, 0.85),
+    invalid:    lighten($orange--fire, 55%),  // invalid
+);
+
+// Set form element border color.
+$form-element-border: (
+    disable:    lighten(desaturate($orange--driftwood, 30%), 30%),  // disabled
+    focus:      $blue--dodger,                                      // focused
+    hover:      $blue--dodger,                                      // hovered
+    initial:    lighten(desaturate($orange--driftwood, 30%), 30%),
+    invalid:    $orange--fire,                                      // invalid
+);
+
+// Set form element border radius.
+$form-element-border-radius: 2px;
+
+// Set form element border width.
+$form-element-border-size: 1px;
+
+// Set form element color.
+$form-element-color: (
+    disable:    lighten($base-color, 30%),  // disabled
+    focus:      darken($base-color, 50%),   // focused
+    hover:      darken($base-color, 50%),   // hovered
+    initial:    $base-color,
+    invalid:    $orange--fire,              // invalid
+    require:    $orange--fire,              // required
+);
+
+// Set form element font size.
+$form-element-font-size: (
+    large:  17px,
+    medium: 14px,
+    small:  11px,
+);
+
+// Set form element padding.
+$form-element-indent: 10px;
+
+// Set form element width.
+$form-element-length: (
+    long:       40em,
+    mean:       20em,
+    short:      4em,
+);
+
+// Set form element color.
+$form-element-placeholder-color: (
+    disable:    lighten($gray, 30%),    // disabled
+    initial:    $gray,
+);
+
+// Set form element height.
+$form-element-size: (
+    large:  46px,
+    medium: 34px,
+    small:  26px,
+);
+
+/**
+ * Form element, primary.
+ */
+
+// // Set primary form element border color.
+// $form-element--primary-border: (
+//     disable:    initial,   // disabled
+//     focus:      initial,   // focused
+//     hover:      initial,   // hovered
+//     initial:    initial,
+// );
+
+// // Set primary form element color.
+// $form-element--primary-color: (
+//     disable:    initial,  // disabled
+//     focus:      initial,  // focused
+//     hover:      initial,  // hovered
+// );
+
+/**
+ * Form element, secondary.
+ */
+
+// // Set seconday form element background.
+// $form-element--secondary-background: (
+//     focus:      initial,   // focused
+//     hover:      initial,   // hovered
+//     initial:    transparent,
+// );
+
+// // Set secondary form element border color.
+// $form-element--secondary-border: (
+//     disable:    initial,     // disabled
+//     focus:      initial,     // focused
+//     hover:      initial,     // hovered
+//     initial:    initial,
+// );
+
+// // Set secondary form element color.
+// $form-element--secondary-color: (
+//     disable:    initial,     // disabled
+//     focus:      initial,     // focused
+//     hover:      initial,     // hovered
+// );

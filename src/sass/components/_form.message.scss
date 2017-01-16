@@ -1,0 +1,70 @@
+/**
+ * Component Form/Message.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form message
+// =============================================================================
+
+.form-message {
+    color: $form-message-color;
+    display: block;
+    font-size: px-to-rem($form-message-font-size);
+    padding: {
+        bottom: px-to-rem(2/8 * map-get($form-message-indent, vertical));
+        left: 12px;
+        top: px-to-rem(1/8 * map-get($form-message-indent, vertical));
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Form message, inline.
+ */
+
+.form-message {
+    &.--inline {
+        display: inline-block;
+    }
+}
+
+/**
+ * Form message, color themes.
+ */
+
+// .form-message {
+//     @each $modifier, $theme in $form-message-theme {
+//         &.--#{$modifier} {
+//             color: darken(map-get($theme, primary), 5%);
+//         }
+//     }
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

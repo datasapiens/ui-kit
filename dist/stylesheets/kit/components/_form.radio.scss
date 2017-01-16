@@ -1,0 +1,154 @@
+/**
+ * Component Form/Radio.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form radio
+// =============================================================================
+
+.form-radio {
+    @extend %form-element !optional;
+    @include round;
+    @include size($form-radio-size);
+
+    background: map-get($form-radio-background, initial);
+    border-color: currentColor;
+    color: map-get($form-radio-color, initial);
+    display: inline-block;
+    margin-right: $form-radio-indent;
+    padding: 0;
+    position: relative;
+    top: floor(0.5 * ($base-line-height - $form-radio-size));
+
+    &::before {
+        @extend %form-radio__control;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Form radio, disabled.
+ */
+
+.form-radio {
+    :disabled + & {
+        border-color: currentColor !important;
+        color: map-get($form-radio-color, disable) !important;
+        cursor: not-allowed;
+    }
+}
+
+/**
+ * Form radio, focused.
+ */
+
+.form-radio {
+    :focus:not(:disabled):not([readonly]) + &,
+    .is-focused:not(:disabled):not([readonly]) + & {
+        border-color: currentColor;
+        color: map-get($form-radio-color, focus);
+
+        &::before,
+        .form-radio__control {
+            @extend %form-radio__control:active;
+        }
+    }
+}
+
+/**
+ * Form radio, hovered.
+ */
+
+.form-radio {
+    :not(:disabled):not([readonly]) + &:hover,
+    :hover:not(:disabled):not([readonly]) + & {
+        border-color: currentColor;
+        color: map-get($form-radio-color, hover);
+
+        &::before,
+        .form-radio__control {
+            @extend %form-radio__control:active;
+        }
+    }
+}
+
+/**
+ * Form radio, checked.
+ */
+
+.form-radio {
+    :checked + & {
+        color: map-get($form-radio-color, active);
+
+        &::before,
+        .form-radio__control {
+            @extend %form-radio__control:active;
+        }
+    }
+}
+
+/**
+ * Form radio, read-only.
+ */
+
+.form-radio {
+    [readonly] + & {
+        border-color: currentColor !important;
+        color: map-get($form-radio-color, disable) !important;
+        cursor: not-allowed;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form radio control
+// =============================================================================
+
+%form-radio__control {
+    @include round;
+    @include stretch(2px, 2px, 2px, 2px);
+
+    content: "";
+    opacity: 0;
+    transform: scale(1.5, 1.5);
+    transition: opacity 0.2s,
+        transform map-get($animation-easing, in-out-circ) 0.3s;
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Form radio control, active.
+ */
+
+%form-radio__control {
+    &:active {
+        background-color: currentColor;
+        opacity: 1;
+        transform: scale(1.0, 1.0);
+    }
+}

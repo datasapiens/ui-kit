@@ -1,0 +1,88 @@
+/**
+ * Component Form/Select.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Form select
+// =============================================================================
+
+/**
+ * This component only tryies to normalize webkit browsers now.
+ * 1. We need to increase specifity.
+ */
+
+.form-select {
+    display: inline-block;
+    position: relative;
+
+    &::before {      /* 1 */
+        @extend %form-select__control;
+        display: none !important;
+
+        @include webkit {
+            & {
+                display: inline-block !important;
+            }
+        }
+    }
+
+    select {
+        @extend %form-select__field;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form select field
+// =============================================================================
+
+%form-select__field {
+    padding-right: calc(#{$form-select-control-size} +
+        2 * #{$form-select-control-indent});
+}
+
+// Form select control
+// =============================================================================
+
+%form-select__control {
+    @extend %ctr--core-y !optional;
+    @extend %ico !optional;
+    @extend %ico--arrow-down !optional;
+
+    font-size: $form-select-control-size;
+    pointer-events: none;
+    right: 0;
+    text-align: center;
+    vertical-align: middle;
+    width: calc(#{$form-select-control-size} +
+        2 * #{$form-select-control-indent}) !important;
+}
