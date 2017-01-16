@@ -1,0 +1,120 @@
+/**
+ * Component List.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// List
+// =============================================================================
+
+// .component {}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * List without bullets and padding.
+ */
+
+%lst--reset {
+    padding: 0;
+
+    li {
+        list-style: none;
+        // padding-left: 0;
+    }
+}
+
+/**
+ * List with inlined items.
+ */
+
+%lst--inline {
+    @extend %lst--reset;
+
+    > li {
+        display: inline-block;
+    }
+}
+
+/**
+ * Compact list.
+ */
+
+.lst {
+    &.\--compact {
+        > li {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/**
+ * List with stacked items.
+ */
+
+.lst {
+    &.\--stack {
+        @extend %lst--reset;
+    }
+}
+
+/**
+ * Inline list with margin after each item.
+ */
+
+.lst {
+    &.\--after {
+        @extend %lst--inline;
+
+        > li {
+            margin-right: $list-item-indent;
+        }
+    }
+}
+
+/**
+ * Inline list with margin before each item.
+ */
+
+.lst {
+    &.\--before {
+        @extend %lst--inline;
+
+        > li {
+            margin-left: $list-item-indent;
+        }
+    }
+}
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
