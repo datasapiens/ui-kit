@@ -1,0 +1,53 @@
+/**
+ * Component Filter.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Filter
+// =============================================================================
+
+.ftr {
+    // align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: (-1) * $filter-item-indent;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Filter item
+// =============================================================================
+
+.ftr__item {
+    // flex: 0 1 auto;
+    margin-right: $filter-item-indent;
+}
