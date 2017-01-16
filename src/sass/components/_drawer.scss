@@ -1,0 +1,91 @@
+/**
+ * Component Drawer.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Drawer
+// =============================================================================
+
+// =============================================================================
+// Drawer
+// =============================================================================
+
+.drw {
+    @include acceleration;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Drawer, static.
+ * There's no `max-height` limit and motion animations are disabled.
+ */
+
+.drw {
+    &.--static {
+        transition: none;
+
+        .drw__content {
+            animation: fade--out 0.3s both,
+                visibility--hide 0.3s both;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Drawer, active.
+ */
+
+.drw {
+    &.is-active {
+        max-height: $drawer--active-size;
+        overflow: visible;
+
+        .drw__content {
+            animation: fade--in 0.2s 0.1s both,
+                slide--up-reverse 0.2s map-get($animation-easing, in-out-circ) both,
+                visibility--show 0.3s both;
+            pointer-events: auto;
+        }
+
+        &.--static {
+            max-height: none;
+
+            .drw__content {
+                animation: fade--in 0.2s 0.1s both,
+                    visibility--show 0.3s both;
+            }
+        }
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Drawer content
+// =============================================================================
+
+.drw__content {
+    animation: fade--out 0.3s both,
+        slide--up 0.2s map-get($animation-easing, in-out-circ) 0.1s both,
+        visibility--hide 0.3s both;
+    pointer-events: none;
+}
