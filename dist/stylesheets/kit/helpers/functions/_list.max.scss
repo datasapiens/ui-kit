@@ -1,0 +1,18 @@
+/**
+ * Gets maximum from a list of numbers.
+ *
+ * @param  {List} $list         (())
+ * @return {Number}
+ */
+
+@function list-max($list: ()) {
+    $max: 0;
+
+    @each $n in $list {
+        @if type-of($n) == number and $n > $max{
+            $max: $n;
+        }
+    }
+
+    @return $max;
+}
