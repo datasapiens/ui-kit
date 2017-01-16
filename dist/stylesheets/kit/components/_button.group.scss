@@ -1,0 +1,84 @@
+/**
+ * Component Button/Group.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Button group
+// =============================================================================
+
+.btn-group {
+    .btn {
+        // margin-bottom: $button-group-space;
+        margin-right: $button-group-space;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Button group, buttons aligned left.
+ */
+
+.btn-group {
+    &.\--left {
+        .btn {
+            &:last-child {
+                margin-right: $button-group-space;
+            }
+        }
+    }
+}
+
+/**
+ * Button group, buttons aligned right.
+ */
+
+.btn-group {
+    &.\--right {
+        .btn {
+            margin: {
+                left: $button-group-space;
+                right: 0;
+            }
+            &:first-child {
+                margin-left: $button-group-space;
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
