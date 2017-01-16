@@ -13,11 +13,11 @@
         $coords: 0 0 0 0;
 
     } @else {
-        @if type-of(nth($args, 1)) == string {
+        @if type-of(nth($args, 1)) == string and nth($args, 1) != auto {
             $position: nth($args, 1);
         }
         @each $a in $args {
-            @if type-of($a) == number {
+            @if type-of($a) == number or $a == auto {
                 $coords: append($coords, $a);
             }
         }
