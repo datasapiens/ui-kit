@@ -382,18 +382,26 @@ button,
 
 table {
     @extend %rhythm;
-    border-collapse: separate;
+
+    border: {
+        collapse: separated;
+        spacing: 0;
+    }
 }
 
 caption {
     @extend h5;
 
     display: table-caption;
-    margin-bottom: 0.25em;
+    margin: {
+        bottom: 0.25em;
+        top: 0;
+    }
     text-align: left;
 }
 
 th {
+    font-weight: 400;
     text-align: left;
 }
 
