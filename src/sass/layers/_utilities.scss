@@ -68,6 +68,17 @@
 }
 
 /**
+ * Spacing.
+ */
+
+.u-push {
+    padding: {
+        left: $utilities-indent;
+        right: $utilities-indent;
+    }
+}
+
+/**
  * Overflow.
  */
 
@@ -92,9 +103,7 @@
     line-height: 1.4;
 }
 
-.u-bold {
-    font-weight: 600;
-}
+.u-bold   { font-weight: 400; }
 .u-italic { font-style: italic; }
 
 .u-capital { text-transform: capitalize; }
