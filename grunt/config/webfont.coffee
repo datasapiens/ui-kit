@@ -14,12 +14,12 @@ module.exports = (grunt) ->
                     dest: '<%= path.source %>/data/sapiensicons.json'
                 }
             ]
+            destHtml: '<%= path.temp %>'
             font: 'icon'
             fontFamilyName: 'Sapiens Icons'
             fontFilename: 'sapiensicons'
             # fontHeight: 24
             hashes: false
-            htmlDemo: false
             # ligatures: true
             # optimize: false
             stylesheet: 'scss'
