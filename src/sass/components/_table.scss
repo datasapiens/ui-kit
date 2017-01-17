@@ -1,0 +1,330 @@
+/**
+ * Component Table.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Table
+// =============================================================================
+
+.tbl {
+    caption,
+    td,
+    th {
+        font-size: px-to-em($table-font-size);
+        padding: {
+            left: $table-cell-indent;
+            right: $table-cell-indent;
+        }
+    }
+    td,
+    th {
+        line-height: $table-line-height-ratio;
+        padding: {
+            bottom: 0.75 * $table-cell-indent;
+            top: 0.75 * $table-cell-indent;
+        }
+        transition: background-color 0.2s;
+        vertical-align: baseline;
+    }
+
+    // thead {
+    //     th {
+    //         @include word-wrap;
+    //     }
+    // }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Table, layout auto.
+ */
+
+.tbl {
+    &.--auto {
+        table-layout: auto;
+    }
+}
+
+/**
+ * Table, layout fixed.
+ */
+
+.tbl {
+    &.--fix {
+        table-layout: fixed;
+    }
+}
+
+/**
+ * Table, cell content horizontaly centered.
+ */
+
+.tbl {
+    &.--center {
+        td,
+        th {
+            text-align: center;
+        }
+    }
+}
+
+/**
+ * Table, cell content verticaly centered.
+ */
+
+.tbl {
+    &.--middle {
+        td,
+        th {
+            vertical-align: middle;
+        }
+    }
+}
+
+/**
+ * Table, cell content aligned to right.
+ */
+
+.tbl {
+    &.--right {
+        td,
+        th {
+            text-align: right;
+        }
+    }
+}
+
+/**
+ * Table, compact.
+ */
+
+.tbl {
+    &.--compact {
+        caption,
+        td,
+        th {
+            padding: {
+                left: 0.5 * $table-cell-indent;
+                right: 0.5 * $table-cell-indent;
+            }
+        }
+    }
+}
+
+/**
+ * Table, container.
+ */
+
+.tbl {
+    &.--container {
+        caption,
+        td,
+        th {
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+/**
+ * Table, box.
+ */
+
+.tbl {
+    &.--box {
+        border: $table--box-border-size solid $table--box-border-color;
+    }
+}
+
+/**
+ * Table variants placeholder.
+ */
+
+%tbl--master {
+    @include round($table-border-radius);
+
+    color: inherit;
+    overflow: hidden;
+
+    thead {
+        tr:last-of-type {
+            th {
+                border: {
+                    bottom: solid transparent;
+                    top: 0;
+                }
+                vertical-align: bottom;
+            }
+        }
+    }
+
+    tr:first-of-type {
+        td,
+        th {
+            border-top-color: transparent;
+        }
+    }
+
+    /**
+     * Responsive.
+     */
+
+    // &.--responsive {
+    //     tr:first-of-type {
+    //         td:not(:first-child),
+    //         th:not(:first-child) {
+    //             border-top-color: map-get($table--primary-border-color, body);;
+    //         }
+    //     }
+    // }
+}
+
+/**
+ * Table, primary.
+ */
+
+.tbl {
+    &.--primary {
+        @extend %tbl--master;
+
+        tbody {
+            tr {
+                &:nth-of-type(even) {
+                    background-color: map-get($table--primary-background, body);
+                }
+            }
+        }
+        thead {
+            background-color: map-get($table--primary-background, head);
+
+            th {
+                border-bottom: {
+                    color: map-get($table--primary-border-color, head);
+                    width: $table--primary-border-size;
+                }
+                color: map-get($table--primary-color, head);
+            }
+        }
+
+        td,
+        th {
+            border-top: $table--primary-border-size
+                solid
+                map-get($table--primary-border-color, body);
+        }
+    }
+}
+
+/**
+ * Table, secondary.
+ */
+
+.tbl {
+    &.--secondary {
+        @extend %tbl--master;
+        @extend .tbl.--container;
+
+        thead {
+            th {
+                border-bottom: {
+                    color: map-get($table--secondary-border-color, head);
+                    width: $table--secondary-border-size;
+                }
+                color: map-get($table--secondary-color, head);
+            }
+        }
+
+        td,
+        th {
+            border-top: $table--secondary-border-size
+            solid
+            map-get($table--secondary-border-color, body);
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Table row
+// =============================================================================
+
+.tbl__row {}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Table row, distinct.
+ */
+
+.tbl__row {
+    &.--distinct {
+        td,
+        th {
+            background-color: $table-row--distinct-background;
+        }
+    }
+}
+
+// Table cell
+// =============================================================================
+
+.tbl__cell {}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Table cell, distinct.
+ */
+
+.tbl__cell {
+    &.--distinct {
+        $parent: #{&};
+
+        @at-root {
+            .tbl.--primary {
+                thead #{$parent} {
+                    background-color: map-get(
+                        $table--primary-cell--distinct-background,
+                        head
+                    );
+                }
+                tbody #{$parent} {
+                    background-color: map-get(
+                        $table--primary-cell--distinct-background,
+                        body
+                    );
+                }
+            }
+        }
+    }
+}

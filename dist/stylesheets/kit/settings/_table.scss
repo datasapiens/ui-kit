@@ -1,0 +1,90 @@
+/**
+ * Component Table settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Table settings
+// =============================================================================
+
+// Set table breakpoints.
+$table-breaks: (
+    750px,
+    800px,
+    1100px
+);
+
+// Set table border radius.
+$table-border-radius: 1px;
+
+// Set table font size.
+$table-font-size: 13px;
+
+// Set table line height ratio.
+$table-line-height-ratio: 1.25;
+
+// Set table `distinct` row background.
+$table-row--distinct-background: lighten(desaturate($orange--driftwood, 30%), 40%);
+
+// Set table cell indent.
+$table-cell-indent: 10px;
+
+/**
+ * Table, box.
+ */
+
+// Set boxed table border color.
+$table--box-border-color: lighten(desaturate($orange--driftwood, 30%), 30%);
+
+// Set boxed table border size.
+$table--box-border-size: 1px;
+
+/**
+ * Table, primary.
+ */
+
+// Set primary table background.
+$table--primary-background: (
+    body: $white,
+    head: lighten($orange--driftwood, 40%),
+);
+
+// Set primary table border color.
+$table--primary-border-color: (
+    body: lighten(desaturate($orange--driftwood, 30%), 30%),
+    head: lighten($orange--driftwood, 30%),
+);
+
+// Set primary table border size.
+$table--primary-border-size: 1px;
+
+// Set primary table color.
+$table--primary-color: (
+    // body: inherit,
+    head: darken($orange--driftwood, 20%),
+);
+
+// Set primary table `distinct` cell background.
+$table--primary-cell--distinct-background: (
+    body: lighten(desaturate($orange--driftwood, 30%), 40%),
+    head: lighten(desaturate($orange--driftwood, 5%), 35%),
+);
+
+/**
+ * Table, secondary.
+ */
+
+// Set secondary table border color.
+$table--secondary-border-color: (
+    body: lighten(desaturate($orange--driftwood, 30%), 30%),
+    head: lighten(desaturate($orange--driftwood, 30%), 30%),
+);
+
+// Set secondary table border size.
+$table--secondary-border-size: 1px;
+
+// Set secondary table color.
+$table--secondary-color: (
+    // body: inherit,
+    head: darken($orange--driftwood, 20%),
+);
