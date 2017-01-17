@@ -9,6 +9,7 @@
 
 .pnl {
     @extend %ctr;
+    @include round($panel-border-radius);
 
     background-color: $panel-background;
     border: $panel-border-size solid $panel-border-color;
@@ -29,6 +30,26 @@
 // .component {
 //     &.--modifier {}
 // }
+
+/**
+ * Panel, blank.
+ */
+
+.pnl {
+    &.--blank {
+        border: 0;
+    }
+}
+
+/**
+ * Panel, light.
+ */
+
+.pnl {
+    &.--light {
+        box-shadow: $panel--light-box-shadow;
+    }
+}
 
 /**
  * States.
