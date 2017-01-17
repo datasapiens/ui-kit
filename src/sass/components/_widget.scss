@@ -1,0 +1,158 @@
+/**
+ * Component Widget.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Widget
+// =============================================================================
+
+.wgt {
+    @extend .pnl;
+
+    &[class] {
+        margin-bottom: $widget-indent;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Widget, primary.
+ */
+
+.wgt {
+    &.--primary {
+        background-color: $widget--primary-background;
+    }
+}
+
+/**
+ * Widget, secondary.
+ */
+
+.wgt {
+    &.--secondary {
+        background-color: $widget--secondary-background;
+    }
+}
+
+/**
+ * Widget, plain.
+ */
+
+.wgt {
+    &.--plain {
+        > .wgt__head {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Widget header
+// =============================================================================
+
+.wgt__head {
+    align-items: center;
+    border-bottom: $widget-head-border-size solid $widget-head-border-color;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1.5 * $widget-head-indent;
+    padding-bottom: $widget-head-indent;
+}
+
+// Widget title
+// =============================================================================
+
+.wgt__title {
+    $parent: ".wgt";
+
+    @extend h4;
+    margin: 0;
+
+    @at-root #{$parent} #{$parent} & {
+        @extend .wgt__title.--secondary;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Widget title, secondary.
+ */
+
+.wgt__title {
+    &.--secondary {
+        @extend h5;
+
+        line-height: $widget-title--secondary-line-height-ratio;
+        margin: 0;
+    }
+}
+
+// Widget filter
+// =============================================================================
+
+.wgt__filter {
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5 * $widget-indent;
+}
+
+// Widget filter item
+// =============================================================================
+
+.wgt__filter__item {
+    align-items: center;
+    display: flex;
+}
+
+// Widget body
+// =============================================================================
+
+.wgt__body {}
+
+// Widget spacer
+// =============================================================================
+
+.wgt__spacer {
+    display: block;
+
+    &::after {
+        content: "";
+        border: {
+            color: $widget-spacer-color;
+            style: dotted;
+            width: $widget-spacer-size 0 0;
+        }
+        display: block;
+        margin: 10px 0;
+    }
+}

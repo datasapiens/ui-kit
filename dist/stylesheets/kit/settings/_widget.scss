@@ -1,0 +1,58 @@
+/**
+ * Component Widget settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Widget settings
+// =============================================================================
+
+// Set widget backdrop background.
+$widget-backdrop-background: $white;
+
+// Set widget indent (according to `$grid-gutter`).
+$widget-indent: 16px;
+
+/**
+ * Widget header.
+ */
+
+// Set widget header border color.
+$widget-head-border-color: lighten(desaturate($orange--driftwood, 30%), 30%);
+
+// Set widget header border size.
+$widget-head-border-size: 1px;
+
+// Set widget header indent.
+$widget-head-indent: 10px;
+
+/**
+ * Widget title.
+ */
+
+// Set widget secondary title line height ratio.
+$widget-title--secondary-line-height-ratio: 1.35;
+
+/**
+ * Widget spacer.
+ */
+
+// Set widget spacer color.
+$widget-spacer-color: lighten(desaturate($orange--driftwood, 30%), 30%);
+
+// Set widget spacer size.
+$widget-spacer-size: 1px;
+
+/**
+ * Widget, primary.
+ */
+
+// Set primary widget background.
+$widget--primary-background: lighten($orange--driftwood, 45%);
+
+/**
+ * Widget, secondary.
+ */
+
+// Set secondary widget background.
+$widget--secondary-background: lighten($gray, 45%);
