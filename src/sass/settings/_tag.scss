@@ -1,0 +1,38 @@
+/**
+ * Component Tag settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Tag settings
+// =============================================================================
+
+// Set tag border radius.
+$tag-border-radius: 2px;
+
+// Set tag border size.
+$tag-border-size: 1px;
+
+// Set tag font size.
+$tag-font-size: (
+    // large:  16px,
+    medium: 11px,
+);
+
+// Set tag gutter.
+$tag-gutter: 10px;
+
+// Set tag indent.
+$tag-indent: (
+    // large:  4px 10px,
+    medium: 2px 5px,
+);
+
+// Set tag line height ratio.
+$tag-line-height-ratio: 1;
+
+// Set tag size.
+$tag-size: 15em;
+
+// Set tag themes map.
+$tag-theme: $color-set--primary;

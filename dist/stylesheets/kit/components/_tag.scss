@@ -1,0 +1,107 @@
+/**
+ * Component Tag.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Tag
+// =============================================================================
+
+.tag {
+    @extend .tag.\--default;
+    @include text-truncate;
+
+    $indent: map-get($tag-indent, medium);
+
+    border: {
+        radius: $tag-border-radius;
+        style: solid;
+        width: $tag-border-size;
+    }
+    color: inherit;
+    display: inline-block;
+    font-size: px-to-rem(map-get($tag-font-size, medium));
+    line-height: $tag-line-height-ratio;
+    margin-right: $tag-gutter;
+    max-width: $tag-size;
+    padding: $indent;
+    // padding-right: calc(1em + 2 * #{nth($indent, 2)});
+    // position: relative;
+    text: {
+        decoration: none;
+        transform: uppercase;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Tag, stack.
+ */
+
+.tag {
+    &.\--stack {
+        margin-top: $tag-gutter;
+    }
+}
+
+/**
+ * Tag, large.
+ */
+
+// .tag {
+//     &.\--large {
+//         $indent: map-get($tag-indent, large);
+
+//         padding: $indent;
+//         padding-right: calc(1em + 2 * #{nth($indent, 2)});
+
+//         .tag__control {
+//             right: nth($indent, 2);
+//         }
+//     }
+// }
+
+/**
+ * Tag, color themes.
+ */
+
+.tag {
+    @each $modifier, $theme in $tag-theme {
+        &.\--#{$modifier} {
+            background-color: map-get($theme, secondary);
+            border-color: darken(map-get($theme, primary), 25%);
+            color: darken(map-get($theme, secondary), 45%);
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Tag control
+// =============================================================================
+
+// .tag__control {
+//     @extend .ico--after !optional;
+//     @extend .ico--close-outline !optional;
+
+//     cursor: pointer;
+//     position: absolute;
+//     right: nth(map-get($tag-indent, medium), 2);
+// }
