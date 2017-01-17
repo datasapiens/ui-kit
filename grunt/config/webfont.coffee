@@ -18,11 +18,11 @@ module.exports = (grunt) ->
             # ligatures: true
             # optimize: false
             stylesheet: 'scss'
-            template: 'grunt/webfont/templates/webfont.css'
+            template: 'grunt/webfont/templates/settings.scss'
             types: [
                 'woff'
                 'woff2',
             ]
         src: '<%= path.source %>/svg/icons/*.svg'
         dest: '<%= path.source %>/woff'
-        destCss: '<%= path.source %>/sass/components'
+        destCss: '<%= path.source %>/sass/settings'

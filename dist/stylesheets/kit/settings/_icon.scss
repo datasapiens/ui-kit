@@ -1,6 +1,8 @@
 /**
  * Component Icon settings.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * NOTE: This is generated from template by 'grunt-webfont' task.
  */
 
 // =============================================================================
@@ -19,44 +21,21 @@ $icon-size: 1em;
 $icon-indent: 0.25 * $icon-size;
 
 // Set icon glyphs list.
-// @link https://material.io/icons/
-$icon-glyphs:
-    "\f101" account-circle,
-    "\f102" add-box,
-    "\f103" add-circle-outline,
-    "\f104" add-circle,
-    "\f105" add,
-    "\f106" arrow-back,
-    "\f107" arrow-down,
-    "\f108" arrow-downward,
-    "\f109" arrow-forward,
-    "\f10a" arrow-left,
-    "\f10b" arrow-right,
-    "\f10c" arrow-up,
-    "\f10d" arrow-upward,
-    "\f10e" block,
-    "\f10f" cancel-outline,
-    "\f110" cancel,
-    "\f111" caret-down,
-    "\f112" caret-up,
-    "\f113" chat-bubble-outline,
-    "\f114" check-circle-outline,
-    "\f115" check-circle,
-    "\f116" check,
-    "\f117" close,
-    "\f118" delete,
-    "\f119" edit,
-    "\f11a" error-outline,
-    "\f11b" error,
-    "\f11c" file-download,
-    "\f11d" file-upload,
-    "\f11e" help-outline,
-    "\f11f" info-outline,
-    "\f120" info,
-    "\f121" lightbulb-outline,
-    "\f122" remove-box,
-    "\f123" remove-circle-outline,
-    "\f124" remove-circle,
-    "\f125" remove,
-    "\f126" warning,
+$icon-glyphs: 
+    "\f101" account,
+    "\f102" apps,
+    "\f103" arrow-down,
+    "\f104" arrow-left,
+    "\f105" arrow-right,
+    "\f106" arrow-up,
+    "\f107" briefcase,
+    "\f108" caret-down,
+    "\f109" caret-up,
+    "\f10a" check-circle,
+    "\f10b" download,
+    "\f10c" exit,
+    "\f10d" help-outline,
+    "\f10e" language,
+    "\f10f" menu,
+    "\f110" timelapse,
 ;

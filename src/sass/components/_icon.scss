@@ -3,20 +3,16 @@
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  */
 
-/**
- * TODO: Investigate `flexbox` solution.
- */
-
 // =============================================================================
 // Icon
 // =============================================================================
 
-@include font-face($family: "SimoKucher Icons", $file: "simokuchericons");
+@include font-face($family: "Sapiens Icons", $file: "sapiensicons");
 
 %ico {
     display: inline-block;
     font: {
-        family: "SimoKucher Icons";
+        family: "Sapiens Icons";
         style: normal;
         weight: normal;
     }

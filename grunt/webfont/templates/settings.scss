@@ -21,21 +21,6 @@ $icon-size: 1em;
 $icon-indent: 0.25 * $icon-size;
 
 // Set icon glyphs list.
-$icon-glyphs: 
-    "\f101" account,
-    "\f102" apps,
-    "\f103" arrow-down,
-    "\f104" arrow-left,
-    "\f105" arrow-right,
-    "\f106" arrow-up,
-    "\f107" briefcase,
-    "\f108" caret-down,
-    "\f109" caret-up,
-    "\f10a" check-circle,
-    "\f10b" download,
-    "\f10c" exit,
-    "\f10d" help-outline,
-    "\f10e" language,
-    "\f10f" menu,
-    "\f110" timelapse,
+$icon-glyphs: <% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
+    "\<%= codepoints[glyphIdx] %>" <%= glyphs[glyphIdx] %><%= ',' %><% } %>
 ;
