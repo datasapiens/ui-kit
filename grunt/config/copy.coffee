@@ -18,11 +18,11 @@ module.exports = (grunt) ->
             }
             {
                 expand: true
-                cwd: '<%= path.source %>/tpl'
+                cwd: '<%= path.source %>/data'
                 src: [
-                    '**/*.html'
+                    '**/*.json'
                 ]
-                dest: '<%= path.dist %>/templates'
+                dest: '<%= path.dist %>/data'
             }
             {
                 expand: true

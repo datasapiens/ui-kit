@@ -8,17 +8,26 @@ module.exports = (grunt) ->
     icon:
         options:
             # codepoints:
-            destHtml: '<%= path.source %>/tpl/partials'
+            customOutputs: [
+                {
+                    template: 'grunt/webfont/templates/data.json'
+                    dest: '<%= path.source %>/data/sapiensicons.json'
+                }
+            ]
             font: 'icon'
             fontFamilyName: 'Sapiens Icons'
             fontFilename: 'sapiensicons'
             # fontHeight: 24
             hashes: false
-            htmlDemoTemplate: 'grunt/webfont/templates/prototype.html'
+            htmlDemo: false
             # ligatures: true
             # optimize: false
             stylesheet: 'scss'
             template: 'grunt/webfont/templates/settings.scss'
+            templateOptions:
+                "baseClass": ""
+                "classPrefix": "ico"
+                "mixinPrefix": ""
             types: [
                 'woff'
                 'woff2',
