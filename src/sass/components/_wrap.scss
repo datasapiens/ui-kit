@@ -1,0 +1,82 @@
+/**
+ * Component Wrap.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Wrap
+// =============================================================================
+
+%wrp {
+    @extend %group;
+
+    @media print {
+        overflow: hidden;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Wrap, scroll pane.
+ */
+
+%wrp--scroll {
+    @extend %wrp;
+
+    margin-bottom: rhythm-get();
+    overflow: auto;
+    padding-bottom: map-get($wrap-indent, vertical);
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+/**
+ * Wrap, X-scroll pane.
+ */
+
+.wrp--scroll-x {
+    @extend %wrp--scroll;
+
+    overflow-x: auto;
+}
+
+/**
+ * Wrap, Y-scroll pane.
+ */
+
+.wrp--scroll-y {
+    @extend %wrp--scroll;
+
+    overflow-y: auto;
+    padding-right: map-get($wrap-indent, horizontal);
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
