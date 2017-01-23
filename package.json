@@ -9,8 +9,8 @@
   },
   "main": "src/sass/main.scss",
   "scripts": {
-    "start": "grunt dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "grunt dist",
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",

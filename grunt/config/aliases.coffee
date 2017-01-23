@@ -10,7 +10,7 @@ module.exports = (grunt) ->
 
     dist: [
         'test'
-        'shell:install'
+        # 'shell:install'
         'clean:dist'
         'clean:preprocess'
         'copy:preprocess'
