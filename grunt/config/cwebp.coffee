@@ -1,18 +1,15 @@
 ##
 # Convert images to WebP.
-# @see https://www.npmjs.com/package/grunt-webp
+# @see https://www.npmjs.com/package/grunt-cwebp
 #
 
 module.exports = (grunt) ->
 
     options:
-        lossless: true
         preset: 'photo'
-        verbose: false
 
     dist:
         options:
-            lossless: false
             preset: 'icon'
 
         files: [

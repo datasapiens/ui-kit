@@ -9,7 +9,7 @@ module.exports = (grunt) ->
     ]
 
     dist: [
-        'test'
+        # 'test'
         # 'shell:install'
         'clean:dist'
         'clean:preprocess'
@@ -31,7 +31,7 @@ module.exports = (grunt) ->
 
     images: [
         'imagemin'
-        'webp'
+        'cwebp'
     ]
 
     release: [
