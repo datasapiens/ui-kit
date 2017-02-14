@@ -202,6 +202,7 @@
         border-color: map-get($button-border-color, focus);
         // box-shadow: 0 1px 3px -2px map-fetch($button--primary, shadow, focus);
         color: map-get($button-color, focus);
+        text-decoration: none;
 
         &.--primary {
             background-color: map-fetch($button--primary, background, focus);
