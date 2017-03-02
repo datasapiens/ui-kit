@@ -20,6 +20,7 @@ module.exports = (grunt) ->
                     '<%= path.source %>/svg/*.svg'
                     '<%= path.source %>/png/apple*.png'
                     '<%= path.source %>/png/launcher-icon@*.png'
+                    '<%= path.source %>/png/metro-tile*.png'
                 ]
                 dest: '<%= path.dist %>/images'
             }
