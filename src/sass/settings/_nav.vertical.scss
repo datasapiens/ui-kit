@@ -1,0 +1,114 @@
+/**
+ * Component Vertical navigation settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Vertical navigation settings
+// =============================================================================
+
+// Set navigation background.
+$nav-vertical-background: #eee !default;
+
+// Set navigation depth.
+$nav-vertical-depth: 3 !default;
+
+// Set navigation line height ratio.
+$nav-vertical-line-height-ratio: 1.4 !default;
+
+// Set navigation size.
+$nav-vertical-size: 250px !default;
+
+/**
+ * Navigation title.
+ */
+
+// Set navigation title font size.
+$nav-vertical-title-font-size: 14px !default;
+
+// Set navigation title font weight.
+$nav-vertical-title-font-weight: 500 !default;
+
+/**
+ * Navigation item.
+ */
+
+// Set navigation item background.
+$nav-vertical-item-background: (
+    active:     #999,      // pressed
+    disable:    #efefef,   // disabled
+    focus:      #999,      // focused
+    hover:      #999,      // hovered
+    initial:    transparent,
+) !default;
+
+
+// Set navigation item border color.
+$nav-vertical-item-border-color: darken(#eee, 10%) !default;
+
+// Set navigation item border size.
+$nav-vertical-item-border-size: 1px !default;
+
+// Set navigation item color.
+$nav-vertical-item-color: (
+    active:     white,    // pressed
+    disable:    #666,     // disabled
+    focus:      white,    // focused
+    hover:      white,    // hovered
+    initial:    #666,
+) !default;
+
+// Set navigation item indent.
+$nav-vertical-item-indent: (
+    horizontal: 20px,
+    vertical: 10px,
+) !default;
+
+// Set navigation item icon color.
+$nav-vertical-item-icon-color: rgba(white, 0.75) !default;
+
+// Set navigation item icon size.
+$nav-vertical-item-icon-size: 1.5em !default;
+
+/**
+ * Navigation, primary.
+ */
+
+// Set primary navigation item background.
+$nav-vertical--primary-item-background: (
+    active:     #333,   // pressed
+    disable:    #999,   // disabled
+    focus:      #333,   // focused
+    hover:      #333,   // hovered
+    initial:    #666,
+) !default;
+
+// Set primary navigation item color.
+$nav-vertical--primary-item-color: (
+    active:     white,    // pressed
+    disable:    #666,     // disabled
+    focus:      white,    // focused
+    hover:      white,    // hovered
+    initial:    #eee,
+) !default;
+
+// Set primary navigation item count.
+$nav-vertical--primary-item-count: 5 !default;
+
+// Set primary navigation item font size.
+$nav-vertical--primary-item-font-size: 12px !default;
+
+// Set primary navigation item font weight.
+$nav-vertical--primary-item-font-weight: 300 !default;
+
+// Set primary navigation item indent.
+$nav-vertical--primary-item-indent: 10px !default;
+
+// Set primary navigation item size.
+$nav-vertical--primary-item-size: (
+    height: 5rem,
+    width: 5rem,
+) !default;
+
+// Set primary navigation item icon size.
+$nav-vertical--primary-item-icon-size: 2.5em !default;

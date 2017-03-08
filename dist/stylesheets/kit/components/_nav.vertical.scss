@@ -1,0 +1,432 @@
+/**
+ * Component Vertical navigation.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Vertical navigation
+// =============================================================================
+
+.nav-vertical {
+    @include acceleration;
+
+    background-color: $nav-vertical-background;
+    line-height: $nav-vertical-line-height-ratio;
+    width: $nav-vertical-size;
+    position: relative;
+
+    ul {
+        @extend %lst--reset !optional;
+
+        margin: 0;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Navigation, levels.
+ */
+
+.nav-vertical {
+    @for $i from 1 through $nav-vertical-depth {
+        &.\--level-#{$i} {
+            background-color: darken(
+                $nav-vertical-background,
+                $i * 10%
+            );
+
+            /**
+             * 1. We need to increase specifity to override
+             *  sub-levels with icons.
+             */
+
+            @at-root {
+                // Navigation header and item region.
+                .nav-vertical:not(.has-icons)[class] & {        /* 1 */
+                    .nav-vertical__head,
+                    .nav-vertical__item__region {
+                        padding-left: $i * map-get($nav-vertical-item-indent, horizontal);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Navigation, primary.
+ */
+
+.nav-vertical {
+    &.\--primary {
+        margin-left: map-get($nav-vertical--primary-item-size, width);
+
+        /**
+         * Navigation item.
+         */
+
+        > ul > .nav-vertical__item {
+            @for $i from 1 through $nav-vertical--primary-item-count {
+                &:nth-of-type(#{$i}) > .nav-vertical__item__region {
+                    top: ($i - 1) * map-get($nav-vertical--primary-item-size, height);
+                }
+            }
+        }
+
+        /**
+         * Navigation item region.
+         */
+
+        > ul > .nav-vertical__item > .nav-vertical__item__region {
+            @include size(
+                map-get($nav-vertical--primary-item-size, width),
+                map-get($nav-vertical--primary-item-size, height)
+            );
+
+            align-items: center;
+            background-color: map-get($nav-vertical--primary-item-background, initial);
+            color: map-get($nav-vertical--primary-item-color, initial);
+            display: flex;
+            flex-direction: column;
+            font: {
+                size: px-to-em($nav-vertical--primary-item-font-size);
+                weight: $nav-vertical--primary-item-font-weight;
+            }
+            justify-content: center;
+            left: (-1) * map-get($nav-vertical--primary-item-size, width);
+            padding: $nav-vertical--primary-item-indent;
+            position: absolute;
+            z-index: 1;
+
+            &::after {
+                content: none;
+            }
+        }
+
+        /**
+         * Navigation item icon.
+         */
+
+        > ul > .nav-vertical__item,
+        > ul > .nav-vertical__item > .nav-vertical__item__region {
+            > .nav-vertical__item__icon {
+                @include size($nav-vertical--primary-item-icon-size);
+
+                position: static;
+                transform: none;
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+/**
+ * Navigation, icons before.
+ */
+
+.nav-vertical {
+    &.has-icons.\--before {
+
+        /**
+         * Navigation header and item region.
+         */
+
+        .nav-vertical__head,
+        .nav-vertical__item__region {
+            padding-left: calc(
+                #{map-get($nav-vertical-item-indent, horizontal)} +
+                5px +
+                #{$nav-vertical-item-icon-size}
+            );
+        }
+
+        /**
+         * Navigation item icon.
+         */
+
+        .nav-vertical__item__icon {
+            left: map-get($nav-vertical-item-indent, horizontal);
+        }
+
+        /**
+         * Navigation levels.
+         */
+
+        @for $i from 1 through $nav-vertical-depth {
+            &.\--level-#{$i} {
+
+                // Navigation levels, header and region.
+                .nav-vertical__head,
+                .nav-vertical__item__region {
+                    padding-left: calc(
+                        #{$i * map-get($nav-vertical-item-indent, horizontal)} +
+                        5px +
+                        #{$nav-vertical-item-icon-size}
+
+                    );
+                }
+
+                // Navigation levels, icon.
+                .nav-vertical__item__icon {
+                    left: #{$i * map-get($nav-vertical-item-indent, horizontal)};
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Navigation, icons after.
+ */
+
+// .nav-vertical {
+//     &.has-icons.\--after {
+
+//         /**
+//          * Navigation header and item region.
+//          */
+
+//         .nav-vertical__head,
+//         .nav-vertical__item__region {
+//             padding-right: calc(
+//                 #{map-get($nav-vertical-item-indent, horizontal)} +
+//                 5px +
+//                 #{$nav-vertical-item-icon-size}
+//             );
+//         }
+
+//         /**
+//          * Navigation item icon.
+//          */
+
+//         .nav-vertical__item__icon {
+//             right: map-get($nav-vertical-item-indent, horizontal);
+//         }
+
+//         /**
+//          * Navigation levels.
+//          */
+
+//         @for $i from 1 through $nav-vertical-depth {
+//             &.\--level-#{$i} {
+
+//                 // Navigation levels, header and region.
+//                 .nav-vertical__head,
+//                 .nav-vertical__item__region {
+//                     padding-right: calc(
+//                         #{$i * map-get($nav-vertical-item-indent, horizontal)} +
+//                         5px +
+//                         #{$nav-vertical-item-icon-size}
+
+//                     );
+//                 }
+
+//                 // Navigation levels, icon.
+//                 .nav-vertical__item__icon {
+//                     right: #{$i * map-get($nav-vertical-item-indent, horizontal)};
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Navigation header
+// =============================================================================
+
+.nav-vertical__head {
+    padding: map-get($nav-vertical-item-indent, vertical)
+        map-get($nav-vertical-item-indent, horizontal)
+        0
+        map-get($nav-vertical-item-indent, horizontal);
+}
+
+// Navigation title
+// =============================================================================
+
+.nav-vertical__title {
+    @include text-truncate;
+
+    display: inline-block;
+    font: {
+        weight: $nav-vertical-title-font-weight;
+        size: px-to-em($nav-vertical-title-font-size);
+    }
+    max-width: 100%;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+// Navigation item
+// =============================================================================
+
+.nav-vertical__item {
+    color: map-get($nav-vertical-item-color, initial);
+    margin: 0;
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Navigation item, active.
+ */
+
+.nav-vertical__item {
+    &.is-active:not(.is-disabled) {
+        > .nav-vertical__item__region {
+            @extend .nav-vertical__item__region.is-active !optional;
+        }
+
+        .nav-vertical {
+            display: block;
+        }
+    }
+}
+
+/**
+ * Navigation item, disabled.
+ */
+
+.nav-vertical__item {
+    &.is-disabled {
+        > .nav-vertical__item__region {
+            @extend .nav-vertical__item__region.is-disabled !optional;
+        }
+
+        .nav-vertical {
+            display: none;
+        }
+    }
+}
+
+/**
+ * Navigation item, hovered.
+ */
+
+// .nav-vertical__item {
+//     &:hover {
+//         @extend .nav-vertical__item.is-active !optional;
+//     }
+// }
+
+// Navigation item region
+// =============================================================================
+
+.nav-vertical__item__region {
+    @include word-wrap;
+
+    color: map-get($nav-vertical-item-color, initial);
+    cursor: pointer;
+    display: block;
+    padding: map-get($nav-vertical-item-indent, vertical)
+        map-get($nav-vertical-item-indent, horizontal);
+    position: relative;
+    text-decoration: none;
+    transition: background-color 0.2s,
+        color 0.2s;
+
+    &::after {
+        border: {
+            bottom: $nav-vertical-item-border-size
+                solid
+                $nav-vertical-item-border-color;
+        }
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Navigation item region, active.
+ */
+
+.nav-vertical__item__region {
+    &.is-active {
+        @extend .nav-vertical__item__region:hover !optional;
+    }
+}
+
+/**
+ * Navigation item region, disabled.
+ */
+
+.nav-vertical__item__region {
+    &.is-disabled {
+        background-color: map-get($nav-vertical-item-background, disable);
+        color: map-get($nav-vertical-item-color, disable);
+        cursor: default;
+        opacity: 0.5;
+        text-decoration: line-through;
+    }
+}
+
+/**
+ * Navigation item region, hovered.
+ */
+
+.nav-vertical__item__region {
+    &:hover:not(.is-disabled) {
+        @at-root {
+            .nav-vertical__item:not(.is-disabled) > & {
+                background-color: map-get($nav-vertical-item-background, hover);
+                color: map-get($nav-vertical-item-color, hover);
+            }
+
+            .nav-vertical.\--primary > ul > .nav-vertical__item:not(.is-disabled) > & {
+                background-color: map-get($nav-vertical--primary-item-background, hover);
+                color: map-get($nav-vertical--primary-item-color, hover);
+            }
+        }
+    }
+}
+
+// Navigation item label
+// =============================================================================
+
+.nav-vertical__item__label {
+    @include text-truncate;
+
+    display: block;
+    max-width: 100%;
+}
+
+// Navigation item icon
+// =============================================================================
+
+.nav-vertical__item__icon {
+    @extend %ctr--core-y !optional;
+    @include round;
+    @include size($nav-vertical-item-icon-size);
+
+    background-color: $nav-vertical-item-icon-color;
+    cursor: pointer;
+    display: inline-block;
+}
