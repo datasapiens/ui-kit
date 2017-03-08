@@ -8,29 +8,19 @@
 // =============================================================================
 
 .tag {
-    @extend .tag.\--default;
+    @extend .tag.\--medium !optional;
     @include text-truncate;
-
-    $indent: map-get($tag-indent, medium);
 
     border: {
         radius: $tag-border-radius;
         style: solid;
         width: $tag-border-size;
     }
-    color: inherit;
-    display: inline-block;
-    font-size: px-to-rem(map-get($tag-font-size, medium));
+    display: inline-flex;
     line-height: $tag-line-height-ratio;
-    margin-right: $tag-gutter;
     max-width: $tag-size;
-    padding: $indent;
-    // padding-right: calc(1em + 2 * #{nth($indent, 2)});
-    // position: relative;
-    text: {
-        decoration: none;
-        transform: uppercase;
-    }
+    position: relative;
+    text-decoration: none;
 }
 
 /**
@@ -38,31 +28,52 @@
  */
 
 /**
- * Tag, stack.
+ * Tag, gutter.
  */
 
 .tag {
-    &.\--stack {
-        margin-top: $tag-gutter;
+    &.\--gutter {
+        margin: {
+            left: $tag-gutter;
+            top: $tag-gutter;
+        }
     }
 }
 
 /**
- * Tag, large.
+ * Tag, primary.
  */
 
-// .tag {
-//     &.\--large {
-//         $indent: map-get($tag-indent, large);
+.tag {
+    &.\--primary {
+        @include round($tag--primary-border-radius);
+    }
+}
 
-//         padding: $indent;
-//         padding-right: calc(1em + 2 * #{nth($indent, 2)});
+/**
+ * Tag, size.
+ */
 
-//         .tag__control {
-//             right: nth($indent, 2);
-//         }
-//     }
-// }
+.tag {
+    @each $modifier in (small, medium, large) {
+        &.\--#{$modifier} {
+            $indent: nth(map-get($tag-indent, $modifier), 1);
+
+            font-size: px-to-rem(map-get($tag-font-size, $modifier));
+            padding: map-get($tag-indent, $modifier);
+
+            // Tag control.
+            &.has-control {
+                padding-right: $indent +
+                    5px +
+                    $tag-control-size;
+            }
+            .tag__control {
+                right: $indent;
+            }
+        }
+    }
+}
 
 /**
  * Tag, color themes.
@@ -72,8 +83,13 @@
     @each $modifier, $theme in $tag-theme {
         &.\--#{$modifier} {
             background-color: map-get($theme, secondary);
-            border-color: darken(map-get($theme, primary), 25%);
-            color: darken(map-get($theme, secondary), 45%);
+            border-color: darken(map-get($theme, secondary), 5%);
+            color: darken(map-get($theme, secondary), 50%);
+
+            // Tag control.
+            .tag__control {
+                border: 1px solid darken(map-get($theme, secondary), 50%);
+            }
         }
     }
 }
@@ -97,11 +113,14 @@
 // Tag control
 // =============================================================================
 
-// .tag__control {
-//     @extend .ico--after !optional;
-//     @extend .ico--close-outline !optional;
+.tag__control {
+    @extend %ctr--core-y !optional;
+    // @extend .ico--after !optional;
+    // @extend .ico--close-outline !optional;
+    @include round;
+    @include size($tag-control-size);
 
-//     cursor: pointer;
-//     position: absolute;
-//     right: nth(map-get($tag-indent, medium), 2);
-// }
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+}

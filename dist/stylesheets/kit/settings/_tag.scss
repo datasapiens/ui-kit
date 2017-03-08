@@ -8,31 +8,47 @@
 // =============================================================================
 
 // Set tag border radius.
-$tag-border-radius: 2px;
+$tag-border-radius: 2px !default;
 
 // Set tag border size.
-$tag-border-size: 1px;
+$tag-border-size: 1px !default;
 
 // Set tag font size.
 $tag-font-size: (
-    // large:  16px,
-    medium: 11px,
-);
+    large:  14px,
+    medium: 14px,
+    small:  12px,
+) !default;
 
 // Set tag gutter.
-$tag-gutter: 10px;
+$tag-gutter: 5px !default;
 
 // Set tag indent.
 $tag-indent: (
-    // large:  4px 10px,
-    medium: 2px 5px,
-);
+    large:  6px 10px,
+    medium: 3px 8px,
+    small:  3px 6px,
+) !default;
 
 // Set tag line height ratio.
-$tag-line-height-ratio: 1;
+$tag-line-height-ratio: 1 !default;
 
 // Set tag size.
-$tag-size: 15em;
+$tag-size: 15em !default;
 
 // Set tag themes map.
-$tag-theme: $color-set--primary;
+$tag-theme: $color-set--primary !default;
+
+/**
+ * Tag control.
+ */
+
+// Set tag control size.
+$tag-control-size: 10px !default;
+
+/**
+ * Tag, primary
+ */
+
+// Set primary tag border radius.
+$tag--primary-border-radius: 100em !default;
