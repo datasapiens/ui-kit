@@ -45,33 +45,33 @@
  * Page sidebar, on.
  */
 
-// .page-sidebar {
-//     &.is-on {
-//         width: map-get($page-sidebar-size, max);
+.page-sidebar {
+    &.is-on {
+        width: map-get($page-sidebar-size, max);
 
-//         .page-sidebar__body {
-//             overflow: {
-//                 y: auto;
-//             }
-//         }
-//     }
-// }
+        .page-sidebar__body {
+            overflow: {
+                y: auto;
+            }
+        }
+    }
+}
 
 /**
  * Page sidebar, off.
  */
 
-// .page-sidebar {
-//     &.is-off {
-//         width: map-get($page-sidebar-size, min);
+.page-sidebar {
+    &.is-off {
+        width: map-get($page-sidebar-size, min);
 
-//         .page-sidebar__body {
-//             overflow: {
-//                 y: hidden;
-//             }
-//         }
-//     }
-// }
+        .page-sidebar__body {
+            overflow: {
+                y: hidden;
+            }
+        }
+    }
+}
 
 // =============================================================================
 // Subcomponents
@@ -100,7 +100,7 @@
     display: flex;
     flex: 1;
 
-    padding: $page-sidebar-indent;
+    // padding: $page-sidebar-indent;
     position: relative;
 }
 

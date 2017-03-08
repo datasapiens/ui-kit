@@ -23,8 +23,8 @@ $page-sidebar-index: 4;
 
 // Set page sidebar size.
 $page-sidebar-size: (
-    max: 380px,
-    min: 80px,
+    max: calc(250px + 5rem),
+    min: 5rem,
 );
 
 // Set page sidebar footer background.
