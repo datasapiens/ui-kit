@@ -176,9 +176,9 @@ a {
     &:hover {
         color: map-get($base-link-color, hover);
     }
-    &:visited {
-        color: map-get($base-link-color, visited);
-    }
+    // &:visited {
+    //     color: map-get($base-link-color, visited);
+    // }
 }
 
 b,
