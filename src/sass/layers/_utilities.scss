@@ -17,33 +17,60 @@
 
 .u-inline         { display: inline !important; }
 .u-inline-block   { display: inline-block !important; }
+.u-inline-flex    { display: inline-flex; }
 .u-inline-table   { display: inline-table; }
 .u-block          { display: block !important; }
 .u-flex           { display: flex; }
-.u-flex--grow     { flex-grow: 1; }
-.u-flex--shrink   { flex-shrink: 1; }
-.u-none           { display: none; }
-.u-none--printer  {
-    @media print {
-        display: none;
-    }
-}
 
 .u-table      { display: table; }
 .u-row        { display: table-row; }
 .u-row-group  { display: table-row-group; }
 .u-cell       { display: table-cell; }
 
+[class*="-flex"] {
+    &.--grow {
+        flex-grow: 1;
+    }
+    &.--shrink {
+        flex-shrink: 1;
+    }
+}
+
+.u-none {
+    &.--printer {
+        @media print {
+            display: none;
+        }
+    }
+    &.--screen {
+        display: none;
+    }
+}
+
 /**
  * Floats and clear(s).
  */
 
-.u-float--left   { float: left; }
-.u-float--right  { float: right; }
+.u-float {
+    &.--left {
+        float: left;
+    }
+    &.--right {
+        float: right;
+    }
+}
 
-.u-clear          { clear: both; }
-.u-clear--left    { clear: left; }
-.u-clear--right   { clear: right; }
+.u-clear {
+    &.--both {
+        clear: both;
+    }
+    &.--left {
+        clear: left;
+    }
+    &.--right {
+        clear: right;
+    }
+}
 
 .u-group {
     @extend %group;
@@ -58,13 +85,14 @@
 .u-static     { position: static !important; }
 
 .u-off {
-    left: -100vw;
-    position: absolute;
-    top: -100vh;
-}
-
-.u-off--reader {
-    @extend %reader;
+    &.--reader {
+        @extend %reader;
+    }
+    &.--screen {
+        left: -100vw;
+        position: absolute;
+        top: -100vh;
+    }
 }
 
 /**
@@ -82,8 +110,14 @@
  * Overflow.
  */
 
-.u-overflow--visible    { overflow: visible; }
-.u-overflow--hidden     { overflow: hidden; }
+.u-overflow {
+    &.--hidden {
+        overflow: hidden;
+    }
+    &.--visible {
+        overflow: visible;
+    }
+}
 
 
 // =============================================================================
