@@ -108,8 +108,10 @@
         td,
         th {
             padding: {
+                bottom: 0.25 * $table-cell-indent;
                 left: 0.5 * $table-cell-indent;
                 right: 0.5 * $table-cell-indent;
+                top: 0.25 * $table-cell-indent;
             }
         }
     }
