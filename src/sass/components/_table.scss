@@ -11,7 +11,6 @@
     caption,
     td,
     th {
-        font-size: px-to-em($table-font-size);
         padding: {
             left: $table-cell-indent;
             right: $table-cell-indent;
@@ -28,11 +27,12 @@
         vertical-align: baseline;
     }
 
-    // thead {
-    //     th {
-    //         @include word-wrap;
-    //     }
-    // }
+    thead {
+        th {
+            // @include word-wrap;
+            font-size: px-to-em($table-font-size);
+        }
+    }
 }
 
 /**
