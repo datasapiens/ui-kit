@@ -10,6 +10,5 @@
 // Set form row margin.
 $form-row-indent: $base-line-height;
 
-// Set form cell push size (according to max from `$form-checkbox-size`
-// and `$form-radio-size`).
-$form-cell-push-size: 16px + 5;
+// Set form cell indent.
+$form-cell-indent: 20px;

@@ -39,6 +39,9 @@
 // Subcomponents
 // =============================================================================
 
+// Form row
+// =============================================================================
+
 .form__row {
     @extend %group;
 
@@ -68,5 +71,16 @@
     &.--grid {
         align-items: baseline;
         display: flex;
+        margin-right: (-1) * $form-cell-indent;
+
+        .form__cell {
+            flex: 1;
+            margin-right: $form-cell-indent;
+        }
     }
 }
+
+// Form cell
+// =============================================================================
+
+.form__cell {}
