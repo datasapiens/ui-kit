@@ -66,14 +66,14 @@
  */
 
 .btn {
-    @each $modifier in (small, medium, large) {
+    @each $modifier in (xsmall, small, medium, large) {
         &.\--#{$modifier} {
             height: map-get($button-size, $modifier);
             font: {
                 size: px-to-rem(map-get($button-font-size, $modifier));
                 weight: map-get($button-font-weight, $modifier)
             }
-            line-height: map-get($button-size, $modifier) - $button-border-size;
+            line-height: map-get($button-size, $modifier) - 2 * $button-border-size;
         }
     }
 }

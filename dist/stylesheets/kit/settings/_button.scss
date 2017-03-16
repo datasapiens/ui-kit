@@ -45,6 +45,7 @@ $button-font-size: (
     large:  17px,
     medium: 14px,
     small:  11px,
+    xsmall: 11px,
 );
 
 // Set button font weight.
@@ -52,13 +53,14 @@ $button-font-weight: (
     large:  300,
     medium: 300,
     small:  400,
+    xsmall: 400,
 );
 
 // Set button indent.
 $button-indent: (
-    long:       2em,
-    mean:       1em,
-    short:      0.5em,
+    long:  2em,
+    mean:  1em,
+    short: 0.5em,
 );
 
 // Set button letter spacing.
@@ -78,6 +80,7 @@ $button-size: (
     large:  46px,
     medium: 34px,
     small:  26px,
+    xsmall: 22px,
 );
 
 // Set button margin.
