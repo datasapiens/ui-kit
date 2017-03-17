@@ -20,7 +20,10 @@ $panel-border-radius: 3px;
 $panel-border-size: 1px;
 
 // Set panel indent.
-$panel-indent: 20px;
+$panel-indent: (
+    horizontal: 20px,
+    vertical:   20px,
+);
 
 // Set light panel box shadow.
 $panel--light-box-shadow: 0 5px 30px -5px rgba($panel-border-color, 0.75);

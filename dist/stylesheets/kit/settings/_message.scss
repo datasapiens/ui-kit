@@ -26,7 +26,10 @@ $message-font-weight: 300;
 $message-color: $base-color;
 
 // Set message indent.
-$message-indent: 10px;
+$message-indent: (
+    horizontal: 20px,
+    vertical: 10px,
+);
 
 // Set message line height ratio.
 $message-line-height-ratio: $base-line-height / 16px;

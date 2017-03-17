@@ -13,7 +13,8 @@
 
     background-color: $panel-background;
     border: $panel-border-size solid $panel-border-color;
-    padding: $panel-indent;
+    padding: map-get($panel-indent, vertical)
+        map-get($panel-indent, horizontal);
 
     &,
     &:last-child {

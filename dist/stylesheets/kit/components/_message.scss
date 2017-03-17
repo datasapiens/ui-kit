@@ -17,13 +17,14 @@
     border: $message-border-size solid $message-border-color;
     border-radius: $message-border-radius;
     color: $message-color;
-    font: {
-        size: $message-font-size;
-        weight: $message-font-weight;
-    }
-    line-height: $message-line-height-ratio;
-    margin-bottom: 15px;
-    padding: $message-indent;
+    // font: {
+    //     size: $message-font-size;
+    //     weight: $message-font-weight;
+    // }
+    // line-height: $message-line-height-ratio;
+    margin-bottom: 16px;
+    padding: map-get($message-indent, vertical)
+        map-get($message-indent, horizontal);
     position: relative;
 
     &::after {
@@ -39,9 +40,9 @@
         @extend %msg__icon;
     }
 
-    p:last-of-type {
-        margin-bottom: 0;
-    }
+    // p:last-of-type {
+    //     margin-bottom: 0;
+    // }
 
     // This is not possible, because angular shows/hides elements
     //  that already exist in DOM tree.
@@ -89,7 +90,7 @@
 
 .msg {
     &.\--primary {
-        padding-left: $message-icon-region-size + $message-indent;
+        padding-left: $message-icon-region-size + map-get($message-indent, horizontal);
     }
 }
 
@@ -157,7 +158,7 @@
 
 // .msg {
 //     &.has-control {
-//         padding-right: 2 * $message-indent + $message-control-size;
+//         padding-right: 2 * map-get($message-indent, horizontal) + $message-control-size;
 //     }
 // }
 
@@ -204,8 +205,8 @@
 //     font-size: px-to-em($message-control-size);
 //     opacity: 1;
 //     position: absolute;
-//     right: 0.5 * $message-indent;
-//     top: 0.5 * $message-indent;
+//     right: 0.5 * map-get($message-indent, horizontal);
+//     top: 0.5 * map-get($message-indent, vertical);
 // }
 
 /**
