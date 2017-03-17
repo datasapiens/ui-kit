@@ -1,0 +1,69 @@
+/**
+ * Component Trail navigation.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Trail navigation
+// =============================================================================
+
+.nav-trail {
+    margin-bottom: $nav-trail-indent;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Navigation item
+// =============================================================================
+
+.nav-trail__item {
+    display: inline-flex;
+    position: relative;
+    margin-right: $nav-trail-item-indent;
+    padding-right: calc(#{$nav-trail-item-indent} + 1em);
+
+    &:not(:last-child)::after {
+        @extend %nav-trail__spacer;
+    }
+}
+
+// Navigation spacer
+// =============================================================================
+
+%nav-trail__spacer {
+    color: $nav-trail-spacer;
+    content: "/";
+    cursor: default;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 1em;
+}
