@@ -69,11 +69,10 @@
 
 .form__row {
     &.--grid {
-        align-items: baseline;
         display: flex;
         margin-right: (-1) * $form-cell-indent;
 
-        .form__cell {
+        & > .form__cell {
             flex: 1;
             margin-right: $form-cell-indent;
         }
