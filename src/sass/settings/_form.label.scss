@@ -16,8 +16,9 @@ $form-label-indent: (
     vertical:  $base-line-height, // according to `$form-row-indent`
 );
 
-// Set form label push (according to `$form-element-border-size`).
-$form-label-push: 1px;
+// Set form label push
+//  (according to `$form-element-indent` and `$form-element-border-size`).
+$form-label-push: 11px;
 
 // Set form label font size.
 $form-label-font-size: 13px;
