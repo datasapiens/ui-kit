@@ -1,10 +1,10 @@
 /**
- * Component Wrap.
+ * Component Wrapper.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  */
 
 // =============================================================================
-// Wrap
+// Wrapper
 // =============================================================================
 
 %wrp {
@@ -20,7 +20,7 @@
  */
 
 /**
- * Wrap, scroll pane.
+ * Wrapper, scroll pane.
  */
 
 %wrp--scroll {
@@ -28,7 +28,7 @@
 
     margin-bottom: rhythm-get();
     overflow: auto;
-    padding-bottom: map-get($wrap-indent, vertical);
+    padding-bottom: map-get($wrapper-indent, vertical);
 
     > :last-child {
         margin-bottom: 0;
@@ -36,24 +36,28 @@
 }
 
 /**
- * Wrap, X-scroll pane.
+ * Wrapper, X-scroll pane.
  */
 
-.wrp--scroll-x {
-    @extend %wrp--scroll;
+.wrp {
+    &.\--scroll-x {
+        @extend %wrp--scroll;
 
-    overflow-x: auto;
+        overflow-x: auto;
+    }
 }
 
 /**
- * Wrap, Y-scroll pane.
+ * Wrapper, Y-scroll pane.
  */
 
-.wrp--scroll-y {
-    @extend %wrp--scroll;
+.wrp {
+    &.\--scroll-y {
+        @extend %wrp--scroll;
 
-    overflow-y: auto;
-    padding-right: map-get($wrap-indent, horizontal);
+        overflow-y: auto;
+        padding-right: map-get($wrapper-indent, horizontal);
+    }
 }
 
 /**
