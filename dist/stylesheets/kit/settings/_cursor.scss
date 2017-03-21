@@ -10,7 +10,10 @@
 // Set cursor types list.
 $cursor-types: (
     default,
+    grab,
+    grabbing
     help,
+    move,
     no-drop,
     pointer,
 );
