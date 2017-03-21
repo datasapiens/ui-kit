@@ -345,7 +345,7 @@ select {
 textarea {
     resize: vertical;       /* 1 */
 
-    &[rows] {               /* 2 */
+    &:not([rows="1"]) {     /* 2 */
         height: auto;
         line-height: inherit;
         padding: {
