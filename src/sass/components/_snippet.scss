@@ -1,0 +1,63 @@
+/**
+ * Component Snippet.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Snippet
+// =============================================================================
+
+.snp {
+    background-color: $snippet-background;
+    border: $snippet-border-size solid $snippet-border-color;
+    border-radius: $snippet-border-radius;
+    font: {
+        family: "#{$snippet-font-family}", monospace;
+        size: px-to-rem($snippet-font-size);
+    }
+    padding: map-get($snippet-indent, vertical)
+        map-get($snippet-indent, horizontal);
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Snippet, block.
+ */
+
+.snp {
+    &.--block {
+        display: block;
+        overflow: auto;
+        padding: map-get($snippet--block-indent, vertical)
+            map-get($snippet--block-indent, horizontal);
+        width: 100%;
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

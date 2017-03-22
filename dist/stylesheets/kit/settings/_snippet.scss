@@ -1,0 +1,42 @@
+/**
+ * Component Snippet settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Snippet settings
+// =============================================================================
+
+// Set snippet background.
+$snippet-background: #e3f2fd !default;
+
+// Set snippet border color.
+$snippet-border-color: #d4d0c3 !default;
+
+// Set snippet border radius.
+$snippet-border-radius: 2px !default;
+
+// Set snippet border size.
+$snippet-border-size: 1px !default;
+
+// Set snippet font family (according to `$font-monospace-family`).
+$snippet-font-family: "Inconsolata" !default;
+
+// Set snippet font size (according to `$font-monospace-size`).
+$snippet-font-size: 15px !default;
+
+// Set snippet indent.
+$snippet-indent: (
+    horizontal: 5px,
+    vertical: 2px,
+) !default;
+
+/**
+ * Snippet, block.
+ */
+
+// Set block snippet indent.
+$snippet--block-indent: (
+    horizontal: 10px,
+    vertical: 10px,
+) !default;
