@@ -1,0 +1,58 @@
+/**
+ * Component Counter.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Counter
+// =============================================================================
+
+.cnt {
+    counter-reset: section;
+
+    .cnt__item {
+        counter-increment: section;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// Counter item
+// =============================================================================
+
+.cnt__item {
+    &::before {
+        content: $counter-prefix counter(section) $counter-suffix;
+    }
+}
