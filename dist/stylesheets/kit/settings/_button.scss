@@ -58,9 +58,9 @@ $button-font-weight: (
 
 // Set button indent.
 $button-indent: (
-    long:  2em,
     mean:  1em,
-    short: 0.5em,
+    narrow: 0.5em,
+    wide:  2em,
 );
 
 // Set button letter spacing.
