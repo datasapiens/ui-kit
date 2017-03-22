@@ -18,7 +18,7 @@
  * @link https://philipwalton.github.io/solved-by-flexbox/demos/grids/
  */
 
-.grid {
+.grd {
     display: flex;
     flex-direction: column;
     margin-left: (-1) * $grid-gutter;
@@ -32,12 +32,12 @@
  * Modifiers.
  */
 
-.grid {
+.grd {
     @each $cols in $grid-columns {
         $index: 0;
 
         &.\--#{$cols} {
-            & > .grid__item {
+            & > .grd__item {
                 flex: 0 0 percentage(1 / $cols);
 
                 @each $break in $grid-breaks {
@@ -77,20 +77,22 @@
 // Grid item
 // =============================================================================
 
-.grid__item {
+.grd__item {
     flex: 1;
     display: flex;
-    margin-bottom: $grid-gutter;
 
     &::before {
         content: "";
         flex: 0 0 $grid-gutter;
     }
 
-    // & > div,
-    // & > span {
-    //     flex: 1 1 auto;
+    // & + & {
+    //     margin-top: $grid-gutter;
     // }
+
+    & > div {
+        @extend %grd__item__content;
+    }
 
     @if $grid-debug {
         @extend %debug !optional;
@@ -110,31 +112,23 @@
  * FIX: This doesn't compute!
  */
 
-.grid__item {
+.grd__item {
     $max: list-max($grid-columns);
 
     @for $i from 2 through $max {
         &.\--span-#{$i}[class] {
             flex: {
-                basis: 100%;
+                // basis: 100%;
                 grow: $i;
             }
         }
     }
 }
 
-// Grid content
+// Grid item content
 // =============================================================================
 
-/**
- * 1. We need to increase specifity.
- */
-
-.grid__content {
+%grd__item__content {
     flex: 1 1 100%;
-    overflow: hidden;
-
-    & > :last-child[class] {
-        margin-bottom: 0;   /* 1 */
-    }
+    // overflow: hidden;
 }

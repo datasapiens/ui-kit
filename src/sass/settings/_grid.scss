@@ -13,13 +13,13 @@ $grid-breaks: (
     1100px,
     1300px,
     1500px,
-);
+) !default;
 
 // Set grid columns count list.
-$grid-columns: (2, 3, 4);
+$grid-columns: (2, 3, 4) !default;
 
 // Set grid gutter size.
-$grid-gutter: 20px;
+$grid-gutter: 20px !default;
 
 // Set grid debug mode.
-$grid-debug: false;
+$grid-debug: false !default;
