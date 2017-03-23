@@ -9,12 +9,7 @@
 
 .btn-group {
     .btn {
-        // margin-bottom: $button-group-space;
-        margin-right: $button-group-space;
-
-        &:last-child {
-            margin-right: 0;
-        }
+        margin-bottom: $button-group-gutter;
     }
 }
 
@@ -27,15 +22,44 @@
  */
 
 /**
+ * Button group, centered buttons.
+ */
+
+.btn-group {
+    &.\--center {
+        text-align: center;
+
+        .btn {
+            margin: {
+                left: 0.5 * $button-group-gutter;
+                right: 0.5 * $button-group-gutter;
+            }
+        }
+    }
+}
+
+/**
+ * Button group, compact.
+ */
+
+.btn-group {
+    &.\--compact {
+        .btn {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/**
  * Button group, buttons aligned left.
  */
 
 .btn-group {
     &.\--left {
+        text-align: left;
+
         .btn {
-            &:last-child {
-                margin-right: $button-group-space;
-            }
+            margin-right: $button-group-gutter;
         }
     }
 }
@@ -46,14 +70,10 @@
 
 .btn-group {
     &.\--right {
+        text-align: right;
+
         .btn {
-            margin: {
-                left: $button-group-space;
-                right: 0;
-            }
-            &:first-child {
-                margin-left: $button-group-space;
-            }
+            margin-left: $button-group-gutter;
         }
     }
 }
