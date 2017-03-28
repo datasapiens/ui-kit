@@ -11,13 +11,13 @@ module.exports = (grunt) ->
             customOutputs: [
                 {
                     template: 'grunt/webfont/templates/data.json'
-                    dest: '<%= path.source %>/data/sapiensicons.json'
+                    dest: '<%= path.source %>/data/kit-icons.json'
                 }
             ]
             destHtml: '<%= path.temp %>'
             font: 'icon'
-            fontFamilyName: 'Sapiens Icons'
-            fontFilename: 'sapiensicons'
+            fontFamilyName: 'UI Kit Icons'
+            fontFilename: 'kit-icons'
             # fontHeight: 24
             hashes: false
             # ligatures: true

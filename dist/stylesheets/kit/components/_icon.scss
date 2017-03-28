@@ -7,12 +7,12 @@
 // Icon
 // =============================================================================
 
-@include font-face($family: "Sapiens Icons", $file: "sapiensicons");
+@include font-face($family: "UI Kit Icons", $file: "kit-icons");
 
 %ico {
     display: inline-block;
     font: {
-        family: "Sapiens Icons";
+        family: "UI Kit Icons";
         style: normal;
         weight: normal;
     }
