@@ -1,0 +1,171 @@
+/**
+ * Component Notification/Toast.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// <ul class="ntf-toast">
+//     <li class="ntf-toast__item">..</li>
+//     <li class="ntf-toast__item --notice">..</li>
+//     <li class="ntf-toast__item --success">..</li>
+//     <li class="ntf-toast__item --warning">..</li>
+//     <li class="ntf-toast__item --danger">..</li>
+// </ul>
+
+// =============================================================================
+// Toast notification
+// =============================================================================
+
+.ntf-toast {
+    @extend %ntf !optional;
+    @include stretch(
+        fixed,
+        $notification-toast-offset + $notification-toast-item-indent,
+        $notification-toast-item-indent,
+        auto,
+        $notification-toast-item-indent
+    );
+
+    display: flex;
+    flex-direction: column;
+    font-size: px-to-rem($notification-toast-font-size);
+    line-height: $notification-toast-line-height-ratio;
+    max-width: $notification-toast-size;
+    padding: 0;
+    z-index: $notification-toast-index;
+
+    @media (
+        min-width: nth($notification-toast-breaks, 1) +
+        (2 * $notification-toast-item-indent)
+    ) {
+        left: auto;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Toast notification, static.
+ */
+
+.ntf-toast {
+    &.\--static {
+        position: static;
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Notification item
+// =============================================================================
+
+.ntf-toast__item {
+    @extend .ntf-toast__item.\--default;
+    @include acceleration;
+
+    animation:
+        fade--in 0.3s 0.1s both,
+        slide--right-reverse map-get($animation-easing, in-out-circ) 0.3s both;
+    // border: $notification-toast-item-border-size solid $notification-toast-item-border-color;
+    border-radius: $notification-toast-item-border-radius;
+    display: inline-block;
+    margin-bottom: 0.5 * $notification-toast-item-indent;
+    padding: $notification-toast-item-indent
+        (1.5 * $notification-toast-item-indent);
+
+    &::before {
+        @extend %ntf-toast__item__icon;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Notification item, color themes.
+ */
+
+.ntf-toast__item {
+    @each $modifier, $theme in $notification-toast-theme {
+        &.\--#{$modifier} {
+            background-color: rgba(map-get($theme, primary), 0.9);
+            color: $notification-toast-item-color;
+
+            @if map-has-key($theme, icon) {
+                @extend .ntf-toast__item.has-icon;
+
+                &::before {
+                    @extend %ico--#{map-get($theme, icon)} !optional;
+                }
+            } @else {
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Notification item, leaving animation.
+ */
+
+.ntf-toast__item {
+    &.is-leaving {
+        animation:
+            fade--out 0.3s both,
+            slide--right 0.3s map-get($animation-easing, in-out-circ) 0.1s;
+    }
+}
+
+/**
+ * Context.
+ */
+
+/**
+ * Notification item containing icon.
+ */
+
+.ntf-toast__item {
+    &.has-icon {
+        padding-left: $notification-toast-item-indent +
+            $notification-toast-item-icon-size +
+            10;
+    }
+}
+
+// Notification item icon
+// =============================================================================
+
+%ntf-toast__item__icon {
+    @extend %ctr--core-y !optional;
+    @extend %ico !optional;
+
+    font-size: px-to-em($notification-toast-item-icon-size);
+    left: $notification-toast-item-indent;
+    opacity: $notification-toast-item-icon-opacity;
+}

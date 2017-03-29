@@ -1,0 +1,56 @@
+/**
+ * Component Notification/Toast settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Toast notification settings
+// =============================================================================
+
+// Set toast notification breakpoints.
+$notification-toast-breaks: (
+    500px,
+) !default;
+
+// Set toast notification font size.
+$notification-toast-font-size: 13px !default;
+
+// Set toast notification index.
+$notification-toast-index: 6 !default;
+
+// Set toast notification line height ratio.
+$notification-toast-line-height-ratio: 1.5 !default;
+
+// Set toast notification (according to `$page-head-bar-size`).
+$notification-toast-offset: 70px !default;
+
+// Set toast notification width.
+$notification-toast-size: 400px !default;
+
+// Set toast notification theme map.
+$notification-toast-theme: $color-set--primary !default;
+
+/**
+ * Toast notification item.
+ */
+
+// Set toast notification item border color.
+$notification-toast-item-border-color: #fff !default;
+
+// Set toast notification item border radius.
+$notification-toast-item-border-radius: 3px !default;
+
+// Set toast notification item border size.
+$notification-toast-item-border-size: 1px !default;
+
+// Set toast notification item color.
+$notification-toast-item-color: #fff !default;
+
+// Set toast notification item indent.
+$notification-toast-item-indent: 20px !default;
+
+// Set toast notification item icon opacity.
+$notification-toast-item-icon-opacity: 0.7 !default;
+
+// Set toast notification item icon size.
+$notification-toast-item-icon-size: 30px !default;
