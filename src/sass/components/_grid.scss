@@ -90,7 +90,9 @@
     //     margin-top: $grid-gutter;
     // }
 
-    & > div {
+    & > article,
+    & > div,
+    & > section {
         @extend %grd__item__content;
     }
 
