@@ -8,55 +8,55 @@
 // =============================================================================
 
 // Set message border color.
-$message-border-color: $white;
+$message-border-color: $white !default;
 
 // Set message border radius (according to `$button-border-radius`).
-$message-border-radius: 3px;
+$message-border-radius: 3px !default;
 
 // Set message border size.
-$message-border-size: 1px;
+$message-border-size: 1px !default;
 
 // Set message font size.
-$message-font-size: 13px;
+$message-font-size: 13px !default;
 
 // Set message font weight.
-$message-font-weight: 300;
+$message-font-weight: 300 !default;
 
 // Set message color.
-$message-color: $base-color;
+$message-color: $base-color !default;
 
 // Set message indent.
 $message-indent: (
-    horizontal: 20px,
+    horizontal: 10px,
     vertical: 10px,
-);
+) !default;
 
 // Set message line height ratio.
-$message-line-height-ratio: $base-line-height / 16px;
+$message-line-height-ratio: inherit !default;
 
 // Set message themes map.
-$message-theme: $color-set--primary;
+$message-theme: $color-set--primary !default;
 
 // Set message title font size.
-$message-title-font-size: 14px; // px-to-rem($base-font-size)
+$message-title-font-size: 14px !default; // px-to-rem($base-font-size)
 
 // Set message control color.
 $message-control-color: (
     hover:      darken($gray, 30%),   // hovered
     initial:    $gray,
-);
+) !default;
 
 // Set message control size.
-$message-control-size: 22px;
+$message-control-size: 22px !default;
 
 // Set message icon opacity.
-$message-icon-opacity: 0.7;
+$message-icon-opacity: 0.7 !default;
 
 // Set message icon color.
-$message-icon-color: transparentize($white, 0.3);
+$message-icon-color: transparentize($white, 0.3) !default;
 
 // Set message icon region size.
-$message-icon-region-size: 50px;
+$message-icon-region-size: 50px !default;
 
 // Set message icon size.
-$message-icon-size: 30px;
+$message-icon-size: 30px !default;

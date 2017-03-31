@@ -45,7 +45,7 @@
     // }
 
     // This is not possible, because angular shows/hides elements
-    //  that already exist in DOM tree.
+    //  that already exist in the DOM tree.
     // & + &,
     // p + p {
     //     margin-top: (-1) * rhythm(0.5);
@@ -156,11 +156,12 @@
  * Message, with control.
  */
 
-// .msg {
-//     &.has-control {
-//         padding-right: 2 * map-get($message-indent, horizontal) + $message-control-size;
-//     }
-// }
+.msg {
+    &.has-control {
+        padding-right: map-get($message-indent, horizontal) +
+            $message-control-size;
+    }
+}
 
 // =============================================================================
 // Subcomponents
@@ -196,18 +197,20 @@
 // Message control
 // =============================================================================
 
-// .msg__control {
-//     @extend %ico !optional;
-//     @extend %ico--cancel-outline !optional;
+.msg__control {
+    color: map-get($message-control-color, initial);
+    cursor: pointer;
+    font-size: px-to-em($message-control-size);
+    opacity: 1;
+    position: absolute;
+    right: 0.5 * map-get($message-indent, horizontal);
+    top: 0.5 * map-get($message-indent, vertical);
 
-//     color: map-get($message-control-color, initial);
-//     cursor: pointer;
-//     font-size: px-to-em($message-control-size);
-//     opacity: 1;
-//     position: absolute;
-//     right: 0.5 * map-get($message-indent, horizontal);
-//     top: 0.5 * map-get($message-indent, vertical);
-// }
+    &::before {
+        @extend %ico !optional;
+        @extend %ico--ios-close-outline !optional;
+    }
+}
 
 /**
  * States.
@@ -217,8 +220,8 @@
  * Message control, hovered.
  */
 
-// .msg__control {
-//     &:hover {
-//         color: map-get($message-control-color, hover);
-//     }
-// }
+.msg__control {
+    &:hover {
+        color: map-get($message-control-color, hover);
+    }
+}
