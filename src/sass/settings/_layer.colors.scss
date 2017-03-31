@@ -146,7 +146,7 @@ $color-set--primary: (
     danger: (
         primary     : $red--600,
         secondary   : lighten($red--a100, 15%),
-        icon        : "block",
+        icon        : "android-alert",
     ),
     default: (
         primary     : $blue-grey--500,
@@ -155,16 +155,16 @@ $color-set--primary: (
     notice: (
         primary     : $blue-light--a700,
         secondary   : lighten($blue-light--a200, 25%),
-        icon        : "info-outline",
+        icon        : "ios-information-outline",
     ),
     success: (
         primary     : $green--a700,
         secondary   : $green--a100,
-        icon        : "check-circle-outline",
+        icon        : "ios-checkmark-outline",
     ),
     warning: (
         primary     : $amber--800,
         secondary   : lighten($amber--a100, 10%),
-        icon        : "error-outline",
+        icon        : "android-warning",
     ),
 );
