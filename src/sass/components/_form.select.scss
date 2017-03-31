@@ -1,6 +1,17 @@
 /**
  * Component Form/Select.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function}    px-to-em
+ * @requires {mixin}       size
+ * @requires {mixin}       stretch
+ * @requires {placeholder} %ctr--core-y
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--checkmark
+ * @requires {variable}    $animation-easing
+ * @requires animation.scale
+ * @requires container
+ * @requires ico
  */
 
 // =============================================================================
@@ -19,6 +30,7 @@
 
     &::before {      /* 1 */
         @extend %form-select__control;
+
         display: none !important;
 
         @include webkit {
@@ -79,7 +91,7 @@
 %form-select__control {
     @extend %ctr--core-y !optional;
     @extend %ico !optional;
-    @extend %ico--arrow-down !optional;
+    @extend %ico--chevron-down !optional;
 
     font-size: $form-select-control-size;
     pointer-events: none;
