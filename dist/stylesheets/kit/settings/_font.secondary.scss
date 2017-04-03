@@ -1,0 +1,27 @@
+/**
+ * Component Font/Secondary settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Secondary font settings
+// =============================================================================
+
+// Set secondary font family.
+$font-secondary-family: "Roboto Slab";
+
+// Set secondary font variant list.
+$font-secondary-variant: (
+    (
+        filename: "robotoslab-light",
+        weight: 300,
+    ),
+    (
+        filename: "robotoslab-regular",
+        weight: 400,
+    ),
+    // (
+    //     filename: "robotoslab-bold",
+    //     weight: 700,
+    // ),
+);
