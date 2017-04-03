@@ -8,24 +8,24 @@
 // =============================================================================
 
 // Set primary font family.
-$font-primary-family: "Open Sans";
+$font-primary-family: "Roboto";
 
 // Set primary font variant list.
 $font-primary-variant: (
     (
-        filename: "opensans-light",
+        filename: "roboto-light",
         weight: 300,
     ),
     (
-        filename: "opensans-regular",
+        filename: "roboto-regular",
         weight: 400,
     ),
     (
-        filename: "opensans-semibold",
+        filename: "roboto-medium",
         weight: 600,
     ),
     // (
-    //     filename: "opensans-bold",
+    //     filename: "roboto-bold",
     //     weight: 700,
     // ),
 );
