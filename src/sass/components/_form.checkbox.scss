@@ -117,7 +117,7 @@
 
 %form-checkbox__control {
     @extend %ico !optional;
-    @extend %ico--check !optional;
+    @extend %ico--checkmark !optional;
 
     $size: $form-checkbox-size - 2 * $form-checkbox-border-size;
 
