@@ -24,28 +24,34 @@
  */
 
 /**
- * Width, auto.
+ * Width.
  */
 
-@keyframes width {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: auto;
-    }
-}
+@keyframes width {}
 
 /**
- * Width, 100 %.
+ * Width, 0 to 100%.
  */
 
-@keyframes width--100 {
+@keyframes width--0-100 {
     0% {
         width: 0;
     }
     100% {
         width: 100%;
+    }
+}
+
+/**
+ * Width, 100% to 0.
+ */
+
+@keyframes width--100-0 {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
     }
 }
 

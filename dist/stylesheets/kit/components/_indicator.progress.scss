@@ -144,7 +144,7 @@
     @extend %ind-progress__scale;
 
     &[style*="duration"] {
-        animation: width--100 1s map-get($animation-easing, out-sine) 0.5s both;
+        animation: width--0-100 1s map-get($animation-easing, out-sine) 0.5s both;
         transition: none;
     }
 }
