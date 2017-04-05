@@ -10,31 +10,42 @@
 // Set page header breakpoints.
 $page-head-breaks: (
     450px,
-);
+    800px,
+) !default;
 
 // Set page header background.
-$page-head-background: $black;
+$page-head-background: $black !default;
 
 // Set page header box shadow.
-$page-head-box-shadow: 0 1px 0 rgba($black, 0.125);
+$page-head-box-shadow: 0 1px 0 rgba($black, 0.125) !default;
 
 // Set page header color.
-$page-head-color: $white;
+$page-head-color: $white !default;
 
 // Set page debug mode.
-$page-head-debug: false;
+$page-head-debug: false !default;
 
 // Set page header icon size.
-$page-head-icon-size: 20px;
+$page-head-icon-size: 20px !default;
+
+// Set page header indent (according to `$page-inset-indent`).
+$page-head-indent: 20px !default;
 
 // Set page header index.
-$page-head-index: 3;
+$page-head-index: 3 !default;
 
 // Set page header line height ratio.
-$page-head-line-height-ratio: 1.5;
+$page-head-line-height-ratio: 1.5 !default;
 
 // Set page header logo size.
 $page-head-logo-size: (
     height: 50px,
     width: 50px,
-);
+) !default;
+
+// Set page sidebar control size
+// (according to `$page-head-logo-size` and `$nav-vertical--primary-item-size`).
+$page-head-control--sidebar-size: (
+    height: 50px,
+    width: 5rem,
+) !default;

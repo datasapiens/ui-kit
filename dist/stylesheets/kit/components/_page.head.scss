@@ -13,7 +13,6 @@
     color: $page-head-color;
     line-height: $page-head-line-height-ratio;
     position: relative;
-    z-index: $page-head-index;
 
     a {
         @include link-underline($underline: false);
@@ -53,6 +52,7 @@
 
 .page-head__row {
     flex-wrap: wrap;
+    position: static;
 }
 
 // Page head cell
@@ -60,7 +60,7 @@
 
 .page__head__cell {
     flex: 1;
-    min-height: 0.75 * map-get($page-head-logo-size, height);
+    height: map-get($page-head-logo-size, height);
 
     &:nth-of-type(1) {
         @if $page-head-debug {
@@ -68,7 +68,6 @@
         }
         flex: 2 0 100%;
         justify-content: center;
-        min-height: 0.5 * map-get($page-head-logo-size, height);
 
         @media (min-width: nth($page-head-breaks, 1)) {
             flex: 1;
@@ -82,6 +81,13 @@
         }
         @media (min-width: nth($page-head-breaks, 1)) {
             order: 1;
+            padding-left: calc(
+                #{map-get($page-head-control--sidebar-size, width)} -
+                #{$page-head-indent}
+            );
+        }
+        @media (min-width: nth($page-head-breaks, 2)) {
+            padding-left: 0;
         }
     }
 
@@ -103,17 +109,51 @@
 .page-head__logo {
     @include size(
         map-get($page-head-logo-size, width),
-        0.6 * map-get($page-head-logo-size, height)
+        map-get($page-head-logo-size, height)
     );
 
-    background: url("../images/logo_datasapiens--white.svg") 50% 100% / 80% auto no-repeat;
+    background: url("../images/logo_datasapiens--white.svg") 50% 50% / 80% auto no-repeat;
     @if $page-head-debug {
         background-color: lightgreen;
     }
 
     @media (min-width: nth($page-head-breaks, 1)) {
-        background-position-y: 45%;
         height: map-get($page-head-logo-size, height);
+    }
+}
+
+// Page head control
+// =============================================================================
+
+%page-head__control {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.page-head__control {
+    @extend %page-head__control;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Page head control, sidebar toggle.
+ */
+
+.page-head__control {
+    &.\--sidebar {
+        @include size(
+            map-get($page-head-control--sidebar-size, width),
+            map-get($page-head-control--sidebar-size, height)
+        );
+
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: $page-head-index + 2;
     }
 }
 

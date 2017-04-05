@@ -8,10 +8,10 @@
 // =============================================================================
 
 // Set page indent.
-$page-indent: 20px;
+$page-indent: 20px !default;
 
 // Set page size.
 $page-size: (
     max: 1600px,
     min: 320px,
-);
+) !default;

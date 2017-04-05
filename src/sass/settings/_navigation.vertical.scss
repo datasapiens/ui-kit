@@ -8,7 +8,10 @@
 // =============================================================================
 
 // Set navigation background.
-$nav-vertical-background: #eee !default;
+$nav-vertical-background: #333 !default;
+
+// Set navigation color.
+$nav-vertical-color: #aaa !default;
 
 // Set navigation depth.
 $nav-vertical-depth: 3 !default;
@@ -18,6 +21,22 @@ $nav-vertical-line-height-ratio: 1.4 !default;
 
 // Set navigation size.
 $nav-vertical-size: 250px !default;
+
+/**
+ * Navigation header.
+ */
+
+// Set navigation header border color.
+$nav-vertical-header-border-color: darken(#666, 10%) !default;
+
+// Set navigation header border size.
+$nav-vertical-header-border-size: 2px !default;
+
+// Set navigation header indent.
+$nav-vertical-header-indent: (
+    horizontal: 20px,
+    vertical: 10px,
+) !default;
 
 /**
  * Navigation title.
@@ -44,7 +63,7 @@ $nav-vertical-item-background: (
 
 
 // Set navigation item border color.
-$nav-vertical-item-border-color: darken(#eee, 10%) !default;
+$nav-vertical-item-border-color: darken(#666, 10%) !default;
 
 // Set navigation item border size.
 $nav-vertical-item-border-size: 1px !default;
@@ -55,7 +74,7 @@ $nav-vertical-item-color: (
     disable:    #666,     // disabled
     focus:      white,    // focused
     hover:      white,    // hovered
-    initial:    #666,
+    initial:    #aaa,
 ) !default;
 
 // Set navigation item indent.

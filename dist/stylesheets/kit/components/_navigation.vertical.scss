@@ -11,6 +11,7 @@
     @include acceleration;
 
     background-color: $nav-vertical-background;
+    color: $nav-vertical-color;
     line-height: $nav-vertical-line-height-ratio;
     width: $nav-vertical-size;
     position: relative;
@@ -27,36 +28,6 @@
  */
 
 /**
- * Navigation, levels.
- */
-
-.nav-vertical {
-    @for $i from 1 through $nav-vertical-depth {
-        &.\--level-#{$i} {
-            background-color: darken(
-                $nav-vertical-background,
-                $i * 10%
-            );
-
-            /**
-             * 1. We need to increase specifity to override
-             *  sub-levels with icons.
-             */
-
-            @at-root {
-                // Navigation header and item region.
-                .nav-vertical:not(.has-icons)[class] & {        /* 1 */
-                    .nav-vertical__head,
-                    .nav-vertical__item__region {
-                        padding-left: $i * map-get($nav-vertical-item-indent, horizontal);
-                    }
-                }
-            }
-        }
-    }
-}
-
-/**
  * Navigation, primary.
  */
 
@@ -71,7 +42,7 @@
         > ul > .nav-vertical__item {
             @for $i from 1 through $nav-vertical--primary-item-count {
                 &:nth-of-type(#{$i}) > .nav-vertical__item__region {
-                    top: ($i - 1) * map-get($nav-vertical--primary-item-size, height);
+                    top: ($i) * map-get($nav-vertical--primary-item-size, height);
                 }
             }
         }
@@ -163,31 +134,6 @@
         .nav-vertical__item__icon {
             left: map-get($nav-vertical-item-indent, horizontal);
         }
-
-        /**
-         * Navigation levels.
-         */
-
-        @for $i from 1 through $nav-vertical-depth {
-            &.\--level-#{$i} {
-
-                // Navigation levels, header and region.
-                .nav-vertical__head,
-                .nav-vertical__item__region {
-                    padding-left: calc(
-                        #{$i * map-get($nav-vertical-item-indent, horizontal)} +
-                        5px +
-                        #{$nav-vertical-item-icon-size}
-
-                    );
-                }
-
-                // Navigation levels, icon.
-                .nav-vertical__item__icon {
-                    left: #{$i * map-get($nav-vertical-item-indent, horizontal)};
-                }
-            }
-        }
     }
 }
 
@@ -218,31 +164,6 @@
 //         .nav-vertical__item__icon {
 //             right: map-get($nav-vertical-item-indent, horizontal);
 //         }
-
-//         /**
-//          * Navigation levels.
-//          */
-
-//         @for $i from 1 through $nav-vertical-depth {
-//             &.\--level-#{$i} {
-
-//                 // Navigation levels, header and region.
-//                 .nav-vertical__head,
-//                 .nav-vertical__item__region {
-//                     padding-right: calc(
-//                         #{$i * map-get($nav-vertical-item-indent, horizontal)} +
-//                         5px +
-//                         #{$nav-vertical-item-icon-size}
-
-//                     );
-//                 }
-
-//                 // Navigation levels, icon.
-//                 .nav-vertical__item__icon {
-//                     right: #{$i * map-get($nav-vertical-item-indent, horizontal)};
-//                 }
-//             }
-//         }
 //     }
 // }
 
@@ -254,10 +175,28 @@
 // =============================================================================
 
 .nav-vertical__head {
-    padding: map-get($nav-vertical-item-indent, vertical)
-        map-get($nav-vertical-item-indent, horizontal)
-        0
-        map-get($nav-vertical-item-indent, horizontal);
+    margin-bottom: map-get($nav-vertical-header-indent, vertical);
+    padding: 3 * map-get($nav-vertical-header-indent, vertical)
+        map-get($nav-vertical-header-indent, horizontal)
+        0.25 * map-get($nav-vertical-header-indent, vertical)
+        map-get($nav-vertical-header-indent, horizontal);
+    position: relative;
+
+    &::after {
+        @include stretch(
+            auto,
+            map-get($nav-vertical-header-indent, horizontal),
+            0,
+            map-get($nav-vertical-header-indent, horizontal)
+        );
+        border-bottom:
+            $nav-vertical-header-border-size
+            solid
+            $nav-vertical-header-border-color;
+        content: "";
+        display: block;
+
+    }
 }
 
 // Navigation title
@@ -266,6 +205,7 @@
 .nav-vertical__title {
     @include text-truncate;
 
+    color: inherit;
     display: inline-block;
     font: {
         weight: $nav-vertical-title-font-weight;
@@ -282,6 +222,25 @@
 .nav-vertical__item {
     color: map-get($nav-vertical-item-color, initial);
     margin: 0;
+
+    & + & {
+        > .nav-vertical__item__region {
+            &::after {
+                @include stretch(
+                    -1px,
+                    map-get($nav-vertical-item-indent, horizontal),
+                    auto,
+                    map-get($nav-vertical-item-indent, horizontal)
+                );
+                border: {
+                    bottom: $nav-vertical-item-border-size
+                        solid
+                        $nav-vertical-item-border-color;
+                }
+                content: "";
+            }
+        }
+    }
 }
 
 /**
@@ -295,7 +254,7 @@
 .nav-vertical__item {
     &.is-active:not(.is-disabled) {
         > .nav-vertical__item__region {
-            @extend .nav-vertical__item__region.is-active !optional;
+            @extend .nav-vertical__item__region.is-active;
         }
 
         .nav-vertical {
@@ -311,7 +270,7 @@
 .nav-vertical__item {
     &.is-disabled {
         > .nav-vertical__item__region {
-            @extend .nav-vertical__item__region.is-disabled !optional;
+            @extend .nav-vertical__item__region.is-disabled;
         }
 
         .nav-vertical {
@@ -326,7 +285,7 @@
 
 // .nav-vertical__item {
 //     &:hover {
-//         @extend .nav-vertical__item.is-active !optional;
+//         @extend .nav-vertical__item.is-active;
 //     }
 // }
 
@@ -345,19 +304,6 @@
     text-decoration: none;
     transition: background-color 0.2s,
         color 0.2s;
-
-    &::after {
-        border: {
-            bottom: $nav-vertical-item-border-size
-                solid
-                $nav-vertical-item-border-color;
-        }
-        bottom: 0;
-        content: "";
-        left: 0;
-        position: absolute;
-        right: 0;
-    }
 }
 
 /**
@@ -370,7 +316,7 @@
 
 .nav-vertical__item__region {
     &.is-active {
-        @extend .nav-vertical__item__region:hover !optional;
+        @extend .nav-vertical__item__region:hover;
     }
 }
 
@@ -398,6 +344,7 @@
             .nav-vertical__item:not(.is-disabled) > & {
                 background-color: map-get($nav-vertical-item-background, hover);
                 color: map-get($nav-vertical-item-color, hover);
+                z-index: 1;
             }
 
             .nav-vertical.\--primary > ul > .nav-vertical__item:not(.is-disabled) > & {
