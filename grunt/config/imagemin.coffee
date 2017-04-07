@@ -25,3 +25,15 @@ module.exports = (grunt) ->
                 dest: '<%= path.dist %>/images'
             }
         ]
+
+    icon:
+        files: [
+            {
+                expand: true
+                flatten: true
+                src: [
+                    '<%= path.source %>/svg/icons/*.svg'
+                ]
+                dest: '<%= path.temp %>/svg/icons'
+            }
+        ]

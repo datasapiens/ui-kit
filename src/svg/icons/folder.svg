@@ -1,14 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="512px" height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<g>
-	<path d="M430.1,192H81.9c-17.7,0-18.6,9.2-17.6,20.5l13,183c0.9,11.2,3.5,20.5,21.1,20.5h316.2c18,0,20.1-9.2,21.1-20.5l12.1-185.3
-		C448.7,199,447.8,192,430.1,192z"/>
-	<g>
-		<path d="M426.2,143.3c-0.5-12.4-4.5-15.3-15.1-15.3c0,0-121.4,0-143.2,0c-21.8,0-24.4,0.3-40.9-17.4C213.3,95.8,218.7,96,190.4,96
-			c-22.6,0-75.3,0-75.3,0c-17.4,0-23.6-1.5-25.2,16.6c-1.5,16.7-5,57.2-5.5,63.4h343.4L426.2,143.3z"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g id="Layer_1">
+</g>
+<g id="Layer_2">
+	<g id="Layer_3">
 	</g>
+	<g id="Layer_4">
+	</g>
+	<g id="drawer-2">
+	</g>
+	<g id="file-pen">
+	</g>
+	<g id="file-drawer-2">
+	</g>
+	<g id="move">
+	</g>
+	<g id="papper-hold">
+	</g>
+	<g id="papper">
+	</g>
+	<g id="file-label">
+	</g>
+	<g id="file-drawer-1">
+	</g>
+	<g id="file-drawer">
+	</g>
+	<g id="disorder-list">
+	</g>
+	<g id="image-list">
+	</g>
+	<g id="bookholder-2">
+	</g>
+	<g id="bookholder">
+	</g>
+	<g id="success-file">
+	</g>
+	<g id="ask-file">
+	</g>
+	<g id="notify">
+	</g>
+	<g id="news">
+	</g>
+	<g id="board-edit">
+	</g>
+	<g id="board-unblock">
+	</g>
+	<g id="board-block">
+	</g>
+	<g id="board-close">
+	</g>
+	<g id="board-check">
+	</g>
+	<g id="board-minus">
+	</g>
+	<g id="board-add">
+	</g>
+	<g id="board-pen">
+	</g>
+	<g id="board-write">
+	</g>
+	<g id="board">
+	</g>
+	<g id="number-file">
+	</g>
+	<g id="list-file">
+	</g>
+	<g id="upload">
+	</g>
+	<g id="download">
+	</g>
+	<g id="png_1_">
+	</g>
+	<g id="png">
+	</g>
+	<g id="jpg">
+	</g>
+	<g id="doc">
+	</g>
+	<g id="xls">
+	</g>
+	<g id="adobe_acrobat">
+	</g>
+	<g id="after-effects">
+	</g>
+	<g id="illustrator">
+	</g>
+	<g id="photoshop">
+	</g>
+	<g id="word-file">
+	</g>
+	<g id="text-file">
+	</g>
+	<g id="letter">
+	</g>
+	<g id="file-folder">
+	</g>
+	<g id="files-3">
+	</g>
+	<g id="two-files-1">
+	</g>
+	<g id="two-files">
+	</g>
+	<g id="file-favorite">
+	</g>
+	<g id="file-block">
+	</g>
+	<g id="file-notification">
+	</g>
+	<g id="file-clude">
+	</g>
+	<g id="files-settings">
+	</g>
+	<g id="fileedit">
+	</g>
+	<g id="file-lock">
+	</g>
+	<g id="file-trash">
+	</g>
+	<g id="file-star">
+	</g>
+	<g id="file_locak">
+	</g>
+	<g id="file_reload">
+	</g>
+	<g id="file-check">
+	</g>
+	<g id="file_close">
+	</g>
+	<g id="file-remove">
+	</g>
+	<g id="file-add">
+	</g>
+	<g id="file-wide">
+	</g>
+	<g id="file-rotate">
+	</g>
+	<g id="file-transfer">
+	</g>
+	<g id="file-hold">
+	</g>
+	<g id="file-zip-1">
+	</g>
+	<g id="file-music">
+	</g>
+	<g id="file-code">
+	</g>
+	<g id="file-play">
+	</g>
+	<g id="file-inage">
+	</g>
+	<g id="file-chart">
+	</g>
+	<g id="file-graph">
+	</g>
+	<g id="file-1">
+	</g>
+	<g id="files">
+	</g>
+	<g id="file-2">
+	</g>
+	<g id="file">
+	</g>
+	<g id="folder-flat">
+	</g>
+	<g id="folder-notify">
+	</g>
+	<g id="folder-cloude">
+	</g>
+	<g id="folder-settings">
+	</g>
+	<g id="folder-edit">
+	</g>
+	<g id="folder-unloack">
+	</g>
+	<g id="folder-lock">
+	</g>
+	<g id="folder-star">
+	</g>
+	<g id="folder-search">
+	</g>
+	<g id="folder-trash">
+	</g>
+	<g id="folder-block">
+	</g>
+	<g id="folder-favorite">
+	</g>
+	<g id="folder-loading">
+	</g>
+	<g id="folder-refresh">
+	</g>
+	<g id="folder-check">
+	</g>
+	<g id="folder-close">
+	</g>
+	<g id="folder-remove">
+	</g>
+	<g id="folder-ad">
+	</g>
+	<g id="folder">
+		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M44,16v-6H23l-4-6H2v39
+			c0,1.1045685,0.8954306,2,2,2h0.5219531c1.4384027,0,2.6743808-1.0209389,2.9460196-2.4334564L12,19h34l-5.4633636,23.6745796
+			C40.2225151,44.0357704,39.0104294,45,37.6134605,45H4"/>
+		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M8,45"/>
+	</g>
+</g>
+<g id="folder-zip">
+</g>
+<g id="bookmark">
+</g>
+<g id="bookmark-file">
+</g>
+<g id="drawer">
 </g>
 </svg>

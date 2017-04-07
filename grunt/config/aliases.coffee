@@ -21,6 +21,7 @@ module.exports = (grunt) ->
     ]
 
     fonts: [
+        'imagemin:icon'
         'webfont'
     ]
 
@@ -30,7 +31,7 @@ module.exports = (grunt) ->
     ]
 
     images: [
-        'imagemin'
+        'imagemin:dist'
         'cwebp'
     ]
 

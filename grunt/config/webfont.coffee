@@ -18,7 +18,7 @@ module.exports = (grunt) ->
             font: 'icon'
             fontFamilyName: 'UI Kit Icons'
             fontFilename: 'kit-icons'
-            # fontHeight: 24
+            # fontHeight: 48
             hashes: false
             # ligatures: true
             # optimize: false
@@ -32,6 +32,6 @@ module.exports = (grunt) ->
                 'woff'
                 'woff2',
             ]
-        src: '<%= path.source %>/svg/icons/*.svg'
+        src: '<%= path.temp %>/svg/icons/*.svg'
         dest: '<%= path.source %>/woff'
         destCss: '<%= path.source %>/sass/settings'
