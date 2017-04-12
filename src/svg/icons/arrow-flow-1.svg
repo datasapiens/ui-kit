@@ -1,126 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
-<g id="Layer_1">
-</g>
-<g id="node-v-rotate">
-</g>
-<g id="node-rotate">
-</g>
-<g id="arw-node-l">
-</g>
-<g id="arw-node-r">
-</g>
-<g id="node-right">
-</g>
-<g id="node-left">
-</g>
-<g id="arw-bottom">
-</g>
-<g id="arw-top">
-</g>
-<g id="arw-right">
-</g>
-<g id="arw-left">
-</g>
-<g id="sr-arw-half">
-</g>
-<g id="sl-arw-half">
-</g>
-<g id="s-arw-h-hide">
-</g>
-<g id="s-arw-v">
-</g>
-<g id="s-arw-h">
-	<g>
-		<g>
-			
-				<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="6" y1="9" x2="6.5" y2="9"/>
-			
-				<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0005664,4.0022655" d="
-				M10.5022583,9H34.5c4.1421509,0,7.5,3.3578491,7.5,7.5S38.6421509,24,34.5,24h-21C9.3578491,24,6,27.3578491,6,31.5
-				S9.3578491,39,13.5,39h25.9988403"/>
-			
-				<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="41.5" y1="39" x2="42" y2="39"/>
-		</g>
-	</g>
-	
-		<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-		11.9040318,15.9040318 5,9 11.9040318,2.0959687 	"/>
-	
-		<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-		35.0959702,32 42,38.9040337 35.0959702,45.8080635 	"/>
-</g>
-<g id="s-arw">
-</g>
-<g id="bend-right">
-</g>
-<g id="bend-left">
-</g>
-<g id="bend-up">
-</g>
-<g id="bend-down">
-</g>
-<g id="push-left">
-</g>
-<g id="push-right">
-</g>
-<g id="weight-dowm">
-</g>
-<g id="weight-up">
-</g>
-<g id="line-arw-rd">
-</g>
-<g id="line-arw-lt">
-</g>
-<g id="line-arw-rt">
-</g>
-<g id="line-arw-ld">
-</g>
-<g id="clock-direction">
-</g>
-<g id="anti-direction">
-</g>
-<g id="up-arw">
-</g>
-<g id="dropdown">
-</g>
-<g id="left-move">
-</g>
-<g id="right-move">
-</g>
-<g id="right-move-2">
-</g>
-<g id="anti-clockwise">
-</g>
-<g id="clockwise">
-</g>
-<g id="download">
-</g>
-<g id="upload">
-</g>
-<g id="arw-rds-down">
-</g>
-<g id="arw-rds-top">
-</g>
-<g id="arw-rd-left-down">
-</g>
-<g id="arw-rd-right-down">
-</g>
-<g id="arw-rd-left-top">
-</g>
-<g id="arw-rd-right-top">
-</g>
-<g id="arw-rd-left">
-</g>
-<g id="arw-rd-right">
-</g>
-<g id="arw-rd-down">
-</g>
-<g id="arw-rd-top">
-</g>
-<g id="left-move-2">
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>s-arw-h</title>
+  <g id="left-move-2">
+    <g>
+      <path d="M21.417,38a1,1,0,0,0,0,2h1a1,1,0,1,0,0-2Z"/>
+      <path d="M22.035,23h-1a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Z"/>
+      <path d="M7.2,28.423a1,1,0,0,0,.842-.458,6.234,6.234,0,0,1,.516-.692,1,1,0,1,0-1.518-1.3,8.312,8.312,0,0,0-.68.91,1,1,0,0,0,.84,1.542Z"/>
+      <path d="M21.508,8h-1a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Z"/>
+      <path d="M5.007,31.153C5,31.268,5,31.384,5,31.5q0,.4.037.784a1,1,0,0,0,.994.906c.031,0,.063,0,.095,0a1,1,0,0,0,.9-1.09Q7,31.8,7,31.5c0-.091,0-.181,0-.271a1,1,0,1,0-2-.076Z"/>
+      <path d="M11.846,23.161a8.541,8.541,0,0,0-1.095.294,1,1,0,1,0,.646,1.893,6.475,6.475,0,0,1,.837-.225,1,1,0,0,0-.389-1.962Z"/>
+      <path d="M11.714,37.751a1,1,0,0,0-.551,1.923,8.462,8.462,0,0,0,1.108.238,1.038,1.038,0,0,0,.145.01,1,1,0,0,0,.143-1.99A6.418,6.418,0,0,1,11.714,37.751Z"/>
+      <path d="M16.032,23a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Z"/>
+      <path d="M7.329,37.348a1,1,0,1,0,1.455-1.373,6.549,6.549,0,0,1-.555-.668,1,1,0,0,0-1.621,1.171A8.706,8.706,0,0,0,7.329,37.348Z"/>
+      <path d="M17.414,38h-1a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Z"/>
+      <path d="M10.5,8a1,1,0,0,0,0,2h1a1,1,0,1,0,0-2Z"/>
+      <path d="M16.5,8h-1a1,1,0,1,0,0,2h1a1,1,0,0,0,0-2Z"/>
+      <path d="M36.662,22.632a6.448,6.448,0,0,1-.834.232,1,1,0,0,0,.2,1.979,1.032,1.032,0,0,0,.206-.021,8.613,8.613,0,0,0,1.09-.3,1,1,0,1,0-.666-1.886Z"/>
+      <path d="M41.343,11.458a8.363,8.363,0,0,0-.732-.867,1,1,0,1,0-1.437,1.391,6.383,6.383,0,0,1,.557.659,1,1,0,0,0,1.613-1.183Z"/>
+      <path d="M36.758,8.3a8.424,8.424,0,0,0-1.112-.227,1,1,0,1,0-.267,1.982,6.423,6.423,0,0,1,.846.172A1,1,0,0,0,36.758,8.3Z"/>
+      <path d="M37.426,40a1,1,0,0,0,0-2h-1a1,1,0,0,0,0,2Z"/>
+      <path d="M41.861,14.742a1,1,0,0,0-.895,1.1A6.457,6.457,0,0,1,41,16.5l0,.2a1,1,0,0,0,.962,1.037H42a1,1,0,0,0,1-.963c0-.091,0-.182,0-.273q0-.437-.043-.863A1,1,0,0,0,41.861,14.742Z"/>
+      <path d="M27.038,23h-1a1,1,0,0,0,0,2h1a1,1,0,1,0,0-2Z"/>
+      <path d="M39.479,20.68a1,1,0,1,0,1.531,1.285,8.578,8.578,0,0,0,.669-.912,1,1,0,0,0-1.687-1.074A6.717,6.717,0,0,1,39.479,20.68Z"/>
+      <path d="M32.041,23h-1a1,1,0,1,0,0,2h1a1,1,0,0,0,0-2Z"/>
+      <path d="M31.423,38a1,1,0,1,0,0,2h1a1,1,0,0,0,0-2Z"/>
+      <path d="M26.511,8h-1a1,1,0,0,0,0,2h1a1,1,0,1,0,0-2Z"/>
+      <path d="M26.42,38a1,1,0,0,0,0,2h1a1,1,0,1,0,0-2Z"/>
+      <path d="M31.514,8h-1a1,1,0,0,0,0,2h1a1,1,0,1,0,0-2Z"/>
+      <path d="M11.9,16.9a1,1,0,0,0,.707-1.707L7.156,9.742a.972.972,0,0,0,0-1.484L12.611,2.8A1,1,0,0,0,11.2,1.389l-6.9,6.9a1,1,0,0,0,0,1.414l6.9,6.9A1,1,0,0,0,11.9,16.9Z"/>
+      <path d="M42.707,38.2l-6.9-6.9a1,1,0,0,0-1.414,1.414l6.142,6.141a.943.943,0,0,0-.028.139L34.389,45.1A1,1,0,1,0,35.8,46.515l6.608-6.608A1,1,0,0,0,43,39c0-.017-.009-.031-.01-.048s.01-.032.01-.048A1,1,0,0,0,42.707,38.2Z"/>
+    </g>
+  </g>
 </svg>

@@ -1,116 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
-<g id="Layer_1">
-</g>
-<g id="node-v-rotate">
-</g>
-<g id="node-rotate">
-</g>
-<g id="arw-node-l">
-</g>
-<g id="arw-node-r">
-</g>
-<g id="node-right">
-</g>
-<g id="node-left">
-</g>
-<g id="arw-bottom">
-</g>
-<g id="arw-top">
-</g>
-<g id="arw-right">
-</g>
-<g id="arw-left">
-</g>
-<g id="sr-arw-half">
-</g>
-<g id="sl-arw-half">
-</g>
-<g id="s-arw-h-hide">
-</g>
-<g id="s-arw-v">
-</g>
-<g id="s-arw-h">
-</g>
-<g id="s-arw">
-</g>
-<g id="bend-right">
-</g>
-<g id="bend-left">
-</g>
-<g id="bend-up">
-</g>
-<g id="bend-down">
-</g>
-<g id="push-left">
-</g>
-<g id="push-right">
-</g>
-<g id="weight-dowm">
-</g>
-<g id="weight-up">
-</g>
-<g id="line-arw-rd">
-</g>
-<g id="line-arw-lt">
-</g>
-<g id="line-arw-rt">
-</g>
-<g id="line-arw-ld">
-</g>
-<g id="clock-direction">
-</g>
-<g id="anti-direction">
-	
-		<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="1,4" d="
-		M6.7049742,27.0400238c0,8.8365555,7.1634436,16,16,16"/>
-	<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-		M22.7049751,43.0400238c8.8365555,0,16-7.1634445,16-16s-7.1634445-16-16-16"/>
-	
-		<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-		26.9672184,4.9599771 20.7049751,11.2222214 26.9672184,17.4844666 	"/>
-</g>
-<g id="up-arw">
-</g>
-<g id="dropdown">
-</g>
-<g id="left-move">
-</g>
-<g id="right-move">
-</g>
-<g id="right-move-2">
-</g>
-<g id="anti-clockwise">
-</g>
-<g id="clockwise">
-</g>
-<g id="download">
-</g>
-<g id="upload">
-</g>
-<g id="arw-rds-down">
-</g>
-<g id="arw-rds-top">
-</g>
-<g id="arw-rd-left-down">
-</g>
-<g id="arw-rd-right-down">
-</g>
-<g id="arw-rd-left-top">
-</g>
-<g id="arw-rd-right-top">
-</g>
-<g id="arw-rd-left">
-</g>
-<g id="arw-rd-right">
-</g>
-<g id="arw-rd-down">
-</g>
-<g id="arw-rd-top">
-</g>
-<g id="left-move-2">
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>anti-direction</title>
+  <g id="left-move-2">
+    <g>
+      <path d="M9.566,37.828a1,1,0,1,0,1.544-1.271q-.3-.361-.572-.742a1,1,0,1,0-1.621,1.171Q9.228,37.417,9.566,37.828Z"/>
+      <path d="M13.826,39.13a1,1,0,1,0-1.186,1.611q.428.314.875.6A1,1,0,0,0,14.6,39.661Q14.2,39.408,13.826,39.13Z"/>
+      <path d="M7.733,27.978q-.028-.465-.028-.938a1,1,0,1,0-2,0q0,.534.032,1.059a1,1,0,0,0,1,.939l.062,0A1,1,0,0,0,7.733,27.978Z"/>
+      <path d="M17.969,41.277a1,1,0,1,0-.633,1.9q.5.168,1.021.3a1,1,0,1,0,.508-1.935Q18.411,41.425,17.969,41.277Z"/>
+      <path d="M6.882,33.267a1,1,0,1,0,1.861-.732q-.171-.434-.316-.884a1,1,0,0,0-1.9.615Q6.688,32.773,6.882,33.267Z"/>
+      <path d="M22.705,42.04h-.131a.979.979,0,0,0-1.01.99,1,1,0,0,0,.99,1.01h.151a16.99,16.99,0,0,0,.567-33.971l4.4-4.4A1,1,0,0,0,26.26,4.253L20,10.515a1,1,0,0,0,0,1.414l6.262,6.262a1,1,0,0,0,1.414-1.414l-4.725-4.725a14.995,14.995,0,0,1-.244,29.988Z"/>
+    </g>
+  </g>
 </svg>

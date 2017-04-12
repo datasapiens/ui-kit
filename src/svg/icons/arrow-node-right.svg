@@ -1,116 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
-<g id="Layer_1">
-</g>
-<g id="node-v-rotate">
-</g>
-<g id="node-rotate">
-</g>
-<g id="arw-node-l">
-</g>
-<g id="arw-node-r">
-</g>
-<g id="node-right">
-</g>
-<g id="node-left">
-	
-		<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="1,4" d="
-		M17.9999886,36C11.3725777,36,6,30.6274223,6,24.0000114v-0.0000229C6,17.3725777,11.3725777,12,17.9999886,12h22.5147285"/>
-	
-		<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-		32,3.5147185 40.4852829,12 32,20.485281 	"/>
-	
-		<circle fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="22" cy="36" r="4"/>
-</g>
-<g id="arw-bottom">
-</g>
-<g id="arw-top">
-</g>
-<g id="arw-right">
-</g>
-<g id="arw-left">
-</g>
-<g id="sr-arw-half">
-</g>
-<g id="sl-arw-half">
-</g>
-<g id="s-arw-h-hide">
-</g>
-<g id="s-arw-v">
-</g>
-<g id="s-arw-h">
-</g>
-<g id="s-arw">
-</g>
-<g id="bend-right">
-</g>
-<g id="bend-left">
-</g>
-<g id="bend-up">
-</g>
-<g id="bend-down">
-</g>
-<g id="push-left">
-</g>
-<g id="push-right">
-</g>
-<g id="weight-dowm">
-</g>
-<g id="weight-up">
-</g>
-<g id="line-arw-rd">
-</g>
-<g id="line-arw-lt">
-</g>
-<g id="line-arw-rt">
-</g>
-<g id="line-arw-ld">
-</g>
-<g id="clock-direction">
-</g>
-<g id="anti-direction">
-</g>
-<g id="up-arw">
-</g>
-<g id="dropdown">
-</g>
-<g id="left-move">
-</g>
-<g id="right-move">
-</g>
-<g id="right-move-2">
-</g>
-<g id="anti-clockwise">
-</g>
-<g id="clockwise">
-</g>
-<g id="download">
-</g>
-<g id="upload">
-</g>
-<g id="arw-rds-down">
-</g>
-<g id="arw-rds-top">
-</g>
-<g id="arw-rd-left-down">
-</g>
-<g id="arw-rd-right-down">
-</g>
-<g id="arw-rd-left-top">
-</g>
-<g id="arw-rd-right-top">
-</g>
-<g id="arw-rd-left">
-</g>
-<g id="arw-rd-right">
-</g>
-<g id="arw-rd-down">
-</g>
-<g id="arw-rd-top">
-</g>
-<g id="left-move-2">
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>node-right</title>
+  <g id="left-move-2">
+    <g>
+      <path d="M12.165,14.673a1,1,0,0,0-1.062-1.7q-.461.289-.894.614a1,1,0,1,0,1.2,1.6Q11.776,14.917,12.165,14.673Z"/>
+      <path d="M13.548,34.063q-.42-.186-.823-.406a1,1,0,1,0-.958,1.756q.475.259.971.479a1,1,0,1,0,.81-1.829Z"/>
+      <path d="M9.271,30.694a1,1,0,1,0-1.585,1.22q.33.429.694.83A1,1,0,1,0,9.86,31.4Q9.551,31.059,9.271,30.694Z"/>
+      <path d="M36.288,13a1,1,0,0,0,0-2h-1a1,1,0,0,0,0,2Z"/>
+      <path d="M17.284,11.979a1,1,0,0,0-1.131-.849q-.54.077-1.064.2a1,1,0,0,0,.445,1.95q.444-.1.9-.167A1,1,0,0,0,17.284,11.979Z"/>
+      <path d="M26.288,11h-1a1,1,0,0,0,0,2h1a1,1,0,1,0,0-2Z"/>
+      <path d="M32.288,12a1,1,0,0,0-1-1h-1a1,1,0,0,0,0,2h1A1,1,0,0,0,32.288,12Z"/>
+      <path d="M41.131,11.232,32.707,2.808a1,1,0,0,0-1.414,1.414L39.071,12l-7.778,7.778a1,1,0,1,0,1.414,1.414l8.424-8.424a.961.961,0,0,0,0-1.536Z"/>
+      <path d="M7.56,27.474q-.144-.432-.253-.881a1,1,0,1,0-1.943.472q.128.53.3,1.041a1,1,0,0,0,1.9-.631Z"/>
+      <path d="M21.288,13a1,1,0,1,0,0-2h-1a1,1,0,0,0,0,2Z"/>
+      <path d="M6.054,23.858a1,1,0,0,0,.995-.905c.029-.307.071-.61.124-.909A1,1,0,0,0,5.2,21.693q-.094.529-.146,1.071a1,1,0,0,0,.9,1.09C5.991,23.857,6.023,23.858,6.054,23.858Z"/>
+      <path d="M7.535,19.122a1,1,0,0,0,.872-.509q.226-.4.483-.781a1,1,0,0,0-1.656-1.121q-.3.447-.569.919a1,1,0,0,0,.87,1.491Z"/>
+      <path d="M22,31a5.007,5.007,0,0,0-4.889,3.964h-.027a1,1,0,0,0-.166,1.993c.059,0,.12,0,.179.007A5,5,0,1,0,22,31Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,22,39Z"/>
+    </g>
+  </g>
 </svg>
