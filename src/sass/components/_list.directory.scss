@@ -1,0 +1,182 @@
+/**
+ * Component List/Directory.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {extend}      truncate
+ * @requires {mixin}       stretch
+ * @requires {placeholder} %lst--reset
+ * @requires list
+ */
+
+// =============================================================================
+// Directory list
+// =============================================================================
+
+.lst-directory {
+    line-height: $list-directory-line-height-ratio;
+    margin-bottom: $list-directory-indent;
+
+    ul {
+        @extend %lst--reset;
+
+        margin: 0;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Directory list section
+// =============================================================================
+
+.lst-directory__section {}
+
+/**
+ * States.
+ */
+
+.lst-directory__section {
+    &:hover {
+        .lst-directory__title {
+            color: map-get($list-directory-item-region-color, hover);
+            opacity: 1;
+        }
+    }
+}
+
+// Directory list header
+// =============================================================================
+
+.lst-directory__head {
+    padding: 0 map-get($list-directory-head-indent, horizontal);
+}
+
+// Directory list body
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.lst-directory__body[class] {      /* 1 */
+    column-gap: $list-directory-section-gutter;
+
+    @each $break in $list-directory-breaks {
+        @media (min-width: $break) {
+            column-count: index($list-directory-breaks, $break) + 1;
+        }
+    }
+}
+
+// Directory list title
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.lst-directory__title[class] {      /* 1 */
+    font-weight: 400;
+    margin-bottom: 5px;
+    opacity: 0.5;
+    transition: color 0.2s, opacity 0.4s;
+}
+
+// Directory list item
+// =============================================================================
+
+.lst-directory__item {
+    break-inside: avoid;
+    margin: 0;
+    position: relative;
+    top: (-1) * $list-directory-item-spacer-size;
+
+    & + & {
+        &::after {
+            @extend %lst-directory__item__spacer;
+            @include stretch(0, 0, auto, 0);
+
+            content: "";
+        }
+    }
+}
+
+// Directory list item spacer
+// =============================================================================
+
+%lst-directory__item__spacer {
+    border: 0 dotted transparent;
+    border-bottom: {
+        color: $list-directory-item-spacer-color;
+        width: $list-directory-item-spacer-size;
+    }
+    display: block;
+}
+
+// Directory list item region
+// =============================================================================
+
+.lst-directory__item__region {
+    @extend %truncate;
+
+    color: inherit;
+    cursor: pointer;
+    display: block;
+    padding: map-get($list-directory-item-region-indent, vertical)
+        map-get($list-directory-item-region-indent, horizontal);
+    position: relative;
+    text-decoration: none;
+    transition: color 0.2s;
+    z-index: 1;
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Directory list item region, active.
+ */
+
+// .lst-directory__item__region {
+//     &.is-active {
+//         @extend .menu__item__region:hover;
+//     }
+// }
+
+/**
+ * Directory list item region, hovered.
+ */
+
+.lst-directory__item__region {
+    &:hover {
+        color: map-get($list-directory-item-region-color, hover);
+    }
+}

@@ -1,0 +1,60 @@
+/**
+ * Component List/Directory settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Directory list settings
+// =============================================================================
+
+// Set directory list breakpoints.
+$list-directory-breaks: (
+    420px,
+    600px,
+    840px,
+    1000px,
+) !default;
+
+// Set directory list indent.
+$list-directory-indent: 20px !default;
+
+// Set directory list line height ratio.
+$list-directory-line-height-ratio: 1.25 !default;
+
+// Set directory list section gutter (according to `$grid-gutter`).
+$list-directory-section-gutter: 20px !default;
+
+/**
+ * Directory list section header (according to `$list-directory-item-region-indent`).
+ */
+
+$list-directory-head-indent: (
+    horizontal: 0,
+    // vertical: 0,
+) !default;
+
+/**
+ * Directory list item spacer.
+ */
+
+// Set directory list item spacer color.
+$list-directory-item-spacer-color: lighten($gray--silverchalice, 20%) !default;
+
+// Set directory list item spacer size.
+$list-directory-item-spacer-size: 1px !default;
+
+/**
+ * Directory list item region.
+ */
+
+$list-directory-item-region-color: (
+    active:     $blue--dodger,   // pressed
+    hover:      $blue--dodger,   // hovered
+    // initial:    transparent,
+) !default;
+
+// Set directory list item region indent.
+$list-directory-item-region-indent: (
+    horizontal: 0,
+    vertical: 6px,
+) !default;
