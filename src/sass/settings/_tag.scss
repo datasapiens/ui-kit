@@ -33,18 +33,11 @@ $tag-indent: (
 // Set tag line height ratio.
 $tag-line-height-ratio: 1 !default;
 
-// Set tag size.
-$tag-size: 15em !default;
+// Set tag length.
+$tag-length: 15em !default;
 
 // Set tag themes map.
 $tag-theme: $color-set--primary !default;
-
-/**
- * Tag control.
- */
-
-// Set tag control size.
-$tag-control-size: 10px !default;
 
 /**
  * Tag, primary

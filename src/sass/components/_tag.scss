@@ -1,6 +1,14 @@
 /**
  * Component Tag.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       round
+ * @requires {mixin}       text-truncate
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--close-circled
+ * @requires {placeholder} %ico--editor-pencil-2
+ * @requires ico
  */
 
 // =============================================================================
@@ -8,18 +16,19 @@
 // =============================================================================
 
 .tag {
-    @extend .tag.--default !optional;
-    @extend .tag.--medium !optional;
+    @extend .tag.--default;
+    @extend .tag.--medium;
 
+    align-items: center;
     border: {
         radius: $tag-border-radius;
         style: solid;
         width: $tag-border-size;
     }
-    cursor: initial;
+    cursor: default;
     display: inline-flex;
     line-height: $tag-line-height-ratio;
-    max-width: $tag-size;
+    max-width: $tag-length;
     position: relative;
     text-decoration: none;
 }
@@ -50,13 +59,9 @@
         @include round($tag--primary-border-radius);
 
         cursor: pointer;
-
-        &,
-        .tag__control {
-            transition: background-color 0.2s,
-                border-color 0.2s,
-                color 0.2s;
-        }
+        transition: background-color 0.2s,
+            border-color 0.2s,
+            color 0.2s;
     }
 }
 
@@ -67,19 +72,18 @@
 .tag {
     @each $modifier in (small, medium, large) {
         &.--#{$modifier} {
-            $indent: nth(map-get($tag-indent, $modifier), 1);
-
             font-size: px-to-rem(map-get($tag-font-size, $modifier));
             padding: map-get($tag-indent, $modifier);
 
-            // tag control
-            &.has-control {
-                padding-right: $indent +
-                    5px +
-                    $tag-control-size;
-            }
             .tag__control {
-                right: $indent;
+                $indent: nth(map-get($tag-indent, $modifier), 2);
+
+                &:first-of-type {
+                    margin-left: (0.5) * $indent;
+                }
+                &:last-child {
+                    margin-right: (-0.5) * $indent;
+                }
             }
         }
     }
@@ -95,11 +99,6 @@
             background-color: map-get($theme, secondary);
             border-color: darken(map-get($theme, secondary), 5%);
             color: darken(map-get($theme, secondary), 50%);
-
-            // tag control
-            .tag__control {
-                border-color: darken(map-get($theme, secondary), 50%);
-            }
         }
     }
 }
@@ -121,11 +120,6 @@
                     background-color: darken(map-get($theme, secondary), 20%);
                     border-color: darken(map-get($theme, secondary), 25%);
                     color: darken(map-get($theme, secondary), 70%);
-
-                    // tag control
-                    .tag__control {
-                        border-color: darken(map-get($theme, secondary), 70%);
-                    }
                 }
             }
         }
@@ -137,15 +131,16 @@
  * 1. We need to increase specifity.
  */
 
-.tag {
+.tag[class][class] { /* 1 */
     &:disabled,
     &.is-disabled {
-        &.tag.tag {                      /* 1 */
-            cursor: not-allowed;
+        &.--primary {
+            opacity: 0.5;
+        }
 
-            &.--primary {
-                opacity: 0.5;
-            }
+        &,
+        .tag__control {
+            cursor: not-allowed;
         }
     }
 }
@@ -163,13 +158,12 @@
                     background-color: darken(map-get($theme, secondary), 10%);
                     border-color: darken(map-get($theme, secondary), 15%);
                     color: darken(map-get($theme, secondary), 60%);
-
-                    // tag control
-                    .tag__control {
-                        border-color: darken(map-get($theme, secondary), 60%);
-                    }
                 }
             }
+        }
+
+        .tag__control {
+            opacity: 0.5;
         }
     }
 }
@@ -205,15 +199,70 @@
 // Tag control
 // =============================================================================
 
-.tag__control {
-    @extend %ctr--core-y !optional;
-    // @extend .ico--after !optional;
-    // @extend .ico--close-outline !optional;
-    @include round;
-    @include size($tag-control-size);
+/**
+ * 1. We need to increase specifity.
+ */
 
-    border: 1px solid currentColor;
+.tag__control {
+    align-items: center;
     cursor: pointer;
-    display: inline-block;
-    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    text-decoration: none;
+    transition: opacity 0.2s;
+
+    &::before {
+        @extend %ico !optional;
+    }
+
+    &[class] {          /* 1 */
+        color: inherit;
+    }
+
+    & + & {
+        margin-left: 2px;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Tag control, edit.
+ */
+
+.tag__control {
+    &.--edit {
+        &::before {
+            @extend %ico--editor-pencil-2 !optional;
+        }
+    }
+}
+
+/**
+ * Tag control, delete.
+ */
+
+.tag__control {
+    &.--delete {
+        &::before {
+            @extend %ico--close-circled !optional;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Tag control, hovered.
+ * 1. We need to increase specifity.
+ */
+
+.tag__control[class][class][class] { /* 1 */
+    &:hover {
+        opacity: 1;
+    }
 }
