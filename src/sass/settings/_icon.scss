@@ -8,13 +8,13 @@
 // =============================================================================
 
 // Set icon font family.
-$icon-font-family: "UI Kit Icons";
+$icon-font-family: "UI Kit Icons" !default;
 
 // Set icon font filename.
-$icon-font-filename: "kit-icons";
+$icon-font-filename: "kit-icons" !default;
 
 // Set icon indent.
-$icon-indent: 0.25em;
+$icon-indent: 0.25em !default;
 
 // Set icon size (Major Third - 1.12).
 // @link https://goo.gl/EeDCq2
@@ -22,7 +22,7 @@ $icon-size: (
     large: 1.44em,
     medium: 1.2em,
     small: 1em,
-);
+) !default;
 
 // Set icon label line height ratio.
-$icon-label-line-height-ratio: 1.25;
+$icon-label-line-height-ratio: 1.25 !default;
