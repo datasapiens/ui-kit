@@ -15,7 +15,7 @@ module.exports = (grunt) ->
                 }
             ]
             destHtml: '<%= path.temp %>'
-            font: 'icon'
+            font: 'icon.glyphs'
             fontFamilyName: 'UI Kit Icons'
             fontFilename: 'kit-icons'
             # fontHeight: 48

@@ -1,19 +1,23 @@
 /**
  * Component Icon.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {mixin}    font-face
+ * @requires {variable} $icon-glyphs
  */
 
 // =============================================================================
 // Icon
 // =============================================================================
 
-@include font-face($family: "UI Kit Icons", $file: "kit-icons");
+@include font-face($family: $icon-font-family, $file: $icon-font-filename);
 
 %ico {
     display: inline-block;
     font: {
-        family: "UI Kit Icons";
+        family: $icon-font-family;
         style: normal;
+        variant: normal;
         weight: normal;
     }
     line-height: 1;
@@ -23,13 +27,17 @@
         transform: none;
     }
     white-space: normal;
-    width: $icon-size;
 
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
 
 [class*="ico"] {
+    @extend %ico--horizontal;
+    @extend .ico.\--medium;
+
+    display: inline-flex;
+
     &::before {
         @extend %ico;
     }
@@ -38,6 +46,99 @@
 /**
  * Modifiers.
  */
+
+/**
+ * Icon, horizontal.
+ */
+
+%ico--horizontal {
+    align-items: baseline;
+}
+
+/**
+ * Icon, vertical.
+ */
+
+%ico--vertical {
+    align-items: center;
+
+    .ico__label {
+        line-height: $icon-label-line-height-ratio;
+        text-align: center;
+    }
+}
+
+/**
+ * Icon, above.
+ */
+
+.ico {
+    &.\--above {
+        @extend %ico--vertical;
+
+        flex-direction: column;
+
+        &::before {
+            margin-bottom: $icon-indent;
+        }
+    }
+}
+
+/**
+ * Icon, after.
+ */
+
+.ico {
+    &.\--after {
+        flex-direction: row-reverse;
+
+        &::before {
+            margin-left: $icon-indent;
+        }
+    }
+}
+
+/**
+ * Icon, before.
+ */
+
+.ico {
+    &.\--before {
+        &::before {
+            margin-right: $icon-indent;
+        }
+    }
+}
+
+/**
+ * Icon, below.
+ */
+
+.ico {
+    &.\--below {
+        @extend %ico--vertical;
+
+        flex-direction: column-reverse;
+
+        &::before {
+            margin-top: $icon-indent;
+        }
+    }
+}
+
+/**
+ * Icon, size.
+ */
+
+.ico {
+    @each $modifier, $size in $icon-size {
+        &.\--#{$modifier} {
+            &::before {
+                font-size: $size;
+            }
+        }
+    }
+}
 
 /**
  * Icon, glyphs.
@@ -56,55 +157,6 @@
             &::before {
                 @extend %#{$extender};
             }
-            &.\--after {
-                &::after {
-                    @extend %#{$extender};
-                }
-            }
-        }
-    }
-}
-
-/**
- * Icon, before.
- */
-
-.ico {
-    &.\--before {
-        &::before {
-            @extend %ico;
-            margin-right: $icon-indent;
-        }
-    }
-}
-
-/**
- * Icon, after.
- */
-
-.ico {
-    &.\--after {
-        &::after {
-            @extend %ico;
-            margin-left: $icon-indent;
-        }
-        &::before {
-            content: none;
-        }
-    }
-}
-
-/**
- * Icon, large.
- */
-
-.ico {
-    &.\--large {
-        &::after,
-        &::before {
-            bottom: (-0.225) * (map-get($icon-font-size, large) - 1em);
-            font-size: map-get($icon-font-size, large);
-            position: relative;
         }
     }
 }
@@ -129,7 +181,7 @@
 // Subcomponents
 // =============================================================================
 
-// Subcomponent
+// Icon label
 // =============================================================================
 
-// .component__subcomponent
+.ico__label {}

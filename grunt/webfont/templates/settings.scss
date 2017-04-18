@@ -9,17 +9,6 @@
 // Icon settings
 // =============================================================================
 
-// Set icon font size.
-$icon-font-size: (
-    large: 1.35em,
-);
-
-// Set icon size.
-$icon-size: 1em;
-
-// Set icon indent.
-$icon-indent: 0.25 * $icon-size;
-
 // Set icon glyphs list.
 $icon-glyphs: <% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
     "\<%= codepoints[glyphIdx] %>" <%= glyphs[glyphIdx] %><%= ',' %><% } %>
