@@ -32,6 +32,9 @@ $base-indent: 30px;
 // Set base line height.
 $base-line-height: 23px;
 
+// Set base line height ratio.
+$base-line-height-ratio: $base-line-height / $base-font-size;
+
 // Set base rhythm unit.
 $base-rhythm-unit: 0.5;
 
