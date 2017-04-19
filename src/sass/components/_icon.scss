@@ -32,7 +32,7 @@
     -webkit-font-smoothing: antialiased;
 }
 
-[class*="ico"] {
+[class~="ico"] {
     @extend %ico--horizontal;
     @extend .ico.--medium;
 
