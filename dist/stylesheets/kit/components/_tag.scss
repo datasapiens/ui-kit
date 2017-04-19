@@ -68,22 +68,29 @@
 
 /**
  * Tag, size.
+ * 1. Negative margin workaround to prevent vertical crop of the tag content
+ *  and enable text truncate at the same time.
  */
 
 .tag {
     @each $modifier in (small, medium, large) {
         &.\--#{$modifier} {
+            $indent: map-get($tag-indent, $modifier);
+
             font-size: px-to-rem(map-get($tag-font-size, $modifier));
-            padding: map-get($tag-indent, $modifier);
+            padding: $indent;
+
+            .tag__content {
+                margin: (-1) * nth($indent, 1) 0; /* 1 */
+                padding: nth($indent, 1) 0;       /* 1 */
+            }
 
             .tag__control {
-                $indent: nth(map-get($tag-indent, $modifier), 2);
-
                 &:first-of-type {
-                    margin-left: (0.5) * $indent;
+                    margin-left: (0.5) * nth($indent, 2);
                 }
                 &:last-child {
-                    margin-right: (-0.5) * $indent;
+                    margin-right: (-0.5) * nth($indent, 2);
                 }
             }
         }
