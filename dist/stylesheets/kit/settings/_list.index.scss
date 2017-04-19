@@ -1,0 +1,21 @@
+/**
+ * Component List/Index settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Index list settings
+// =============================================================================
+
+// Set index list breakpoints.
+$list-index-breaks: (
+    400px,
+    1200px,
+    1800px,
+) !default;
+
+// Set index list gutter (according to `$grid-gutter`).
+$list-index-gutter: 20px !default;
+
+// Set index list title color.
+$list-index-title-color: $blue--dodger !default;
