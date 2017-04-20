@@ -26,15 +26,6 @@
 .u-table-group    { display: table-row-group; }
 .u-table-cell     { display: table-cell; }
 
-[class*="-flex"] {
-    &.\--grow {
-        flex-grow: 1;
-    }
-    &.\--shrink {
-        flex-shrink: 1;
-    }
-}
-
 .u-none {
     &.\--printer {
         @media print {
@@ -45,6 +36,50 @@
         display: none;
     }
 }
+
+/**
+ * Flexbox related.
+ */
+
+// [class*="-flex"] {
+    &.\--grow {
+        flex-grow: 1;
+    }
+    &.\--shrink {
+        flex-shrink: 1;
+    }
+    &.\--align {
+        &-baseline {
+            align-items: baseline;
+        }
+        &-center {
+            align-items: center;
+        }
+        &-end {
+            align-items: flex-end;
+        }
+        &-start {
+            align-items: flex-start;
+        }
+    }
+    &.\--justify {
+        &-around {
+            justify-content: space-around;
+        }
+        &-between {
+            justify-content: space-between;
+        }
+        &-center {
+            justify-content: center;
+        }
+        &-end {
+            justify-content: flex-end;
+        }
+        &-start {
+            justify-content: flex-start;
+        }
+    }
+// }
 
 /**
  * Floats and clear(s).
