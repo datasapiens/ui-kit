@@ -72,7 +72,8 @@
                 size: px-to-rem(map-get($button-font-size, $modifier));
                 weight: map-get($button-font-weight, $modifier)
             }
-            line-height: map-get($button-size, $modifier) - 2 * $button-border-size;
+            // line-height: map-get($button-size, $modifier) - 2 * $button-border-size;
+            line-height: map-get($button-size, $modifier);
         }
     }
 }
