@@ -41,40 +41,40 @@
  * Flexbox related.
  */
 
-.\--grow {
+.u-grow {
     flex-grow: 1;
 }
-.\--shrink {
+.u-shrink {
     flex-shrink: 1;
 }
-.\--align {
-    &-baseline {
+.u-align {
+    &.\--baseline {
         align-items: baseline;
     }
-    &-center {
+    &.\--center {
         align-items: center;
     }
-    &-end {
+    &.\--end {
         align-items: flex-end;
     }
-    &-start {
+    &.\--start {
         align-items: flex-start;
     }
 }
-.\--justify {
-    &-around {
+.u-justify {
+    &.\--around {
         justify-content: space-around;
     }
-    &-between {
+    &.\--between {
         justify-content: space-between;
     }
-    &-center {
+    &.\--center {
         justify-content: center;
     }
-    &-end {
+    &.\--end {
         justify-content: flex-end;
     }
-    &-start {
+    &.\--start {
         justify-content: flex-start;
     }
 }
