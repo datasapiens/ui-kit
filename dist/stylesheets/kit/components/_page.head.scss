@@ -1,6 +1,12 @@
 /**
  * Component Page/Header.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       acceleration
+ * @requires {mixin}       link-underline
+ * @requires {mixin}       size
+ * @requires {mixin}       stretch
  */
 
 // =============================================================================
@@ -12,7 +18,12 @@
     box-shadow: $page-head-box-shadow;
     color: $page-head-color;
     line-height: $page-head-line-height-ratio;
+    min-height: $page-head-size;
     position: relative;
+
+    @if $page-head-debug {
+        background-color: green;
+    }
 
     a {
         @include link-underline($underline: false);
@@ -59,27 +70,37 @@
 // =============================================================================
 
 .page__head__cell {
+    @include acceleration;
+
     flex: 1;
-    height: map-get($page-head-logo-size, height);
+    min-height: $page-head-size;
+    position: relative;
 
     &:nth-of-type(1) {
+        @include stretch;
+
+        justify-content: center;
+
         @if $page-head-debug {
             background-color: red;
         }
-        flex: 2 0 100%;
-        justify-content: center;
 
         @media (min-width: nth($page-head-breaks, 1)) {
             flex: 1;
             order: 2;
+            position: static;
         }
     }
 
     &:nth-of-type(2) {
+        display: none;
+
         @if $page-head-debug {
             background-color: orange;
         }
+
         @media (min-width: nth($page-head-breaks, 1)) {
+            display: inherit;
             order: 1;
             padding-left: calc(
                 #{map-get($page-head-control--sidebar-size, width)} -
@@ -92,10 +113,11 @@
     }
 
     &:nth-of-type(3) {
+        justify-content: flex-end;
+
         @if $page-head-debug {
             background-color: cyan;
         }
-        justify-content: flex-end;
 
         @media (min-width: nth($page-head-breaks, 1)) {
             order: 3;
@@ -107,18 +129,26 @@
 // =============================================================================
 
 .page-head__logo {
-    @include size(
-        map-get($page-head-logo-size, width),
-        map-get($page-head-logo-size, height)
-    );
+    display: flex;
+    position: relative;
+    transform: scale(0.9, 0.9);
+    z-index: 1;
 
-    background: url("../images/logo_datasapiens--white.svg") 50% 50% / 80% auto no-repeat;
-    @if $page-head-debug {
-        background-color: lightgreen;
-    }
+    &::after {
+        @include size(
+            map-get($page-head-logo-size, width),
+            map-get($page-head-logo-size, height)
+        );
 
-    @media (min-width: nth($page-head-breaks, 1)) {
-        height: map-get($page-head-logo-size, height);
+        background: url("../images/datasapiens.svg")
+            0 (-1) * map-get($page-head-logo-size, height)
+            no-repeat;
+        content: "";
+        flex: 1;
+
+        @if $page-head-debug {
+            background-color: lightgreen;
+        }
     }
 }
 

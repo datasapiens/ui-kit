@@ -24,6 +24,7 @@ $page-head-color: $white !default;
 
 // Set page debug mode.
 $page-head-debug: false !default;
+// $page-head-debug: true;
 
 // Set page header icon size.
 $page-head-icon-size: 20px !default;
@@ -37,10 +38,13 @@ $page-head-index: 3 !default;
 // Set page header line height ratio.
 $page-head-line-height-ratio: 1.5 !default;
 
+// Set page header logo height.
+$page-head-size: 50px !default;
+
 // Set page header logo size.
 $page-head-logo-size: (
-    height: 50px,
-    width: 50px,
+    height: 25px,
+    width: 45px,
 ) !default;
 
 // Set page sidebar control size
