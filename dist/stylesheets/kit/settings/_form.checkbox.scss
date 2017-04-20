@@ -10,10 +10,10 @@
 // Set form checkbox background.
 $form-checkbox-background: (
     initial:    $white,
-);
+) !default;
 
 // Set form checkbox border width (according to `$form-element-border-size`).
-$form-checkbox-border-size: 2px;
+$form-checkbox-border-size: 2px !default;
 
 // Set form checkbox color.
 $form-checkbox-color: (
@@ -22,10 +22,10 @@ $form-checkbox-color: (
     focus:      $blue--dodger,  // focused
     hover:      $blue--dodger,  // hovered
     initial:    $blue--cerulean,
-);
+) !default;
 
 // Set form checkbox size.
-$form-checkbox-size: 16px;
+$form-checkbox-size: 16px !default;
 
 // Set form checkbox indent.
-$form-checkbox-indent: 5px;
+$form-checkbox-indent: 5px !default;

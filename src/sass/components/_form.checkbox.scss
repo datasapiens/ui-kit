@@ -1,28 +1,26 @@
 /**
  * Component Form/Checkbox.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function}    px-to-em
+ * @requires {mixin}       size
+ * @requires {mixin}       stretch
+ * @requires {placeholder} %form-element
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--checkmark
+ * @requires {variable}    $animation-easing
+ * @requires animation.scale
+ * @requires form.element
+ * @requires ico
  */
 
 // =============================================================================
-// form checkbox
+// Form checkbox
 // =============================================================================
 
 .form-checkbox {
-    @extend %form-element !optional;
-    @include size($form-checkbox-size);
-
-    background: map-get($form-checkbox-background, initial);
-    border-color: currentColor;
-    color: map-get($form-checkbox-color, initial);
-    display: inline-block;
-    margin-right: $form-checkbox-indent;
-    padding: 0;
-    position: relative;
-    top: floor(0.5 * ($base-line-height - $form-checkbox-size));
-
-    &::before {
-        @extend %form-checkbox__control;
-    }
+    align-items: baseline;
+    display: inline-flex;
 }
 
 /**
@@ -44,7 +42,7 @@
  */
 
 .form-checkbox {
-    :disabled + & {
+    :disabled ~ &__shape {
         border-color: currentColor !important;
         color: map-get($form-checkbox-color, disable) !important;
         cursor: not-allowed;
@@ -56,8 +54,8 @@
  */
 
 .form-checkbox {
-    :focus:not(:disabled):not([readonly]) + &,
-    .is-focused:not(:disabled):not([readonly]) + & {
+    :focus:not(:disabled):not([readonly])  ~ &__shape,
+    .is-focused:not(:disabled):not([readonly])  ~ &__shape {
         border-color: currentColor;
         color: map-get($form-checkbox-color, focus);
     }
@@ -68,8 +66,8 @@
  */
 
 .form-checkbox {
-    :not(:disabled):not([readonly]) + &:hover,
-    :hover:not(:disabled):not([readonly]) + & {
+    :not(:disabled):not([readonly]) ~ &__shape:hover,
+    :hover:not(:disabled):not([readonly])  ~ &__shape {
         border-color: currentColor;
         color: map-get($form-checkbox-color, hover);
     }
@@ -80,12 +78,11 @@
  */
 
 .form-checkbox {
-    :checked + & {
+    :checked ~ &__shape {
         color: map-get($form-checkbox-color, active);
 
-        &::before,
-        .form-checkbox__control {
-            @extend %form-checkbox__control:active;
+        &::before {
+            @extend %form-checkbox__shape:active;
         }
     }
 }
@@ -95,8 +92,8 @@
  */
 
 .form-checkbox {
-    [readonly] + & {
-        border-color: currentColor !important;
+    [readonly] ~ &__shape {
+        border-color: currentColor;
         color: map-get($form-checkbox-color, disable) !important;
         cursor: not-allowed;
     }
@@ -115,22 +112,58 @@
 // Form checkbox control
 // =============================================================================
 
-%form-checkbox__control {
+.form-checkbox__control {
+    @include size(px-to-em($form-checkbox-size));
+
+    display: inherit;
+    position: relative;
+
+    &:not(:only-child) {
+        $indent: px-to-em($form-checkbox-indent);
+
+        &:first-child {
+            margin: {
+                right: $indent;
+            }
+        }
+        &:last-child {
+            margin: {
+                left: $indent;
+            }
+        }
+    }
+}
+
+// Form checkbox shape
+// =============================================================================
+
+.form-checkbox__shape {
+    @extend %form-element !optional;
+    @include size(100%);
+
+    align-items: center;
+    background: map-get($form-checkbox-background, initial);
+    border-color: currentColor;
+    color: map-get($form-checkbox-color, initial);
+    display: inline-flex;
+    font-size: 1em;
+    justify-content: center;
+    padding: 0;
+
+    &::before {
+        @extend %form-checkbox__shape;
+    }
+}
+
+%form-checkbox__shape {
     @extend %ico !optional;
     @extend %ico--checkmark !optional;
 
-    $size: $form-checkbox-size - 2 * $form-checkbox-border-size;
-
-    font-size: 1rem;
-    height: $size;
-    left: 0;
     opacity: 0;
-    position: absolute;
-    top: 0;
     transform: scale(1.5, 1.5);
-    transition: opacity 0.2s 0.1s,
+    transition:
+        opacity 0.2s 0.1s,
         transform map-get($animation-easing, in-out-circ) 0.3s;
-    width: $size !important;
 }
 
 /**
@@ -138,12 +171,17 @@
  */
 
 /**
- * Form checkbox control, active.
+ * Form checkbox shape, active.
  */
 
-%form-checkbox__control {
+%form-checkbox__shape {
     &:active {
         opacity: 1;
         transform: scale(1.0, 1.0);
     }
 }
+
+// Form checkbox label
+// =============================================================================
+
+// .form-checkbox__label {}
