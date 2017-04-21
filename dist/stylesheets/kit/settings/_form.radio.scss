@@ -10,13 +10,13 @@
 // Set form radio background (according to `$form-checkbox-background`).
 $form-radio-background: (
     initial:    $white,
-);
+) !default;
 
 // Set form radio color (according to `$form-checkbox-color`).
-$form-radio-color: $form-checkbox-color;
+$form-radio-color: $form-checkbox-color !default;
 
 // Set form radio size (according to `$form-checkbox-size`).
-$form-radio-size: $form-checkbox-size;
+$form-radio-size: $form-checkbox-size !default;
 
 // Set form radio indent (according to `$form-checkbox-size`).
-$form-radio-indent: $form-checkbox-indent;
+$form-radio-indent: $form-checkbox-indent !default;

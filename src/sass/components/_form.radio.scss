@@ -1,6 +1,14 @@
 /**
  * Component Form/Radio.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function}    px-to-em
+ * @requires {mixin}       size
+ * @requires {placeholder} %form-element
+ * @requires {variable}    $animation-easing
+ * @requires animation.fade
+ * @requires animation.scale
+ * @requires form.element
  */
 
 // =============================================================================
@@ -8,22 +16,8 @@
 // =============================================================================
 
 .form-radio {
-    @extend %form-element !optional;
-    @include round;
-    @include size($form-radio-size);
-
-    background: map-get($form-radio-background, initial);
-    border-color: currentColor;
-    color: map-get($form-radio-color, initial);
-    display: inline-block;
-    margin-right: $form-radio-indent;
-    padding: 0;
-    position: relative;
-    top: floor(0.5 * ($base-line-height - $form-radio-size));
-
-    &::before {
-        @extend %form-radio__control;
-    }
+    align-items: baseline;
+    display: inline-flex;
 }
 
 /**
@@ -45,10 +39,8 @@
  */
 
 .form-radio {
-    :disabled + & {
-        border-color: currentColor !important;
-        color: map-get($form-radio-color, disable) !important;
-        cursor: not-allowed;
+    :disabled ~ &__shape {
+        @extend %form-radio__shape:disabled;
     }
 }
 
@@ -57,15 +49,9 @@
  */
 
 .form-radio {
-    :focus:not(:disabled):not([readonly]) + &,
-    .is-focused:not(:disabled):not([readonly]) + & {
-        border-color: currentColor;
-        color: map-get($form-radio-color, focus);
-
-        &::before,
-        .form-radio__control {
-            @extend %form-radio__control:active;
-        }
+    :focus:not(:checked):not(:disabled):not([readonly]) ~ &__shape,
+    &.is-focused :not(:checked):not(:disabled):not([readonly]) ~ &__shape {
+        @extend %form-radio__shape:hover;
     }
 }
 
@@ -74,30 +60,19 @@
  */
 
 .form-radio {
-    :not(:disabled):not([readonly]) + &:hover,
-    :hover:not(:disabled):not([readonly]) + & {
-        border-color: currentColor;
-        color: map-get($form-radio-color, hover);
-
-        &::before,
-        .form-radio__control {
-            @extend %form-radio__control:active;
-        }
+    &:hover :not(:checked):not(:disabled):not([readonly]) ~ &__shape {
+        @extend %form-radio__shape:hover;
     }
 }
 
 /**
  * Form radio, checked.
+ * 1. We need to increase specifity.
  */
 
 .form-radio {
-    :checked + & {
-        color: map-get($form-radio-color, active);
-
-        &::before,
-        .form-radio__control {
-            @extend %form-radio__control:active;
-        }
+    :checked ~ &__shape {
+        @extend %form-radio__shape:checked;
     }
 }
 
@@ -106,10 +81,8 @@
  */
 
 .form-radio {
-    [readonly] + & {
-        border-color: currentColor !important;
-        color: map-get($form-radio-color, disable) !important;
-        cursor: not-allowed;
+    [readonly] ~ &__shape {
+        @extend %form-radio__shape:disabled;
     }
 }
 
@@ -126,14 +99,78 @@
 // Form radio control
 // =============================================================================
 
-%form-radio__control {
-    @include round;
-    @include stretch(2px, 2px, 2px, 2px);
+.form-radio__control {
+    @include size(px-to-em($form-radio-size));
 
-    content: "";
+    display: inherit;
+
+    &:not(:only-child) {
+        $indent: px-to-em($form-radio-indent);
+
+        &:first-child {
+            margin: {
+                right: $indent;
+            }
+        }
+        &:last-child {
+            margin: {
+                left: $indent;
+            }
+        }
+    }
+}
+
+// Form radio shape
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.form-radio__shape {
+    @extend %form-element !optional;
+
+    align-items: center;
+    background: map-get($form-radio-background, initial);
+    border-color: currentColor;
+    color: map-get($form-radio-color, initial);
+    display: inherit;
+    font-size: 1em;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+
+    &,
+    &::before {
+        @include round;
+        @include size(100%);
+    }
+
+    &:after,
+    &::before {
+        @extend %form-radio__shape;
+    }
+
+    &[class]::after {           /* 1 */
+        @include round;
+        @include size(125%);
+
+        content: "";
+        display: none;
+        position: absolute;
+    }
+}
+
+%form-radio__shape {
+    background-color: currentColor;
+    content: "o";
+    display: inline-block;
+    line-height: 1;
     opacity: 0;
-    transform: scale(1.5, 1.5);
-    transition: opacity 0.2s,
+    pointer-events: none;
+    transform: scale(1.25, 1.25);
+    transition:
+        opacity 0.2s,
         transform map-get($animation-easing, in-out-circ) 0.3s;
 }
 
@@ -142,13 +179,61 @@
  */
 
 /**
- * Form radio control, active.
+ * Form radio shape, disabled.
  */
 
-%form-radio__control {
-    &:active {
-        background-color: currentColor;
-        opacity: 1;
-        transform: scale(1.0, 1.0);
+%form-radio__shape {
+    &:disabled {
+        border-color: currentColor !important;
+        color: map-get($form-radio-color, disable) !important;
+        cursor: not-allowed;
+        pointer-events: none;
     }
 }
+
+/**
+ * Form radio shape, focused.
+ */
+
+%form-radio__shape {}
+
+/**
+ * Form radio shape, hovered.
+ */
+
+%form-radio__shape {
+    &:hover {
+        &::before {
+            opacity: 0.35;
+            transform: scale(0.7, 0.7);
+        }
+    }
+}
+
+/**
+ * Form radio shape, checked.
+ * 1. We need to increase specifity.
+ */
+
+%form-radio__shape {
+    &:checked {
+        border-color: currentColor !important;
+
+        &[class]::after {       /* 1 */
+            animation:
+                fade--out 0.3s both,
+                scale--50-200 0.6s both;
+            display: inline-block;
+        }
+
+        &::before {
+            opacity: 1;
+            transform: scale(0.7, 0.7);
+        }
+    }
+}
+
+// Form radio label
+// =============================================================================
+
+.form-radio__label {}
