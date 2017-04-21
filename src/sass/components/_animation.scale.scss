@@ -50,6 +50,19 @@
 }
 
 /**
+ * Scale, from 0.5 to 2.
+ */
+
+@keyframes scale--50-200 {
+    0% {
+        transform: scale(0.5, 0.5);
+    }
+    100% {
+        transform: scale(2, 2);
+    }
+}
+
+/**
  * Scale, from 100 to 50.
  */
 
