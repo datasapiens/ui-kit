@@ -2,14 +2,9 @@
  * Component Form/Select.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  *
- * @requires {function}    px-to-em
- * @requires {mixin}       size
- * @requires {mixin}       stretch
  * @requires {placeholder} %ctr--core-y
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--checkmark
- * @requires {variable}    $animation-easing
- * @requires animation.scale
+ * @requires {placeholder} %ico--chevron-down
  * @requires container
  * @requires ico
  */
@@ -81,8 +76,10 @@
 // =============================================================================
 
 %form-select__field {
-    padding-right: calc(#{$form-select-control-size} +
-        2 * #{$form-select-control-indent});
+    padding-right: calc(
+        #{$form-select-control-size} +
+        2 * #{$form-select-control-indent}
+    );
 }
 
 // Form select control
@@ -98,6 +95,8 @@
     right: 0;
     text-align: center;
     vertical-align: middle;
-    width: calc(#{$form-select-control-size} +
-        2 * #{$form-select-control-indent}) !important;
+    width: calc(
+        #{$form-select-control-size} +
+        2 * #{$form-select-control-indent}
+    ) !important;
 }
