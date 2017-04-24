@@ -1,6 +1,12 @@
 /**
  * Component Drawer.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {mixin}       acceleration
+ * @requires {variable}    $animation-easing
+ * @requires animation.fade
+ * @requires animation.slide
+ * @requires animation.visibility
  */
 
 // =============================================================================
@@ -16,7 +22,7 @@
 
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s;
+    transition: max-height 0.3s map-get($animation-easing, in-out-circ);
 }
 
 /**
@@ -32,8 +38,9 @@
     &.\--static {
         transition: none;
 
-        .drw__content {
-            animation: fade--out 0.3s both,
+        .drw__body {
+            animation:
+                fade--out 0.3s both,
                 visibility--hide 0.3s both;
         }
     }
@@ -44,27 +51,29 @@
  */
 
 /**
- * Drawer, active.
+ * Drawer, on.
  */
 
 .drw {
-    &.is-active {
-        max-height: $drawer--active-size;
+    &.is-on {
+        max-height: $drawer-size;
         overflow: visible;
 
-        .drw__content {
-            animation: fade--in 0.2s 0.1s both,
+        .drw__body {
+            animation:
+                fade--in 0.3s 0.1s both,
                 slide--up-reverse 0.2s map-get($animation-easing, in-out-circ) both,
-                visibility--show 0.3s both;
+                visibility--show 0.2s both;
             pointer-events: auto;
         }
 
         &.\--static {
             max-height: none;
 
-            .drw__content {
-                animation: fade--in 0.2s 0.1s both,
-                    visibility--show 0.3s both;
+            .drw__body {
+                animation:
+                    fade--in 0.3s 0.1s both,
+                    visibility--show 0.2s both;
             }
         }
     }
@@ -80,11 +89,12 @@
 // Subcomponents
 // =============================================================================
 
-// Drawer content
+// Drawer body
 // =============================================================================
 
-.drw__content {
-    animation: fade--out 0.3s both,
+.drw__body {
+    animation:
+        fade--out 0.2s both,
         slide--up 0.2s map-get($animation-easing, in-out-circ) 0.1s both,
         visibility--hide 0.3s both;
     pointer-events: none;

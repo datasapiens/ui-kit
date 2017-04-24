@@ -7,5 +7,5 @@
 // Drawer settings
 // =============================================================================
 
-// Set active drawer mask size.
-$drawer--active-size: 200vh;
+// Set drawer max. height.
+$drawer-size: 100vh !default;
