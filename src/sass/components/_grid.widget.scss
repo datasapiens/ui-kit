@@ -1,0 +1,127 @@
+/**
+ * Component Grid/Widget.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Widget grid
+// =============================================================================
+
+.grd-widget {
+    counter-reset: counter-widget;
+    display: grid;
+    grid: {
+        gap: $grid-widget-gutter;
+    }
+    margin-bottom: $grid-widget-gutter;
+
+    @media (min-width: nth($grid-widget-breaks, 1)) {
+        grid: {
+            auto-flow: dense;
+            template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Widget grid, debug mode.
+ */
+
+.grd-widget {
+    &.--debug {
+        margin-bottom: 3 * $grid-widget-gutter;
+
+        .grd-widget__item {
+            background-color: cornflowerblue;
+            counter-increment: counter-widget;
+            min-height: 4em;
+
+            &::before {
+                font-size: 3em;
+                color: white;
+                content: counter(counter-widget);
+            }
+        }
+
+        .grd-widget__item {
+            &.--primary {
+                background-color: crimson;
+
+                &::after {
+                    font-size: 1em;
+                    color: white;
+                    content: " / primary";
+                }
+            }
+
+            &.--secondary {
+                background-color: slateblue;
+
+                &::after {
+                    font-size: 1em;
+                    color: white;
+                    content: " / secondary";
+                }
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Widget grid item
+// =============================================================================
+
+.grd-widget__item {
+    grid-column-start: span 2;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Widget grid item, primary.
+ */
+
+.grd-widget__item {
+    &.--primary {
+        @media (min-width: nth($grid-widget-breaks, 1)) {
+            grid-column-start: span 4;
+        }
+    }
+}
+
+/**
+ * Widget grid item, secondary.
+ */
+
+.grd-widget__item {
+    &.--secondary {
+        @media (min-width: nth($grid-widget-breaks, 1)) {
+            grid-column-start: span 1;
+        }
+    }
+}

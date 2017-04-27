@@ -1,0 +1,16 @@
+/**
+ * Component Grid/Widget settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Widget grid settings
+// =============================================================================
+
+// Set widget grid breakpoints.
+$grid-widget-breaks: (
+    1200px,
+) !default;
+
+// Set widget grid gutter.
+$grid-widget-gutter: 16px !default;
