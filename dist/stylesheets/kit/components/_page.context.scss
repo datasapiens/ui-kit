@@ -1,0 +1,56 @@
+/**
+ * Component Page/Context.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Page context
+// =============================================================================
+
+.page-context {
+    background-color: $page-context-background;
+    padding: $page-context-indent 0;
+    position: fixed;
+    top: $page-context-offset;
+    z-index: 2;
+
+    @supports (position: sticky) {
+        position: sticky;
+        top: 0;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
