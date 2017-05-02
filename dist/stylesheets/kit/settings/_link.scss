@@ -1,0 +1,17 @@
+/**
+ * Component Link settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Link settings
+// =============================================================================
+
+// Set link color (according to `$base-link-color`).
+$link-color: (
+    active:     $blue--dodger,       // pressed
+    // focus:      $blue--dodger,       // focused
+    hover:      $blue--dodger,       // hovered
+    initial:    $blue--cerulean,
+    visit:      $blue--cerulean,     // visited
+) !default;

@@ -7,7 +7,12 @@
 // Link
 // =============================================================================
 
-// .component {}
+.lnk {
+    @include link-underline($underline: true);
+
+    color: map-get($link-color, initial);
+    cursor: pointer;
+}
 
 /**
  * Modifiers.
@@ -37,11 +42,45 @@
  * States.
  */
 
-// .is-component-state {}
+/**
+ * Link, active.
+ */
 
-// .component {
-//     &.is-state {}
-// }
+.lnk {
+    &:active {
+        color: map-get($link-color, active);
+    }
+}
+
+/**
+ * Link, focus.
+ */
+
+.lnk {
+    &:focus {
+        color: map-get($link-color, focus);
+    }
+}
+
+/**
+ * Link, hover.
+ */
+
+.lnk {
+    &:hover {
+        color: map-get($link-color, hover);
+    }
+}
+
+/**
+ * Link, visited.
+ */
+
+.lnk {
+    &:visited {
+        color: map-get($link-color, visit);
+    }
+}
 
 /**
  * Context.
