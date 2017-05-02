@@ -8,11 +8,7 @@
 // =============================================================================
 
 .cnt {
-    counter-reset: section;
-
-    .cnt__item {
-        counter-increment: section;
-    }
+    counter-reset: counter;
 }
 
 /**
@@ -52,7 +48,9 @@
 // =============================================================================
 
 .cnt__item {
+    counter-increment: counter;
+
     &::before {
-        content: $counter-prefix counter(section) $counter-suffix;
+        content: $counter-prefix counter(counter) $counter-suffix;
     }
 }
