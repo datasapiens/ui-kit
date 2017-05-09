@@ -1,6 +1,16 @@
 /**
  * Component Page/Sidebar.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function}    px-to-em
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       acceleration
+ * @requires {mixin}       size
+ * @requires {mixin}       stretch
+ * @requires {placeholder} %lst--reset
+ * @requires {variable}    $animation-easing
+ * @requires animation.fade
+ * @requires animation.slide
  */
 
 // =============================================================================
@@ -8,33 +18,41 @@
 // =============================================================================
 
 .page-sidebar {
-    @include acceleration;
+    @include stretch(fixed, 0, auto, 0 ,0);
 
-    background-color: $page-sidebar-background;
-    bottom: 0;
+    background-color: nth($page-sidebar-background, 2);
     display: flex;
     flex-direction: column;
-    left: 0;
-    position: fixed;
-    top: 0;
-    transition: width 0.2s map-get($animation-easing, out-sine);
-    user-select: none;
     width: 0;
     z-index: $page-sidebar-index;
 
-    &::after {
+    &,
+    &::before {
+        @include acceleration;
+        transition: width 0.2s map-get($animation-easing, out-sine);
+    }
+
+    &::before {
         @include stretch(0, auto, 0, 0);
 
-        background-color: $page-sidebar-background;
+        background-color: nth($page-sidebar-background, 1);
         content: "";
         width: 0;
+        z-index: $page-sidebar-index + 1;
     }
 
     @media (min-width: nth($page-sidebar-breaks, 1)) {
+        padding-left: map-get($page-sidebar-size, min);
         width: map-get($page-sidebar-size, min);
 
-        &::after {
+        &::before {
             width: map-get($page-sidebar-size, min);
+        }
+
+        .page-sidebar__navigation__item__region {
+            opacity: 1;
+            pointer-events: initial;
+            transform: translateX(0);
         }
     }
     @media (min-width: nth($page-sidebar-breaks, 2)) {
@@ -46,11 +64,15 @@
  * Modifiers.
  */
 
-// .component--modifier {}
+/**
+ * Page sidebar, debug.
+ */
 
-// .component {
-//     &.\--modifier {}
-// }
+.page-sidebar {
+    &.\--debug {
+        position: relative;
+    }
+}
 
 /**
  * States.
@@ -62,21 +84,19 @@
 
 .page-sidebar {
     &.is-on {
+        padding-left: map-get($page-sidebar-size, min);
         width: map-get($page-sidebar-size, max);
 
-        &::after {
+        &::before {
             width: map-get($page-sidebar-size, min);
         }
 
-        .page-sidebar__body {
-            overflow: {
-                y: auto;
-            }
+        .page-sidebar__navigation__item__region {
+            @extend %page-sidebar__navigation__item__region:on;
+            transform: translateX(0);
         }
 
-        .page-sidebar__navigation {}
-
-        .page-sidebar__navigation__item {
+        .\--level-2 {
             animation:
                 fade--in 0.6s 0.2s both,
                 slide--left-reverse 0.2s map-get($animation-easing, out-sine) 0.2s both;
@@ -90,13 +110,12 @@
 
 .page-sidebar {
     &.is-off {
-        .page-sidebar__body {
-            overflow: hidden;
+        .page-sidebar__navigation__item__region {
+            @extend %page-sidebar__navigation__item__region:off;
+            transform: translateX(-100%);
         }
 
-        .page-sidebar__navigation {}
-
-        .page-sidebar__navigation__item {
+        .\--level-2 {
             animation:
                 fade--out 0.15s both,
                 slide--left 0.15s map-get($animation-easing, out-sine) both;
@@ -104,6 +123,11 @@
 
         @media (min-width: nth($page-sidebar-breaks, 1)) {
             width: map-get($page-sidebar-size, min);
+
+            .page-sidebar__navigation__item__region {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     }
 }
@@ -116,7 +140,7 @@
 // =============================================================================
 
 .page-sidebar__inset {
-    flex: 1;
+    flex: inherit;
     overflow: {
         y: auto;
     }
@@ -125,27 +149,67 @@
 // Page sidebar header
 // =============================================================================
 
-.page-sidebar__head {
-    padding: $page-sidebar-indent;
-}
+.page-sidebar__head {}
 
+// Page sidebar body
 // =============================================================================
 
 .page-sidebar__body {
-    display: flex;
+    display: inherit;
     flex: 1;
-
-    overflow: hidden;
-    // padding: $page-sidebar-indent;
-    position: relative;
 }
 
 // Page sidebar navigation
 // =============================================================================
 
+/**
+ * 1. We need to increase specifity.
+ */
+
 .page-sidebar__navigation {
-    position: relative;
-    z-index: 1;
+    display: block;
+
+    &,
+    [class*="--level-"] {
+        @include acceleration;
+        border: 0;
+        border-radius: 0;
+    }
+
+    &[class] {                              /* 1 */
+        background: none;
+    }
+
+    @for $i from 2 through $page-sidebar-navigation-depth {
+
+        $indent: map-get($page-sidebar-indent, horizontal);
+        $j: $i - 1;
+
+        .\--level-#{$i} {
+            padding-left: $j * $indent;
+
+            [class*="__head"][class] {      /* 1 */
+                padding-left: $j * $indent;
+
+                &::after {
+                    left: $j * $indent;
+                }
+            }
+
+            ul,
+            [class*="__head"] {
+                margin-left: (-1) * $j * $indent;
+            }
+
+            [class*="__region"][class] {    /* 1 */
+                padding-left: $j * $indent;
+
+                &::after {
+                    left: $j * $indent;
+                }
+            }
+        }
+    }
 }
 
 // Page sidebar navigation item
@@ -153,9 +217,89 @@
 
 .page-sidebar__navigation__item {}
 
+// Page sidebar navigation item region
+// =============================================================================
+
+/**
+ * 1. Increase specifity to override all states.
+ * 2. We need to increase specifity.
+ */
+
+.page-sidebar__navigation__item__region {
+    @extend %page-sidebar__navigation__item__region:off;
+    @include size(
+        map-get($page-sidebar-navigation-item-size, width),
+        map-get($page-sidebar-navigation-item-size, height)
+    );
+
+    align-items: center;
+    font: {
+        size: px-to-em($page-sidebar-navigation-item-font-size);
+        weight: $page-sidebar-navigation-item-font-weight;
+    }
+    justify-content: center;
+    left: 0;
+    padding: $page-sidebar-navigation-item-indent;
+    position: absolute;
+    transform: translateX(-100%);
+    transition:
+        opacity 0.15s,
+        transform 0.15s;
+    z-index: $page-sidebar-index + 2 !important; /* 1 */
+
+    &[class][class]::after {                     /* 2 */
+        content: none;
+    }
+
+    @at-root {
+        @for $i from 1 through $page-sidebar-navigation-item-count {
+            .page-sidebar__navigation__item:nth-of-type(#{$i}) & {
+                top: ($i) * map-get($page-sidebar-navigation-item-size, height);
+            }
+        }
+    }
+
+    [class*="__icon"] {
+        font-size: px-to-rem(
+            $page-sidebar-navigation-item-icon-size
+        );
+        margin-bottom: 0;
+    }
+
+    [class*="__label"] {
+        font-size: px-to-em(
+            $page-sidebar-navigation-item-font-size,
+            $page-sidebar-navigation-item-icon-size
+        );
+        text-transform: uppercase;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Page sidebar navigation item region, on.
+ */
+
+%page-sidebar__navigation__item__region {
+    &:on {
+        pointer-events: initial;
+    }
+}
+
+/**
+ * Page sidebar navigation item region, off.
+ */
+
+%page-sidebar__navigation__item__region {
+    &:off {
+        pointer-events: none;
+    }
+}
+
 // Page sidebar footer
 // =============================================================================
 
-.page-sidebar__foot {
-    padding: $page-sidebar-indent;
-}
+.page-sidebar__foot {}

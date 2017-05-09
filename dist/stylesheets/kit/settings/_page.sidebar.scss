@@ -8,25 +8,63 @@
 // =============================================================================
 
 // Set page sidebar background.
-$page-sidebar-background: #666;
+$page-sidebar-background: (
+    #333,
+    #4d4d4d,
+) !default;
 
 // Set page sidebar breakpoints.
 $page-sidebar-breaks: (
     800px,
     1000px,
-);
+) !default;
 
-// Set page sidebar indent.
-$page-sidebar-indent: 10px;
+// Set page sidebar indent (according to `nav-sidebar-indent`).
+$page-sidebar-indent: (
+    horizontal: 16px,
+    vertical: 0,
+) !default;
 
 // Set page sidebar index.
-$page-sidebar-index: 4;
+$page-sidebar-index: 4 !default;
 
 // Set page sidebar size.
 $page-sidebar-size: (
     max: calc(250px + 5rem),
     min: 5rem,
-);
+) !default;
+
+/**
+ * Page sidebar navigation.
+ */
+
+// Set page sidebar navigation depth.
+$page-sidebar-navigation-depth: 3 !default;
+
+// Set page sidebar navigation item count.
+$page-sidebar-navigation-item-count: 5 !default;
+
+// Set page sidebar navigation item font size.
+$page-sidebar-navigation-item-font-size: 11px !default;
+
+// Set page sidebar navigation item font weight.
+$page-sidebar-navigation-item-font-weight: 300 !default;
+
+// Set page sidebar navigation item indent.
+$page-sidebar-navigation-item-indent: 10px !default;
+
+// Set page sidebar navigation item size.
+$page-sidebar-navigation-item-size: (
+    height: 5rem,
+    width: 5rem,
+) !default;
+
+// Set page sidebar navigation item icon size.
+$page-sidebar-navigation-item-icon-size: 18px !default;
+
+/**
+ * Page sidebar footer.
+ */
 
 // Set page sidebar footer background.
-$page-sidebar-footer-background: #777;
+$page-sidebar-footer-background: #777 !default;
