@@ -8,10 +8,10 @@
 // =============================================================================
 
 // Set page sidebar background.
-$page-sidebar-background: (
-    #333,
-    #4d4d4d,
-) !default;
+$page-sidebar-background: #4d4d4d !default;
+
+// Set page sidebar box shadow.
+$page-sidebar-box-shadow: inset 0 0 3px rgba(black, 0.5);
 
 // Set page sidebar breakpoints.
 $page-sidebar-breaks: (
@@ -33,6 +33,16 @@ $page-sidebar-size: (
     max: calc(250px + 5rem),
     min: 5rem,
 ) !default;
+
+/**
+ * Page sidebar navbar.
+ */
+
+// Set page sidebar navbar background.
+$page-sidebar-navbar-background: #333 !default;
+
+// Set page sidebar navbar box shadow.
+$page-sidebar-navbar-box-shadow: 0 -1px 3px rgba(black, 0.5);
 
 /**
  * Page sidebar navigation.

@@ -20,7 +20,7 @@
 .page-sidebar {
     @include stretch(fixed, 0, auto, 0 ,0);
 
-    background-color: nth($page-sidebar-background, 2);
+    background-color: $page-sidebar-background;
     display: flex;
     flex-direction: column;
     width: 0;
@@ -29,16 +29,24 @@
     &,
     &::before {
         @include acceleration;
+
         transition: width 0.2s map-get($animation-easing, out-sine);
     }
 
-    &::before {
-        @include stretch(0, auto, 0, 0);
+    &::after {
+        @include stretch;
 
-        background-color: nth($page-sidebar-background, 1);
+        box-shadow: $page-sidebar-box-shadow;
+        content: "";
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &::before {
+        @extend %page-sidebar-navbar;
+
         content: "";
         width: 0;
-        z-index: $page-sidebar-index + 1;
     }
 
     @media (min-width: nth($page-sidebar-breaks, 1)) {
@@ -133,6 +141,17 @@
 // =============================================================================
 // Subcomponents
 // =============================================================================
+
+// Page sidebar navbar
+// =============================================================================
+
+%page-sidebar-navbar {
+    @include stretch(0, auto, 0, 0);
+
+    background-color: $page-sidebar-navbar-background;
+    box-shadow: $page-sidebar-navbar-box-shadow;
+    z-index: $page-sidebar-index + 1;
+}
 
 // Page sidebar inset
 // =============================================================================
