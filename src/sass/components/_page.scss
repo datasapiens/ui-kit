@@ -1,6 +1,11 @@
 /**
  * Component Page.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {mixin}       acceleration
+ * @requires {placeholder} %ctr--center
+ * @requires {variable}    $animation-easing
+ * @requires container
  */
 
 // =============================================================================
@@ -94,6 +99,7 @@
 
 .page__inset {
     @extend %ctr--center !optional;
+    @include acceleration;
 
     max-width: map-get($page-size, max);
     min-width: map-get($page-size, min);
@@ -102,6 +108,7 @@
         right: $page-indent;
     }
     position: relative;
+    transition: margin 0.2s map-get($animation-easing, out-sine);
 
     @media print {
         max-width: 100%;
@@ -110,39 +117,4 @@
             right: 0;
         }
     }
-}
-
-/**
- * States.
- */
-
-/**
- * Page inset, static.
- */
-
-// .page__inset {
-//     &.is-static {
-//         margin: {
-//             left: 0 !important;
-//             right: 0 !important;
-//         }
-//         max-width: 100%;
-//     }
-// }
-
-// Page row
-// =============================================================================
-
-.page__row {
-    display: flex;
-    flex: 1 0;
-    justify-content: space-between;
-}
-
-// Page cell
-// =============================================================================
-
-.page__cell {
-    align-items: center;
-    display: flex;
 }
