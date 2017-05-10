@@ -92,7 +92,6 @@
         }
 
         .page-sidebar__navigation__item__region {
-            @extend %page-sidebar__navigation__item__region:on;
             transform: translateX(0);
         }
 
@@ -111,7 +110,6 @@
 .page-sidebar {
     &.is-off {
         .page-sidebar__navigation__item__region {
-            @extend %page-sidebar__navigation__item__region:off;
             transform: translateX(-100%);
         }
 
@@ -226,7 +224,6 @@
  */
 
 .page-sidebar__navigation__item__region {
-    @extend %page-sidebar__navigation__item__region:off;
     @include size(
         map-get($page-sidebar-navigation-item-size, width),
         map-get($page-sidebar-navigation-item-size, height)
@@ -271,30 +268,6 @@
             $page-sidebar-navigation-item-icon-size
         );
         text-transform: uppercase;
-    }
-}
-
-/**
- * States.
- */
-
-/**
- * Page sidebar navigation item region, on.
- */
-
-%page-sidebar__navigation__item__region {
-    &:on {
-        pointer-events: initial;
-    }
-}
-
-/**
- * Page sidebar navigation item region, off.
- */
-
-%page-sidebar__navigation__item__region {
-    &:off {
-        pointer-events: none;
     }
 }
 
