@@ -380,7 +380,7 @@
         @include stretch(
             auto,
             map-get($nav-vertical-header-indent, horizontal),
-            0,
+            -1px,
             map-get($nav-vertical-header-indent, horizontal)
         );
 
