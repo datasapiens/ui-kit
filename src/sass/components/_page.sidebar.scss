@@ -234,6 +234,24 @@
 
 .page-sidebar__navigation__item {}
 
+/**
+ * States.
+ */
+
+/**
+ * Page sidebar navigation item, active.
+ */
+
+.page-sidebar__navigation {
+    [class*="__item"][class][class] {
+        &.is-active:not(.is-disabled) {
+            > [class*="__region"] {
+                @extend %page-sidebar__navigation__item__region:active;
+            }
+        }
+    }
+}
+
 // Page sidebar navigation item region
 // =============================================================================
 
@@ -287,6 +305,32 @@
             $page-sidebar-navigation-item-icon-size
         );
         text-transform: uppercase;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Page sidebar navigation item region, active.
+ */
+
+%page-sidebar__navigation__item__region:active {
+    background-color: map-get($page-sidebar-navigation-item-background, active);
+}
+
+/**
+ * Page sidebar navigation item region, hovered.
+ */
+
+%page-sidebar__navigation__item__region:hover {
+    background-color: map-get($page-sidebar-navigation-item-background, hover);
+}
+
+.page-sidebar__navigation__item[class][class] {
+    [class*="__region"][class]:hover {
+        @extend %page-sidebar__navigation__item__region:hover;
     }
 }
 

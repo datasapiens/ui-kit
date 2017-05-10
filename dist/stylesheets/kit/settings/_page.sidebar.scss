@@ -51,6 +51,15 @@ $page-sidebar-navbar-box-shadow: 0 -1px 3px rgba(black, 0.5);
 // Set page sidebar navigation depth.
 $page-sidebar-navigation-depth: 3 !default;
 
+// Set page sidebar navigation item background.
+$page-sidebar-navigation-item-background: (
+    active:     $blue-light--a700,      // pressed
+    disable:    transparent,            // disabled
+    focus:      $blue-light--a700,      // focused
+    hover:      $blue-light--a700,      // hovered
+    initial:    transparent,
+) !default;
+
 // Set page sidebar navigation item count.
 $page-sidebar-navigation-item-count: 5 !default;
 
