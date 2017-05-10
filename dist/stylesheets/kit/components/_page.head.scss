@@ -163,6 +163,25 @@
 
 .page-head__control {
     @extend %page-head__control;
+
+    cursor: pointer;
+    font: {
+        size: px-to-em($page-head-control-font-size);
+        weight: $page-head-control-font-weight;
+    }
+
+    [class*="__icon"] {
+        font-size: px-to-rem(
+            $page-head-control-icon-size
+        );
+    }
+    [class*="__label"] {
+        font-size: px-to-em(
+            $page-head-control-font-size,
+            $page-head-control-icon-size
+        );
+        text-transform: uppercase;
+    }
 }
 
 /**
@@ -184,6 +203,12 @@
         position: absolute;
         top: 0;
         z-index: $page-head-index + 2;
+
+        [class*="__icon"] {
+            &::before {
+                margin-bottom: 0;
+            }
+        }
     }
 }
 

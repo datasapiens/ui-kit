@@ -47,8 +47,25 @@ $page-head-logo-size: (
     width: 45px,
 ) !default;
 
-// Set page sidebar control size
-// (according to `$page-head-logo-size` and `$nav-vertical--primary-item-size`).
+/**
+ * Page header control.
+ */
+
+// Set page control font size.
+$page-head-control-font-size: 11px !default;
+
+// Set page control font weight.
+$page-head-control-font-weight: 300 !default;
+
+// Set page control icon size.
+$page-head-control-icon-size: 18px !default;
+
+/**
+ * Page header control, sidebar toggle.
+ */
+
+// Set page header sidebar control size
+// (according to `$page-head-logo-size` and `$page-sidebar-navigation-item-size`).
 $page-head-control--sidebar-size: (
     height: 50px,
     width: 5rem,
