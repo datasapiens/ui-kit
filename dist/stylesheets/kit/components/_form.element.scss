@@ -32,6 +32,19 @@
  */
 
 /**
+ * Form element, transparent.
+ */
+
+%form-element--transparent {
+    background: transparent;
+    border: 0;
+
+    @if $form-element-border-radius {
+        border-radius: 0;
+    }
+}
+
+/**
  * Form element length.
  */
 

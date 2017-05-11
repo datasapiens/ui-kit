@@ -1,0 +1,74 @@
+/**
+ * Component Form/Composite.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {placeholder} %form-element
+ * @requires form.element
+ */
+
+// =============================================================================
+// Form composite
+// =============================================================================
+
+/**
+ * TODO: Implement form element sizes and lengths.
+ * TODO: Implement control states.
+ */
+
+.form-composite {
+    @extend %form-element;
+
+    display: inline-flex;
+
+    [class*="ico"] {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form composite field
+// =============================================================================
+
+.form-composite__content {
+    @extend %form-element--transparent;
+
+    height: auto;
+}
+
+// Form composite field
+// =============================================================================
+
+.form-composite__control {
+    cursor: pointer;
+    width: $form-composite-control-size;
+}
