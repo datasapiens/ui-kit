@@ -1,6 +1,11 @@
 /**
  * Component Panel.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function}    rhythm-get
+ * @requires {mixin}       round
+ * @requires {placeholder} %ctr
+ * @requires container
  */
 
 // =============================================================================
@@ -33,21 +38,21 @@
 // }
 
 /**
- * Panel, blank.
+ * Panel, plain.
  */
 
 .pnl {
-    &.--blank {
+    &.--plain {
         border: 0;
     }
 }
 
 /**
- * Panel, light.
+ * Panel, elevate.
  */
 
 .pnl {
-    &.--light {
+    &.--elevate {
         box-shadow: $panel--light-box-shadow;
     }
 }
