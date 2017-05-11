@@ -36,7 +36,7 @@
     }
 
     select {
-        @extend %form-select__field;
+        @extend %form-select__content;
 
         width: 100%;
     }
@@ -72,10 +72,10 @@
 // Subcomponents
 // =============================================================================
 
-// Form select field
+// Form select content
 // =============================================================================
 
-%form-select__field {
+%form-select__content {
     padding-right: calc(
         #{$form-select-control-size} +
         2 * #{$form-select-control-indent}
