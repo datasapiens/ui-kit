@@ -41,12 +41,18 @@
  * Flexbox related.
  */
 
-.u-grow {
-    flex-grow: 1;
+[class*="flex"] {
+    &.--grow {
+        flex-grow: 1;
+    }
+    &.--shrink {
+        flex-shrink: 1;
+    }
+    &.--wrap {
+        flex-wrap: wrap;
+    }
 }
-.u-shrink {
-    flex-shrink: 1;
-}
+
 .u-align {
     &.--baseline {
         align-items: baseline;
@@ -61,6 +67,7 @@
         align-items: flex-start;
     }
 }
+
 .u-justify {
     &.--around {
         justify-content: space-around;
