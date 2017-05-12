@@ -1,0 +1,75 @@
+/**
+ * Component Anchor.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function}    px-to-rem
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--editor-link
+ * @requires ico
+ */
+
+// =============================================================================
+// Anchor
+// =============================================================================
+
+.anc {
+    display: flex;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Anchor, active.
+ */
+
+// .anc {
+//     &.is-active {
+//         opacity: 1;
+//     }
+// }
+
+/**
+ * Anchor, hovered.
+ */
+
+// .anc {
+//     &:hover {
+//         @extend .anc.is-active;
+//     }
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Anchor link
+// =============================================================================
+
+.anc__link {
+    font-size: px-to-rem($anchor-link-size);
+    // opacity: 0;
+    // transition: opacity 0.3s;
+
+    &::before {
+        @extend %ico !optional;
+        @extend %ico--editor-link !optional;
+    }
+}
