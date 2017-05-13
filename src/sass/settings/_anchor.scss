@@ -8,4 +8,7 @@
 // =============================================================================
 
 // Set anchor link size.
-$anchor-link-size: 16px;
+$anchor-link-size: 16px !default;
+
+// Set anchor link indent.
+$anchor-link-indent: 4px !default;

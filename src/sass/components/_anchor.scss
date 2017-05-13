@@ -71,5 +71,7 @@
     &::before {
         @extend %ico !optional;
         @extend %ico--editor-link !optional;
+
+        margin-right: $anchor-link-indent;
     }
 }
