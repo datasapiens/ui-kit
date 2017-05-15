@@ -1,6 +1,9 @@
 /**
  * Component Wrapper.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function}    rhythm-get
+ * @requires {placeholder} %group
  */
 
 // =============================================================================
@@ -8,7 +11,7 @@
 // =============================================================================
 
 %wrp {
-    @extend %group;
+    @extend %group !optional;
 
     @media print {
         overflow: hidden;
@@ -26,12 +29,20 @@
 %wrp--scroll {
     @extend %wrp;
 
-    margin-bottom: rhythm-get();
-    overflow: auto;
-    padding-bottom: map-get($wrapper-indent, vertical);
-
     > :last-child {
         margin-bottom: 0;
+    }
+}
+
+/**
+ * Wrapper, scroll pane.
+ */
+
+.wrp {
+    &.\--scroll {
+        @extend %wrp--scroll;
+
+        overflow: auto;
     }
 }
 
@@ -56,7 +67,33 @@
         @extend %wrp--scroll;
 
         overflow-y: auto;
-        padding-right: map-get($wrapper-indent, horizontal);
+    }
+}
+
+/**
+ * Wrapper, scroll pane with padding.
+ */
+
+.wrp {
+    &.\--indent {
+        &.\--scroll {
+            padding: {
+                bottom: map-get($wrapper-indent, vertical);
+                right: map-get($wrapper-indent, horizontal);
+            }
+        }
+
+        &.\--scroll-x {
+            padding: {
+                right: map-get($wrapper-indent, horizontal);
+            }
+        }
+
+        &.\--scroll-y {
+            padding: {
+                bottom: map-get($wrapper-indent, vertical);
+            }
+        }
     }
 }
 
