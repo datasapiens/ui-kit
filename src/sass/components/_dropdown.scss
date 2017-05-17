@@ -115,6 +115,7 @@
     border: $dropdown-border-size solid $dropdown-border-color;
     border-radius: $dropdown-border-radius;
     box-shadow: map-get($dropdown-box-shadow, outer);
+    position: absolute;
     transition:
         opacity 0.2s,
         transform 0.2s map-get($animation-easing, in-out-circ) 0.1s,
