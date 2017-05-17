@@ -1,0 +1,160 @@
+/**
+ * Component Dropdown.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {mixin}       acceleration
+ * @requires {variable}    $animation-easing
+ */
+
+// =============================================================================
+// Dropdown
+// =============================================================================
+
+.drp {
+    position: relative;
+    z-index: $dropdown-index;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Dropdown, debug mode.
+ */
+
+.drp {
+    &.--debug {
+        .drp__body {
+            @extend %drp__body:on;
+
+            position: static;
+        }
+    }
+}
+
+/**
+ * Dropdown, aligned left.
+ */
+
+.drp {
+    &.--left {
+        left: 0;
+        right: auto;
+    }
+}
+
+/**
+ * Dropdown, aligned right.
+ */
+
+.drp {
+    &.--right {
+        left: auto;
+        right: 0;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * 1. Use `animation` instead of `transition` for more complex or diverse animations.
+ */
+
+/**
+ * Dropdown, on.
+ */
+
+.drp {
+    &.is-on {
+        .drp__body {
+            @extend %drp__body:on;
+
+            // animation: ... ;  /* 1 */
+        }
+    }
+}
+
+/**
+ * Dropdown, off.
+ */
+
+// .drp {
+//     &.is-off {
+//         .drp__body {
+//             @extend %drp__body:off;
+//
+//             animation: ... ;  /* 1 */
+//         }
+//     }
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Dropdown body
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.drp__body {
+    @extend %drp__body:off;
+    @include acceleration;
+
+    border: $dropdown-border-size solid $dropdown-border-color;
+    border-radius: $dropdown-border-radius;
+    box-shadow: map-get($dropdown-box-shadow, outer);
+    transition:
+        opacity 0.2s,
+        transform 0.2s map-get($animation-easing, in-out-circ) 0.1s,
+        visibility 0.3s;
+
+    &[class] {              /* 1 */
+        display: block;
+        max-width: none;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Dropdown body, on.
+ */
+
+%drp__body:on {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/**
+ * Dropdown body, off.
+ */
+
+%drp__body:off {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100%);
+    visibility: hidden;
+}
+
+// Dropdown inset
+// =============================================================================
+
+.drp__inset {
+    box-shadow: map-get($dropdown-box-shadow, inner);
+}

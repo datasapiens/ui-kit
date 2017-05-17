@@ -1,0 +1,29 @@
+/**
+ * Component Dropdown settings.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Dropdown settings
+// =============================================================================
+
+// Set dropdown border color.
+$dropdown-border-color: #ccc !default;
+
+// Set dropdown border radius.
+$dropdown-border-radius: 3px !default;
+
+// Set dropdown border size.
+$dropdown-border-size: 1px !default;
+
+// Set dropdown box shadow.
+$dropdown-box-shadow: (
+    inner: (
+        inset 0 1px 2px -1px rgba($black, 0.125),
+        inset 0 -1px 2px -1px rgba($black, 0.125),
+    ),
+    outer: 0 1px 4px -2px rgba($black, 0.125),
+) !default;
+
+// Set dropdown z-index.
+$dropdown-index: 1 !default;
