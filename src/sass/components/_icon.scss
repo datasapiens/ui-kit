@@ -34,7 +34,7 @@
 
 [class~="ico"] {
     @extend %ico--horizontal;
-    @extend .ico.--medium;
+    @extend %ico--medium;
 
     display: inline-flex;
     text-decoration: none;
@@ -133,6 +133,7 @@
 
 .ico {
     @each $modifier, $size in $icon-size {
+        %ico--#{$modifier},
         &.--#{$modifier} {
             &::before {
                 font-size: $size;
