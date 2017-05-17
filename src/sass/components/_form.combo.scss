@@ -1,0 +1,171 @@
+/**
+ * Component Form/Combo.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {mixin}       acceleration
+ * @requires {placeholder} %drp__body:on
+ * @requires {placeholder} %drp__body:off
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--caret-down
+ * @requires {variable}    $animation-easing
+ * @requires dropdown
+ * @requires ico
+ */
+
+// =============================================================================
+// Form combo box
+// =============================================================================
+
+.form-combo {}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Form combo, debug mode.
+ * 1. We need to increase specifity.
+ */
+
+.form-combo {
+    &.--debug {
+        .form-combo__head {
+            &[class] {          /* 1 */
+                border-color: red;
+            }
+        }
+
+        .form-combo__body {
+            @extend %drp__body:on;
+
+            border-color: blue;
+            position: static;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Form combo, on.
+ */
+
+.form-combo {
+    &.is-on {
+        .form-combo__body {
+            @extend %drp__body:on !optional;
+        }
+
+        .form-combo__control {
+            @extend %form-combo__control:on;
+        }
+    }
+}
+
+/**
+ * Form combo, off.
+ */
+
+.form-combo {
+    &.is-off {
+        .form-combo__body {
+            @extend %drp__body:off !optional;
+        }
+
+        .form-combo__control {
+            @extend %form-combo__control:off;
+        }
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form combo header
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.form-combo__head {
+    position: relative;
+    z-index: 2;
+
+    // &[class] {                  /* 1 */
+    //     border: {
+    //         bottom: {
+    //             left-radius: 0;
+    //             right-radius: 0;
+    //         }
+    //     }
+    // }
+}
+
+// Form combo body
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ * 2. Shadow the `form-combo__head`.
+ */
+
+.form-combo__body {
+    border: {
+        top: {
+            left-radius: 0;
+            right-radius: 0;
+        }
+    }
+    left: 0;                /* 2 */
+    margin-top: (-1) * $form-combo-border-size;
+    right: 0;               /* 2 */
+
+    &[class] {              /* 1 */
+        min-width: 0;
+    }
+}
+
+// Form combo control
+// =============================================================================
+
+.form-combo__control {
+    @extend %form-combo__control:off;
+    @include acceleration;
+
+    transition: transform 0.3s map-get($animation-easing, in-out-circ);
+
+    &::before {
+        @extend %ico !optional;
+        @extend %ico--caret-down !optional;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Form combo control, on.
+ */
+
+%form-combo__control:on {
+    transform: rotate(180deg);
+}
+
+/**
+ * Form combo control, off.
+ */
+
+%form-combo__control:off {
+    transform: rotate(0deg);
+}
