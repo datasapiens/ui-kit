@@ -4,9 +4,6 @@
  *
  * @requires {mixin}       acceleration
  * @requires {variable}    $animation-easing
- * @requires animation.fade
- * @requires animation.slide
- * @requires animation.visibility
  */
 
 // =============================================================================
@@ -18,10 +15,8 @@
 // =============================================================================
 
 .drw {
-    @include acceleration;
+    @extend %drw:off;
 
-    max-height: 0;
-    overflow: hidden;
     transition: max-height 0.3s map-get($animation-easing, in-out-circ);
 }
 
@@ -30,18 +25,18 @@
  */
 
 /**
- * Drawer, static.
+ * Drawer, debug mode.
  * There's no `max-height` limit and motion animations are disabled.
  */
 
 .drw {
-    &.\--static {
-        transition: none;
+    &.\--debug {
+        @extend %drw:on;
+
+        max-height: none;
 
         .drw__body {
-            animation:
-                fade--out 0.3s both,
-                visibility--hide 0.3s both;
+            @extend %drp__body:on;
         }
     }
 }
@@ -51,33 +46,49 @@
  */
 
 /**
+ * 1. Use `animation` instead of `transition` for more complex or diverse animations.
+ */
+
+/**
  * Drawer, on.
  */
 
+%drw:on {
+    max-height: $drawer-size;
+    // overflow: visible;
+}
+
 .drw {
     &.is-on {
-        max-height: $drawer-size;
-        overflow: visible;
+        @extend %drw:on;
 
         .drw__body {
-            animation:
-                fade--in 0.3s 0.1s both,
-                slide--up-reverse 0.2s map-get($animation-easing, in-out-circ) both,
-                visibility--show 0.2s both;
-            pointer-events: auto;
-        }
-
-        &.\--static {
-            max-height: none;
-
-            .drw__body {
-                animation:
-                    fade--in 0.3s 0.1s both,
-                    visibility--show 0.2s both;
-            }
+            @extend %drw__body:on;
+            // animation: ... ;  /* 1 */
         }
     }
 }
+
+/**
+ * Drawer, off.
+ */
+
+%drw:off {
+    max-height: 0;
+    overflow: hidden;
+}
+
+// .drw {
+//     &.is-off {
+//         @extend %drw:off;
+//
+//         .drw__body {
+//             @extend %drw__body:off;
+//
+//             animation: ... ;  /* 1 */
+//         }
+//     }
+// }
 
 /**
  * Context.
@@ -93,9 +104,37 @@
 // =============================================================================
 
 .drw__body {
-    animation:
-        fade--out 0.2s both,
-        slide--up 0.2s map-get($animation-easing, in-out-circ) 0.1s both,
-        visibility--hide 0.3s both;
+    @extend %drw__body:off;
+    @include acceleration;
+
+    transition:
+        opacity 0.2s,
+        transform 0.2s map-get($animation-easing, in-out-circ) 0.1s,
+        visibility 0.3s;
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Dropdown body, on.
+ */
+
+%drw__body:on {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/**
+ * Dropdown body, off.
+ */
+
+%drw__body:off {
+    opacity: 0;
     pointer-events: none;
+    transform: translateY(-100%);
+    visibility: hidden;
 }
