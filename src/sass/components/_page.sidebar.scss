@@ -189,8 +189,6 @@
     &,
     [class*="--level-"] {
         @include acceleration;
-        border: 0;
-        border-radius: 0;
     }
 
     &[class] {                              /* 1 */
@@ -213,7 +211,7 @@
                 }
             }
 
-            ul,
+            .page-sidebar__navigation__inset,
             [class*="__head"] {
                 margin-left: (-1) * $j * $indent;
             }
@@ -228,6 +226,11 @@
         }
     }
 }
+
+// Page sidebar navigation inset
+// =============================================================================
+
+.page-sidebar__navigation__inset {}
 
 // Page sidebar navigation item
 // =============================================================================

@@ -18,8 +18,6 @@
 
 .nav-vertical {
     background-color: $nav-vertical-background;
-    border: $nav-vertical-border-size solid $nav-vertical-border-color;
-    border-radius: $nav-vertical-border-radius;
     color: $nav-vertical-color;
     display: inline-block;
     font-size: px-to-rem($nav-vertical-font-size);
@@ -32,7 +30,13 @@
 
     ul {
         @extend %lst--reset !optional;
+    }
 
+    a {
+        color: inherit;
+    }
+
+    .nav-vertical__inset {
         margin: 0 (-1) * map-get($nav-vertical-indent, horizontal);
     }
 
@@ -78,11 +82,12 @@
                 }
             }
 
-            ul,
+            .nav-vertical__inset,
             .nav-vertical__head {
                 margin-left: (-1) * $i * $indent;
             }
 
+            .nav-vertical__item__inset[class],
             .nav-vertical__item__region[class] {    /* 1 */
                 &::after {
                     left: $i * $indent-item;
@@ -125,13 +130,16 @@
             color: map-get($nav-vertical--primary-item-color, initial);
 
             & + .nav-vertical__item {
+                &.nav-vertical__item__inset,
+                > .nav-vertical__item__inset,
+                &.nav-vertical__item__region,
                 > .nav-vertical__item__region {
                     &::after {
                         // Background gradient option
                         // background-color: $nav-vertical--primary-item-border-color;
 
                         // Border style option
-                        background-color: $nav-vertical--primary-item-border-color;
+                        border-color: $nav-vertical--primary-item-border-color;
                     }
                 }
             }
@@ -143,6 +151,7 @@
 
         .nav-vertical__item__region {
             color: map-get($nav-vertical--primary-item-color, initial);
+            // color: inherit;
         }
 
         /**
@@ -181,10 +190,13 @@
 // =============================================================================
 
 .nav-vertical__item {
-    color: map-get($nav-vertical-item-color, initial);
+    // color: map-get($nav-vertical-item-color, initial);
     margin: 0;
 
     & + & {
+        &.nav-vertical__item__inset,
+        > .nav-vertical__item__inset,
+        &.nav-vertical__item__region,
         > .nav-vertical__item__region {
             &::after {
                 @include stretch(
@@ -221,6 +233,7 @@
 
 .nav-vertical__item {
     &.is-active:not(.is-disabled) {
+        &.nav-vertical__item__region,
         > .nav-vertical__item__region {
             @extend .nav-vertical__item__region:active;
         }
@@ -237,6 +250,7 @@
 
 .nav-vertical__item {
     &.is-disabled {
+        &.nav-vertical__item__region,
         > .nav-vertical__item__region {
             @extend .nav-vertical__item__region:disabled;
         }
@@ -257,20 +271,32 @@
 //     }
 // }
 
-// Navigation item region
+// Navigation item inset
 // =============================================================================
 
-.nav-vertical__item__region {
+%nav-vertical__item__inset {
     @include word-wrap;
 
-    color: map-get($nav-vertical-item-color, initial);
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     padding:
         map-get($nav-vertical-item-indent, vertical)
         map-get($nav-vertical-item-indent, horizontal);
     position: relative;
+}
+
+.nav-vertical__item__inset {
+    @extend %nav-vertical__item__inset;
+}
+
+// Navigation item region
+// =============================================================================
+
+.nav-vertical__item__region {
+    @extend %nav-vertical__item__inset;
+
+    color: map-get($nav-vertical-item-color, initial);
+    cursor: pointer;
     text-decoration: none;
     transition:
         background-color 0.2s,
@@ -287,6 +313,7 @@
         .nav-vertical {
             @for $i from 2 through $nav-vertical-depth {
                 &.\--level-#{$i} {
+                    .nav-vertical__item__inset,
                     .nav-vertical__item__region {
                         padding-left: $i * map-get($nav-vertical-item-indent, horizontal);
                     }
@@ -307,14 +334,16 @@
 .nav-vertical__item__region {
     &:active {
         @at-root {
-            .nav-vertical__item:not(.is-disabled) > & {
+            .nav-vertical__item:not(.is-disabled) > &,
+            &:not(.is-disabled) {
                 background-color: map-get($nav-vertical-item-background, active);
                 color: map-get($nav-vertical-item-color, active);
                 z-index: 1;
             }
 
             // primary
-            .nav-vertical.\--primary .nav-vertical__item:not(.is-disabled) > & {
+            .nav-vertical.\--primary .nav-vertical__item:not(.is-disabled) > &,
+            .nav-vertical.\--primary &:not(.is-disabled) {
                 background-color: map-get($nav-vertical--primary-item-background, active);
                 color: map-get($nav-vertical--primary-item-color, active);
             }
