@@ -4,7 +4,7 @@
  *
  * @requires {placeholder} %ctr--core-y
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--chevron-down
+ * @requires {placeholder} %ico--caret-down
  * @requires container
  * @requires ico
  */
@@ -88,7 +88,7 @@
 %form-select__control {
     @extend %ctr--core-y !optional;
     @extend %ico !optional;
-    @extend %ico--chevron-down !optional;
+    @extend %ico--caret-down !optional;
 
     font-size: $form-select-control-size;
     pointer-events: none;
