@@ -3,7 +3,12 @@
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  *
  * @requires {placeholder} %form-element
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--caret-down
+ * @requires {placeholder} %ico--horizontal
+ * @requires {placeholder} %ico--medium
  * @requires form.element
+ * @requires ico
  */
 
 // =============================================================================
@@ -20,7 +25,8 @@
 
     display: inline-flex;
 
-    [class*="ico"] {
+    [class*="ico"],
+    .form-composite__control {
         align-items: center;
         justify-content: center;
     }
@@ -76,6 +82,10 @@
 // =============================================================================
 
 .form-composite__control {
+    @extend %ico--horizontal !optional;
+    @extend %ico--medium !optional;
+
     cursor: pointer;
+    display: inline-flex;
     width: $form-composite-control-size;
 }
