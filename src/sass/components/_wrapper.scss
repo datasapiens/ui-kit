@@ -85,13 +85,13 @@
 
         &.--scroll-x {
             padding: {
-                right: map-get($wrapper-indent, horizontal);
+                bottom: map-get($wrapper-indent, vertical);
             }
         }
 
         &.--scroll-y {
             padding: {
-                bottom: map-get($wrapper-indent, vertical);
+                right: map-get($wrapper-indent, horizontal);
             }
         }
     }
