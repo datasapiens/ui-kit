@@ -7,8 +7,5 @@
 // Form settings
 // =============================================================================
 
-// Set form row margin.
-$form-row-indent: $base-line-height;
-
-// Set form cell indent.
-$form-cell-indent: 20px;
+// Set form row margin (according to `$base-line-height`).
+$form-row-indent: 23px !default;

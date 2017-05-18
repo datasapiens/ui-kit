@@ -1,6 +1,8 @@
 /**
  * Component Form.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function} px-to-rem
  */
 
 // =============================================================================
@@ -43,9 +45,6 @@
 // =============================================================================
 
 .form__row {
-    @extend %group;
-
-    display: block;
     margin-bottom: px-to-rem(0.5 * $form-row-indent);
 }
 
@@ -65,9 +64,14 @@
 
 /**
  * Form row, grid.
+ * @deprecated
+ *
+ * TODO: Replace with `grid.lax`
  */
 
 .form__row {
+    $form-cell-indent: 16px;
+
     &.\--grid {
         display: flex;
         margin-right: (-1) * $form-cell-indent;
