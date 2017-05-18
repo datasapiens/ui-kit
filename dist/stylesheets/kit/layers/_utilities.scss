@@ -179,9 +179,12 @@
 .u-bold   { font-weight: 400; }
 .u-italic { font-style: italic; }
 
-.u-capital { text-transform: capitalize; }
-.u-upper   { text-transform: uppercase; }
-.u-lower   { text-transform: lowercase; }
+.u-transform {
+    &.\--capital { text-transform: capitalize; }
+    &.\--lower   { text-transform: lowercase; }
+    &.\--none    { text-transform: none; }
+    &.\--upper   { text-transform: uppercase; }
+}
 
 .u-left   { text-align: left !important; }
 .u-center { text-align: center !important; }
