@@ -154,6 +154,23 @@
 // Dropdown inset
 // =============================================================================
 
+/**
+ * 1. We need to increase specifity.
+ */
+
 .drp__inset {
-    box-shadow: map-get($dropdown-box-shadow, inner);
+    position: relative;
+
+    &::after {
+        @include stretch;
+
+        box-shadow: map-get($dropdown-box-shadow, inner);
+        content: "";
+        pointer-events: none;
+    }
+
+    &[class]::after {   /* 1 */
+        display: block;
+        z-index: $dropdown-index + 1;
+    }
 }
