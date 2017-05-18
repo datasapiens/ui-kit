@@ -1,0 +1,59 @@
+/**
+ * Component Grid/Lax.
+ * @author David Sklar <david.sklar@datasapiens.co.uk>
+ */
+
+// =============================================================================
+// Lax grid
+// =============================================================================
+
+.grd-lax {
+    // align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: (-1) * $grid-lax-gutter;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Lax grid, fitting the parent.
+ */
+
+.grd-lax {
+    &.--fit {
+        .grd-lax__item {
+            flex: 1;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Lax grid item
+// =============================================================================
+
+.grd-lax__item {
+    // flex: 0 1 auto;
+    margin-right: $grid-lax-gutter;
+}
