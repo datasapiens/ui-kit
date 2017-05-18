@@ -1,6 +1,8 @@
 /**
  * Component Form/Label.
  * @author David Sklar <david.sklar@datasapiens.co.uk>
+ *
+ * @requires {function} px-to-rem
  */
 
 // =============================================================================
@@ -37,7 +39,10 @@
 .form-label {
     &.--stack {
         display: block;
-        margin-bottom: px-to-rem(1/8 * map-get($form-label-indent, vertical));
+        margin-bottom: px-to-rem(
+            1/8 *
+            map-get($form-label-indent, vertical)
+        );
         padding-left: $form-label-push;
     }
 }

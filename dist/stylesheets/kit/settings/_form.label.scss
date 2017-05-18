@@ -7,21 +7,29 @@
 // Form label settings
 // =============================================================================
 
-// Set form label color.
-$form-label-color: $base-label-color;
+// Set form label color (according to `$base-label-color`).
+$form-label-color: (
+    active:     desaturate($blue--lochmara, 50%),   // pressed
+    focus:      desaturate($blue--lochmara, 90%),   // focused
+    hover:      desaturate($blue--lochmara, 50%),   // hovered
+    disable:    lighten($base-color, 30%),          // disabled
+    initial:    inherit,
+    invalid:    $orange--fire,                      // invalid
+    required:   $orange--fire,                      // required
+) !default;
 
 // Set form label indent.
 $form-label-indent: (
     horizontal: 5px,
     vertical:  $base-line-height, // according to `$form-row-indent`
-);
+) !default;
 
-// Set form label push
-//  (according to `$form-element-indent` and `$form-element-border-size`).
-$form-label-push: 11px;
+// Set form label push (according to `$form-element-indent` and
+// `$form-element-border-size`).
+$form-label-push: 11px !default;
 
 // Set form label font size.
-$form-label-font-size: 13px;
+$form-label-font-size: 13px !default;
 
 // Set form label font weight.
-$form-label-font-weight: 400;
+$form-label-font-weight: 400 !default;
