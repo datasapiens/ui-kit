@@ -3,7 +3,6 @@
  * @author David Sklar <david.sklar@datasapiens.co.uk>
  *
  * @requires {mixin}       acceleration
- * @requires {variable}    $animation-easing
  */
 
 // =============================================================================
@@ -118,8 +117,7 @@
     position: absolute;
     transition:
         opacity 0.2s,
-        transform 0.2s map-get($animation-easing, in-out-circ) 0.1s,
-        visibility 0.3s;
+        transform 0.2s;
 
     &[class] {              /* 1 */
         display: block;
@@ -149,7 +147,7 @@
 %drp__body:off {
     opacity: 0;
     pointer-events: none;
-    transform: translateY(100%);
+    transform: translateY(-20%);
     visibility: hidden;
 }
 
