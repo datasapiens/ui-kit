@@ -30,6 +30,8 @@
 
     ul {
         @extend %lst--reset !optional;
+
+        margin-bottom: 0;
     }
 
     a {
