@@ -16,7 +16,10 @@
 // Form combo box
 // =============================================================================
 
-.form-combo {}
+.form-combo {
+    position: relative;
+    z-index: $form-combo-index;
+}
 
 /**
  * Modifiers.
@@ -54,6 +57,8 @@
 
 .form-combo {
     &.is-on {
+        z-index: $form-combo-index + 2;
+
         .form-combo__body {
             @extend %drp__body:on !optional;
         }
@@ -99,7 +104,7 @@
 
 .form-combo__head {
     position: relative;
-    z-index: 2;
+    z-index: $form-combo-index + 1;
 
     // &[class] {                  /* 1 */
     //     border: {
