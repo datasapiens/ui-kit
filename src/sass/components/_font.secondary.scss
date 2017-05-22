@@ -1,22 +1,22 @@
 /**
- * Component Page/Context.
+ * Component Font/Secondary.
  */
 
+@each $variant in $font-secondary-variant {
+    @include font-face(
+        $family: $font-secondary-family,
+        $file: map-get($variant, filename),
+        $format: ("woff2", "woff"),
+        $weight: map-get($variant, weight)
+    );
+}
+
 // =============================================================================
-// Page context
+// Secondary font
 // =============================================================================
 
-.page-context {
-    background-color: $page-context-background;
-    padding: $page-context-indent 0;
-    position: fixed;
-    top: $page-context-offset;
-    z-index: 2;
-
-    @supports (position: sticky) {
-        position: sticky;
-        top: 0;
-    }
+.font-secondary {
+    font-family: $font-secondary-family;
 }
 
 /**
@@ -26,7 +26,7 @@
 // .component--modifier {}
 
 // .component {
-//     &.\--modifier {}
+//     &.--modifier {}
 // }
 
 /**
@@ -43,7 +43,7 @@
  * Context.
  */
 
-// .has-component {}
+// .has-component
 
 // =============================================================================
 // Subcomponents
@@ -52,4 +52,4 @@
 // SubcomponentName
 // =============================================================================
 
-// .component__subcomponent {}
+// .component__subcomponent
