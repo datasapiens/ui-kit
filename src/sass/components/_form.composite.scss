@@ -64,10 +64,22 @@
 // Form composite field
 // =============================================================================
 
+/**
+ * 1. Non-native form elements.
+ * 2. We need to increase specifity.
+ */
+
 .form-composite__content {
+    @extend %form-element;   /* 1 */
     @extend %form-element--transparent;
 
-    height: auto;
+    overflow: hidden;        /* 1 */
+    text-overflow: ellipsis; /* 1 */
+    white-space: nowrap;     /* 1 */
+
+    &[class] {               /* 2 */
+        height: auto;
+    }
 
     &:first-child {
         padding-left: 0;
