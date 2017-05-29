@@ -1,9 +1,9 @@
 /**
- * Layer Utilities.
+ * Layer Utility.
  */
 
 // =============================================================================
-// Utilities
+// Utility
 // =============================================================================
 
 // =============================================================================
@@ -26,12 +26,12 @@
 .u-table-cell     { display: table-cell; }
 
 .u-none {
-    &.\--printer {
+    &.--printer {
         @media print {
             display: none;
         }
     }
-    &.\--screen {
+    &.--screen {
         display: none;
     }
 }
@@ -41,46 +41,46 @@
  */
 
 [class*="flex"] {
-    &.\--grow {
+    &.--grow {
         flex-grow: 1;
     }
-    &.\--shrink {
+    &.--shrink {
         flex-shrink: 1;
     }
-    &.\--wrap {
+    &.--wrap {
         flex-wrap: wrap;
     }
 }
 
 .u-align {
-    &.\--baseline {
+    &.--baseline {
         align-items: baseline;
     }
-    &.\--center {
+    &.--center {
         align-items: center;
     }
-    &.\--end {
+    &.--end {
         align-items: flex-end;
     }
-    &.\--start {
+    &.--start {
         align-items: flex-start;
     }
 }
 
 .u-justify {
-    &.\--around {
+    &.--around {
         justify-content: space-around;
     }
-    &.\--between {
+    &.--between {
         justify-content: space-between;
     }
-    &.\--center {
+    &.--center {
         justify-content: center;
     }
-    &.\--end {
+    &.--end {
         justify-content: flex-end;
     }
-    &.\--start {
+    &.--start {
         justify-content: flex-start;
     }
 }
@@ -90,22 +90,22 @@
  */
 
 .u-float {
-    &.\--left {
+    &.--left {
         float: left;
     }
-    &.\--right {
+    &.--right {
         float: right;
     }
 }
 
 .u-clear {
-    &.\--both {
+    &.--both {
         clear: both;
     }
-    &.\--left {
+    &.--left {
         clear: left;
     }
-    &.\--right {
+    &.--right {
         clear: right;
     }
 }
@@ -123,10 +123,10 @@
 .u-static     { position: static !important; }
 
 .u-off {
-    &.\--reader {
+    &.--reader {
         @extend %reader;
     }
-    &.\--screen {
+    &.--screen {
         left: -100vw;
         position: absolute;
         top: -100vh;
@@ -139,8 +139,8 @@
 
 .u-push {
     padding: {
-        left: $utilities-indent;
-        right: $utilities-indent;
+        left: $utility-indent;
+        right: $utility-indent;
     }
 }
 
@@ -149,10 +149,10 @@
  */
 
 .u-overflow {
-    &.\--hidden {
+    &.--hidden {
         overflow: hidden;
     }
-    &.\--visible {
+    &.--visible {
         overflow: visible;
     }
 }
@@ -179,10 +179,10 @@
 .u-italic { font-style: italic; }
 
 .u-transform {
-    &.\--capital { text-transform: capitalize; }
-    &.\--lower   { text-transform: lowercase; }
-    &.\--none    { text-transform: none; }
-    &.\--upper   { text-transform: uppercase; }
+    &.--capital { text-transform: capitalize; }
+    &.--lower   { text-transform: lowercase; }
+    &.--none    { text-transform: none; }
+    &.--upper   { text-transform: uppercase; }
 }
 
 .u-left   { text-align: left !important; }
