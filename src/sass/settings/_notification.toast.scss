@@ -29,6 +29,9 @@ $notification-toast-size: 400px !default;
 // Set toast notification theme map.
 $notification-toast-theme: map-get($color-set, accent) !default;
 
+// Set toast notification theme icons map.
+$notification-toast-theme-icon: map-get($icon-set, notification) !default;
+
 /**
  * Toast notification item.
  */
@@ -42,14 +45,14 @@ $notification-toast-item-border-radius: 3px !default;
 // Set toast notification item border size.
 $notification-toast-item-border-size: 1px !default;
 
+// Set toast notification item box shadow.
+$notification-toast-item-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
+
 // Set toast notification item color.
 $notification-toast-item-color: #fff !default;
 
 // Set toast notification item indent.
-$notification-toast-item-indent: 20px !default;
-
-// Set toast notification item icon opacity.
-$notification-toast-item-icon-opacity: 0.7 !default;
+$notification-toast-item-indent: 16px !default;
 
 // Set toast notification item icon size.
 $notification-toast-item-icon-size: 30px !default;
