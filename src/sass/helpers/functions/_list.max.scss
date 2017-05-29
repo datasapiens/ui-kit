@@ -9,7 +9,7 @@
     $max: 0;
 
     @each $n in $list {
-        @if type-of($n) == number and $n > $max{
+        @if type-of($n) == number and $n > $max {
             $max: $n;
         }
     }
