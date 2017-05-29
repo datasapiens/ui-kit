@@ -36,7 +36,7 @@ $tag-line-height-ratio: 1 !default;
 $tag-length: 15em !default;
 
 // Set tag themes map.
-$tag-theme: $color-set--primary !default;
+$tag-theme: map-get($color-set, accent) !default;
 
 /**
  * Tag, primary

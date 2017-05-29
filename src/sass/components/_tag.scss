@@ -15,7 +15,7 @@
 // =============================================================================
 
 .tag {
-    @extend .tag.--default;
+    @extend .tag.--neutral;
     @extend .tag.--medium;
 
     align-items: center;
@@ -103,9 +103,9 @@
 .tag {
     @each $modifier, $theme in $tag-theme {
         &.--#{$modifier} {
-            background-color: map-get($theme, secondary);
-            border-color: darken(map-get($theme, secondary), 5%);
-            color: darken(map-get($theme, secondary), 50%);
+            background-color: map-get($theme, 100);
+            border-color: darken(map-get($theme, 100), 5%);
+            color: darken(map-get($theme, 100), 50%);
         }
     }
 }
@@ -124,9 +124,9 @@
         &.--primary {
             @each $modifier, $theme in $tag-theme {
                 &.--#{$modifier} {
-                    background-color: darken(map-get($theme, secondary), 20%);
-                    border-color: darken(map-get($theme, secondary), 25%);
-                    color: darken(map-get($theme, secondary), 70%);
+                    background-color: darken(map-get($theme, 100), 20%);
+                    border-color: darken(map-get($theme, 100), 25%);
+                    color: darken(map-get($theme, 100), 70%);
                 }
             }
         }
@@ -162,9 +162,9 @@
         &.--primary {
             @each $modifier, $theme in $tag-theme {
                 &.--#{$modifier} {
-                    background-color: darken(map-get($theme, secondary), 10%);
-                    border-color: darken(map-get($theme, secondary), 15%);
-                    color: darken(map-get($theme, secondary), 60%);
+                    background-color: darken(map-get($theme, 100), 10%);
+                    border-color: darken(map-get($theme, 100), 15%);
+                    color: darken(map-get($theme, 100), 60%);
                 }
             }
         }

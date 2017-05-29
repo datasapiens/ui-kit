@@ -25,8 +25,8 @@ $indicator-progress-size: (
 // Set progress indicator theme.
 $indicator-progress-theme: (
     default: (
-        background: rgba($green--wildwillow, 0.25),
-        color: rgba($green--wildwillow, 0.85),
+        background: rgba($orange--safron, 0.35),
+        color: $orange--safron,
         font: (
             size:   (
                 figure: 14px,

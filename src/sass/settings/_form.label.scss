@@ -8,13 +8,13 @@
 
 // Set form label color (according to `$base-label-color`).
 $form-label-color: (
-    active:     desaturate($blue--lochmara, 50%),   // pressed
-    focus:      desaturate($blue--lochmara, 90%),   // focused
-    hover:      desaturate($blue--lochmara, 50%),   // hovered
-    disable:    lighten($base-color, 30%),          // disabled
+    active:     $blue--deepcerulean,       // pressed
+    focus:      $blue--deepcerulean,       // focused
+    hover:      $blue--deepcerulean,       // hovered
+    disable:    lighten($base-color, 30%), // disabled
     initial:    inherit,
-    invalid:    $orange--fire,                      // invalid
-    required:   $orange--fire,                      // required
+    invalid:    $red--monza,               // invalid
+    required:   $red--monza,               // required
 ) !default;
 
 // Set form label indent.

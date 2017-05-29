@@ -1,0 +1,106 @@
+/**
+ * Layer Color settings.
+ */
+
+// =============================================================================
+// Color settings
+// =============================================================================
+
+$black : #000;
+$white : #fff;
+
+/**
+ * Accent palette.
+ */
+
+// notices
+$blue--anakiwa2     : #a7ffff;
+$blue--congress2    : #004899;
+$blue--dodger       : #20a0ff; // primary 0091ea
+$blue--malibu       : #70d1ff;
+$blue--science      : #0072cb;
+
+// successes
+$green--aquamarine  : #9cffc6;
+$green--camarone    : #006c07;
+$green--haze        : #009c39;
+$green--malachite   : #13ce66; // primary
+$green--screaming   : #63ff95;
+
+// neutrals
+$blue--fiord        : #3e4e62;
+$blue--nepal        : #99a9bf; // primary
+$blue--linkwater    : #cadbf2;
+$blue--slategray    : #6a7a8f;
+$blue--twilight     : #fdffff;
+
+// warnings
+$orange--brown      : #8b5d00;
+$orange--candycorn  : #ffec60;
+$yellow--palecanary : #ffff92;
+$orange--pirategold : #c08a00;
+$orange--safron     : #f7ba2a; // primary
+
+// dangers
+$red--cornflower    : #ffb1a4;
+$red--berry         : #8c0000;
+$red--monza         : #c50021;
+$red--salmon        : #ff7f75;
+$red--sunset        : #ff4949; // primary
+
+/**
+ * datasapiens palette.
+ */
+
+// $blue--bahama       : #005a9a;
+// $blue--cerulean     : #009fe3;
+// $green--asparagus   : #85a056;
+// $orange--diserria   : #db9a63;
+// $purple--wisteria   : #9469ab;
+// $red--falcon        : #856469;
+
+/**
+ * Neutral palette.
+ */
+
+$blue--catskill : #e5e9f2;
+$blue--fiord    : #475669;
+$blue--geyser   : #d3dce6;
+$blue--heather  : #c0ccda;
+$blue--mirage   : #1f2d3d;
+$blue--nepal    : #99a9bf;
+$blue--regent   : #8492a6;
+$blue--wood     : #324057;
+$blue--zircon   : #f9fafc;
+
+/**
+ * Primary palette.
+ */
+
+// primaries
+$blue--anakiwa      : #9bffff;
+$blue--cerulean     : #009fe3; // primary
+$blue--congress     : #004681;
+$blue--deepcerulean : #0071b1;
+$blue--malibu       : #62d0ff;
+
+// secondaries
+$orange--burning    : #ff7738;
+$orange--tangerine  : #ffa866;
+$orange--trinidad   : #e24400; // primary
+$red--bright        : #a80000;
+$red--lonestar      : #720000;
+
+// tertiaries
+$green--canary      : #d4ff52;
+$green--dolly       : #ffff86;
+$green--limeade     : #69b000;
+$green--riogrande   : #9ee200; // primary
+$green--verdun      : #348000;
+
+// quaternaries
+$red--cerise        : #e2009e; // primary
+$red--flirt         : #ab006f;
+$red--hotpink       : #ff58cf;
+$red--siren         : #770044;
+$purple--blushpink  : #ff8eff;

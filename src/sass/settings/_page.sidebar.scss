@@ -52,10 +52,10 @@ $page-sidebar-navigation-depth: 3 !default;
 
 // Set page sidebar navigation item background.
 $page-sidebar-navigation-item-background: (
-    active:     $blue-light--a700,      // pressed
-    disable:    transparent,            // disabled
-    focus:      $blue-light--a700,      // focused
-    hover:      $blue-light--a700,      // hovered
+    active:     $blue--dodger,  // pressed
+    disable:    transparent,    // disabled
+    focus:      $blue--dodger,  // focused
+    hover:      $blue--dodger,  // hovered
     initial:    transparent,
 ) !default;
 

@@ -7,10 +7,10 @@
 // =============================================================================
 
 // Set base background color.
-$base-background: #fafafa;
+$base-background: $blue--zircon;
 
 // Set base text color.
-$base-color: $gray--scorpion;
+$base-color: grayscale($blue--fiord);
 
 // Set base font family stack.
 $base-font-stack: ("Roboto", Helvetica, sans-serif);
@@ -38,11 +38,11 @@ $base-rhythm-unit: 0.5;
 
 // Set base link color.
 $base-link-color: (
-    active:     $blue--dodger,       // pressed
-    // focus:      $blue--dodger,       // focused
-    hover:      $blue--dodger,       // hovered
+    active:     lighten($blue--cerulean, 5%),  // pressed
+    // focus:      lighten($blue--cerulean, 5%),  // focused
+    hover:      lighten($blue--cerulean, 5%),  // hovered
     initial:    $blue--cerulean,
-    visit:      $blue--cerulean,     // visited
+    visit:      $blue--cerulean,               // visited
 );
 
 // Set base type scale (Major Third - 1.12).
@@ -63,13 +63,13 @@ $base-selection-background: gold;
  */
 
 $base-label-color: (
-    active:     desaturate($blue--lochmara, 50%),   // pressed
-    focus:      desaturate($blue--lochmara, 90%),   // focused
-    hover:      desaturate($blue--lochmara, 50%),   // hovered
-    disable:    lighten($base-color, 30%),          // disabled
+    active:     $blue--deepcerulean,       // pressed
+    focus:      $blue--deepcerulean,       // focused
+    hover:      $blue--deepcerulean,       // hovered
+    disable:    lighten($base-color, 30%), // disabled
     initial:    inherit,
-    invalid:    $orange--fire,                      // invalid
-    required:   $orange--fire,                      // required
+    invalid:    $red--monza,               // invalid
+    required:   $red--monza,               // required
 );
 
 // Browser (OS) specific

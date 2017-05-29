@@ -10,7 +10,7 @@
     $size: map-get($form-element-size, medium);
 
     background-color: map-get($form-element-background, initial);
-    border: $form-element-border-size solid map-get($form-element-border, initial);
+    border: $form-element-border-size solid map-get($form-element-border-color, initial);
     border-radius: $form-element-border-radius;
     color: map-get($form-element-color, initial);
     font: {
@@ -125,7 +125,7 @@
 %form-element {
     &:disabled,
     &.is-disabled {
-        border-color: map-get($form-element-border, disable);
+        border-color: map-get($form-element-border-color, disable);
         color: map-get($form-element-color, disable);
         cursor: not-allowed;
     }
@@ -154,7 +154,7 @@
     &.is-focused,
     &:focus {
         &:not(:disabled):not(.is-disabled):not([readonly]):not(.is-readonly) {
-            border-color: map-get($form-element-border, focus);
+            border-color: map-get($form-element-border-color, focus);
             color: map-get($form-element-color, focus);
         }
     }
@@ -188,7 +188,7 @@
     &:hover,
     &.is-hovered {
         &:not(:disabled):not(.is-disabled):not([readonly]):not(.is-readonly) {
-            border-color: map-get($form-element-border, hover);
+            border-color: map-get($form-element-border-color, hover);
         }
     }
 
@@ -219,7 +219,7 @@
     // &:invalid,
     &.is-invalid {
         background-color: map-get($form-element-background, invalid);
-        border-color: map-get($form-element-border, invalid);
+        border-color: map-get($form-element-border-color, invalid);
         color: map-get($form-element-color, invalid);
     }
 }

@@ -1,0 +1,103 @@
+/**
+ * Layer Color set settings.
+ */
+
+// =============================================================================
+// Color set settings
+// =============================================================================
+
+// Set color sets map.
+$color-set: (
+    //
+    // Accent colors set
+    //
+    accent: (
+        danger: (
+              0 : $red--berry,
+             20 : $red--monza,
+             50 : $red--sunset,
+             80 : $red--salmon,
+            100 : $red--cornflower,
+        ),
+        neutral: (
+              0 : $blue--fiord,
+             20 : $blue--slategray,
+             50 : $blue--nepal,
+             80 : $blue--linkwater,
+            100 : $blue--twilight,
+        ),
+        notice: (
+              0 : $blue--congress2,
+             20 : $blue--science,
+             50 : $blue--dodger,
+             80 : $blue--malibu,
+            100 : $blue--anakiwa2,
+        ),
+        success: (
+              0 : $green--camarone,
+             20 : $green--haze,
+             50 : $green--malachite,
+             80 : $green--screaming,
+            100 : $green--aquamarine,
+        ),
+        warning: (
+              0 : $orange--brown,
+             20 : $orange--pirategold,
+             50 : $orange--safron,
+             80 : $orange--candycorn,
+            100 : $yellow--palecanary,
+        ),
+    ),
+
+    //
+    // Neutral colors set
+    //
+    neutral: (
+          0 : $black,
+         10 : $blue--mirage,
+         20 : $blue--wood,
+         30 : $blue--fiord,
+         40 : $blue--regent,
+         50 : $blue--nepal,
+         60 : $blue--heather,
+         70 : $blue--geyser,
+         80 : $blue--catskill,
+         90 : $blue--zircon,
+        100 : $white,
+    ),
+
+    //
+    // Primary colors set
+    //
+    primary: (
+        primary: (
+              0 : $blue--congress,
+             20 : $blue--deepcerulean,
+             50 : $blue--cerulean,
+             80 : $blue--malibu,
+            100 : $blue--anakiwa,
+        ),
+        secondary: (
+              0 : $red--lonestar,
+             20 : $red--bright,
+             50 : $orange--trinidad,
+             80 : $orange--burning,
+            100 : $orange--tangerine,
+        ),
+        tertiary: (
+              0 : $green--verdun,
+             20 : $green--limeade,
+             50 : $green--riogrande,
+             80 : $green--canary,
+            100 : $green--dolly,
+        ),
+        quaternary: (
+              0 : $red--siren,
+             20 : $red--flirt,
+             50 : $red--cerise,
+             80 : $red--hotpink,
+            100 : $purple--blushpink,
+        ),
+    ),
+
+) !default;

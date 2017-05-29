@@ -37,7 +37,7 @@ $list-directory-head-indent: (
  */
 
 // Set directory list item spacer color.
-$list-directory-item-spacer-color: lighten($gray--silverchalice, 20%) !default;
+$list-directory-item-spacer-color: $blue--geyser !default;
 
 // Set directory list item spacer size.
 $list-directory-item-spacer-size: 1px !default;

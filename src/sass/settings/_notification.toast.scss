@@ -27,7 +27,7 @@ $notification-toast-offset: 70px !default;
 $notification-toast-size: 400px !default;
 
 // Set toast notification theme map.
-$notification-toast-theme: $color-set--primary !default;
+$notification-toast-theme: map-get($color-set, accent) !default;
 
 /**
  * Toast notification item.

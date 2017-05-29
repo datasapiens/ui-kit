@@ -74,7 +74,7 @@ body {
 // =============================================================================
 
 %heading {
-    color: desaturate($blue--lochmara, 90%);
+    color: $blue--regent;
     font-weight: 400;
     display: block;
     margin: {
@@ -278,6 +278,7 @@ select,
 textarea {
     @extend %form-element !optional;
 
+    font-family: inherit;
     font-weight: inherit;
     color: inherit;
     outline: none;

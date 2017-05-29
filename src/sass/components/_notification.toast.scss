@@ -78,7 +78,7 @@
 // =============================================================================
 
 .ntf-toast__item {
-    @extend .ntf-toast__item.--default;
+    @extend .ntf-toast__item.--neutral;
     @include acceleration;
 
     animation:
@@ -107,15 +107,15 @@
 .ntf-toast__item {
     @each $modifier, $theme in $notification-toast-theme {
         &.--#{$modifier} {
-            background-color: rgba(map-get($theme, primary), 0.9);
+            background-color: rgba(map-get($theme, 50), 0.9);
             color: $notification-toast-item-color;
 
             @if map-has-key($theme, icon) {
                 @extend .ntf-toast__item.has-icon;
 
-                &::before {
-                    @extend %ico--#{map-get($theme, icon)} !optional;
-                }
+                // &::before {
+                //     @extend %ico--#{map-get($theme, icon)} !optional;
+                // }
             } @else {
                 &::before {
                     content: none;

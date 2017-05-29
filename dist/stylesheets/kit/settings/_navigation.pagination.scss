@@ -12,19 +12,19 @@
 
 // Set pagination item background.
 $navigation-pagination-item-background: (
-    active:     lighten($blue--bahama, 65%),    // pressed
+    active:     lighten($blue--congress, 65%),    // pressed
     disable:    lighten(#ccc, 20%),             // disabled
-    focus:      lighten($blue--bahama, 65%),    // focused
-    hover:      lighten($blue--bahama, 65%),    // hovered
+    focus:      lighten($blue--congress, 65%),    // focused
+    hover:      lighten($blue--congress, 65%),    // hovered
     initial:    $white,
 );
 
 // Set pagination item border color.
 $navigation-pagination-item-border: (
-    active:     lighten($blue--bahama, 50%),    // pressed
+    active:     lighten($blue--congress, 50%),    // pressed
     disable:    lighten(#ccc, 10%),             // disabled
-    focus:      lighten($blue--bahama, 50%),    // focused
-    hover:      lighten($blue--bahama, 50%),    // hovered
+    focus:      lighten($blue--congress, 50%),    // focused
+    hover:      lighten($blue--congress, 50%),    // hovered
     initial:    #ccc,
 );
 
@@ -36,10 +36,10 @@ $navigation-pagination-item-border-size: 1px;
 
 // Set pagination item color.
 $navigation-pagination-item-color: (
-    active:     $blue--bahama,                  // pressed
+    active:     $blue--congress,                  // pressed
     disable:    lighten($base-color, 40%),      // disabled
-    focus:      $blue--bahama,                  // focused
-    hover:      $blue--bahama,                  // hovered
+    focus:      $blue--congress,                  // focused
+    hover:      $blue--congress,                  // hovered
     initial:    initial,
 );
 
