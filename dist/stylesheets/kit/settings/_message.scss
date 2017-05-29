@@ -15,44 +15,51 @@ $message-border-radius: 3px !default;
 // Set message border size.
 $message-border-size: 1px !default;
 
+// Set message box shadow.
+// $message-box-shadow: 0 1px 4px -2px rgba($black, 0.125) !default;
+$message-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
+
 // Set message font size.
-$message-font-size: 13px !default;
+$message-font-size: 14px !default;
 
 // Set message font weight.
 $message-font-weight: 300 !default;
 
 // Set message color.
-$message-color: $base-color !default;
+$message-color: $black !default;
 
-// Set message indent.
+// Set message indent (according to `$panel-indent`).
 $message-indent: (
-    horizontal: 10px,
-    vertical: 10px,
+    horizontal: 16px,
+    vertical:   8px,
 ) !default;
 
 // Set message line height ratio.
 $message-line-height-ratio: inherit !default;
 
 // Set message themes map.
-$message-theme: $color-set--primary !default;
+$message-theme: map-get($color-set, accent) !default;
+
+// Set message theme icons map.
+$message-theme-icon: map-get($icon-set, notification) !default;
+
+/**
+ * Message title.
+ */
 
 // Set message title font size.
-$message-title-font-size: 14px !default; // px-to-rem($base-font-size)
+$message-title-font-size: 14px !default;
 
-// Set message control color.
-$message-control-color: (
-    hover:      darken($gray, 30%),   // hovered
-    initial:    $gray,
-) !default;
+/**
+ * Message control.
+ */
 
 // Set message control size.
 $message-control-size: 22px !default;
 
-// Set message icon opacity.
-$message-icon-opacity: 0.7 !default;
-
-// Set message icon color.
-$message-icon-color: transparentize($white, 0.3) !default;
+/**
+ * Message icon.
+ */
 
 // Set message icon region size.
 $message-icon-region-size: 50px !default;
