@@ -37,10 +37,10 @@
     @if $message-font-size != $base-font-size {
         font-size: px-to-rem($message-font-size);
     }
-    @if $message-font-size != $base-font-weight {
+    @if $message-font-weight != $base-font-weight {
         font-weight: $message-font-weight;
     }
-    @if $message-font-size != inherit {
+    @if $message-line-height-ratio != inherit {
         line-height: $message-line-height-ratio;
     }
 
@@ -73,10 +73,12 @@
     &.--primary {
         @extend %msg-has-icon;
 
-        padding-left: $message-icon-region-size + map-get($message-indent, horizontal);
+        padding-left:
+            $message-icon-region-size +
+            map-get($message-indent, horizontal);
 
         &.--primary::after {
-            color: rgba($white, 0.75);
+            color: rgba(#fff, 0.75);
         }
 
         &::before {
@@ -121,16 +123,18 @@
             background: {
                 color: lighten(map-get($theme, 80), 10%);
                 image: linear-gradient(
-                    100deg,
+                    120deg,
                     lighten(map-get($theme, 80), 10%) 40%,
                     lighten(map-get($theme, 50), 0%)
                 );
             }
             border-color: desaturate(map-get($theme, 80), 50%);
 
-            &.--primary::after,
-            &.--secondary::after {
-                @extend %ico--#{map-get($message-theme-icon, $modifier)} !optional;
+            @if map-has-key($message-theme-icon, $modifier) {
+                &.--primary::after,
+                &.--secondary::after {
+                    @extend %ico--#{map-get($message-theme-icon, $modifier)} !optional;
+                }
             }
 
             &.--secondary::after {
