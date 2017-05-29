@@ -25,3 +25,21 @@ $icon-size: (
 
 // Set icon label line height ratio.
 $icon-label-line-height-ratio: 1.25 !default;
+
+/**
+ * Icons sets.
+ */
+
+// Set icon sets map.
+$icon-set: (
+    //
+    // Notification icon set
+    //
+    notification: (
+        danger: "block",
+        notice: "info-outline",
+        success: "check-outline",
+        warning: "warning-outline",
+    ),
+
+) !default;
