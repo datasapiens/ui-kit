@@ -10,7 +10,7 @@
 $panel-background: $white;
 
 // Set panel border color.
-$panel-border-color: #aaa;
+$panel-border-color: $blue--heather;
 
 // Set panel border radius.
 $panel-border-radius: 3px;
@@ -21,8 +21,8 @@ $panel-border-size: 1px;
 // Set panel indent.
 $panel-indent: (
     horizontal: 16px,
-    vertical:   8px,
+    vertical:   16px,
 );
 
 // Set light panel box shadow.
-$panel--light-box-shadow: 0 5px 30px -5px rgba($panel-border-color, 0.75);
+$panel--light-box-shadow: 0 5px 20px -5px rgba($panel-border-color, 0.5);
