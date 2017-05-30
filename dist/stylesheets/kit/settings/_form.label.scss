@@ -13,8 +13,8 @@ $form-label-color: (
     hover:      $blue--deepcerulean,       // hovered
     disable:    lighten($base-color, 30%), // disabled
     initial:    inherit,
-    invalid:    $red--monza,               // invalid
-    required:   $red--monza,               // required
+    invalid:    $red--sunset,              // invalid
+    required:   $red--sunset,              // required
 ) !default;
 
 // Set form label indent.
