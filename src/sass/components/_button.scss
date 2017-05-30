@@ -19,7 +19,7 @@
         style: solid;
     }
     box-shadow: 0 1px 3px -2px rgba(map-get($button-shadow-color, initial), 0.75);
-    color: inherit;
+    color: map-get($button-color, initial);
     cursor: pointer;
     display: inline-block;
     letter-spacing: px-to-em($button-letter-spacing);

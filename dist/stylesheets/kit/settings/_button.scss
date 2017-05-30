@@ -8,20 +8,20 @@
 
 // Set button background.
 $button-background: (
-    active:     unset,                  // pressed
-    disable:    lighten($blue--geyser, 33%),    // disabled
-    focus:      unset,                  // focused
-    hover:      unset,                  // hovered
-    initial:    lighten($blue--geyser, 43%),
+    active:     unset,           // pressed
+    disable:    $blue--heather,  // disabled
+    focus:      unset,           // focused
+    hover:      unset,           // hovered
+    initial:    $blue--catskill,
 );
 
 // Set button border color.
 $button-border-color: (
-    active:     $blue--geyser,                  // pressed
-    disable:    lighten($blue--geyser, 23%),    // disabled
-    focus:      $blue--geyser,                  // focused
-    hover:      $blue--geyser,                  // hovered
-    initial:    lighten($blue--geyser, 23%),
+    active:     $blue--heather, // pressed
+    disable:    $blue--nepal,   // disabled
+    focus:      $blue--heather, // focused
+    hover:      $blue--heather, // hovered
+    initial:    $blue--heather,
 );
 
 // Set button border radius.
@@ -32,11 +32,11 @@ $button-border-size: 1px;
 
 // Set button color.
 $button-color: (
-    active:     $blue--regent,       // pressed
-    disable:    $blue--geyser,                  // disabled
-    focus:      $blue--regent,       // focused
-    hover:      $blue--regent,       // hovered
-    initial:    initial,
+    active:     $blue--wood,   // pressed
+    disable:    $blue--regent, // disabled
+    focus:      $blue--wood,   // focused
+    hover:      $blue--wood,   // hovered
+    initial:    $blue--fiord,
 );
 
 // Set button font size.
@@ -67,11 +67,11 @@ $button-letter-spacing: 0.25px;
 
 // Set button shadow color.
 $button-shadow-color: (
-    active:     initial,            // pressed
-    disable:    $blue--geyser,              // disabled
-    focus:      initial,            // focused
-    hover:      initial,            // hovered
-    initial:    $blue--regent,
+    active:     initial, // pressed
+    disable:    $black,  // disabled
+    focus:      initial, // focused
+    hover:      initial, // hovered
+    initial:    $black,
 );
 
 // Set button height.
@@ -98,31 +98,31 @@ $button-size: (
 // Set primary button properties.
 $button--primary: (
     background: (
-        active:     $blue--congress,      // pressed
-        focus:      $blue--dodger,      // focused
-        hover:      $blue--dodger,      // hovered
+        active:     $blue--deepcerulean, // pressed
+        focus:      $blue--malibu,       // focused
+        hover:      $blue--malibu,       // hovered
         initial:    $blue--cerulean,
     ),
     border: (
-        active:     $blue--congress,      // pressed
-        disable:    initial,            // disabled
-        focus:      $blue--dodger,      // focused
-        hover:      $blue--dodger,      // hovered
+        active:     $blue--deepcerulean, // pressed
+        disable:    initial,             // disabled
+        focus:      $blue--malibu,       // focused
+        hover:      $blue--malibu,       // hovered
         initial:    $blue--cerulean,
     ),
     color: (
-        active:     $white,             // pressed
-        disable:    initial,            // disabled
-        focus:      $white,             // focused
-        hover:      initial,            // hovered
+        active:     $white,              // pressed
+        disable:    initial,             // disabled
+        focus:      $white,              // focused
+        hover:      initial,             // hovered
         initial:    $white,
     ),
     letter-spacing: 0.5px,
     shadow: (
-        active:     $blue--cerulean,    // pressed
-        disable:    initial,            // disabled
-        focus:      $blue--cerulean,    // focused
-        hover:      $blue--cerulean,    // hovered
+        active:     $blue--cerulean,     // pressed
+        disable:    initial,             // disabled
+        focus:      $blue--cerulean,     // focused
+        hover:      $blue--cerulean,     // hovered
         initial:    $blue--cerulean,
     ),
 );
@@ -143,32 +143,32 @@ $button--primary: (
 // Set secondary button properties.
 $button--secondary: (
     background: (
-        active:     $blue--geyser,    // pressed
-        disable:    initial,                            // disabled
-        focus:      $blue--heather,    // focused
-        hover:      $blue--heather,    // hovered
-        initial:    $blue--nepal,
+        active:     lighten($blue--cerulean, 30%), // pressed
+        disable:    initial,                       // disabled
+        focus:      lighten($blue--cerulean, 50%), // focused
+        hover:      lighten($blue--cerulean, 50%), // hovered
+        initial:    lighten($blue--cerulean, 40%),
     ),
     border: (
-        active:     $blue--wood,                 // pressed
-        disable:    initial,                            // disabled
-        focus:      $blue--fiord,                  // focused
-        hover:      $blue--fiord,                  // hovered
-        initial:    $blue--fiord,
+        active:     lighten($blue--cerulean, 25%), // pressed
+        disable:    initial,                       // disabled
+        focus:      lighten($blue--cerulean, 45%), // focused
+        hover:      lighten($blue--cerulean, 45%), // hovered
+        initial:    lighten($blue--cerulean, 35%),
     ),
     color: (
-        active:     $blue--mirage,                 // pressed
-        disable:    initial,                            // disabled
-        focus:      $blue--wood,     // focused
-        hover:      $blue--wood,     // hovered
-        initial:    $blue--wood,
+        active:     darken($blue--cerulean, 5%),   // pressed
+        disable:    initial,                       // disabled
+        focus:      darken($blue--cerulean, 5%),   // focused
+        hover:      darken($blue--cerulean, 5%),   // hovered
+        initial:    darken($blue--cerulean, 5%),
     ),
     letter-spacing: 0.5px,
     shadow: (
-        active:     $blue--wood,                 // pressed
-        disable:    initial,                            // disabled
-        focus:      $blue--wood,                 // focused
-        hover:      $blue--wood,                 // hovered
+        active:     $blue--wood,                   // pressed
+        disable:    initial,                       // disabled
+        focus:      $blue--wood,                   // focused
+        hover:      $blue--wood,                   // hovered
         initial:    $blue--wood,
     ),
 );
