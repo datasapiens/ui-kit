@@ -7,36 +7,39 @@
 // =============================================================================
 
 // Set progress indicator border radius (according to `$button-border-radius`).
-$indicator-progress-border-radius: 2px;
+$indicator-progress-border-radius: 2px !default;
 
 // Set progress indicator border size.
-$indicator-progress-border-size: 0px;
+$indicator-progress-border-size: 0px !default;
 
-// Set progress indicator inde.
-$indicator-progress-indent: 5px;
+// Set progress indicator box shadow.
+$indicator-progress-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
+
+// Set progress indicator color.
+$indicator-progress-color: $orange--safron !default;
+
+// Set progress indicator font size.
+$indicator-progress-font-size: 14px !default;
+
+// Set progress indicator font weight.
+$indicator-progress-font-weight: 300 !default;
+
+// Set progress indicator indent.
+$indicator-progress-indent: 5px !default;
+
+// Set progress indicator index.
+$indicator-progress-index: 1 !default;
 
 // Set progress indicator size.
 $indicator-progress-size: (
-    thick:  20px,
-    medium: 10px,
-    thin:  5px,
-);
+    thick:  16px,
+    medium: 8px,
+    thin:  4px,
+) !default;
 
-// Set progress indicator theme.
-$indicator-progress-theme: (
-    default: (
-        background: rgba($orange--safron, 0.35),
-        color: $orange--safron,
-        font: (
-            size:   (
-                figure: 14px,
-                status: 14px,
+/**
+ * Progress indicator, data.
+ */
 
-            ),
-            weight: (
-                figure: 400,
-                status: 300,
-            ),
-        ),
-    ),
-);
+// Set progress indicator data color.
+$indicator-progress-data-color: $blue--regent !default;

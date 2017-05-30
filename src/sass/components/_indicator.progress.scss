@@ -1,43 +1,27 @@
 /**
  * Component Indicator/Progress.
+ *
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       acceleration
+ * @requires {variable}    $animation-easing
+ * @requires animation.fade
+ * @requires animation.width
  */
-
-// <span class="ind-progress"><span class="ind-progress__scale" style="width: 66%; "></span></span>
-// <progress class="ind-progress" value="70" max="100">70 %</progress>
 
 // =============================================================================
 // Progress indicator
 // =============================================================================
 
-%ind-progress {
-    background-color: map-fetch($indicator-progress-theme, default, background);
-}
-
 .ind-progress {
-    @extend %ind-progress;
-    @extend .ind-progress.--under;
-    @include acceleration;
-
-    // appearance: none;
-    border-radius: $indicator-progress-border-radius;
-    border: $indicator-progress-border-size solid transparent;
+    animation: fade--in 0.3s both;
+    color: $indicator-progress-color;
     display: block;
-    height: map-get($indicator-progress-size, medium);
+    font: {
+        size: px-to-rem($indicator-progress-font-size);
+        weight: $indicator-progress-font-weight;
+    }
     position: relative;
-    width: 100%;
-
-    // &::before {
-    //     @extend %ind-progress__figure;
-
-    //     content: attr(value);
-    // }
-
-    // &::-webkit-progress-bar {
-    //     @extend %ind-progress;
-    // }
-    // &::-webkit-progress-value {
-    //     @extend %ind-progress__scale;
-    // }
+    z-index: $indicator-progress-index;
 }
 
 /**
@@ -51,60 +35,23 @@
 .ind-progress {
     @each $modifier, $size in $indicator-progress-size {
         &.--#{$modifier} {
-            height: $size;
+            .ind-progress__scale {
+                &,
+                &::before {
+                    height: $size;
+                }
+            }
         }
     }
 }
 
 /**
- * Progress indicator, figure placed above bar.
- */
-
-// .ind-progress {
-//     &.--above {
-//         // &::before,
-//         .ind-progress__figure {
-//             @extend %ind-progress__figure--above;
-//         }
-//     }
-// }
-
-/**
- * Progress indicator, figure placed before bar.
- */
-
-// .ind-progress {
-//     &.--before {
-//         // &::before,
-//         .ind-progress__figure {
-//             @extend %ind-progress__figure--before;
-//         }
-//     }
-// }
-
-/**
- * Progress indicator, static.
+ * Progress indicator, debug.
  */
 
 .ind-progress {
-    &.--static {
-        margin: {
-            bottom: $indicator-progress-indent;
-            top: $indicator-progress-indent;
-        }
-    }
-}
-
-/**
- * Progress indicator, figure placed under bar.
- */
-
-.ind-progress {
-    &.--under {
-        // &::before,
-        .ind-progress__figure {
-            @extend %ind-progress__figure--under;
-        }
+    &.--debug {
+        margin: (5 * $indicator-progress-indent) 0;
     }
 }
 
@@ -131,92 +78,65 @@
 // Progress indicator scale
 // =============================================================================
 
-%ind-progress__scale {
-    background-color: map-fetch($indicator-progress-theme, default, color);
-    border-radius: $indicator-progress-border-radius;
-    display: block;
-    height: 100%;
-    transition: width 0.3s map-get($animation-easing, out-sine) 0.1s;
-}
-
 .ind-progress__scale {
-    @extend %ind-progress__scale;
+    @include acceleration;
+
+    background: {
+        color: currentColor;
+        image: linear-gradient(
+            120deg,
+            transparent 10%,
+            rgba(#fff, 0.35) 50%,
+            transparent 90%
+        );
+    }
+    box-shadow: $indicator-progress-box-shadow;
+    display: block;
+    margin: (0.5 * $indicator-progress-indent) 0;
+    transition: width 0.3s map-get($animation-easing, out-sine) 0.1s;
 
     &[style*="duration"] {
         animation: width--0-100 1s map-get($animation-easing, out-sine) 0.5s both;
         transition: none;
     }
+
+    &,
+    &::before {
+        border-radius: $indicator-progress-border-radius;
+        height: map-get($indicator-progress-size, medium);
+    }
+
+    &::before {
+        @include stretch(auto, 0);
+
+        background-color: inherit;
+        content: "";
+        opacity: 0.25;
+        z-index: -1;
+    }
+}
+
+// Progress indicator data
+// =============================================================================
+
+.ind-progress__data {
+    color: $indicator-progress-data-color;
+    display: flex;
+    justify-content: space-between;
 }
 
 // Progress indicator status
 // =============================================================================
 
-.ind-progress__status {
-    color: desaturate(
-        map-fetch($indicator-progress-theme, default, color),
-        75%
-    );
-    font: {
-        size: px-to-rem(map-fetch($indicator-progress-theme, default, font, size, status));
-        weight: map-fetch($indicator-progress-theme, default, font, weight, status);
-    }
-    margin-top: 0.5 * $indicator-progress-indent;
-    position: absolute;
-}
+.ind-progress__status {}
 
 // Progress indicator figure
 // =============================================================================
 
-%ind-progress__figure {
-    color: desaturate(
-        map-fetch($indicator-progress-theme, default, color),
-        75%
-    );
+.ind-progress__figure {
     display: inline-block;
     font: {
-        size: px-to-rem(map-fetch($indicator-progress-theme, default, font, size, figure));
-        weight: map-fetch($indicator-progress-theme, default, font, weight, figure);
+        size: 1.2em;
+        weight: bolder;
     }
-    position: absolute;
-}
-
-.ind-progress__figure {
-    @extend %ind-progress__figure;
-}
-
-/**
- * Modifiers.
- */
-
-/**
- * Progress indicator figure, placed above bar.
- */
-
-%ind-progress__figure--above {
-    top: 0;
-    transform: translate(
-        0,
-        calc((-1) * (100% + #{$indicator-progress-indent}))
-    );
-}
-
-/**
- * Progress indicator figure, placed before bar.
- */
-
-%ind-progress__figure--before {
-    top: 50%;
-    transform: translate(
-        calc((-1) * (100% + #{$indicator-progress-indent})),
-        -50%
-    );
-}
-
-/**
- * Progress indicator figure, placed under bar.
- */
-
-%ind-progress__figure--under {
-    right: 0;
-    margin-top: 0.5 * $indicator-progress-indent;
 }
