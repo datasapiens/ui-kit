@@ -17,7 +17,7 @@ $widget-indent: 16px;
  */
 
 // Set widget header border color.
-$widget-head-border-color: lighten($blue--nepal, 30%);
+$widget-head-border-color: $blue--geyser;
 
 // Set widget header border size.
 $widget-head-border-size: 1px;
@@ -37,7 +37,7 @@ $widget-title--secondary-line-height-ratio: 1.35;
  */
 
 // Set widget spacer color.
-$widget-spacer-color: lighten($blue--nepal, 30%);
+$widget-spacer-color: $blue--heather;
 
 // Set widget spacer size.
 $widget-spacer-size: 1px;
@@ -47,7 +47,7 @@ $widget-spacer-size: 1px;
  */
 
 // Set primary widget background.
-$widget--primary-background: lighten($blue--nepal, 45%);
+$widget--primary-background: $blue--geyser;
 
 /**
  * Widget, secondary.
