@@ -180,6 +180,7 @@
             box-shadow: none;
             color: map-get($button-color, disable);
             cursor: not-allowed;
+            text-shadow: none;
 
             &.\--tertiary {
                 background-color: map-fetch($button--tertiary, background, disable);
