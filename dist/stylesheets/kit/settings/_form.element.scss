@@ -12,16 +12,16 @@ $form-element-background: (
     focus:      rgba($white, 1),              // focused
     hover:      rgba($white, 1),              // hovered
     initial:    rgba($white, 0.85),
-    invalid:    lighten($red--monza, 55%),  // invalid
+    invalid:    lighten($red--sunset, 55%),  // invalid
 );
 
 // Set form element border color.
 $form-element-border-color: (
-    disable:    $blue--nepal,  // disabled
+    disable:    $blue--catskill,  // disabled
     focus:      $blue--dodger,                                      // focused
     hover:      $blue--dodger,                                      // hovered
-    initial:    $blue--nepal,
-    invalid:    $red--monza,                                      // invalid
+    initial:    $blue--heather,
+    invalid:    $red--sunset,                                      // invalid
 );
 
 // Set form element border radius.
@@ -32,12 +32,12 @@ $form-element-border-size: 1px;
 
 // Set form element color.
 $form-element-color: (
-    disable:    lighten($base-color, 30%),  // disabled
-    focus:      darken($base-color, 50%),   // focused
-    hover:      darken($base-color, 50%),   // hovered
+    disable:    lighten($base-color, 30%), // disabled
+    focus:      darken($base-color, 50%),  // focused
+    hover:      darken($base-color, 50%),  // hovered
     initial:    $base-color,
-    invalid:    $red--monza,              // invalid
-    require:    $red--monza,              // required
+    invalid:    $red--sunset,               // invalid
+    require:    $red--sunset,               // required
 );
 
 // Set form element font size.
@@ -69,48 +69,3 @@ $form-element-size: (
     medium: 34px,
     small:  26px,
 );
-
-/**
- * Form element, primary.
- */
-
-// // Set primary form element border color.
-// $form-element--primary-border: (
-//     disable:    initial,   // disabled
-//     focus:      initial,   // focused
-//     hover:      initial,   // hovered
-//     initial:    initial,
-// );
-
-// // Set primary form element color.
-// $form-element--primary-color: (
-//     disable:    initial,  // disabled
-//     focus:      initial,  // focused
-//     hover:      initial,  // hovered
-// );
-
-/**
- * Form element, secondary.
- */
-
-// // Set seconday form element background.
-// $form-element--secondary-background: (
-//     focus:      initial,   // focused
-//     hover:      initial,   // hovered
-//     initial:    transparent,
-// );
-
-// // Set secondary form element border color.
-// $form-element--secondary-border: (
-//     disable:    initial,     // disabled
-//     focus:      initial,     // focused
-//     hover:      initial,     // hovered
-//     initial:    initial,
-// );
-
-// // Set secondary form element color.
-// $form-element--secondary-color: (
-//     disable:    initial,     // disabled
-//     focus:      initial,     // focused
-//     hover:      initial,     // hovered
-// );

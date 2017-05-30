@@ -84,27 +84,6 @@
 }
 
 /**
- * Form element, primary.
- */
-
-// %form-element {
-//     &.\--primary {
-//         border-color: map-get($form-element--primary-border, initial);
-//     }
-// }
-
-/**
- * Form element, secondary.
- */
-
-// %form-element {
-//     &.\--secondary {
-//         background-color: map-get($form-element--secondary-background, initial);
-//         border-color: map-get($form-element--secondary-border, initial);
-//     }
-// }
-
-/**
  * States.
  */
 
@@ -129,21 +108,6 @@
         color: map-get($form-element-color, disable);
         cursor: not-allowed;
     }
-
-    // &.\--primary {
-    //     &:disabled,
-    //     &.is-disabled {
-    //         border-color: map-get($form-element--primary-border, disable);
-    //         color: map-get($form-element--primary-color, disable);
-    //     }
-    // }
-    // &.\--secondary {
-    //     &:disabled,
-    //     &.is-disabled {
-    //         border-color: map-get($form-element--secondary-border, disable);
-    //         color: map-get($form-element--secondary-color, disable);
-    //     }
-    // }
 }
 
 /**
@@ -158,26 +122,6 @@
             color: map-get($form-element-color, focus);
         }
     }
-
-    // &.\--primary {
-    //     &.is-focused,
-    //     &:focus {
-    //         &:not(:disabled):not(.is-disabled):not([readonly]):not(.is-readonly) {
-    //             border-color: map-get($form-element--primary-border, focus);
-    //             color: map-get($form-element--primary-color, focus);
-    //         }
-    //     }
-    // }
-    // &.\--secondary {
-    //     &.is-focused,
-    //     &:focus {
-    //         &:not(:disabled):not(.is-disabled):not([readonly]):not(.is-readonly) {
-    //             background-color: map-get($form-element--secondary-background, focus);
-    //             border-color: map-get($form-element--secondary-border, focus);
-    //             color: map-get($form-element--secondary-color, focus);
-    //         }
-    //     }
-    // }
 }
 
 /**
@@ -191,24 +135,6 @@
             border-color: map-get($form-element-border-color, hover);
         }
     }
-
-    // &.\--primary {
-    //     &:hover,
-    //     &.is-hovered {
-    //         &:not(:disabled):not(.is-disabled):not([readonly]):not(.is-readonly) {
-    //             border-color: map-get($form-element--primary-border, hover);
-    //         }
-    //     }
-    // }
-    // &.\--secondary {
-    //     &:hover,
-    //     &.is-hovered {
-    //         &:not(:disabled):not(.is-disabled):not([readonly]):not(.is-readonly) {
-    //             background-color: map-get($form-element--secondary-background, hover);
-    //             border-color: map-get($form-element--secondary-border, hover);
-    //         }
-    //     }
-    // }
 }
 
 /**
