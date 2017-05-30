@@ -7,10 +7,10 @@
 // =============================================================================
 
 // Set snippet background.
-$snippet-background: #e3f2fd !default;
+$snippet-background: lighten($green--dolly, 10%) !default;
 
 // Set snippet border color.
-$snippet-border-color: #d4d0c3 !default;
+$snippet-border-color: darken($green--dolly, 30%) !default;
 
 // Set snippet border radius.
 $snippet-border-radius: 2px !default;
