@@ -10,12 +10,18 @@
 $tag-border-radius: 3px !default;
 
 // Set tag border size.
-$tag-border-size: 1px !default;
+// $tag-border-size: 1px !default;
+
+// Set tag box shadow.
+$tag-box-shadow: 0 1px 3px -1px rgba($black, 0.25) !default;
+
+// Set tag color.
+$tag-color: #fff !default;
 
 // Set tag font size.
 $tag-font-size: (
     large:  14px,
-    medium: 14px,
+    medium: 13px,
     small:  12px,
 ) !default;
 
@@ -23,17 +29,20 @@ $tag-font-size: (
 $tag-gutter: 5px !default;
 
 // Set tag indent.
-$tag-indent: (
-    large:  6px 10px,
-    medium: 3px 8px,
-    small:  3px 6px,
-) !default;
-
-// Set tag line height ratio.
-$tag-line-height-ratio: 1 !default;
+$tag-indent: 1em !default;
 
 // Set tag length.
 $tag-length: 15em !default;
+
+// Set tag size.
+$tag-size: (
+    large:  32px,
+    medium: 28px,
+    small:  24px,
+) !default;
+
+// Set tag text shadow.
+$tag-text-shadow: 0 1px 1px rgba($black, 0.075) !default;
 
 // Set tag themes map.
 $tag-theme: map-get($color-set, accent) !default;

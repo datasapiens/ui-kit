@@ -14,6 +14,10 @@
 // Tag
 // =============================================================================
 
+/**
+ * 1. We need to increase specifity.
+ */
+
 .tag {
     @extend .tag.\--neutral;
     @extend .tag.\--medium;
@@ -21,15 +25,24 @@
     align-items: center;
     border: {
         radius: $tag-border-radius;
-        style: solid;
-        width: $tag-border-size;
     }
+    box-shadow: $tag-box-shadow;
     cursor: default;
     display: inline-flex;
-    line-height: $tag-line-height-ratio;
     max-width: $tag-length;
+    padding: {
+        left: $tag-indent;
+        right: $tag-indent;
+    }
     position: relative;
-    text-decoration: none;
+    text: {
+        decoration: none;
+        shadow: $tag-text-shadow;
+    }
+
+    &[class] {          /* 1 */
+        color: $tag-color;
+    }
 }
 
 /**
@@ -59,7 +72,8 @@
         @include round($tag--primary-border-radius);
 
         cursor: pointer;
-        transition: background-color 0.2s,
+        transition:
+            background-color 0.2s,
             border-color 0.2s,
             color 0.2s;
     }
@@ -72,26 +86,18 @@
  */
 
 .tag {
-    @each $modifier in (small, medium, large) {
+    @each $modifier in map-keys($tag-size) {
         &.\--#{$modifier} {
-            $indent: map-get($tag-indent, $modifier);
+            $size: px-to-em(
+                map-get($tag-size, $modifier),
+                map-get($tag-font-size, $modifier)
+            );
 
-            font-size: px-to-rem(map-get($tag-font-size, $modifier));
-            padding: $indent;
-
-            .tag__content {
-                margin: (-1) * nth($indent, 1) 0; /* 1 */
-                padding: nth($indent, 1) 0;       /* 1 */
-            }
-
-            .tag__control {
-                &:first-of-type {
-                    margin-left: (0.5) * nth($indent, 2);
-                }
-                &:last-child {
-                    margin-right: (-0.5) * nth($indent, 2);
-                }
-            }
+            font-size: px-to-rem(
+                map-get($tag-font-size, $modifier)
+            );
+            height: $size;
+            line-height: $size;
         }
     }
 }
@@ -103,9 +109,15 @@
 .tag {
     @each $modifier, $theme in $tag-theme {
         &.\--#{$modifier} {
-            background-color: map-get($theme, 100);
-            border-color: darken(map-get($theme, 100), 5%);
-            color: darken(map-get($theme, 100), 50%);
+            background: {
+                color: map-get($theme, 50);
+                image: linear-gradient(
+                    120deg,
+                    rgba(map-get($theme, 80), 0.25) 0%,
+                    rgba(map-get($theme, 50), 0.00) 25%,
+                    rgba(map-get($theme, 20), 0.25) 75%
+                );
+            }
         }
     }
 }
@@ -124,9 +136,10 @@
         &.\--primary {
             @each $modifier, $theme in $tag-theme {
                 &.\--#{$modifier} {
-                    background-color: darken(map-get($theme, 100), 20%);
-                    border-color: darken(map-get($theme, 100), 25%);
-                    color: darken(map-get($theme, 100), 70%);
+                    background: {
+                        color: darken(map-get($theme, 50), 15%);
+                        image: none;
+                    }
                 }
             }
         }
@@ -141,9 +154,8 @@
 .tag[class][class] { /* 1 */
     &:disabled,
     &.is-disabled {
-        &.\--primary {
-            opacity: 0.25;
-        }
+        box-shadow: none;
+        opacity: 0.35;
 
         &,
         .tag__control {
@@ -162,9 +174,7 @@
         &.\--primary {
             @each $modifier, $theme in $tag-theme {
                 &.\--#{$modifier} {
-                    background-color: darken(map-get($theme, 100), 10%);
-                    border-color: darken(map-get($theme, 100), 15%);
-                    color: darken(map-get($theme, 100), 60%);
+                    background-color: lighten(map-get($theme, 50), 15%);
                 }
             }
         }
@@ -199,8 +209,16 @@
 // Tag control
 // =============================================================================
 
+/**
+ * 1. Negative margin workaround to prevent vertical crop of the tag content
+ *  and enable text truncate at the same time.
+ */
+
 .tag__content {
     @include text-truncate;
+
+    margin: (-1) * $tag-indent 0; /* 1 */
+    padding: $tag-indent 0;       /* 1 */
 }
 
 // Tag control
@@ -228,6 +246,13 @@
 
     & + & {
         margin-left: 2px;
+    }
+
+    &:first-of-type {
+        margin-left: (0.5) * $tag-indent;
+    }
+    &:last-child {
+        margin-right: (-0.5) * $tag-indent;
     }
 }
 
