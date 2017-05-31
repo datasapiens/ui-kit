@@ -1,0 +1,103 @@
+/**
+ * Component Tag/Group.
+ */
+
+// =============================================================================
+// Tag group
+// =============================================================================
+
+.tag-group {
+    .tag {
+        margin-bottom: $tag-group-gutter;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Tag group, centered tags.
+ */
+
+.tag-group {
+    &.\--center {
+        text-align: center;
+
+        .tag {
+            margin: {
+                left: 0.5 * $tag-group-gutter;
+                right: 0.5 * $tag-group-gutter;
+            }
+        }
+    }
+}
+
+/**
+ * Tag group, compact.
+ */
+
+.tag-group {
+    &.\--compact {
+        .tag {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/**
+ * Tag group, tags aligned left.
+ */
+
+.tag-group {
+    &.\--left {
+        text-align: left;
+
+        .tag {
+            margin-right: $tag-group-gutter;
+        }
+    }
+}
+
+/**
+ * Tag group, tags aligned right.
+ */
+
+.tag-group {
+    &.\--right {
+        text-align: right;
+
+        .tag {
+            margin-left: $tag-group-gutter;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

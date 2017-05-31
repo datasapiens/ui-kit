@@ -50,20 +50,6 @@
  */
 
 /**
- * Tag, gutter.
- */
-
-.tag {
-    &.--gutter {
-        margin: {
-            right: $tag-gutter;
-            top: $tag-gutter;
-        }
-        max-width: 100%;
-    }
-}
-
-/**
  * Tag, primary.
  */
 
