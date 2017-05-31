@@ -1,5 +1,7 @@
 /**
  * Component Widget.
+ *
+ * @requires panel
  */
 
 // =============================================================================
@@ -7,7 +9,7 @@
 // =============================================================================
 
 .wgt {
-    @extend .pnl;
+    @extend .pnl !optional;
 
     &[class] {
         margin-bottom: $widget-indent;
@@ -24,7 +26,23 @@
 
 .wgt {
     &.--primary {
-        background-color: $widget--primary-background;
+        $color-border: darken($widget--primary-color, 20%);
+
+        background: {
+            color: $widget--primary-background;
+            image: $widget--primary-background-gradient;
+        }
+        border-color: darken($widget--primary-background, 5%);
+        color: $widget--primary-color;
+
+        .wgt__head {
+            border-bottom-color: $color-border;
+        }
+        .wgt__spacer {
+            &::after {
+                border-color: darken($color-border, 5%);
+            }
+        }
     }
 }
 
@@ -34,7 +52,23 @@
 
 .wgt {
     &.--secondary {
-        background-color: $widget--secondary-background;
+        $color-border: darken($widget--secondary-background, 5%);
+
+        background: {
+            color: $widget--secondary-background;
+            image: $widget--secondary-background-gradient;
+        }
+        border-color: $color-border;
+        // color: $widget--secondary-color;
+
+        .wgt__head {
+            border-bottom-color: $color-border;
+        }
+        .wgt__spacer {
+            &::after {
+                border-color: darken($color-border, 5%);
+            }
+        }
     }
 }
 
@@ -45,9 +79,7 @@
 .wgt {
     &.--plain {
         > .wgt__head {
-            border-bottom: 0;
-            margin-bottom: 0;
-            padding-bottom: 10px;
+            @extend %wgt__head--plain;
         }
     }
 }
@@ -85,6 +117,26 @@
     padding-bottom: $widget-head-indent;
 }
 
+/**
+ * Modifiers.
+ */
+
+/**
+ * Widget header, plain.
+ */
+
+%wgt__head--plain {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 8px;
+}
+
+.wgt__head {
+    &.--plain {
+        @extend %wgt__head--plain;
+    }
+}
+
 // Widget title
 // =============================================================================
 
@@ -95,7 +147,7 @@
     margin: 0;
 
     @at-root #{$parent} #{$parent} & {
-        @extend .wgt__title.--secondary;
+        @extend .wgt__title.--primary;
     }
 }
 
@@ -104,20 +156,24 @@
  */
 
 /**
- * Widget title, secondary.
+ * Widget title, primary.
  */
 
 .wgt__title {
-    &.--secondary {
+    &.--primary {
         @extend h5;
 
-        line-height: $widget-title--secondary-line-height-ratio;
+        line-height: $widget-title--primary-line-height-ratio;
         margin: 0;
     }
 }
 
 // Widget filter
 // =============================================================================
+
+/**
+ * TODO: Consider removal.
+ */
 
 .wgt__filter {
     align-items: center;

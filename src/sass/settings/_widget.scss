@@ -7,51 +7,85 @@
 // =============================================================================
 
 // Set widget backdrop background.
-$widget-backdrop-background: $white;
+$widget-backdrop-background: $white !default;
 
 // Set widget indent (according to `$grid-gutter`).
-$widget-indent: 16px;
+$widget-indent: 16px !default;
 
 /**
  * Widget header.
  */
 
-// Set widget header border color.
-$widget-head-border-color: $blue--geyser;
+// Set widget header border color (according to `$panel-border-color`).
+$widget-head-border-color: map-get(
+    map-get($color-set, neutral),
+    70
+) !default;
 
 // Set widget header border size.
-$widget-head-border-size: 1px;
+$widget-head-border-size: 1px !default;
 
 // Set widget header indent.
-$widget-head-indent: 10px;
+$widget-head-indent: 10px !default;
 
 /**
  * Widget title.
  */
 
-// Set widget secondary title line height ratio.
-$widget-title--secondary-line-height-ratio: 1.35;
+// Set widget primary title line height ratio.
+$widget-title--primary-line-height-ratio: 1.35 !default;
 
 /**
  * Widget spacer.
  */
 
-// Set widget spacer color.
-$widget-spacer-color: $blue--heather;
+// Set widget spacer color (according to `$panel-border-color`).
+$widget-spacer-color: map-get(
+    map-get($color-set, neutral),
+    60
+) !default;
 
 // Set widget spacer size.
-$widget-spacer-size: 1px;
+$widget-spacer-size: 1px !default;
 
 /**
  * Widget, primary.
  */
 
 // Set primary widget background.
-$widget--primary-background: $blue--geyser;
+$widget--primary-background: map-get(
+    map-get($color-set, neutral),
+    40
+) !default;
+
+// Set primary widget background gradient.
+$widget--primary-background-gradient: linear-gradient(
+    160deg,
+    rgba(map-get(map-get($color-set, neutral), 20), 0.250) 0%,
+    rgba(map-get(map-get($color-set, neutral), 40), 0.000) 50%,
+    rgba(map-get(map-get($color-set, neutral), 80), 0.125) 100%
+) !default;
+
+// Set primary widget color.
+$widget--primary-color: $white !default;
 
 /**
  * Widget, secondary.
  */
 
 // Set secondary widget background.
-$widget--secondary-background: $blue--catskill;
+$widget--secondary-background: map-get(
+    map-get($color-set, neutral),
+    80
+) !default;
+
+// Set secondary widget background gradient.
+$widget--secondary-background-gradient: linear-gradient(
+    160deg,
+    rgba(map-get(map-get($color-set, neutral), 100), 0.125) 0%,
+    rgba(map-get(map-get($color-set, neutral), 80), 0.000) 50%,
+    rgba(map-get(map-get($color-set, neutral), 20), 0.075) 100%
+) !default;
+
+// Set secondary widget color.
+$widget--secondary-color: inherit !default;
