@@ -15,14 +15,23 @@
     @extend %ctr;
     @include round($panel-border-radius);
 
-    background-color: $panel-background;
+    background: {
+        color: $panel-background;
+        image: $panel-background-gradient;
+    }
     border: $panel-border-size solid $panel-border-color;
-    padding: map-get($panel-indent, vertical)
+    box-shadow: $panel-box-shadow;
+    padding:
+        map-get($panel-indent, vertical)
         map-get($panel-indent, horizontal);
 
     &,
     &:last-child {
         margin-bottom: rhythm-get();
+    }
+
+    & & {
+        box-shadow: none;
     }
 }
 

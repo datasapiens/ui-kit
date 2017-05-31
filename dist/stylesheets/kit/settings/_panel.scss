@@ -9,14 +9,24 @@
 // Set panel background.
 $panel-background: $white;
 
+// Set panel background gradient.
+$panel-background-gradient: linear-gradient(
+    160deg,
+    rgba(map-get(map-get($color-set, neutral), 100), 0.125) 0%,
+    rgba(map-get(map-get($color-set, neutral), 20), 0.050) 100%
+);
+
 // Set panel border color.
-$panel-border-color: $blue--heather;
+$panel-border-color: $blue--geyser;
 
 // Set panel border radius.
 $panel-border-radius: 3px;
 
 // Set panel border size.
 $panel-border-size: 1px;
+
+// Set panel box shadow.
+$panel-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
 
 // Set panel indent.
 $panel-indent: (
