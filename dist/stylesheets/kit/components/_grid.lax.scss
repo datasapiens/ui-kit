@@ -11,6 +11,11 @@
     display: flex;
     flex-wrap: wrap;
     margin-right: (-1) * $grid-lax-gutter;
+
+    // Directly nested grids
+    &.grd-lax__item {
+        margin-right: 0;
+    }
 }
 
 /**
