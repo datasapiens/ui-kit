@@ -1,5 +1,5 @@
 /**
- * Componen Vertical navigation settings.
+ * Componen Navigation/Vertical settings.
  */
 
 // =============================================================================
@@ -7,32 +7,32 @@
 // =============================================================================
 
 // Set navigation background.
-$nav-vertical-background: white !default;
+$navigation-vertical-background: white !default;
 
 // Set navigation color.
-$nav-vertical-color: #666 !default;
+$navigation-vertical-color: #666 !default;
 
 // Set navigation debug.
-$nav-vertical-debug: false !default;
-// $nav-vertical-debug: true;
+$navigation-vertical-debug: false !default;
+// $navigation-vertical-debug: true;
 
 // Set navigation depth.
-$nav-vertical-depth: 5 !default;
+$navigation-vertical-depth: 5 !default;
 
 // Set navigation font size.
-$nav-vertical-font-size: 14px !default;
+$navigation-vertical-font-size: 14px !default;
 
 // Set navigation indent.
-$nav-vertical-indent: (
+$navigation-vertical-indent: (
     horizontal: 16px,
     vertical: 0,
 ) !default;
 
 // Set navigation line height ratio.
-$nav-vertical-line-height-ratio: 1.4 !default;
+$navigation-vertical-line-height-ratio: 1.4 !default;
 
 // Set navigation size.
-$nav-vertical-size: (
+$navigation-vertical-size: (
     max: 280px,
     min: 180px,
 ) !default;
@@ -42,7 +42,7 @@ $nav-vertical-size: (
  */
 
 // Set navigation item background.
-$nav-vertical-item-background: (
+$navigation-vertical-item-background: (
     active:     #eee,          // pressed
     disable:    transparent,   // disabled
     focus:      #eee,          // focused
@@ -51,13 +51,13 @@ $nav-vertical-item-background: (
 ) !default;
 
 // Set navigation item border color.
-$nav-vertical-item-border-color: rgba(black, 0.125) !default;
+$navigation-vertical-item-border-color: rgba(black, 0.125) !default;
 
 // Set navigation item border size.
-$nav-vertical-item-border-size: 1px !default;
+$navigation-vertical-item-border-size: 1px !default;
 
 // Set navigation item color.
-$nav-vertical-item-color: (
+$navigation-vertical-item-color: (
     active:     black,    // pressed
     disable:    #666,     // disabled
     focus:      black,    // focused
@@ -66,7 +66,7 @@ $nav-vertical-item-color: (
 ) !default;
 
 // Set navigation item indent.
-$nav-vertical-item-indent: (
+$navigation-vertical-item-indent: (
     horizontal: 16px,
     vertical: 8px,
 ) !default;
@@ -76,13 +76,13 @@ $nav-vertical-item-indent: (
  */
 
 // Set navigation header border color.
-$nav-vertical-header-border-color: rgba(black, 0.125) !default;
+$navigation-vertical-head-border-color: rgba(black, 0.125) !default;
 
 // Set navigation header border size.
-$nav-vertical-header-border-size: 1px !default;
+$navigation-vertical-head-border-size: 1px !default;
 
 // Set navigation header indent.
-$nav-vertical-header-indent: (
+$navigation-vertical-head-indent: (
     horizontal: 16px,
     vertical: 8px,
 ) !default;
@@ -92,29 +92,29 @@ $nav-vertical-header-indent: (
  */
 
 // Set navigation title font size.
-$nav-vertical-title-font-size: 12px !default;
+$navigation-vertical-title-font-size: 12px !default;
 
 // Set navigation title font weight.
-$nav-vertical-title-font-weight: 500 !default;
+$navigation-vertical-title-font-weight: 500 !default;
 
 // Primary navigation settings
 // =============================================================================
 
 // Set primary navigation background.
-$nav-vertical--primary-background: #333 !default;
+$navigation-vertical--primary-background: #333 !default;
 
 // Set primary navigation border color.
-$nav-vertical--primary-border-color: #aaa !default;
+$navigation-vertical--primary-border-color: #aaa !default;
 
 // Set primary navigation color.
-$nav-vertical--primary-color: #aaa !default;
+$navigation-vertical--primary-color: #aaa !default;
 
 /**
  * Primary navigation item.
  */
 
 // Set primary navigation item background.
-$nav-vertical--primary-item-background: (
+$navigation-vertical--primary-item-background: (
     active:     #999,          // pressed
     disable:    transparent,   // disabled
     focus:      #999,          // focused
@@ -123,11 +123,11 @@ $nav-vertical--primary-item-background: (
 ) !default;
 
 // Set primary navigation item border color.
-$nav-vertical--primary-item-border-color: rgba(white, 0.25) !default;
-// $nav-vertical--primary-item-border-color: red;
+$navigation-vertical--primary-item-border-color: rgba(white, 0.25) !default;
+// $navigation-vertical--primary-item-border-color: red;
 
 // Set primary navigation item color.
-$nav-vertical--primary-item-color: (
+$navigation-vertical--primary-item-color: (
     active:     white,    // pressed
     disable:    #ddd,     // disabled
     focus:      white,    // focused
@@ -140,4 +140,4 @@ $nav-vertical--primary-item-color: (
  */
 
 // Set primary navigation header border color.
-$nav-vertical--primary-header-border-color: rgba(white, 0.25) !default;
+$navigation-vertical--primary-head-border-color: rgba(white, 0.25) !default;

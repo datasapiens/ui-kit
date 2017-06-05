@@ -1,5 +1,8 @@
 /**
- * Component Trail navigation.
+ * Component Navigation/Trail.
+ *
+ * @requires {placeholder} %lst--reset
+ * @requires list
  */
 
 // =============================================================================
@@ -8,7 +11,7 @@
 
 .nav-trail {
     ul {
-        @extend %lst--reset;
+        @extend %lst--reset !optional;
 
         margin: 0;
     }
@@ -49,7 +52,7 @@
 
 .nav-trail__item {
     display: inline;
-    margin-right: $nav-trail-item-indent;
+    margin-right: $navigation-trail-item-indent;
 
     &:not(:last-child)::after {
         @extend %nav-trail__spacer;
@@ -60,10 +63,10 @@
 // =============================================================================
 
 %nav-trail__spacer {
-    color: $nav-trail-spacer;
+    color: $navigation-trail-spacer;
     content: "/";
     display: inline-block;
-    margin-left: $nav-trail-item-indent;
+    margin-left: $navigation-trail-item-indent;
     text-align: center;
     width: 1em;
 }
