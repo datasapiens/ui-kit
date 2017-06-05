@@ -1,0 +1,115 @@
+/**
+ * Component Navigation/Tab settings.
+ */
+
+// =============================================================================
+// Tab navigation settings
+// =============================================================================
+
+/**
+ * Navigation item.
+ */
+
+// Set tab navigation item background map.
+$navigation-tab-item-background: (
+    active:     $white,          // pressed
+    disable:    $blue--catskill, // disabled
+    focus:      $white,          // focused
+    hover:      $white,          // hovered
+    initial:    $blue--catskill,
+) !default;
+
+// Set tab navigation item border color map.
+$navigation-tab-item-border-color: (
+    active:     $blue--geyser,  // pressed
+    disable:    $blue--heather, // disabled
+    focus:      $blue--geyser,  // focused
+    hover:      $blue--geyser,  // hovered
+    initial:    $blue--geyser,
+) !default;
+
+// Set tab navigation item border radius.
+$navigation-tab-item-border-radius: 3px !default;
+
+// Set tab navigation item border size.
+$navigation-tab-item-border-size: 1px !default;
+
+// Set tab navigation item box shadow.
+$navigation-tab-item-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
+
+// Set tab navigation item color map.
+$navigation-tab-item-color: (
+    active:     lighten($blue--cerulean, 5%), // pressed
+    disable:    $blue--regent,                // disabled
+    focus:      lighten($blue--cerulean, 5%), // focused
+    hover:      lighten($blue--cerulean, 5%), // hovered
+    initial:    $blue--cerulean,
+) !default;
+
+// Set tab navigation item indent.
+$navigation-tab-item-indent: (
+    horizontal: 16px,
+    vertical: 4px,
+) !default;
+
+/**
+ * Navigation tab, primary.
+ */
+
+// Set primary tab navigation item background map.
+$navigation-tab--primary-item-background: (
+    active:     darken($blue--regent, 5%), // pressed
+    disable:    darken($blue--regent, 10%), // disabled
+    focus:      darken($blue--regent, 5%), // focused
+    hover:      darken($blue--regent, 5%), // hovered
+    initial:    darken($blue--regent, 20%),
+) !default;
+
+// Set primary tab navigation item border color map.
+$navigation-tab--primary-item-border-color: (
+    active:     darken($blue--regent, 20%), // pressed
+    disable:    darken($blue--regent, 20%), // disabled
+    focus:      darken($blue--regent, 20%), // focused
+    hover:      darken($blue--regent, 20%), // hovered
+    initial:    darken($blue--regent, 20%),
+) !default;
+
+// Set primary tab navigation item color map.
+$navigation-tab--primary-item-color: (
+    active:     $white, // pressed
+    disable:    $white, // disabled
+    focus:      $white, // focused
+    hover:      $white, // hovered
+    initial:    $white,
+) !default;
+
+/**
+ * Navigation tab, secondary.
+ */
+
+// Set secondary tab navigation item background map.
+$navigation-tab--secondary-item-background: (
+    active:     darken($blue--catskill, 0%), // pressed
+    disable:    darken($blue--geyser, 10%),  // disabled
+    focus:      darken($blue--catskill, 0%), // focused
+    hover:      darken($blue--catskill, 0%), // hovered
+    initial:    darken($blue--geyser, 0%),
+) !default;
+
+// Set secondary tab navigation item border color map.
+$navigation-tab--secondary-item-border-color: (
+    active:     darken($blue--catskill, 5%), // pressed
+    disable:    darken($blue--catskill, 5%), // disabled
+    focus:      darken($blue--catskill, 5%), // focused
+    hover:      darken($blue--catskill, 5%), // hovered
+    initial:    darken($blue--catskill, 5%),
+) !default;
+
+// Set secondary tab navigation item color map.
+$navigation-tab--secondary-item-color: (
+    active:     lighten($blue--cerulean, 5%), // pressed
+    disable:    $blue--regent,                // disabled
+    focus:      lighten($blue--cerulean, 5%), // focused
+    hover:      lighten($blue--cerulean, 5%), // hovered
+    initial:    $blue--cerulean,
+) !default;

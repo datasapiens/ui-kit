@@ -1,0 +1,391 @@
+/**
+ * Component Navigation/Tab.
+ *
+ * @requires {function}    rhythm-get
+ * @requires {placeholder} %lst--reset
+ * @requires list
+ */
+
+// =============================================================================
+// Tab navigation
+// =============================================================================
+
+.nav-tab {
+    @extend %nav-tab:start;
+    @extend %nav-tab:top;
+
+    margin-top: rhythm-get();
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Navigation tab, centered items.
+ */
+
+.nav-tab {
+    &.\--center {
+        @extend %nav-tab:center;
+    }
+}
+
+%nav-tab:center {
+    .nav-tab__head {
+        justify-content: center;
+    }
+    .nav-tab__item {
+        margin: {
+            left: 1/4 * map-get($navigation-tab-item-indent, horizontal);
+            right: 1/4 * map-get($navigation-tab-item-indent, horizontal);
+        }
+    }
+}
+
+/**
+ * Navigation tab, items aligned to end.
+ */
+
+%nav-tab:end {
+    .nav-tab__head {
+        justify-content: flex-end;
+    }
+    .nav-tab__item {
+        margin: {
+            left: 1/2 * map-get($navigation-tab-item-indent, horizontal);
+            right: 0;
+        }
+    }
+}
+
+.nav-tab {
+    &.\--end {
+        @extend %nav-tab:end;
+    }
+}
+
+/**
+ * Navigation tab, items aligned to start.
+ */
+
+%nav-tab:start {
+    .nav-tab__head {
+        justify-content: flex-start;
+    }
+    .nav-tab__item {
+        margin: {
+            left: 0;
+            right: 1/2 * map-get($navigation-tab-item-indent, horizontal);
+        }
+    }
+}
+
+.nav-tab {
+    &.\--start {
+        @extend %nav-tab:start;
+    }
+}
+
+/**
+ * Navigation tab, top.
+ */
+
+%nav-tab:top {
+    .nav-tab__item {
+        border: {
+            bottom: 0;
+            bottom-left-radius: 0;
+            bottom-right-radius: 0;
+        }
+    }
+    .nav-tab__body {
+        border: {
+            top-left-radius: 0;
+            top-right-radius: 0;
+        }
+    }
+}
+
+// .nav-tab {
+//     &.\--top {
+//         @extend %nav-tab:top;
+//     }
+// }
+
+/**
+ * Navigation tab, primary.
+ */
+
+.nav-tab {
+    &.\--primary {
+        .nav-tab__item__region {
+            background-color: map-get($navigation-tab--primary-item-background, initial);
+            border-color: map-get($navigation-tab--primary-item-border-color, initial);
+            color: map-get($navigation-tab--primary-item-color, initial);
+        }
+    }
+}
+
+/**
+ * Navigation tab, secondary.
+ */
+
+.nav-tab {
+    &.\--secondary {
+        .nav-tab__item__region {
+            background-color: map-get($navigation-tab--secondary-item-background, initial);
+            border-color: map-get($navigation-tab--secondary-item-border-color, initial);
+            color: map-get($navigation-tab--secondary-item-color, initial);
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Navigation tab header (aka HQ)
+// =============================================================================
+
+.nav-tab__head {
+    @extend %lst--reset !optional;
+
+    display: flex;
+    margin: 0;
+    margin-bottom: (-1) * $navigation-tab-item-border-size;
+}
+
+// Navigation tab item
+// =============================================================================
+
+.nav-tab__item {
+    // box-shadow: $navigation-tab-item-box-shadow;
+    margin: 0;
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Navigation tab item, active.
+ */
+
+.nav-tab__item {
+    &.is-active:not(.is-disabled) {
+        // box-shadow: none;
+
+        &.nav-tab__item__region,
+        .nav-tab__item__region {
+            @extend %nav-tab__item__region:active;
+        }
+    }
+
+    @at-root {
+        .nav-tab {
+            &.\--primary {
+                .nav-tab__item {
+                    &.is-active:not(.is-disabled) {
+                        &.nav-tab__item__region,
+                        .nav-tab__item__region {
+                            @extend %nav-tab__item__region:active[primary];
+                        }
+                    }
+                }
+            }
+            &.\--secondary {
+                .nav-tab__item {
+                    &.is-active:not(.is-disabled) {
+                        &.nav-tab__item__region,
+                        .nav-tab__item__region {
+                            @extend %nav-tab__item__region:active[secondary];
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Navigation tab item, disabled.
+ */
+
+.nav-tab__item {
+    &.is-disabled {
+        &.nav-tab__item__region,
+        .nav-tab__item__region {
+            @extend %nav-tab__item__region:disabled;
+        }
+    }
+}
+
+/**
+ * Navigation tab item, hovered.
+ */
+
+.nav-tab__item {
+    &.is-hovered,
+    &:hover {
+        &:not(.is-disabled) {
+            // box-shadow: none;
+
+            &.nav-tab__item__region,
+            .nav-tab__item__region {
+                @extend %nav-tab__item__region:hover;
+            }
+        }
+
+        @at-root {
+            .nav-tab {
+                &.\--primary {
+                    .nav-tab__item {
+                        &.is-hovered,
+                        &:hover {
+                            &:not(.is-disabled)[class] {
+                                &.nav-tab__item__region,
+                                .nav-tab__item__region {
+                                    @extend %nav-tab__item__region:hover[primary];
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.\--secondary {
+                    .nav-tab__item {
+                        &.is-hovered,
+                        &:hover {
+                            &:not(.is-disabled) {
+                                &.nav-tab__item__region,
+                                .nav-tab__item__region {
+                                    @extend %nav-tab__item__region:hover[secondary];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Navigation tab item region
+// =============================================================================
+
+.nav-tab__item__region {
+    background-color: map-get($navigation-tab-item-background, initial);
+    border:
+        $navigation-tab-item-border-size
+        solid
+        map-get($navigation-tab-item-border-color, initial);
+    border: {
+        bottom: 0;
+        radius: $navigation-tab-item-border-radius;
+        bottom-left-radius: 0;
+        bottom-right-radius: 0;
+    }
+    color: map-get($navigation-tab-item-color, initial);
+    cursor: pointer;
+    display: inline-block;
+    padding:
+        map-get($navigation-tab-item-indent, vertical)
+        map-get($navigation-tab-item-indent, horizontal);
+    position: relative;
+    text-decoration: none;
+    transition:
+        background-color 0.2s,
+        border-color 0.2s,
+        color 0.2s,
+        opacity 0.2s;
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Navigation tab item region, active.
+ */
+
+%nav-tab__item__region {
+    &:active {
+        background-color: map-get($navigation-tab-item-background, active);
+        border-color: map-get($navigation-tab-item-border-color, active);
+        color: map-get($navigation-tab-item-color, active);
+        z-index: 1;
+
+        &[primary] {
+            background-color: map-get($navigation-tab--primary-item-background, active);
+            border-color: map-get($navigation-tab--primary-item-border-color, active);
+            color: map-get($navigation-tab--primary-item-color, active);
+        }
+
+        &[secondary] {
+            background-color: map-get($navigation-tab--secondary-item-background, active);
+            border-color: map-get($navigation-tab--secondary-item-border-color, active);
+            color: map-get($navigation-tab--secondary-item-color, active);
+        }
+    }
+}
+
+/**
+ * Navigation tab item region, disabled.
+ */
+
+%nav-tab__item__region {
+    &:disabled {
+        background-color: map-get($navigation-tab-item-background, disable);
+        border-color: map-get($navigation-tab-item-border-color, disable);
+        color: map-get($navigation-tab-item-color, disable);
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
+
+/**
+ * Navigation tab item region, hovered.
+ */
+
+%nav-tab__item__region {
+    &:hover {
+        background-color: map-get($navigation-tab-item-background, hover);
+        border-color: map-get($navigation-tab-item-border-color, hover);
+        color: map-get($navigation-tab-item-color, hover);
+        z-index: 1;
+
+        &[primary] {
+            background-color: map-get($navigation-tab--primary-item-background, hover);
+            border-color: map-get($navigation-tab--primary-item-border-color, hover);
+            color: map-get($navigation-tab--primary-item-color, hover);
+        }
+        &[secondary] {
+            background-color: map-get($navigation-tab--secondary-item-background, hover);
+            border-color: map-get($navigation-tab--secondary-item-border-color, hover);
+            color: map-get($navigation-tab--secondary-item-color, hover);
+        }
+    }
+}
+
+
+// Navigation tab body (aka pane)
+// =============================================================================
+
+.nav-tab__body {}
