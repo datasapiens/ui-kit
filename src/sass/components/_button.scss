@@ -65,15 +65,22 @@
  */
 
 .btn {
-    @each $modifier in (xsmall, small, medium, large) {
+    @each $modifier in map-keys($button-size) {
         &.--#{$modifier} {
-            height: map-get($button-size, $modifier);
+            $size: px-to-em(
+                map-get($button-size, $modifier),
+                map-get($button-font-size, $modifier)
+            );
+
+            height: $size;
             font: {
-                size: px-to-rem(map-get($button-font-size, $modifier));
+                size: px-to-rem(
+                    map-get($button-font-size, $modifier)
+                );
                 weight: map-get($button-font-weight, $modifier)
             }
-            // line-height: map-get($button-size, $modifier) - 2 * $button-border-size;
-            line-height: map-get($button-size, $modifier);
+            // line-height: $size - 2 * $button-border-size;
+            line-height: $size;
         }
     }
 }
