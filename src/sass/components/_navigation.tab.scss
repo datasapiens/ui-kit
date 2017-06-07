@@ -114,6 +114,18 @@
 // }
 
 /**
+ * Navigation tab, plain.
+ */
+
+.nav-tab {
+    &.--plain {
+        .nav-tab__item__region {
+            border: 0;
+        }
+    }
+}
+
+/**
  * Navigation tab, primary.
  */
 
