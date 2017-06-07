@@ -11,6 +11,8 @@
 .wgt {
     @extend .pnl !optional;
 
+    color: $widget-color;
+
     &[class] {
         margin-bottom: $widget-indent;
     }
@@ -59,7 +61,7 @@
             image: $widget--secondary-background-gradient;
         }
         border-color: $color-border;
-        // color: $widget--secondary-color;
+        color: $widget--secondary-color;
 
         .wgt__head {
             border-bottom-color: $color-border;

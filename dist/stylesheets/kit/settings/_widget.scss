@@ -6,8 +6,8 @@
 // Widget settings
 // =============================================================================
 
-// Set widget backdrop background.
-$widget-backdrop-background: $white !default;
+// Set widget color.
+$widget-color: $base-color !default;
 
 // Set widget indent (according to `$grid-gutter`).
 $widget-indent: 16px !default;
@@ -88,4 +88,4 @@ $widget--secondary-background-gradient: linear-gradient(
 ) !default;
 
 // Set secondary widget color.
-$widget--secondary-color: inherit !default;
+$widget--secondary-color: $base-color !default;
