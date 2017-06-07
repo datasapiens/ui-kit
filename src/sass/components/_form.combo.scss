@@ -16,6 +16,7 @@
 // =============================================================================
 
 .form-combo {
+    min-width: $form-combo-length;
     position: relative;
     z-index: $form-combo-index;
 }
