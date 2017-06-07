@@ -22,6 +22,7 @@
 .form-composite {
     @extend %form-element;
 
+    align-items: center;
     display: inline-flex;
 
     [class*="ico"],
