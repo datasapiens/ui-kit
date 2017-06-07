@@ -143,11 +143,19 @@
 // Form combo control
 // =============================================================================
 
+/**
+ * 1. We need to increase specifity.
+ */
+
 .form-combo__control {
     @extend %form-combo__control:off;
     @include acceleration;
 
-    transition: transform 0.3s map-get($animation-easing, in-out-circ);
+    &[class] {      /* 1 */
+        transition:
+            opacity 0.2s,
+            transform 0.3s map-get($animation-easing, in-out-circ);
+    }
 
     &::before {
         @extend %ico !optional;
