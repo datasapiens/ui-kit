@@ -38,8 +38,9 @@
 .form-label {
     &.\--stack {
         display: block;
+        line-height: $form-label--stack-line-height-ratio;
         margin-bottom: px-to-rem(
-            1/8 *
+            1/4 *
             map-get($form-label-indent, vertical)
         );
         padding-left: $form-label-push;

@@ -32,3 +32,10 @@ $form-label-font-size: 13px !default;
 
 // Set form label font weight.
 $form-label-font-weight: 400 !default;
+
+/**
+ * Label, stacked.
+ */
+
+// Set stacked label line height ratio.
+$form-label--stack-line-height-ratio: 1.3 !default;
