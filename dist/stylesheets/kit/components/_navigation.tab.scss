@@ -373,24 +373,34 @@
 }
 
 /**
+ * Navigation tab item region, focused.
+ */
+
+%nav-tab__item__region {
+    &:focus {
+        @extend %nav-tab__item__region:hover;
+    }
+}
+
+/**
  * Navigation tab item region, hovered.
  */
 
 %nav-tab__item__region {
     &:hover {
         background-color: map-get($navigation-tab-item-background, hover);
-        border-color: map-get($navigation-tab-item-border-color, hover);
+        // border-color: map-get($navigation-tab-item-border-color, hover);
         color: map-get($navigation-tab-item-color, hover);
-        z-index: 1;
+        // z-index: 1;
 
         &[primary] {
             background-color: map-get($navigation-tab--primary-item-background, hover);
-            border-color: map-get($navigation-tab--primary-item-border-color, hover);
+            // border-color: map-get($navigation-tab--primary-item-border-color, hover);
             color: map-get($navigation-tab--primary-item-color, hover);
         }
         &[secondary] {
             background-color: map-get($navigation-tab--secondary-item-background, hover);
-            border-color: map-get($navigation-tab--secondary-item-border-color, hover);
+            // border-color: map-get($navigation-tab--secondary-item-border-color, hover);
             color: map-get($navigation-tab--secondary-item-color, hover);
         }
     }
