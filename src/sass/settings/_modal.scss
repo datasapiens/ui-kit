@@ -7,34 +7,45 @@
 // =============================================================================
 
 // Set modal background.
-$modal-background: $white;
+$modal-background: $white !default;
 
 // Set modal border radius.
-$modal-border-radius: 3px;
+$modal-border-radius: 3px !default;
 
 // Set modal box shadow.
-$modal-box-shadow: 0 5px 30px -5px rgba(lighten($blue--nepal, 30%), 0.75);
+$modal-box-shadow: 0 5px 20px -10px rgba($black, 0.75) !default;
+
+// Set modal breakpoints.
+$modal-breaks: (
+    400px,
+) !default;
 
 // Set modal color.
-$modal-color: $base-color;
-
-// Set modal shadow.
-// $modal-box-shadow: 0 0 5px rgba($black, 0.15);
+$modal-color: $base-color !default;
 
 // Set modal indent.
-$modal-indent: 20px;
+$modal-indent: 16px !default;
 
 // Set modal z-index.
-$modal-index: 5;
+$modal-index: 5 !default;
 
 // Set modal size.
-$modal-size: 800px;
+$modal-size: (
+    max: 800px,
+    min: 100px,
+) !default;
+
+/**
+ * Control.
+ */
 
 // Set modal control color.
 $modal-control-color: (
-    hover:      $blue--dodger,   // hovered
-    initial:    $blue--heather,
-);
+    active:     lighten($blue--cerulean, 5%),  // pressed
+    // focus:      lighten($blue--cerulean, 5%),  // focused
+    hover:      lighten($blue--cerulean, 5%),  // hovered
+    initial:    $blue--nepal,
+) !default;
 
 // Set modal control size.
-$modal-control-size: 4 * $base-font-size;
+$modal-control-size: 4 * $base-font-size !default;

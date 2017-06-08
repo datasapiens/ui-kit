@@ -1,5 +1,16 @@
 /**
  * Component Modal.
+ *
+ * @requires {function}    px-to-em
+ * @requires {mixin}       acceleration
+ * @requires {mixin}       stretch
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--ios-close-outline
+ * @requires {variable}    $animation-easing
+ * @requires animation.fade
+ * @requires animation.scale
+ * @requires animation.visibility
+ * @requires ico
  */
 
 // =============================================================================
@@ -7,10 +18,8 @@
 // =============================================================================
 
 /**
- * TODO: Consider rename to `dialog`.
  * TODO: Improve vertical position related to modal content and viewport height.
  * TODO: Implement content gradients.
- * TODO: Improve close control animation via rotation.
  */
 
 .mod {
@@ -34,11 +43,17 @@
  * Modifiers.
  */
 
-// .component--modifier {}
+/**
+ * Modal, expanded.
+ */
 
-// .component {
-//     &.--modifier {}
-// }
+.mod {
+    &.--expand {
+        .mod__container {
+            max-width: none;
+        }
+    }
+}
 
 /**
  * States.
@@ -107,7 +122,7 @@
 // =============================================================================
 
 .mod__container {
-    max-width: $modal-size;
+    max-width: map-get($modal-size, max);
     padding: $modal-indent;
     // pointer-events: initial;
     position: relative;
@@ -120,14 +135,25 @@
     &::before {
         @include stretch(
             absolute,
-            $modal-indent - $modal-border-radius,
-            $modal-indent
+            0,
+            0
         );
-
         background-color: $modal-background;
         border-radius: $modal-border-radius;
         box-shadow: $modal-box-shadow;
         content: "";
+    }
+
+    @media (min-width: nth($modal-breaks, 1)) {
+        padding: {
+            left: 2 * $modal-indent;
+            right: 2 * $modal-indent;
+        }
+
+        &::before {
+            left: $modal-indent;
+            right: $modal-indent;
+        }
     }
 }
 
@@ -135,15 +161,29 @@
 // =============================================================================
 
 .mod__body {
-    max-height: calc(100vh - 2 * #{$modal-indent});
-    overflow-y: auto;
-    padding-right: $modal-indent;
+    max: {
+        height: calc(
+            100vh -
+            2 * #{2 * $modal-indent + $modal-control-size}
+        );
+        width: calc(100vw - 2 * #{$modal-indent});
+    }
+    min: {
+        height: map-get($modal-size, min);
+        width:
+            map-get($modal-size, min) +
+            2 * $modal-indent;
+    }
+    overflow: auto;
     position: relative;
-    margin-right: (-1) * $modal-indent;
 
     // > :last-child {
     //     margin-bottom: 0;
     // }
+
+    @media (min-width: nth($modal-breaks, 1)) {
+        max-width: calc(100vw - 4 * #{$modal-indent});
+    }
 }
 
 // Modal control
