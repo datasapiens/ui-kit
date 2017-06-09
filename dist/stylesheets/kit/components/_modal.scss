@@ -18,7 +18,6 @@
 // =============================================================================
 
 /**
- * TODO: Improve vertical position related to modal content and viewport height.
  * TODO: Implement content gradients.
  */
 
@@ -51,6 +50,7 @@
     &.\--expand {
         .mod__container {
             max-width: none;
+            width: 100vw;
         }
     }
 }
