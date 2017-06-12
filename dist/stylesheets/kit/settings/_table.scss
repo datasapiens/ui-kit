@@ -6,37 +6,50 @@
 // Table settings
 // =============================================================================
 
+// Set table background.
+$table-background: (
+    body: $white,
+    head: $white,
+) !default;
+
 // Set table breakpoints.
 $table-breaks: (
     750px,
     800px,
     1100px
-);
+) !default;
 
 // Set table border radius.
-$table-border-radius: 1px;
+$table-border-radius: 2px !default;
+
+// Set table box shadow.
+$table-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
 
 // Set table font size.
-$table-font-size: 13px;
+$table-font-size: $base-font-size !default;
 
 // Set table line height ratio.
-$table-line-height-ratio: 1.25;
-
-// Set table `distinct` row background.
-$table-row--distinct-background: lighten($blue--nepal, 40%);
+$table-line-height-ratio: 1.25 !default;
 
 // Set table cell indent.
-$table-cell-indent: 10px;
+$table-cell-indent: 8px !default;
 
 /**
- * Table, box.
+ * Table, bold row.
+ */
+
+// Set table `bold` row background.
+$table-row--bold-background: rgba($blue--malibu, 0.25) !default;
+
+/**
+ * Table, edge.
  */
 
 // Set boxed table border color.
-$table--box-border-color: lighten($blue--nepal, 30%);
+$table--edge-border-color: $blue--heather !default;
 
 // Set boxed table border size.
-$table--box-border-size: 1px;
+$table--edge-border-size: 1px !default;
 
 /**
  * Table, primary.
@@ -45,29 +58,29 @@ $table--box-border-size: 1px;
 // Set primary table background.
 $table--primary-background: (
     body: $white,
-    head: lighten($blue--nepal, 40%),
-);
+    head: lighten($blue--wood, 40%),
+) !default;
 
 // Set primary table border color.
 $table--primary-border-color: (
-    body: lighten($blue--nepal, 30%),
-    head: lighten($blue--nepal, 30%),
-);
+    body: lighten($blue--wood, 30%),
+    head: lighten($blue--wood, 30%),
+) !default;
 
 // Set primary table border size.
-$table--primary-border-size: 1px;
+$table--primary-border-size: 1px !default;
 
 // Set primary table color.
 $table--primary-color: (
     // body: inherit,
     head: $blue--fiord,
-);
+) !default;
 
-// Set primary table `distinct` cell background.
-$table--primary-cell--distinct-background: (
-    body: lighten($blue--nepal, 40%),
-    head: lighten($blue--nepal, 35%),
-);
+// Set primary table `bold` cell background.
+$table--primary-cell--bold-background: (
+    body: lighten($blue--wood, 40%),
+    head: lighten($blue--wood, 35%),
+) !default;
 
 /**
  * Table, secondary.
@@ -75,15 +88,15 @@ $table--primary-cell--distinct-background: (
 
 // Set secondary table border color.
 $table--secondary-border-color: (
-    body: lighten($blue--nepal, 30%),
-    head: lighten($blue--nepal, 30%),
-);
+    body: lighten($blue--wood, 30%),
+    head: lighten($blue--wood, 30%),
+) !default;
 
 // Set secondary table border size.
-$table--secondary-border-size: 1px;
+$table--secondary-border-size: 1px !default;
 
 // Set secondary table color.
 $table--secondary-color: (
     // body: inherit,
     head: $blue--fiord,
-);
+) !default;

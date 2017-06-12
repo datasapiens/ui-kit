@@ -1,5 +1,16 @@
 /**
  * Component Table.
+ *
+ * @requires {function}    px-to-em
+ * @requires {mixin}       size
+ * @requires {mixin}       stretch
+ * @requires {placeholder} %form-element
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--checkmark
+ * @requires {variable}    $animation-easing
+ * @requires animation.scale
+ * @requires form.element
+ * @requires ico
  */
 
 // =============================================================================
@@ -7,29 +18,107 @@
 // =============================================================================
 
 .tbl {
-    caption,
-    td,
-    th {
+    border-radius: $table-border-radius;
+    font-size: px-to-rem($table-font-size);
+    line-height: $table-line-height-ratio;
+
+    caption {
         padding: {
-            left: $table-cell-indent;
-            right: $table-cell-indent;
+            left: 2 * $table-cell-indent;
+            right: 2 * $table-cell-indent;
         }
     }
     td,
     th {
-        line-height: $table-line-height-ratio;
         padding: {
             bottom: 0.75 * $table-cell-indent;
+            left: $table-cell-indent;
+            right: $table-cell-indent;
             top: 0.75 * $table-cell-indent;
         }
         transition: background-color 0.2s;
         vertical-align: baseline;
     }
 
+    tr {
+        &:first-child {
+            td,
+            th {
+                &:first-child {
+                    border-top: {
+                        left-radius: $table-border-radius;
+                    }
+                }
+                &:last-child {
+                    border-top: {
+                        right-radius: $table-border-radius;
+                    }
+                }
+            }
+        }
+    }
+
     thead {
+        border-top: {
+            left-radius: $table-border-radius;
+            right-radius: $table-border-radius;
+        }
         th {
-            // @include word-wrap;
-            font-size: px-to-em($table-font-size);
+            font-size: 0.9em;
+        }
+    }
+
+    tbody {
+        tr:last-child {
+            td,
+            th {
+                &:first-child {
+                    border-bottom: {
+                        left-radius: $table-border-radius;
+                    }
+                }
+                &:last-child {
+                    border-bottom: {
+                        right-radius: $table-border-radius;
+                    }
+                }
+            }
+        }
+    }
+
+    thead + tbody {
+        tr:first-child {
+            td,
+            th {
+                &:first-child,
+                &:last-child {
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+
+    // Apply selected properties.
+    &:not(.\--rack) {
+        background-color: rgba(map-get($table-background, body), 0.25);
+
+        tbody {
+            background-color: map-get($table-background, body);
+        }
+
+        @if map-get($table-background, head) != map-get($table-background, body) {
+            thead {
+                background-color: map-get($table-background, head);
+            }
+        }
+
+        box-shadow: $table-box-shadow;
+        // padding: $table-cell-indent;
+    }
+
+    &:not(.\--compact):not(.--edge):not(.--rack) {
+        tbody {
+            // box-shadow: $table-box-shadow;
         }
     }
 }
@@ -48,13 +137,28 @@
     }
 }
 
+
 /**
- * Table, layout fixed.
+ * Table, background.
  */
 
+%tbl--background {
+    background-color: $blue--catskill;
+}
+
+/**
+ * Table, vertical lines (aka bars).
+ */
+
+%tbl--bar {
+    @extend %tbl--background;
+
+    border-spacing: 1px 0;
+}
+
 .tbl {
-    &.\--fix {
-        table-layout: fixed;
+    &.\--bar {
+        @extend %tbl--bar;
     }
 }
 
@@ -72,6 +176,94 @@
 }
 
 /**
+ * Table, compact.
+ */
+
+%tbl--compact {
+    caption {
+        padding: {
+            left: 1.5 * $table-cell-indent;
+            right: 1.5 * $table-cell-indent;
+        }
+    }
+    td,
+    th {
+        padding: 0.5 * $table-cell-indent;
+        // padding: {
+        //     bottom: 0.35 * $table-cell-indent;
+        //     left: 0.5 * $table-cell-indent;
+        //     right: 0.5 * $table-cell-indent;
+        //     top: 0.35 * $table-cell-indent;
+        // }
+    }
+}
+
+.tbl {
+    &.\--compact {
+        @extend %tbl--compact;
+    }
+}
+
+/**
+ * Table, edge (aka border).
+ */
+
+%tbl--edge {
+    border:
+        $table--edge-border-size
+        solid
+        $table--edge-border-color;
+}
+
+.tbl {
+    &.\--edge {
+        @extend %tbl--edge;
+    }
+}
+
+/**
+ * Table, layout fixed.
+ */
+
+.tbl {
+    &.\--fix {
+        table-layout: fixed;
+    }
+}
+
+/**
+ * Table, grid (aka bars and lines combo).
+ */
+
+%tbl--grid {
+    @extend %tbl--background;
+
+    border-spacing: 1px;
+}
+
+.tbl {
+    &.\--grid {
+        @extend %tbl--grid;
+    }
+}
+
+/**
+ * Table, horizontal lines.
+ */
+
+%tbl--line {
+    @extend %tbl--background;
+
+    border-spacing: 0 1px;
+}
+
+.tbl {
+    &.\--line {
+        @extend %tbl--line;
+    }
+}
+
+/**
  * Table, cell content verticaly centered.
  */
 
@@ -81,6 +273,29 @@
         th {
             vertical-align: middle;
         }
+    }
+}
+
+/**
+ * Table, rack (aka container).
+ */
+
+%tbl--rack {
+    caption,
+    td,
+    th {
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+.tbl {
+    &.\--rack {
+        @extend %tbl--rack;
     }
 }
 
@@ -98,94 +313,37 @@
 }
 
 /**
- * Table, compact.
+ * Table, stripes.
  */
 
 .tbl {
-    &.\--compact {
-        caption,
-        td,
-        th {
-            padding: {
-                bottom: 0.25 * $table-cell-indent;
-                left: 0.5 * $table-cell-indent;
-                right: 0.5 * $table-cell-indent;
-                top: 0.25 * $table-cell-indent;
+    &.\--stripe {
+        &.\--even {
+            tbody {
+                tr:nth-child(even) {
+                    background-color: $blue--catskill;
+                }
+            }
+        }
+        &.\--odd {
+            tbody {
+                tr:nth-child(odd) {
+                    background-color: $blue--catskill;
+                }
             }
         }
     }
 }
 
-/**
- * Table, container.
- */
 
-.tbl {
-    &.\--container {
-        caption,
-        td,
-        th {
-            &:first-child {
-                padding-left: 0;
-            }
-            &:last-child {
-                padding-right: 0;
-            }
-        }
-    }
-}
-
-/**
- * Table, box.
- */
-
-.tbl {
-    &.\--box {
-        border: $table--box-border-size solid $table--box-border-color;
-    }
-}
 
 /**
  * Table variants placeholder.
  */
 
 %tbl--master {
-    @include round($table-border-radius);
-
-    color: inherit;
-    overflow: hidden;
-
-    thead {
-        tr:last-of-type {
-            th {
-                border: {
-                    bottom: solid transparent;
-                    top: 0;
-                }
-                vertical-align: bottom;
-            }
-        }
-    }
-
-    tr:first-of-type {
-        td,
-        th {
-            border-top-color: transparent;
-        }
-    }
-
-    /**
-     * Responsive.
-     */
-
-    // &.\--responsive {
-    //     tr:first-of-type {
-    //         td:not(:first-child),
-    //         th:not(:first-child) {
-    //             border-top-color: map-get($table--primary-border-color, body);;
-    //         }
-    //     }
-    // }
+    // color: inherit;
+    // overflow: hidden;
 }
 
 /**
@@ -194,32 +352,18 @@
 
 .tbl {
     &.\--primary {
-        @extend %tbl--master;
+        // @extend %tbl--master;
+        @extend %tbl--edge;
+        @extend %tbl--grid;
 
-        tbody {
-            tr {
-                &:nth-of-type(even) {
-                    background-color: map-get($table--primary-background, body);
-                }
-            }
-        }
-        thead {
-            background-color: map-get($table--primary-background, head);
+        // background-color: map-get($table--primary-background, body);
 
-            th {
-                border-bottom: {
-                    color: map-get($table--primary-border-color, head);
-                    width: $table--primary-border-size;
-                }
-                color: map-get($table--primary-color, head);
-            }
-        }
+        // thead {
+        //     background-color: map-get($table--primary-background, head);
+        // }
 
-        td,
-        th {
-            border-top: $table--primary-border-size
-                solid
-                map-get($table--primary-border-color, body);
+        &:not(.\--rack) {
+            padding: $table-cell-indent;
         }
     }
 }
@@ -230,25 +374,7 @@
 
 .tbl {
     &.\--secondary {
-        @extend %tbl--master;
-        @extend .tbl.\--container;
-
-        thead {
-            th {
-                border-bottom: {
-                    color: map-get($table--secondary-border-color, head);
-                    width: $table--secondary-border-size;
-                }
-                color: map-get($table--secondary-color, head);
-            }
-        }
-
-        td,
-        th {
-            border-top: $table--secondary-border-size
-            solid
-            map-get($table--secondary-border-color, body);
-        }
+        // @extend %tbl--master;
     }
 }
 
@@ -256,11 +382,25 @@
  * States.
  */
 
-// .is-component-state {}
+/**
+ * Table, active.
+ */
 
-// .component {
-//     &.is-state {}
-// }
+.tbl {
+    &.is-active {
+        tbody {
+            tr:hover {
+                cursor: pointer;
+
+                td,
+                th {
+                    // background-color: $blue--malibu;
+                    background-color: rgba($green--dolly, 0.5);
+                }
+            }
+        }
+    }
+}
 
 /**
  * Context.
@@ -272,6 +412,25 @@
 // Subcomponents
 // =============================================================================
 
+// Table column
+// =============================================================================
+
+.tbl__column {}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Table column, bold.
+ */
+
+.tbl__column {
+    &.\--bold {
+        background-color: rgba($table-row--bold-background, 0.25);
+    }
+}
+
 // Table row
 // =============================================================================
 
@@ -282,14 +441,14 @@
  */
 
 /**
- * Table row, distinct.
+ * Table row, bold.
  */
 
 .tbl__row {
-    &.\--distinct {
+    &.\--bold {
         td,
         th {
-            background-color: $table-row--distinct-background;
+            background-color: rgba($table-row--bold-background, 0.25);
         }
     }
 }
@@ -304,28 +463,30 @@
  */
 
 /**
- * Table cell, distinct.
+ * Table cell, bold.
  */
 
 .tbl__cell {
-    &.\--distinct {
-        $parent: #{&};
+    &.\--bold {
+        background-color: rgba($table-row--bold-background, 0.25);
 
-        @at-root {
-            .tbl.\--primary {
-                thead #{$parent} {
-                    background-color: map-get(
-                        $table--primary-cell--distinct-background,
-                        head
-                    );
-                }
-                tbody #{$parent} {
-                    background-color: map-get(
-                        $table--primary-cell--distinct-background,
-                        body
-                    );
-                }
-            }
-        }
+        // $parent: #{&};
+
+        // @at-root {
+        //     .tbl.\--primary {
+        //         thead #{$parent} {
+        //             background-color: map-get(
+        //                 $table--primary-cell--bold-background,
+        //                 head
+        //             );
+        //         }
+        //         tbody #{$parent} {
+        //             background-color: map-get(
+        //                 $table--primary-cell--bold-background,
+        //                 body
+        //             );
+        //         }
+        //     }
+        // }
     }
 }

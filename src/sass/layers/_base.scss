@@ -75,7 +75,7 @@ body {
 
 %heading {
     font-weight: 400;
-    display: block;
+    // display: block;
     margin: {
         bottom: rhythm-get();
         top: rhythm-get(1.25);
@@ -391,7 +391,7 @@ table {
     @extend %rhythm;
 
     border: {
-        collapse: separated;
+        collapse: separate;
         spacing: 0;
     }
 }
@@ -399,7 +399,7 @@ table {
 caption {
     @extend h5;
 
-    display: table-caption;
+    // display: table-caption;
     margin: {
         bottom: 0.25em;
         top: 0;
