@@ -1,16 +1,7 @@
 /**
  * Component Table.
  *
- * @requires {function}    px-to-em
- * @requires {mixin}       size
- * @requires {mixin}       stretch
- * @requires {placeholder} %form-element
- * @requires {placeholder} %ico
- * @requires {placeholder} %ico--checkmark
- * @requires {variable}    $animation-easing
- * @requires animation.scale
- * @requires form.element
- * @requires ico
+ * @requires {function} px-to-em
  */
 
 // =============================================================================
@@ -28,6 +19,7 @@
             right: 2 * $table-cell-indent;
         }
     }
+
     td,
     th {
         padding: {
@@ -100,25 +92,42 @@
 
     // Apply selected properties.
     &:not(.\--rack) {
-        background-color: rgba(map-get($table-background, body), 0.25);
-
-        tbody {
-            background-color: map-get($table-background, body);
-        }
+        background-color: map-get($table-background, body);
+        box-shadow: $table-box-shadow;
 
         @if map-get($table-background, head) != map-get($table-background, body) {
             thead {
                 background-color: map-get($table-background, head);
             }
         }
+        thead {
+            color: map-get($table-color, head);
+        }
 
-        box-shadow: $table-box-shadow;
-        // padding: $table-cell-indent;
-    }
+        thead + tbody {
+            tr:first-child {
+                td,
+                th {
+                    @extend %tbl__group;
+                }
+            }
+        }
 
-    &:not(.\--compact):not(.--edge):not(.--rack) {
         tbody {
-            // box-shadow: $table-box-shadow;
+            color: map-get($table-color, body);
+        }
+
+        tbody + tfoot {
+            tr:first-child {
+                td,
+                th {
+                    @extend %tbl__group;
+                }
+            }
+        }
+
+        tfoot {
+            color: map-get($table-color, foot);
         }
     }
 }
@@ -137,23 +146,17 @@
     }
 }
 
-
-/**
- * Table, background.
- */
-
-%tbl--background {
-    background-color: $blue--catskill;
-}
-
 /**
  * Table, vertical lines (aka bars).
  */
 
 %tbl--bar {
-    @extend %tbl--background;
-
-    border-spacing: 1px 0;
+    td,
+    th {
+        &:not(:last-of-type) {
+            border-right: $table-cell-border-size solid $table-cell-border-color;
+        }
+    }
 }
 
 .tbl {
@@ -186,15 +189,10 @@
             right: 1.5 * $table-cell-indent;
         }
     }
+
     td,
     th {
         padding: 0.5 * $table-cell-indent;
-        // padding: {
-        //     bottom: 0.35 * $table-cell-indent;
-        //     left: 0.5 * $table-cell-indent;
-        //     right: 0.5 * $table-cell-indent;
-        //     top: 0.35 * $table-cell-indent;
-        // }
     }
 }
 
@@ -236,9 +234,8 @@
  */
 
 %tbl--grid {
-    @extend %tbl--background;
-
-    border-spacing: 1px;
+    @extend %tbl--bar;
+    @extend %tbl--line;
 }
 
 .tbl {
@@ -252,9 +249,14 @@
  */
 
 %tbl--line {
-    @extend %tbl--background;
-
-    border-spacing: 0 1px;
+    tbody {
+        tr:not(:first-of-type) {
+            td,
+            th {
+                border-top: $table-cell-border-size solid $table-cell-border-color;
+            }
+        }
+    }
 }
 
 .tbl {
@@ -321,29 +323,18 @@
         &.\--even {
             tbody {
                 tr:nth-child(even) {
-                    background-color: $blue--catskill;
+                    background-color: rgba($table--stripe-row-background, 0.225);
                 }
             }
         }
         &.\--odd {
             tbody {
                 tr:nth-child(odd) {
-                    background-color: $blue--catskill;
+                    background-color: rgba($table--stripe-row-background, 0.225);
                 }
             }
         }
     }
-}
-
-
-
-/**
- * Table variants placeholder.
- */
-
-%tbl--master {
-    // color: inherit;
-    // overflow: hidden;
 }
 
 /**
@@ -352,18 +343,21 @@
 
 .tbl {
     &.\--primary {
-        // @extend %tbl--master;
         @extend %tbl--edge;
         @extend %tbl--grid;
 
-        // background-color: map-get($table--primary-background, body);
+        background-color: map-get($table--primary-background, body);
 
-        // thead {
-        //     background-color: map-get($table--primary-background, head);
-        // }
-
-        &:not(.\--rack) {
-            padding: $table-cell-indent;
+        @if $table--primary-border-size {
+            border-width: $table--primary-border-size;
+        }
+        @if $table--primary-indent {
+            padding: $table--primary-indent;
+        }
+        @if map-get($table--primary-background, head) != map-get($table--primary-background, body) {
+            thead {
+                background-color: map-get($table--primary-background, head);
+            }
         }
     }
 }
@@ -374,7 +368,22 @@
 
 .tbl {
     &.\--secondary {
-        // @extend %tbl--master;
+        @extend %tbl--bar;
+        @extend %tbl--edge;
+
+        background-color: map-get($table--secondary-background, body);
+
+        @if $table--secondary-border-size {
+            border-width: $table--secondary-border-size;
+        }
+        @if $table--secondary-indent {
+            padding: $table--secondary-indent;
+        }
+        @if map-get($table--secondary-background, head) != map-get($table--secondary-background, body) {
+            thead {
+                background-color: map-get($table--secondary-background, head);
+            }
+        }
     }
 }
 
@@ -387,16 +396,15 @@
  */
 
 .tbl {
-    &.is-active {
+    &.is-active[class] {
         tbody {
             tr:hover {
-                cursor: pointer;
+                @extend %tbl__group--active;
 
-                td,
-                th {
-                    // background-color: $blue--malibu;
-                    background-color: rgba($green--dolly, 0.5);
-                }
+                // td,
+                // th {
+                //     @extend %tbl__group--active;
+                // }
             }
         }
     }
@@ -411,6 +419,35 @@
 // =============================================================================
 // Subcomponents
 // =============================================================================
+
+// Table group
+// =============================================================================
+
+%tbl__group {
+    border-top: $table-group-border-size solid $table-group-border-color;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Table group, active.
+ */
+
+%tbl__group--active {
+    background-color: rgba($table-group--active-background, 1);
+    color: $table-group--active-color;
+}
+
+/**
+ * Table group, bold.
+ */
+
+%tbl__group--bold {
+    background-color: rgba($table-group--bold-background, 0.5);
+    color: $table-group--bold-color;
+}
 
 // Table column
 // =============================================================================
@@ -427,7 +464,21 @@
 
 .tbl__column {
     &.\--bold {
-        background-color: rgba($table-row--bold-background, 0.25);
+        @extend %tbl__group--bold;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Table column, active.
+ */
+
+.tbl__column {
+    &.is-active {
+        @extend %tbl__group--active;
     }
 }
 
@@ -446,9 +497,23 @@
 
 .tbl__row {
     &.\--bold {
+        @extend %tbl__group--bold;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Table row, active.
+ */
+
+.tbl__row {
+    &.is-active {
         td,
         th {
-            background-color: rgba($table-row--bold-background, 0.25);
+            @extend %tbl__group--active;
         }
     }
 }
@@ -468,25 +533,20 @@
 
 .tbl__cell {
     &.\--bold {
-        background-color: rgba($table-row--bold-background, 0.25);
+        @extend %tbl__group--bold;
+    }
+}
 
-        // $parent: #{&};
+/**
+ * States.
+ */
 
-        // @at-root {
-        //     .tbl.\--primary {
-        //         thead #{$parent} {
-        //             background-color: map-get(
-        //                 $table--primary-cell--bold-background,
-        //                 head
-        //             );
-        //         }
-        //         tbody #{$parent} {
-        //             background-color: map-get(
-        //                 $table--primary-cell--bold-background,
-        //                 body
-        //             );
-        //         }
-        //     }
-        // }
+/**
+ * Table cell, active.
+ */
+
+.tbl__cell {
+    &.is-active {
+        @extend %tbl__group--active;
     }
 }

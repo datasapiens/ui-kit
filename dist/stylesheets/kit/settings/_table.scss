@@ -9,6 +9,7 @@
 // Set table background.
 $table-background: (
     body: $white,
+    foot: $white,
     head: $white,
 ) !default;
 
@@ -25,31 +26,70 @@ $table-border-radius: 2px !default;
 // Set table box shadow.
 $table-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
 
+// Set table color.
+$table-color: (
+    body: $base-color,
+    foot: $base-color,
+    head: $base-color,
+) !default;
+
 // Set table font size.
 $table-font-size: $base-font-size !default;
 
 // Set table line height ratio.
 $table-line-height-ratio: 1.25 !default;
 
-// Set table cell indent.
-$table-cell-indent: 8px !default;
-
 /**
- * Table, bold row.
+ * Table group.
  */
 
-// Set table `bold` row background.
-$table-row--bold-background: rgba($blue--malibu, 0.25) !default;
+// Set table group border color.
+$table-group-border-color: $blue--geyser !default;
+
+// Set table group border size.
+$table-group-border-size: 1px !default;
+
+// Set table `active` group background.
+$table-group--active-background: $green--dolly !default;
+
+// Set table `active` group color.
+$table-group--active-color: $black !default;
+
+// Set table `bold` group background.
+$table-group--bold-background: $green--canary !default;
+
+// Set table `bold` group color.
+$table-group--bold-color: $black !default;
+
+/**
+ * Table cell.
+ */
+
+// Set table cell border color.
+$table-cell-border-color: $blue--catskill !default;
+
+// Set table cell border size.
+$table-cell-border-size: 1px !default;
+
+// Set table cell indent.
+$table-cell-indent: 8px !default;
 
 /**
  * Table, edge.
  */
 
 // Set boxed table border color.
-$table--edge-border-color: $blue--heather !default;
+$table--edge-border-color: $blue--catskill !default;
 
 // Set boxed table border size.
 $table--edge-border-size: 1px !default;
+
+/**
+ * Table, stripe.
+ */
+
+// Set table `bold` row background.
+$table--stripe-row-background: $blue--malibu !default;
 
 /**
  * Table, primary.
@@ -58,45 +98,29 @@ $table--edge-border-size: 1px !default;
 // Set primary table background.
 $table--primary-background: (
     body: $white,
-    head: lighten($blue--wood, 40%),
-) !default;
-
-// Set primary table border color.
-$table--primary-border-color: (
-    body: lighten($blue--wood, 30%),
-    head: lighten($blue--wood, 30%),
+    foot: $white,
+    head: $blue--zircon,
 ) !default;
 
 // Set primary table border size.
-$table--primary-border-size: 1px !default;
+$table--primary-border-size: 8px !default;
 
-// Set primary table color.
-$table--primary-color: (
-    // body: inherit,
-    head: $blue--fiord,
-) !default;
-
-// Set primary table `bold` cell background.
-$table--primary-cell--bold-background: (
-    body: lighten($blue--wood, 40%),
-    head: lighten($blue--wood, 35%),
-) !default;
+// Set primary table indent.
+$table--primary-indent: 0 !default;
 
 /**
  * Table, secondary.
  */
 
-// Set secondary table border color.
-$table--secondary-border-color: (
-    body: lighten($blue--wood, 30%),
-    head: lighten($blue--wood, 30%),
+// Set secondary table background.
+$table--secondary-background: (
+    body: $white,
+    foot: $white,
+    head: $white,
 ) !default;
 
 // Set secondary table border size.
-$table--secondary-border-size: 1px !default;
+$table--secondary-border-size: 0 !default;
 
-// Set secondary table color.
-$table--secondary-color: (
-    // body: inherit,
-    head: $blue--fiord,
-) !default;
+// Set secondary table indent.
+$table--secondary-indent: 8px !default;
