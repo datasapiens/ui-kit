@@ -7,44 +7,53 @@
 // =============================================================================
 
 /**
- * Pagination item has the same look as the Form/Element component.
+ * Pagination item.
  */
 
 // Set pagination item background.
 $navigation-pagination-item-background: (
-    active:     lighten($blue--congress, 65%),    // pressed
-    disable:    lighten(#ccc, 20%),             // disabled
-    focus:      lighten($blue--congress, 65%),    // focused
-    hover:      lighten($blue--congress, 65%),    // hovered
-    initial:    $white,
-);
+    active:     $blue--congress $blue--cerulean $blue--anakiwa, // pressed
+    disable:    $blue--geyser,                                  // disabled
+    focus:      $white,                                         // focused
+    hover:      $white,                                         // hovered
+    initial:    $blue--catskill $white $white,
+) !default;
 
 // Set pagination item border color.
 $navigation-pagination-item-border: (
-    active:     lighten($blue--congress, 50%),    // pressed
-    disable:    lighten(#ccc, 10%),             // disabled
-    focus:      lighten($blue--congress, 50%),    // focused
-    hover:      lighten($blue--congress, 50%),    // hovered
-    initial:    #ccc,
-);
+    active:     $blue--cerulean, // pressed
+    disable:    $blue--heather,  // disabled
+    focus:      $blue--cerulean, // focused
+    hover:      $blue--cerulean, // hovered
+    initial:    $blue--heather,
+) !default;
 
 // Set pagination item border radius.
-$navigation-pagination-item-border-radius: 2px;
+$navigation-pagination-item-border-radius: 2px !default;
 
 // Set pagination item border size.
-$navigation-pagination-item-border-size: 1px;
+$navigation-pagination-item-border-size: 1px !default;
+
+// Set pagination item box shadow.
+$navigation-pagination-item-box-shadow: 0 1px 3px -1px rgba($black, 0.25) !default;
 
 // Set pagination item color.
 $navigation-pagination-item-color: (
-    active:     $blue--congress,                  // pressed
-    disable:    lighten($base-color, 40%),      // disabled
-    focus:      $blue--congress,                  // focused
-    hover:      $blue--congress,                  // hovered
-    initial:    initial,
-);
+    active:     $white,             // pressed
+    disable:    $blue--regent,      // disabled
+    focus:      $blue--cerulean,    // focused
+    hover:      $blue--cerulean,    // hovered
+    initial:    $blue--cerulean,
+) !default;
+
+// Set pagination item font size.
+$navigation-pagination-item-font-size: 13px !default;
+
+// Set pagination item font weight.
+$navigation-pagination-item-font-weight: 400 !default;
 
 // Set pagination item indent.
-$navigation-pagination-item-indent: 10px;
+$navigation-pagination-item-indent: 8px !default;
 
 // Set pagination item height.
-$navigation-pagination-item-size: 30px;
+$navigation-pagination-item-size: 34px !default;

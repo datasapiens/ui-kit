@@ -1,5 +1,11 @@
 /**
  * Component Navigation/Pagination.
+ *
+ * @requires {function}    px-to-rem
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--caret-left
+ * @requires {placeholder} %ico--caret-right
+ * @requires ico
  */
 
 // =============================================================================
@@ -7,14 +13,83 @@
 // =============================================================================
 
 .nav-pagination {
-    display: inline-block;
+    @extend %nav-pagination__cell;
+    @extend .nav-pagination.\--left;
+
+    align-items: center;
 }
 
 /**
  * Modifiers.
  */
 
-// .component--modifier
+/**
+ * Pagination, block.
+ */
+
+%nav-pagination--block {
+    display: flex;
+}
+
+.nav-pagination {
+    &.\--block {
+        @extend %nav-pagination--block;
+    }
+}
+
+/**
+ * Pagination, centered.
+ */
+
+.nav-pagination {
+    &.\--center {
+        @extend %nav-pagination--block;
+
+        justify-content: center;
+
+        .nav-pagination__cell + .nav-pagination__cell {
+            margin: {
+                left: 0;
+                right: $navigation-pagination-item-indent;
+            }
+        }
+    }
+}
+
+/**
+ * Pagination, aligned left.
+ */
+
+.nav-pagination {
+    &.\--left {
+        @extend %nav-pagination--block;
+
+        justify-content: flex-start;
+
+        .nav-pagination__cell {
+            margin-left: 0;
+        }
+    }
+}
+
+/**
+ * Pagination, aligned right.
+ */
+
+.nav-pagination {
+    &.\--right {
+        @extend %nav-pagination--block;
+
+        justify-content: flex-end;
+
+        .nav-pagination__cell {
+            margin: {
+                left: $navigation-pagination-item-indent;
+                right: 0;
+            }
+        }
+    }
+}
 
 /**
  * States.
@@ -32,21 +107,22 @@
 // Subcomponents
 // =============================================================================
 
-// Pagination row
+// Pagination inset
 // =============================================================================
 
-// .nav-pagination__row {
-//     display: flex;
-//     flex-wrap: wrap;
-//     margin-bottom: (-1) * $navigation-pagination-item-indent;
-// }
+%nav-pagination__cell {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
 
-// Pagination cell
-// =============================================================================
+.nav-pagination__cell {
+    @extend %nav-pagination__cell;
 
-// .nav-pagination__cell {
-//     margin-bottom: $navigation-pagination-item-indent;
-// }
+    margin: {
+        left: $navigation-pagination-item-indent;
+        right: $navigation-pagination-item-indent;
+    }
+}
 
 // Pagination item
 // =============================================================================
@@ -56,11 +132,12 @@
     border: $navigation-pagination-item-border-size solid transparent;
     display: inline-block;
     font: {
-        weight: 400;
-        size: px-to-rem(13px);
+        weight: $navigation-pagination-item-font-weight;
+        size: px-to-rem($navigation-pagination-item-font-size);
     }
     height: $navigation-pagination-item-size;
-    line-height: $navigation-pagination-item-size -
+    line-height:
+        $navigation-pagination-item-size -
         2 * $navigation-pagination-item-border-size;
     min-width: $navigation-pagination-item-size;
     padding: 0 $navigation-pagination-item-indent;
@@ -70,15 +147,32 @@
 .nav-pagination__item {
     @extend %nav-pagination__item;
 
-    background-color: map-get($navigation-pagination-item-background, initial);
+    background: {
+        $c: map-get($navigation-pagination-item-background, initial);
+
+        @if type-of($c) == list {
+            color: nth($c, 2);
+            image: linear-gradient(
+                160deg,
+                rgba(nth($c, 3), 0.25) 0%,
+                rgba(nth($c, 2), 0.00) 25%,
+                rgba(nth($c, 1), 0.25) 75%
+            );
+        } @else {
+            color: $c;
+        }
+    }
     border: {
         color: map-get($navigation-pagination-item-border, initial);
         radius: $navigation-pagination-item-border-radius;
     }
+    box-shadow: $navigation-pagination-item-box-shadow;
+    color: map-get($navigation-pagination-item-color, initial);
     cursor: pointer;
-    margin: 0 0.5 * $navigation-pagination-item-indent;
+    margin: 0.5 * $navigation-pagination-item-indent;
     text-decoration: none;
-    transition: background-color 0.2s,
+    transition:
+        background-color 0.2s,
         border-color 0.2s,
         color 0.2s;
 
@@ -104,13 +198,28 @@
  * Pagination item, active.
  */
 
-.nav-pagination__item {
+.nav-pagination__item[class] {
     &:active,
     &.is-active {
-        @extend .nav-pagination__item:hover;
-        // background-color: map-get($navigation-pagination-item-background, active);
-        // border-color: map-get($navigation-pagination-item-border, active);
-        // color: map-get($navigation-pagination-item-border, active);
+        &:not(.is-disabled) {
+            background: {
+                $c: map-get($navigation-pagination-item-background, active);
+
+                @if type-of($c) == list {
+                    color: nth($c, 2);
+                    image: linear-gradient(
+                        160deg,
+                        rgba(nth($c, 3), 0.25) 0%,
+                        rgba(nth($c, 2), 0.25) 50%,
+                        rgba(nth($c, 1), 0.25) 100%
+                    );
+                } @else {
+                    color: $c;
+                }
+            }
+            border-color: map-get($navigation-pagination-item-border, active);
+            color: map-get($navigation-pagination-item-color, active);
+        }
     }
 }
 
@@ -119,11 +228,25 @@
  */
 
 .nav-pagination__item {
-    &:disabled,
     &.is-disabled {
-        background-color: map-get($navigation-pagination-item-background, disable) !important;
-        border-color: map-get($navigation-pagination-item-border, disable) !important;
-        color: map-get($navigation-pagination-item-color, disable) !important;
+        background: {
+            $c: map-get($navigation-pagination-item-background, disable);
+
+            @if type-of($c) == list {
+                color: nth($c, 2);
+                image: linear-gradient(
+                    160deg,
+                    rgba(nth($c, 3), 0.25) 0%,
+                    rgba(nth($c, 2), 0.25) 50%,
+                    rgba(nth($c, 1), 0.25) 100%
+                );
+            } @else {
+                color: $c;
+            }
+        }
+        border-color: map-get($navigation-pagination-item-border, disable);
+        box-shadow: none;
+        color: map-get($navigation-pagination-item-color, disable);
         cursor: not-allowed;
     }
 }
@@ -133,11 +256,8 @@
  */
 
 .nav-pagination__item {
-    &:focus {
+    &:focus:not(.is-disabled) {
         @extend .nav-pagination__item:hover;
-        // background-color: map-get($navigation-pagination-item-background, focus);
-        // border-color: map-get($navigation-pagination-item-border, focus);
-        // color: map-get($navigation-pagination-item-color, focus);
     }
 }
 
@@ -146,8 +266,22 @@
  */
 
 .nav-pagination__item {
-    &:hover {
-        background-color: map-get($navigation-pagination-item-background, hover);
+    &:hover:not(.is-disabled) {
+        background: {
+            $c: map-get($navigation-pagination-item-background, hover);
+
+            @if type-of($c) == list {
+                color: nth($c, 2);
+                image: linear-gradient(
+                    160deg,
+                    rgba(nth($c, 3), 0.25) 0%,
+                    rgba(nth($c, 2), 0.25) 50%,
+                    rgba(nth($c, 1), 0.25) 100%
+                );
+            } @else {
+                color: $c;
+            }
+        }
         border-color: map-get($navigation-pagination-item-border, hover);
         color: map-get($navigation-pagination-item-color, hover);
     }
@@ -173,8 +307,8 @@
         @extend .nav-pagination__control;
 
         &::before {
-            @extend %ico;
-            @extend %ico--arrow-left;
+            @extend %ico !optional;
+            @extend %ico--caret-left !optional;
         }
     }
 }
@@ -188,8 +322,8 @@
         @extend .nav-pagination__control;
 
         &::after {
-            @extend %ico;
-            @extend %ico--arrow-right;
+            @extend %ico !optional;
+            @extend %ico--caret-right !optional;
         }
     }
 }
