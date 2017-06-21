@@ -165,21 +165,26 @@
 // Typography
 // =============================================================================
 
-.u-normal {
-    font-style: normal;
-    font-weight: normal;
+.u-font {
+    &.\--bold {
+        font-weight: 400;
+    }
+    &.\--italic {
+        font-style: italic;
+    }
+    &.\--large {
+        font-size: 1.2em;
+    }
+    &.\--normal {
+        font: {
+            style: normal;
+            weight: normal;
+        }
+    }
+    &.\--small {
+        font-size: 0.9em;
+    }
 }
-
-.u-small { font-size: 0.9em; }
-.u-large { font-size: 1.2em; }
-
-.u-tight {
-    font-size: 0.8em;
-    line-height: 1.4;
-}
-
-.u-bold   { font-weight: 400; }
-.u-italic { font-style: italic; }
 
 .u-transform {
     &.\--capital { text-transform: capitalize; }
