@@ -25,7 +25,6 @@
     @include acceleration;
     @include stretch(fixed, 0, 0);
 
-    // align-items: flex-start;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -153,6 +152,7 @@
     }
 
     @media (min-width: nth($modal-breaks, 1)) {
+        min-width: nth($modal-breaks, 1);
         padding: {
             left: 2 * $modal-indent;
             right: 2 * $modal-indent;
@@ -170,10 +170,9 @@
 
 %mod__region {
     border: 0 dotted $modal-head-border-color;
-    padding: {
-        bottom: 0.5 * $modal-indent;
-        top: 0.5 * $modal-indent;
-    }
+    padding:
+        0.5 * $modal-indent
+        $modal-indent;
     position: relative;
 }
 
@@ -188,16 +187,16 @@
         style: solid;
     }
     margin-bottom: 0.5 * $modal-indent;
+    padding-top: 0;
 }
 
 // Modal title
 // =============================================================================
 
 .mod__title {
-    @extend h4;
+    @extend h5 !optional;
 
     margin: 0;
-    text-transform: uppercase;
 }
 
 // Modal body
@@ -207,12 +206,11 @@
     max-width: calc(100vw - 2 * #{$modal-indent});
     min: {
         height: map-get($modal-size, min);
-        width:
-            map-get($modal-size, min) +
-            2 * $modal-indent;
     }
     overflow: auto;
+    padding: 0 $modal-indent;
     position: relative;
+    z-index: 1;
 
     // > :last-child {
     //     margin-bottom: 0;
@@ -220,6 +218,7 @@
 
     @media (min-width: nth($modal-breaks, 1)) {
         max-width: calc(100vw - 4 * #{$modal-indent});
+        min-width: nth($modal-breaks, 1) - 4 * $modal-indent;
     }
 
     /**
@@ -237,8 +236,9 @@
             content: "";
             display: block;
             height: $modal-indent;
+            left: 0;
             position: sticky;
-            z-index: 1;
+            right: 0;
         }
         &::after {
             bottom: 0;
