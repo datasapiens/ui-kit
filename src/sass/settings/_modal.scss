@@ -36,6 +36,19 @@ $modal-size: (
 ) !default;
 
 /**
+ * Header.
+ */
+
+// Set modal header border color.
+$modal-head-border-color: map-get(
+    map-get($color-set, neutral),
+    70
+) !default;
+
+// Set modal header border size.
+$modal-head-border-size: 1px !default;
+
+/**
  * Control.
  */
 
