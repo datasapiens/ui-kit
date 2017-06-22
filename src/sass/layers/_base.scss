@@ -444,5 +444,6 @@ th {
 
     &-track {
         background-color: $base-scrollbar-track;
+        border-radius: 0.5 * $base-scrollbar-size;
     }
 }
