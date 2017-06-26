@@ -1,0 +1,36 @@
+/**
+ * Applies a clip like polygon `clip-path` to indicate shortened content.
+ *
+ * @param {Number} $pitch (1%)   - Distance of peaks
+ * @param {Number} $size  (10px) - Distance of peaks in percents
+ */
+
+@mixin rectangle-clip(
+    $pitch: 1%,
+    $size: 10px
+) {
+    $max: 100 / unit-strip($pitch);
+
+    $polygon: (
+        0% 0%,  // left top corner
+        0% 100% // left bottom corner
+    );
+
+    @for $i from 0 through $max {
+        $x: $i * $pitch;
+        $y: if(
+            $i % 2 == 0,
+            calc(100% - #{$size}),
+            100%
+        );
+        $polygon: append($polygon, $x $y, comma);
+    }
+
+    $polygon: append($polygon, 100% 0%, comma); // right bottom corner
+    $polygon: append($polygon, 0% 0%, comma);   // right top corner
+
+    @supports (clip-path: none) {
+        clip-path: polygon(#{$polygon});
+        padding-bottom: 1.5 * $size;
+    }
+}

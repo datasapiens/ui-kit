@@ -64,8 +64,10 @@
 .wrp {
     &.\--scroll-y {
         @extend %wrp--scroll;
+        @include rectangle-clip($pitch: 2%);
 
         overflow-y: auto;
+        transition: max-height 0.3s map-get($animation-easing, in-out-circ);
     }
 }
 
@@ -100,11 +102,31 @@
  * States.
  */
 
-// .is-component-state {}
+/**
+ * Wrapper, on.
+ */
 
-// .component {
-//     &.is-state {}
-// }
+.wrp {
+    &.is-on {
+        &.\--scroll-y {
+            max-height: map-get($wrapper-size, vertical);
+        }
+    }
+}
+
+/**
+ * Wrapper, off.
+ */
+
+.wrp {
+    &.is-off {
+        // overflow: visible;
+
+        &.\--scroll-y {
+            max-height: 200vh !important;
+        }
+    }
+}
 
 /**
  * Context.

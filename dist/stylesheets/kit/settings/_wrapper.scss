@@ -6,8 +6,14 @@
 // Wrapper settings
 // =============================================================================
 
-// Set wrap indent.
+// Set wrapper indent.
 $wrapper-indent: (
     horizontal: 8px,
     vertical: 8px,
+) !default;
+
+// Set wrapper size.
+$wrapper-size: (
+    horizontal: auto,
+    vertical: 10em,
 ) !default;
