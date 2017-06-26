@@ -9,6 +9,7 @@
 %ctr,
 .ctr {
     @extend %group;
+
     position: relative;
 
     &:first-child {
@@ -76,30 +77,30 @@
  * @link http://tympanus.net/codrops/2013/07/14/justified-and-vertically-centered-header-elements/
  */
 
-%ctr--justify {
-    text-align: justify;
+// %ctr--justify {
+//     text-align: justify;
 
-    &::after {
-        content: "";
-        display: inline-block;
-        width: 100%;
-    }
-}
+//     &::after {
+//         content: "";
+//         display: inline-block;
+//         width: 100%;
+//     }
+// }
 
 /**
  * Container with `inline-block` verticaly centered ascendants.
  * @link http://css-tricks.com/centering-in-the-unknown/
  */
 
-%ctr--middle {
-    &::before {
-        content: "";
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-        width: 0;
-    }
-}
+// %ctr--middle {
+//     &::before {
+//         content: "";
+//         display: inline-block;
+//         height: 100%;
+//         vertical-align: middle;
+//         width: 0;
+//     }
+// }
 
 /**
  * States.
