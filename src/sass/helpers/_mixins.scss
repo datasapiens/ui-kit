@@ -6,6 +6,8 @@
 // Mixins
 // =============================================================================
 
+// 1. Webpack `resolve-url-loader` partials import issue workaround
+
 @import "mixins/acceleration";
 @import "mixins/browser.ie-edge";
 @import "mixins/browser.ie-gte-10";
@@ -23,7 +25,7 @@
 @import "mixins/size";
 @import "mixins/spacing";
 @import "mixins/stretch";
-@import "mixins/typography.font-face";
+@import "mixins/typography.font-face.scss";     // 1
 @import "mixins/typography.font-size";
 @import "mixins/typography.link-underline";
 @import "mixins/typography.text-truncate";
