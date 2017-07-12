@@ -27,7 +27,6 @@
     "grunt-cwebp": "^2.1.0",
     "grunt-hashres": "^0.4.1",
     "grunt-prompt": "^1.3.3",
-    "grunt-sass": "^1.2.1",
     "grunt-shell": "^2.0.0",
     "grunt-text-replace": "^0.4.0",
     "grunt-webfont": "^1.6.0",
