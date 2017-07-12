@@ -49,6 +49,15 @@ $table-group-border-color: $blue--geyser !default;
 // Set table group border size.
 $table-group-border-size: 1px !default;
 
+// Set table group box shadow.
+$table-group-box-shadow: (
+    inner: (
+        inset 0 1px 2px -1px rgba($black, 0.125),
+        inset 0 -1px 2px -1px rgba($black, 0.125),
+    ),
+    // outer: 0 1px 4px -2px rgba($black, 0.125),
+) !default;
+
 // Set table `active` group background.
 $table-group--active-background: $green--dolly !default;
 
@@ -73,6 +82,13 @@ $table-cell-border-size: 1px !default;
 
 // Set table cell indent.
 $table-cell-indent: 8px !default;
+
+/**
+ * Table scrollbar.
+ */
+
+// Set table scrollbar size (according to `$base-scrollbar-size`).
+$table-scrollbar-size: 8px !default;
 
 /**
  * Table, edge.
