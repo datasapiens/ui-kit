@@ -8,7 +8,7 @@
  */
 
 @mixin ie-edge {
-    @supports (-ms-accelerator: true) {
+    @supports (-ms-ime-align: auto) {
         @content;
     }
 }
