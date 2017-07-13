@@ -33,6 +33,13 @@ $table-color: (
     head: $base-color,
 ) !default;
 
+// Set maximum columns count.
+// It's required for `sticky` variant to patch IE browsers.
+$table-columns: (
+    max: 20,
+    min: 3,
+) !default;
+
 // Set table font size.
 $table-font-size: $base-font-size !default;
 

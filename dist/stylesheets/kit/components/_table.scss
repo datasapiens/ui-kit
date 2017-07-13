@@ -458,6 +458,30 @@
         }
 
         /**
+         * IE
+         */
+
+        @include ie-gte-10 {
+            @for $c from map-get($table-columns, min) through map-get($table-columns, max) {
+                &[cols="#{$c}"] {
+                    td, th {
+                        width: percentage(1 / $c);
+                    }
+                }
+            }
+        }
+
+        @include ie-edge {
+            @for $c from map-get($table-columns, min) through map-get($table-columns, max) {
+                &[cols="#{$c}"] {
+                    td, th {
+                        width: percentage(1 / $c);
+                    }
+                }
+            }
+        }
+
+        /**
          * IE 10+
          */
 
