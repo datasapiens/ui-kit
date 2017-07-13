@@ -360,14 +360,21 @@
             }
         }
 
-        tbody {
+        tbody,
+        tfoot {
             border: 0 solid $table-group-border-color;
-            border: {
-                bottom-width: $table-group-border-size;
-                top-width: $table-group-border-size;
-            }
+        }
+
+        tbody {
             box-shadow: map-get($table-group-box-shadow, inner);
             overflow-y: auto;
+        }
+
+        thead + tbody,
+        tbody + tfoot {
+            border: {
+                top-width: $table-group-border-size;
+            }
         }
 
         tr {
