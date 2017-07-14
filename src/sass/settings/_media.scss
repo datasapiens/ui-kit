@@ -1,0 +1,18 @@
+/**
+ * Component Media settings.
+ */
+
+// =============================================================================
+// Media settings
+// =============================================================================
+
+// Set media breakpoints.
+$media-breaks: (
+    520px,
+) !default;
+
+// Set media figure indent.
+$media-figure-indent: (
+    horizontal: 8px,
+    vertical: 8px,
+) !default;

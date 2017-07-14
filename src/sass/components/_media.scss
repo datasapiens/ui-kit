@@ -1,0 +1,94 @@
+/**
+ * Component Media.
+ */
+
+// <div class="mda --before --float">
+//     <span class="mda__figure"></span>
+//     <div class="mda__content"></div>
+// </div>
+
+// =============================================================================
+// Media
+// =============================================================================
+
+.mda {
+    @extend .mda.--before;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: nth($media-breaks, 1)) {
+        flex-direction: row;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Media, figure after.
+ */
+
+.mda {
+    &.--after {
+        @media (min-width: nth($media-breaks, 1)) {
+            &,
+            .mda {
+                flex-direction: row-reverse;
+            }
+
+            .mda__figure {
+                margin: {
+                    left: map-get($media-figure-indent, horizontal);
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Media, figure before.
+ */
+
+.mda {
+    &.--before {
+        @media (min-width: nth($media-breaks, 1)) {
+            .mda__figure {
+                margin: {
+                    left: 0;
+                    right: map-get($media-figure-indent, horizontal);
+                }
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Media content
+// =============================================================================
+
+.mda__content {}
+
+// Media figure
+// =============================================================================
+
+.mda__figure {
+    margin-bottom: map-get($media-figure-indent, vertical);
+}
