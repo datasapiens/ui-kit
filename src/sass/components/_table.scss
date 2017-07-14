@@ -324,20 +324,13 @@
     &.--sticky {
         $spacer: 40px;
 
-        clip-path: polygon(
-            0% 0%,
-            100% 0%,
-            100% 100%,
-            0% 100%
-        );                                  /* 1 */
-
         tbody,
         tfoot,
         thead {
             clip-path: polygon(
                 0% 0%,
-                calc(100% - $spacer) 0%,
-                calc(100% - $spacer) 100%,
+                calc(100% - #{$spacer}) 0%,
+                calc(100% - #{$spacer}) 100%,
                 0% 100%
             );                              /* 1 */
             display: block;
@@ -406,6 +399,7 @@
             tbody,
             tfoot,
             thead {
+                clip-path: none;
                 margin-right: 0;
                 overflow-y: auto;
             }
@@ -428,6 +422,7 @@
             tbody,
             tfoot,
             thead {
+                clip-path: none;
                 margin-right: 0;
                 overflow-y: auto;
             }
@@ -451,6 +446,11 @@
                         padding-right: $table-cell-indent;
                     }
                 }
+            }
+
+            td,
+            th {
+                box-sizing: content-box;
             }
 
             ::-webkit-scrollbar {
