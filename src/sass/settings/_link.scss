@@ -8,9 +8,9 @@
 
 // Set link color (according to `$base-link-color`).
 $link-color: (
-    active:     $blue--dodger,       // pressed
-    // focus:      $blue--dodger,       // focused
-    hover:      $blue--dodger,       // hovered
+    active:     lighten($blue--cerulean, 5%),  // pressed
+    // focus:      lighten($blue--cerulean, 5%),  // focused
+    hover:      lighten($blue--cerulean, 5%),  // hovered
     initial:    $blue--cerulean,
-    visit:      $blue--cerulean,     // visited
+    visit:      $blue--cerulean,               // visited
 ) !default;
