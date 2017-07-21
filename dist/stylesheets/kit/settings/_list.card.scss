@@ -1,0 +1,18 @@
+/**
+ * Component List/Card settings.
+ */
+
+// =============================================================================
+// Card list settings
+// =============================================================================
+
+// Set card list breakpoints.
+$list-card-breaks: (
+    640px,
+    940px,
+    1240px,
+    1440px,
+) !default;
+
+// Set card list gutter.
+$list-card-gutter: 8px !default;

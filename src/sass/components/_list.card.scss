@@ -1,0 +1,64 @@
+/**
+ * Component List/Card.
+ */
+
+// =============================================================================
+// Card list
+// =============================================================================
+
+.lst-card {
+    display: grid;
+    grid-gap: $list-card-gutter;
+
+    @each $break in $list-card-breaks {
+        @media (min-width: $break) {
+            grid-template-columns: repeat(
+                #{index($list-card-breaks, $break) + 1},
+                1fr
+            );
+        }
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Card list item
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.lst-card__item {
+    &[class][class] {       /* 1 */
+        margin: 0;
+    }
+}
