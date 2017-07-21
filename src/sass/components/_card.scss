@@ -1,0 +1,407 @@
+/**
+ * Component Card.
+ *
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       round
+ * @requires {mixin}       stretch
+ * @requires {mixin}       size
+ * @requires {placeholder} %ico
+ * @requires {variable}    $animation-easing
+ * @requires ico
+ * @requires widget
+ */
+
+// =============================================================================
+// Card
+// =============================================================================
+
+.crd {
+    @extend %crd:primary;
+    @extend .wgt !optional;
+    // @extend .wgt.--secondary !optional;
+
+    backface-visibility: visible;
+    display: flex;
+    flex-direction: column;
+    font-size: px-to-rem($card-font-size);
+    line-height: $card-line-height-ratio;
+    position: relative;
+
+    &[class] {
+        padding: 0;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Card, debug mode.
+ */
+
+.crd {
+    &.--debug {
+        /**
+         * Region.
+         */
+
+        .crd__region {
+            &.--primary {
+                background-color: rgba(deeppink, 0.5);
+            }
+            &.--secondary {
+                background-color: rgba(mediumspringgreen, 0.5);
+            }
+        }
+
+        /**
+         * Inset.
+         */
+
+        %card__inset {
+            &:first-of-type {
+                background-color: rgba(cyan, 0.5);
+            }
+            &:last-of-type {
+                background-color: rgba(red, 0.5);
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Card, primary.
+ */
+
+%crd:primary {
+    .crd__region {
+        &.--primary {
+            @extend %crd__region--primary:on;
+        }
+    }
+    .crd__region {
+        &.--secondary {
+            @extend %crd__region--secondary:off;
+        }
+    }
+}
+
+.crd {
+    &.is-primary {
+        @extend %crd:primary;
+
+        animation: crd--swap-out 0.6s 0.1s map-get($animation-easing, in-out-circ) both;
+
+        .crd__region[class] {
+            &.--primary {
+                animation: crd__region--swap-in 0.3s 0.3s both;
+            }
+            &.--secondary {
+                animation: crd__region--swap-out 0.2s both;
+            }
+        }
+    }
+}
+
+/**
+ * Card, secondary.
+ */
+
+%crd:secondary {
+    .crd__region {
+        &.--primary {
+            @extend %crd__region--primary:off;
+        }
+    }
+    .crd__region {
+        &.--secondary {
+            @extend %crd__region--secondary:on;
+        }
+    }
+}
+
+.crd {
+    &.is-secondary {
+        @extend %crd:secondary;
+
+        animation: crd--swap-in 0.4s 0.1s map-get($animation-easing, in-out-circ) both;
+
+        .crd__region[class] {
+            &.--primary {
+                animation: crd__region--swap-out 0.2s both;
+            }
+            &.--secondary {
+                animation: crd__region--swap-in 0.3s 0.3s both;
+            }
+        }
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+/**
+ * Card, swap in.
+ */
+
+@keyframes crd--swap-in {
+    0% {
+        transform: rotateX(0deg);
+    }
+    30% {
+        transform:
+            rotateX(90deg)
+            scale(0.975, 0.975);
+    }
+    100% {
+        transform:
+            rotateX(180deg)
+            scale(1, 1);
+    }
+}
+
+/**
+ * Card, swap out.
+ */
+
+@keyframes crd--swap-out {
+    0% {
+        transform: rotateX(-180deg);
+    }
+    30% {
+        transform:
+            rotateX(-90deg)
+            scale(0.975, 0.975);
+    }
+    100% {
+        transform:
+            rotateX(0deg)
+            scale(1, 1);
+    }
+}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Card region
+// =============================================================================
+
+.crd__region {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/**
+ * Modifiers.
+ */
+
+
+/**
+ * Card region, primary.
+ */
+
+.crd__region {
+    &.--primary {
+        background-color: map-get($card-background, primary);
+    }
+}
+
+/**
+ * Card region, secodanry.
+ */
+
+.crd__region {
+    &.--secondary {
+        @include stretch;
+
+        background-color: map-get($card-background, secondary);
+        transform: rotateX(180deg);
+
+        .crd__body {
+            margin: {
+                bottom: $card-indent;
+                right: $card-indent;
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+%crd__region--primary:on {
+    max-height: $card-size;
+    visibility: visible;
+}
+
+%crd__region--primary:off {
+    max-height: 0;
+    visibility: hidden;
+}
+
+%crd__region--secondary:on {
+    visibility: visible;
+}
+
+%crd__region--secondary:off {
+    visibility: hidden;
+}
+
+/**
+ * Animations.
+ */
+
+/**
+ * Card region, swap in.
+ */
+
+@keyframes crd__region--swap-in {
+    0% {
+        max-height: $card-size;
+        opacity: 0;
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/**
+ * Card region, swap out.
+ */
+
+@keyframes crd__region--swap-out {
+    0% {
+        max-height: $card-size;
+        opacity: 1;
+        visibility: visible;
+    }
+    99.9% {
+        max-height: $card-size;
+    }
+    100% {
+        max-height: 0;
+        visibility: hidden;
+    }
+}
+
+// Card inset
+// =============================================================================
+
+%card__inset {
+    padding: {
+        left: $card-indent;
+        right: $card-indent;
+    }
+
+    &:first-of-type {
+        padding-top: $card-indent;
+    }
+    &:last-of-type {
+        padding-bottom: $card-indent;
+    }
+}
+
+// Card header
+// =============================================================================
+
+.crd__head {
+    @extend %card__inset;
+}
+
+// Card body
+// =============================================================================
+
+.crd__body {
+    @extend %card__inset;
+
+    flex: 1;
+}
+
+// Card footer
+// =============================================================================
+
+.crd__foot {
+    @extend %card__inset;
+}
+
+// Card title
+// =============================================================================
+
+.crd__title {
+    @extend h5;
+
+    line-height: $card-title-line-height-ratio;
+    max-height: 2 * $card-title-line-height-ratio * $card-title-font-size;
+    margin: {
+        bottom: 4px;
+        top: 0;
+    }
+    overflow: hidden;
+    text-transform: none;
+}
+
+// Card description
+// =============================================================================
+
+.crd__description {
+    max-height: 3 * $card-line-height-ratio * px-to-rem($card-font-size);
+    overflow: hidden;
+}
+
+// Card figure
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.crd__figure {
+    @include size($card-figure-size);
+
+    align-items: center;
+    background: transparent center / cover no-repeat;
+    color: inherit;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+
+    &,
+    &::after {
+        @include round;
+    }
+
+
+    &::after {
+        @include stretch;
+
+        content: "";
+        background: inherit;
+        background-color: transparent;
+    }
+
+    &::before {
+        @extend %ico !optional;
+        // @extend %ico--user !optional;
+
+        font-size: $card-figure-icon-size;
+    }
+}

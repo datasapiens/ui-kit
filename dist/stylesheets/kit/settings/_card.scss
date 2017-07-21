@@ -1,0 +1,46 @@
+/**
+ * Component Card settings.
+ */
+
+// =============================================================================
+// Card settings
+// =============================================================================
+
+// Set card font size.
+$card-font-size: 13px !default;
+
+// Set card indent (according to `$widget-indent`).
+$card-indent: 16px !default;
+
+// Set card line height ratio.
+$card-line-height-ratio: 1.5 !default;
+
+// Set card max. height.
+$card-size: 300px !default;
+
+// Set card background.
+$card-background: (
+    primary:   map-get(map-get($color-set, neutral), 100),
+    secondary: map-get(map-get($color-set, neutral), 80),
+    // initial:   ,
+) !default;
+
+/**
+ * Title.
+ */
+
+// Set card title font size.
+$card-title-font-size: nth($base-type-scale, 5) * $base-font-size !default;
+
+// Set card title line height ratio.
+$card-title-line-height-ratio: 1.4 !default;
+
+/**
+ * Figure.
+ */
+
+// Set card figure size.
+$card-figure-size: 50px !default;
+
+// Set card figure icon size.
+$card-figure-icon-size: 24px !default;
