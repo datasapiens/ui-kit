@@ -70,6 +70,23 @@
     }
 }
 
+.u-direction {
+    &.\--column {
+        flex-direction: column;
+
+        &.\--reverse {
+            flex-direction: column-reverse;
+        }
+    }
+    &.\--row {
+        flex-direction: row;
+
+        &.\--reverse {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
 .u-justify {
     &.\--around {
         justify-content: space-around;
