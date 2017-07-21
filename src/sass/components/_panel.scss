@@ -12,7 +12,7 @@
 // =============================================================================
 
 .pnl {
-    @extend %ctr;
+    @extend %ctr !optional;
     @include round($panel-border-radius);
 
     background: {
@@ -61,7 +61,7 @@
 
 .pnl {
     &.--elevate {
-        box-shadow: $panel--light-box-shadow;
+        box-shadow: $panel--elevate-box-shadow;
     }
 }
 
