@@ -34,17 +34,32 @@
  * States.
  */
 
-// .is-component-state {}
+/**
+ * Card list, active (i.e. animated enter).
+ */
 
-// .component {
-//     &.is-state {}
-// }
+.lst-card {
+    &.is-active {
+        .lst-card__item {
+            @include acceleration;
+
+            animation: lst-card__item--enter 0.3s map-get($animation-easing, in-out-circ) both;
+            transform-origin: 50% 0;
+        }
+    }
+}
 
 /**
  * Context.
  */
 
 // .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
 
 // =============================================================================
 // Subcomponents
@@ -58,7 +73,32 @@
  */
 
 .lst-card__item {
+    display: flex;
+
     &[class][class] {       /* 1 */
         margin: 0;
+    }
+}
+
+/**
+ * Animations.
+ */
+
+/**
+ * Card list item, enter.
+ */
+
+@keyframes lst-card__item--enter {
+    0% {
+        opacity: 0;
+        transform:
+            scale(0.25, 1.5)
+            translateY(20%);
+    }
+    100% {
+        opacity: 1;
+        transform:
+            scale(1, 1)
+            translateY(0);
     }
 }

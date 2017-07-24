@@ -22,6 +22,7 @@
 
     backface-visibility: visible;
     display: flex;
+    flex: 1;
     flex-direction: column;
     font-size: px-to-rem($card-font-size);
     line-height: $card-line-height-ratio;
