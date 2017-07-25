@@ -8,10 +8,10 @@
 
 // Set button background.
 $button-background: (
-    active:     unset,           // pressed
-    disable:    $blue--heather,  // disabled
-    focus:      unset,           // focused
-    hover:      unset,           // hovered
+    active:     $white,           // pressed
+    disable:    $blue--heather,   // disabled
+    focus:      $white,           // focused
+    hover:      $white,           // hovered
     initial:    $blue--catskill,
 );
 

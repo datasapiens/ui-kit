@@ -79,7 +79,7 @@
                 );
                 weight: map-get($button-font-weight, $modifier)
             }
-            // line-height: $size - 2 * $button-border-size;
+            // line-height: calc(#{$size} - 2 * #{$button-border-size});
             line-height: $size;
         }
     }
