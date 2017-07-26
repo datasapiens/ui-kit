@@ -12,10 +12,10 @@
 
     position: relative;
 
-    &:first-child {
+    &[class]:first-child {
         margin-top: 0;
     }
-    &:last-child {
+    &[class]:last-child {
         margin-bottom: 0;
     }
 }
