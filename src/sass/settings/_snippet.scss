@@ -34,6 +34,9 @@ $snippet-indent: (
  * Snippet, block.
  */
 
+// Set block snippet line height ratio.
+$snippet--block-line-height-ratio: 1.2 !default;
+
 // Set block snippet indent.
 $snippet--block-indent: (
     horizontal: 10px,

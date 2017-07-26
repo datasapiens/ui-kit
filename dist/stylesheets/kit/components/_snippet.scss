@@ -29,6 +29,7 @@
 .snp {
     &.\--block {
         display: block;
+        line-height: $snippet--block-line-height-ratio;
         overflow: auto;
         padding: map-get($snippet--block-indent, vertical)
             map-get($snippet--block-indent, horizontal);
