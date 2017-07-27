@@ -220,8 +220,14 @@
 .u-text-bottom    { vertical-align: text-bottom !important; }
 .u-bottom         { vertical-align: bottom !important; }
 
-.u-wrap   { @include word-wrap; }
-.u-nowrap { @include word-wrap(false); }
+.u-wrap {
+    &:not(.\--nope)   {
+        @include word-wrap;
+    }
+    &.\--nope {
+        @include word-wrap(false);
+    }
+}
 
 .u-truncate {
     @include text-truncate;
