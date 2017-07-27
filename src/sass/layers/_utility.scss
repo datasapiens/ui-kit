@@ -43,12 +43,24 @@
 [class*="flex"] {
     &.--grow {
         flex-grow: 1;
+
+        &.--nope {
+            flex-grow: 0;
+        }
     }
     &.--shrink {
         flex-shrink: 1;
+
+        &.--nope {
+            flex-shrink: 0;
+        }
     }
     &.--wrap {
         flex-wrap: wrap;
+
+        &.--nope {
+            flex-wrap: nowrap;
+        }
     }
 }
 
