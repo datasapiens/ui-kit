@@ -6,6 +6,9 @@
 // Tab navigation settings
 // =============================================================================
 
+// Set tab navigation border radius (according to `$panel-border-radius`).
+$navigation-tab-radius: 3px !default;
+
 /**
  * Navigation item.
  */

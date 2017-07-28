@@ -14,12 +14,48 @@
     @extend %nav-tab:start;
     @extend %nav-tab:top;
 
-    margin-top: rhythm-get();
+    margin: rhythm-get() 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 /**
  * Modifiers.
  */
+
+/**
+ * Navigation tab, bottom.
+ */
+
+%nav-tab:bottom {
+    .nav-tab__foot {
+        .nav-tab__item__region {
+            border: {
+                top: 0;
+                top-left-radius: 0;
+                top-right-radius: 0;
+            }
+        }
+    }
+    .nav-tab__body {
+        border: {
+            radius: $navigation-tab-radius;
+            bottom-left-radius: 0;
+            bottom-right-radius: 0;
+        }
+    }
+}
+
+.nav-tab {
+    &.--bottom {
+        @extend %nav-tab:bottom;
+    }
+}
 
 /**
  * Navigation tab, centered items.
@@ -66,6 +102,24 @@
 }
 
 /**
+ * Navigation tab, double.
+ */
+
+%nav-tab:double {
+    .nav-tab__body {
+        border-radius: 0;
+    }
+}
+
+.nav-tab {
+    &.--double {
+        @extend %nav-tab:bottom;
+        @extend %nav-tab:top;
+        @extend %nav-tab:double;
+    }
+}
+
+/**
  * Navigation tab, items aligned to start.
  */
 
@@ -92,26 +146,29 @@
  */
 
 %nav-tab:top {
-    .nav-tab__item {
-        border: {
-            bottom: 0;
-            bottom-left-radius: 0;
-            bottom-right-radius: 0;
+    .nav-tab__head {
+        .nav-tab__item__region {
+            border: {
+                bottom: 0;
+                bottom-left-radius: 0;
+                bottom-right-radius: 0;
+            }
         }
     }
     .nav-tab__body {
         border: {
+            radius: $navigation-tab-radius;
             top-left-radius: 0;
             top-right-radius: 0;
         }
     }
 }
 
-// .nav-tab {
-//     &.--top {
-//         @extend %nav-tab:top;
-//     }
-// }
+.nav-tab {
+    &.--top {
+        @extend %nav-tab:top;
+    }
+}
 
 /**
  * Navigation tab, plain.
@@ -173,14 +230,22 @@
 // Subcomponents
 // =============================================================================
 
-// Navigation tab header (aka HQ)
+// Navigation tab control (aka HQ)
 // =============================================================================
 
-.nav-tab__head {
+%nav-tab__control {
     @extend %lst--reset !optional;
 
     display: flex;
     margin: 0;
+}
+
+// Navigation tab header
+// =============================================================================
+
+.nav-tab__head {
+    @extend %nav-tab__control;
+
     margin-bottom: (-1) * $navigation-tab-item-border-size;
 }
 
@@ -309,10 +374,7 @@
         solid
         map-get($navigation-tab-item-border-color, initial);
     border: {
-        bottom: 0;
         radius: $navigation-tab-item-border-radius;
-        bottom-left-radius: 0;
-        bottom-right-radius: 0;
     }
     color: map-get($navigation-tab-item-color, initial);
     cursor: pointer;
@@ -410,4 +472,23 @@
 // Navigation tab body (aka pane)
 // =============================================================================
 
-.nav-tab__body {}
+/**
+ * 1. We need to increase specifity.
+ */
+
+.nav-tab__body {
+    border-radius: $navigation-tab-radius;
+
+    &[class][class] {       /* 1 */
+        margin: 0;
+    }
+}
+
+// Navigation tab footer
+// =============================================================================
+
+.nav-tab__foot {
+    @extend %nav-tab__control;
+
+    margin-top: (-1) * $navigation-tab-item-border-size;
+}
