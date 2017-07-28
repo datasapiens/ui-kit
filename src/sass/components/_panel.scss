@@ -21,13 +21,10 @@
     }
     border: $panel-border-size solid $panel-border-color;
     box-shadow: $panel-box-shadow;
+    margin-bottom: rhythm-get();
     padding:
         map-get($panel-indent, vertical)
         map-get($panel-indent, horizontal);
-
-    & {
-        margin-bottom: rhythm-get();
-    }
 
     & & {
         box-shadow: none;
