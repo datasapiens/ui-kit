@@ -234,6 +234,7 @@
         margin-left: 2px;
     }
 
+    // FIX: It doesn't work if content is wrapped in the same element type.
     &:first-of-type {
         margin-left: (0.5) * $tag-indent;
     }
