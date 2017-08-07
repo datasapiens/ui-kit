@@ -553,6 +553,19 @@
 }
 
 /**
+ * Table, cell content verticaly aligned to top.
+ */
+
+.tbl {
+    &.\--top {
+        td,
+        th {
+            vertical-align: top;
+        }
+    }
+}
+
+/**
  * Table, primary.
  */
 
