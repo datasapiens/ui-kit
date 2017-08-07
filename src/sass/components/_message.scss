@@ -114,6 +114,20 @@
 }
 
 /**
+ * Message, tertiary.
+ */
+
+.msg {
+    &.--tertiary {
+        @extend %debug;
+        @include font-size(
+            $message--tertiary-font-size,
+            $message--tertiary-line-height-ratio
+        );
+    }
+}
+
+/**
  * Message, color themes.
  */
 

@@ -65,3 +65,13 @@ $message-icon-region-size: 50px !default;
 
 // Set message icon size.
 $message-icon-size: 30px !default;
+
+/**
+ * Tertiary message.
+ */
+
+// Set tertiary message font size.
+$message--tertiary-font-size: 0.9em !default;
+
+// Set tertiary message line height ratio.
+$message--tertiary-line-height-ratio: 0.75 !default;
