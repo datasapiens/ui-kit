@@ -1,24 +1,27 @@
 /**
- * Component Media.
+ * Component Media/Table.
  */
 
-// <div class="mda">
-//     <span class="mda__figure"></span>
-//     <div class="mda__content"></div>
+// <div class="mda-table">
+//     <span class="mda-table__figure"></span>
+//     <div class="mda-table__content"></div>
 // </div>
 
 // =============================================================================
 // Media
 // =============================================================================
 
-.mda {
-    @extend .mda.--before;
-
-    display: flex;
-    flex-direction: column;
+.mda-table {
+    @extend .mda-table.\--before;
 
     @media (min-width: nth($media-breaks, 1)) {
-        flex-direction: row;
+        display: table;
+        width: 100%;
+
+        .mda-table__content,
+        .mda-table__figure {
+            display: table-cell;
+        }
     }
 }
 
@@ -27,22 +30,28 @@
  */
 
 /**
+ * Media, fix.
+ */
+
+.mda-table {
+    &.\--fix {
+        table-layout: fixed;
+    }
+}
+
+/**
  * Media, figure after.
  */
 
-.mda {
-    &.--after {
+.mda-table {
+    &.\--after {
         @media (min-width: nth($media-breaks, 1)) {
-            &,
-            .mda {
-                flex-direction: row-reverse;
-            }
-
-            .mda__figure {
-                margin: {
+            .mda-table__figure {
+                padding: {
                     left: map-get($media-figure-indent, horizontal);
                     right: 0;
                 }
+                text-align: right;
             }
         }
     }
@@ -52,11 +61,11 @@
  * Media, figure before.
  */
 
-.mda {
-    &.--before {
+.mda-table {
+    &.\--before {
         @media (min-width: nth($media-breaks, 1)) {
-            .mda__figure {
-                margin: {
+            .mda-table__figure {
+                padding: {
                     left: 0;
                     right: map-get($media-figure-indent, horizontal);
                 }
@@ -84,13 +93,15 @@
 // Media content
 // =============================================================================
 
-.mda__content {
-    width: 100%;
+.mda-table__content {
+    display: block;
 }
 
 // Media figure
 // =============================================================================
 
-.mda__figure {
-    margin-bottom: map-get($media-figure-indent, vertical);
+.mda-table__figure {
+    display: block;
+    padding-bottom: map-get($media-figure-indent, vertical);
+    vertical-align: top;
 }
