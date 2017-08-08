@@ -49,6 +49,20 @@
  * Modifiers.
  */
 
+
+/**
+ * Tag, narrow.
+ */
+
+.tag {
+    &.\--narrow {
+        padding: {
+            left: 0.5 * $tag-indent;
+            right: 0.5 * $tag-indent;
+        }
+    }
+}
+
 /**
  * Tag, primary.
  */
