@@ -15,6 +15,10 @@
 // Card
 // =============================================================================
 
+/**
+ * 1. We need to increase specifity.
+ */
+
 .crd {
     @extend %crd:primary;
     @extend .wgt !optional;
@@ -28,7 +32,7 @@
     line-height: $card-line-height-ratio;
     position: relative;
 
-    &[class] {
+    &[class] {      /* 1 */
         padding: 0;
     }
 }
@@ -92,13 +96,17 @@
     }
 }
 
+/**
+ * 1. We need to increase specifity.
+ */
+
 .crd {
     &.is-primary {
         @extend %crd:primary;
 
         animation: crd--swap-out 0.6s 0.1s map-get($animation-easing, in-out-circ) both;
 
-        .crd__region[class] {
+        .crd__region[class] {       /* 1 */
             &.\--primary {
                 animation: crd__region--swap-in 0.3s 0.3s both;
             }
@@ -126,13 +134,17 @@
     }
 }
 
+/**
+ * 1. We need to increase specifity.
+ */
+
 .crd {
     &.is-secondary {
         @extend %crd:secondary;
 
         animation: crd--swap-in 0.4s 0.1s map-get($animation-easing, in-out-circ) both;
 
-        .crd__region[class] {
+        .crd__region[class] {   /* 1 */
             &.\--primary {
                 animation: crd__region--swap-out 0.2s both;
             }
@@ -376,20 +388,22 @@
 .crd__figure {
     @include size($card-figure-size);
 
-    align-items: center;
     background: transparent center / cover no-repeat;
     color: inherit;
     display: inline-flex;
     flex: 0 0 auto;
-    justify-content: center;
     position: relative;
     text-decoration: none;
+
+    &[class] {          /* 1 */
+        align-items: center;
+        justify-content: center;
+    }
 
     &,
     &::after {
         @include round;
     }
-
 
     &::after {
         @include stretch;
