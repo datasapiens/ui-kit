@@ -24,11 +24,14 @@
 
     align-items: center;
     color: inherit;
-    cursor: pointer;
     display: inline-flex;
     justify-content: center;
-    opacity: 0.85;
     transition: opacity 0.3s;
+
+    &:not(.is-static) {
+        cursor: pointer;
+        opacity: 0.85;
+    }
 
     &[class][class] {   /* 1 */
         text-decoration: none;
@@ -148,10 +151,14 @@
 .page-control {
     &:active,
     &.is-active {
-        opacity: 1;
+        color: inherit;
 
-        .page-control__figure {
-            box-shadow: none;
+        &:not(.is-static) {
+            opacity: 1;
+
+            .page-control__figure {
+                box-shadow: none;
+            }
         }
     }
 }
@@ -194,6 +201,14 @@
 }
 
 /**
+ * Page control, static.
+ */
+
+.page-control {
+    &.is-static {}
+}
+
+/**
  * Context.
  */
 
@@ -225,6 +240,7 @@
     border: $page-control-figure-border-size solid currentColor;
     box-shadow: $page-control-figure-box-shadow;
     display: flex;
+    flex: 0 0 auto;
     font-size: $page-control-figure-size;
     justify-content: center;
     position: relative;
