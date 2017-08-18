@@ -62,7 +62,7 @@
 %ico--vertical {
     align-items: center;
 
-    .ico__label {
+    [class*="__label"] {
         line-height: $icon-label-line-height-ratio;
         text-align: center;
     }
