@@ -25,9 +25,6 @@ $page-head-color: $white !default;
 $page-head-debug: false !default;
 // $page-head-debug: true;
 
-// Set page header icon size.
-$page-head-icon-size: 20px !default;
-
 // Set page header indent (according to `$page-inset-indent`).
 $page-head-indent: 20px !default;
 
@@ -40,32 +37,22 @@ $page-head-line-height-ratio: 1.5 !default;
 // Set page header height.
 $page-head-size: 50px !default;
 
+/**
+ * Page header, control.
+ */
+
+// Set page header control size (according to `$page-sidebar-navigation-item-size`).
+$page-head-control-size: (
+    height: 5rem,
+    width: 5rem,
+) !default;
+
+/**
+ * Page header, logo.
+ */
+
 // Set page header logo size.
 $page-head-logo-size: (
     height: 25px,
     width: 45px,
-) !default;
-
-/**
- * Page header control.
- */
-
-// Set page control font size.
-$page-head-control-font-size: 11px !default;
-
-// Set page control font weight.
-$page-head-control-font-weight: 300 !default;
-
-// Set page control icon size.
-$page-head-control-icon-size: 18px !default;
-
-/**
- * Page header control, sidebar toggle.
- */
-
-// Set page header sidebar control size
-// (according to `$page-head-logo-size` and `$page-sidebar-navigation-item-size`).
-$page-head-control--sidebar-size: (
-    height: 50px,
-    width: 5rem,
 ) !default;

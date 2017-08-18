@@ -1,0 +1,267 @@
+/**
+ * Component Page/Control.
+ *
+ * @requires {function}    px-to-em
+ * @requires {mixin}       font-size
+ * @requires {mixin}       round
+ * @requires {mixin}       size
+ * @requires {mixin}       stretch
+ */
+
+// =============================================================================
+// Page control
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.page-control {
+    @include font-size(
+        $page-control-font-size,
+        $page-control-line-height-ratio
+    );
+
+    align-items: center;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+
+    &[class][class] {   /* 1 */
+        text-decoration: none;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Page control, debug.
+ */
+
+.page-control {
+    &.--debug {
+        .page-control__figure {
+            background-color: rgba(green, 0.25);
+
+            &::after {
+                background: rgba(cyan, 0.25);
+            }
+        }
+        .page-control__label {
+            background-color: rgba(red, 0.25);
+        }
+    }
+}
+
+/**
+ * Page control, figure horizontal.
+ */
+
+%page-control--horizontal {
+    align-items: baseline;
+}
+
+/**
+ * Page control, figure vertical.
+ */
+
+%page-control--vertical {
+    align-items: center;
+
+    [class*="__label"] {
+        line-height: $icon-label-line-height-ratio;
+        text-align: center;
+    }
+}
+
+/**
+ * Page control, figure above.
+ */
+
+.page-control {
+    &.--above {
+        @extend %page-control--vertical;
+
+        flex-direction: column;
+
+        .page-control__figure {
+            margin-bottom: $page-control-indent;
+        }
+    }
+}
+
+/**
+ * Page control, figure after.
+ */
+
+.page-control {
+    &.--after {
+        flex-direction: row-reverse;
+
+        .page-control__figure {
+            margin-left: 3 * $page-control-indent;
+        }
+    }
+}
+
+/**
+ * Page control, figure before.
+ */
+
+.page-control {
+    &.--before {
+        .page-control__figure {
+            margin-right: 3 * $page-control-indent;
+        }
+    }
+}
+
+/**
+ * Page control, figure below.
+ */
+
+.page-control {
+    &.--below {
+        @extend %page-control--vertical;
+
+        flex-direction: column-reverse;
+
+        .page-control__figure {
+            margin-top: $page-control-indent;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Page control, active (aka pressed).
+ */
+
+.page-control {
+    &:active,
+    &.is-active {
+        opacity: 1;
+
+        .page-control__figure {
+            box-shadow: none;
+        }
+    }
+}
+
+/**
+ * Page control, disabled.
+ */
+
+.page-control {
+    &:disabled,
+    &.is-disabled {
+        opacity: 0.5;
+
+        .page-control__figure {
+            box-shadow: none;
+        }
+    }
+}
+
+/**
+ * Page control, focused.
+ */
+
+.page-control {
+    &:focus,
+    &.is-focused {
+        @extend .page-control:active;
+    }
+}
+
+/**
+ * Page control, hovered.
+ */
+
+.page-control {
+    &:hover,
+    &.is-hovered {
+        @extend .page-control:active;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Page control figure
+// =============================================================================
+
+.page-control__figure {
+    @include round;
+    @include size($page-control-figure-size);
+
+    align-items: center;
+    background: {
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    border: $page-control-figure-border-size solid currentColor;
+    box-shadow: $page-control-figure-box-shadow;
+    display: flex;
+    font-size: $page-control-figure-size;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+        @include stretch(absolute, -3px, -3px);
+
+        background: inherit;
+        border: inherit;
+        border: {
+            color: transparent;
+            radius: inherit;
+        }
+        content: "";
+    }
+
+    &::before {
+        font-size: 0.85em;
+    }
+}
+
+// Page control label
+// =============================================================================
+
+.page-control__label {
+    // @include text-truncate;
+
+    max-width: 12em;
+}
+
+// Page control legend
+// =============================================================================
+
+.page-control__legend {
+    font-size: px-to-em(
+        $page-control-legend-font-size,
+        $page-control-font-size
+    );
+    text-transform: uppercase;
+}

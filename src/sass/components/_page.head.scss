@@ -69,8 +69,10 @@
 // =============================================================================
 
 .page__head__cell {
-    @include acceleration;
+    // @include acceleration;
 
+    align-items: center;
+    display: flex;
     flex: 1;
     min-height: $page-head-size;
     position: relative;
@@ -102,7 +104,7 @@
             display: inherit;
             order: 1;
             padding-left: calc(
-                #{map-get($page-head-control--sidebar-size, width)} -
+                #{map-get($page-head-control-size, width)} -
                 #{$page-head-indent}
             );
         }
@@ -151,66 +153,6 @@
     }
 }
 
-// Page head control
-// =============================================================================
-
-%page-head__control {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.page-head__control {
-    @extend %page-head__control;
-
-    cursor: pointer;
-    font: {
-        size: px-to-em($page-head-control-font-size);
-        weight: $page-head-control-font-weight;
-    }
-
-    [class*="__icon"] {
-        font-size: px-to-rem(
-            $page-head-control-icon-size
-        );
-    }
-    [class*="__label"] {
-        font-size: px-to-em(
-            $page-head-control-font-size,
-            $page-head-control-icon-size
-        );
-        text-transform: uppercase;
-    }
-}
-
-/**
- * Modifiers.
- */
-
-/**
- * Page head control, sidebar toggle.
- */
-
-.page-head__control {
-    &.--sidebar {
-        @include size(
-            map-get($page-head-control--sidebar-size, width),
-            map-get($page-head-control--sidebar-size, height)
-        );
-
-        left: 0;
-        position: absolute;
-        top: 0;
-        z-index: $page-head-index + 2;
-
-        [class*="__icon"] {
-            &::before {
-                margin-bottom: 0;
-            }
-        }
-    }
-}
-
 // Page head title
 // =============================================================================
 
@@ -223,11 +165,4 @@
     line-height: inherit;
     margin: 0;
     text-decoration: none;
-}
-
-// Page head icon
-// =============================================================================
-
-.page-head__icon {
-    font-size: px-to-rem($page-head-icon-size);
 }

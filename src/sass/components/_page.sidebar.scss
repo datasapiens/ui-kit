@@ -340,3 +340,28 @@
 // =============================================================================
 
 .page-sidebar__foot {}
+
+// Page sidebar control
+// =============================================================================
+
+.page-sidebar__control {
+    @include size(
+        map-get($page-sidebar-navigation-item-size, width),
+        map-get($page-sidebar-navigation-item-size, height)
+    );
+
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: $page-sidebar-index + 1;
+
+    [class*="__legend"] {
+        opacity: 0;
+        pointer-events: none;
+
+        @media (min-width: nth($page-sidebar-breaks, 1)) {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}

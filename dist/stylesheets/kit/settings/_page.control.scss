@@ -1,0 +1,36 @@
+/**
+ * Component Page/Control settings.
+ */
+
+// =============================================================================
+// Page control settings
+// =============================================================================
+
+// Set page control font size (according to `$base-font-size`).
+$page-control-font-size: 14px !default;
+
+// Set page control line height ratio.
+$page-control-line-height-ratio: 0.75 !default;
+
+// Set page control indent.
+$page-control-indent: 0.125em !default;
+
+/**
+ * Page control figure.
+ */
+
+// Set page control figure border size.
+$page-control-figure-border-size: 1px !default;
+
+// Set page control figure box shadow.
+$page-control-figure-box-shadow: 0 1px 5px -3px currentColor !default;
+
+// Set page control figure size.
+$page-control-figure-size: 1.5em !default;
+
+/**
+ * Page control legend.
+ */
+
+// Set page control legend font size.
+$page-control-legend-font-size: 11px !default;
