@@ -49,11 +49,31 @@ $navigation-tab-item-color: (
     initial:    $blue--cerulean,
 ) !default;
 
+// Set tab navigation item font size.
+$navigation-tab-item-font-size: $base-font-size !default;
+
 // Set tab navigation item indent.
 $navigation-tab-item-indent: (
     horizontal: 16px,
     vertical: 4px,
 ) !default;
+
+// Set tab navigation item line height ratio.
+$navigation-tab-item-line-height-ratio: $base-line-height-ratio !default;
+
+// Set tab navigation item height.
+$navigation-tab-item-height: $navigation-tab-item-font-size *
+    $navigation-tab-item-line-height-ratio +
+    2 * map-get($navigation-tab-item-indent, vertical) +
+    $navigation-tab-item-border-size !default;
+
+/**
+ * Navigation tab control.
+ */
+
+// Set tab navigation control item size.
+$navigation-tab-control-item-size: $navigation-tab-item-height -
+    1/2 * map-get($navigation-tab-item-indent, horizontal) !default;
 
 /**
  * Navigation tab, primary.

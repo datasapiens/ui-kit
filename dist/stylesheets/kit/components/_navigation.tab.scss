@@ -1,8 +1,17 @@
 /**
  * Component Navigation/Tab.
  *
+ * @requires {function}    px-to-em
  * @requires {function}    rhythm-get
+ * @requires {mixin}       acceleration
+ * @requires {mixin}       size
+ * @requires {mixin}       word-wrap
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--caret-left
+ * @requires {placeholder} %ico--caret-right
  * @requires {placeholder} %lst--reset
+ * @requires {variable}    $animation-easing
+ * @requires animation.slide
  * @requires list
  */
 
@@ -33,6 +42,13 @@
  */
 
 %nav-tab:bottom {
+    .nav-tab__body {
+        border: {
+            radius: $navigation-tab-radius;
+            bottom-left-radius: 0;
+            bottom-right-radius: 0;
+        }
+    }
     .nav-tab__foot {
         .nav-tab__item__region {
             border: {
@@ -41,12 +57,8 @@
                 top-right-radius: 0;
             }
         }
-    }
-    .nav-tab__body {
-        border: {
-            radius: $navigation-tab-radius;
-            bottom-left-radius: 0;
-            bottom-right-radius: 0;
+        .nav-tab__control__item {
+            bottom: 0;
         }
     }
 }
@@ -68,7 +80,7 @@
 }
 
 %nav-tab:center {
-    .nav-tab__head {
+    %nav-tab__control__inset {
         justify-content: center;
     }
     .nav-tab__item {
@@ -81,10 +93,11 @@
 
 /**
  * Navigation tab, items aligned to end.
+ * FIX: Tab items scrolling
  */
 
 %nav-tab:end {
-    .nav-tab__head {
+    %nav-tab__control__inset {
         justify-content: flex-end;
     }
     .nav-tab__item {
@@ -124,7 +137,7 @@
  */
 
 %nav-tab:start {
-    .nav-tab__head {
+    %nav-tab__control__inset {
         justify-content: flex-start;
     }
     .nav-tab__item {
@@ -153,6 +166,9 @@
                 bottom-left-radius: 0;
                 bottom-right-radius: 0;
             }
+        }
+        .nav-tab__control__item {
+            top: 0;
         }
     }
     .nav-tab__body {
@@ -214,11 +230,38 @@
  * States.
  */
 
-// .is-component-state {}
+/**
+ * Navigation tab, scrollable.
+ */
 
-// .component {
-//     &.is-state {}
-// }
+.nav-tab {
+    &.is-scrollable {
+        $indent: $navigation-tab-control-item-size +
+            1/2 * map-get($navigation-tab-item-indent, horizontal);
+
+        %nav-tab__control__inset {
+            margin: {
+                left: $indent;
+                right: $indent;
+            }
+        }
+
+        .nav-tab__control__item {
+            pointer-events: auto;
+
+            &:nth-of-type(1) {
+                animation:
+                    fade--in 0.3s 0.6s both,
+                    slide--left-reverse 0.2s map-get($animation-easing, out-sine) 0.6s both;
+            }
+            &:nth-of-type(2) {
+                animation:
+                    fade--in 0.3s 0.6s both,
+                    slide--right-reverse 0.2s map-get($animation-easing, out-sine) 0.6s both;
+            }
+        }
+    }
+}
 
 /**
  * Context.
@@ -234,10 +277,72 @@
 // =============================================================================
 
 %nav-tab__control {
+    display: block;
+    position: relative;
+}
+
+// Navigation tab control inset
+// =============================================================================
+
+%nav-tab__control__inset {
+    @include acceleration;
+
+    height: $navigation-tab-item-height;
+    overflow: hidden;
+    transition: margin 0.3s;
+}
+
+// Navigation tab control pane
+// =============================================================================
+
+%nav-tab__control__pane {
     @extend %lst--reset !optional;
 
     display: flex;
     margin: 0;
+    overflow: auto;
+}
+
+// Navigation tab control item
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.nav-tab__control__item {
+    @include acceleration;
+
+    align-items: center;
+    display: inline-flex;
+    flex: 0;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+
+    &[class] {  /* 1 */
+        @include size($navigation-tab-control-item-size);
+    }
+
+    &::before {
+        @extend %ico !optional;
+    }
+
+    &:nth-of-type(1) {
+        left: 0;
+
+        &::before {
+            @extend %ico--caret-left !optional;
+        }
+    }
+    &:nth-of-type(2) {
+        right: 0;
+
+        &::before {
+            @extend %ico--caret-right !optional;
+        }
+    }
 }
 
 // Navigation tab header
@@ -247,12 +352,29 @@
     @extend %nav-tab__control;
 
     margin-bottom: (-1) * $navigation-tab-item-border-size;
+
+}
+
+// Navigation tab header inset
+// =============================================================================
+
+.nav-tab__head__inset {
+    @extend %nav-tab__control__inset;
+}
+
+// Navigation tab header scrollable pane
+// =============================================================================
+
+.nav-tab__head__pane {
+    @extend %nav-tab__control__pane;
 }
 
 // Navigation tab item
 // =============================================================================
 
 .nav-tab__item {
+    @include word-wrap(false);
+
     // box-shadow: $navigation-tab-item-box-shadow;
     margin: 0;
 }
@@ -379,6 +501,14 @@
     color: map-get($navigation-tab-item-color, initial);
     cursor: pointer;
     display: inline-block;
+
+    @if $navigation-tab-item-font-size != $base-font-size {
+        font-size: px-to-em($navigation-tab-item-font-size);
+    }
+    @if $navigation-tab-item-line-height-ratio != $base-line-height-ratio {
+        line-height: $navigation-tab-item-line-height-ratio;
+    }
+
     padding:
         map-get($navigation-tab-item-indent, vertical)
         map-get($navigation-tab-item-indent, horizontal);
@@ -491,4 +621,18 @@
     @extend %nav-tab__control;
 
     margin-top: (-1) * $navigation-tab-item-border-size;
+}
+
+// Navigation tab footer inset
+// =============================================================================
+
+.nav-tab__foot__inset {
+    @extend %nav-tab__control__inset;
+}
+
+// Navigation tab footer scrollable pane
+// =============================================================================
+
+.nav-tab__foot__pane {
+    @extend %nav-tab__control__pane;
 }
