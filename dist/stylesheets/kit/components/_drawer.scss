@@ -37,6 +37,15 @@
 }
 
 /**
+ * Drawer, safe mode.
+ * Use in case you encounter `overflow` or `z-index` issues on subcomponents.
+ */
+
+.drw {
+    &.\--safe {}
+}
+
+/**
  * States.
  */
 
@@ -60,6 +69,15 @@
         .drw__body {
             @extend %drw__body:on;
             // animation: ... ;  /* 1 */
+        }
+
+        &.\--safe {
+            overflow: visible;
+
+            .drw__body {
+                transform: none;
+                transition: none;
+            }
         }
     }
 }
