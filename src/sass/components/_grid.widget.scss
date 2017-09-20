@@ -8,16 +8,33 @@
 
 .grd-widget {
     counter-reset: counter-widget;
-    display: grid;
-    grid: {
-        gap: $grid-widget-gutter;
-    }
+    display: flex;
+    flex-direction: column;
     margin-bottom: $grid-widget-gutter;
 
     @media (min-width: nth($grid-widget-breaks, 1)) {
+        flex-flow: row wrap;
+        margin: {
+            right: (-1) * $grid-widget-gutter;
+        }
+        width: calc(100% + #{$grid-widget-gutter});
+    }
+
+    @supports (display: grid) {
+        display: grid;
         grid: {
-            auto-flow: dense;
-            template-columns: repeat(4, 1fr);
+            gap: $grid-widget-gutter;
+        }
+
+        @media (min-width: nth($grid-widget-breaks, 1)) {
+            grid: {
+                auto-flow: dense;
+                template-columns: repeat(4, 1fr);
+            }
+            margin: {
+                right: 0;
+            }
+            width: 100%;
         }
     }
 }
@@ -33,6 +50,10 @@
 .grd-widget {
     &.--debug {
         margin-bottom: 3 * $grid-widget-gutter;
+
+        @supports (display: grid) {
+            background-color: pink;
+        }
 
         .grd-widget__item {
             background-color: cornflowerblue;
@@ -94,7 +115,28 @@
 // =============================================================================
 
 .grd-widget__item {
-    grid-column-start: span 2;
+    margin: {
+        bottom: $grid-widget-gutter;
+    }
+
+    @media (min-width: nth($grid-widget-breaks, 1)) {
+        flex: 0;
+        flex-basis: calc(#{percentage(1 / 2)} - #{$grid-widget-gutter});
+        margin: {
+            right: $grid-widget-gutter;
+        }
+    }
+
+    @supports (display: grid) {
+        margin: {
+            bottom: 0;
+            right: 0;
+        }
+
+        @media (min-width: nth($grid-widget-breaks, 1)) {
+            grid-column-start: span 2;
+        }
+    }
 }
 
 /**
@@ -108,7 +150,11 @@
 .grd-widget__item {
     &.--primary {
         @media (min-width: nth($grid-widget-breaks, 1)) {
-            grid-column-start: span 4;
+            flex-basis: calc(#{percentage(1 / 1)} - #{$grid-widget-gutter});
+
+            @supports (display: grid) {
+                grid-column-start: span 4;
+            }
         }
     }
 }
@@ -120,7 +166,11 @@
 .grd-widget__item {
     &.--secondary {
         @media (min-width: nth($grid-widget-breaks, 1)) {
-            grid-column-start: span 1;
+            flex-basis: calc(#{percentage(1 / 4)} - #{$grid-widget-gutter});
+
+            @supports (display: grid) {
+                grid-column-start: span 1;
+            }
         }
     }
 }
