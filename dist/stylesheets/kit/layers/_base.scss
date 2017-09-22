@@ -18,6 +18,11 @@
     outline: none;
 
     -webkit-touch-callout: none; /* 2 */
+
+    @media print {
+        box-shadow: none;
+        text-shadow: none;
+    }
 }
 
 /**
@@ -100,6 +105,10 @@ h1 {
     // font-weight: 300;
     margin: {
         top: 0;
+    }
+
+    @media print {
+        page-break-after: avoid;
     }
 }
 
@@ -405,6 +414,17 @@ caption {
         top: 0;
     }
     text-align: left;
+}
+
+caption,
+td,
+tfoot,
+th,
+thead,
+ {
+    @media print {
+        page-break-inside: avoid;
+    }
 }
 
 th {

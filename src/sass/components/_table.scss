@@ -526,6 +526,43 @@
                 flex: 1 1 auto;
             }
         }
+
+
+        @media print {
+            tbody,
+            tfoot,
+            thead {
+                clip-path: none;
+                display: block;
+                margin-right: inherit;
+                overflow-y: visible;
+            }
+            tbody {
+                display: table-row-group;
+            }
+            tfoot {
+                display: table-footer-group;
+            }
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                display: table-row;
+
+                td,
+                th {
+                    &:last-of-type {
+                        padding-right: inherit;
+                    }
+                }
+            }
+
+            td,
+            th {
+                display: table-cell;
+            }
+        }
     }
 }
 

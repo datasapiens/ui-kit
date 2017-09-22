@@ -272,3 +272,38 @@
 
 .u-hidden  { visibility: hidden; }
 .u-visible { visibility: visible; }
+
+
+// =============================================================================
+// Print
+// =============================================================================
+
+/**
+ * Page break.
+ * Browsers don't support `avoid` for `page-break-before` & `page-break-after`
+ *  (only `page-break-inside`).
+ * @link http://caniuse.com/#feat=css-page-break
+ */
+
+.u-break {
+    @media print {
+        &.\--after {
+            &.\--always {
+                page-break-after: always;
+            }
+        }
+        &.\--before {
+            &.\--always {
+                page-break-before: always;
+            }
+        }
+        &.\--inside {
+            &.\--always {
+                page-break-inside: always;
+            }
+            &.\--avoid {
+                page-break-inside: avoid;
+            }
+        }
+    }
+}

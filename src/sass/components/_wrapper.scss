@@ -31,6 +31,10 @@
     > :last-child {
         margin-bottom: 0;
     }
+
+    @media print {
+        overflow: visible;
+    }
 }
 
 /**
@@ -59,6 +63,8 @@
 
 /**
  * Wrapper, Y-scroll pane.
+ *
+ * 1. Flag is required to override later defined `is-off` state.
  */
 
 .wrp {
@@ -68,6 +74,11 @@
 
         overflow-y: auto;
         transition: max-height 0.3s map-get($animation-easing, in-out-circ);
+
+        @media print {
+            clip-path: none;
+            max-height: none !important; /* 1 */
+        }
     }
 }
 
@@ -95,6 +106,13 @@
                 right: map-get($wrapper-indent, horizontal);
             }
         }
+
+        @media print {
+            padding: {
+                bottom: 0;
+                right: 0;
+            }
+        }
     }
 }
 
@@ -116,6 +134,8 @@
 
 /**
  * Wrapper, off.
+ *
+ * 1. Flag is required to override inline styles.
  */
 
 .wrp {
@@ -123,7 +143,7 @@
         // overflow: visible;
 
         &.--scroll-y {
-            max-height: 200vh !important;
+            max-height: 200vh !important; /* 1 */
         }
     }
 }

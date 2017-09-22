@@ -28,6 +28,10 @@
         @include link-underline($underline: false);
         color: inherit;
     }
+
+    @media print {
+        display: none;
+    }
 }
 
 /**

@@ -7,7 +7,7 @@
 // =============================================================================
 
 // Set page context background.
-$page-context-background: rgba(#ccc, 0.5) !default;
+$page-context-background: map-get(map-get($color-set, neutral), 80) !default;
 
 // Set page context offset (according to `$page-head-size`).
 $page-context-offset: 50px !default;

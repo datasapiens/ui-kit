@@ -16,6 +16,10 @@
     &[class] {
         margin-bottom: $widget-indent;
     }
+
+    @media print {
+        background-image: none;
+    }
 }
 
 /**
@@ -117,6 +121,10 @@
     justify-content: space-between;
     margin-bottom: 1.5 * $widget-head-indent;
     padding-bottom: $widget-head-indent;
+
+    @media print {
+        page-break-inside: avoid;
+    }
 }
 
 /**
@@ -181,6 +189,10 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0.5 * $widget-indent;
+
+    @media print {
+        page-break-inside: avoid;
+    }
 }
 
 // Widget filter item

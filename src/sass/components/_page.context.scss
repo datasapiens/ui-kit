@@ -17,6 +17,10 @@
         position: sticky;
         top: 0;
     }
+
+    @media print {
+        background-color: transparent;
+    }
 }
 
 /**

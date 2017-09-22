@@ -37,6 +37,10 @@
             width: 100%;
         }
     }
+
+    @media print {
+        display: block;
+    }
 }
 
 /**
@@ -92,6 +96,18 @@
 }
 
 /**
+ * Widget grid, print view.
+ */
+
+.grd-widget {
+    &.--print {
+        .grd-widget__item {
+            @extend .grd-widget__item.--primary;
+        }
+    }
+}
+
+/**
  * States.
  */
 
@@ -135,6 +151,12 @@
 
         @media (min-width: nth($grid-widget-breaks, 1)) {
             grid-column-start: span 2;
+        }
+    }
+
+    @media print {
+        margin: {
+            bottom: $grid-widget-gutter;
         }
     }
 }

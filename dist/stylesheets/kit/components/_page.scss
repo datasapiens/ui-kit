@@ -23,7 +23,18 @@
  */
 
 /**
- * Page, wide.
+ * Page, print view.
+ */
+
+.page {
+    &.\--print {
+        display: block;
+        height: auto;
+    }
+}
+
+/**
+ * Page, wide view.
  */
 
 .page {
@@ -38,7 +49,29 @@
  * States.
  */
 
-// .is-component-state
+/**
+ * Page, `landscape` layout (print view).
+ */
+
+.page {
+    &.is-landscape {
+        .page__inset {
+            max-width: map-get($page-size, landscape);
+        }
+    }
+}
+
+/**
+ * Page, `portrait` layout (print view).
+ */
+
+.page {
+    &.is-portrait {
+        .page__inset {
+            max-width: map-get($page-size, portrait);
+        }
+    }
+}
 
 /**
  * Context.
@@ -107,7 +140,9 @@
         right: $page-indent;
     }
     position: relative;
-    transition: margin 0.2s map-get($animation-easing, out-sine);
+    transition:
+        margin 0.2s map-get($animation-easing, out-sine),
+        max-width 0.2s;
 
     @media print {
         max-width: 100%;
