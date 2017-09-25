@@ -282,20 +282,13 @@
  * Table, print.
  */
 
-%tbl--print {
-    border: 0;
-    padding: 0 !important;
-    font-size: $table--print-font-size;
-
-    td {
-        color: map-fetch($color-set, neutral, 10) !important;
-    }
-}
-
 .tbl {
     &.--print {
-        @extend %tbl--print;
         @extend %tbl--rack;
+
+        border: 0;
+        padding: 0 !important;
+        font-size: $table--print-font-size;
     }
 }
 
@@ -692,6 +685,20 @@
                 //     @extend %tbl__group--active;
                 // }
             }
+        }
+    }
+}
+
+/**
+ * Table, monochrome.
+ */
+
+.tbl {
+    &.is-monochrome {
+        td,
+        th {
+            background: none !important;
+            color: map-fetch($color-set, neutral, 10) !important;
         }
     }
 }
