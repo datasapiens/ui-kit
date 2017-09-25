@@ -91,6 +91,16 @@
 }
 
 /**
+ * Widget, print.
+ */
+
+.wgt {
+    &.--print {
+        background-image: none;
+    }
+}
+
+/**
  * States.
  */
 
