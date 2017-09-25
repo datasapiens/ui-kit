@@ -18,8 +18,8 @@
 
 .page-control {
     @include font-size(
-        $page-control-font-size,
-        $page-control-line-height-ratio
+        $size-to: $page-control-font-size,
+        $lines: $page-control-line-height-ratio
     );
 
     align-items: center;

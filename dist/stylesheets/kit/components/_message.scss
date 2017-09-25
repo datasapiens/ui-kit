@@ -124,8 +124,8 @@
 .msg {
     &.\--tertiary {
         @include font-size(
-            $message--tertiary-font-size,
-            $message--tertiary-line-height-ratio
+            $size-to: $message--tertiary-font-size,
+            $lines: $message--tertiary-line-height-ratio
         );
     }
 }

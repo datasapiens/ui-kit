@@ -60,6 +60,7 @@ body {
     @media print {
         background-color: $white;
         color: $black;
+        // filter: grayscale(100%);
     }
 }
 
@@ -99,8 +100,8 @@ body {
 
 h1 {
     @include font-size(
-        nth($base-type-scale, 1) * $base-font-size,
-        1.5
+        $size-to: nth($base-type-scale, 1) * $base-font-size,
+        $lines: 1.5
     );
     // font-weight: 300;
     margin: {
@@ -114,8 +115,8 @@ h1 {
 
 h2 {
     @include font-size(
-        nth($base-type-scale, 2) * $base-font-size,
-        1.25
+        $size-to: nth($base-type-scale, 2) * $base-font-size,
+        $lines: 1.25
     );
     // font-weight: 300;
     margin: {
@@ -125,8 +126,8 @@ h2 {
 
 h3 {
     @include font-size(
-        nth($base-type-scale, 3) * $base-font-size,
-        1.125
+        $size-to: nth($base-type-scale, 3) * $base-font-size,
+        $lines: 1.125
     );
     margin: {
         bottom: rhythm-get(0.25);
@@ -136,7 +137,7 @@ h3 {
 
 h4 {
     @include font-size(
-        nth($base-type-scale, 4) * $base-font-size
+        $size-to: nth($base-type-scale, 4) * $base-font-size
     );
     font-weight: 500;
     margin: {
@@ -147,7 +148,7 @@ h4 {
 
 h5 {
     @include font-size(
-        nth($base-type-scale, 5) * $base-font-size
+        $size-to: nth($base-type-scale, 5) * $base-font-size
     );
     margin: {
         bottom: rhythm-get(0.125);
