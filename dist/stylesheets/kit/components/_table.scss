@@ -279,6 +279,27 @@
 }
 
 /**
+ * Table, print.
+ */
+
+%tbl--print {
+    border: 0;
+    padding: 0 !important;
+    font-size: $table--print-font-size;
+
+    td {
+        color: map-fetch($color-set, neutral, 10) !important;
+    }
+}
+
+.tbl {
+    &.\--print {
+        @extend %tbl--print;
+        @extend %tbl--rack;
+    }
+}
+
+/**
  * Table, rack (aka container).
  */
 

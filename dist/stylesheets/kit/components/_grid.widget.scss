@@ -40,6 +40,10 @@
 
     @media print {
         display: block;
+
+        .grd-widget__item:not(:last-of-type) {
+            page-break-after: always;
+        }
     }
 }
 

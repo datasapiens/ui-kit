@@ -19,6 +19,7 @@
 
     @media print {
         background-image: none;
+        page-break-after: always;
     }
 }
 

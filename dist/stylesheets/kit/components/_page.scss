@@ -29,6 +29,7 @@
 .page {
     &.\--print {
         display: block;
+        // filter: grayscale(100%);
         height: auto;
     }
 }
@@ -56,7 +57,9 @@
 .page {
     &.is-landscape {
         .page__inset {
-            max-width: map-get($page-size, landscape);
+            max-width:
+                map-fetch($page-size, print, landscape) -
+                map-get($page-indent, print);
         }
     }
 }
@@ -68,7 +71,9 @@
 .page {
     &.is-portrait {
         .page__inset {
-            max-width: map-get($page-size, portrait);
+            max-width:
+                map-fetch($page-size, print, portrait) -
+                map-get($page-indent, print);
         }
     }
 }
@@ -133,11 +138,11 @@
     @extend %ctr--center !optional;
     @include acceleration;
 
-    max-width: map-get($page-size, max);
-    min-width: map-get($page-size, min);
+    max-width: map-fetch($page-size, screen, max);
+    min-width: map-fetch($page-size, screen, min);
     padding: {
-        left: $page-indent;
-        right: $page-indent;
+        left: map-get($page-indent, screen);
+        right: map-get($page-indent, screen);
     }
     position: relative;
     transition:

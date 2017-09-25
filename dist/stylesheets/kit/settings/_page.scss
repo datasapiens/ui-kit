@@ -6,17 +6,22 @@
 // Page settings
 // =============================================================================
 
-// TODO: Implement page `indent` and `size` as maps with media types as keys
-//  (e.g. screen, print) and use it for `@media print` and `@page` properties.
-
 // Set page indent.
-$page-indent: 20px !default;
+$page-indent: (
+    print: 10mm,
+    screen: 20px,
+    // speech: ,
+) !default;
 
 // Set page size.
 $page-size: (
-    // landscape: 297mm,
-    landscape: 287mm,
-    max: 1600px,
-    min: 320px,
-    portrait: 210mm,
+    print: (
+        landscape: 297mm,
+        portrait: 210mm,
+    ),
+    screen: (
+        max: 1600px,
+        min: 320px,
+    ),
+    // speech: ,
 ) !default;

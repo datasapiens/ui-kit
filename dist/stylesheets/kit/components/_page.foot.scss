@@ -12,8 +12,8 @@
     flex: 1 0 auto;
     font-size: px-to-rem($page-foot-font-size);
     padding: {
-        bottom: 0.5 * $page-indent;
-        top: 0.5 * $page-indent;
+        bottom: 0.5 * map-get($page-indent, screen);
+        top: 0.5 * map-get($page-indent, screen);
     }
 
     a {

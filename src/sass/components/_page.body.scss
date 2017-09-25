@@ -12,7 +12,7 @@
         x: hidden;
         y: auto;
     }
-    padding: $page-indent 0;
+    padding: map-get($page-indent, screen) 0;
     position: relative;
 }
 

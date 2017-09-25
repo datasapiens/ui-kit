@@ -108,6 +108,13 @@ $table--edge-border-color: $blue--catskill !default;
 $table--edge-border-size: 1px !default;
 
 /**
+ * Table, print.
+ */
+
+// Set print table font size.
+$table--print-font-size: 8pt !default;
+
+/**
  * Table, stripe.
  */
 
