@@ -52,4 +52,8 @@
 .page-body__inset {
     position: relative;
     right: calc(-0.5 * (100vw - 100%));
+
+    @media print {
+        position: static;
+    }
 }
