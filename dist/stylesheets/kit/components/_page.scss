@@ -57,9 +57,11 @@
 .page {
     &.is-landscape {
         .page__inset {
-            max-width:
-                map-fetch($page-size, print, landscape) -
-                map-get($page-indent, print);
+            @if map-has-key($page-size, "print") and map-has-key($page-indent, "print") {
+                max-width:
+                    map-fetch($page-size, print, landscape) -
+                    map-get($page-indent, print);
+            }
         }
     }
 }
@@ -71,9 +73,11 @@
 .page {
     &.is-portrait {
         .page__inset {
-            max-width:
-                map-fetch($page-size, print, portrait) -
-                map-get($page-indent, print);
+            @if map-has-key($page-size, "print") and map-has-key($page-indent, "print") {
+                max-width:
+                    map-fetch($page-size, print, portrait) -
+                    map-get($page-indent, print);
+            }
         }
     }
 }
