@@ -9,7 +9,11 @@
 // Icon
 // =============================================================================
 
-@include font-face($family: $icon-font-family, $file: $icon-font-filename);
+@include font-face(
+    $family: $icon-font-family,
+    $file: $icon-font-filename,
+    $format: ("woff2", "woff")
+);
 
 %ico {
     display: inline-block;
