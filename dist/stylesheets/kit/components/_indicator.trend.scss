@@ -1,0 +1,99 @@
+/**
+ * Component Indicator/Trend.
+ *
+ * @requires {mixin}       acceleration
+ * @requires {variable}    $animation-easing
+ * @requires animation.fade
+ */
+
+// =============================================================================
+// Trend indicator
+// =============================================================================
+
+.ind-trend {
+    @include acceleration;
+
+    animation: fade--in 0.4s 0.8s both;
+    @if map-get($indicator-trend-color, initial) != inherit {
+        color: map-get($indicator-trend-color, initial);
+    }
+    transition: transform 0.4s map-get($animation-easing, in-out-circ) 1.2s;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Trend indicator, debug mode.
+ */
+
+.ind-trend {
+    &.\--debug {
+        font-size: 5rem;
+    }
+}
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+/**
+ * Trend indicator, decrease.
+ */
+
+.ind-trend {
+    &.is-decrease {
+        color: map-get($indicator-trend-color, negative);
+        transform: rotate(90deg);
+    }
+}
+
+/**
+ * Trend indicator, increase.
+ */
+
+.ind-trend {
+    &.is-increase {
+        color: map-get($indicator-trend-color, positive);
+        transform: rotate(-90deg);
+    }
+}
+
+/**
+ * Trend indicator, steady.
+ */
+
+.ind-trend {
+    &.is-steady {
+        color: map-get($indicator-trend-color, neutral);
+        transform: rotate(0deg);
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

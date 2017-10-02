@@ -1,0 +1,15 @@
+/**
+ * Component Indicator/Trend settings.
+ */
+
+// =============================================================================
+// Trend indicator settings
+// =============================================================================
+
+// Set trend indicator color map.
+$indicator-trend-color: (
+    initial:  inherit,
+    negative: $red--sunset,
+    neutral:  $blue--dodger,
+    positive: $green--malachite,
+) !default;
