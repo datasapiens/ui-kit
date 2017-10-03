@@ -1,0 +1,247 @@
+/**
+ * Component Figure.
+ *
+ * @requires {function}    px-to-em
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       text-truncate
+ * @requires {variable}    $animation-easing
+ * @requires panel
+ */
+
+// =============================================================================
+// Figure
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.fgr {
+    @extend .pnl !optional;
+    @extend .pnl.--elevate !optional;
+
+    align-items: center;
+    display: flex;
+    font-size: px-to-rem($figure-font-size);
+    justify-content: center;
+    line-height: $figure-line-height-ratio;
+    text-align: center;
+
+    &[class][class] {      /* 1 */
+        background: $figure-background;
+        border-color: $figure-border-color;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Figure, debug mode.
+ */
+
+// .fgr {
+//     &.--debug {
+//         .fgr__head {
+//             background-color: rgba(orange, 0.5);
+//         }
+//         .fgr__body {
+//             background-color: rgba(gold, 0.5);
+//         }
+//         .fgr__foot {
+//             background-color: rgba(cyan, 0.5);
+//         }
+//         .fgr__cell {
+//             background-color: rgba(red, 0.5);
+//         }
+//     }
+// }
+
+/**
+ * Figure, primary.
+ */
+
+.fgr {
+    &.--primary {
+        .fgr__body {
+            flex: {
+                direction: row;
+                flow: wrap;
+            }
+            line-height: $figure--primary-body-line-height-ratio;
+        }
+
+        .fgr__cell {
+            &:nth-of-type(1) {
+                font-size: $figure--primary-number-font-size;
+                letter-spacing: px-to-em(-0.5px);
+                order: 2;
+                padding-left: 8px;
+            }
+        }
+
+        .fgr__indicator {
+            font-size: 2em;
+        }
+    }
+}
+
+/**
+ * Figure, secondary.
+ */
+
+.fgr {
+    &.--secondary {
+        .fgr__body {
+            line-height: $figure--secondary-body-line-height-ratio;
+        }
+
+        .fgr__number {
+            &:nth-of-type(1) {
+                font-size: $figure--secondary-number-font-size;
+                letter-spacing: px-to-em(-0.5px);
+            }
+        }
+
+        .fgr__indicator {
+            display: none;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Figure inset
+// =============================================================================
+
+.fgr__inset {
+    max-width: 100%;
+}
+
+// Figure region
+// =============================================================================
+
+%fgr__region {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+// Figure header
+// =============================================================================
+
+.fgr__head {
+    @extend %fgr__region;
+}
+
+// Figure body
+// =============================================================================
+
+.fgr__body {
+    @extend %fgr__region;
+
+    flex-direction: column;
+}
+
+// Figure footer
+// =============================================================================
+
+.fgr__foot {
+    @extend %fgr__region;
+
+}
+
+// Figure cell
+// =============================================================================
+
+.fgr__cell {}
+
+// Figure title
+// =============================================================================
+
+.fgr__title {
+    @include text-truncate;
+
+    display: inline-block;
+    line-height: $figure-title-line-height-ratio;
+    max-height: 1 * $figure-title-line-height-ratio * $figure-title-font-size;
+    margin: 0;
+    text-transform: none;
+}
+
+// Figure number
+// =============================================================================
+
+.fgr__number {
+    display: block;
+    font-weight: 300;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Figure number, negative.
+ */
+
+.fgr__number {
+    &.--negative {
+        color: map-get($figure-number-color, negative);
+    }
+}
+
+/**
+ * Figure number, neutral.
+ */
+
+.fgr__number {
+    &.--neutral {
+        color: map-get($figure-number-color, neutral);
+    }
+}
+
+/**
+ * Figure number, positive.
+ */
+
+.fgr__number {
+    &.--positive {
+        color: map-get($figure-number-color, positive);
+    }
+}
+
+// Figure indicator
+// =============================================================================
+
+.fgr__indicator {
+    display: inline-block;
+    font-size: $figure-indicator-size;
+    margin: 0 4px;
+}

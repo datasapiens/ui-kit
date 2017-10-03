@@ -1,0 +1,70 @@
+/**
+ * Component Figure settings.
+ */
+
+// =============================================================================
+// Figure settings
+// =============================================================================
+
+// Set figure font size.
+$figure-font-size: 13px !default;
+
+// Set figure indent (according to `$widget-indent`).
+$figure-indent: 16px !default;
+
+// Set figure line height ratio.
+$figure-line-height-ratio: 1.5 !default;
+
+// Set figure background.
+$figure-background: $white !default;
+
+// Set figure border color.
+$figure-border-color: $blue--catskill !default;
+
+/**
+ * Body.
+ */
+
+// Set primary figure body line height ratio.
+$figure--primary-body-line-height-ratio: 1.25 !default;
+
+// Set secondary figure body line height ratio.
+$figure--secondary-body-line-height-ratio: 1.25 !default;
+
+/**
+ * Title.
+ */
+
+// Set figure title font size.
+$figure-title-font-size: nth($base-type-scale, 5) * $base-font-size !default;
+
+// Set figure title line height ratio.
+$figure-title-line-height-ratio: 1.4 !default;
+
+/**
+ * Number.
+ */
+
+// Set figure number color map (according to `$indicator-trend-color`).
+$figure-number-color: (
+    // initial:  inherit,
+    negative: $red--sunset,
+    neutral:  $blue--dodger,
+    positive: $green--malachite,
+) !default;
+
+// Set figure number font size.
+// $figure-number-font-size: 1em !default;
+
+// Set primary figure number font size.
+$figure--primary-number-font-size: 4em !default;
+
+// Set secondary figure number font size.
+$figure--secondary-number-font-size: 4.5em !default;
+
+/**
+ * Indicator.
+ */
+
+// Set figure indicator size.
+$figure-indicator-size: 3em !default;
