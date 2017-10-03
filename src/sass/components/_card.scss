@@ -64,7 +64,7 @@
          * Inset.
          */
 
-        %card__inset {
+        %crd__inset {
             &:first-of-type {
                 background-color: rgba(cyan, 0.5);
             }
@@ -317,7 +317,7 @@
 // Card inset
 // =============================================================================
 
-%card__inset {
+%crd__inset {
     padding: {
         left: $card-indent;
         right: $card-indent;
@@ -335,14 +335,14 @@
 // =============================================================================
 
 .crd__head {
-    @extend %card__inset;
+    @extend %crd__inset;
 }
 
 // Card body
 // =============================================================================
 
 .crd__body {
-    @extend %card__inset;
+    @extend %crd__inset;
 
     flex: 1;
 }
@@ -351,7 +351,7 @@
 // =============================================================================
 
 .crd__foot {
-    @extend %card__inset;
+    @extend %crd__inset;
 }
 
 // Card title
