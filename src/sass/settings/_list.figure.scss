@@ -1,0 +1,25 @@
+/**
+ * Component List/Figure settings.
+ */
+
+// =============================================================================
+// Figure list settings
+// =============================================================================
+
+// Set figure list breakpoints.
+$list-figure-breaks: (
+    400px,
+) !default;
+
+// Set figure list gutter.
+$list-figure-gutter: 8px !default;
+
+/**
+ * Figure list item.
+ */
+
+// Set figure list item size.
+$list-figure-item-size: (
+    max: 200px,
+    // min: 200px,
+) !default;

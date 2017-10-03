@@ -1,0 +1,95 @@
+/**
+ * Component List/Figure.
+ *
+ * @requires {mixin}       acceleration
+ * @requires {variable}    $animation-easing
+ */
+
+// =============================================================================
+// Figure list
+// =============================================================================
+
+.lst-figure {
+    @media (min-width: #{nth($list-figure-breaks, 1)}) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: (-1) * $list-figure-gutter;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+/**
+ * Figure list item, enter.
+ */
+
+@keyframes lst-figure__item--enter {
+    0% {
+        opacity: 0;
+        transform:
+            scale(0.25, 1.5)
+            translateY(20%);
+    }
+    100% {
+        opacity: 1;
+        transform:
+            scale(1, 1)
+            translateY(0);
+    }
+}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Figure list item
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.lst-figure__item {
+    @include acceleration;
+
+    animation: lst-figure__item--enter 0.3s map-get($animation-easing, in-out-circ) both;
+    transform-origin: 50% 0;
+
+    &[class][class] {       /* 1 */
+        margin-bottom: $list-figure-gutter;
+    }
+
+    @media (min-width: #{nth($list-figure-breaks, 1)}) {
+        margin-right: $list-figure-gutter;
+        width: map-get($list-figure-item-size, max);
+        // max-width: calc(100% - #{$list-figure-gutter});
+    }
+}
