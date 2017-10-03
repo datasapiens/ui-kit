@@ -41,22 +41,22 @@
  * Figure, debug mode.
  */
 
-// .fgr {
-//     &.\--debug {
-//         .fgr__head {
-//             background-color: rgba(orange, 0.5);
-//         }
-//         .fgr__body {
-//             background-color: rgba(gold, 0.5);
-//         }
-//         .fgr__foot {
-//             background-color: rgba(cyan, 0.5);
-//         }
-//         .fgr__cell {
-//             background-color: rgba(red, 0.5);
-//         }
-//     }
-// }
+.fgr {
+    &.\--debug {
+        .fgr__head {
+            background-color: rgba(orange, 0.5);
+        }
+        .fgr__body {
+            background-color: rgba(gold, 0.5);
+        }
+        .fgr__foot {
+            background-color: rgba(cyan, 0.5);
+        }
+        .fgr__cell {
+            background-color: rgba(red, 0.5);
+        }
+    }
+}
 
 /**
  * Figure, primary.
