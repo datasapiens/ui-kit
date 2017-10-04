@@ -74,7 +74,10 @@
 
         .fgr__cell {
             &:nth-of-type(1) {
-                font-size: $figure--primary-number-font-size;
+                font-size: px-to-em(
+                    $figure--primary-number-font-size,
+                    $figure-font-size
+                );
                 letter-spacing: px-to-em(-0.5px);
                 order: 2;
                 padding-left: 8px;
@@ -82,7 +85,10 @@
         }
 
         .fgr__indicator {
-            font-size: 2em;
+            font-size: px-to-em(
+                $figure--primary-indicator-size,
+                $figure-font-size
+            );
         }
     }
 }
@@ -99,7 +105,10 @@
 
         .fgr__number {
             &:nth-of-type(1) {
-                font-size: $figure--secondary-number-font-size;
+                font-size: px-to-em(
+                    $figure--secondary-number-font-size,
+                    $figure-font-size
+                );
                 letter-spacing: px-to-em(-0.5px);
             }
         }
@@ -242,6 +251,9 @@
 
 .fgr__indicator {
     display: inline-block;
-    font-size: $figure-indicator-size;
+    font-size: px-to-em(
+        $figure-indicator-size,
+        $figure-font-size
+    );
     margin: 0 4px;
 }

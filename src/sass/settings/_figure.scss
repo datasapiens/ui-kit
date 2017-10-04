@@ -57,14 +57,17 @@ $figure-number-color: (
 // $figure-number-font-size: 1em !default;
 
 // Set primary figure number font size.
-$figure--primary-number-font-size: 4em !default;
+$figure--primary-number-font-size: 42px !default;
 
 // Set secondary figure number font size.
-$figure--secondary-number-font-size: 4.5em !default;
+$figure--secondary-number-font-size: 58px !default;
 
 /**
  * Indicator.
  */
 
 // Set figure indicator size.
-$figure-indicator-size: 3em !default;
+$figure-indicator-size: 38px !default;
+
+// Set figure indicator size.
+$figure--primary-indicator-size: 16px !default;
