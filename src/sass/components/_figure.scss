@@ -123,11 +123,18 @@
  * States.
  */
 
-// .is-component-state {}
+/**
+ * Figure, monochrome.
+ */
 
-// .component {
-//     &.is-state {}
-// }
+.fgr {
+    &.is-monochrome {
+        .fgr__indicator,
+        .fgr__number {
+            color: inherit;
+        }
+    }
+}
 
 /**
  * Context.
