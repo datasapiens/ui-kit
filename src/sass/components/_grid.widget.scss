@@ -8,12 +8,14 @@
 
 .grd-widget {
     counter-reset: counter-widget;
-    display: flex;
-    flex-direction: column;
     margin-bottom: $grid-widget-gutter;
 
     @media (min-width: nth($grid-widget-breaks, 1)) {
-        flex-flow: row wrap;
+        display: flex;
+        flex: {
+            direction: column;
+            flow: row wrap;
+        }
         margin: {
             right: (-1) * $grid-widget-gutter;
         }
@@ -21,14 +23,11 @@
     }
 
     @supports (display: grid) {
-        display: grid;
-        grid: {
-            gap: $grid-widget-gutter;
-        }
-
         @media (min-width: nth($grid-widget-breaks, 1)) {
+            display: grid;
             grid: {
                 auto-flow: dense;
+                gap: $grid-widget-gutter;
                 template-columns: repeat(4, 1fr);
             }
             margin: {
@@ -148,13 +147,12 @@
     }
 
     @supports (display: grid) {
-        margin: {
-            bottom: 0;
-            right: 0;
-        }
-
         @media (min-width: nth($grid-widget-breaks, 1)) {
             grid-column-start: span 2;
+            margin: {
+                bottom: 0;
+                right: 0;
+            }
         }
     }
 
