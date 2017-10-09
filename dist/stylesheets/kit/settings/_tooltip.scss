@@ -1,0 +1,66 @@
+/**
+ * Component Tooltip settings.
+ */
+
+// =============================================================================
+// Tooltip settings
+// =============================================================================
+
+// Set tooltip background.
+$tooltip-background-color: $blue--catskill !default;
+
+// Set primary widget background gradient.
+$tooltip-background-gradient: linear-gradient(
+    160deg,
+    rgba(map-get(map-get($color-set, neutral), 20), 0.250) 0%,
+    rgba(map-get(map-get($color-set, neutral), 40), 0.000) 50%,
+    rgba(map-get(map-get($color-set, neutral), 80), 0.125) 100%
+) !default;
+
+// Set tooltip border radius.
+$tooltip-border-radius: 2px !default;
+
+// Set tooltip box shadow.
+$tooltip-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
+
+// Set tooltip font size.
+$tooltip-font-size: 13px !default;
+
+// Set tooltip line height ratio.
+$tooltip-line-height-ratio: 1 !default;
+
+// Set tooltip indent.
+$tooltip-indent: 8px !default;
+
+// Set tooltip size.
+$tooltip-size: (
+    height: 140px,
+    width: 380px,
+) !default;
+
+// Set tooltip z-index.
+$tooltip-index: 3 !default;
+
+/**
+ * Tooltip title.
+ */
+
+// Set tooltip title font size.
+$tooltip-title-font-size: 13px !default;
+
+/**
+ * Tooltip control.
+ */
+
+// Set tooltip control font size.
+$tooltip-control-font-size: 16px !default;
+
+/**
+ * Tooltip body.
+ */
+
+// Set tooltip body background.
+$tooltip-body-background: $blue--zircon !default;
+
+// Set tooltip body color.
+$tooltip-body-color: $black !default;

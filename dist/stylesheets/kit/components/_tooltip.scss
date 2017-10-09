@@ -1,0 +1,175 @@
+/**
+ * Component Tooltip.
+ *
+ * @requires {function}    px-to-em
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       acceleration
+ * @requires {mixin}       font-size
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--fa-times-circle
+ * @requires {variable}    $animation-easing
+ * @requires ico
+ */
+
+// =============================================================================
+// Tooltip
+// =============================================================================
+
+.tip {
+    @include acceleration;
+    @include font-size(
+        $size-to: $tooltip-font-size,
+        $lines: $tooltip-line-height-ratio
+    );
+
+    animation: tip--enter 0.3s map-get($animation-easing, in-out-circ) both;
+    background: {
+        color: rgba($tooltip-background-color, 0.95);
+        image: $tooltip-background-gradient;
+    }
+    border-radius: $tooltip-border-radius;
+    box-shadow: $tooltip-shadow;
+    display: inline-block;
+    font-size: px-to-rem($tooltip-font-size);
+    max-width: map-get($tooltip-size, width);
+    padding: $tooltip-indent;
+    padding-bottom: 2 * $tooltip-indent;
+    // position: absolute;
+    position: fixed;
+    z-index: $tooltip-index;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Tooltip, debug mode.
+ */
+
+// .tip {
+//     &.\--debug {
+//         position: relative;
+//     }
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+@keyframes tip--enter {
+    0% {
+        opacity: 0;
+        transform: scale(0.75, 0.75);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Tooltip head
+// =============================================================================
+
+.tip__head {
+    display: flex;
+    justify-content: space-between;
+    padding:
+        0
+        0
+        0.5 * $tooltip-indent
+        $tooltip-indent;
+}
+
+// Tooltip title
+// =============================================================================
+
+.tip__title {
+    font-size: px-to-rem(
+        $tooltip-title-font-size,
+        $tooltip-font-size
+    );
+    margin: 0;
+    text-transform: uppercase;
+}
+
+// Tooltip body
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.tip__body {
+    background-color: $tooltip-body-background;
+    border-radius: $tooltip-border-radius;
+    color: $tooltip-body-color;
+    max-height: map-get($tooltip-size, height);
+    padding: $tooltip-indent;
+
+    &[class][class] {   /* 1 */
+        clip-path: none;
+    }
+}
+
+// Tooltip control
+// =============================================================================
+
+.tip__control {
+    cursor: pointer;
+    font-size: px-to-rem(
+        $tooltip-control-font-size,
+        $tooltip-font-size
+    );
+    transition: opacity 0.3s;
+
+    &::after {
+        @extend %ico !optional;
+        @extend %ico--fa-times-circle !optional;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Tooltip control, active.
+ */
+
+.tip__control {
+    &:active,
+    &.is-active {
+        opacity: 0.75;
+    }
+}
+
+/**
+ * Tooltip control, hovered.
+ */
+
+.tip__control {
+    &:hover {
+        @extend .tip__control:active;
+    }
+}
