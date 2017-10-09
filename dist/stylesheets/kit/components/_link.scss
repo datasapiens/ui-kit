@@ -1,5 +1,10 @@
 /**
  * Component Link.
+ *
+ * @requires {mixin}       link-underline
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--checkmark
+ * @requires ico
  */
 
 // =============================================================================
@@ -18,11 +23,59 @@
  */
 
 /**
- * Link, reverse.
+ * Link, external.
+ */
+
+// .lnk {
+//     &.\--external {
+//         @extend %lnk--icon;
+
+//         &::after {}
+
+//         @media print {}
+//     }
+// }
+
+/**
+ * Link, icon.
+ */
+
+%lnk--icon {
+    &::after {
+        @extend %ico !optional;
+
+        font-size: 0.85em;
+        padding-left: 0.25em;
+        position: relative;
+        top: -0.35em;
+    }
+}
+
+/**
+ * Link, info.
  */
 
 .lnk {
-    &.\--plain[class] {
+    &.\--info {
+        @extend %lnk--icon;
+
+        &::after {
+            @extend %ico--fa-lt-info-circle !optional;
+        }
+
+        @media print {
+            display: none;
+        }
+    }
+}
+
+/**
+ * Link, plain (without any text decoration).
+ * 1. We need to increase specifity.
+ */
+
+.lnk {
+    &.\--plain[class] {  /* 1 */
         text-decoration: none;
     }
 }
