@@ -7,14 +7,14 @@
 // =============================================================================
 
 // Set tooltip background.
-$tooltip-background-color: $blue--catskill !default;
+$tooltip-background-color: $green--dolly !default;
 
 // Set primary widget background gradient.
 $tooltip-background-gradient: linear-gradient(
     160deg,
-    rgba(map-get(map-get($color-set, neutral), 20), 0.250) 0%,
-    rgba(map-get(map-get($color-set, neutral), 40), 0.000) 50%,
-    rgba(map-get(map-get($color-set, neutral), 80), 0.125) 100%
+    rgba(map-get(map-get(map-get($color-set, primary), tertiary), 50), 0.250) 0%,
+    rgba(map-get(map-get(map-get($color-set, primary), tertiary), 80), 0.000) 50%,
+    rgba(map-get(map-get(map-get($color-set, primary), tertiary), 100), 0.125) 100%
 ) !default;
 
 // Set tooltip border radius.
@@ -35,7 +35,7 @@ $tooltip-indent: 8px !default;
 // Set tooltip size.
 $tooltip-size: (
     height: 140px,
-    width: 380px,
+    width: 400px,
 ) !default;
 
 // Set tooltip z-index.
@@ -60,7 +60,7 @@ $tooltip-control-font-size: 16px !default;
  */
 
 // Set tooltip body background.
-$tooltip-body-background: $blue--zircon !default;
+$tooltip-body-background: rgba($white, 0.75) !default;
 
 // Set tooltip body color.
 $tooltip-body-color: $black !default;

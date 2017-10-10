@@ -24,7 +24,7 @@
 
     animation: tip--enter 0.3s map-get($animation-easing, in-out-circ) both;
     background: {
-        color: rgba($tooltip-background-color, 0.95);
+        color: rgba($tooltip-background-color, 0.85);
         image: $tooltip-background-gradient;
     }
     border-radius: $tooltip-border-radius;
@@ -92,13 +92,19 @@
 // =============================================================================
 
 .tip__head {
-    display: flex;
-    justify-content: space-between;
+    min-height: 2em;
     padding:
         0
-        0
+        calc(
+            #{$tooltip-indent} +
+            #{px-to-rem(
+                $tooltip-control-font-size,
+                $tooltip-font-size
+            )}
+        )
         0.5 * $tooltip-indent
         $tooltip-indent;
+    position: relative;
 }
 
 // Tooltip title
@@ -141,6 +147,9 @@
         $tooltip-control-font-size,
         $tooltip-font-size
     );
+    position: absolute;
+    right: 0;
+    top: 0;
     transition: opacity 0.3s;
 
     &::after {
