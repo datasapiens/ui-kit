@@ -102,6 +102,19 @@
 }
 
 /**
+ * Widget, rack.
+ */
+
+.wgt {
+    &.\--rack {
+        background: none;
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+/**
  * States.
  */
 
