@@ -64,16 +64,19 @@
 /**
  * Wrapper, Y-scroll pane.
  *
+ * TODO: Resolve artifacts hotfix.
+ *
  * 1. Flag is required to override later defined `is-off` state.
+ * 2. Artifacts hotfix.
  */
 
 .wrp {
     &.\--scroll-y {
         @extend %wrp--scroll;
-        @include rectangle-clip($pitch: 2%);
+        // @include rectangle-clip($pitch: 2%); /* 2 */
 
         overflow-y: auto;
-        transition: max-height 0.3s map-get($animation-easing, in-out-circ);
+        // transition: max-height 0.3s map-get($animation-easing, in-out-circ); /* 2 */
 
         @media print {
             clip-path: none;
