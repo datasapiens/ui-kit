@@ -51,7 +51,7 @@ $table-spacer: 5 * $table-cell-indent;
 
     tbody {
         box-shadow: map-get($table-group-box-shadow, inner);
-        overflow-y: auto;
+        // overflow-y: auto;
     }
 
     thead + tbody,
