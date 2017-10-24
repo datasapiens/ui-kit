@@ -1,0 +1,185 @@
+/**
+ * Component Table/Sticky.
+ *
+ * @requires {mixin}       ie-gte-10
+ * @requires {variable}    $table-cell-indent
+ * @requires {variable}    $table-group-border-color
+ * @requires {variable}    $table-group-border-size
+ * @requires {variable}    $table-group-box-shadow
+ * @requires table
+ */
+
+// Set table spacer.
+$table-spacer: 5 * $table-cell-indent;
+
+// =============================================================================
+// Sticky table
+// =============================================================================
+
+/**
+ * 1. We need to increase specifity.
+ * 2. Cut off vertical scrollbar.
+ * 3. IE/Edge
+ */
+
+.tbl-sticky {
+    overflow: hidden;   /* 3 */
+
+    tbody,
+    tfoot,
+    thead {
+        display: block;
+        overflow-y: scroll;
+    }
+
+    tfoot,
+    thead {
+        clip-path: polygon(
+            0% 0%,
+            calc(100% - #{$table-spacer}) 0%,
+            calc(100% - #{$table-spacer}) 100%,
+            0% 100%
+        );
+        margin-right: (-1) * $table-spacer;     /* 2 */
+        padding-right: $table-spacer;           /* 2 */
+    }
+
+    tbody,
+    tfoot {
+        border: 0 solid $table-group-border-color;
+    }
+
+    tbody {
+        box-shadow: map-get($table-group-box-shadow, inner);
+        overflow-y: auto;
+    }
+
+    thead + tbody,
+    tbody + tfoot {
+        border: {
+            top-width: $table-group-border-size;
+        }
+    }
+
+    &[class][class] {   /* 1 */
+        tfoot,
+        tbody {
+            tr:first-of-type {
+                td,
+                th {
+                    border-top: 0;
+                }
+            }
+        }
+    }
+
+    tr {
+        display: flex;
+    }
+
+    td,
+    th {
+        display: inline-block;  /* 3 */
+        flex: 1 1 0%;
+        overflow: hidden;
+    }
+
+    /**
+     * Webkit
+     */
+
+    @supports (-webkit-appearance: none) {
+        ::-webkit-scrollbar {
+            &-track {
+                border-radius: 0;
+            }
+        }
+    }
+
+    /**
+     * IE10-11
+     */
+
+    @include ie-gte-10 {
+        display: block;
+
+        caption {
+            display: none;
+        }
+    }
+
+    /**
+     * Print
+     */
+
+    @media print {
+        display: table;
+
+        tbody,
+        tfoot,
+        thead {
+            clip-path: none;
+            margin-right: inherit;
+            overflow-y: visible;
+            padding-right: 0;
+        }
+
+        tbody {
+            display: table-row-group;
+        }
+        tfoot {
+            display: table-footer-group;
+        }
+        thead {
+            display: table-header-group;
+        }
+        tr {
+            display: table-row;
+        }
+        td,
+        th {
+            display: table-cell;
+        }
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
