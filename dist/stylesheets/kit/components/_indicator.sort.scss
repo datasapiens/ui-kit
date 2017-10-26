@@ -1,0 +1,196 @@
+/**
+ * Component Indicator/Sort.
+ *
+ * @requires {function}    px-to-em
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       size
+ * @requires {placeholder} %ico
+ * @requires {placeholder} %ico--fa-lt-sort-down
+ * @requires {placeholder} %ico--fa-lt-sort-up
+ * @requires {placeholder} %ico--fa-sd-sort-down
+ * @requires {placeholder} %ico--fa-sd-sort-up
+ * @requires ico
+ */
+
+$indent: px-to-em($indicator-sort-indent);
+
+// =============================================================================
+// Sort indicator
+// =============================================================================
+
+.ind-sort {
+    display: inline-flex;
+    cursor: pointer;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Sort indicator, after.
+ */
+
+.ind-sort {
+    &.\--after {
+        margin-left: $indent;
+    }
+}
+
+/**
+ * Sort indicator, before.
+ */
+
+.ind-sort {
+    &.\--before {
+        margin-right: $indent;
+    }
+}
+
+/**
+ * Sort indicator, debug mode.
+ */
+
+.ind-sort {
+    &.\--debug {
+        .ind-sort__control {
+            font-size: px-to-rem(5 * $indicator-sort-size);
+
+            &.\--asc {
+                background-color: rgba(cyan, 0.5);
+            }
+            &.\--dsc {
+                background-color: rgba(red, 0.5);
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Sort indicator, ascending.
+ */
+
+.ind-sort {
+    &.is-asc {
+        .ind-sort__control {
+            &.\--asc {
+                @extend %ind-sort__control::active;
+            }
+        }
+    }
+}
+
+/**
+ * Sort indicator, descending.
+ */
+
+.ind-sort {
+    &.is-dsc {
+        .ind-sort__control {
+            &.\--dsc {
+                @extend %ind-sort__control::active;
+            }
+        }
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Sort indicator control
+// =============================================================================
+
+.ind-sort__control {
+    @include size(0.65em, 0.5em);
+
+    display: flex;
+    font-size: px-to-em($indicator-sort-size);
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+
+    &::after,
+    &::before {
+        @extend %ico !optional;
+    }
+
+    &::after {
+        left: 0;
+        position: absolute;
+    }
+    &::before {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Sort indicator control, ascending.
+ */
+
+.ind-sort__control {
+    &.\--asc {
+        // align-items: flex-start;
+
+        &::after {
+            @extend %ico--fa-lt-sort-up !optional;
+        }
+        &::before {
+            @extend %ico--fa-sd-sort-up !optional;
+        }
+    }
+}
+
+/**
+ * Sort indicator control, descending.
+ */
+
+.ind-sort__control {
+    &.\--dsc {
+        align-items: flex-end;
+
+        &::after {
+            @extend %ico--fa-lt-sort-down !optional;
+        }
+        &::before {
+            @extend %ico--fa-sd-sort-down !optional;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Sort indicator control, active.
+ */
+
+%ind-sort__control::active {
+    &::before {
+        opacity: 1;
+    }
+}
