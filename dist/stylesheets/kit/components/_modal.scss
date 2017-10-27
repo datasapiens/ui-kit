@@ -42,6 +42,14 @@
  */
 
 /**
+ * Modal, driving to action.
+ */
+
+.mod {
+    &.\--drive {}
+}
+
+/**
  * Modal, expanded.
  */
 
@@ -76,10 +84,13 @@
                 scale--100-50 0.3s 0.2s map-get($animation-easing, in-out-circ) both,
                 fade--out 0.3s both;
         }
-        .mod__control {
-            animation:
-                slide--right 0.3s map-get($animation-easing, in-out-circ) forwards,
-                fade--out 0.2s both;
+
+        &:not(.\--drive) {
+            .mod__control {
+                animation:
+                    slide--right 0.3s map-get($animation-easing, in-out-circ) forwards,
+                    fade--out 0.2s both;
+            }
         }
     }
 }
@@ -99,10 +110,13 @@
                 scale--50-100 0.3s 0.1s map-get($animation-easing, in-out-circ) both,
                 fade--in 0.3s 0.2s both;
         }
-        .mod__control {
-            animation:
-                slide--right-reverse 0.3s 0.4s map-get($animation-easing, in-out-circ) forwards,
-                fade--in 0.2s 0.5s both;
+
+        &:not(.\--drive) {
+            .mod__control {
+                animation:
+                    slide--right-reverse 0.3s 0.4s map-get($animation-easing, in-out-circ) forwards,
+                    fade--in 0.2s 0.5s both;
+            }
         }
     }
 }
