@@ -9,5 +9,11 @@
 // Set indicator indent.
 $indicator-sort-indent: 4px !default;
 
-// Set indicator size.
-$indicator-sort-size: 16px !default;
+// Set indicator font size.
+$indicator-sort-font-size: 16px !default;
+
+// Set indicator unit size.
+$indicator-sort-unit-size: (
+    height: 0.5em,
+    width: 0.7em,
+) !default;
