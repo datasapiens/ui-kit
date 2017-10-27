@@ -3,7 +3,8 @@
  *
  * @requires {mixin}       link-underline
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--checkmark
+ * @requires {placeholder} %ico--fa-lt-external-link-square
+ * @requires {placeholder} %ico--fa-lt-info-circle
  * @requires ico
  */
 
@@ -23,20 +24,6 @@
  */
 
 /**
- * Link, external.
- */
-
-// .lnk {
-//     &.--external {
-//         @extend %lnk--icon;
-
-//         &::after {}
-
-//         @media print {}
-//     }
-// }
-
-/**
  * Link, icon.
  */
 
@@ -48,6 +35,24 @@
         padding-left: 0.25em;
         position: relative;
         top: -0.35em;
+    }
+}
+
+/**
+ * Link, external.
+ */
+
+.lnk {
+    &.--external {
+        @extend %lnk--icon;
+
+        &::after {
+            @extend %ico--fa-lt-external-link-square !optional;
+        }
+
+        @media print {
+            display: none;
+        }
     }
 }
 
