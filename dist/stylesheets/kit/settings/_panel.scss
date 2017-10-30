@@ -17,7 +17,10 @@ $panel-background-gradient: linear-gradient(
 );
 
 // Set panel border color.
-$panel-border-color: $blue--geyser;
+$panel-border-color: map-get(
+    map-get($color-set, neutral),
+    70
+) !default;
 
 // Set panel border radius.
 $panel-border-radius: 3px;
