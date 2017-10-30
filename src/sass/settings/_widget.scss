@@ -19,7 +19,7 @@ $widget-indent: 16px !default;
 // Set widget header border color (according to `$panel-border-color`).
 $widget-head-border-color: map-get(
     map-get($color-set, neutral),
-    70
+    80
 ) !default;
 
 // Set widget header border size.
