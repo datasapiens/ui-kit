@@ -214,7 +214,7 @@
 
 .crd__region {
     display: flex;
-    flex: 1;
+    flex: 1 1 auto;
     flex-direction: column;
     overflow: hidden;
 }
@@ -344,7 +344,7 @@
 .crd__body {
     @extend %crd__inset;
 
-    flex: 1;
+    flex: 1 1 auto;
 }
 
 // Card footer
@@ -395,7 +395,7 @@
     position: relative;
     text-decoration: none;
 
-    &[class] {          /* 1 */
+    &[class] {  /* 1 */
         align-items: center;
         justify-content: center;
     }

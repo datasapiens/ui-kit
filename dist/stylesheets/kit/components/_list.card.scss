@@ -10,15 +10,34 @@
 // =============================================================================
 
 .lst-card {
-    display: grid;
-    grid-gap: $list-card-gutter;
+    margin-bottom: $list-card-gutter;
 
-    @each $break in $list-card-breaks {
-        @media (min-width: $break) {
-            grid-template-columns: repeat(
-                #{index($list-card-breaks, $break) + 1},
-                1fr
-            );
+    @media (min-width: nth($list-card-breaks, 1)) {
+        display: flex;
+        flex: {
+            direction: column;
+            flow: row wrap;
+        }
+        margin: {
+            right: (-1) * $list-card-gutter;
+        }
+        width: calc(100% + #{$list-card-gutter});
+    }
+
+    @supports (display: grid) {
+        @media (min-width: nth($list-card-breaks, 1)) {
+            display: grid;
+            grid-gap: $list-card-gutter;
+            margin-right: 0;
+            width: 100%;
+        }
+        @each $break in $list-card-breaks {
+            @media (min-width: $break) {
+                grid-template-columns: repeat(
+                    #{index($list-card-breaks, $break) + 1},
+                    1fr
+                );
+            }
         }
     }
 }
@@ -76,10 +95,50 @@
  */
 
 .lst-card__item {
-    display: flex;
+    &[class][class] {
+        margin-bottom: $list-card-gutter;
+    }
 
-    &[class][class] {       /* 1 */
-        margin: 0;
+    @each $break in $list-card-breaks {
+        $fraction: index($list-card-breaks, $break) + 1;
+
+        @media (min-width: $break) {
+            flex-basis: calc(
+                #{percentage(1 / $fraction)} -
+                #{$list-card-gutter}
+            );
+            max-width: calc(
+                #{percentage(1 / $fraction)} -
+                #{$list-card-gutter}
+            );
+
+            @include ie-gte-10 {
+                width: calc(
+                    #{percentage(1 / $fraction)} -
+                    #{$list-card-gutter}
+                );
+            }
+        }
+    }
+
+    @media (min-width: nth($list-card-breaks, 1)) {
+        display: flex;
+        margin-right: $list-card-gutter;
+
+        @include ie-gte-10 {
+            -ms-flex-preferred-size: auto;
+        }
+    }
+
+    @supports (display: grid) {
+        @media (min-width: nth($list-card-breaks, 1)) {
+            margin-right: 0;
+            max-width: none;
+
+            &[class][class] {   /* 1 */
+                margin-bottom: 0;
+            }
+        }
     }
 }
 
