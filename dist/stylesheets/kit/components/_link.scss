@@ -12,11 +12,18 @@
 // Link
 // =============================================================================
 
+/**
+ * 1. We need to increase specifity.
+ */
+
 .lnk {
     @include link-underline($underline: true);
 
-    color: map-get($link-color, initial);
     cursor: pointer;
+
+    &[class] {  /* 1 */
+        color: map-get($link-color, initial);
+    }
 }
 
 /**
