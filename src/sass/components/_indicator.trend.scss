@@ -67,6 +67,16 @@
 }
 
 /**
+ * Trend indicator, monochrome.
+ */
+
+.ind-trend {
+    &.is-monochrome {
+        color: inherit;
+    }
+}
+
+/**
  * Trend indicator, steady.
  */
 
