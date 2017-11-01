@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <title>move-block</title>
-  <g id="move-block">
-    <g>
-      <path d="M4,4H29V15h2V3a1,1,0,0,0-1-1H3A1,1,0,0,0,2,3V30a1,1,0,0,0,1,1H15V29H4Z"/>
-      <path d="M45,17H18a1,1,0,0,0-1,1V45a1,1,0,0,0,1,1H45a1,1,0,0,0,1-1V18A1,1,0,0,0,45,17ZM44,44H19V19H44Z"/>
-    </g>
-  </g>
-</svg>
