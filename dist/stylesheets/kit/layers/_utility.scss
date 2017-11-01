@@ -238,8 +238,16 @@
     &.\--top      { vertical-align: top !important; }
 }
 
+.u-text {
+    @each $modifier in (danger, neutral, notice, success, warning) {
+        &.\--#{$modifier} {
+            color: map-fetch($color-set, accent, $modifier, 50);
+        }
+    }
+}
+
 .u-wrap {
-    &:not(.\--nope)   {
+    &:not(.\--nope) {
         @include word-wrap;
     }
     &.\--nope {
