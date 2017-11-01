@@ -185,16 +185,22 @@ a {
     cursor: pointer;
     transition: color 0.2s;
 
-    &:active {
-        color: map-get($base-link-color, active);
+    @if map-get($base-link-color, active) != map-get($base-link-color, initial) {
+        &:active {
+            color: map-get($base-link-color, active);
+        }
     }
+
     &:focus,
     &:hover {
         color: map-get($base-link-color, hover);
     }
-    // &:visited {
-    //     color: map-get($base-link-color, visit);
-    // }
+
+    @if map-get($base-link-color, visit) != map-get($base-link-color, initial) {
+        &:visited {
+            color: map-get($base-link-color, visit);
+        }
+    }
 }
 
 b,
