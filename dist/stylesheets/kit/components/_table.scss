@@ -342,17 +342,21 @@
 
 .tbl {
     &.\--stripe {
-        &.\--even {
-            tbody {
-                tr:nth-child(even) {
-                    background-color: rgba($table--stripe-row-background, 0.225);
+        &:not(.is-monochrome) {
+            $color: rgba($table--stripe-row-background, 0.225);
+
+            &.\--even {
+                tbody {
+                    tr:nth-child(even) {
+                        background-color: $color;
+                    }
                 }
             }
-        }
-        &.\--odd {
-            tbody {
-                tr:nth-child(odd) {
-                    background-color: rgba($table--stripe-row-background, 0.225);
+            &.\--odd {
+                tbody {
+                    tr:nth-child(odd) {
+                        background-color: $color;
+                    }
                 }
             }
         }
