@@ -1,6 +1,6 @@
 [contributing]:  CONTRIBUTING.md
 [changelog]:     CHANGELOG.md
-<!-- [styleguide]:     -->
+[styleguide]:    https://app.netlify.com/
 
 
 
@@ -42,10 +42,6 @@ __UI Kit is Sass components and static assets library.__
 ## Quick Start
 
 1. Clone repo  
-
-    ```
-    https://github.com/datasapiens/ui-kit.git
-    ```
 1. Install dependencies  
 
     ```
@@ -76,20 +72,20 @@ You can find all available tasks in [grunt/config/alias.coffee](grunt/config/ali
 
 There's a living Styleguide aka [UI Styleguide][styleguide].
 
-It's also recommended to check out the [project Wiki](wikis/home).
+It's also recommended to check out the [project Wiki](../../wiki).
 
 
 ## Recipes (FAQ)
 
-* [How to release new version](wikis/how-to-release-new-version)
-* [How to extend icon webfont](wikis/how-to-extend-icon-webfont)
-* [How to process webfont](wikis/how-to-process-webfont)
+* [How to release new version](../../wiki/how-to-release-new-version)
+* [How to extend icon webfont](../../wiki/how-to-extend-icon-webfont)
+* [How to process webfont](../../wiki/how-to-process-webfont)
 
 
 
 ## Troubleshooting
 
-* [Locking down package's dependencies](wikis/locking-down-packages-dependencies)
+* [Locking down package's dependencies](../../wiki/locking-down-packages-dependencies)
 
 
 
