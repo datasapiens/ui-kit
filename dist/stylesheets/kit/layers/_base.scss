@@ -311,7 +311,8 @@ input::-ms-clear {
 }
 
 [type="email"],
-[type="text"] {
+[type="text"],
+select {
     min-width: 0; /* 2 */
     text-overflow: ellipsis;
 }
@@ -339,15 +340,12 @@ input::-ms-clear {
 
 /**
  * Select
+ * 1. We need to increase specifity.
  */
 
 select {
-    @include ie-gte-10 {
-        padding-right: 0 !important;
-    }
-
-    @include webkit {
-        -webkit-appearance: none;
+    &[name] {   /* 1 */
+        padding-right: 0;
     }
 }
 

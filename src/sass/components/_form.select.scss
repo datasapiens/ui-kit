@@ -1,10 +1,13 @@
 /**
  * Component Form/Select.
  *
+ * @requires {mixin}       ie-gte-10
  * @requires {placeholder} %ctr--core-y
+ * @requires {placeholder} %form-element
  * @requires {placeholder} %ico
  * @requires {placeholder} %ico--caret-down
  * @requires container
+ * @requires form.element
  * @requires ico
  */
 
@@ -18,26 +21,23 @@
  */
 
 .form-select {
-    display: inline-block;
-    width: 100%;
+    @extend %form-element !optional;
+
+    align-items: center;
+    display: inline-flex;
+    overflow: hidden;
+    padding: 0;
     position: relative;
 
-    &::before {      /* 1 */
+    &::after {      /* 1 */
         @extend %form-select__control;
-
-        display: none !important;
-
-        @include webkit {
-            & {
-                display: inline-block !important;
-            }
+        @include ie-gte-10 {
+            display: none;
         }
     }
 
     select {
         @extend %form-select__content;
-
-        width: 100%;
     }
 }
 
@@ -75,10 +75,17 @@
 // =============================================================================
 
 %form-select__content {
+    appearance: none;
+    border: 0;
+    height: auto;
     padding-right: calc(
         #{$form-select-control-size} +
         2 * #{$form-select-control-indent}
     );
+
+    @include ie-gte-10 {
+        padding-right: $form-select-indent;
+    }
 }
 
 // Form select control
@@ -93,9 +100,8 @@
     pointer-events: none;
     right: 0;
     text-align: center;
-    vertical-align: middle;
     width: calc(
         #{$form-select-control-size} +
         2 * #{$form-select-control-indent}
-    ) !important;
+    );
 }
