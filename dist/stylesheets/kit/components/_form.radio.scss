@@ -17,6 +17,11 @@
 .form-radio {
     align-items: baseline;
     display: inline-flex;
+
+    @include ie-gte-10 {
+        align-items: center;
+        vertical-align: middle;
+    }
 }
 
 /**
@@ -102,6 +107,7 @@
     @include size(px-to-em($form-radio-size));
 
     display: inherit;
+    flex-shrink: 0;
 
     &:not(:only-child) {
         $indent: px-to-em($form-radio-indent);
