@@ -1,5 +1,16 @@
 /**
  * Layer Base.
+ *
+ * @requires {function}    px-to-rem
+ * @requires {function}    rhythm-get
+ * @requires {mixin}       font-size
+ * @requires {mixin}       link-underline
+ * @requires {mixin}       size
+ * @requires {placeholder} %form-element
+ * @requires {placeholder} %form-label
+ * @requires {placeholder} %rhythm
+ * @requires form.element
+ * @requires form.label
  */
 
 // =============================================================================
@@ -264,27 +275,7 @@ fieldset {
 }
 
 label {
-    color: map-get($base-label-color, initial);
-    cursor: pointer;
-    display: inline-block;
-    transition: color 0.2s;
-
-    &.is-active {
-        color: map-get($base-label-color, active);
-    }
-    &:hover {
-        color: map-get($base-label-color, hover);
-    }
-    &.is-disabled {
-        color: map-get($base-label-color, disable);
-        cursor: not-allowed;
-    }
-    &.is-invalid {
-        color: map-get($base-label-color, invalid);
-    }
-    &.is-required {
-        color: map-get($base-label-color, required);
-    }
+    @extend %form-label !optional;
 }
 
 input,

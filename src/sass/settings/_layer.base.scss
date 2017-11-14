@@ -58,21 +58,6 @@ $base-type-scale: (
 // Set base `::selection` background.
 $base-selection-background: gold;
 
-/**
- * Base `label`.
- */
-
-// Set base label color map.
-$base-label-color: (
-    active:     $blue--deepcerulean,       // pressed
-    focus:      $blue--deepcerulean,       // focused
-    hover:      $blue--deepcerulean,       // hovered
-    disable:    lighten($base-color, 30%), // disabled
-    initial:    inherit,
-    invalid:    $red--sunset,              // invalid
-    required:   $red--sunset,              // required
-);
-
 // Browser (OS) specific
 // =============================================================================
 

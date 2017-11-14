@@ -8,8 +8,16 @@
 // Form label
 // =============================================================================
 
-.form-label {
+%form-label {
     color: map-get($form-label-color, initial);
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.form-label {
+    @extend %form-label;
+
     font: {
         size: px-to-rem($form-label-font-size);
         weight: $form-label-font-weight;
@@ -40,8 +48,7 @@
         display: block;
         line-height: $form-label--stack-line-height-ratio;
         margin-bottom: px-to-rem(
-            1/4 *
-            map-get($form-label-indent, vertical)
+            1/4 * map-get($form-label-indent, vertical)
         );
         padding-left: $form-label-push;
     }
@@ -52,13 +59,63 @@
  */
 
 /**
+ * Form label, active.
+ */
+
+%form-label {
+    // &:active,
+    &.is-active {
+        color: map-get($form-label-color, active);
+    }
+}
+
+/**
  * Form label, disabled.
  */
 
-.form-label {
+%form-label {
+    // &:disabled,
     &.is-disabled {
         color: map-get($form-label-color, disable);
         cursor: not-allowed;
+    }
+}
+
+/**
+ * Form label, hovered.
+ */
+
+%form-label {
+    &:hover {
+        color: map-get($form-label-color, hover);
+    }
+}
+
+/**
+ * Form label, invalid.
+ */
+
+%form-label {
+    // &:invalid,
+    &.is-invalid {
+        color: map-get($form-label-color, invalid);
+    }
+}
+
+/**
+ * Form label, required.
+ */
+
+%form-label {
+    // &:required,
+    &.is-required {
+        color: map-get($form-label-color, required);
+
+        &::after {
+            content: "*";
+            display: inline-block;
+            margin-left: 0.25em;
+        }
     }
 }
 
