@@ -17,7 +17,7 @@ $form-checkbox-border-size: 2px !default;
 // Set form checkbox color.
 $form-checkbox-color: (
     active:     $blue--dodger,  // pressed aka checked
-    disable:    lighten($blue--nepal, 30%),  // disabled
+    disable:    $blue--geyser,  // disabled
     focus:      $blue--dodger,  // focused
     hover:      $blue--dodger,  // hovered
     initial:    $blue--cerulean,
