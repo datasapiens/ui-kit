@@ -12,18 +12,24 @@
 // Link
 // =============================================================================
 
+%lnk {
+    @include link-underline($underline: true);
+
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &,
+    &[class] {  /* 1 */
+        color: map-get($link-color, initial);
+    }
+}
+
 /**
  * 1. We need to increase specifity.
  */
 
 .lnk {
-    @include link-underline($underline: true);
-
-    cursor: pointer;
-
-    &[class] {  /* 1 */
-        color: map-get($link-color, initial);
-    }
+    @extend %lnk;
 }
 
 /**
@@ -109,9 +115,11 @@
  * Link, active.
  */
 
-.lnk {
+%lnk {
     &:active {
-        color: map-get($link-color, active);
+        @if map-get($link-color, active) != map-get($link-color, initial) {
+            color: map-get($link-color, active);
+        }
     }
 }
 
@@ -119,7 +127,7 @@
  * Link, focus.
  */
 
-.lnk {
+%lnk {
     &:focus {
         color: map-get($link-color, focus);
     }
@@ -129,9 +137,13 @@
  * Link, hover.
  */
 
-.lnk {
+%lnk {
     &:hover {
-        color: map-get($link-color, hover);
+        @if map-get($link-color, hover) != map-get($link-color, focus) {
+            color: map-get($link-color, hover);
+        } @else {
+            @extend %lnk:focus;
+        }
     }
 }
 
@@ -141,7 +153,11 @@
 
 .lnk {
     &:visited {
-        color: map-get($link-color, visit);
+        @if map-get($link-color, visit) != map-get($link-color, initial) {
+            &:visited {
+                color: map-get($link-color, visit);
+            }
+        }
     }
 }
 

@@ -36,15 +36,6 @@ $base-line-height-ratio: $base-line-height / $base-font-size;
 // Set base rhythm unit.
 $base-rhythm-unit: 0.5;
 
-// Set base link color.
-$base-link-color: (
-    active:     lighten($blue--cerulean, 5%),  // pressed
-    // focus:      lighten($blue--cerulean, 5%),  // focused
-    hover:      lighten($blue--cerulean, 5%),  // hovered
-    initial:    $blue--cerulean,
-    visit:      $blue--cerulean,               // visited
-);
-
 // Set base type scale (Major Third - 1.12).
 // @link https://goo.gl/EeDCq2
 $base-type-scale: (

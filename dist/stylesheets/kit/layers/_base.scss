@@ -8,9 +8,11 @@
  * @requires {mixin}       size
  * @requires {placeholder} %form-element
  * @requires {placeholder} %form-label
+ * @requires {placeholder} %link
  * @requires {placeholder} %rhythm
  * @requires form.element
  * @requires form.label
+ * @requires link
  */
 
 // =============================================================================
@@ -190,28 +192,7 @@ hr {
 // =============================================================================
 
 a {
-    @include link-underline;
-
-    color: map-get($base-link-color, initial);
-    cursor: pointer;
-    transition: color 0.2s;
-
-    @if map-get($base-link-color, active) != map-get($base-link-color, initial) {
-        &:active {
-            color: map-get($base-link-color, active);
-        }
-    }
-
-    &:focus,
-    &:hover {
-        color: map-get($base-link-color, hover);
-    }
-
-    @if map-get($base-link-color, visit) != map-get($base-link-color, initial) {
-        &:visited {
-            color: map-get($base-link-color, visit);
-        }
-    }
+    @extend %lnk !optional;
 }
 
 b,
