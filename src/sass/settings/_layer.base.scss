@@ -7,34 +7,34 @@
 // =============================================================================
 
 // Set base background color.
-$base-background: $blue--zircon;
+$base-background: $blue--zircon !default;
 
 // Set base text color.
-$base-color: grayscale($blue--fiord);
+$base-color: grayscale($blue--fiord) !default;
 
 // Set base font family stack.
-$base-font-stack: ("Roboto", Helvetica, sans-serif);
+$base-font-stack: ("Roboto", Helvetica, sans-serif) !default;
 
 // Set base font size.
-$base-font-size: 14px;
+$base-font-size: 14px !default;
 
 // Set browser default font size.
-$base-font-size--browser: 16px;
+$base-font-size--browser: 16px !default;
 
 // Set base font weight.
-$base-font-weight: 300;
+$base-font-weight: 300 !default;
 
 // Set amount lists and blockquotes are indented.
-$base-indent: 30px;
+$base-indent: 30px !default;
 
 // Set base line height.
-$base-line-height: 23px;
+$base-line-height: 23px !default;
 
 // Set base line height ratio.
-$base-line-height-ratio: $base-line-height / $base-font-size;
+$base-line-height-ratio: $base-line-height / $base-font-size !default;
 
 // Set base rhythm unit.
-$base-rhythm-unit: 0.5;
+$base-rhythm-unit: 0.5 !default;
 
 // Set base type scale (Major Third - 1.12).
 // @link https://goo.gl/EeDCq2
@@ -44,10 +44,10 @@ $base-type-scale: (
     1.44,
     1.2,
     1,
-);
+) !default;
 
 // Set base `::selection` background.
-$base-selection-background: gold;
+$base-selection-background: gold !default;
 
 // Browser (OS) specific
 // =============================================================================
@@ -57,15 +57,15 @@ $base-selection-background: gold;
  */
 
 // Set base scrollbar radius.
-// $base-scrollbar-radius: 4px;
+// $base-scrollbar-radius: 4px !default;
 
 // Set base scrollbar size.
-$base-scrollbar-size: 8px;
+$base-scrollbar-size: 8px !default;
 
 $base-scrollbar-thumb: (
     hover:      rgba($black, 0.6),   // hovered
     initial:    rgba($black, 0.4),
-);
+) !default;
 
 // Set base scrollbar track color.
-$base-scrollbar-track: rgba($black, 0.1);
+$base-scrollbar-track: rgba($black, 0.1) !default;
