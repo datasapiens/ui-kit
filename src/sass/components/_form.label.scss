@@ -87,7 +87,9 @@
 
 %form-label {
     &:hover {
-        color: map-get($form-label-color, hover);
+        &:not(.is-disabled):not(.is-invalid):not(.is-required) {
+            color: map-get($form-label-color, hover);
+        }
     }
 }
 
