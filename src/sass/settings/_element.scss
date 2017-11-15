@@ -1,0 +1,33 @@
+/**
+ * Component Element settings.
+ */
+
+// =============================================================================
+// Element settings
+// =============================================================================
+
+// Set element border size.
+$element-border-size: 1px !default;
+
+// Set element font size.
+$element-font-size: (
+    large:  17px,
+    medium: 14px,
+    small:  11px,
+    xsmall: 11px,
+) !default;
+
+// Set element width.
+$element-length: (
+    long:  40em,
+    mean:  20em,
+    short: 4em,
+) !default;
+
+// Set element height.
+$element-size: (
+    large:  46px,
+    medium: 34px,
+    small:  26px,
+    xsmall: 22px,
+) !default;

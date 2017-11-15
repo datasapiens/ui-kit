@@ -6,6 +6,8 @@
  * @requires {placeholder} %ico--caret-down
  * @requires {placeholder} %ico--horizontal
  * @requires {placeholder} %ico--medium
+ * @requires {variable}    $element-size
+ * @requires element
  * @requires form.element
  * @requires ico
  */
@@ -15,15 +17,11 @@
 // =============================================================================
 
 /**
- * TODO: Implement form element sizes and lengths.
  * TODO: Implement control states.
  */
 
 .form-composite {
-    @extend %form-element;
-
-    align-items: center;
-    display: inline-flex;
+    @extend %form-element !optional;
 
     [class*="ico"],
     .form-composite__control {
@@ -36,11 +34,19 @@
  * Modifiers.
  */
 
-// .component--modifier {}
+/**
+ * Form composite, size.
+ */
 
-// .component {
-//     &.--modifier {}
-// }
+.form-composite {
+    @each $modifier in map-keys($element-size) {
+        &.--#{$modifier} {
+            .form-composite__content {
+                @extend %emt--#{$modifier};
+            }
+        }
+    }
+}
 
 /**
  * States.
@@ -71,16 +77,11 @@
  */
 
 .form-composite__content {
-    @extend %form-element;   /* 1 */
-    @extend %form-element--transparent;
+    @extend %form-element.--transparent !optional; /* 1 */
 
-    overflow: hidden;        /* 1 */
-    text-overflow: ellipsis; /* 1 */
-    white-space: nowrap;     /* 1 */
-
-    &[class] {               /* 2 */
-        height: auto;
-    }
+    overflow: hidden;                              /* 1 */
+    text-overflow: ellipsis;                       /* 1 */
+    white-space: nowrap;                           /* 1 */
 
     &:first-child {
         padding-left: 0;

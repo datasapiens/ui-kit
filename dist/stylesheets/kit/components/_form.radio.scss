@@ -135,7 +135,6 @@
 .form-radio__shape {
     @extend %form-element !optional;
 
-    align-items: center;
     background: map-get($form-radio-background, initial);
     border-color: currentColor;
     color: map-get($form-radio-color, initial);

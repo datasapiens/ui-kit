@@ -39,27 +39,19 @@ $button-color: (
     initial:    $blue--fiord,
 );
 
-// Set button font size.
-$button-font-size: (
-    large:  17px,
-    medium: 14px,
-    small:  11px,
-    xsmall: 11px,
-);
-
 // Set button font weight.
-$button-font-weight: (
-    large:  300,
-    medium: 300,
-    small:  400,
-    xsmall: 400,
-);
+// $button-font-weight: (
+//     large:  300,
+//     medium: 300,
+//     small:  400,
+//     xsmall: 400,
+// );
 
 // Set button indent.
 $button-indent: (
-    mean:  1em,
-    narrow: 0.5em,
-    wide:  2em,
+    mean:   1rem,
+    narrow: 0.5rem,
+    wide:   2rem,
 );
 
 // Set button letter spacing.
@@ -74,29 +66,12 @@ $button-shadow-color: (
     initial:    $black,
 );
 
-// Set button height.
-$button-size: (
-    large:  46px,
-    medium: 34px,
-    small:  26px,
-    xsmall: 22px,
-);
-
 // Set button text shadow.
 $button-text-shadow: 0 1px 1px rgba($black, 0.075) !default;
 
 /**
  * Primary button.
  */
-
-// Set primary button background.
-// $button--primary-background: (
-//     active:     `color`,    // pressed
-//     disable:    `color`,    // disabled
-//     focus:      `color`,    // focused
-//     hover:      `color`,    // hovered
-//     initial:    `color`,
-// );
 
 // Set primary button properties.
 $button--primary: (
@@ -120,7 +95,6 @@ $button--primary: (
         hover:      initial,             // hovered
         initial:    $white,
     ),
-    letter-spacing: 0.5px,
     shadow: (
         active:     $blue--cerulean,     // pressed
         disable:    initial,             // disabled
@@ -166,7 +140,6 @@ $button--secondary: (
         hover:      darken($blue--cerulean, 5%),   // hovered
         initial:    darken($blue--cerulean, 5%),
     ),
-    letter-spacing: 0.5px,
     shadow: (
         active:     $blue--wood,                   // pressed
         disable:    initial,                       // disabled
@@ -199,7 +172,6 @@ $button--tertiary: (
         hover:      initial,                // hovered
         initial:    $white,
     ),
-    letter-spacing: 0.5px,
     shadow: (
         active:     initial,                // pressed
         disable:    initial,                // disabled

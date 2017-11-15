@@ -40,32 +40,11 @@ $form-element-color: (
     require:    $red--sunset,               // required
 );
 
-// Set form element font size.
-$form-element-font-size: (
-    large:  17px,
-    medium: 14px,
-    small:  11px,
-);
-
 // Set form element padding.
 $form-element-indent: 10px;
-
-// Set form element width.
-$form-element-length: (
-    long:       40em,
-    mean:       20em,
-    short:      4em,
-);
 
 // Set form element color.
 $form-element-placeholder-color: (
     disable:    $blue--geyser,    // disabled
     initial:    $blue--nepal,
-);
-
-// Set form element height.
-$form-element-size: (
-    large:  46px,
-    medium: 34px,
-    small:  26px,
 );

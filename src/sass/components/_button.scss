@@ -1,5 +1,11 @@
 /**
  * Component Button.
+ *
+ * @requires {function}    px-to-em
+ * @requires {placeholder} %emt--alignment
+ * @requires {placeholder} %emt--medium
+ * @requires {placeholder} %emt--size
+ * @requires element
  */
 
 // =============================================================================
@@ -7,10 +13,12 @@
 // =============================================================================
 
 .btn {
-    // @extend %element;
+    @extend %emt--alignment !optional;
+    @extend %emt--medium !optional;
+    @extend %emt--size !optional;
     @extend .btn.--mean;
-    @extend .btn.--medium;
 
+    align-items: center;
     background-color: map-get($button-background, initial);
     border: {
         color: map-get($button-border-color, initial);
@@ -21,7 +29,7 @@
     box-shadow: 0 1px 3px -2px rgba(map-get($button-shadow-color, initial), 0.75);
     color: map-get($button-color, initial);
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
     letter-spacing: px-to-em($button-letter-spacing);
     outline: 0;
     padding: {
@@ -33,7 +41,8 @@
         shadow: $button-text-shadow;
         transform: uppercase;
     }
-    transition: background-color 0.2s,
+    transition:
+        background-color 0.2s,
         border-color 0.2s,
         box-shadow 0.2s,
         color 0.2s;
@@ -46,7 +55,7 @@
  */
 
 /**
- * Button, length via indentation.
+ * Button, length by indentation.
  */
 
 .btn {
@@ -61,31 +70,6 @@
 }
 
 /**
- * Button, size.
- */
-
-.btn {
-    @each $modifier in map-keys($button-size) {
-        &.--#{$modifier} {
-            $size: px-to-em(
-                map-get($button-size, $modifier),
-                map-get($button-font-size, $modifier)
-            );
-
-            height: $size;
-            font: {
-                size: px-to-rem(
-                    map-get($button-font-size, $modifier)
-                );
-                weight: map-get($button-font-weight, $modifier)
-            }
-            // line-height: calc(#{$size} - 2 * #{$button-border-size});
-            line-height: $size;
-        }
-    }
-}
-
-/**
  * Button, primary.
  */
 
@@ -93,9 +77,7 @@
     &.--primary {
         background-color: map-fetch($button--primary, background, initial);
         border-color: map-fetch($button--primary, border, initial);
-        // box-shadow: 0 1px 3px -2px map-fetch($button--primary, shadow, initial);
         color: map-fetch($button--primary, color, initial);
-        // letter-spacing: px-to-em(map-fetch($button--primary, letter-spacing));
     }
 }
 
@@ -107,9 +89,7 @@
     &.--secondary {
         background-color: map-fetch($button--secondary, background, initial);
         border-color: map-fetch($button--secondary, border, initial);
-        // box-shadow: 0 1px 3px -2px map-fetch($button--secondary, shadow, initial);
         color: map-fetch($button--secondary, color, initial);
-        // letter-spacing: px-to-em(map-fetch($button--secondary, letter-spacing));
     }
 }
 
@@ -121,9 +101,7 @@
     &.--tertiary {
         background-color: map-fetch($button--tertiary, background, initial);
         border-color: map-fetch($button--tertiary, border, initial);
-        // box-shadow: 0 1px 3px -2px map-fetch($button--tertiary, shadow, initial);
         color: map-fetch($button--tertiary, color, initial);
-        // letter-spacing: px-to-em(map-fetch($button--tertiary, letter-spacing));
     }
 }
 
@@ -146,7 +124,6 @@
         &.--primary {
             background-color: map-fetch($button--primary, background, active);
             border-color: map-fetch($button--primary, border, active);
-            // box-shadow: 0 1px 3px -2px map-fetch($button--primary, shadow, active);
             color: map-fetch($button--primary, color, active);
         }
 
@@ -156,7 +133,6 @@
             &.is-hovered {
                 background-color: map-fetch($button--secondary, background, active);
                 border-color: map-fetch($button--secondary, border, active);
-                // box-shadow: 0 1px 3px -2px map-fetch($button--secondary, shadow, active);
                 color: map-fetch($button--secondary, color, active);
             }
         }
@@ -164,7 +140,6 @@
         &.--tertiary {
             background-color: map-fetch($button--tertiary, background, active);
             border-color: map-fetch($button--tertiary, border, active);
-            // box-shadow: 0 1px 3px -2px map-fetch($button--tertiary, shadow, active);
             color: map-fetch($button--tertiary, color, active);
         }
     }
@@ -178,12 +153,9 @@
 .btn {
     &:disabled,
     &.is-disabled {
-        // @extend %element:disabled;
-
-        &.btn.btn {                      /* 1 */
+        &[class][class] {   /* 1 */
             background-color: map-get($button-background, disable);
             border-color: map-get($button-border-color, disable);
-            // box-shadow: 0 1px 3px -2px map-get($button-shadow-color, disable);
             box-shadow: none;
             color: map-get($button-color, disable);
             cursor: not-allowed;
@@ -191,7 +163,6 @@
 
             &.--tertiary {
                 background-color: map-fetch($button--tertiary, background, disable);
-                // box-shadow: 0 1px 3px -2px map-fetch($button--tertiary, shadow, disable);
             }
         }
     }
@@ -204,32 +175,26 @@
 .btn {
     &:focus,
     &.is-focused {
-        // @extend %element:focus;
-
         background-color: map-get($button-background, focus);
         border-color: map-get($button-border-color, focus);
-        // box-shadow: 0 1px 3px -2px map-fetch($button--primary, shadow, focus);
         color: map-get($button-color, focus);
         text-decoration: none;
 
         &.--primary {
             background-color: map-fetch($button--primary, background, focus);
             border-color: map-fetch($button--primary, border, focus);
-            // box-shadow: 0 1px 3px -2px map-fetch($button--primary, shadow, focus);
             color: map-fetch($button--primary, color, focus);
         }
 
         &.--secondary {
             background-color: map-fetch($button--secondary, background, focus);
             border-color: map-fetch($button--secondary, border, focus);
-            // box-shadow: 0 1px 3px -2px map-fetch($button--secondary, shadow, focus);
             color: map-fetch($button--secondary, color, focus);
         }
 
         &.--tertiary {
             background-color: map-fetch($button--tertiary, background, focus);
             border-color: map-fetch($button--tertiary, border, focus);
-            // box-shadow: 0 1px 3px -2px map-fetch($button--tertiary, shadow, focus);
             color: map-fetch($button--tertiary, color, focus);
         }
     }

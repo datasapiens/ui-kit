@@ -6,7 +6,9 @@
  * @requires {placeholder} %form-element
  * @requires {placeholder} %ico
  * @requires {placeholder} %ico--caret-down
+ * @requires {variable}    $element-size
  * @requires container
+ * @requires element
  * @requires form.element
  * @requires ico
  */
@@ -22,8 +24,6 @@
 .form-select {
     @extend %form-element !optional;
 
-    align-items: center;
-    display: inline-flex;
     padding: 0;
     position: relative;
 
@@ -51,11 +51,19 @@
  * Modifiers.
  */
 
-// .component--modifier {}
+/**
+ * Form select, size.
+ */
 
-// .component {
-//     &.--modifier {}
-// }
+.form-select {
+    @each $modifier in map-keys($element-size) {
+        &.--#{$modifier} {
+            %form-select__content {
+                @extend %emt--#{$modifier};
+            }
+        }
+    }
+}
 
 /**
  * States.
@@ -81,6 +89,8 @@
 // =============================================================================
 
 %form-select__content {
+    @extend %form-element.--transparent !optional;
+
     appearance: none;
     border: 0;
     height: auto;

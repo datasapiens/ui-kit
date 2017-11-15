@@ -1,5 +1,9 @@
 /**
  * Component Form/Element.
+ *
+ * @requires {placeholder} %emt
+ * @requires {placeholder} %emt--medium
+ * @requires element
  */
 
 // =============================================================================
@@ -7,23 +11,27 @@
 // =============================================================================
 
 %form-element {
-    $size: map-get($form-element-size, medium);
+    @extend %emt !optional;
+    @extend %emt--medium !optional;
+
+    align-items: center;
+    display: inline-flex;
 
     background-color: map-get($form-element-background, initial);
     border: $form-element-border-size solid map-get($form-element-border-color, initial);
     border-radius: $form-element-border-radius;
     color: map-get($form-element-color, initial);
-    font: {
-        size: px-to-rem(map-get($form-element-font-size, medium));
-    }
-    height: $size;
-    line-height: $size;
     padding: 0 $form-element-indent;
-    transition: background-color 0.2s,
+    transition:
+        background-color 0.2s,
         border-color 0.2s,
         color 0.2s,
         width 0.2s;
     width: 100%;
+}
+
+.form-element {
+    @extend %form-element;
 }
 
 /**
@@ -34,52 +42,15 @@
  * Form element, transparent.
  */
 
-%form-element--transparent {
-    background: transparent;
-    border: 0;
+%form-element {
+    &.\--transparent {
+        background: transparent;
+        border: 0;
+        // border-color: transparent;
 
-    @if $form-element-border-radius {
-        border-radius: 0;
-    }
-}
-
-/**
- * Form element length.
- */
-
-.form-element {
-    @each $modifier, $length in $form-element-length {
-        &.\--#{$modifier} {
-            max-width: $length;
+        @if $form-element-border-radius {
+            border-radius: 0;
         }
-    }
-}
-
-/**
- * Form element large.
- */
-
-.form-element {
-    &.\--large {
-        $size: map-get($form-element-size, large);
-
-        font-size: px-to-rem(map-get($form-element-font-size, large));
-        height: $size;
-        line-height: $size;
-    }
-}
-
-/**
- * Form element small.
- */
-
-.form-element {
-    &.\--small {
-        $size: map-get($form-element-size, small);
-
-        font-size: px-to-rem(map-get($form-element-font-size, small));
-        height: $size;
-        line-height: $size;
     }
 }
 
@@ -158,21 +129,6 @@
     &[readonly],
     &.is-readonly {
         @extend %form-element:disabled;
-    }
-}
-
-/**
- * Form element, required.
- */
-
-.form-element {
-    // &[required],
-    &.is-required {
-        &::after {
-            content: "*";
-            display: inline-block;
-            margin-left: 0.25em;
-        }
     }
 }
 

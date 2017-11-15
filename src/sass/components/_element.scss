@@ -1,0 +1,112 @@
+/**
+ * Component Element.
+ *
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       ie-gte-10
+ */
+
+// =============================================================================
+// Element
+// =============================================================================
+
+%emt {
+    @extend %emt--alignment;
+    @extend %emt--length;
+    @extend %emt--size;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Element alignment.
+ */
+
+%emt--alignment {
+    vertical-align: baseline;
+
+    @include ie-gte-10 {
+        vertical-align: middle;
+    }
+}
+
+/**
+ * Element length.
+ */
+
+%emt--length {
+    @each $modifier in map-keys($element-length) {
+        &.--#{$modifier} {
+            @extend %emt--#{$modifier};
+        }
+    }
+    @each $modifier in map-keys($element-length) {
+        @at-root %emt--#{$modifier} {
+            max-width: map-get($element-length, $modifier);
+        }
+    }
+}
+
+/**
+ * Element, size.
+ */
+
+%emt--size {
+    @each $modifier in map-keys($element-size) {
+        &.--#{$modifier} {
+            @extend %emt--#{$modifier};
+        }
+    }
+    @each $modifier in map-keys($element-size) {
+        @at-root %emt--#{$modifier} {
+            $size: map-get($element-size, $modifier);
+
+            // relative $size below doesn't compute
+            // $size: px-to-em(
+            //     map-get($element-size, $modifier),
+            //     map-get($element-font-size, $modifier)
+            // );
+
+            font: {
+                size: px-to-rem(
+                    map-get($element-font-size, $modifier)
+                );
+                // weight: map-get($element-font-weight, $modifier);
+            }
+            height: $size;
+            line-height: $size - 2 * $element-border-size;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

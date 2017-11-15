@@ -135,7 +135,6 @@
     @extend %form-element !optional;
     @include size(100%);
 
-    align-items: center;
     background: map-get($form-checkbox-background, initial);
     border-color: currentColor;
     color: map-get($form-checkbox-color, initial);
