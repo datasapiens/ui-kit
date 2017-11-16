@@ -15,12 +15,11 @@
     @extend %emt--medium !optional;
 
     align-items: center;
-    display: inline-flex;
-
     background-color: map-get($form-element-background, initial);
     border: $form-element-border-size solid map-get($form-element-border-color, initial);
     border-radius: $form-element-border-radius;
     color: map-get($form-element-color, initial);
+    display: inline-flex;
     padding: 0 $form-element-indent;
     transition:
         background-color 0.2s,
