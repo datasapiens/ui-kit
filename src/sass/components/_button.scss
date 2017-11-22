@@ -12,11 +12,12 @@
 // Button
 // =============================================================================
 
-.btn {
+%btn {
+    @extend %btn--length;
+    @extend %btn--mean;
     @extend %emt--alignment !optional;
     @extend %emt--medium !optional;
     @extend %emt--size !optional;
-    @extend .btn.--mean;
 
     align-items: center;
     background-color: map-get($button-background, initial);
@@ -26,7 +27,7 @@
         width: $button-border-size;
         style: solid;
     }
-    box-shadow: 0 1px 3px -2px rgba(map-get($button-shadow-color, initial), 0.75);
+    box-shadow: $button-box-shadow;
     color: map-get($button-color, initial);
     cursor: pointer;
     display: inline-flex;
@@ -36,11 +37,7 @@
         bottom: 0;
         top: 0;
     }
-    text: {
-        decoration: none;
-        shadow: $button-text-shadow;
-        transform: uppercase;
-    }
+    text-shadow: $button-text-shadow;
     transition:
         background-color 0.2s,
         border-color 0.2s,
@@ -48,6 +45,18 @@
         color 0.2s;
     user-select: none;
     white-space: nowrap;
+
+    &[class] {
+        text-decoration: none;
+    }
+}
+
+
+.btn {
+    @extend %btn;
+    @extend %btn__event;
+
+    text-transform: uppercase;
 }
 
 /**
@@ -58,9 +67,16 @@
  * Button, length by indentation.
  */
 
-.btn {
-    @each $modifier, $indent in $button-indent {
+%btn--length {
+    @each $modifier in map-keys($button-indent) {
         &.--#{$modifier} {
+            @extend %btn--#{$modifier};
+        }
+    }
+    @each $modifier in map-keys($button-indent) {
+        $indent: map-get($button-indent, $modifier);
+
+        @at-root %btn--#{$modifier} {
             padding: {
                 left: $indent;
                 right: $indent;
@@ -73,11 +89,11 @@
  * Button, primary.
  */
 
-.btn {
+%btn {
     &.--primary {
-        background-color: map-fetch($button--primary, background, initial);
-        border-color: map-fetch($button--primary, border, initial);
-        color: map-fetch($button--primary, color, initial);
+        background-color: map-get($button--primary-background, initial);
+        border-color: map-get($button--primary-border-color, initial);
+        color: map-get($button--primary-color, initial);
     }
 }
 
@@ -85,11 +101,11 @@
  * Button, secondary.
  */
 
-.btn {
+%btn {
     &.--secondary {
-        background-color: map-fetch($button--secondary, background, initial);
-        border-color: map-fetch($button--secondary, border, initial);
-        color: map-fetch($button--secondary, color, initial);
+        background-color: map-get($button--secondary-background, initial);
+        border-color: map-get($button--secondary-border-color, initial);
+        color: map-get($button--secondary-color, initial);
     }
 }
 
@@ -97,11 +113,27 @@
  * Button, tertiary.
  */
 
-.btn {
+%btn {
     &.--tertiary {
-        background-color: map-fetch($button--tertiary, background, initial);
-        border-color: map-fetch($button--tertiary, border, initial);
-        color: map-fetch($button--tertiary, color, initial);
+        background-color: map-get($button--tertiary-background, initial);
+        border-color: map-get($button--tertiary-border-color, initial);
+        color: map-get($button--tertiary-color, initial);
+    }
+}
+
+/**
+ * Button, themes.
+ */
+
+%btn {
+    @each $modifier, $theme in $button-theme {
+        $color: map-get($theme, 50);
+
+        &.--#{$modifier} {
+            background-color: $color;
+            border-color: darken($color, 3%);
+            color: $white;
+        }
     }
 }
 
@@ -113,34 +145,40 @@
  * Button, active (aka pressed).
  */
 
-.btn {
+%btn {
     &:active,
     &.is-active {
-        background-color: map-get($button-background, active);
-        border-color: map-get($button-border-color, active);
-        box-shadow: none;
-        color: map-get($button-color, active);
+        &:not(:disabled):not(.is-disabled) {
+            background-color: map-get($button-background, active);
+            border-color: map-get($button-border-color, active);
+            box-shadow: none;
+            color: map-get($button-color, active);
 
-        &.--primary {
-            background-color: map-fetch($button--primary, background, active);
-            border-color: map-fetch($button--primary, border, active);
-            color: map-fetch($button--primary, color, active);
-        }
-
-        &.--secondary {
-            &,
-            &:hover,
-            &.is-hovered {
-                background-color: map-fetch($button--secondary, background, active);
-                border-color: map-fetch($button--secondary, border, active);
-                color: map-fetch($button--secondary, color, active);
+            &.--primary {
+                background-color: map-get($button--primary-background, active);
+                border-color: map-get($button--primary-border-color, active);
+                color: map-get($button--primary-color, active);
             }
-        }
+            &.--secondary {
+                background-color: map-get($button--secondary-background, active);
+                border-color: map-get($button--secondary-border-color, active);
+                color: map-get($button--secondary-color, active);
+            }
+            &.--tertiary {
+                background-color: map-get($button--tertiary-background, active);
+                border-color: map-get($button--tertiary-border-color, active);
+                color: map-get($button--tertiary-color, active);
+            }
 
-        &.--tertiary {
-            background-color: map-fetch($button--tertiary, background, active);
-            border-color: map-fetch($button--tertiary, border, active);
-            color: map-fetch($button--tertiary, color, active);
+            @each $modifier, $theme in $button-theme {
+                $color: lighten(map-get($theme, 20), 2%);
+
+                &.--#{$modifier} {
+                    background-color: $color;
+                    border-color: darken($color, 3%);
+                    color: $white;
+                }
+            }
         }
     }
 }
@@ -150,21 +188,50 @@
  * 1. We need to increase specifity.
  */
 
-.btn {
+%btn {
     &:disabled,
     &.is-disabled {
-        &[class][class] {   /* 1 */
-            background-color: map-get($button-background, disable);
-            border-color: map-get($button-border-color, disable);
-            box-shadow: none;
-            color: map-get($button-color, disable);
-            cursor: not-allowed;
-            text-shadow: none;
+        // background-color: map-get($button-background, disable);
+        // border-color: map-get($button-border-color, disable);
+        box-shadow: none;
+        // color: map-get($button-color, disable);
+        cursor: not-allowed;
+        opacity: 0.5;
+        text-shadow: none;
 
-            &.--tertiary {
-                background-color: map-fetch($button--tertiary, background, disable);
-            }
+        &::after {
+            content: none;
         }
+
+        @supports (filter: grayscale(100%)) {
+            filter: grayscale(80%);
+        }
+
+        // &.--primary {
+        //     background-color: map-get($button--primary-background, disable);
+        //     border-color: map-get($button--primary-border-color, disable);
+        //     color: map-get($button--primary-color, disable);
+        // }
+        // &.--secondary {
+        //     background-color: map-get($button--secondary-background, disable);
+        //     border-color: map-get($button--secondary-border-color, disable);
+        //     color: map-get($button--secondary-color, disable);
+        // }
+        // &.--tertiary {
+        //     background-color: map-get($button--tertiary-background, disable);
+        //     border-color: map-get($button--tertiary-border-color, disable);
+        //     color: map-get($button--tertiary-color, disable);
+        // }
+
+        // @each $modifier, $theme in $button-theme {
+        //     $color: map-get($theme, 50);
+
+        //     &.--#{$modifier} {
+        //         background-color: $color;
+        //         border-color: darken($color, 3%);
+        //         color: $white;
+        //     }
+        // }
     }
 }
 
@@ -172,30 +239,40 @@
  * Button, focused.
  */
 
-.btn {
+%btn {
     &:focus,
     &.is-focused {
-        background-color: map-get($button-background, focus);
-        border-color: map-get($button-border-color, focus);
-        color: map-get($button-color, focus);
-        text-decoration: none;
+        &:not(:disabled):not(.is-disabled) {
+            background-color: map-get($button-background, focus);
+            border-color: map-get($button-border-color, focus);
+            color: map-get($button-color, focus);
+            text-decoration: none;
 
-        &.--primary {
-            background-color: map-fetch($button--primary, background, focus);
-            border-color: map-fetch($button--primary, border, focus);
-            color: map-fetch($button--primary, color, focus);
-        }
+            &.--primary {
+                background-color: map-get($button--primary-background, focus);
+                border-color: map-get($button--primary-border-color, focus);
+                color: map-get($button--primary-color, focus);
+            }
+            &.--secondary {
+                background-color: map-get($button--secondary-background, focus);
+                border-color: map-get($button--secondary-border-color, focus);
+                color: map-get($button--secondary-color, focus);
+            }
+            &.--tertiary {
+                background-color: map-get($button--tertiary-background, focus);
+                border-color: map-get($button--tertiary-border-color, focus);
+                color: map-get($button--tertiary-color, focus);
+            }
 
-        &.--secondary {
-            background-color: map-fetch($button--secondary, background, focus);
-            border-color: map-fetch($button--secondary, border, focus);
-            color: map-fetch($button--secondary, color, focus);
-        }
+            @each $modifier, $theme in $button-theme {
+                $color: lighten(map-get($theme, 20), 8%);
 
-        &.--tertiary {
-            background-color: map-fetch($button--tertiary, background, focus);
-            border-color: map-fetch($button--tertiary, border, focus);
-            color: map-fetch($button--tertiary, color, focus);
+                &.--#{$modifier} {
+                    background-color: $color;
+                    border-color: darken($color, 3%);
+                    color: $white;
+                }
+            }
         }
     }
 }
@@ -204,10 +281,10 @@
  * Button, hovered.
  */
 
-.btn {
+%btn {
     &:hover,
     &.is-hovered {
-        @extend .btn:focus;
+        @extend %btn:focus;
     }
 }
 
@@ -221,7 +298,43 @@
 // Subcomponents
 // =============================================================================
 
-// SubcomponentName
+// Button event
 // =============================================================================
 
-// .component__subcomponent {}
+%btn__event {
+    position: relative;
+
+    &::after {
+        @include round;
+        @include size(2em);
+
+        background-color: rgba($white, 0.75);
+        content: "";
+        display: inline-block;
+        left: 50%;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(6);
+        transition:
+            opacity 0.6s,
+            transform 1.2s map-get($animation-easing, out-cubic);
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Button event, active.
+ */
+
+%btn__event:active {
+    &::after {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+        transition-duration: 0s;
+    }
+}

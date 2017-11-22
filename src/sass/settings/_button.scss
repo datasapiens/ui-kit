@@ -8,12 +8,12 @@
 
 // Set button background.
 $button-background: (
-    active:     $white,           // pressed
-    disable:    $blue--heather,   // disabled
-    focus:      $white,           // focused
-    hover:      $white,           // hovered
+    active:     lighten($blue--catskill, 3%),   // pressed
+    disable:    $blue--heather,                 // disabled
+    focus:      lighten($blue--catskill, 5%),   // focused
+    hover:      lighten($blue--catskill, 5%),   // hovered
     initial:    $blue--catskill,
-);
+) !default;
 
 // Set button border color.
 $button-border-color: (
@@ -22,13 +22,16 @@ $button-border-color: (
     focus:      $blue--heather, // focused
     hover:      $blue--heather, // hovered
     initial:    $blue--heather,
-);
+) !default;
 
 // Set button border radius.
-$button-border-radius: 2px;
+$button-border-radius: 2px !default;
 
 // Set button border size.
-$button-border-size: 1px;
+$button-border-size: 1px !default;
+
+// Set button box shadow.
+$button-box-shadow: 0 1px 3px -2px rgba($black, 0.75) !default;
 
 // Set button color.
 $button-color: (
@@ -37,146 +40,116 @@ $button-color: (
     focus:      $blue--wood,   // focused
     hover:      $blue--wood,   // hovered
     initial:    $blue--fiord,
-);
-
-// Set button font weight.
-// $button-font-weight: (
-//     large:  300,
-//     medium: 300,
-//     small:  400,
-//     xsmall: 400,
-// );
+) !default;
 
 // Set button indent.
 $button-indent: (
     mean:   1rem,
     narrow: 0.5rem,
     wide:   2rem,
-);
+) !default;
 
 // Set button letter spacing.
-$button-letter-spacing: 0.25px;
-
-// Set button shadow color.
-$button-shadow-color: (
-    active:     initial, // pressed
-    disable:    $black,  // disabled
-    focus:      initial, // focused
-    hover:      initial, // hovered
-    initial:    $black,
-);
+$button-letter-spacing: 0.25px !default;
 
 // Set button text shadow.
 $button-text-shadow: 0 1px 1px rgba($black, 0.075) !default;
+
+// Set button themes map.
+$button-theme: map-remove(
+    map-get($color-set, accent),
+    neutral
+) !default;
 
 /**
  * Primary button.
  */
 
-// Set primary button properties.
-$button--primary: (
-    background: (
-        active:     $blue--deepcerulean, // pressed
-        focus:      $blue--malibu,       // focused
-        hover:      $blue--malibu,       // hovered
-        initial:    $blue--cerulean,
-    ),
-    border: (
-        active:     $blue--deepcerulean, // pressed
-        disable:    initial,             // disabled
-        focus:      $blue--malibu,       // focused
-        hover:      $blue--malibu,       // hovered
-        initial:    $blue--cerulean,
-    ),
-    color: (
-        active:     $white,              // pressed
-        disable:    initial,             // disabled
-        focus:      $white,              // focused
-        hover:      initial,             // hovered
-        initial:    $white,
-    ),
-    shadow: (
-        active:     $blue--cerulean,     // pressed
-        disable:    initial,             // disabled
-        focus:      $blue--cerulean,     // focused
-        hover:      $blue--cerulean,     // hovered
-        initial:    $blue--cerulean,
-    ),
-);
+// Set primary button background.
+$button--primary-background: (
+    active:     lighten($blue--deepcerulean, 4%),   // pressed
+    disable:    initial,                            // disabled
+    focus:      lighten($blue--deepcerulean, 6%),   // focused
+    hover:      lighten($blue--deepcerulean, 6%),   // hovered
+    initial:    $blue--cerulean,
+) !default;
+
+// Set primary button border color.
+$button--primary-border-color: (
+    active:     lighten($blue--deepcerulean, 1%),   // pressed
+    disable:    initial,                            // disabled
+    focus:      lighten($blue--deepcerulean, 3%),   // focused
+    hover:      lighten($blue--deepcerulean, 3%),   // hovered
+    initial:    darken($blue--cerulean, 3%),
+) !default;
+
+// Set primary button color.
+$button--primary-color: (
+    active:     $white,             // pressed
+    disable:    initial,            // disabled
+    focus:      $white,             // focused
+    hover:      $white,             // hovered
+    initial:    $white,
+) !default;
 
 /**
  * Secondary button.
  */
 
 // Set secondary button background.
-// $button--secondary-background: (
-//     active:     `color`,    // pressed
-//     disable:    `color`,    // disabled
-//     focus:      `color`,    // focused
-//     hover:      `color`,    // hovered
-//     initial:    `color`,
-// );
+$button--secondary-background: (
+    active:     lighten($blue--cerulean, 4%),   // pressed
+    disable:    initial,                        // disabled
+    focus:      lighten($blue--cerulean, 6%),   // focused
+    hover:      lighten($blue--cerulean, 6%),   // hovered
+    initial:    $blue--malibu,
+) !default;
 
-// Set secondary button properties.
-$button--secondary: (
-    background: (
-        active:     lighten($blue--cerulean, 30%), // pressed
-        disable:    initial,                       // disabled
-        focus:      lighten($blue--cerulean, 50%), // focused
-        hover:      lighten($blue--cerulean, 50%), // hovered
-        initial:    lighten($blue--cerulean, 40%),
-    ),
-    border: (
-        active:     lighten($blue--cerulean, 25%), // pressed
-        disable:    initial,                       // disabled
-        focus:      lighten($blue--cerulean, 45%), // focused
-        hover:      lighten($blue--cerulean, 45%), // hovered
-        initial:    lighten($blue--cerulean, 35%),
-    ),
-    color: (
-        active:     darken($blue--cerulean, 5%),   // pressed
-        disable:    initial,                       // disabled
-        focus:      darken($blue--cerulean, 5%),   // focused
-        hover:      darken($blue--cerulean, 5%),   // hovered
-        initial:    darken($blue--cerulean, 5%),
-    ),
-    shadow: (
-        active:     $blue--wood,                   // pressed
-        disable:    initial,                       // disabled
-        focus:      $blue--wood,                   // focused
-        hover:      $blue--wood,                   // hovered
-        initial:    $blue--wood,
-    ),
-);
+// Set secondary button border color.
+$button--secondary-border-color: (
+    active:     lighten($blue--cerulean, 1%),   // pressed
+    disable:    initial,                        // disabled
+    focus:      lighten($blue--cerulean, 3%),   // focused
+    hover:      lighten($blue--cerulean, 3%),   // hovered
+    initial:    darken($blue--malibu, 3%),
+) !default;
 
-// Set tertiary button properties.
-$button--tertiary: (
-    background: (
-        active:     rgba($white, 0.15),     // pressed
-        disable:    initial,                // disabled
-        focus:      rgba($white, 0.25),     // focused
-        hover:      initial,                // hovered
-        initial:    initial,
-    ),
-    border: (
-        active:     initial,                // pressed
-        disable:    initial,                // disabled
-        focus:      initial,                // focused
-        hover:      initial,                // hovered
-        initial:    initial,
-    ),
-    color: (
-        active:     $white,                 // pressed
-        disable:    initial,                // disabled
-        focus:      $white,                 // focused
-        hover:      initial,                // hovered
-        initial:    $white,
-    ),
-    shadow: (
-        active:     initial,                // pressed
-        disable:    initial,                // disabled
-        focus:      initial,                // focused
-        hover:      initial,                // hovered
-        initial:    initial,
-    ),
-);
+// Set secondary button color.
+$button--secondary-color: (
+    active:     $white,             // pressed
+    disable:    initial,            // disabled
+    focus:      $white,             // focused
+    hover:      $white,             // hovered
+    initial:    $white,
+) !default;
+
+/**
+ * Tertiary button.
+ */
+
+// Set tertiary button background.
+$button--tertiary-background: (
+    active:     rgba($black, 0.15),     // pressed
+    disable:    initial,                // disabled
+    focus:      rgba($white, 0.15),     // focused
+    hover:      rgba($white, 0.15),     // hovered
+    initial:    transparent,
+) !default;
+
+// Set tertiary button border color.
+$button--tertiary-border-color: (
+    active:     $white,                 // pressed
+    disable:    $white,                 // disabled
+    focus:      $white,                 // focused
+    hover:      $white,                 // hovered
+    initial:    $white,
+) !default;
+
+// Set tertiary button color.
+$button--tertiary-color: (
+    active:     $white,                 // pressed
+    disable:    $white,                 // disabled
+    focus:      $white,                 // focused
+    hover:      $white,                 // hovered
+    initial:    $white,
+) !default;
