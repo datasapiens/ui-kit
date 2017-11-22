@@ -27,6 +27,18 @@
         color 0.2s,
         width 0.2s;
     width: 100%;
+
+    /**
+     * Chrome `vertical-align` issue workaround.
+     */
+
+    @supports (-webkit-appearance: none) {
+        vertical-align: bottom ;
+    }
+
+    @include ie-gte-10 {
+        display: inline-block;
+    }
 }
 
 .form-element {
