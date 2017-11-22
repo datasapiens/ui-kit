@@ -1,0 +1,109 @@
+/**
+ * Component Button/Switch settings.
+ */
+
+// =============================================================================
+// Button switch settings
+// =============================================================================
+
+// Set switch button background.
+$button-switch-background: (
+    active:     darken($blue--catskill, 3%),    // pressed
+    disable:    $blue--heather,                 // disabled
+    focus:      darken($blue--catskill, 3%),    // focused
+    hover:      darken($blue--catskill, 3%),    // hovered
+    initial:    lighten($blue--catskill, 5%),
+) !default;
+
+// Set switch button border color.
+$button-switch-border-color: (
+    active:     $blue--heather, // pressed
+    disable:    $blue--nepal,   // disabled
+    focus:      $blue--heather, // focused
+    hover:      $blue--heather, // hovered
+    initial:    $blue--heather,
+) !default;
+
+// Set switch button border radius (according to `$button-border-radius`).
+// $button-switch-border-radius: $button-border-radius !default;
+
+// Set switch button border size (according to `$button-border-size`).
+// $button-switch-border-size: $button-border-size !default;
+
+// Set switch button box shadow (according to `$button-box-shadow`).
+$button-switch-box-shadow: $button-box-shadow !default;
+
+// Set switch button color.
+$button-switch-color: (
+    active:     $blue--wood,   // pressed
+    disable:    $blue--regent, // disabled
+    focus:      $blue--wood,   // focused
+    hover:      $blue--wood,   // hovered
+    initial:    $blue--fiord,
+) !default;
+
+// Set switch button letter spacing.
+// $button-switch-letter-spacing: $button-letter-spacing !default;
+
+// Set switch button text shadow.
+// $button-switch-text-shadow: $button-text-shadow !default;
+
+// Set switch button themes map.
+$button-switch-theme: $button-theme !default;
+
+/**
+ * Primary switch button.
+ */
+
+// Set primary switch button background.
+$button-switch--primary-background: (
+    active:     lighten($blue--deepcerulean, 6%),   // pressed
+    disable:    initial,                            // disabled
+    focus:      lighten($blue--deepcerulean, 6%),   // focused
+    hover:      lighten($blue--deepcerulean, 6%),   // hovered
+    initial:    lighten($blue--deepcerulean, 60%),
+) !default;
+
+// Set primary switch button border color (according to `$button--primary-border-color`).
+$button-switch--primary-border-color: $button--primary-border-color !default;
+
+// Set primary switch button color (according to `$button--primary-color`).
+$button-switch--primary-color: $button--primary-color !default;
+
+/**
+ * Secondary switch button.
+ */
+
+// Set secondary switch button background.
+$button-switch--secondary-background: (
+    active:     lighten($blue--cerulean, 6%),   // pressed
+    disable:    initial,                        // disabled
+    focus:      lighten($blue--cerulean, 6%),   // focused
+    hover:      lighten($blue--cerulean, 6%),   // hovered
+    initial:    lighten($blue--cerulean, 54%),
+) !default;
+
+// Set secondary switch button border color (according to `$button--secondary-border-color`).
+$button-switch--secondary-border-color: $button--secondary-border-color !default;
+
+// Set secondary switch button color (according to `$button--secondary-color`).
+$button-switch--secondary-color: $button--secondary-color !default;
+
+/**
+ * Tertiary switch button.
+ */
+
+// Set tertiary switch button background.
+$button-switch--tertiary-background: (
+    active:     rgba($white, 0.15),     // pressed
+    disable:    initial,                // disabled
+    focus:      rgba($white, 0.15),     // focused
+    hover:      rgba($white, 0.15),     // hovered
+    initial:    transparent,
+) !default;
+
+// Set tertiary switch button border color (according to `$button--tertiary-border-color`).
+$button-switch--tertiary-border-color: $button--tertiary-border-color !default;
+
+// Set tertiary switch button color (according to `$button--tertiary-color`).
+$button-switch--tertiary-color: $button--tertiary-color !default;
