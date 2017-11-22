@@ -265,11 +265,11 @@ select,
 textarea {
     @extend %form-element !optional;
 
+    color: inherit;
     font: {
         family: inherit;
         weight: inherit;
     }
-    color: inherit;
     outline: none;
 }
 
@@ -367,7 +367,6 @@ button,
         family: inherit;
         weight: inherit;
     }
-    line-height: inherit;
 }
 
 [type="reset"],
