@@ -40,8 +40,7 @@
         &.--#{$modifier} {
             @extend %emt--#{$modifier};
         }
-    }
-    @each $modifier in map-keys($element-length) {
+
         @at-root %emt--#{$modifier} {
             max-width: map-get($element-length, $modifier);
         }
@@ -57,8 +56,6 @@
         &.--#{$modifier} {
             @extend %emt--#{$modifier};
         }
-    }
-    @each $modifier in map-keys($element-size) {
         @at-root %emt--#{$modifier} {
             $size: map-get($element-size, $modifier);
 
@@ -75,6 +72,7 @@
                 // weight: map-get($element-font-weight, $modifier);
             }
             height: $size;
+            // line-height: $size;
             line-height: $size - 2 * $element-border-size;
         }
     }
