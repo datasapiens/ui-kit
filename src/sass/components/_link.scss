@@ -15,13 +15,9 @@
 %lnk {
     @include link-underline($underline: true);
 
+    color: map-get($link-color, initial);
     cursor: pointer;
     transition: color 0.2s;
-
-    &,
-    &[class] {  /* 1 */
-        color: map-get($link-color, initial);
-    }
 }
 
 /**
@@ -29,7 +25,10 @@
  */
 
 .lnk {
-    @extend %lnk;
+    &,
+    &[class] {  /* 1 */
+        @extend %lnk;
+    }
 }
 
 /**
@@ -151,12 +150,10 @@
  * Link, visited.
  */
 
-.lnk {
+%lnk {
     &:visited {
         @if map-get($link-color, visit) != map-get($link-color, initial) {
-            &:visited {
-                color: map-get($link-color, visit);
-            }
+            color: map-get($link-color, visit);
         }
     }
 }
