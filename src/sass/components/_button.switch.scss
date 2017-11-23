@@ -31,6 +31,20 @@
  */
 
 /**
+ * Button switch, truncate items.
+ */
+
+.btn-switch {
+    &.--truncate {
+        .btn-switch__item {
+            @include text-truncate;
+
+            flex: 1;
+        }
+    }
+}
+
+/**
  * Button switch, primary.
  */
 
@@ -153,7 +167,6 @@
     @extend %btn !optional;
     @extend %btn--narrow !optional;
     @extend %btn__event !optional;
-    @include text-truncate;
 
     background-color: transparent;
     border: {
@@ -164,9 +177,8 @@
     box-shadow: none;
     // color: inherit;
     display: inline-block;
-    flex: 1;
     margin: 0;
-    text-align: center;
+    text-transform: uppercase;
     transition:
         background-color 0.2s,
         color 0.2s;
