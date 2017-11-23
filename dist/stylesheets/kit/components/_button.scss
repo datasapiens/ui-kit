@@ -31,13 +31,17 @@
     color: map-get($button-color, initial);
     cursor: pointer;
     display: inline-flex;
+    justify-content: center;
     letter-spacing: px-to-em($button-letter-spacing);
     outline: 0;
     padding: {
         bottom: 0;
         top: 0;
     }
-    text-shadow: $button-text-shadow;
+    text: {
+        align: center;
+        shadow: $button-text-shadow;
+    }
     transition:
         background-color 0.2s,
         border-color 0.2s,
