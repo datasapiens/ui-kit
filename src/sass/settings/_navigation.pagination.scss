@@ -10,21 +10,19 @@
  * Pagination item.
  */
 
-// Set pagination item background.
 $navigation-pagination-item-background: (
-    active:     $blue--congress $blue--cerulean $blue--anakiwa, // pressed
-    disable:    $blue--geyser,                                  // disabled
-    focus:      $white,                                         // focused
-    hover:      $white,                                         // hovered
-    initial:    $blue--catskill $white $white,
+    active:     lighten($blue--cerulean, 4%),   // pressed
+    disable:    $blue--geyser,                  // disabled
+    focus:      $white,                         // focused
+    hover:      $white,                         // hovered
+    initial:    darken($blue--zircon, 1%),
 ) !default;
 
-// Set pagination item border color.
-$navigation-pagination-item-border: (
-    active:     $blue--cerulean, // pressed
-    disable:    $blue--heather,  // disabled
-    focus:      $blue--cerulean, // focused
-    hover:      $blue--cerulean, // hovered
+$navigation-pagination-item-border-color: (
+    active:     lighten($blue--cerulean, 1%),   // pressed
+    disable:    darken($blue--geyser, 3%),      // disabled
+    focus:      lighten($blue--cerulean, 3%),   // focused
+    hover:      lighten($blue--cerulean, 3%),   // hovered
     initial:    $blue--heather,
 ) !default;
 
@@ -37,7 +35,6 @@ $navigation-pagination-item-border-size: 1px !default;
 // Set pagination item box shadow.
 $navigation-pagination-item-box-shadow: 0 1px 3px -1px rgba($black, 0.25) !default;
 
-// Set pagination item color.
 $navigation-pagination-item-color: (
     active:     $white,             // pressed
     disable:    $blue--regent,      // disabled

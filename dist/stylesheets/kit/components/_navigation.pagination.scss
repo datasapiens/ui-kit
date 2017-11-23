@@ -2,9 +2,11 @@
  * Component Navigation/Pagination.
  *
  * @requires {function}    px-to-rem
+ * @requires {placeholder} %btn__event
  * @requires {placeholder} %ico
  * @requires {placeholder} %ico--caret-left
  * @requires {placeholder} %ico--caret-right
+ * @requires button
  * @requires ico
  */
 
@@ -148,22 +150,23 @@
     @extend %nav-pagination__item;
 
     background: {
-        $c: map-get($navigation-pagination-item-background, initial);
+        // $c: map-get($navigation-pagination-item-background, initial);
 
-        @if type-of($c) == list {
-            color: nth($c, 2);
-            image: linear-gradient(
-                160deg,
-                rgba(nth($c, 3), 0.25) 0%,
-                rgba(nth($c, 2), 0.00) 25%,
-                rgba(nth($c, 1), 0.25) 75%
-            );
-        } @else {
-            color: $c;
-        }
+        // @if type-of($c) == list {
+        //     color: nth($c, 2);
+        //     image: linear-gradient(
+        //         160deg,
+        //         rgba(nth($c, 3), 0.25) 0%,
+        //         rgba(nth($c, 2), 0.00) 25%,
+        //         rgba(nth($c, 1), 0.25) 75%
+        //     );
+        // } @else {
+        //     color: $c;
+        // }
+        color: map-get($navigation-pagination-item-background, initial)
     }
     border: {
-        color: map-get($navigation-pagination-item-border, initial);
+        color: map-get($navigation-pagination-item-border-color, initial);
         radius: $navigation-pagination-item-border-radius;
     }
     box-shadow: $navigation-pagination-item-box-shadow;
@@ -174,6 +177,7 @@
     transition:
         background-color 0.2s,
         border-color 0.2s,
+        box-shadow 0.2s,
         color 0.2s;
 
     &:first-of-type {
@@ -181,6 +185,10 @@
     }
     &:last-of-type {
         margin-right: 0;
+    }
+
+    &:not(.is-disabled) {
+        @extend %btn__event !optional;
     }
 }
 
@@ -203,21 +211,23 @@
     &.is-active {
         &:not(.is-disabled) {
             background: {
-                $c: map-get($navigation-pagination-item-background, active);
+                // $c: map-get($navigation-pagination-item-background, active);
 
-                @if type-of($c) == list {
-                    color: nth($c, 2);
-                    image: linear-gradient(
-                        160deg,
-                        rgba(nth($c, 3), 0.25) 0%,
-                        rgba(nth($c, 2), 0.25) 50%,
-                        rgba(nth($c, 1), 0.25) 100%
-                    );
-                } @else {
-                    color: $c;
-                }
+                // @if type-of($c) == list {
+                //     color: nth($c, 2);
+                //     image: linear-gradient(
+                //         160deg,
+                //         rgba(nth($c, 3), 0.25) 0%,
+                //         rgba(nth($c, 2), 0.25) 50%,
+                //         rgba(nth($c, 1), 0.25) 100%
+                //     );
+                // } @else {
+                //     color: $c;
+                // }
+                color: map-get($navigation-pagination-item-background, active)
             }
-            border-color: map-get($navigation-pagination-item-border, active);
+            border-color: map-get($navigation-pagination-item-border-color, active);
+            box-shadow: none;
             color: map-get($navigation-pagination-item-color, active);
         }
     }
@@ -230,21 +240,22 @@
 .nav-pagination__item {
     &.is-disabled {
         background: {
-            $c: map-get($navigation-pagination-item-background, disable);
+            // $c: map-get($navigation-pagination-item-background, disable);
 
-            @if type-of($c) == list {
-                color: nth($c, 2);
-                image: linear-gradient(
-                    160deg,
-                    rgba(nth($c, 3), 0.25) 0%,
-                    rgba(nth($c, 2), 0.25) 50%,
-                    rgba(nth($c, 1), 0.25) 100%
-                );
-            } @else {
-                color: $c;
-            }
+            // @if type-of($c) == list {
+            //     color: nth($c, 2);
+            //     image: linear-gradient(
+            //         160deg,
+            //         rgba(nth($c, 3), 0.25) 0%,
+            //         rgba(nth($c, 2), 0.25) 50%,
+            //         rgba(nth($c, 1), 0.25) 100%
+            //     );
+            // } @else {
+            //     color: $c;
+            // }
+            color: map-get($navigation-pagination-item-background, disable)
         }
-        border-color: map-get($navigation-pagination-item-border, disable);
+        border-color: map-get($navigation-pagination-item-border-color, disable);
         box-shadow: none;
         color: map-get($navigation-pagination-item-color, disable);
         cursor: not-allowed;
@@ -268,21 +279,22 @@
 .nav-pagination__item {
     &:hover:not(.is-disabled) {
         background: {
-            $c: map-get($navigation-pagination-item-background, hover);
+            // $c: map-get($navigation-pagination-item-background, hover);
 
-            @if type-of($c) == list {
-                color: nth($c, 2);
-                image: linear-gradient(
-                    160deg,
-                    rgba(nth($c, 3), 0.25) 0%,
-                    rgba(nth($c, 2), 0.25) 50%,
-                    rgba(nth($c, 1), 0.25) 100%
-                );
-            } @else {
-                color: $c;
-            }
+            // @if type-of($c) == list {
+            //     color: nth($c, 2);
+            //     image: linear-gradient(
+            //         160deg,
+            //         rgba(nth($c, 3), 0.25) 0%,
+            //         rgba(nth($c, 2), 0.25) 50%,
+            //         rgba(nth($c, 1), 0.25) 100%
+            //     );
+            // } @else {
+            //     color: $c;
+            // }
+            color: map-get($navigation-pagination-item-background, hover)
         }
-        border-color: map-get($navigation-pagination-item-border, hover);
+        border-color: map-get($navigation-pagination-item-border-color, hover);
         color: map-get($navigation-pagination-item-color, hover);
     }
 }
@@ -321,7 +333,7 @@
     &.\--next {
         @extend .nav-pagination__control;
 
-        &::after {
+        &::before {
             @extend %ico !optional;
             @extend %ico--caret-right !optional;
         }
