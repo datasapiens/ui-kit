@@ -260,16 +260,22 @@ label {
 }
 
 input,
+optgroup,
+select,
+textarea {
+    font: {
+        family: inherit;
+        weight: inherit;
+    }
+}
+
+input,
 // input:not([type="button"]),
 select,
 textarea {
     @extend %form-element !optional;
 
     color: inherit;
-    font: {
-        family: inherit;
-        weight: inherit;
-    }
     outline: none;
 }
 
