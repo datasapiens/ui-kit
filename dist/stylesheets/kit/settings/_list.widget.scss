@@ -1,17 +1,15 @@
 /**
- * Component Grid/Widget settings.
- *
- * @deprecated
+ * Component List/Widget settings.
  */
 
 // =============================================================================
-// Widget grid settings
+// Widget list settings
 // =============================================================================
 
-// Set widget grid breakpoints.
-$grid-widget-breaks: (
+// Set widget list breakpoints.
+$list-widget-breaks: (
     1200px,
 ) !default;
 
-// Set widget grid gutter.
-$grid-widget-gutter: 16px !default;
+// Set widget list gutter.
+$list-widget-gutter: 16px !default;

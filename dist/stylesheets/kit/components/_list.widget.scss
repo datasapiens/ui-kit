@@ -1,35 +1,33 @@
 /**
- * Component Grid/Widget.
- *
- * @deprecated
+ * Component List/Widget.
  */
 
 // =============================================================================
-// Widget grid
+// Widget list
 // =============================================================================
 
-.grd-widget {
+.lst-widget {
     counter-reset: counter-widget;
-    margin-bottom: $grid-widget-gutter;
+    margin-bottom: $list-widget-gutter;
 
-    @media (min-width: nth($grid-widget-breaks, 1)) {
+    @media (min-width: nth($list-widget-breaks, 1)) {
         display: flex;
         flex: {
             direction: column;
             flow: row wrap;
         }
         margin: {
-            right: (-1) * $grid-widget-gutter;
+            right: (-1) * $list-widget-gutter;
         }
-        width: calc(100% + #{$grid-widget-gutter});
+        width: calc(100% + #{$list-widget-gutter});
     }
 
     @supports (display: grid) {
-        @media (min-width: nth($grid-widget-breaks, 1)) {
+        @media (min-width: nth($list-widget-breaks, 1)) {
             display: grid;
             grid: {
                 auto-flow: dense;
-                gap: $grid-widget-gutter;
+                gap: $list-widget-gutter;
                 template-columns: repeat(4, 1fr);
             }
             margin: {
@@ -42,7 +40,7 @@
     @media print {
         display: block;
 
-        .grd-widget__item:not(:last-of-type) {
+        .lst-widget__item:not(:last-of-type) {
             page-break-after: always;
         }
     }
@@ -53,18 +51,18 @@
  */
 
 /**
- * Widget grid, debug mode.
+ * Widget list, debug mode.
  */
 
-.grd-widget {
+.lst-widget {
     &.\--debug {
-        margin-bottom: 3 * $grid-widget-gutter;
+        margin-bottom: 3 * $list-widget-gutter;
 
         @supports (display: grid) {
             background-color: pink;
         }
 
-        .grd-widget__item {
+        .lst-widget__item {
             background-color: cornflowerblue;
             counter-increment: counter-widget;
             min-height: 4em;
@@ -76,7 +74,7 @@
             }
         }
 
-        .grd-widget__item {
+        .lst-widget__item {
             &.\--primary {
                 background-color: crimson;
 
@@ -101,13 +99,13 @@
 }
 
 /**
- * Widget grid, print view.
+ * Widget list, print view.
  */
 
-.grd-widget {
+.lst-widget {
     &.\--print {
-        .grd-widget__item {
-            @extend .grd-widget__item.\--primary;
+        .lst-widget__item {
+            @extend .lst-widget__item.\--primary;
         }
     }
 }
@@ -132,24 +130,24 @@
 // Subcomponents
 // =============================================================================
 
-// Widget grid item
+// Widget list item
 // =============================================================================
 
-.grd-widget__item {
+.lst-widget__item {
     margin: {
-        bottom: $grid-widget-gutter;
+        bottom: $list-widget-gutter;
     }
 
-    @media (min-width: nth($grid-widget-breaks, 1)) {
+    @media (min-width: nth($list-widget-breaks, 1)) {
         flex: 0;
-        flex-basis: calc(#{percentage(1 / 2)} - #{$grid-widget-gutter});
+        flex-basis: calc(#{percentage(1 / 2)} - #{$list-widget-gutter});
         margin: {
-            right: $grid-widget-gutter;
+            right: $list-widget-gutter;
         }
     }
 
     @supports (display: grid) {
-        @media (min-width: nth($grid-widget-breaks, 1)) {
+        @media (min-width: nth($list-widget-breaks, 1)) {
             grid-column-start: span 2;
             margin: {
                 bottom: 0;
@@ -160,7 +158,7 @@
 
     @media print {
         margin: {
-            bottom: $grid-widget-gutter;
+            bottom: $list-widget-gutter;
         }
     }
 }
@@ -170,13 +168,13 @@
  */
 
 /**
- * Widget grid item, primary.
+ * Widget list item, primary.
  */
 
-.grd-widget__item {
+.lst-widget__item {
     &.\--primary {
-        @media (min-width: nth($grid-widget-breaks, 1)) {
-            flex-basis: calc(#{percentage(1 / 1)} - #{$grid-widget-gutter});
+        @media (min-width: nth($list-widget-breaks, 1)) {
+            flex-basis: calc(#{percentage(1 / 1)} - #{$list-widget-gutter});
 
             @supports (display: grid) {
                 grid-column-start: span 4;
@@ -186,13 +184,13 @@
 }
 
 /**
- * Widget grid item, secondary.
+ * Widget list item, secondary.
  */
 
-.grd-widget__item {
+.lst-widget__item {
     &.\--secondary {
-        @media (min-width: nth($grid-widget-breaks, 1)) {
-            flex-basis: calc(#{percentage(1 / 4)} - #{$grid-widget-gutter});
+        @media (min-width: nth($list-widget-breaks, 1)) {
+            flex-basis: calc(#{percentage(1 / 4)} - #{$list-widget-gutter});
 
             @supports (display: grid) {
                 grid-column-start: span 1;
