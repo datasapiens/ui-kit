@@ -15,6 +15,8 @@
 %btn {
     @extend %btn--length;
     @extend %btn--mean;
+    @extend %btn--state;
+    @extend %btn--variant;
     @extend %emt--alignment !optional;
     @extend %emt--medium !optional;
     @extend %emt--size !optional;
@@ -93,7 +95,7 @@
  * Button, primary.
  */
 
-%btn {
+%btn--variant {
     &.\--primary {
         background-color: map-get($button--primary-background, initial);
         border-color: map-get($button--primary-border-color, initial);
@@ -105,7 +107,7 @@
  * Button, secondary.
  */
 
-%btn {
+%btn--variant {
     &.\--secondary {
         background-color: map-get($button--secondary-background, initial);
         border-color: map-get($button--secondary-border-color, initial);
@@ -117,7 +119,7 @@
  * Button, tertiary.
  */
 
-%btn {
+%btn--variant {
     &.\--tertiary {
         background-color: map-get($button--tertiary-background, initial);
         border-color: map-get($button--tertiary-border-color, initial);
@@ -129,7 +131,7 @@
  * Button, themes.
  */
 
-%btn {
+%btn--variant {
     @each $modifier, $theme in $button-theme {
         $color: map-get($theme, 50);
 
@@ -149,7 +151,7 @@
  * Button, active (aka pressed).
  */
 
-%btn {
+%btn--state {
     &:active,
     &.is-active {
         &:not(:disabled):not(.is-disabled) {
@@ -192,7 +194,7 @@
  * 1. We need to increase specifity.
  */
 
-%btn {
+%btn--state {
     &:disabled,
     &.is-disabled {
         // background-color: map-get($button-background, disable);
@@ -243,7 +245,7 @@
  * Button, focused.
  */
 
-%btn {
+%btn--state {
     &:focus,
     &.is-focused {
         &:not(:disabled):not(.is-disabled) {
@@ -285,10 +287,10 @@
  * Button, hovered.
  */
 
-%btn {
+%btn--state {
     &:hover,
     &.is-hovered {
-        @extend %btn:focus;
+        @extend %btn--state:focus;
     }
 }
 
