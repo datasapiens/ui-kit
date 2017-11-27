@@ -25,10 +25,10 @@ $button-switch-border-color: (
 ) !default;
 
 // Set switch button border radius (according to `$button-border-radius`).
-// $button-switch-border-radius: $button-border-radius !default;
+$button-switch-border-radius: $button-border-radius !default;
 
 // Set switch button border size (according to `$button-border-size`).
-// $button-switch-border-size: $button-border-size !default;
+$button-switch-border-size: $button-border-size !default;
 
 // Set switch button box shadow (according to `$button-box-shadow`).
 $button-switch-box-shadow: $button-box-shadow !default;
@@ -50,6 +50,16 @@ $button-switch-color: (
 
 // Set switch button themes map.
 $button-switch-theme: $button-theme !default;
+
+/**
+ * Transparent switch button.
+ */
+
+// Set transparent switch button background.
+$button-switch--transparent-background: transparent !default;
+
+// Set transparent switch button color.
+$button-switch--transparent-color: $white !default;
 
 /**
  * Primary switch button.
