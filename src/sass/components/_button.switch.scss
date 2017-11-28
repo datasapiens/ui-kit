@@ -310,36 +310,38 @@
 
 .btn-switch__item {
     &:focus {
-        @at-root {
-            .btn-switch:not(.is-disabled) & {
-                background-color: map-get($button-switch-background, focus);
-            }
+        &:not(.is-readonly) {
+            @at-root {
+                .btn-switch:not(.is-disabled) & {
+                    background-color: map-get($button-switch-background, focus);
+                }
 
-            // primary
-            .btn-switch.--primary & {
-                background-color: map-get($button-switch--primary-background, focus);
-                color: map-get($button-switch--primary-color, focus);
-            }
+                // primary
+                .btn-switch.--primary & {
+                    background-color: map-get($button-switch--primary-background, focus);
+                    color: map-get($button-switch--primary-color, focus);
+                }
 
-            // secondary
-            .btn-switch.--secondary & {
-                background-color: map-get($button-switch--secondary-background, focus);
-                color: map-get($button-switch--secondary-color, focus);
-            }
+                // secondary
+                .btn-switch.--secondary & {
+                    background-color: map-get($button-switch--secondary-background, focus);
+                    color: map-get($button-switch--secondary-color, focus);
+                }
 
-            // tertiary
-            .btn-switch.--tertiary & {
-                background-color: map-get($button-switch--tertiary-background, focus);
-                color: map-get($button-switch--tertiary-color, focus);
-            }
+                // tertiary
+                .btn-switch.--tertiary & {
+                    background-color: map-get($button-switch--tertiary-background, focus);
+                    color: map-get($button-switch--tertiary-color, focus);
+                }
 
-            // themes
-            @each $modifier, $theme in $button-switch-theme {
-                $color: lighten(map-get($theme, 20), 8%);
+                // themes
+                @each $modifier, $theme in $button-switch-theme {
+                    $color: lighten(map-get($theme, 20), 8%);
 
-                .btn-switch.--#{$modifier} & {
-                    background-color: $color;
-                    color: $white;
+                    .btn-switch.--#{$modifier} & {
+                        background-color: $color;
+                        color: $white;
+                    }
                 }
             }
         }
