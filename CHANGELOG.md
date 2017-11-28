@@ -1,3 +1,44 @@
+<a name="1.1.0"></a>
+## 1.1.0 (2017-11-28)
+
+#### Bug Fixes
+
+- **base:** consolidate `button` font weight ([06ab274](https://github.com/datasapiens/ui-kit/commit/06ab274))
+- **card:** enforce figure size ([b924f0f](https://github.com/datasapiens/ui-kit/commit/b924f0f))
+- **form.checkbox:** prevent shape shrinking ([78037af](https://github.com/datasapiens/ui-kit/commit/78037af))
+- **form.label:** improve `disabled` state ([0dce0db](https://github.com/datasapiens/ui-kit/commit/0dce0db))
+- **form.radio:** prevent shape shrinking ([2d54ba6](https://github.com/datasapiens/ui-kit/commit/2d54ba6))
+- **icon:** restore missing icons ([83eaa5d](https://github.com/datasapiens/ui-kit/commit/83eaa5d))
+- **table:** do not apply stripes in `is-monochrome` state ([e1c2f66](https://github.com/datasapiens/ui-kit/commit/e1c2f66))
+
+#### Features
+
+- **animation:** extend easing map ([7cb301a](https://github.com/datasapiens/ui-kit/commit/7cb301a))
+- **base:** improve `optgroup` ([998a1dc](https://github.com/datasapiens/ui-kit/commit/998a1dc))
+- **button:** add `readonly` state ([bfc81d8](https://github.com/datasapiens/ui-kit/commit/bfc81d8))
+- **button:** decouple states and variants ([3e0be11](https://github.com/datasapiens/ui-kit/commit/3e0be11))
+- **button:** tweak text alignment ([062abc2](https://github.com/datasapiens/ui-kit/commit/062abc2))
+- **button.switch:** add `button.switch` component ([d20a389](https://github.com/datasapiens/ui-kit/commit/d20a389))
+- **button.switch:** add `readonly` state ([5969023](https://github.com/datasapiens/ui-kit/commit/5969023))
+- **button.switch:** decouple shortened text in `truncate` variant ([9609bce](https://github.com/datasapiens/ui-kit/commit/9609bce))
+- **button.switch:** enable text truncate ([cbcecba](https://github.com/datasapiens/ui-kit/commit/cbcecba))
+- **button.switch:** improve diversity ([5708428](https://github.com/datasapiens/ui-kit/commit/5708428))
+- **element:** add `element` component ([6c9d444](https://github.com/datasapiens/ui-kit/commit/6c9d444))
+- **form.element:** improve cross-browser appearance ([17e0201](https://github.com/datasapiens/ui-kit/commit/17e0201))
+- **link:** resolve specifity ([ece8878](https://github.com/datasapiens/ui-kit/commit/ece8878))
+- **list.widget:** add `list.widget` component ([34c600f](https://github.com/datasapiens/ui-kit/commit/34c600f))
+- **navigation.pagination:** reflect `button` component ([144324b](https://github.com/datasapiens/ui-kit/commit/144324b))
+
+#### Refactoring
+
+- **form.label:** decouple states ([500b2a3](https://github.com/datasapiens/ui-kit/commit/500b2a3))
+- **form.select:** flexbox ([bf73d0d](https://github.com/datasapiens/ui-kit/commit/bf73d0d))
+- **form.select:** IE/Edge ([1a66f84](https://github.com/datasapiens/ui-kit/commit/1a66f84))
+- **link:** decouple states ([5168451](https://github.com/datasapiens/ui-kit/commit/5168451))
+- **link:** use `vertical-align` ([6686e72](https://github.com/datasapiens/ui-kit/commit/6686e72))
+
+
+
 <a name="1.0.0"></a>
 ## 1.0.0 Copper Spider (2017-11-02)
 
