@@ -242,13 +242,22 @@
 }
 
 /**
+ * Button, read-only.
+ */
+
+%btn--state {
+    &:readonly,
+    &.is-readonly {}
+}
+
+/**
  * Button, focused.
  */
 
 %btn--state {
     &:focus,
     &.is-focused {
-        &:not(:disabled):not(.is-disabled) {
+        &:not(:disabled):not(.is-disabled):not(.is-readonly) {
             background-color: map-get($button-background, focus);
             border-color: map-get($button-border-color, focus);
             color: map-get($button-color, focus);
