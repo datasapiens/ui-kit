@@ -386,8 +386,6 @@
  */
 
 .crd__figure {
-    @include size($card-figure-size);
-
     background: transparent center / cover no-repeat;
     color: inherit;
     display: inline-flex;
@@ -396,6 +394,8 @@
     text-decoration: none;
 
     &[class] {  /* 1 */
+        @include size($card-figure-size);
+
         align-items: center;
         justify-content: center;
     }
