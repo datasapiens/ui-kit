@@ -4,6 +4,8 @@
  * @requires {mixin}       acceleration
  * @requires {placeholder} %ctr--center
  * @requires {variable}    $animation-easing
+ * @requires {variable}    $page-sidebar-breaks
+ * @requires {variable}    $page-sidebar-size
  * @requires container
  */
 
@@ -158,6 +160,42 @@
         padding: {
             left: 0;
             right: 0;
+        }
+    }
+}
+
+// Page add-on
+// =============================================================================
+
+.page__addon {
+    animation: fade--in 0.3s both;
+    display: none;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Page add-on, primary.
+ */
+
+.page__addon {
+    &.--primary {
+        @media (min-width: nth($page-breaks, 1)) {
+            display: inherit;
+        }
+    }
+}
+
+/**
+ * Page add-on, secondary.
+ */
+
+.page__addon {
+    &.--secondary {
+        @media (min-width: nth($page-breaks, 2)) {
+            display: inherit;
         }
     }
 }

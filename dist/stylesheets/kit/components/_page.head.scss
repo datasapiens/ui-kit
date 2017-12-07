@@ -98,14 +98,11 @@
     }
 
     &:nth-of-type(2) {
-        display: none;
-
         @if $page-head-debug {
             background-color: orange;
         }
 
         @media (min-width: nth($page-head-breaks, 1)) {
-            display: inherit;
             order: 1;
             padding-left: calc(
                 #{map-get($page-head-control-size, width)} -
@@ -135,9 +132,7 @@
 
 .page-head__logo {
     display: flex;
-    position: relative;
     transform: scale(0.9, 0.9);
-    z-index: 1;
 
     &::after {
         @include size(
@@ -150,10 +145,12 @@
             no-repeat;
         content: "";
         flex: 1;
+    }
 
-        @if $page-head-debug {
-            background-color: lightgreen;
-        }
+    @if $page-head-debug {
+        background-color: lightgreen;
+        position: relative;
+        z-index: 1;
     }
 }
 

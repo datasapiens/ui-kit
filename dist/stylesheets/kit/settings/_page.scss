@@ -6,6 +6,12 @@
 // Page settings
 // =============================================================================
 
+// Set page breakpoints.
+$page-breaks: (
+    450px,
+    800px,
+) !default;
+
 // Set page indent.
 $page-indent: (
     print: 10mm,
