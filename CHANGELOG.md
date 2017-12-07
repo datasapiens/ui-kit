@@ -1,3 +1,13 @@
+<a name="1.2.0"></a>
+## 1.2.0 (2017-12-07)
+
+#### Features
+
+- **page:** add page addon ([1cb7e9d](https://github.com/datasapiens/ui-kit/commit/1cb7e9d))
+- **utility:** add monochrome filter ([74675ef](https://github.com/datasapiens/ui-kit/commit/74675ef))
+
+
+
 <a name="1.1.0"></a>
 ## 1.1.0 (2017-11-28)
 
