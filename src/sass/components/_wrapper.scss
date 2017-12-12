@@ -57,7 +57,10 @@
     &.--scroll-x {
         @extend %wrp--scroll;
 
-        overflow-x: auto;
+        overflow: {
+            x: auto;
+            y: hidden;
+        }
     }
 }
 
@@ -75,7 +78,10 @@
         @extend %wrp--scroll;
         // @include rectangle-clip($pitch: 2%); /* 2 */
 
-        overflow-y: auto;
+        overflow: {
+            x: hidden;
+            y: auto;
+        }
         // transition: max-height 0.3s map-get($animation-easing, in-out-circ); /* 2 */
 
         @media print {
