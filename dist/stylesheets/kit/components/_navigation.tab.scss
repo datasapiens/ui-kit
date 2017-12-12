@@ -6,9 +6,6 @@
  * @requires {mixin}       acceleration
  * @requires {mixin}       size
  * @requires {mixin}       word-wrap
- * @requires {placeholder} %ico
- * @requires {placeholder} %ico--caret-left
- * @requires {placeholder} %ico--caret-right
  * @requires {placeholder} %lst--reset
  * @requires {variable}    $animation-easing
  * @requires animation.slide
@@ -80,7 +77,7 @@
 }
 
 %nav-tab:center {
-    %nav-tab__control__inset {
+    %nav-tab__control__pane {
         justify-content: center;
     }
     .nav-tab__item {
@@ -97,7 +94,7 @@
  */
 
 %nav-tab:end {
-    %nav-tab__control__inset {
+    %nav-tab__control__pane {
         justify-content: flex-end;
     }
     .nav-tab__item {
@@ -137,7 +134,7 @@
  */
 
 %nav-tab:start {
-    %nav-tab__control__inset {
+    %nav-tab__control__pane {
         justify-content: flex-start;
     }
     .nav-tab__item {
@@ -313,35 +310,37 @@
 .nav-tab__control__item {
     @include acceleration;
 
-    align-items: center;
-    display: inline-flex;
-    flex: 0;
-    justify-content: center;
     opacity: 0;
     pointer-events: none;
     position: absolute;
 
-    &[class] {  /* 1 */
-        @include size($navigation-tab-control-item-size);
+    [class~="ico"] {
+        display: inline-block;
+        margin: 0;
     }
+}
 
-    &::before {
-        @extend %ico !optional;
-    }
+/**
+ * Modifiers.
+ */
 
-    &:nth-of-type(1) {
+/**
+ * Navigation tab `previous` control item.
+ */
+
+.nav-tab__control__item {
+    &.\--prev {
         left: 0;
-
-        &::before {
-            @extend %ico--caret-left !optional;
-        }
     }
-    &:nth-of-type(2) {
-        right: 0;
+}
 
-        &::before {
-            @extend %ico--caret-right !optional;
-        }
+/**
+ * Navigation tab `next` control item.
+ */
+
+.nav-tab__control__item {
+    &.\--next {
+        right: 0;
     }
 }
 
@@ -534,7 +533,7 @@
         background-color: map-get($navigation-tab-item-background, active);
         border-color: map-get($navigation-tab-item-border-color, active);
         color: map-get($navigation-tab-item-color, active);
-        z-index: 1;
+        z-index: $navigation-tab-index + 1;
 
         &[primary] {
             background-color: map-get($navigation-tab--primary-item-background, active);
@@ -583,7 +582,7 @@
         background-color: map-get($navigation-tab-item-background, hover);
         // border-color: map-get($navigation-tab-item-border-color, hover);
         color: map-get($navigation-tab-item-color, hover);
-        // z-index: 1;
+        // z-index: $navigation-tab-index + 1;
 
         &[primary] {
             background-color: map-get($navigation-tab--primary-item-background, hover);
@@ -608,6 +607,8 @@
 
 .nav-tab__body {
     border-radius: $navigation-tab-radius;
+    position: relative;
+    z-index: $navigation-tab-index;
 
     &[class][class] {       /* 1 */
         margin: 0;
