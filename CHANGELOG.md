@@ -1,3 +1,13 @@
+<a name="1.2.1"></a>
+### 1.2.1 (2017-12-13)
+
+#### Bug Fixes
+
+- **navigation.tab:** switch button regressions ([4983eb1](https://github.com/datasapiens/ui-kit/commit/4983eb1))
+- **wrapper:** improve overflow properties ([17bdc06](https://github.com/datasapiens/ui-kit/commit/17bdc06))
+
+
+
 <a name="1.2.0"></a>
 ## 1.2.0 (2017-12-07)
 
