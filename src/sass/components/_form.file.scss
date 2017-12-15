@@ -1,0 +1,62 @@
+/**
+ * Component Form/File.
+ *
+ * @requires {mixin} stretch
+ */
+
+// =============================================================================
+// Form file
+// =============================================================================
+
+.form-file {
+    position: relative;
+
+    [type="file"] {
+        @extend %form-file__input;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form file input
+// =============================================================================
+
+%form-file__input {
+    @include stretch;
+
+    opacity: 0;
+}
