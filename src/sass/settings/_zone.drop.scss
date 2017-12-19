@@ -1,0 +1,37 @@
+/**
+ * Component Zone/Drop settings.
+ */
+
+// =============================================================================
+// Drop zone settings
+// =============================================================================
+
+// Set drop zone background.
+$zone-drop-background: (
+    active:     inherit,       // pressed
+    disable:    inherit,   // disabled
+    focus:      inherit,   // focused
+    hover:      inherit,   // hovered
+    initial:    $white,
+) !default;
+
+// Set drop zone border size.
+$zone-drop-border-size: (
+    active:     3px,       // pressed
+    disable:    inherit,   // disabled
+    focus:      inherit,   // focused
+    hover:      inherit,   // hovered
+    initial:    inherit,
+) !default;
+
+// Set drop zone border style.
+$zone-drop-border-style: (
+    active:     dashed,     // pressed
+    disable:    inherit,    // disabled
+    focus:      inherit,    // focused
+    hover:      inherit,    // hovered
+    initial:    inherit,
+) !default;
+
+// Set drop zone themes map.
+$zone-drop-theme: map-get($color-set, accent) !default;

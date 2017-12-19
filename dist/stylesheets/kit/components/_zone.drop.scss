@@ -1,0 +1,92 @@
+/**
+ * Component Zone/Drop.
+ *
+ * @requires {mixin} stretch
+ */
+
+// =============================================================================
+// Drop zone
+// =============================================================================
+
+.zone-drop {
+    background: map-get($zone-drop-background, initial);
+    position: relative;
+    transition:
+        background-color 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+
+    &::before {
+        @include stretch;
+
+        display: block;
+        transition: border 0.2s;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Drop zone, themes.
+ */
+
+.zone-drop {
+    @each $modifier, $theme in $zone-drop-theme {
+        &.\--#{$modifier} {
+            border-color: desaturate(map-get($theme, 80), 50%);
+
+            &::before {
+                background-color: rgba(map-get($theme, 50), 0.25);
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Drop zone, active.
+ */
+
+.zone-drop {
+    &.is-active {
+        border-color: transparent;
+
+        @each $modifier, $theme in $zone-drop-theme {
+            &.\--#{$modifier} {
+                &::before {
+                    border: {
+                        color: map-get($theme, 50);
+                        style: map-get($zone-drop-border-style, active);
+                        width: map-get($zone-drop-border-size, active);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
