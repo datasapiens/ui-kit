@@ -1,3 +1,13 @@
+<a name="1.3.0"></a>
+## 1.3.0 (2017-12-19)
+
+#### Features
+
+- **form.file:** add 'form.file' component ([0f8ec37](https://github.com/datasapiens/ui-kit/commit/0f8ec37))
+- **zone.drop:** add 'zone.drop' component ([90d019b](https://github.com/datasapiens/ui-kit/commit/90d019b))
+
+
+
 <a name="1.2.1"></a>
 ### 1.2.1 (2017-12-13)
 
