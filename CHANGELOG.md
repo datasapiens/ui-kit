@@ -1,3 +1,12 @@
+<a name="1.4.0"></a>
+## 1.4.0 (2017-12-21)
+
+#### Features
+
+- **icon:** add emotions ([52fb3ac](https://github.com/datasapiens/ui-kit/commit/52fb3ac))
+
+
+
 <a name="1.3.0"></a>
 ## 1.3.0 (2017-12-19)
 
