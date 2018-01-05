@@ -7,7 +7,7 @@
 // =============================================================================
 
 .btn-group {
-    .btn {
+    %btn-group__item {
         margin-bottom: $button-group-gutter;
     }
 }
@@ -28,7 +28,7 @@
     &.--center {
         text-align: center;
 
-        .btn {
+        %btn-group__item {
             margin: {
                 left: 0.5 * $button-group-gutter;
                 right: 0.5 * $button-group-gutter;
@@ -43,7 +43,7 @@
 
 .btn-group {
     &.--compact {
-        .btn {
+        %btn-group__item {
             margin-bottom: 0;
         }
     }
@@ -57,7 +57,7 @@
     &.--left {
         text-align: left;
 
-        .btn {
+        %btn-group__item {
             margin-right: $button-group-gutter;
         }
     }
@@ -71,7 +71,7 @@
     &.--right {
         text-align: right;
 
-        .btn {
+        %btn-group__item {
             margin-left: $button-group-gutter;
         }
     }
@@ -97,7 +97,11 @@
 // Subcomponents
 // =============================================================================
 
-// SubcomponentName
+// Button group item
 // =============================================================================
 
-// .component__subcomponent {}
+%btn-group__item {}
+
+.btn-group__item {
+    @extend %btn-group__item;
+}

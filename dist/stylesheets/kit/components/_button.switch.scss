@@ -5,7 +5,9 @@
  * @requires {placeholder} %btn:disabled
  * @requires {placeholder} %btn--narrow
  * @requires {placeholder} %btn__event
+ * @requires {placeholder} %btn-group__item
  * @requires button
+ * @requires button.group
  */
 
 // =============================================================================
@@ -13,6 +15,7 @@
 // =============================================================================
 
 .btn-switch {
+    @extend %btn-group__item !optional;
     @extend %emt--alignment !optional;
     @extend %emt--medium !optional;
     @extend %emt--size !optional;

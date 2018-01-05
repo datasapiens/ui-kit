@@ -2,9 +2,11 @@
  * Component Button.
  *
  * @requires {function}    px-to-em
+ * @requires {placeholder} %btn-group__item
  * @requires {placeholder} %emt--alignment
  * @requires {placeholder} %emt--medium
  * @requires {placeholder} %emt--size
+ * @requires button.group
  * @requires element
  */
 
@@ -61,6 +63,7 @@
 .btn {
     @extend %btn;
     @extend %btn__event;
+    @extend %btn-group__item !optional;
 
     text-transform: uppercase;
 }
