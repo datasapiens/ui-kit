@@ -1,3 +1,19 @@
+<a name="1.5.0"></a>
+## 1.5.0 (2018-01-05)
+
+#### Features
+
+- **badge:** add `badge` component ([6b66698](https://github.com/datasapiens/ui-kit/commit/6b66698))
+- **button.group:** provide group item placeholder ([cb72683](https://github.com/datasapiens/ui-kit/commit/cb72683))
+- **icon:** extend icon set ([97b54ff](https://github.com/datasapiens/ui-kit/commit/97b54ff))
+- **list.article:** add `list.article` component ([9e6794c](https://github.com/datasapiens/ui-kit/commit/9e6794c))
+
+#### Refactoring
+
+- **list.article:** extract `article` component ([11c68e0](https://github.com/datasapiens/ui-kit/commit/11c68e0))
+
+
+
 <a name="1.4.0"></a>
 ## 1.4.0 (2017-12-21)
 
