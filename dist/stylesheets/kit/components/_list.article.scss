@@ -1,0 +1,117 @@
+/**
+ * Component List/Article.
+ *
+ * @requires {function}    function
+ * @requires {mixin}       mixin
+ * @requires {placeholder} %placeholder
+ * @requires {variable}    $variable
+ * @requires component
+ */
+
+// =============================================================================
+// Article list
+// =============================================================================
+
+.lst-article {
+    @extend %lst--reset !optional;
+
+    margin-bottom: $list-article-gutter;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Article list item
+// =============================================================================
+
+.lst-article__item {
+    position: relative;
+
+    & + & {
+        margin-top: $list-article-gutter;
+
+        &::after {
+            @extend %lst-article__spacer;
+            @include stretch(
+                -0.5 * $list-article-gutter,
+                0,
+                auto,
+                0
+            );
+
+            content: "";
+        }
+    }
+}
+
+// Article list header
+// =============================================================================
+
+.lst-article__head {}
+
+// Article list title
+// =============================================================================
+
+.lst-article__title {
+    @extend h5 !optional;
+
+    margin: 0;
+    text-transform: none;
+}
+
+// Article list metadata
+// =============================================================================
+
+.lst-article__meta {
+    font-size: 0.9em;
+}
+
+// Article list body
+// =============================================================================
+
+.lst-article__body {}
+
+// Article list footer
+// =============================================================================
+
+.lst-article__foot {}
+
+// Article list spacer
+// =============================================================================
+
+%lst-article__spacer {
+    border: $list-article-spacer-size dotted $list-articler-color;
+}

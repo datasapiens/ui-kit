@@ -1,0 +1,24 @@
+/**
+ * Component List/Article settings.
+ */
+
+// =============================================================================
+// Article list settings
+// =============================================================================
+
+// Set article list breakpoints.
+$list-article-breaks: (
+    940px,
+) !default;
+
+// Set article list gutter.
+$list-article-gutter: 16px !default;
+
+// Set article list spacer color.
+$list-articler-color: map-get(
+    map-get($color-set, neutral),
+    80
+) !default;
+
+// Set article list spacer size.
+$list-article-spacer-size: 1px !default;
