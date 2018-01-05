@@ -1,11 +1,9 @@
 /**
  * Component List/Article.
  *
- * @requires {function}    function
- * @requires {mixin}       mixin
- * @requires {placeholder} %placeholder
- * @requires {variable}    $variable
- * @requires component
+ * @requires {mixin}       stretch
+ * @requires {placeholder} %lst--reset
+ * @requires list
  */
 
 // =============================================================================
@@ -77,37 +75,37 @@
     }
 }
 
-// Article list header
+// Article list item header
 // =============================================================================
 
-.lst-article__head {}
+.lst-article__item__head {}
 
-// Article list title
+// Article list item metadata
 // =============================================================================
 
-.lst-article__title {
+.lst-article__item__title {
     @extend h5 !optional;
 
     margin: 0;
     text-transform: none;
 }
 
-// Article list metadata
+// Article list item metadata
 // =============================================================================
 
-.lst-article__meta {
+.lst-article__item__meta {
     font-size: 0.9em;
 }
 
-// Article list body
+// Article list item body
 // =============================================================================
 
-.lst-article__body {}
+.lst-article__item__body {}
 
-// Article list footer
+// Article list item footer
 // =============================================================================
 
-.lst-article__foot {}
+.lst-article__item__foot {}
 
 // Article list spacer
 // =============================================================================
