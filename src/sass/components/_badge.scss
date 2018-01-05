@@ -1,0 +1,94 @@
+/**
+ * Component Badge.
+ *
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       acceleration
+ * @requires {mixin}       text-truncate
+ * @requires animation.fade
+ * @requires animation.slide
+ */
+
+// =============================================================================
+// Badge
+// =============================================================================
+
+.bdg {
+    @extend .bdg.--neutral;
+    @include acceleration;
+    @include text-truncate;
+
+    animation:
+        fade--in 0.25s 0.75s both,
+        slide--right-reverse 0.25s 0.65s forwards;
+
+    border-radius: $badge-border-radius;
+    color: $badge-color;
+    display: inline-block;
+    font: {
+        weight: 300;
+        size: px-to-rem($badge-font-size);
+    }
+    height: $badge-size;
+    letter-spacing: px-to-em($badge-letter-spacing / 1000);
+    line-height: $badge-size / $badge-font-size;
+    min-width: $badge-size;
+    padding: 0 $badge-indent;
+    text: {
+        align: center;
+        indent: px-to-em($badge-letter-spacing / 1000);
+    }
+    vertical-align: text-top;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * Badge, themes.
+ */
+
+.bdg {
+    @each $modifier, $theme in $badge-theme {
+        &.--#{$modifier} {
+            background-color: map-get($theme, 50);
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

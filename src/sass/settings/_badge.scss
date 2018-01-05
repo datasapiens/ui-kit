@@ -1,0 +1,28 @@
+/**
+ * Component Badge settings.
+ */
+
+// =============================================================================
+// Badge settings
+// =============================================================================
+
+// Set badge border radius.
+$badge-border-radius: 100px !default;
+
+// Set badge color.
+$badge-color: $white !default;
+
+// Set badge font size.
+$badge-font-size: 11px !default;
+
+// Set badge indent.
+$badge-indent: 5px !default;
+
+// Set badge letter spacing.
+$badge-letter-spacing: -100 !default;
+
+// Set badge size.
+$badge-size: 17px !default;
+
+// Set badge themes map.
+$badge-theme: map-get($color-set, accent) !default;
