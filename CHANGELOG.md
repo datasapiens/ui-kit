@@ -1,3 +1,14 @@
+<a name="1.6.0"></a>
+## 1.6.0 (2018-01-09)
+
+#### Features
+
+- **navigation.vertical:** add `is-selected` item state ([915f6ee](https://github.com/datasapiens/ui-kit/commit/915f6ee))
+- **navigation.vertical:** tweak `is-selected` item state ([b153968](https://github.com/datasapiens/ui-kit/commit/b153968))
+- **navigation.vertical:** tweak colors ([ea4eef1](https://github.com/datasapiens/ui-kit/commit/ea4eef1))
+
+
+
 <a name="1.5.0"></a>
 ## 1.5.0 (2018-01-05)
 
