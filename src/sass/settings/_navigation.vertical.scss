@@ -7,7 +7,7 @@
 // =============================================================================
 
 // Set navigation background.
-$navigation-vertical-background: white !default;
+$navigation-vertical-background: lighten($blue--malibu, 30%) !default;
 
 // Set navigation color.
 $navigation-vertical-color: #666 !default;
@@ -43,10 +43,10 @@ $navigation-vertical-size: (
 
 // Set navigation item background.
 $navigation-vertical-item-background: (
-    active:     #eee,          // pressed
-    disable:    transparent,   // disabled
-    focus:      #eee,          // focused
-    hover:      #eee,          // hovered
+    active:     rgba($blue--malibu, 0.2),   // pressed
+    disable:    transparent,                // disabled
+    focus:      rgba($blue--malibu, 0.2),   // focused
+    hover:      rgba($blue--malibu, 0.2),   // hovered
     initial:    transparent,
     select:     $green--dolly,              // selected
 ) !default;
@@ -59,10 +59,10 @@ $navigation-vertical-item-border-size: 1px !default;
 
 // Set navigation item color.
 $navigation-vertical-item-color: (
-    active:     black,    // pressed
-    disable:    #666,     // disabled
-    focus:      black,    // focused
-    hover:      black,    // hovered
+    active:     black,  // pressed
+    disable:    #666,   // disabled
+    focus:      black,  // focused
+    hover:      black,  // hovered
     initial:    #666,
     select:     black,  // selected
 ) !default;
