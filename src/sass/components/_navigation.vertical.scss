@@ -286,12 +286,11 @@
         }
 
         @at-root & + .nav-vertical__item:not(.is-selected) {
-            margin-top: map-get($navigation-vertical-item-indent, vertical);
-
             &.nav-vertical__item__region,
             > .nav-vertical__item__region {
                 &::after {
-                    top: (-1) * map-get($navigation-vertical-item-indent, vertical);
+                    left: 0;
+                    right: 0;
                 }
             }
         }
