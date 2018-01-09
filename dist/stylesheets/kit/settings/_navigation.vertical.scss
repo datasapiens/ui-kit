@@ -48,6 +48,7 @@ $navigation-vertical-item-background: (
     focus:      #eee,          // focused
     hover:      #eee,          // hovered
     initial:    transparent,
+    select:     $green--dolly,              // selected
 ) !default;
 
 // Set navigation item border color.
@@ -63,6 +64,7 @@ $navigation-vertical-item-color: (
     focus:      black,    // focused
     hover:      black,    // hovered
     initial:    #666,
+    select:     black,  // selected
 ) !default;
 
 // Set navigation item indent.

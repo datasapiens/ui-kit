@@ -68,7 +68,7 @@
         $indent-item: map-get($navigation-vertical-item-indent, horizontal);
 
         &.--level-#{$i} {
-            background-color: darken($navigation-vertical-background, $i * 5%);
+            background-color: darken($navigation-vertical-background, $i * 3%);
             padding-left: $i * $indent;
 
             @if $navigation-vertical-debug {
@@ -272,6 +272,32 @@
 //     }
 // }
 
+/**
+ * Navigation item, selected.
+ */
+
+.nav-vertical__item {
+    &.is-selected {
+    // &.is-selected:not(.is-disabled) {
+
+        &.nav-vertical__item__region,
+        > .nav-vertical__item__region {
+            @extend .nav-vertical__item__region:checked;
+        }
+
+        @at-root & + .nav-vertical__item:not(.is-selected) {
+            margin-top: map-get($navigation-vertical-item-indent, vertical);
+
+            &.nav-vertical__item__region,
+            > .nav-vertical__item__region {
+                &::after {
+                    top: (-1) * map-get($navigation-vertical-item-indent, vertical);
+                }
+            }
+        }
+    }
+}
+
 // Navigation item inset
 // =============================================================================
 
@@ -381,6 +407,30 @@
 .nav-vertical__item__region {
     &:hover {
         @extend .nav-vertical__item__region:active;
+    }
+}
+
+/**
+ * Navigation item region, selected.
+ */
+
+.nav-vertical__item__region {
+    &:checked {
+        @at-root {
+            .nav-vertical__item:not(.is-disabled) > &,
+            &:not(.is-disabled) {
+                background-color: map-get($navigation-vertical-item-background, select);
+                color: map-get($navigation-vertical-item-color, select);
+                z-index: 1;
+            }
+
+            // primary
+            // .nav-vertical.--primary .nav-vertical__item:not(.is-disabled) > &,
+            // .nav-vertical.--primary &:not(.is-disabled) {
+            //     background-color: map-get($navigation-vertical--primary-item-background, select);
+            //     color: map-get($navigation-vertical--primary-item-color, select);
+            // }
+        }
     }
 }
 
