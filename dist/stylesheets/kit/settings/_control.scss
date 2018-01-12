@@ -1,0 +1,19 @@
+/**
+ * Component Control settings.
+ */
+
+// =============================================================================
+// Control settings
+// =============================================================================
+
+// Set component property.
+// $component-property:
+
+// Set control color.
+$control-color: (
+    active:     $blue--fiord,   // pressed
+    disable:    $blue--heather, // disabled
+    focus:      $blue--fiord,   // focused
+    hover:      $blue--fiord,   // hovered
+    initial:    $blue--heather,
+) !default;
