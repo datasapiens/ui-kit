@@ -2,7 +2,7 @@
  * Component Form/Select.
  *
  * @requires {mixin}       ie-gte-10
- * @requires {placeholder} %ctr--core-y
+ * @requires {placeholder} %con--core-y
  * @requires {placeholder} %form-element
  * @requires {placeholder} %ico
  * @requires {placeholder} %ico--caret-down
@@ -108,7 +108,7 @@
 // =============================================================================
 
 %form-select__control {
-    @extend %ctr--core-y !optional;
+    @extend %con--core-y !optional;
     @extend %ico !optional;
     @extend %ico--caret-down !optional;
 

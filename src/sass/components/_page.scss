@@ -2,7 +2,7 @@
  * Component Page.
  *
  * @requires {mixin}       acceleration
- * @requires {placeholder} %ctr--center
+ * @requires {placeholder} %con--center
  * @requires {variable}    $animation-easing
  * @requires {variable}    $page-sidebar-breaks
  * @requires {variable}    $page-sidebar-size
@@ -141,7 +141,7 @@
 // =============================================================================
 
 .page__inset {
-    @extend %ctr--center !optional;
+    @extend %con--center !optional;
     @include acceleration;
 
     max-width: map-fetch($page-size, screen, max);

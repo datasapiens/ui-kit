@@ -3,7 +3,7 @@
  *
  * @requires {function}    rhythm-get
  * @requires {mixin}       round
- * @requires {placeholder} %ctr
+ * @requires {placeholder} %con
  * @requires container
  */
 
@@ -12,7 +12,7 @@
 // =============================================================================
 
 .pnl {
-    @extend %ctr !optional;
+    @extend %con !optional;
     @include round($panel-border-radius);
 
     background: {

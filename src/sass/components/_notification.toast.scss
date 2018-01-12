@@ -5,7 +5,7 @@
  * @requires {function}    px-to-rem
  * @requires {mixin}       acceleration
  * @requires {mixin}       stretch
- * @requires {placeholder} %ctr--core-y
+ * @requires {placeholder} %con--core-y
  * @requires {placeholder} %ico
  * @requires {variable}    $animation-easing
  * @requires {variable}    $icon-set
@@ -193,7 +193,7 @@
 // =============================================================================
 
 %ntf-toast__item__icon {
-    @extend %ctr--core-y !optional;
+    @extend %con--core-y !optional;
     @extend %ico !optional;
 
     animation: fade--in 0.2s 0.6s both;

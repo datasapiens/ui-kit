@@ -7,7 +7,7 @@
  * @requires {mixin}       acceleration
  * @requires {mixin}       font-size
  * @requires {mixin}       stretch
- * @requires {placeholder} %ctr--core-y
+ * @requires {placeholder} %con--core-y
  * @requires {placeholder} %ico
  * @requires {placeholder} %ico--ios-close-outline
  * @requires {variable}    $animation-easing
@@ -229,7 +229,7 @@
 // =============================================================================
 
 %msg__icon {
-    @extend %ctr--core-y !optional;
+    @extend %con--core-y !optional;
     @extend %ico !optional;
 
     content: "";
