@@ -1,3 +1,21 @@
+<a name="2.0.0"></a>
+## 2.0.0 Zinc Zebra (2018-01-15)
+
+#### Features
+
+- **control:** add `control` component ([6433f21](https://github.com/datasapiens/ui-kit/commit/6433f21))
+- **icon:** extend icon set ([231d65e](https://github.com/datasapiens/ui-kit/commit/231d65e))
+- **utility:** add white space helpers ([74bb955](https://github.com/datasapiens/ui-kit/commit/74bb955))
+
+#### Refactoring
+
+- **container:** change component prefix ([da21b63](https://github.com/datasapiens/ui-kit/commit/da21b63))
+
+#### BREAKING CHANGES
+
+- [object Object]
+
+
 <a name="1.6.0"></a>
 ## 1.6.0 (2018-01-09)
 
