@@ -96,7 +96,7 @@
 
 .lst-card__item {
     &[class][class] {
-        margin-bottom: $list-card-gutter;
+        margin-bottom: $list-card-gutter;   /* 1 */
     }
 
     @each $break in $list-card-breaks {
