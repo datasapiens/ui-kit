@@ -230,6 +230,10 @@
     }
 }
 
+.u-rhythm {
+    margin-bottom: rhythm-get() !important;
+}
+
 .u-transform {
     &.--capital { text-transform: capitalize; }
     &.--lower   { text-transform: lowercase; }
@@ -256,6 +260,10 @@
     }
 }
 
+.u-truncate {
+    @include text-truncate;
+}
+
 .u-wrap {
     &:not(.--nope) {
         @include word-wrap;
@@ -265,12 +273,19 @@
     }
 }
 
-.u-truncate {
-    @include text-truncate;
-}
-
-.u-rhythm {
-    margin-bottom: rhythm-get() !important;
+.u-whitespace {
+    &.--normal {
+        white-space: normal;
+    }
+    &.--nowrap {
+        white-space: nowrap;
+    }
+    &.--pre {
+        white-space: pre;
+    }
+    &.--preline {
+        white-space: pre-line;
+    }
 }
 
 /**
