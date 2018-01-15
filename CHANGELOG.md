@@ -13,7 +13,9 @@
 
 #### BREAKING CHANGES
 
-- [object Object]
+- **container:** component prefix is changed from `ctr` to `con`
+- **form:** removed `form__row` grid (replaced with `grid.lax`)
+- **grid.widget:** replaced with `list.widget`
 
 
 <a name="1.6.0"></a>
