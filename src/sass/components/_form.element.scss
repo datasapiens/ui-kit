@@ -139,7 +139,7 @@
 %form-element {
     &[readonly],
     &.is-readonly {
-        @extend %form-element:disabled;
+        // @extend %form-element:disabled;
     }
 }
 

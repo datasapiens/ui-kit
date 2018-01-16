@@ -301,8 +301,7 @@ select {
     text-align: right;
 }
 
-:disabled,
-[readonly] {
+:disabled {
     cursor: not-allowed !important;
 }
 
