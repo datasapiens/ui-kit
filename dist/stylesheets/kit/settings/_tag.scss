@@ -6,36 +6,51 @@
 // Tag settings
 // =============================================================================
 
+// Set tag background.
+$tag-background: $blue--catskill !default;
+
 // Set tag border radius.
 $tag-border-radius: 3px !default;
 
 // Set tag border size.
-// $tag-border-size: 1px !default;
+$tag-border-size: 1px !default;
 
-// Set tag box shadow.
-$tag-box-shadow: 0 1px 3px -1px rgba($black, 0.25) !default;
+// Set tag background.
+$tag-box-shadow: (
+    active:     0 1px 1px -1px rgba($black, 0.25),  // pressed
+    disable:    none,                               // disabled
+    focus:      0 1px 1px -1px rgba($black, 0.25),  // focused
+    hover:      0 1px 1px -1px rgba($black, 0.25),  // hovered
+    initial:    0 1px 3px -1px rgba($black, 0.25),
+) !default;
 
 // Set tag color.
-$tag-color: #fff !default;
+$tag-color: $blue--wood !default;
+
+// Set tag indent.
+$tag-indent: (
+    mean:   0.75rem,
+    narrow: 0.50rem,
+    wide:   1.50rem,
+) !default;
 
 // Set tag font size.
 $tag-font-size: (
-    large:  14px,
+    large:  15px,
     medium: 13px,
     small:  12px,
+    xsmall: 11px,
 ) !default;
-
-// Set tag indent.
-$tag-indent: 1em !default;
 
 // Set tag length.
 $tag-length: 15em !default;
 
-// Set tag size.
+// Set tag height.
 $tag-size: (
-    large:  32px,
+    large:  36px,
     medium: 28px,
     small:  24px,
+    xsmall: 22px,
 ) !default;
 
 // Set tag text shadow.

@@ -19,21 +19,16 @@
  */
 
 .tag {
-    @extend .tag.\--neutral;
     @extend .tag.\--medium;
+    @extend .tag.\--mean;
 
     align-items: center;
-    border: {
-        radius: $tag-border-radius;
-    }
-    box-shadow: $tag-box-shadow;
+    background-color: $tag-background;
+    border: $tag-border-size solid darken($tag-background, 5%);
+    border-radius: $tag-border-radius;
     cursor: default;
     display: inline-flex;
     max-width: $tag-length;
-    padding: {
-        left: $tag-indent;
-        right: $tag-indent;
-    }
     position: relative;
     text: {
         decoration: none;
@@ -49,16 +44,19 @@
  * Modifiers.
  */
 
-
 /**
- * Tag, narrow.
+ * Tag, length by indentation.
  */
 
 .tag {
-    &.\--narrow {
-        padding: {
-            left: 0.5 * $tag-indent;
-            right: 0.5 * $tag-indent;
+    @each $modifier in map-keys($tag-indent) {
+        &.\--#{$modifier} {
+            $indent: map-get($tag-indent, $modifier);
+
+            padding: {
+                left: $indent;
+                right: $indent;
+            }
         }
     }
 }
@@ -71,33 +69,33 @@
     &.\--primary {
         @include round($tag--primary-border-radius);
 
+        box-shadow: map-get($tag-box-shadow, initial);
         cursor: pointer;
         transition:
             background-color 0.2s,
             border-color 0.2s,
+            box-shadow 0.2s,
             color 0.2s;
     }
 }
 
 /**
  * Tag, size.
- * 1. Negative margin workaround to prevent vertical crop of the tag content
- *  and enable text truncate at the same time.
  */
 
 .tag {
     @each $modifier in map-keys($tag-size) {
         &.\--#{$modifier} {
-            $size: px-to-em(
-                map-get($tag-size, $modifier),
-                map-get($tag-font-size, $modifier)
-            );
+            $size: map-get($tag-size, $modifier);
 
-            font-size: px-to-rem(
-                map-get($tag-font-size, $modifier)
-            );
+            font: {
+                size: px-to-rem(
+                    map-get($tag-font-size, $modifier)
+                );
+            }
             height: $size;
-            line-height: $size;
+            // line-height: $size;
+            line-height: $size - 2 * $tag-border-size;
         }
     }
 }
@@ -109,15 +107,10 @@
 .tag {
     @each $modifier, $theme in $tag-theme {
         &.\--#{$modifier} {
-            background: {
-                color: map-get($theme, 50);
-                image: linear-gradient(
-                    120deg,
-                    rgba(map-get($theme, 80), 0.25) 0%,
-                    rgba(map-get($theme, 50), 0.00) 25%,
-                    rgba(map-get($theme, 20), 0.25) 75%
-                );
-            }
+            $color: map-get($theme, 80);
+
+            background-color: $color;
+            border-color: darken($color, 5%);
         }
     }
 }
@@ -133,16 +126,7 @@
 .tag {
     &:active,
     &.is-active {
-        &.\--primary {
-            @each $modifier, $theme in $tag-theme {
-                &.\--#{$modifier} {
-                    background: {
-                        color: darken(map-get($theme, 50), 15%);
-                        image: none;
-                    }
-                }
-            }
-        }
+        @extend .tag:focus;
     }
 }
 
@@ -154,8 +138,8 @@
 .tag[class][class] { /* 1 */
     &:disabled,
     &.is-disabled {
-        box-shadow: none;
-        opacity: 0.35;
+        box-shadow: map-get($tag-box-shadow, disable);
+        opacity: 0.5;
 
         &,
         .tag__control {
@@ -169,18 +153,29 @@
  */
 
 .tag {
-    &:focus:not(:disabled):not(.is-disabled),
-    &.is-focused:not(:disabled):not(.is-disabled) {
-        &.\--primary {
-            @each $modifier, $theme in $tag-theme {
-                &.\--#{$modifier} {
-                    background-color: lighten(map-get($theme, 50), 15%);
+    &:focus,
+    &.is-focused {
+        &:not(:disabled):not(.is-disabled) {
+            &.\--primary {
+                $color: darken($tag-background, 10%);
+
+                background-color: $color;
+                border-color: darken($color, 5%);
+                box-shadow: map-get($tag-box-shadow, focus);
+
+                @each $modifier, $theme in $tag-theme {
+                    $color: darken(map-get($theme, 80), 10%);
+
+                    &.\--#{$modifier} {
+                        background-color: $color;
+                        border-color: darken($color, 5%);
+                    }
                 }
             }
-        }
 
-        .tag__control {
-            opacity: 0.5;
+            .tag__control {
+                opacity: 0.5;
+            }
         }
     }
 }
@@ -217,8 +212,10 @@
 .tag__content {
     @include text-truncate;
 
-    margin: (-1) * $tag-indent 0; /* 1 */
-    padding: $tag-indent 0;       /* 1 */
+    $indent: map-get($tag-indent, narrow);
+
+    margin: (-1) * $indent 0; /* 1 */
+    padding: $indent 0;       /* 1 */
 }
 
 // Tag control
@@ -229,6 +226,8 @@
  */
 
 .tag__control {
+    $indent: map-get($tag-indent, narrow);
+
     align-items: center;
     cursor: pointer;
     display: inline-flex;
@@ -247,13 +246,11 @@
     & + & {
         margin-left: 2px;
     }
-
-    // FIX: It doesn't work if content is wrapped in the same element type.
-    &:first-of-type {
-        margin-left: (0.5) * $tag-indent;
+    &:first-child {
+        margin-left: $indent;
     }
     &:last-child {
-        margin-right: (-0.5) * $tag-indent;
+        margin-right: (-0.5) * $indent;
     }
 }
 
