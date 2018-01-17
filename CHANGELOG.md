@@ -1,3 +1,17 @@
+<a name="2.1.0"></a>
+## 2.1.0 (2018-01-17)
+
+#### Features
+
+- **form.element:** tweak `disabled` state ([96aa3ed](https://github.com/datasapiens/ui-kit/commit/96aa3ed))
+- **utility:** tweak white space helpers ([b4f977f](https://github.com/datasapiens/ui-kit/commit/b4f977f))
+
+#### Refactoring
+
+- **tag:** rethink `tag` ([ed9403b](https://github.com/datasapiens/ui-kit/commit/ed9403b))
+
+
+
 <a name="2.0.0"></a>
 ## 2.0.0 Zinc Zebra (2018-01-15)
 
