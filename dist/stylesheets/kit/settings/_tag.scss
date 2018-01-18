@@ -7,7 +7,13 @@
 // =============================================================================
 
 // Set tag background.
-$tag-background: $blue--catskill !default;
+$tag-background: (
+    active:     $blue--geyser,      // pressed
+    disable:    $blue--catskill,    // disabled
+    focus:      $blue--geyser,      // focused
+    hover:      $blue--geyser,      // hovered
+    initial:    $blue--catskill,
+) !default;
 
 // Set tag border radius.
 $tag-border-radius: 3px !default;
@@ -25,7 +31,13 @@ $tag-box-shadow: (
 ) !default;
 
 // Set tag color.
-$tag-color: $blue--wood !default;
+$tag-color: (
+    active:     $black,         // pressed
+    disable:    $blue--wood,    // disabled
+    focus:      $black,         // focused
+    hover:      $black,         // hovered
+    initial:    $blue--wood,
+) !default;
 
 // Set tag indent.
 $tag-indent: (

@@ -22,9 +22,11 @@
     @extend .tag.--medium;
     @extend .tag.--mean;
 
+    $bg-color: map-get($tag-background, initial);
+
     align-items: center;
-    background-color: $tag-background;
-    border: $tag-border-size solid darken($tag-background, 5%);
+    background-color: $bg-color;
+    border: $tag-border-size solid darken($bg-color, 5%);
     border-radius: $tag-border-radius;
     cursor: default;
     display: inline-flex;
@@ -36,7 +38,7 @@
     }
 
     &[class] {          /* 1 */
-        color: $tag-color;
+        color: map-get($tag-color, initial);
     }
 }
 
@@ -107,10 +109,11 @@
 .tag {
     @each $modifier, $theme in $tag-theme {
         &.--#{$modifier} {
-            $color: map-get($theme, 80);
+            $bg-color: map-get($theme, 80);
 
-            background-color: $color;
-            border-color: darken($color, 5%);
+            background-color: $bg-color;
+            border-color: darken($bg-color, 5%);
+            color: map-get($theme, 20);
         }
     }
 }
@@ -157,18 +160,21 @@
     &.is-focused {
         &:not(:disabled):not(.is-disabled) {
             &.--primary {
-                $color: darken($tag-background, 10%);
+                $bg-color: map-get($tag-background, focus);
 
-                background-color: $color;
-                border-color: darken($color, 5%);
+                background-color: $bg-color;
+                border-color: darken($bg-color, 5%);
                 box-shadow: map-get($tag-box-shadow, focus);
+                color: map-get($tag-color, focus);
 
                 @each $modifier, $theme in $tag-theme {
-                    $color: darken(map-get($theme, 80), 10%);
+                    $bg-color: darken(map-get($theme, 80), 10%);
+                    $color: map-get($theme, 0);
 
                     &.--#{$modifier} {
-                        background-color: $color;
-                        border-color: darken($color, 5%);
+                        background-color: $bg-color;
+                        border-color: darken($bg-color, 5%);
+                        color: $color;
                     }
                 }
             }
