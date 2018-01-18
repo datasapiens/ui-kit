@@ -1,3 +1,13 @@
+<a name="2.2.0"></a>
+## 2.2.0 (2018-01-18)
+
+#### Features
+
+- **table:** tweak stripe color ([e2c0737](https://github.com/datasapiens/ui-kit/commit/e2c0737))
+- **tag:** tweak colors ([a8861f4](https://github.com/datasapiens/ui-kit/commit/a8861f4))
+
+
+
 <a name="2.1.0"></a>
 ## 2.1.0 (2018-01-17)
 
