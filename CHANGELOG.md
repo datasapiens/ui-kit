@@ -1,3 +1,13 @@
+<a name="2.3.0"></a>
+## 2.3.0 (2018-01-19)
+
+#### Features
+
+- **list:** drop style on immediate childrens ([ed8310c](https://github.com/datasapiens/ui-kit/commit/ed8310c))
+- **message:** add `compact` variant and `spacer` subcomponent ([f2467ad](https://github.com/datasapiens/ui-kit/commit/f2467ad))
+
+
+
 <a name="2.2.0"></a>
 ## 2.2.0 (2018-01-18)
 
