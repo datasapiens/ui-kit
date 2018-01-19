@@ -10,12 +10,14 @@
  * @requires {placeholder} %con--core-y
  * @requires {placeholder} %ico
  * @requires {placeholder} %ico--ios-close-outline
+ * @requires {placeholder} %spa
  * @requires {variable}    $animation-easing
  * @requires {variable}    $icon-set
  * @requires animation.fade
  * @requires animation.slide
  * @requires container
  * @requires ico
+ * @requires spacer
  */
 
 // =============================================================================
@@ -68,6 +70,23 @@
 /**
  * Modifiers.
  */
+
+/**
+ * Message, compact.
+ */
+
+%msg--compact {
+    @include font-size(
+        $size-to: $message--compact-font-size,
+        $lines: $message--compact-line-height-ratio
+    );
+}
+
+.msg {
+    &.\--compact {
+        @extend %msg--compact;
+    }
+}
 
 /**
  * Message, primary.
@@ -123,10 +142,7 @@
 
 .msg {
     &.\--tertiary {
-        @include font-size(
-            $size-to: $message--tertiary-font-size,
-            $lines: $message--tertiary-line-height-ratio
-        );
+        @extend %msg--compact;
     }
 }
 
@@ -164,9 +180,13 @@
 
             .msg__title {
                 color: desaturate(
-                    map-get($theme, 20),
+                    map-get($theme, 0),
                     90%
                 );
+            }
+
+            .msg__spacer {
+                border-color: desaturate(map-get($theme, 80), 50%);
             }
 
             .msg__control {
@@ -225,6 +245,13 @@
     text-transform: uppercase;
 }
 
+// Message spacer
+// =============================================================================
+
+.msg__spacer {
+    @extend %spa !optional;
+}
+
 // Message icon
 // =============================================================================
 
@@ -233,7 +260,7 @@
     @extend %ico !optional;
 
     content: "";
-    font-size: px-to-em($message-icon-size);
+    font-size: px-to-rem($message-icon-size);
     left: 0;
     text-align: center;
     width: $message-icon-region-size !important;

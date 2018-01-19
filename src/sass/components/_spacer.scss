@@ -12,14 +12,23 @@
  * TODO: Consider renaming to `divider`
  */
 
-.spa {
-    border-bottom: $spacer-size solid $spacer-color;
+%spa {
+    border-bottom: {
+        style: solid;
+        width: $spacer-size;
+    }
     clear: both;
     display: block;
     margin: {
         bottom: rhythm-get();
         top: rhythm-get();
     }
+}
+
+.spa {
+    @extend %spa;
+
+    border-bottom-color: $spacer-color;
 }
 
 /**
