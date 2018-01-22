@@ -1,3 +1,13 @@
+<a name="2.4.0"></a>
+## 2.4.0 (2018-01-22)
+
+#### Features
+
+- **icon:** extend icon set ([2b7a414](https://github.com/datasapiens/ui-kit/commit/2b7a414))
+- **sticker:** add `sticker` component ([c0b62fb](https://github.com/datasapiens/ui-kit/commit/c0b62fb))
+
+
+
 <a name="2.3.0"></a>
 ## 2.3.0 (2018-01-19)
 
