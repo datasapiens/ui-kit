@@ -1,0 +1,159 @@
+/**
+ * Component Sticker.
+ *
+ * @requires {mixin}       acceleration
+ * @requires {mixin}       round
+ * @requires {mixin}       size
+ * @requires {placeholder} %con--core
+ * @requires {variable}    $animation-easing
+ * @requires container
+ */
+
+// =============================================================================
+// Sticker
+// =============================================================================
+
+%stk {
+    @include acceleration;
+
+    background-color: rgba($sticker-background, 0.75);
+    border-radius: $sticker-border-radius;
+    box-shadow: $sticker-box-shadow;
+    color: $sticker-color;
+    content: "";
+    position: absolute;
+    // width: 100%;
+    z-index: -1;
+}
+
+.stk {
+    @extend %stk--variant;
+
+    align-items: center;
+    display: inline-flex;
+    font-size: px-to-rem($sticker-font-size);
+    justify-content: center;
+    min-width: map-get($sticker-size, min);
+    padding: {
+        left: $sticker-indent;
+        right: $sticker-indent;
+    }
+    pointer-events: none;
+    position: relative;
+    // text-shadow: $sticker-text-shadow;
+    z-index: $sticker-index;
+
+    &::before {
+        @extend %stk;
+        @include size(100%);
+
+        animation: stk--enter 0.4s map-get($animation-easing, in-out-circ) both;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Sticker, themes.
+ */
+
+%stk--variant {
+    @each $modifier, $theme in $sticker-theme {
+        $color: map-get($theme, 50);
+
+        &.\--#{$modifier} {
+            color: $white;
+
+            &::before {
+                background: {
+                    color: rgba($color, 0.75);
+                    image: linear-gradient(
+                        190deg,
+                        rgba(darken($color, 10%), 0.75) 0%,
+                        rgba($color, 0.75) 40%
+                    );
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Sticker, primary.
+ */
+
+%stk--primary {
+    padding-top: 100%;
+}
+
+.stk {
+    &.\--primary {
+        font: {
+            size: px-to-rem($sticker--primary-font-size);
+            weight: 500;
+        }
+        text-transform: uppercase;
+        transform: rotate(-10deg);
+
+        &::before {
+            @extend %stk;
+            @extend %stk--primary;
+            @include round;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+/**
+ * Sticker, enter.
+ */
+
+@keyframes stk--enter {
+    0% {
+        opacity: 0;
+        transform: scale(0.75, 0.75);
+    }
+    95% {
+        transform: scale(1.05, 1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Sticker icon
+// =============================================================================
+
+.stk__icon {
+    @extend %con--core !optional;
+
+    font-size: 240%;
+    opacity: 0.25;
+    z-index: 0;
+}

@@ -1,0 +1,51 @@
+/**
+ * Component Sticker settings.
+ */
+
+// =============================================================================
+// Sticker settings
+// =============================================================================
+
+// Set sticker background.
+$sticker-background: $blue--catskill !default;
+
+// Set sticker border radius.
+$sticker-border-radius: 2px !default;
+
+// Set sticker box shadow.
+$sticker-box-shadow: 0 2px 3px -1px rgba($black, 0.125) !default;
+
+// Set sticker text shadow.
+// $sticker-text-shadow: $black !default;
+
+// Set sticker color.
+$sticker-color: $black !default;
+
+// Set sticker font size.
+$sticker-font-size: 14px !default;
+
+// Set sticker indent.
+$sticker-indent: 8px !default;
+
+// Set sticker z-index.
+$sticker-index: 1 !default;
+
+// Set sticker text shadow.
+$sticker-text-shadow: 0 1px 1px rgba($black, 0.125) !default;
+
+// Set sticker size map.
+$sticker-size: (
+    max: 10rem,
+    min: 4rem,
+) !default;
+
+// Set sticker themes map.
+$sticker-theme: map-get($color-set, accent) !default;
+
+/**
+ * Primary sticker.
+ */
+
+// Set primary sticker font size.
+$sticker--primary-font-size: 12px !default;
+
