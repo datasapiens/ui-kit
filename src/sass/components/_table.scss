@@ -435,7 +435,7 @@
  */
 
 .tbl {
-    &.is-active[class] {
+    &.is-active[class][class] {
         tbody {
             tr:hover {
                 @extend %tbl__group--active;
