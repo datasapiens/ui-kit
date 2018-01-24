@@ -1,3 +1,12 @@
+<a name="2.4.1"></a>
+### 2.4.1 (2018-01-24)
+
+#### Bug Fixes
+
+- **table:** row highlighting ([d8de7ee](https://github.com/datasapiens/ui-kit/commit/d8de7ee))
+
+
+
 <a name="2.4.0"></a>
 ## 2.4.0 (2018-01-22)
 
