@@ -1,3 +1,12 @@
+<a name="2.5.0"></a>
+## 2.5.0 (2018-01-30)
+
+#### Features
+
+- **utility:** add text decoration helpers ([3059316](https://github.com/datasapiens/ui-kit/commit/3059316))
+
+
+
 <a name="2.4.1"></a>
 ### 2.4.1 (2018-01-24)
 

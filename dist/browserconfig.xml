@@ -3,10 +3,10 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square70x70logo src="assets/metro-tile--medium.png"/>
-            <square150x150logo src="assets/metro-tile--medium.png"/>
-            <wide310x150logo src="assets/metro-tile--wide.png"/>
-            <square310x310logo src="assets/metro-tile--large.png"/>
+            <square70x70logo src="assets/metro-tile--medium.png?v=4637264b"/>
+            <square150x150logo src="assets/metro-tile--medium.png?v=4637264b"/>
+            <wide310x150logo src="assets/metro-tile--wide.png?v=239b7199"/>
+            <square310x310logo src="assets/metro-tile--large.png?v=8436932a"/>
         </tile>
     </msapplication>
 </browserconfig>
