@@ -250,6 +250,10 @@
     &.--bottom   { vertical-align: bottom !important; }
     &.--middle   { vertical-align: middle !important; }
     &.--top      { vertical-align: top !important; }
+
+    &.--none      { text-decoration: none; }
+    &.--strike    { text-decoration: line-through; }
+    &.--underline { text-decoration: underline; }
 }
 
 .u-text {
