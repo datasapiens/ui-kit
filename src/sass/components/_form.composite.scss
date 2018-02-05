@@ -1,6 +1,7 @@
 /**
  * Component Form/Composite.
  *
+ * @requires {mixin}       ie-gte-10
  * @requires {placeholder} %form-element
  * @requires {placeholder} %ico
  * @requires {placeholder} %ico--caret-down
@@ -17,6 +18,9 @@
 // =============================================================================
 
 /**
+ * 1. We need to increase specifity to overrride `inline-block`
+ *  set by `%form-element` in IE10+.
+ *
  * TODO: Implement control states.
  */
 
@@ -27,6 +31,12 @@
     .form-composite__control {
         align-items: center;
         justify-content: center;
+    }
+
+    @include ie-gte-10 {
+        &[class] {
+            display: inline-flex; /* 1 */
+        }
     }
 }
 
