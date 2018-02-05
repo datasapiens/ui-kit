@@ -2,6 +2,8 @@
  * Component List/Card.
  *
  * @requires {mixin}       acceleration
+ * @requires {mixin}       ie-edge
+ * @requires {mixin}       ie-gte-10
  * @requires {variable}    $animation-easing
  */
 
@@ -67,6 +69,13 @@
 
             animation: lst-card__item--enter 0.3s map-get($animation-easing, in-out-circ) both;
             transform-origin: 50% 0;
+
+            @include ie-gte-10 {
+                animation: fade--in 0.3s both;
+            }
+            @include ie-edge {
+                animation: fade--in 0.3s both;
+            }
         }
     }
 }
