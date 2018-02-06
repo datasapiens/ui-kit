@@ -1,3 +1,14 @@
+<a name="2.5.1"></a>
+### 2.5.1 (2018-02-06)
+
+#### Bug Fixes
+
+- **form.composite:** enforce `inline-flex` in IE11 ([8932dff](https://github.com/datasapiens/ui-kit/commit/8932dff))
+- **list.card:** simplify animations for Edge/IE11 ([8c5c371](https://github.com/datasapiens/ui-kit/commit/8c5c371))
+- **message:** simplify animations for Edge/IE11 ([9b2acc8](https://github.com/datasapiens/ui-kit/commit/9b2acc8))
+
+
+
 <a name="2.5.0"></a>
 ## 2.5.0 (2018-01-30)
 
