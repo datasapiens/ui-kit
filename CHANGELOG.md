@@ -1,3 +1,12 @@
+<a name="2.5.2"></a>
+### 2.5.2 (2018-02-06)
+
+#### Bug Fixes
+
+- **tooltip:** restore `absolute` position ([4356454](https://github.com/datasapiens/ui-kit/commit/4356454))
+
+
+
 <a name="2.5.1"></a>
 ### 2.5.1 (2018-02-06)
 
