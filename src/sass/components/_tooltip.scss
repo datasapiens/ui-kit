@@ -34,8 +34,7 @@
     max-width: map-get($tooltip-size, width);
     padding: $tooltip-indent;
     padding-bottom: 2 * $tooltip-indent;
-    // position: absolute;
-    position: fixed;
+    position: absolute;
     z-index: $tooltip-index;
 }
 
