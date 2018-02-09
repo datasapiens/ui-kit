@@ -50,7 +50,7 @@
  * Flexbox related.
  */
 
-
+// @deprecated in favour of `u-flex__item` modifiers.
 .u-grow[class] {
     flex-grow: 1;
 
@@ -58,6 +58,8 @@
         flex-grow: 0;
     }
 }
+
+// @deprecated in favour of `u-flex__item` modifiers.
 .u-shrink[class] {
     flex-shrink: 1;
 
@@ -66,7 +68,8 @@
     }
 }
 
-[class*="flex"] {
+.u-flex,
+.u-inline-flex {
     &.--wrap {
         flex-wrap: wrap;
 
@@ -127,6 +130,22 @@
     &.--start {
         justify-content: flex-start;
     }
+}
+
+.u-flex-item[class] {
+    // &.--01a { flex: 0 1 auto; }
+    &.--110 {
+        flex: 1;
+
+        @include ie-gte-10 {
+            flex: 1 1 0%;
+        }
+    }
+
+    &.--1xx { flex-grow: 1; }
+    &.--0xx { flex-grow: 0; }
+    &.--x1x { flex-shrink: 1; }
+    &.--x0x { flex-shrink: 0; }
 }
 
 /**
