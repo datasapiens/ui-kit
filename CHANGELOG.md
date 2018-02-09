@@ -1,3 +1,14 @@
+<a name="2.6.0"></a>
+## 2.6.0 (2018-02-09)
+
+#### Features
+
+- **icon:** extend icon set ([ae5a1df](https://github.com/datasapiens/ui-kit/commit/ae5a1df))
+- **modal:** increase `z-index` ([ef44bd0](https://github.com/datasapiens/ui-kit/commit/ef44bd0))
+- **utility:** add flexbox kids helpers ([120acf6](https://github.com/datasapiens/ui-kit/commit/120acf6))
+
+
+
 <a name="2.5.2"></a>
 ### 2.5.2 (2018-02-06)
 
