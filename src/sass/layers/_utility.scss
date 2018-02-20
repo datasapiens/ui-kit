@@ -132,6 +132,24 @@
     }
 }
 
+.u-self {
+    &.--baseline {
+        align-self: baseline;
+    }
+    &.--center {
+        align-self: center;
+    }
+    &.--end {
+        align-self: flex-end;
+    }
+    &.--start {
+        align-self: flex-start;
+    }
+    &.--stretch {
+        align-self: stretch;
+    }
+}
+
 .u-flex-item[class] {
     // &.--01a { flex: 0 1 auto; }
     &.--110 {
