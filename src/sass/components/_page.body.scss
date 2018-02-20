@@ -7,13 +7,17 @@
 // =============================================================================
 
 .page-body {
-    flex: 100 1 auto;
+    flex: 1;
     overflow: {
         x: hidden;
         y: auto;
     }
     padding: map-get($page-indent, screen) 0;
     position: relative;
+
+    @include ie-gte-10 {
+        flex: 1 1 0%;
+    }
 }
 
 /**
