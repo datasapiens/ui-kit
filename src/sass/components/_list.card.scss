@@ -27,6 +27,7 @@
     }
 
     @supports (display: grid) {
+        /* autoprefixer: off */
         @media (min-width: nth($list-card-breaks, 1)) {
             display: grid;
             grid-gap: $list-card-gutter;
@@ -140,6 +141,7 @@
     }
 
     @supports (display: grid) {
+        /* autoprefixer: off */
         @media (min-width: nth($list-card-breaks, 1)) {
             margin-right: 0;
             max-width: none;

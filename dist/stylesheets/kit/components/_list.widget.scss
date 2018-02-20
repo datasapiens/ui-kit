@@ -23,6 +23,7 @@
     }
 
     @supports (display: grid) {
+        /* autoprefixer: off */
         @media (min-width: nth($list-widget-breaks, 1)) {
             display: grid;
             grid: {
@@ -59,6 +60,7 @@
         margin-bottom: 3 * $list-widget-gutter;
 
         @supports (display: grid) {
+            /* autoprefixer: off */
             background-color: pink;
         }
 
@@ -147,6 +149,7 @@
     }
 
     @supports (display: grid) {
+        /* autoprefixer: off */
         @media (min-width: nth($list-widget-breaks, 1)) {
             grid-column-start: span 2;
             margin: {
@@ -177,6 +180,7 @@
             flex-basis: calc(#{percentage(1 / 1)} - #{$list-widget-gutter});
 
             @supports (display: grid) {
+                /* autoprefixer: off */
                 grid-column-start: span 4;
             }
         }
@@ -193,6 +197,7 @@
             flex-basis: calc(#{percentage(1 / 4)} - #{$list-widget-gutter});
 
             @supports (display: grid) {
+                /* autoprefixer: off */
                 grid-column-start: span 1;
             }
         }

@@ -12,6 +12,7 @@
 // =============================================================================
 
 .lst-index {
+    /* autoprefixer: off */
     display: grid;
     grid-gap: $list-index-gutter;
 
