@@ -1,3 +1,17 @@
+<a name="2.7.0"></a>
+## 2.7.0 (2018-02-20)
+
+#### Bug Fixes
+
+- **page.body:** flex base ([b763be0](https://github.com/datasapiens/ui-kit/commit/b763be0))
+
+#### Features
+
+- disable autoprefixer for CSS Grid ([8bed509](https://github.com/datasapiens/ui-kit/commit/8bed509))
+- **utility:** add flexbox self align helpers ([edd4006](https://github.com/datasapiens/ui-kit/commit/edd4006))
+
+
+
 <a name="2.6.0"></a>
 ## 2.6.0 (2018-02-09)
 
