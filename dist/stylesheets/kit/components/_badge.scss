@@ -17,6 +17,8 @@
     @include acceleration;
     @include text-truncate;
 
+    $tracking: $badge-letter-spacing / 1000 * 1em;
+
     animation:
         fade--in 0.25s 0.75s both,
         slide--right-reverse 0.25s 0.65s forwards;
@@ -29,13 +31,13 @@
         size: px-to-rem($badge-font-size);
     }
     height: $badge-size;
-    letter-spacing: px-to-em($badge-letter-spacing / 1000);
+    // letter-spacing: $tracking;
     line-height: $badge-size / $badge-font-size;
     min-width: $badge-size;
     padding: 0 $badge-indent;
     text: {
         align: center;
-        indent: px-to-em($badge-letter-spacing / 1000);
+        // indent: $tracking;
     }
     vertical-align: text-top;
 }
