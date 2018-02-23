@@ -46,7 +46,7 @@
 
                 @if str-index($unit-key, "i") {
                     $flag: !important;
-                    $unit-key: str-replace($unit-key, "i");
+                    $unit-key: string-replace($unit-key, "i");
                 }
                 @if map-has-key($unit-map, $unit-key) {
                     $unit: map-get($unit-map, $unit-key);
