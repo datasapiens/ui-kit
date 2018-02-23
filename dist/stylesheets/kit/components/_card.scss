@@ -415,7 +415,6 @@
 
     &::before {
         @extend %ico !optional;
-        // @extend %ico--user !optional;
 
         font-size: $card-figure-icon-size;
     }

@@ -5,7 +5,6 @@
  * @requires {mixin}       acceleration
  * @requires {mixin}       stretch
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--ios-close-outline
  * @requires {variable}    $animation-easing
  * @requires animation.fade
  * @requires animation.scale
@@ -305,7 +304,7 @@
 
         &::before {
             @extend %ico !optional;
-            @extend %ico--ios-close-outline !optional;
+            @extend %ico--#{$modal-control-icon} !optional;
         }
     }
 }

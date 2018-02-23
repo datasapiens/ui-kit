@@ -5,7 +5,6 @@
  * @requires {placeholder} %con--core-y
  * @requires {placeholder} %form-element
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--caret-down
  * @requires {variable}    $element-size
  * @requires container
  * @requires element
@@ -110,7 +109,7 @@
 %form-select__control {
     @extend %con--core-y !optional;
     @extend %ico !optional;
-    @extend %ico--caret-down !optional;
+    @extend %ico--#{$form-select-control-icon} !optional;
 
     font-size: $form-select-control-size;
     pointer-events: none;

@@ -5,10 +5,6 @@
  * @requires {function}    px-to-rem
  * @requires {mixin}       size
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--fa-lt-sort-down
- * @requires {placeholder} %ico--fa-lt-sort-up
- * @requires {placeholder} %ico--fa-sd-sort-down
- * @requires {placeholder} %ico--fa-sd-sort-up
  * @requires ico
  */
 
@@ -156,13 +152,15 @@ $indent: px-to-em($indicator-sort-indent);
 
 .ind-sort__unit {
     &.\--asc {
+        $ico: map-fetch($indicator-sort-unit-icon, asc);
+
         // align-items: flex-start;
 
         &::after {
-            @extend %ico--fa-lt-sort-up !optional;
+            @extend %ico--#{map-fetch($ico, initial)} !optional;
         }
         &::before {
-            @extend %ico--fa-sd-sort-up !optional;
+            @extend %ico--#{map-fetch($ico, active)} !optional;
         }
     }
 }
@@ -173,13 +171,15 @@ $indent: px-to-em($indicator-sort-indent);
 
 .ind-sort__unit {
     &.\--dsc {
+        $ico: map-fetch($indicator-sort-unit-icon, dsc);
+
         align-items: flex-end;
 
         &::after {
-            @extend %ico--fa-lt-sort-down !optional;
+            @extend %ico--#{map-fetch($ico, initial)} !optional;
         }
         &::before {
-            @extend %ico--fa-sd-sort-down !optional;
+            @extend %ico--#{map-fetch($ico, active)} !optional;
         }
     }
 }

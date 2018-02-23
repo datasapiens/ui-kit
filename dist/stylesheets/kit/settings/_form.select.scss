@@ -7,10 +7,13 @@
 // =============================================================================
 
 // Set form select indent (according to `$form-element-indent`).
-$form-select-indent: 10px;
+$form-select-indent: 10px !default;
+
+// Set form select control icon.
+$form-select-control-icon: caret-down !default;
 
 // Set form select control indent.
-$form-select-control-indent: 10px;
+$form-select-control-indent: 10px !default;
 
 // Set form select control size.
-$form-select-control-size: 1em;
+$form-select-control-size: 1em !default;

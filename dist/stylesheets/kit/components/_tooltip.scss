@@ -6,7 +6,6 @@
  * @requires {mixin}       acceleration
  * @requires {mixin}       font-size
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--fa-times-circle
  * @requires {variable}    $animation-easing
  * @requires ico
  */
@@ -153,7 +152,7 @@
 
     &::after {
         @extend %ico !optional;
-        @extend %ico--fa-times-circle !optional;
+        @extend %ico--#{$tooltip-control-icon} !optional;
     }
 }
 

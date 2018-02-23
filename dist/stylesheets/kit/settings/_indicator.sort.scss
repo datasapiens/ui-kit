@@ -12,6 +12,18 @@ $indicator-sort-indent: 4px !default;
 // Set indicator font size.
 $indicator-sort-font-size: 16px !default;
 
+// Set indicator unit icon map.
+$indicator-sort-unit-icon: (
+    asc: (
+        active:  fa-sd-sort-up,
+        initial: fa-lt-sort-up,
+    ),
+    dsc: (
+        active:  fa-sd-sort-down,
+        initial: fa-lt-sort-down,
+    ),
+) !default;
+
 // Set indicator unit size.
 $indicator-sort-unit-size: (
     height: 0.5em,

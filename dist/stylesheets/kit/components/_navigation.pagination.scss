@@ -4,8 +4,6 @@
  * @requires {function}    px-to-rem
  * @requires {placeholder} %btn__event
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--caret-left
- * @requires {placeholder} %ico--caret-right
  * @requires button
  * @requires ico
  */
@@ -320,7 +318,7 @@
 
         &::before {
             @extend %ico !optional;
-            @extend %ico--caret-left !optional;
+            @extend %ico--#{map-fetch($navigation-pagination-control-icon, prev)} !optional;
         }
     }
 }
@@ -335,7 +333,7 @@
 
         &::before {
             @extend %ico !optional;
-            @extend %ico--caret-right !optional;
+            @extend %ico--#{map-fetch($navigation-pagination-control-icon, next)} !optional;
         }
     }
 }

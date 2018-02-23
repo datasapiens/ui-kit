@@ -3,8 +3,6 @@
  *
  * @requires {mixin}       link-underline
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--fa-lt-external-link-square
- * @requires {placeholder} %ico--fa-lt-info-circle
  * @requires ico
  */
 
@@ -58,7 +56,7 @@
         @extend %lnk--icon;
 
         &::after {
-            @extend %ico--fa-lt-external-link-square !optional;
+            @extend %ico--#{map-fetch($link-icon, external)} !optional;
         }
 
         @media print {
@@ -76,7 +74,7 @@
         @extend %lnk--icon;
 
         &::after {
-            @extend %ico--fa-lt-info-circle !optional;
+            @extend %ico--#{map-fetch($link-icon, info)} !optional;
         }
 
         @media print {

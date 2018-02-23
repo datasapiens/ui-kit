@@ -54,3 +54,13 @@ $navigation-pagination-item-indent: 8px !default;
 
 // Set pagination item height.
 $navigation-pagination-item-size: 34px !default;
+
+/**
+ * Pagination control.
+ */
+
+// Set pagination control icon map.
+$navigation-pagination-control-icon: (
+    next: caret-right,
+    prev: caret-left,
+) !default;

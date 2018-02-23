@@ -6,7 +6,6 @@
  * @requires {mixin}       stretch
  * @requires {placeholder} %form-element
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--checkmark
  * @requires {variable}    $animation-easing
  * @requires animation.scale
  * @requires form.element
@@ -150,7 +149,7 @@
 
 %form-checkbox__shape {
     @extend %ico !optional;
-    @extend %ico--checkmark !optional;
+    @extend %ico--#{$form-checkbox-icon} !optional;
 
     pointer-events: none;
     opacity: 0;

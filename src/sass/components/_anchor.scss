@@ -3,7 +3,6 @@
  *
  * @requires {function}    px-to-rem
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--editor-link
  * @requires ico
  */
 
@@ -69,7 +68,7 @@
 
     &::before {
         @extend %ico !optional;
-        @extend %ico--editor-link !optional;
+        @extend %ico--#{$anchor-link-icon} !optional;
 
         margin-right: $anchor-link-indent;
     }

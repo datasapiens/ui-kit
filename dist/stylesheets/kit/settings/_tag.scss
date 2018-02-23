@@ -77,3 +77,13 @@ $tag-theme: map-get($color-set, accent) !default;
 
 // Set primary tag border radius.
 $tag--primary-border-radius: 100em !default;
+
+/**
+ * Tag control.
+ */
+
+// Set tag control icon map.
+$tag-control-icon: (
+    delete: close-circled,
+    edit:   editor-pencil-2,
+) !default;

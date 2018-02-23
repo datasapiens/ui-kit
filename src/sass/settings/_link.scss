@@ -14,3 +14,9 @@ $link-color: (
     initial:    $blue--cerulean,
     visit:      $blue--cerulean,               // visited
 ) !default;
+
+// Set link icon map.
+$link-icon: (
+    external: fa-lt-external-link-square,
+    info:     fa-lt-info-circle,
+) !default;

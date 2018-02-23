@@ -11,7 +11,6 @@
  * @requires {mixin}       stretch
  * @requires {placeholder} %con--core-y
  * @requires {placeholder} %ico
- * @requires {placeholder} %ico--ios-close-outline
  * @requires {placeholder} %spa
  * @requires {variable}    $animation-easing
  * @requires {variable}    $icon-set
@@ -297,7 +296,7 @@
 
     &::before {
         @extend %ico !optional;
-        @extend %ico--ios-close-outline !optional;
+        @extend %ico--#{$message-control-icon} !optional;
     }
 
     @include ie-gte-10 {
