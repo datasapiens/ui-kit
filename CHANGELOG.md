@@ -1,3 +1,16 @@
+<a name="2.8.0"></a>
+## 2.8.0 (2018-02-26)
+
+#### Bug Fixes
+
+- **spacing:** function name typo ([e42ca8c](https://github.com/datasapiens/ui-kit/commit/e42ca8c))
+
+#### Features
+
+- **badge:** disable tracking ([ea70d40](https://github.com/datasapiens/ui-kit/commit/ea70d40))
+
+
+
 <a name="2.7.0"></a>
 ## 2.7.0 (2018-02-20)
 
