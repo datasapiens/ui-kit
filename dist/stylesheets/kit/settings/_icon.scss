@@ -7,10 +7,13 @@
 // =============================================================================
 
 // Set icon font family.
-$icon-font-family: "UI Kit Icons" !default;
+$icon-font-family: "" !default;
 
 // Set icon font filename.
-$icon-font-filename: "kit-icons" !default;
+$icon-font-filename: "" !default;
+
+// Set glyphs list.
+$icon-glyphs: () !default;
 
 // Set icon indent.
 $icon-indent: 0.25em !default;

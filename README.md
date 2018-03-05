@@ -1,17 +1,17 @@
 [contributing]:  CONTRIBUTING.md
 [changelog]:     CHANGELOG.md
-[styleguide]:    https://app.netlify.com/
+[styleguide]:    https://datasapiens-styleguide.netlify.com/
 
 
 
 # UI Kit
 
 
-__UI Kit is Sass components and static assets library.__
+__UI Kit is Sass toolkit and components library.__
 
-![node](http://img.shields.io/badge/node-6.9.x-7FC100.svg?style=flat-square)
+![node](http://img.shields.io/badge/node-9.6.x-7FC100.svg?style=flat-square)
 ![grunt](http://img.shields.io/badge/grunt-1.0.x-E38800.svg?style=flat-square)
-![libsass](http://img.shields.io/badge/libsass-3.3.x-C44C8D.svg?style=flat-square)
+![libsass](http://img.shields.io/badge/libsass-4.7.x-C44C8D.svg?style=flat-square)
 
 
 ### Table of Contents
@@ -30,8 +30,8 @@ __UI Kit is Sass components and static assets library.__
 
 ## Requirements
 
-1. [Git](http://git-scm.com/downloads)    
-1. [Node](https://nodejs.org/en/download/) `6.9.x`    
+1. [Git](http://git-scm.com/downloads)  
+1. [Node](https://nodejs.org/en/download/) `9.6.x`  
 1. [Grunt CLI](http://gruntjs.com/getting-started)  
 
     ```

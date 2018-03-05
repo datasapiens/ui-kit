@@ -9,30 +9,16 @@ module.exports = (grunt) ->
     ]
 
     dist: [
-        # 'test'
-        # 'shell:install'
         'clean:dist'
         'clean:preprocess'
         'copy:preprocess'
         'replace:preprocess'
         'copy:dist'
-        'images'
-        'hashres:dist'
-    ]
-
-    fonts: [
-        'imagemin:icon'
-        'webfont'
     ]
 
     changelog: [
         'prompt:changelog'
         'conventionalChangelog'
-    ]
-
-    images: [
-        'imagemin:dist'
-        'cwebp'
     ]
 
     release: [

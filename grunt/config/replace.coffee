@@ -19,22 +19,7 @@ module.exports = (grunt) ->
                 to: '$1\\$2$3'
             }
             {
-                from: /(\.)(-{2})(.*[\{|,;])/g         # 2
+                from: /(\.)(-{2})(.*[\{|,;])/g             # 2
                 to: '$1\\$2$3'
-            }
-        ]
-
-    # 1. Fix hashres task `woff2` bug
-    #   @see https://github.com/Luismahou/grunt-hashres/issues/40
-
-    postprocess:
-        src: [
-            '<%= path.build %>/assets/css/*.css'
-        ]
-        overwrite: true
-        replacements: [
-            {
-                from: /(\?v=.{8})2/g                # 1
-                to: '2$1'
             }
         ]

@@ -15,11 +15,3 @@ module.exports = (grunt) ->
 
     commit:
         command: '<%= bump.commit %> && grunt bump-commit'
-
-    install:
-        command: [
-            'npm install'
-        ].join('&&')
-
-    watch:
-        command: 'ENV=development <%= shell.build.command %>'

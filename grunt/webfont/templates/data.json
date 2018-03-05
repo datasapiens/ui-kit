@@ -1,5 +1,0 @@
-{
-    "base": "<%= baseClass %>",
-    "prefix": "<%= classPrefix %>",
-    "glyphs": <%= JSON.stringify(glyphs) %>
-}
