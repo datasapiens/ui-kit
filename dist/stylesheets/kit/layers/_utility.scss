@@ -50,24 +50,6 @@
  * Flexbox related.
  */
 
-// @deprecated in favour of `u-flex__item` modifiers.
-.u-grow[class] {
-    flex-grow: 1;
-
-    &.\--nope {
-        flex-grow: 0;
-    }
-}
-
-// @deprecated in favour of `u-flex__item` modifiers.
-.u-shrink[class] {
-    flex-shrink: 1;
-
-    &.\--nope {
-        flex-shrink: 0;
-    }
-}
-
 .u-flex,
 .u-inline-flex {
     &.\--wrap {
