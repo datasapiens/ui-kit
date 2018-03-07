@@ -1,3 +1,17 @@
+<a name="3.0.0"></a>
+## 3.0.0 Iron Ladybug (2018-03-07)
+
+#### Bug Fixes
+
+- **font.monospace:** missing `default` flag ([1b90e08](https://github.com/datasapiens/ui-kit/commit/1b90e08))
+- **typography.font-face:** empty string parameters ([37a6adb](https://github.com/datasapiens/ui-kit/commit/37a6adb))
+
+##### BREAKING CHANGES
+
+All images, icons, fonts and none-sass related stuff has moved to the [datasapiens/ui-assets](https://github.com/datasapiens/ui-assets) repository.
+
+
+
 <a name="2.8.0"></a>
 ## 2.8.0 (2018-02-26)
 
