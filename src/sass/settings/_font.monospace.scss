@@ -7,10 +7,10 @@
 // =============================================================================
 
 // Set monospace font family.
-$font-monospace-family: "Inconsolata";
+$font-monospace-family: "Inconsolata" !default;
 
 // Set monospace font size.
-$font-monospace-size: 15px;
+$font-monospace-size: 15px !default;
 
 // Set monospace font variant list.
 $font-monospace-variant: (
@@ -22,4 +22,4 @@ $font-monospace-variant: (
     //     filename: "inconsolata-bold",
     //     weight: 700,
     // ),
-);
+) !default;
