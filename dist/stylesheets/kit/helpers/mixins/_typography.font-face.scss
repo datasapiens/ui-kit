@@ -3,31 +3,33 @@
  *
  * @link https://css-tricks.com/snippets/css/using-font-face/
  *
- * @param {String} $family          - Font family
- * @param {String} $file            - Font filename
- * @param {List}   $format ("woff") - Font file format
- * @param {String} $style  (normal) - Font style
- * @param {String} $weight (normal) - Font weight
+ * @param {String} $family           - Font family
+ * @param {String} $file             - Font filename
+ * @param {List}   $format ("woff2") - Font file format
+ * @param {String} $style  (normal)  - Font style
+ * @param {String} $weight (normal)  - Font weight
  */
 
 @mixin font-face(
-    $family,
-    $file,
-    $format: ("woff"),
+    $family: "",
+    $file: "",
+    $format: ("woff2"),
     $style: normal,
     $weight: normal
 ) {
-    @font-face {
-        font: {
-            family: $family;
-            style: $style;
-            weight: $weight;
-        }
-        @if length($format) > 1 {
-            src: url("../fonts/#{$file}.woff2") format("woff2"),
-                url("../fonts/#{$file}.woff") format("woff");
-        } @else {
-            src: url("../fonts/#{$file}.woff") format("woff");
+    @if $family != "" and $file != "" {
+        @font-face {
+            font: {
+                family: $family;
+                style: $style;
+                weight: $weight;
+            }
+            @if length($format) > 1 {
+                src: url("../fonts/#{$file}.woff2") format("woff2"),
+                    url("../fonts/#{$file}.woff") format("woff");
+            } @else {
+                src: url("../fonts/#{$file}.woff2") format("woff2");
+            }
         }
     }
 }
