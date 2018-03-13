@@ -35,11 +35,16 @@
  * Modifiers.
  */
 
-// .component--modifier {}
+/**
+ * Panel, flat.
+ * 1. We need to increase specifity.
+ */
 
-// .component {
-//     &.\--modifier {}
-// }
+.pnl {
+    &.\--flat[class] {
+        background-image: none;
+    }
+}
 
 /**
  * Panel, plain.
