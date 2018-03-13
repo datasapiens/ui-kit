@@ -97,6 +97,28 @@
 }
 
 /**
+ * Message, flat.
+ * 1. We need to increase specifity.
+ */
+
+.msg {
+    &.--flat[class] {          /* 1 */
+        background-image: none;
+    }
+}
+
+/**
+ * Message, plain.
+ * 1. We need to increase specifity.
+ */
+
+.msg {
+    &.--plain[class] {          /* 1 */
+        border: 0;
+    }
+}
+
+/**
  * Message, primary.
  */
 
