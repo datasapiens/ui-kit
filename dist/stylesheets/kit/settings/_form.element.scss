@@ -12,16 +12,16 @@ $form-element-background: (
     focus:      rgba($white, 1),              // focused
     hover:      rgba($white, 1),              // hovered
     initial:    rgba($white, 0.85),
-    invalid:    lighten($red--sunset, 55%),  // invalid
+    invalid:    lighten($red--sunset, 35%),   // invalid
 );
 
 // Set form element border color.
 $form-element-border-color: (
-    disable:    $blue--catskill,  // disabled
-    focus:      $blue--dodger,                                      // focused
-    hover:      $blue--dodger,                                      // hovered
+    disable:    $blue--catskill, // disabled
+    focus:      $blue--dodger,   // focused
+    hover:      $blue--dodger,   // hovered
     initial:    $blue--heather,
-    invalid:    $red--sunset,                                      // invalid
+    invalid:    $red--sunset,    // invalid
 );
 
 // Set form element border radius.
@@ -32,11 +32,11 @@ $form-element-border-size: 1px;
 
 // Set form element color.
 $form-element-color: (
-    disable:    lighten($base-color, 30%), // disabled
-    focus:      darken($base-color, 50%),  // focused
-    hover:      darken($base-color, 50%),  // hovered
+    disable:    lighten($base-color, 30%),  // disabled
+    focus:      darken($base-color, 50%),   // focused
+    hover:      darken($base-color, 50%),   // hovered
     initial:    $base-color,
-    invalid:    $red--sunset,               // invalid
+    invalid:    $base-color,                // invalid
     require:    $red--sunset,               // required
 );
 
