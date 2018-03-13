@@ -35,11 +35,15 @@
  * Modifiers.
  */
 
-// .component--modifier {}
+/**
+ * Spacer, secondary.
+ */
 
-// .component {
-//     &.\--modifier {}
-// }
+.spa {
+    &.\--secondary {
+        border-bottom-style: dotted;
+    }
+}
 
 /**
  * States.
