@@ -50,6 +50,18 @@
 }
 
 /**
+ * Button group, tight.
+ */
+
+.btn-group {
+    &.--tight {
+        %btn-group__item {
+            margin-bottom: 0.5 * $button-group-gutter;
+        }
+    }
+}
+
+/**
  * Button group, buttons aligned left.
  */
 
