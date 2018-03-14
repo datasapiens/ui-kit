@@ -1,3 +1,21 @@
+<a name="3.1.0"></a>
+## 3.1.0 (2018-03-14)
+
+#### Bug Fixes
+
+- **table:** rise `active` group priority ([c1f949b](https://github.com/datasapiens/ui-kit/commit/c1f949b))
+
+#### Features
+
+- **button.group:** add `tight` variant ([d299036](https://github.com/datasapiens/ui-kit/commit/d299036))
+- **form.element:** tweak `invalid` colors ([ec08189](https://github.com/datasapiens/ui-kit/commit/ec08189))
+- **message:** add `plain`, `flat` variants ([2b86e58](https://github.com/datasapiens/ui-kit/commit/2b86e58))
+- **notification.toast:** tweak animation delay ([c301a90](https://github.com/datasapiens/ui-kit/commit/c301a90))
+- **panel:** add `flat` variant ([527809a](https://github.com/datasapiens/ui-kit/commit/527809a))
+- **spacer:** add `secondary` variant ([12642e1](https://github.com/datasapiens/ui-kit/commit/12642e1))
+
+
+
 <a name="3.0.0"></a>
 ## 3.0.0 Iron Ladybug (2018-03-07)
 
