@@ -527,10 +527,11 @@
 
 /**
  * Table column, active.
+ * 1. We need to increase specifity.
  */
 
 .tbl__column {
-    &.is-active {
+    &.is-active[class] {    /* 1 */
         @extend %tbl__group--active;
     }
 }
@@ -560,10 +561,11 @@
 
 /**
  * Table row, active.
+ * 1. We need to increase specifity.
  */
 
 .tbl__row {
-    &.is-active {
+    &.is-active[class] {        /* 1 */
         td,
         th {
             @extend %tbl__group--active;
