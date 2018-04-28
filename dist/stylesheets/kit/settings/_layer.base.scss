@@ -49,6 +49,25 @@ $base-type-scale: (
 // Set base `::selection` background.
 $base-selection-background: gold !default;
 
+/**
+ * Blockquotes.
+ */
+
+// Set blockquote background.
+$base-blockquote-background: $blue--zircon !default;
+
+// Set blockquote border color.
+$base-blockquote-border-color: $orange--safron !default;
+
+// Set blockquote border size.
+$base-blockquote-border-size: 1px !default;
+
+// Set blockquote box shadow.
+$base-blockquote-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
+
+// Set blockquote indent (acording to `$base-indent`).
+$base-blockquote-indent: 30px !default;
+
 // Browser (OS) specific
 // =============================================================================
 
