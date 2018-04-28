@@ -1,3 +1,17 @@
+<a name="3.2.0"></a>
+## 3.2.0 (2018-04-28)
+
+#### Bug Fixes
+
+- **dropdown:** increase `z-index` ([2724ba0](https://github.com/datasapiens/ui-kit/commit/2724ba0))
+
+#### Features
+
+- **base:** blockquotes ([23d8cce](https://github.com/datasapiens/ui-kit/commit/23d8cce))
+- **basics:** add `basics` component ([6b6c84c](https://github.com/datasapiens/ui-kit/commit/6b6c84c))
+
+
+
 <a name="3.1.0"></a>
 ## 3.1.0 (2018-03-14)
 
