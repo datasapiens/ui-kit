@@ -1,0 +1,77 @@
+/**
+ * Component Basics.
+ *
+ * @requires {function} rhythm-get
+ * @requires {placeholder} %tbl--edge
+ * @requires {placeholder} %tbl--grid
+ * @requires list
+ * @requires spacer
+ * @requires table
+ */
+
+// =============================================================================
+// Basics
+// =============================================================================
+
+.bsc {
+    hr {
+        @extend .spa !optional;
+    }
+
+    ol, ul {
+        @extend .lst.\--compact !optional;
+    }
+
+    p + p {
+        margin-top: (-1) * rhythm-get(0.25);
+    }
+
+    table {
+        @extend .tbl !optional;
+        @extend %tbl--edge !optional;
+        @extend %tbl--grid !optional;
+
+        padding: $basics-table-indent;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.\--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}
