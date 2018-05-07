@@ -48,6 +48,25 @@
 }
 
 /**
+ * Element, shape.
+ */
+
+%emt--shape {
+    @each $modifier in map-keys($element-shape) {
+        &.--#{$modifier} {
+            @extend %emt--#{$modifier};
+        }
+        @at-root %emt--#{$modifier} {
+            @if $modifier == "round" {
+                @include round(
+                    map-fetch($element-shape, $modifier, radius)
+                );
+            }
+        }
+    }
+}
+
+/**
  * Element, size.
  */
 

@@ -2,6 +2,7 @@
  * Component Button.
  *
  * @requires {function}    px-to-em
+ * @requires {mixin}       round
  * @requires {placeholder} %btn-group__item
  * @requires {placeholder} %emt--alignment
  * @requires {placeholder} %emt--medium
@@ -21,6 +22,7 @@
     @extend %btn--variant;
     @extend %emt--alignment !optional;
     @extend %emt--medium !optional;
+    @extend %emt--shape !optional;
     @extend %emt--size !optional;
 
     align-items: center;
