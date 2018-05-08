@@ -14,6 +14,10 @@
 // =============================================================================
 
 .bsc {
+    code {
+        @extend .snp !optional;
+    }
+
     hr {
         @extend .spa !optional;
     }
@@ -24,6 +28,12 @@
 
     p + p {
         margin-top: (-1) * rhythm-get(0.25);
+    }
+
+    pre {
+        code {
+            @extend .snp.\--block !optional;
+        }
     }
 
     table {
