@@ -1,0 +1,11 @@
+/**
+ * Provides `iOS` content block.
+ *
+ * @param {String} $content
+ */
+
+@mixin ios {
+    .ios & {
+        @content;
+    }
+}
