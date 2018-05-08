@@ -1,3 +1,13 @@
+<a name="3.3.0"></a>
+## 3.3.0 (2018-05-08)
+
+#### Features
+
+- **basics:** add `code` and `pre` ([951e2c8](https://github.com/datasapiens/ui-kit/commit/951e2c8))
+- **button:** add `round` variant ([d14ccba](https://github.com/datasapiens/ui-kit/commit/d14ccba))
+
+
+
 <a name="3.2.0"></a>
 ## 3.2.0 (2018-04-28)
 
