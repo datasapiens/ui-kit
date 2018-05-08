@@ -1,3 +1,12 @@
+<a name="3.4.0"></a>
+## 3.4.0 (2018-05-08)
+
+#### Features
+
+- **browser.ios:** add `iOS` mixin ([a8ecb9b](https://github.com/datasapiens/ui-kit/commit/a8ecb9b))
+
+
+
 <a name="3.3.0"></a>
 ## 3.3.0 (2018-05-08)
 
