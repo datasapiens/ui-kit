@@ -1,3 +1,12 @@
+<a name="3.5.0"></a>
+## 3.5.0 (2018-05-18)
+
+#### Features
+
+- **notification.strip:** add strip notification component ([52d56e6](https://github.com/datasapiens/ui-kit/commit/52d56e6))
+
+
+
 <a name="3.4.0"></a>
 ## 3.4.0 (2018-05-08)
 
