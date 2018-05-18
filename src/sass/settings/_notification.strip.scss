@@ -1,0 +1,55 @@
+/**
+ * Component Notification/Strip settings.
+ */
+
+// =============================================================================
+// Strip notification settings
+// =============================================================================
+
+// Set strip notification breakpoints.
+$notification-strip-breaks: (
+    500px,
+) !default;
+
+// Set strip notification font size.
+$notification-strip-font-size: 13px !default;
+
+// Set strip notification index.
+$notification-strip-index: 6 !default;
+
+// Set strip notification line height ratio.
+$notification-strip-line-height-ratio: 1.5 !default;
+
+// Set strip notification width.
+$notification-strip-size: 500px !default;
+
+// Set strip notification theme map.
+$notification-strip-theme: map-get($color-set, accent) !default;
+
+/**
+ * Strip notification item.
+ */
+
+// Set strip notification item border radius.
+$notification-strip-item-border-radius: 3px !default;
+
+// Set strip notification item box shadow.
+$notification-strip-item-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
+
+// Set strip notification item color.
+$notification-strip-item-color: #fff !default;
+
+// Set strip notification item indent.
+$notification-strip-item-indent: 16px !default;
+
+// Set strip notification item title font size.
+$notification-strip-item-title-font-size: 13px !default;
+
+// Set strip notification item title font weight.
+$notification-strip-item-title-font-weight: 500 !default;
+
+// Set strip notification item indent.
+$notification-strip-item-control-icon: "ios-close-outline" !default;
+
+// Set strip notification item indent.
+$notification-strip-item-control-size: 20px !default;

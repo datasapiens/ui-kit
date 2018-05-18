@@ -1,0 +1,208 @@
+/**
+ * Component Notification/Strip.
+ *
+ * @requires {function}    px-to-rem
+ * @requires {mixin}       font-size
+ * @requires {mixin}       size
+ * @requires {placeholder} %ico
+ * @requires {variable}    $variable
+ * @requires animation.fade
+ * @requires icon
+ */
+
+// =============================================================================
+// Strip notification
+// =============================================================================
+
+.ntf-strip {
+    animation: fade--in 0.3s 1s both;
+    display: flex;
+    flex-direction: column;
+
+    @if $notification-strip-font-size != $base-font-size {
+        font-size: px-to-rem($notification-strip-font-size);
+    }
+    @if $notification-strip-line-height-ratio != inherit {
+        line-height: $notification-strip-line-height-ratio;
+    }
+
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Strip notification, debug.
+ */
+
+.ntf-strip {
+    &.\--debug[class] {
+        position: static;
+        transform: none;
+    }
+}
+
+/**
+ * Strip notification, primary.
+ */
+
+.ntf-strip {
+    &.\--primary {
+        border-radius: $notification-strip-item-border-radius;
+        box-shadow: $notification-strip-item-box-shadow;
+        overflow: hidden;
+        position: fixed;
+        top: 16px;
+        z-index: $notification-strip-index;
+
+        @media (min-width: nth($notification-strip-breaks, 1)) {
+            left: 50%;
+            max-width: 500px;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Strip notification item
+// =============================================================================
+
+.ntf-strip__item {
+    @extend .ntf-strip__item.\--neutral;
+
+    color: $notification-strip-item-color;
+    display: block;
+    margin: 0;
+    padding:
+        $notification-strip-item-indent
+        1.5 * $notification-strip-item-indent;
+
+    a {
+        color: inherit;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Strip item, color themes.
+ */
+
+.ntf-strip__item {
+    @each $modifier, $theme in $notification-strip-theme {
+        &.\--#{$modifier} {
+            background-color: map-get($theme, 50);
+        }
+
+        @at-root .ntf-strip {
+            // Primary
+            &.\--primary {
+                .ntf-strip__item.\--#{$modifier} {
+                    background-color: rgba(map-get($theme, 50), 0.9);
+                }
+            }
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Strip item, leaving animation.
+ */
+
+.ntf-strip__item {
+    &.is-leaving {
+        animation: fade--out 0.3s both;
+    }
+}
+
+// Strip item inset
+// =============================================================================
+
+.ntf-strip__item__inset {
+    margin: {
+        left: (-1.5) * $notification-strip-item-indent;
+        right: (-1.5) * $notification-strip-item-indent;
+    }
+}
+
+// Strip item title
+// =============================================================================
+
+.ntf-strip__item__title {
+    @include font-size($notification-strip-item-title-font-size);
+
+    font-weight: $notification-strip-item-title-font-weight;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+// Strip item control
+// =============================================================================
+
+.ntf-strip__item__control {
+    @include size(
+        px-to-rem($notification-strip-item-control-size)
+    );
+
+    cursor: pointer;
+    display: inline-block;
+    flex: none;
+    font-size: px-to-rem($notification-strip-item-control-size);
+    line-height: 1;
+    margin-left: $notification-strip-item-indent;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+
+    &::before {
+        @extend %ico !optional;
+        @extend %ico--#{$notification-strip-item-control-icon} !optional;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Strip item control, hover.
+ */
+
+.ntf-strip__item__control {
+    &:hover {
+        opacity: 1;
+    }
+}

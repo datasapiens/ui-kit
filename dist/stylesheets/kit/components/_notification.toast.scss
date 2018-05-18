@@ -12,8 +12,7 @@
  * @requires animation.fade
  * @requires animation.slide
  * @requires container
- * @requires ico
- * @requires ntf
+ * @requires icon
  */
 
 // <ul class="ntf-toast">
@@ -29,7 +28,6 @@
 // =============================================================================
 
 .ntf-toast {
-    @extend %ntf !optional;
     @include stretch(
         fixed,
         $notification-toast-offset + $notification-toast-item-indent,
