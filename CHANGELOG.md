@@ -1,3 +1,13 @@
+<a name="3.5.1"></a>
+### 3.5.1 (2018-05-22)
+
+#### Bug Fixes
+
+- **notification.strip:** tweak narrow screens ([3093ed2](https://github.com/datasapiens/ui-kit/commit/3093ed2))
+- **snippet:** set text color ([1c8bb42](https://github.com/datasapiens/ui-kit/commit/1c8bb42))
+
+
+
 <a name="3.5.0"></a>
 ## 3.5.0 (2018-05-18)
 
