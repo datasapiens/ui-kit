@@ -2,7 +2,6 @@
  * Component Notification/Strip.
  *
  * @requires {function}    px-to-rem
- * @requires {mixin}       font-size
  * @requires {mixin}       size
  * @requires {placeholder} %ico
  * @requires {variable}    $variable
@@ -55,13 +54,14 @@
         box-shadow: $notification-strip-item-box-shadow;
         overflow: hidden;
         position: fixed;
-        top: 16px;
+        top: 0;
+        width: 100%;
         z-index: $notification-strip-index;
 
         @media (min-width: nth($notification-strip-breaks, 1)) {
             left: 50%;
-            max-width: 500px;
-            transform: translateX(-50%);
+            max-width: nth($notification-strip-breaks, 1);
+            transform: translate(-50%, 16px);
         }
     }
 }
@@ -163,9 +163,11 @@
 // =============================================================================
 
 .ntf-strip__item__title {
-    @include font-size($notification-strip-item-title-font-size);
-
-    font-weight: $notification-strip-item-title-font-weight;
+    font: {
+        size: px-to-rem($notification-strip-item-title-font-size);
+        weight: $notification-strip-item-title-font-weight;
+    }
+    line-height: $notification-strip-item-title-line-height-ratio;
     margin: 0;
     text-transform: uppercase;
 }
