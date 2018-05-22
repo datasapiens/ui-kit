@@ -10,6 +10,7 @@
     background-color: $snippet-background;
     border: $snippet-border-size solid $snippet-border-color;
     border-radius: $snippet-border-radius;
+    color: $snippet-color;
     font: {
         family: "#{$snippet-font-family}", monospace;
         size: px-to-rem($snippet-font-size);
