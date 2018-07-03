@@ -7,14 +7,14 @@
 // =============================================================================
 
 // Set panel background.
-$panel-background: $white;
+$panel-background: $white !default;
 
 // Set panel background gradient.
 $panel-background-gradient: linear-gradient(
     160deg,
     rgba(map-get(map-get($color-set, neutral), 100), 0.125) 0%,
     rgba(map-get(map-get($color-set, neutral), 20), 0.050) 100%
-);
+) !default;
 
 // Set panel border color.
 $panel-border-color: map-get(
@@ -23,10 +23,10 @@ $panel-border-color: map-get(
 ) !default;
 
 // Set panel border radius.
-$panel-border-radius: 3px;
+$panel-border-radius: 3px !default;
 
 // Set panel border size.
-$panel-border-size: 1px;
+$panel-border-size: 1px !default;
 
 // Set panel box shadow.
 $panel-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
@@ -35,11 +35,11 @@ $panel-box-shadow: 0 1px 3px -1px rgba($black, 0.125) !default;
 $panel-indent: (
     horizontal: 16px,
     vertical:   16px,
-);
+) !default;
 
 /**
  * Panel, elevate.
  */
 
 // Set elevate panel box shadow.
-$panel--elevate-box-shadow: 0 5px 20px -5px rgba($panel-border-color, 0.5);
+$panel--elevate-box-shadow: 0 5px 20px -5px rgba($panel-border-color, 0.5) !default;
