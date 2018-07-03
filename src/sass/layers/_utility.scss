@@ -26,13 +26,15 @@
 .u-table-cell     { display: table-cell; }
 
 .u-none {
-    &.--printer {
+    &.--print {
         @media print {
             display: none;
         }
     }
     &.--screen {
-        display: none;
+        @media screen {
+            display: none;
+        }
     }
 }
 
