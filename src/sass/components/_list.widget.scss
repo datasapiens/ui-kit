@@ -44,6 +44,12 @@
         .lst-widget__item:not(:last-of-type) {
             page-break-after: always;
         }
+
+        .lst-widget__item {
+            .lst-widget__item {
+                page-break-after: unset;
+            }
+        }
     }
 }
 
