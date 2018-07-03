@@ -1,3 +1,19 @@
+<a name="3.6.0"></a>
+## 3.6.0 (2018-07-03)
+
+#### Bug Fixes
+
+- **list.widget:** tweak page break rules ([c39f445](https://github.com/datasapiens/ui-kit/commit/c39f445))
+- **utility:** display for print ([71a48af](https://github.com/datasapiens/ui-kit/commit/71a48af))
+
+#### Features
+
+- **notification.toast:** disable for print ([9caad71](https://github.com/datasapiens/ui-kit/commit/9caad71))
+- **page.context:** disable for print ([8c4e5ee](https://github.com/datasapiens/ui-kit/commit/8c4e5ee))
+- **utility:** add text `compact` variant ([2ecd75c](https://github.com/datasapiens/ui-kit/commit/2ecd75c))
+
+
+
 <a name="3.5.1"></a>
 ### 3.5.1 (2018-05-22)
 
