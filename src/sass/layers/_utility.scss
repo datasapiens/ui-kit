@@ -273,6 +273,8 @@
     &.--none      { text-decoration: none; }
     &.--strike    { text-decoration: line-through; }
     &.--underline { text-decoration: underline; }
+
+    &.--compact { line-height: 1.3; }
 }
 
 .u-text {
