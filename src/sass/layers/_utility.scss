@@ -44,7 +44,9 @@
 
 .u-filter {
     &.--monochrome {
-        filter: grayscale(100%);
+        @media screen {
+            filter: grayscale(100%);
+        }
     }
 }
 
