@@ -1,3 +1,15 @@
+<a name="3.6.1"></a>
+### 3.6.1 (2018-07-04)
+
+#### Bug Fixes
+
+- **button:** restrict `filter` and shadows to screens ([d49a611](https://github.com/datasapiens/ui-kit/commit/d49a611))
+- **button.switch:** restrict shadows to screens ([42897dc](https://github.com/datasapiens/ui-kit/commit/42897dc))
+- **control:** restrict `filter` to screens ([b2c744d](https://github.com/datasapiens/ui-kit/commit/b2c744d))
+- **utiity:** restrict monochrome filter to screens ([97c87f7](https://github.com/datasapiens/ui-kit/commit/97c87f7))
+
+
+
 <a name="3.6.0"></a>
 ## 3.6.0 (2018-07-03)
 
