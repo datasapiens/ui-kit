@@ -28,7 +28,6 @@
         width: $button-switch-border-size;
         style: solid;
     }
-    box-shadow: $button-switch-box-shadow;
     // color: map-get($button-switch-color, initial);
     cursor: pointer;
     display: inline-flex;
@@ -37,6 +36,10 @@
 
     &[class] {
         padding: 0;
+    }
+
+    @media screen {
+        box-shadow: $button-switch-box-shadow;
     }
 }
 
