@@ -67,7 +67,9 @@
     opacity: 0.5;
 
     @supports (filter: grayscale(100%)) {
-        filter: grayscale(100%);
+        @media screen {
+            filter: grayscale(100%);
+        }
     }
 }
 
