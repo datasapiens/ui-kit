@@ -33,7 +33,6 @@
         width: $button-border-size;
         style: solid;
     }
-    box-shadow: $button-box-shadow;
     color: map-get($button-color, initial);
     cursor: pointer;
     display: inline-flex;
@@ -44,10 +43,7 @@
         bottom: 0;
         top: 0;
     }
-    text: {
-        align: center;
-        shadow: $button-text-shadow;
-    }
+    text-align: center;
     transition:
         background-color 0.2s,
         border-color 0.2s,
@@ -58,6 +54,11 @@
 
     &[class] {
         text-decoration: none;
+    }
+
+    @media screen {
+        box-shadow: $button-box-shadow;
+        text-shadow: $button-text-shadow;
     }
 }
 
@@ -215,7 +216,9 @@
         }
 
         @supports (filter: grayscale(100%)) {
-            filter: grayscale(80%);
+            @media screen {
+                filter: grayscale(80%);
+            }
         }
 
         // &.\--primary {
