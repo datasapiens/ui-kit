@@ -1,3 +1,12 @@
+<a name="3.6.2"></a>
+### 3.6.2 (2018-07-10)
+
+#### Bug Fixes
+
+- **base:** disable custom scrollbars ([a814bd8](https://github.com/datasapiens/ui-kit/commit/a814bd8))
+
+
+
 <a name="3.6.1"></a>
 ### 3.6.1 (2018-07-04)
 
