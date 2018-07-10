@@ -446,32 +446,37 @@ th {
  * @link https://css-tricks.com/custom-scrollbars-in-webkit/
  */
 
-::-webkit-scrollbar {
-    -webkit-appearance: none;
+/**
+ * Do not customize scrollbars pls!
+ * @link https://trello.com/c/mtD7V2Db
+ */
 
-    &:horizontal {
-        height: $base-scrollbar-size;
-    }
+// ::-webkit-scrollbar {
+//     -webkit-appearance: none;
 
-    &:vertical {
-        width: $base-scrollbar-size;
-    }
+//     &:horizontal {
+//         height: $base-scrollbar-size;
+//     }
 
-    &-thumb {
-        background-color: map-get($base-scrollbar-thumb, initial);
-        border-radius: 0.5 * $base-scrollbar-size;
-        transition: background-color 0.2s;
+//     &:vertical {
+//         width: $base-scrollbar-size;
+//     }
 
-        &:hover {
-            background-color: map-get($base-scrollbar-thumb, hover);
-        }
-    }
+//     &-thumb {
+//         background-color: map-get($base-scrollbar-thumb, initial);
+//         border-radius: 0.5 * $base-scrollbar-size;
+//         transition: background-color 0.2s;
 
-    &-track {
-        background-color: $base-scrollbar-track;
-        border-radius: 0.5 * $base-scrollbar-size;
-    }
-}
+//         &:hover {
+//             background-color: map-get($base-scrollbar-thumb, hover);
+//         }
+//     }
+
+//     &-track {
+//         background-color: $base-scrollbar-track;
+//         border-radius: 0.5 * $base-scrollbar-size;
+//     }
+// }
 
 // =============================================================================
 // Print
