@@ -1,3 +1,12 @@
+<a name="3.6.3"></a>
+### 3.6.3 (2018-07-12)
+
+#### Bug Fixes
+
+- **basics:** set maximum width for `img` ([01878e0](https://github.com/datasapiens/ui-kit/commit/01878e0))
+
+
+
 <a name="3.6.2"></a>
 ### 3.6.2 (2018-07-10)
 
