@@ -1,3 +1,12 @@
+<a name="3.6.4"></a>
+### 3.6.4 (2018-07-18)
+
+#### Bug Fixes
+
+- **size:** min/max size mixins ([1ae9631](https://github.com/datasapiens/ui-kit/commit/1ae9631))
+
+
+
 <a name="3.6.3"></a>
 ### 3.6.3 (2018-07-12)
 
