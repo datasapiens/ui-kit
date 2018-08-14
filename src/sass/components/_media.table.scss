@@ -95,6 +95,14 @@
 
 .mda-table__content {
     display: block;
+
+    @if map-get($media-features, debug) {
+        background-color: rgba(cyan, 0.5);
+
+        @at-root .mda-table:nth-of-type(odd) & {
+            background-color: rgba(gold, 0.5);
+        }
+    }
 }
 
 // Media figure
@@ -104,4 +112,8 @@
     display: block;
     padding-bottom: map-get($media-figure-indent, vertical);
     vertical-align: top;
+
+    @if map-get($media-features, debug) {
+        background-color: rgba(red, 0.5);
+    }
 }

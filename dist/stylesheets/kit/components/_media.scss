@@ -85,7 +85,16 @@
 // =============================================================================
 
 .mda__content {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
+
+    @if map-get($media-features, debug) {
+        background-color: rgba(cyan, 0.5);
+
+        @at-root .mda:nth-of-type(odd) & {
+            background-color: rgba(gold, 0.5);
+        }
+    }
 }
 
 // Media figure
@@ -93,4 +102,8 @@
 
 .mda__figure {
     margin-bottom: map-get($media-figure-indent, vertical);
+
+    @if map-get($media-features, debug) {
+        background-color: rgba(red, 0.5);
+    }
 }

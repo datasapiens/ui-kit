@@ -9,7 +9,11 @@
 // Set media breakpoints.
 $media-breaks: (
     0,
-    // 520px,
+) !default;
+
+// Set media features.
+$media-features: (
+    debug: false,
 ) !default;
 
 // Set media figure indent.
