@@ -110,13 +110,17 @@
 
 %form-label {
     // &:required,
-    &.is-required {
+    &.is-required:not(.is-disabled) {
         color: map-get($form-label-color, required);
 
         &::after {
             content: "*";
             display: inline-block;
-            margin-left: 0.25em;
+            font-size: 1.2em;
+            margin: {
+                left: 0.125em;
+                top: -0.6em;
+            }
         }
     }
 }

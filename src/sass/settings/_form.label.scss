@@ -14,7 +14,7 @@ $form-label-color: (
     disable:    lighten($base-color, 30%), // disabled
     initial:    inherit,
     invalid:    $red--sunset,              // invalid
-    required:   $red--sunset,              // required
+    required:   inherit,                   // required
 ) !default;
 
 // Set form label indent.
