@@ -1,3 +1,13 @@
+<a name="3.6.5"></a>
+### 3.6.5 (2018-08-15)
+
+#### Bug Fixes
+
+- **form.label:** tweak `is-required` state ([f6e1428](https://github.com/datasapiens/ui-kit/commit/f6e1428))
+- **media:** non-wrapping text inside content ([fd4d017](https://github.com/datasapiens/ui-kit/commit/fd4d017))
+
+
+
 <a name="3.6.4"></a>
 ### 3.6.4 (2018-07-18)
 
