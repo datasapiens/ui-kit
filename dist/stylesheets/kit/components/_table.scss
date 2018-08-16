@@ -347,14 +347,14 @@
 
             &.\--even {
                 tbody {
-                    tr:nth-child(even) {
+                    tr:nth-child(even):not(.\--bold) {
                         background-color: $color;
                     }
                 }
             }
             &.\--odd {
                 tbody {
-                    tr:nth-child(odd) {
+                    tr:nth-child(odd):not(.\--bold) {
                         background-color: $color;
                     }
                 }
@@ -435,7 +435,7 @@
  */
 
 .tbl {
-    &.is-active[class][class] {
+    &.is-active[class][class][class] {
         tbody {
             tr:hover {
                 @extend %tbl__group--active;
