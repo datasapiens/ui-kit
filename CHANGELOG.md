@@ -1,3 +1,12 @@
+<a name="3.6.6"></a>
+### 3.6.6 (2018-08-16)
+
+#### Bug Fixes
+
+- **table:** row highlighting priority ([f619bd3](https://github.com/datasapiens/ui-kit/commit/f619bd3))
+
+
+
 <a name="3.6.5"></a>
 ### 3.6.5 (2018-08-15)
 
