@@ -10,6 +10,7 @@
 // =============================================================================
 
 @include font-face(
+    $display: block,
     $family: $icon-font-family,
     $file: $icon-font-filename,
     $format: ("woff2", "woff")

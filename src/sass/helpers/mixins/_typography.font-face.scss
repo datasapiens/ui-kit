@@ -11,6 +11,7 @@
  */
 
 @mixin font-face(
+    $display: optional,
     $family: "",
     $file: "",
     $format: ("woff2"),
@@ -20,6 +21,7 @@
     @if $family != "" and $file != "" {
         @font-face {
             font: {
+                display: $display;
                 family: $family;
                 style: $style;
                 weight: $weight;
