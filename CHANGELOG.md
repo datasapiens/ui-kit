@@ -1,3 +1,12 @@
+<a name="3.7.0"></a>
+## 3.7.0 (2018-09-20)
+
+#### Features
+
+- **typography.font-face:** add `font-display` ([3feb6a6](https://github.com/datasapiens/ui-kit/commit/3feb6a6))
+
+
+
 <a name="3.6.6"></a>
 ### 3.6.6 (2018-08-16)
 
