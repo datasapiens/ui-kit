@@ -177,6 +177,9 @@
 .page-sidebar__body {
     display: inherit;
     flex: 1;
+    overflow: {
+        y: auto;
+    }
 }
 
 // Page sidebar navigation
