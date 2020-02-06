@@ -233,6 +233,16 @@
     }
 }
 
+// Hardcoded values
+
+.msg.--notice {
+    color: $white;
+
+    .msg__title {
+        color: $white;
+    }
+}
+
 /**
  * States.
  */
