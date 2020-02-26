@@ -16,6 +16,7 @@
     animation: fade--in 0.4s 0.8s both;
     @if map-get($indicator-trend-color, initial) != inherit {
         color: map-get($indicator-trend-color, initial);
+        color: var(--indicator-trend-color, map-get($indicator-trend-color, initial));
     }
     transition: transform 0.4s map-get($animation-easing, in-out-circ) 1.2s;
 }
@@ -51,6 +52,7 @@
 .ind-trend {
     &.is-decrease {
         color: map-get($indicator-trend-color, negative);
+        color: var(--indicator-trend--is-decrease-color, map-get($indicator-trend-color, negative));
         transform: rotate(90deg);
     }
 }
@@ -62,6 +64,7 @@
 .ind-trend {
     &.is-increase {
         color: map-get($indicator-trend-color, positive);
+        color: var(--indicator-trend--is-increase-color, map-get($indicator-trend-color, positive));
         transform: rotate(-90deg);
     }
 }
@@ -73,6 +76,7 @@
 .ind-trend {
     &.is-monochrome {
         color: inherit;
+        color: var(--indicator-trend--is-monochrome-color, inherit);
     }
 }
 
@@ -83,6 +87,7 @@
 .ind-trend {
     &.is-steady {
         color: map-get($indicator-trend-color, neutral);
+        color: var(--indicator-trend--is-steady-color, map-get($indicator-trend-color, neutral));
         transform: rotate(0deg);
     }
 }
