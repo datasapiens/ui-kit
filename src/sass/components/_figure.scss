@@ -29,7 +29,10 @@
 
     &[class][class] {      /* 1 */
         background: $figure-background;
+        background: var(--figure-background-color, $figure-background);
+
         border-color: $figure-border-color;
+        border-color: var(--igure-border-color, $figure-border-color);
     }
 }
 
@@ -132,6 +135,7 @@
         .fgr__indicator,
         .fgr__number {
             color: inherit;
+            color: var(--figure_number--is-monochrome-color, inherit);
         }
     }
 }
@@ -230,6 +234,7 @@
 .fgr__number {
     &.--negative {
         color: map-get($figure-number-color, negative);
+        color: var(--figure__number--negative-color, map-get($figure-number-color, negative));
     }
 }
 
@@ -240,6 +245,7 @@
 .fgr__number {
     &.--neutral {
         color: map-get($figure-number-color, neutral);
+        color: var(--figure__number--neutral-color, map-get($figure-number-color, neutral));
     }
 }
 
@@ -250,6 +256,7 @@
 .fgr__number {
     &.--positive {
         color: map-get($figure-number-color, positive);
+        color: var(--figure__number--positive-color, map-get($figure-number-color, positive));
     }
 }
 
