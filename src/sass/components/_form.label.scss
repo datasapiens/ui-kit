@@ -10,6 +10,7 @@
 
 %form-label {
     color: map-get($form-label-color, initial);
+    color: var(--form-label-color, map-get($form-label-color, initial));
     cursor: pointer;
     display: inline-block;
     transition: color 0.2s;
@@ -66,6 +67,7 @@
     // &:active,
     &.is-active {
         color: map-get($form-label-color, active);
+        color: var(--form-label--is-active-color, map-get($form-label-color, active));
     }
 }
 
@@ -77,6 +79,7 @@
     // &:disabled,
     &.is-disabled {
         color: map-get($form-label-color, disable);
+        color: var(--form-label--is-disabled-color, map-get($form-label-color, disable));
         cursor: not-allowed;
     }
 }
@@ -89,6 +92,7 @@
     &:hover {
         &:not(.is-disabled):not(.is-invalid):not(.is-required) {
             color: map-get($form-label-color, hover);
+            color: var(--form-label--is-hovered-color, map-get($form-label-color, hover));
         }
     }
 }
@@ -101,6 +105,7 @@
     // &:invalid,
     &.is-invalid {
         color: map-get($form-label-color, invalid);
+        color: var(--form-label--is-invalid-color, map-get($form-label-color, invalid));
     }
 }
 
@@ -112,6 +117,7 @@
     // &:required,
     &.is-required:not(.is-disabled) {
         color: map-get($form-label-color, required);
+        color: var(--form-label--is-required-color, map-get($form-label-color, required));
 
         &::after {
             content: "*";
