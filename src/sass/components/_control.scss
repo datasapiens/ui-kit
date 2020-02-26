@@ -13,6 +13,7 @@
     @include acceleration;
 
     color: map-get($control-color, initial);
+    color: var(--control-color, map-get($control-color, initial));
     transition: color 0.4s;
 }
 
@@ -43,6 +44,7 @@
         @extend %ctr:active;
 
         color: map-get($control-color, active);
+        color: var(--control--is-active-color, map-get($control-color, active));
     }
 }
 
@@ -78,6 +80,7 @@
         @extend %ctr:disabled;
 
         color: map-get($control-color, disable);
+        color: var(--control--is-disabled-color, map-get($control-color, disable));
 
     }
 }
@@ -89,6 +92,7 @@
 %ctr:hover {
     &:active {
         color: map-get($control-color, hover);
+        color: var(--control--is-hovered-color, map-get($control-color, hover));
     }
 }
 
@@ -112,6 +116,7 @@
         @extend %ctr:on;
 
         color: map-get($control-color, active);
+        color: var(--control--is-on-color, map-get($control-color, active));
     }
 }
 
@@ -129,6 +134,7 @@
         @extend %ctr:off;
 
         color: map-get($control-color, initial);
+        color: var(--control--is-off-color, map-get($control-color, initial));
     }
 }
 
