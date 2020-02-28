@@ -20,6 +20,8 @@
     @include stretch(fixed, 0, auto, 0 ,0);
 
     background-color: $page-sidebar-background;
+    background-color: var(--page-sidebar-background-color, $page-sidebar-background);
+
     display: flex;
     flex-direction: column;
     width: 0;
@@ -152,6 +154,8 @@
     @include stretch(0, auto, 0, 0);
 
     background-color: $page-sidebar-navbar-background;
+    background-color: var(--page-sidebar-navbar-background-color, $page-sidebar-navbar-background);
+
     box-shadow: $page-sidebar-navbar-box-shadow;
     z-index: $page-sidebar-index + 1;
 }
@@ -327,6 +331,7 @@
 
 %page-sidebar__navigation__item__region:active {
     background-color: map-get($page-sidebar-navigation-item-background, active);
+    background-color: var(--page-sidebar-navigation__item__region--is-active-background-color, map-get($page-sidebar-navigation-item-background, active));
 }
 
 /**
@@ -335,6 +340,7 @@
 
 %page-sidebar__navigation__item__region:hover {
     background-color: map-get($page-sidebar-navigation-item-background, hover);
+    background-color: var(--page-sidebar-navigation__item__region--is-hovered-background-color, map-get($page-sidebar-navigation-item-background, hover));
 }
 
 .page-sidebar__navigation__item[class][class] {
