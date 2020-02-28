@@ -10,6 +10,8 @@
 
 .zone-drop {
     background: map-get($zone-drop-background, initial);
+    background: var(--zone-drop-background-color, map-get($zone-drop-background, initial));
+
     position: relative;
     transition:
         background-color 0.2s,
@@ -36,9 +38,11 @@
     @each $modifier, $theme in $zone-drop-theme {
         &.--#{$modifier} {
             border-color: desaturate(map-get($theme, 80), 50%);
+            border-color: var(--zone-drop--#{$modifier}-border-color, desaturate(map-get($theme, 80), 50%));
 
             &::before {
                 background-color: rgba(map-get($theme, 50), 0.25);
+                background-color: var(--zone-drop--#{$modifier}-background-color, rgba(map-get($theme, 50), 0.25));
             }
         }
     }
@@ -55,12 +59,14 @@
 .zone-drop {
     &.is-active {
         border-color: transparent;
+        border-color: var(--zone-drop--is-active-border-color, transparent);
 
         @each $modifier, $theme in $zone-drop-theme {
             &.--#{$modifier} {
                 &::before {
                     border: {
                         color: map-get($theme, 50);
+                        color: var(--zone-drop--is-active--#{$modifier}-border-color, map-get($theme, 50));
                         style: map-get($zone-drop-border-style, active);
                         width: map-get($zone-drop-border-size, active);
                     }
