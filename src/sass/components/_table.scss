@@ -93,16 +93,20 @@
     // Apply selected properties.
     &:not(.--rack) {
         background-color: map-get($table-background, body);
+        background-color: var(--table-background-color, map-get($table-background, body));
+
         box-shadow: $table-box-shadow;
 
         @if map-get($table-background, head) != map-get($table-background, body) {
             thead {
                 background-color: map-get($table-background, head);
+                background-color: var(--table-thead-background-color, map-get($table-background, head));
             }
         }
 
         thead {
             color: map-get($table-color, head);
+            color: var(--table-thead-color, map-get($table-color, head));
 
             tr:not(:first-child) {
                 td,
@@ -123,6 +127,7 @@
 
         tbody {
             color: map-get($table-color, body);
+            color: var(--table-tbody-color, map-get($table-color, body));
         }
 
         tbody + tfoot {
@@ -136,6 +141,7 @@
 
         tfoot {
             color: map-get($table-color, foot);
+            color: var(--table-tfoot-color, map-get($table-color, foot));
         }
     }
 }
@@ -163,6 +169,7 @@
     th {
         &:not(:last-of-type) {
             border-right: $table-cell-border-size solid $table-cell-border-color;
+            border-right: $table-cell-border-size solid var(--table-cell-border-color, $table-cell-border-color);
         }
     }
 }
@@ -215,10 +222,8 @@
  */
 
 %tbl--edge {
-    border:
-        $table--edge-border-size
-        solid
-        $table--edge-border-color;
+    border: $table--edge-border-size solid $table--edge-border-color;
+    border: $table--edge-border-size solid var(--table--edge-border-color, $table--edge-border-color);
 }
 
 .tbl {
@@ -262,6 +267,7 @@
             td,
             th {
                 border-top: $table-cell-border-size solid $table-cell-border-color;
+                border-top: $table-cell-border-size solid var(--table--line-border-color, $table-cell-border-color);
             }
         }
     }
@@ -349,6 +355,7 @@
                 tbody {
                     tr:nth-child(even):not(.--bold) {
                         background-color: $color;
+                        background-color: var(--table--stripe--even-row-background-color, $color);
                     }
                 }
             }
@@ -356,6 +363,7 @@
                 tbody {
                     tr:nth-child(odd):not(.--bold) {
                         background-color: $color;
+                        background-color: var(--table--stripe--odd-row-background-color, $color);
                     }
                 }
             }
@@ -386,6 +394,7 @@
         @extend %tbl--grid;
 
         background-color: map-get($table--primary-background, body);
+        background-color: var(--table--primary-background-color, map-get($table--primary-background, body));
 
         @if $table--primary-border-size {
             border-width: $table--primary-border-size;
@@ -396,6 +405,7 @@
         @if map-get($table--primary-background, head) != map-get($table--primary-background, body) {
             thead {
                 background-color: map-get($table--primary-background, head);
+                background-color: var(--table-thead--primary-background-color, map-get($table--primary-background, head));
             }
         }
     }
@@ -411,6 +421,7 @@
         @extend %tbl--edge;
 
         background-color: map-get($table--secondary-background, body);
+        background-color: var(--table--secondary-background-color, map-get($table--secondary-background, body));
 
         @if $table--secondary-border-size {
             border-width: $table--secondary-border-size;
@@ -421,6 +432,7 @@
         @if map-get($table--secondary-background, head) != map-get($table--secondary-background, body) {
             thead {
                 background-color: map-get($table--secondary-background, head);
+                background-color: var(--table-thead--secondary-background-color, map-get($table--secondary-background, head));
             }
         }
     }
@@ -459,6 +471,7 @@
         th {
             background: none !important;
             color: map-fetch($color-set, neutral, 10) !important;
+            color: var(--table-cell--is-monochrome-color, map-fetch($color-set, neutral, 10) !important);
         }
     }
 }
@@ -478,6 +491,7 @@
 
 %tbl__group {
     border-top: $table-group-border-size solid $table-group-border-color;
+    border-top: $table-group-border-size solid var(--table__group-border-top-color, $table-group-border-color);
 }
 
 /**
@@ -490,7 +504,10 @@
 
 %tbl__group--active {
     background-color: rgba($table-group--active-background, 1);
+    background-color: var(--table__group--active-background-color, rgba($table-group--active-background, 1));
+
     color: $table-group--active-color;
+    color: var(--table__group--active-color, $table-group--active-color);
 }
 
 /**
@@ -499,7 +516,10 @@
 
 %tbl__group--bold {
     background-color: rgba($table-group--bold-background, 0.5);
+    background-color: var(--table__group--bold-background-color, rgba($table-group--bold-background, 0.5));
+
     color: $table-group--bold-color;
+    color: var(--table__group--bold-color, $table-group--bold-color);
 }
 
 // Table column
