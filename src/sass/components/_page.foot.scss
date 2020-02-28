@@ -9,6 +9,7 @@
 .page-foot {
     background-color: $page-foot-background;
     color: rgba($page-foot-color, 0.5);
+    color: var(--page-foot-color, rgba($page-foot-color, 0.5));
     flex: 1 0 auto;
     font-size: px-to-rem($page-foot-font-size);
     padding: {
@@ -19,6 +20,7 @@
     a {
         // @include link-underline($underline: false);
         color: $page-foot-color;
+        color: var(--page-foot-link-color, $page-foot-color);
         text-decoration: none;
     }
 }
