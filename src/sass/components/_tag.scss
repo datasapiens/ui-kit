@@ -24,7 +24,11 @@
 
     align-items: center;
     background-color: $bg-color;
+    background-color: var(--tag-background-color, $bg-color);
+
     border: $tag-border-size solid darken($bg-color, 5%);
+    border: $tag-border-size solid var(--tag-border-color, darken($bg-color, 5%));
+
     border-radius: $tag-border-radius;
     cursor: default;
     display: inline-flex;
@@ -37,6 +41,7 @@
 
     &[class] {          /* 1 */
         color: map-get($tag-color, initial);
+        color: var(--tag-color, map-get($tag-color, initial));
     }
 }
 
@@ -110,8 +115,13 @@
             $bg-color: map-get($theme, 80);
 
             background-color: $bg-color;
+            background-color: var(--tag--#{$modifier}-background-color, $bg-color);
+
             border-color: darken($bg-color, 5%);
+            border-color: var(--tag--#{$modifier}-border-color, darken($bg-color, 5%));
+
             color: map-get($theme, 20);
+            color: var(--tag--#{$modifier}-color, map-get($theme, 20));
         }
     }
 }
@@ -161,9 +171,14 @@
                 $bg-color: map-get($tag-background, focus);
 
                 background-color: $bg-color;
+                background-color: var(--tag--primary-is-focused-background-color, $bg-color);
+
                 border-color: darken($bg-color, 5%);
+                border-color: var(--tag--primary-is-focused-border-color, darken($bg-color, 5%));
+
                 box-shadow: map-get($tag-box-shadow, focus);
                 color: map-get($tag-color, focus);
+                color: var(--tag--primary-is-focused-color, map-get($tag-color, focus));
 
                 @each $modifier, $theme in $tag-theme {
                     $bg-color: darken(map-get($theme, 80), 10%);
@@ -171,8 +186,13 @@
 
                     &.--#{$modifier} {
                         background-color: $bg-color;
+                        background-color: var(--tag--primary-is-focused--#{$modifier}-background-color, $bg-color);
+
                         border-color: darken($bg-color, 5%);
+                        border-color: var(--tag--primary-is-focused--#{$modifier}-border-color, darken($bg-color, 5%));
+
                         color: $color;
+                        color: var(--tag--primary-is-focused--#{$modifier}-color, $color);
                     }
                 }
             }
@@ -245,6 +265,7 @@
 
     &[class] {          /* 1 */
         color: inherit;
+        color: var(--tag__control-color, inherit);
     }
 
     & + & {
