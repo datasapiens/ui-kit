@@ -99,6 +99,8 @@
     @extend .ntf-strip__item.--neutral;
 
     color: $notification-strip-item-color;
+    color: var(--notification-strip__item-color, $notification-strip-item-color);
+
     display: block;
     margin: 0;
     padding:
@@ -122,6 +124,7 @@
     @each $modifier, $theme in $notification-strip-theme {
         &.--#{$modifier} {
             background-color: map-get($theme, 50);
+            background-color: var(--notification-strip__item--#{$modifier}-background-color, map-get($theme, 50));
         }
 
         @at-root .ntf-strip {
@@ -129,6 +132,7 @@
             &.--primary {
                 .ntf-strip__item.--#{$modifier} {
                     background-color: rgba(map-get($theme, 50), 0.9);
+                    background-color: var(--notification-strip__item--primary--#{$modifier}-background-color, rgba(map-get($theme, 50), 0.9));
                 }
             }
         }
