@@ -8,8 +8,11 @@
 
 .page-foot {
     background-color: $page-foot-background;
+    background-color: var(--page-foot-background-color, $page-foot-background);
+
     color: rgba($page-foot-color, 0.5);
     color: var(--page-foot-color, rgba($page-foot-color, 0.5));
+    
     flex: 1 0 auto;
     font-size: px-to-rem($page-foot-font-size);
     padding: {
