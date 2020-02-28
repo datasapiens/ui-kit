@@ -17,7 +17,11 @@
 
 .nav-vertical {
     background-color: $navigation-vertical-background;
+    background-color: var(--navigation-vertical-background-color, $navigation-vertical-background);
+
     color: $navigation-vertical-color;
+    color: var(--navigation-vertical-color, $navigation-vertical-color);
+
     display: inline-block;
     font-size: px-to-rem($navigation-vertical-font-size);
     line-height: $navigation-vertical-line-height-ratio;
@@ -69,6 +73,8 @@
 
         &.--level-#{$i} {
             background-color: darken($navigation-vertical-background, $i * 3%);
+            background-color: var(--navigation-vertical--level-#{$i}-background-color, darken($navigation-vertical-background, $i * 3%));
+
             padding-left: $i * $indent;
 
             @if $navigation-vertical-debug {
@@ -105,11 +111,15 @@
 .nav-vertical {
     &.--primary {
         background-color: $navigation-vertical--primary-background;
+        background-color: var(--navigation-vertical--primary-background-color, $navigation-vertical--primary-background);
 
         &,
         .nav-vertical {
             border-color: $navigation-vertical--primary-border-color;
+            border-color: var(--navigation-vertical--primary-border-color, $navigation-vertical--primary-border-color);
+
             color: $navigation-vertical--primary-color;
+            color: var(--navigation-vertical--primary-color, $navigation-vertical--primary-color);
         }
 
         // navigation levels
@@ -118,6 +128,7 @@
                 @for $i from 2 through $navigation-vertical-depth {
                     &.--level-#{$i} {
                         background-color: lighten($navigation-vertical--primary-background, $i * 5%);
+                        background-color: var(--navigation-vertical--primary--level-#{$i}-background-color, lighten($navigation-vertical--primary-background, $i * 5%));
                     }
                 }
             }
@@ -129,6 +140,7 @@
 
         .nav-vertical__item {
             color: map-get($navigation-vertical--primary-item-color, initial);
+            color: var(--navigation-vertical__item--primary-color, map-get($navigation-vertical--primary-item-color, initial));
 
             & + .nav-vertical__item {
                 &.nav-vertical__item__inset,
@@ -141,6 +153,7 @@
 
                         // Border style option
                         border-color: $navigation-vertical--primary-item-border-color;
+                        border-color: var(--navigation-vertical__item--primary-border-color, $navigation-vertical--primary-item-border-color);
                     }
                 }
             }
@@ -152,6 +165,7 @@
 
         .nav-vertical__item__region {
             color: map-get($navigation-vertical--primary-item-color, initial);
+            color: var(--navigation-vertical__item__region--primary-color, map-get($navigation-vertical--primary-item-color, initial));
             // color: inherit;
         }
 
@@ -162,6 +176,7 @@
         .nav-vertical__head {
             &::after {
                 border-bottom-color: $navigation-vertical--primary-head-border-color;
+                border-bottom-color: var(--navigation-vertical__head--primary-border-color, $navigation-vertical--primary-head-border-color);
             }
         }
     }
@@ -213,10 +228,8 @@
 
                 // Border style option
                 border: {
-                    bottom:
-                        $navigation-vertical-item-border-size
-                        solid
-                        $navigation-vertical-item-border-color;
+                    bottom: $navigation-vertical-item-border-size solid $navigation-vertical-item-border-color;
+                    bottom: $navigation-vertical-item-border-size solid var(--navigation-vertical__item-border-color, $navigation-vertical-item-border-color);
                 }
                 content: "";
             }
@@ -322,6 +335,8 @@
     @extend %nav-vertical__item__inset;
 
     color: map-get($navigation-vertical-item-color, initial);
+    color: var(--navigation-vertical__item__region-color, map-get($navigation-vertical-item-color, initial));
+
     cursor: pointer;
     text-decoration: none;
     transition:
@@ -363,7 +378,11 @@
             .nav-vertical__item:not(.is-disabled) > &,
             &:not(.is-disabled) {
                 background-color: map-get($navigation-vertical-item-background, active);
+                background-color: var(--navigation-vertical__item__region--is-active-background-color, map-get($navigation-vertical-item-background, active));
+
                 color: map-get($navigation-vertical-item-color, active);
+                color: var(--navigation-vertical__item__region--is-active-color, map-get($navigation-vertical-item-color, active));
+
                 z-index: 1;
             }
 
@@ -371,7 +390,10 @@
             .nav-vertical.--primary .nav-vertical__item:not(.is-disabled) > &,
             .nav-vertical.--primary &:not(.is-disabled) {
                 background-color: map-get($navigation-vertical--primary-item-background, active);
+                background-color: var(--navigation-vertical__item__region--primary--is-active-background-color, map-get($navigation-vertical--primary-item-background, active));
+
                 color: map-get($navigation-vertical--primary-item-color, active);
+                color: var(--navigation-vertical__item__region--primary--is-active-color, map-get($navigation-vertical--primary-item-color, active));
             }
         }
     }
@@ -384,7 +406,11 @@
 .nav-vertical__item__region {
     &:disabled {
         background-color: map-get($navigation-vertical-item-background, disable);
+        background-color: var(--navigation-vertical__item__region--is-disabled-background-color, map-get($navigation-vertical-item-background, disable));
+
         color: map-get($navigation-vertical-item-color, disable);
+        color: var(--navigation-vertical__item__region--is-disabled-color, map-get($navigation-vertical-item-color, disable));
+
         cursor: default;
         opacity: 0.5;
         text-decoration: line-through;
@@ -393,7 +419,10 @@
         @at-root {
             .nav-vertical.--primary & {
                 background-color: map-get($navigation-vertical--primary-item-background, disable);
+                background-color: var(--navigation-vertical__item__region--primary--is-disabled-background-color, map-get($navigation-vertical--primary-item-background, disable));
+
                 color: map-get($navigation-vertical--primary-item-color, disable);
+                color: var(--navigation-vertical__item__region--primary--is-disabled-color, map-get($navigation-vertical--primary-item-color, disable));
             }
         }
     }
@@ -419,7 +448,10 @@
             .nav-vertical__item:not(.is-disabled) > &,
             &:not(.is-disabled) {
                 background-color: map-get($navigation-vertical-item-background, select);
+                background-color: var(--navigation-vertical__item__region--is-checked-background-color, map-get($navigation-vertical-item-background, select));
+
                 color: map-get($navigation-vertical-item-color, select);
+                color: var(--navigation-vertical__item__region--is-checked-color, map-get($navigation-vertical-item-color, select));
                 z-index: 1;
             }
 
