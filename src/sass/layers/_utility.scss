@@ -285,6 +285,7 @@
     @each $modifier in (danger, neutral, notice, success, warning) {
         &.--#{$modifier} {
             color: map-fetch($color-set, accent, $modifier, 50);
+            color: var(--u-text--#{$modifier}-color, map-fetch($color-set, accent, $modifier, 50));
         }
     }
 }
