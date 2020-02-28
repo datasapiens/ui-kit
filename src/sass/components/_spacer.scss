@@ -29,6 +29,7 @@
     @extend %spa;
 
     border-bottom-color: $spacer-color;
+    border-bottom-color: var(--spacer-bottom-color, $spacer-color);
 }
 
 /**
