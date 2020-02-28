@@ -66,14 +66,20 @@ body {
 
 body {
     background-color: $base-background;
+    background-color: var(--base-background-color, $base-background);
+    
     color: $base-color;
+    color: var(--base-color, $base-color);
     // overflow-y: hidden;
 
     -webkit-print-color-adjust: exact; /* 2 */
 
     @media print {
         background-color: $white;
+        background-color: var(--print-background-color, $white);
+
         color: $black;
+        color: var(--print-color, $black);
         // filter: grayscale(100%);
     }
 }
@@ -84,6 +90,7 @@ body {
 
 ::selection {
     background-color: $base-selection-background;
+    background-color: var(--base-selection-background-color, $base-selection-background);
 }
 
 // =============================================================================
@@ -186,6 +193,7 @@ address {
 
 blockquote {
     background-color: $base-blockquote-background;
+    background-color: var(--base-blockquote-background-color, $base-blockquote-background);
     // box-shadow: $base-blockquote-box-shadow;
     margin: rhythm-get() auto;
     padding: rhythm-get() $base-blockquote-indent;
@@ -195,6 +203,7 @@ blockquote {
         @include stretch(0, auto, 0, 0);
 
         background-color: $base-blockquote-border-color;
+        background-color: var(--base-blockquote-border-color, $base-blockquote-border-color);
         content: "";
         width: 8 * $base-blockquote-border-size;
     }
@@ -371,10 +380,12 @@ textarea {
 
 ::placeholder {
     color: map-get($form-element-placeholder-color, initial);
+    color: var(--form-element-placeholder-color, map-get($form-element-placeholder-color, initial));
 }
 
 :disabled::placeholder {
     color: map-get($form-element-placeholder-color, disable);
+    color: var(--form-element-placeholder--is-disabled-color, map-get($form-element-placeholder-color, disable));
 }
 
 /**
