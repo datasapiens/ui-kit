@@ -25,6 +25,7 @@
 
     align-items: center;
     color: inherit;
+    color: var(--page-control-color, inherit);
     display: inline-flex;
     justify-content: center;
     transition: opacity 0.3s;
@@ -153,6 +154,7 @@
     &:active,
     &.is-active {
         color: inherit;
+        color: var(--page-control--is-active-color, inherit);
 
         &:not(.is-static) {
             opacity: 1;
