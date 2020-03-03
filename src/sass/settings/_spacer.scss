@@ -14,3 +14,7 @@ $spacer-color: map-get(
 
 // Set spacer border width.
 $spacer-size: 1px;
+
+body.theme {
+    --spacer-bottom-color: var(--neutral-70-color);
+}

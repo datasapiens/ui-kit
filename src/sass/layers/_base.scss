@@ -496,3 +496,15 @@ th {
 @page {
     margin: 10mm;
 }
+
+body.theme {
+    --base-background-color: var(--neutral-90-color);
+    --base-color: var(--neutral-30-color-desaturate-100);
+    --print-background-color: var(--white-color);
+    --print-color: var(--black-color);
+    --base-selection-background-color: gold;
+    --base-blockquote-background-color: var(--neutral-90-color);
+    --base-blockquote-border-color: var(--warning-accent-50-color);
+    --form-element-placeholder-color: var(--neutral-50-color);
+    --form-element-placeholder--is-disabled-color: var(--neutral-70-color);
+}

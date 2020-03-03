@@ -78,3 +78,66 @@ $message--compact-font-size: 0.9em !default;
 
 // Set compact message line height ratio.
 $message--compact-line-height-ratio: 0.75 !default;
+
+
+body.theme {
+    --message-border-color: var(--white-color);
+    --message-color: var(--black-color);
+    --message-link-color: inherit;
+    
+    --message--danger-background-color: var(--danger-accent-80-color-lighten-10);
+    --message--danger-background-image-color-start: var(--danger-accent-80-color-lighten-10);
+    --message--danger-background-image-color-end: var(--danger-accent-50-color);
+    --message--danger-border-color: var(--danger-accent-80-color-desaturate-50);
+    --message--danger--secondary-icon-color: var(--danger-accent-50-color-opacity-50);
+    --message--danger--primary-icon-background-color: var(--danger-accent-50-color);
+    --message--danger--primary-icon-border-color: var(--danger-accent-50-color-desaturate-25);
+    --message__title--danger-color: var(--danger-accent-0-color-desaturate-90);
+    --message__spacer--danger-border-color: var(--danger-accent-80-color-desaturate-50);
+    --message__control--danger-color: var(--danger-accent-0-color);
+    
+    
+    --message--neutral-background-color: var(--neutral-accent-80-color-lighten-10);
+    --message--neutral-background-image-color-start: var(--neutral-accent-80-color-lighten-10);
+    --message--neutral-background-image-color-end: var(--neutral-accent-50-color);
+    --message--neutral-border-color: var(--neutral-accent-80-color-desaturate-50);
+    --message--neutral--secondary-icon-color: var(--neutral-accent-50-color-opacity-50);
+    --message--neutral--primary-icon-background-color: var(--neutral-accent-50-color);
+    --message--neutral--primary-icon-border-color: var(--neutral-accent-50-color-desaturate-25);
+    --message__title--neutral-color: var(--neutral-accent-0-color-desaturate-90);
+    --message__spacer--neutral-border-color: var(--neutral-accent-80-color-desaturate-50);
+    --message__control--neutral-color: var(--neutral-accent-0-color);
+    
+    --message--notice-background-color: var(--notice-accent-80-color-lighten-10);
+    --message--notice-background-image-color-start: var(--notice-accent-80-color-lighten-10);
+    --message--notice-background-image-color-end: var(--notice-accent-50-color);
+    --message--notice-border-color: var(--notice-accent-80-color-desaturate-50);
+    --message--notice--secondary-icon-color: var(--notice-accent-50-color-opacity-50);
+    --message--notice--primary-icon-background-color: var(--notice-accent-50-color);
+    --message--notice--primary-icon-border-color: var(--notice-accent-50-color-desaturate-25);
+    --message__title--notice-color: var(--notice-accent-0-color-desaturate-90);
+    --message__spacer--notice-border-color: var(--notice-accent-80-color-desaturate-50);
+    --message__control--notice-color: var(--notice-accent-0-color);
+    
+    --message--success-background-color: var(--success-accent-80-color-lighten-10);
+    --message--success-background-image-color-start: var(--success-accent-80-color-lighten-10);
+    --message--success-background-image-color-end: var(--success-accent-50-color);
+    --message--success-border-color: var(--success-accent-80-color-desaturate-50);
+    --message--success--secondary-icon-color: var(--success-accent-50-color-opacity-50);
+    --message--success--primary-icon-background-color: var(--success-accent-50-color);
+    --message--success--primary-icon-border-color: var(--success-accent-50-color-desaturate-25);
+    --message__title--success-color: var(--success-accent-0-color-desaturate-90);
+    --message__spacer--success-border-color: var(--success-accent-80-color-desaturate-50);
+    --message__control--success-color: var(--success-accent-0-color);
+    
+    --message--warning-background-color: var(--warning-accent-80-color-lighten-10);
+    --message--warning-background-image-color-start: var(--warning-accent-80-color-lighten-10);
+    --message--warning-background-image-color-end: var(--warning-accent-50-color);
+    --message--warning-border-color: var(--warning-accent-80-color-desaturate-50);
+    --message--warning--secondary-icon-color: var(--warning-accent-50-color-opacity-50);
+    --message--warning--primary-icon-background-color: var(--warning-accent-50-color);
+    --message--warning--primary-icon-border-color: var(--warning-accent-50-color-desaturate-25);
+    --message__title--warning-color: var(--warning-accent-0-color-desaturate-90);
+    --message__spacer--warning-border-color: var(--warning-accent-80-color-desaturate-50);
+    --message__control--warning-color: var(--warning-accent-0-color);
+}

@@ -21,3 +21,7 @@ $form-message-indent: (
 // Set form message themes map.
 // $form-message-theme: $color-set--accent;
 $form-message-theme: ();
+
+body.theme{
+    --form-message-color: var(--danger-accent-20-color);
+}
