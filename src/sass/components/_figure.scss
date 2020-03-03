@@ -135,7 +135,7 @@
         .fgr__indicator,
         .fgr__number {
             color: inherit;
-            color: var(--figure_number--is-monochrome-color, inherit);
+            color: var(--figure__number--is-monochrome-color, inherit);
         }
     }
 }

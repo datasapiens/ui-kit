@@ -136,9 +136,10 @@
     @extend %form-element !optional;
 
     background: map-get($form-radio-background, initial);
+    background: var(--form-radio__shape-background-color, map-get($form-radio-background, initial));
     
     border-color: currentColor;
-    border-color: var(--form-radio__shape-background-color, currentColor);
+    border-color: var(--form-radio__shape-border-color, currentColor);
 
     color: map-get($form-radio-color, initial);
     color: var(--form-radio__shape-color, map-get($form-radio-color, initial));

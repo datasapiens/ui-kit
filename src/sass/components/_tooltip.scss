@@ -25,7 +25,18 @@
     background: {
         color: rgba($tooltip-background-color, 0.85);
         color: var(--tooltip-background-color, rgba($tooltip-background-color, 0.85));
-        image: $tooltip-background-gradient;
+        image: linear-gradient(
+            160deg,
+            rgba(map-get(map-get(map-get($color-set, primary), tertiary), 50), 0.250) 0%,
+            rgba(map-get(map-get(map-get($color-set, primary), tertiary), 80), 0.000) 50%,
+            rgba(map-get(map-get(map-get($color-set, primary), tertiary), 100), 0.125) 100%
+        );
+        image: linear-gradient(
+            160deg,
+            var(--tooltip-background-gradient-color1) 0%, 
+            var(--tooltip-background-gradient-color2) 50%,
+            var(--tooltip-background-gradient-color3) 100%
+        );
     }
     border-radius: $tooltip-border-radius;
     box-shadow: $tooltip-shadow;

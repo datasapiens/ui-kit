@@ -321,7 +321,7 @@
                 // tertiary
                 .btn-switch.--tertiary & {
                     background-color: map-get($button-switch--tertiary-background, active);
-                    background-color: var(--button-switch__item--is-active--tertiary-background, map-get($button-switch--tertiary-background, active));
+                    background-color: var(--button-switch__item--is-active--tertiary-background-color, map-get($button-switch--tertiary-background, active));
 
                     color: map-get($button-switch--tertiary-color, active);
                     color: var(--button-switch__item--is-active--tertiary-color, map-get($button-switch--tertiary-color, active));

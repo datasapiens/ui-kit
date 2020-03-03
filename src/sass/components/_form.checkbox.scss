@@ -136,6 +136,7 @@
     @include size(100%);
 
     background: map-get($form-checkbox-background, initial);
+    background: var(--form-checkbox__shape-background-color, map-get($form-checkbox-background, initial));
     
     border-color: currentColor;
     border-color: var(--form-checkbox__shape-border-color, currentColor);
@@ -198,10 +199,10 @@
 %form-checkbox__shape {
     &:hover {
         border-color: currentColor;
-        border-color: var(--form-checkbox__shape-is-hovered-border-color, currentColor);
+        border-color: var(--form-checkbox__shape--is-hovered-border-color, currentColor);
 
         color: map-get($form-checkbox-color, hover);
-        color: var(--form-checkbox__shape-is-hovered-color, map-get($form-checkbox-color, hover));
+        color: var(--form-checkbox__shape--is-hovered-color, map-get($form-checkbox-color, hover));
     }
 }
 
