@@ -86,6 +86,7 @@
                         var(--sticker--#{$modifier}-gradient-background-dark-color, rgba(darken($color, 10%), 0.75)) 0%,
                         var(--sticker--#{$modifier}-gradient-background-light-color, rgba($color, 0.75)) 40%
                     );
+                }
             }
         }
     }
