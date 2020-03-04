@@ -24,7 +24,19 @@
     animation: tip--enter 0.3s map-get($animation-easing, in-out-circ) both;
     background: {
         color: rgba($tooltip-background-color, 0.85);
-        image: $tooltip-background-gradient;
+        color: var(--tooltip-background-color, rgba($tooltip-background-color, 0.85));
+        image: linear-gradient(
+            160deg,
+            rgba(map-get(map-get(map-get($color-set, primary), tertiary), 50), 0.250) 0%,
+            rgba(map-get(map-get(map-get($color-set, primary), tertiary), 80), 0.000) 50%,
+            rgba(map-get(map-get(map-get($color-set, primary), tertiary), 100), 0.125) 100%
+        );
+        image: linear-gradient(
+            160deg,
+            var(--tooltip-background-gradient-color1) 0%, 
+            var(--tooltip-background-gradient-color2) 50%,
+            var(--tooltip-background-gradient-color3) 100%
+        );
     }
     border-radius: $tooltip-border-radius;
     box-shadow: $tooltip-shadow;
@@ -126,8 +138,13 @@
 
 .tip__body {
     background-color: $tooltip-body-background;
+    background-color: var(--tooltip__body-background-color, $tooltip-body-background);
+
     border-radius: $tooltip-border-radius;
+    
     color: $tooltip-body-color;
+    color: var(--tooltip__body-color, $tooltip-body-color);
+
     max-height: map-get($tooltip-size, height);
     padding: $tooltip-indent;
 

@@ -65,6 +65,7 @@
     &:hover {
         .lst-directory__title {
             color: map-get($list-directory-item-region-color, hover);
+            color: var(--list-directory__title--is-hovered-color, map-get($list-directory-item-region-color, hover));
             opacity: 1;
         }
     }
@@ -134,6 +135,7 @@
     border: 0 dotted transparent;
     border-bottom: {
         color: $list-directory-item-spacer-color;
+        color: var(--list-directory__item__spacer-border-bottom-color, $list-directory-item-spacer-color);
         width: $list-directory-item-spacer-size;
     }
     display: block;
@@ -146,6 +148,7 @@
     @extend %truncate;
 
     color: inherit;
+    color: var(--list-directory__item__region-color, inherit);
     cursor: pointer;
     display: block;
     padding: map-get($list-directory-item-region-indent, vertical)
@@ -177,5 +180,6 @@
 .lst-directory__item__region {
     &:hover {
         color: map-get($list-directory-item-region-color, hover);
+        color: var(--list-directory__item__region--is-hovered-color, map-get($list-directory-item-region-color, hover));
     }
 }

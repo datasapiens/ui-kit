@@ -203,8 +203,13 @@
     &.\--primary {
         .nav-tab__item__region {
             background-color: map-get($navigation-tab--primary-item-background, initial);
+            background-color: var(--navigation-tab__item__region--primary-background-color, map-get($navigation-tab--primary-item-background, initial));
+
             border-color: map-get($navigation-tab--primary-item-border-color, initial);
+            border-color: var(--navigation-tab__item__region--primary-border-color, map-get($navigation-tab--primary-item-border-color, initial));
+
             color: map-get($navigation-tab--primary-item-color, initial);
+            color: var(--navigation-tab__item__region--primary-color, map-get($navigation-tab--primary-item-color, initial));
         }
     }
 }
@@ -217,8 +222,13 @@
     &.\--secondary {
         .nav-tab__item__region {
             background-color: map-get($navigation-tab--secondary-item-background, initial);
+            background-color: var(--navigation-tab__item__region--secondary-background-color, map-get($navigation-tab--secondary-item-background, initial));
+
             border-color: map-get($navigation-tab--secondary-item-border-color, initial);
+            border-color: var(--navigation-tab__item__region--secondary-border-color, map-get($navigation-tab--secondary-item-border-color, initial));
+
             color: map-get($navigation-tab--secondary-item-color, initial);
+            color: var(--navigation-tab__item__region--secondary-color, map-get($navigation-tab--secondary-item-color, initial));
         }
     }
 }
@@ -490,14 +500,16 @@
 
 .nav-tab__item__region {
     background-color: map-get($navigation-tab-item-background, initial);
-    border:
-        $navigation-tab-item-border-size
-        solid
-        map-get($navigation-tab-item-border-color, initial);
+    background-color: var(--navigation-tab__item__region-background-color, map-get($navigation-tab-item-background, initial));
+
+    border: $navigation-tab-item-border-size solid map-get($navigation-tab-item-border-color, initial);
+    border: $navigation-tab-item-border-size solid var(--navigation-tab__item__region-border-color, map-get($navigation-tab-item-border-color, initial));
+
     border: {
         radius: $navigation-tab-item-border-radius;
     }
     color: map-get($navigation-tab-item-color, initial);
+    color: var(--navigation-tab__item__region-color, map-get($navigation-tab-item-color, initial));
     cursor: pointer;
     display: inline-block;
 
@@ -531,8 +543,14 @@
 %nav-tab__item__region {
     &:active {
         background-color: map-get($navigation-tab-item-background, active);
+        background-color: var(--navigation-tab__item__region--is-active-background-color, map-get($navigation-tab-item-background, active));
+
         border-color: map-get($navigation-tab-item-border-color, active);
+        border-color: var(--navigation-tab__item__region--is-active-border-color, map-get($navigation-tab-item-border-color, active));
+
         color: map-get($navigation-tab-item-color, active);
+        color: var(--navigation-tab__item__region--is-active-color, map-get($navigation-tab-item-color, active));
+
         z-index: $navigation-tab-index + 1;
 
         &[primary] {
@@ -556,8 +574,14 @@
 %nav-tab__item__region {
     &:disabled {
         background-color: map-get($navigation-tab-item-background, disable);
+        background-color: var(--navigation-tab__item__region--is-disabled-background-color, map-get($navigation-tab-item-background, disable));
+
         border-color: map-get($navigation-tab-item-border-color, disable);
+        border-color: var(--navigation-tab__item__region--is-disabled-border-color, map-get($navigation-tab-item-border-color, disable));
+
         color: map-get($navigation-tab-item-color, disable);
+        color: var(--navigation-tab__item__region--is-disabled-color, map-get($navigation-tab-item-color, disable));
+
         cursor: not-allowed;
         opacity: 0.5;
     }
@@ -580,8 +604,13 @@
 %nav-tab__item__region {
     &:hover {
         background-color: map-get($navigation-tab-item-background, hover);
+        background-color: var(--navigation-tab__item__region--is-hovered-background-color, map-get($navigation-tab-item-background, hover));
+
         // border-color: map-get($navigation-tab-item-border-color, hover);
+        
         color: map-get($navigation-tab-item-color, hover);
+        color: var(--navigation-tab__item__region--is-hovered-color, map-get($navigation-tab-item-color, hover));
+
         // z-index: $navigation-tab-index + 1;
 
         &[primary] {

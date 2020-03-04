@@ -112,4 +112,5 @@
 
 %lst-article__spacer {
     border: $list-article-spacer-size dotted $list-articler-color;
+    border: $list-article-spacer-size dotted var(--list-article__spacer-border-color, $list-articler-color);
 }

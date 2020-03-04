@@ -20,3 +20,12 @@ $link-icon: (
     external: fa-lt-external-link-square,
     info:     fa-lt-info-circle,
 ) !default;
+
+
+body.theme {
+    --link-color: var(--primary-accent-50-color);
+    --link-color--is-active-color: var(--primary-accent-50-color-lighten-5);
+    //--link-color--is-focused-color:
+    --link-color--is-hovered-color: var(--primary-accent-50-color-lighten-5);
+    --link-color--is-visited-color: var(--primary-accent-50-color);
+}

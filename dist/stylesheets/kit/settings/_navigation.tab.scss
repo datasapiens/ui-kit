@@ -139,3 +139,29 @@ $navigation-tab--secondary-item-color: (
     hover:      lighten($blue--cerulean, 5%), // hovered
     initial:    $blue--cerulean,
 ) !default;
+
+
+body.themes {
+    --navigation-tab__item__region--primary-background-color: var(--neutral-40-color-darken-20);
+    --navigation-tab__item__region--primary-border-color: var(--neutral-40-color-darken-20);
+    --navigation-tab__item__region--primary-color: var(--white-color);
+    
+    --navigation-tab__item__region--secondary-background-color: var(--neutral-70-color);
+    --navigation-tab__item__region--secondary-border-color: var(--neutral-80-color-darken-5);
+    --navigation-tab__item__region--secondary-color: var(--primary-accent-50-color);
+    
+    --navigation-tab__item__region-background-color: var(--neutral-80-color);
+    --navigation-tab__item__region-border-color: var(--neutral-70-color);
+    --navigation-tab__item__region-color: var(--primary-accent-50-color);
+     
+    --navigation-tab__item__region--is-active-background-color: var(--white-color);
+    --navigation-tab__item__region--is-active-border-color: var(--neutral-70-color);
+    --navigation-tab__item__region--is-active-color: var(--primary-accent-50-color-lighten-5);
+    
+    --navigation-tab__item__region--is-disabled-background-color: var(--neutral-80-color);
+    --navigation-tab__item__region--is-disabled-border-color: var(--neutral-70-color);
+    --navigation-tab__item__region--is-disabled-color: var(--neutral-40-color);
+    
+    --navigation-tab__item__region--is-hovered-background-color: var(--white-color);
+    --navigation-tab__item__region--is-hovered-color: var(--primary-accent-50-color-lighten-5);
+}

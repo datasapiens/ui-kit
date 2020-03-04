@@ -67,3 +67,13 @@ $tooltip-body-background: rgba($white, 0.75) !default;
 
 // Set tooltip body color.
 $tooltip-body-color: $black !default;
+
+
+body.theme {
+    --tooltip-background-color: var(--tertiary-accent-100-color-opacity-85);
+    --tooltip-background-gradient-color1: var(--tertiary-accent-50-color-opacity-25);
+    --tooltip-background-gradient-color2: var(--tertiary-accent-50-color-opacity-0);
+    --tooltip-background-gradient-color3: var(--tertiary-accent-50-color-opacity-13);
+    --tooltip__body-background-color: var(--white-color-opacity-75);
+    --tooltip__body-color: var(--black-color);
+}

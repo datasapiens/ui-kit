@@ -9,6 +9,7 @@
 .page-overlay {
     @include stretch(fixed, 0, 0, 0, 0);
     background-color: $page-overlay-background;
+    background-color: var(--page-overlay-background-color, $page-overlay-background);
     padding-top: $page-overlay-offset;
     text-align: center;
 }

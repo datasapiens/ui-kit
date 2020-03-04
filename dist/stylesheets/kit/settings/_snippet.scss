@@ -45,3 +45,10 @@ $snippet--block-indent: (
     horizontal: 10px,
     vertical: 10px,
 ) !default;
+
+
+body.theme {
+    --snippet-background-color: var(--tertiary-accent-100-color-lighten-10);
+    --snippet-border-color: var(--tertiary-accent-100-color-darken-30);
+    --snippet-color: var(--base-color);
+}

@@ -107,7 +107,7 @@
 %btn--variant {
     &.\--primary {
         background-color: map-get($button--primary-background, initial);
-        background-color: var(--button--primary-background, map-get($button--primary-background, initial));
+        background-color: var(--button--primary-background-color, map-get($button--primary-background, initial));
         
         border-color: map-get($button--primary-border-color, initial);
         border-color: var(--button--primary-border-color, map-get($button--primary-border-color, initial));
@@ -124,7 +124,7 @@
 %btn--variant {
     &.\--secondary {
         background-color: map-get($button--secondary-background, initial);
-        background-color: var(--button--secondary-background, map-get($button--secondary-background, initial));
+        background-color: var(--button--secondary-background-color, map-get($button--secondary-background, initial));
 
         border-color: map-get($button--secondary-border-color, initial);
         border-color: var(--button--secondary-border-color, map-get($button--secondary-border-color, initial));

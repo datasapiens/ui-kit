@@ -12,6 +12,7 @@
     @extend .pnl !optional;
 
     color: $widget-color;
+    color: var(--widget-color, $widget-color);
 
     &[class] {
         margin-bottom: $widget-indent;
@@ -37,17 +38,23 @@
 
         background: {
             color: $widget--primary-background;
+            color: var(--widget--primary-background-color, $widget--primary-background);
             image: $widget--primary-background-gradient;
         }
         border-color: darken($widget--primary-background, 5%);
+        border-color: var(--widget--primary-border-color, darken($widget--primary-background, 5%));
+
         color: $widget--primary-color;
+        color: var(--widget--primary-color, $widget--primary-color);
 
         .wgt__head {
             border-bottom-color: $color-border;
+            border-bottom-color: var(--widget__head--primary-border-bottom-color, $color-border);
         }
         .wgt__spacer {
             &::after {
                 border-color: darken($color-border, 5%);
+                border-color: var(--widget__spacer--primary-border-color, darken($color-border, 5%));
             }
         }
     }
@@ -63,17 +70,23 @@
 
         background: {
             color: $widget--secondary-background;
+            color: var(--widget--secondary-background-color, $widget--secondary-background);
             image: $widget--secondary-background-gradient;
         }
         border-color: $color-border;
-        color: $widget--secondary-color;
+        border-color: var(--widget--secondary-border-color, $color-border);
 
+        color: $widget--secondary-color;
+        color: var(--widget--secondary-color, $widget--secondary-color);
+        
         .wgt__head {
             border-bottom-color: $color-border;
+            border-bottom-color: var(--widget__head--secondary-border-bottom-color, $color-border);
         }
         .wgt__spacer {
             &::after {
                 border-color: darken($color-border, 5%);
+                border-color: var(--widget__spacer--secondary-border-color, darken($color-border, 5%));
             }
         }
     }
@@ -140,6 +153,7 @@
 .wgt__head {
     align-items: center;
     border-bottom: $widget-head-border-size solid $widget-head-border-color;
+    border-bottom: $widget-head-border-size solid var(--widget__head-border-bottom-color, $widget-head-border-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -243,6 +257,7 @@
         content: "";
         border: {
             color: $widget-spacer-color;
+            color: var(--widget__spacer-border-color, $widget-spacer-color);
             style: dotted;
             width: $widget-spacer-size 0 0;
         }

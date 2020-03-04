@@ -87,3 +87,56 @@ $tag-control-icon: (
     delete: close-circled,
     edit:   editor-pencil-2,
 ) !default;
+
+
+body.theme {
+    --tag-background-color: var(--neutral-80-color);
+    --tag-border-color: var(--neutral-80-color-darken-5);
+    --tag-color: var(--neutral-20-color);
+    
+    --tag--danger-background-color: var(--danger-accent-80-color);
+    --tag--danger-border-color: var(--danger-accent-80-color-darken-5);
+    --tag--danger-color: var(--danger-accent-20-color);
+    
+    --tag--neutral-background-color: var(--neutral-accent-80-color);
+    --tag--neutral-border-color: var(--neutral-accent-80-color-darken-5);
+    --tag--neutral-color: var(--neutral-accent-20-color);
+    
+    --tag--notice-background-color: var(--notice-accent-80-color);
+    --tag--notice-border-color: var(--notice-accent-80-color-darken-5);
+    --tag--notice-color: var(--notice-accent-20-color);
+    
+    --tag--success-background-color: var(--success-accent-80-color);
+    --tag--success-border-color: var(--success-accent-80-color-darken-5);
+    --tag--success-color: var(--success-accent-20-color);
+    
+    --tag--warning-background-color: var(--warning-accent-80-color);
+    --tag--warning-border-color: var(--warning-accent-80-color-darken-5);
+    --tag--warning-color: var(--warning-accent-20-color);
+    
+    --tag--primary-is-focused-background-color: var(--neutral-70-color);
+    --tag--primary-is-focused-border-color: var(--neutral-70-color-darken-5);
+    --tag--primary-is-focused-color: var(--black-color);
+    
+    --tag--primary-is-focused--danger-background-color: var(--danger-accent-80-color-darken-10);
+    --tag--primary-is-focused--danger-border-color: var(--danger-accent-80-color-darken-15);
+    --tag--primary-is-focused--danger-color: var(--danger-accent-0-color);
+    
+    --tag--primary-is-focused--neutral-background-color: var(--neutral-accent-80-color-darken-10);
+    --tag--primary-is-focused--neutral-border-color: var(--neutral-accent-80-color-darken-15);
+    --tag--primary-is-focused--neutral-color: var(--neutral-accent-0-color);
+    
+    --tag--primary-is-focused--notice-background-color: var(--notice-accent-80-color-darken-10);
+    --tag--primary-is-focused--notice-border-color: var(--notice-accent-80-color-darken-15);
+    --tag--primary-is-focused--notice-color: var(--notice-accent-0-color);
+    
+    --tag--primary-is-focused--success-background-color: var(--success-accent-80-color-darken-10);
+    --tag--primary-is-focused--success-border-color: var(--success-accent-80-color-darken-15);
+    --tag--primary-is-focused--success-color: var(--success-accent-0-color);
+    
+    --tag--primary-is-focused--warning-background-color: var(--warning-accent-80-color-darken-10);
+    --tag--primary-is-focused--warning-border-color: var(--warning-accent-80-color-darken-15);
+    --tag--primary-is-focused--warning-color: var(--warning-accent-0-color);
+    
+    --tag__control-color: inherit;
+}

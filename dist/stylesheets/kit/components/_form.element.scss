@@ -15,10 +15,18 @@
     @extend %emt--medium !optional;
 
     align-items: center;
+    
     background-color: map-get($form-element-background, initial);
+    background-color: var(--form-element-background-color, map-get($form-element-background, initial));
+
     border: $form-element-border-size solid map-get($form-element-border-color, initial);
+    border: $form-element-border-size solid var(--form-element-border-color, map-get($form-element-border-color, initial));
+
     border-radius: $form-element-border-radius;
+
     color: map-get($form-element-color, initial);
+    color: var(--form-element-color, map-get($form-element-color, initial));
+
     display: inline-flex;
     padding: 0 $form-element-indent;
     transition:
@@ -87,7 +95,10 @@
     &:disabled,
     &.is-disabled {
         border-color: map-get($form-element-border-color, disable);
+        border-color: var(--form-element--is-disabled-border-color, map-get($form-element-border-color, disable));
+
         color: map-get($form-element-color, disable);
+        color: var(--form-element--is-disabled-color, map-get($form-element-color, disable));
         cursor: not-allowed;
     }
 }
@@ -101,7 +112,10 @@
     &:focus {
         &:not(:disabled):not(.is-disabled):not([readonly]):not(.is-readonly) {
             border-color: map-get($form-element-border-color, focus);
+            border-color: var(--form-element--is-focused-border-color, map-get($form-element-border-color, focus));
+
             color: map-get($form-element-color, focus);
+            color: var(--form-element--is-focused-color, map-get($form-element-color, focus));
         }
     }
 }
@@ -115,6 +129,7 @@
     &.is-hovered {
         &:not(:disabled):not(.is-disabled):not([readonly]):not(.is-readonly) {
             border-color: map-get($form-element-border-color, hover);
+            border-color: var(--form-element--is-hovered-border-color, map-get($form-element-border-color, hover));
         }
     }
 }
@@ -127,8 +142,13 @@
     // &:invalid,
     &.is-invalid {
         background-color: map-get($form-element-background, invalid);
+        background-color: var(--form-element--is-invalid-background-color, map-get($form-element-background, invalid));
+
         border-color: map-get($form-element-border-color, invalid);
+        border-color: var(--form-element--is-invalid-border-color, map-get($form-element-border-color, invalid));
+
         color: map-get($form-element-color, invalid);
+        color: var(--form-element--is-invalid-color, map-get($form-element-color, invalid));
     }
 }
 

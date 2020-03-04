@@ -17,9 +17,12 @@
     @include acceleration;
 
     background-color: rgba($sticker-background, 0.75);
+    background-color: var(--sticker-background-color, rgba($sticker-background, 0.75));
+
     border-radius: $sticker-border-radius;
     box-shadow: $sticker-box-shadow;
     color: $sticker-color;
+    color: var(--sticker-color, $sticker-color);
     content: "";
     position: absolute;
     // width: 100%;
@@ -65,6 +68,7 @@
 
         &.\--#{$modifier} {
             color: $white;
+            color: var(--sticker--#{$modifier}-color, $white);
 
             &::before {
                 background: {
@@ -75,6 +79,13 @@
                         rgba($color, 0.75) 40%
                     );
                 }
+                background: {
+                    color: var(--sticker--#{$modifier}-background-color, rgba($color, 0.75));
+                    image: linear-gradient(
+                        190deg,
+                        var(--sticker--#{$modifier}-gradient-background-dark-color, rgba(darken($color, 10%), 0.75)) 0%,
+                        var(--sticker--#{$modifier}-gradient-background-light-color, rgba($color, 0.75)) 40%
+                    );
             }
         }
     }

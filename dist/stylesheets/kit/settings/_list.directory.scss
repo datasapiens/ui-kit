@@ -57,3 +57,11 @@ $list-directory-item-region-indent: (
     horizontal: 0,
     vertical: 6px,
 ) !default;
+
+
+body.theme {
+    --list-directory__title--is-hovered-color: var(--notice-accent-50-color);
+    --list-directory__item__spacer-border-bottom-color: var(--neutral-70-color);
+    --list-directory__item__region-color: inherit;
+    --list-directory__item__region--is-hovered-color: var(--notice-accent-50-color);
+}

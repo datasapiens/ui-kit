@@ -8,6 +8,7 @@
 
 .form-message {
     color: $form-message-color;
+    color: var(--form-message-color, $form-message-color);
     display: block;
     font-size: px-to-rem($form-message-font-size);
     padding: {

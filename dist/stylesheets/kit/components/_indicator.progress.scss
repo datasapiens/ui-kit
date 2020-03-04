@@ -15,6 +15,7 @@
 .ind-progress {
     animation: fade--in 0.3s both;
     color: $indicator-progress-color;
+    color: var(--indicator-progress-color, $indicator-progress-color);
     display: block;
     font: {
         size: px-to-rem($indicator-progress-font-size);
@@ -83,6 +84,7 @@
 
     background: {
         color: currentColor;
+        color: var(--ind-progress__scale-background-color, currentColor);
         image: linear-gradient(
             120deg,
             transparent 10%,
@@ -121,6 +123,7 @@
 
 .ind-progress__data {
     color: $indicator-progress-data-color;
+    color: var(--ind-progress__data-color, $indicator-progress-data-color);
     display: flex;
     justify-content: space-between;
 }

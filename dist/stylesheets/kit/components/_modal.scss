@@ -161,6 +161,7 @@
             0
         );
         background-color: $modal-background;
+        background-color: var(--modal-background-color, $modal-background);
         border-radius: $modal-border-radius;
         box-shadow: $modal-box-shadow;
         content: "";
@@ -185,6 +186,7 @@
 
 %mod__region {
     border: 0 dotted $modal-head-border-color;
+    border: 0 dotted var(--modal__head-border-color, $modal-head-border-color);
     padding:
         0.5 * $modal-indent
         $modal-indent;
@@ -281,6 +283,7 @@
 
 .mod__control {
     color: map-get($modal-control-color, initial);
+    color: var(--modal__control-color, map-get($modal-control-color, initial));
     cursor: default;
     font-size: px-to-rem($modal-control-size);
     opacity: 0;
@@ -320,5 +323,6 @@
 .mod__control {
     &:hover {
         color: map-get($modal-control-color, hover);
+        color: var(--modal__control--is-hovered-color, map-get($modal-control-color, hover));
     }
 }

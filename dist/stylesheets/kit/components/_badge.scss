@@ -25,6 +25,7 @@
 
     border-radius: $badge-border-radius;
     color: $badge-color;
+    color: var(--badge-color, $badge-color);
     display: inline-block;
     font: {
         weight: 300;
@@ -60,6 +61,7 @@
     @each $modifier, $theme in $badge-theme {
         &.\--#{$modifier} {
             background-color: map-get($theme, 50);
+            background-color: var(--badge--#{$modifier}-background-color, map-get($theme, 50));
         }
     }
 }

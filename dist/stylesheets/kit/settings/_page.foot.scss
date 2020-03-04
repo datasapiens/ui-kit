@@ -14,3 +14,10 @@ $page-foot-color: $white;
 
 // Set page footer font size.
 $page-foot-font-size: 13px;
+
+
+body.theme {
+    --page-foot-background-color: var(--neutral-accent-50-color);
+    --page-foot-color: var(--white-color);
+    --page-foot-link-color: var(--white-color);
+}

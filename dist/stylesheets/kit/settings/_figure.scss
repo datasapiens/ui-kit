@@ -71,3 +71,12 @@ $figure-indicator-size: 38px !default;
 
 // Set figure indicator size.
 $figure--primary-indicator-size: 16px !default;
+
+
+body.theme{
+    --figure-background-color: var(--white-color);
+    --figure__number--is-monochrome-color: inherit;
+    --figure__number--negative-color: var(--danger-accent-50-color);
+    --figure__number--neutral-color: var(--notice-accent-50-color);
+    --figure__number--positive-color: var(--success-accent-50-color);
+}

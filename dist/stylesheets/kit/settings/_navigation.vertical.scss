@@ -143,3 +143,40 @@ $navigation-vertical--primary-item-color: (
 
 // Set primary navigation header border color.
 $navigation-vertical--primary-head-border-color: rgba(white, 0.25) !default;
+
+
+body.theme {
+    --navigation-vertical-background-color: var(--primary-accent-80-color-lighten-30);
+    --navigation-vertical-color: #666;
+    
+    --navigation-vertical--level-2-background-color: var(--primary-accent-80-color-lighten-24);
+    --navigation-vertical--level-3-background-color: var(--primary-accent-80-color-lighten-21);
+    --navigation-vertical--level-4-background-color: var(--primary-accent-80-color-lighten-18);
+    --navigation-vertical--level-5-background-color: var(--primary-accent-80-color-lighten-15);
+    
+    --navigation-vertical--primary-background-color: #333;
+    --navigation-vertical--primary-border-color: #aaa;
+    --navigation-vertical--primary-color: #aaa;
+    --navigation-vertical--primary--level-2-background-color: #4d4d4d;
+    --navigation-vertical--primary--level-3-background-color: #595959;
+    --navigation-vertical--primary--level-4-background-color: #666666;
+    --navigation-vertical--primary--level-5-background-color: #737373;
+    
+    
+    --navigation-vertical__item--primary-color: #ddd;
+    --navigation-vertical__item--primary-border-color: rgba(white, 0.25);
+    --navigation-vertical__item__region--primary-color: #ddd;
+    --navigation-vertical__head--primary-border-color: rgba(white, 0.25);
+    --navigation-vertical__item-border-color: rgba(black, 0.125);
+    --navigation-vertical__item__region-color: #666;
+    --navigation-vertical__item__region--is-active-background-color: var(--primary-accent-80-color-opacity-20);
+    --navigation-vertical__item__region--is-active-color: black;
+    --navigation-vertical__item__region--primary--is-active-background-color: #999;  
+    --navigation-vertical__item__region--primary--is-active-color: white;
+    --navigation-vertical__item__region--is-disabled-background-color: transparent;
+    --navigation-vertical__item__region--is-disabled-color: #666;
+    --navigation-vertical__item__region--primary--is-disabled-background-color: transparent;
+    --navigation-vertical__item__region--primary--is-disabled-color: #ddd;
+    --navigation-vertical__item__region--is-checked-background-color: var(--tertiary-accent-100-color);
+    --navigation-vertical__item__region--is-checked-color: black;
+}

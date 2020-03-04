@@ -44,3 +44,9 @@ $card-figure-size: 50px !default;
 
 // Set card figure icon size.
 $card-figure-icon-size: 24px !default;
+
+body.theme {
+--card__region--primary-background-color: var(--neutral-accent-100-color);
+--card__region--secondary-background-color: var(--neutral-accent-80-color);
+--card__figure-color: inherit;
+}

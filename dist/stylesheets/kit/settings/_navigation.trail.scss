@@ -14,3 +14,8 @@ $navigation-trail-item-indent: 4px !default;
 
 // Set navigation spacer color.
 $navigation-trail-spacer: #ccc !default;
+
+
+body.theme {
+    --navigation-trail__spacer-color: #ccc;
+}

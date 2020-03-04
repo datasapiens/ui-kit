@@ -32,10 +32,15 @@
     animation:
         slide--down-reverse 0.2s 0.4s map-get($animation-easing, in-out-circ) forwards,
         fade--in 0.3s 0.5s both;
+
     border: $message-border-size solid $message-border-color;
+    border: $message-border-size solid var(--message-border-color, $message-border-color);
+
     border-radius: $message-border-radius;
     box-shadow: $message-box-shadow;
+
     color: $message-color;
+    color: var(--message-color, $message-color);
 
     @if $message-font-size != $base-font-size {
         font-size: px-to-rem($message-font-size);
@@ -61,6 +66,7 @@
 
     a {
         color: inherit;
+        color: var(--message-link-color, inherit);
     }
 
     @include ie-gte-10 {
@@ -192,13 +198,22 @@
         &.\--#{$modifier} {
             background: {
                 color: lighten(map-get($theme, 80), 10%);
+                color: var(--message--#{$modifier}-background-color, lighten(map-get($theme, 80), 10%));
+
                 image: linear-gradient(
                     120deg,
                     lighten(map-get($theme, 80), 10%) 40%,
                     lighten(map-get($theme, 50), 0%)
                 );
+
+                image: linear-gradient(
+                    120deg,
+                    var(--message--#{$modifier}-background-image-color-start, lighten(map-get($theme, 80), 10%)) 40%,
+                    var(--message--#{$modifier}-background-image-color-end, lighten(map-get($theme, 50), 0%))
+                );
             }
             border-color: desaturate(map-get($theme, 80), 50%);
+            border-color: var(--message--#{$modifier}-border-color, desaturate(map-get($theme, 80), 50%));
 
             @if map-has-key($message-theme-icon, $modifier) {
                 &.\--primary::after,
@@ -209,25 +224,30 @@
 
             &.\--secondary::after {
                 color: rgba(map-get($theme, 50), 0.5);
+                color: var(--message--#{$modifier}--secondary-icon-color, rgba(map-get($theme, 50), 0.5));
             }
+
             &.\--primary::before {
                 background-color: rgba(map-get($theme, 50), 1);
+                background-color: var(--message--#{$modifier}--primary-icon-background-color, rgba(map-get($theme, 50), 1));
+
                 border-color: desaturate(map-get($theme, 50), 25%);
+                border-color: var(--message--#{$modifier}--primary-icon-border-color, desaturate(map-get($theme, 50), 25%));
             }
 
             .msg__title {
-                color: desaturate(
-                    map-get($theme, 0),
-                    90%
-                );
+                color: desaturate(map-get($theme, 0), 90%);
+                color: var(--message__title--#{$modifier}-color, desaturate(map-get($theme, 0), 90%));
             }
 
             .msg__spacer {
                 border-color: desaturate(map-get($theme, 80), 50%);
+                border-color: var(--message__spacer--#{$modifier}-border-color, desaturate(map-get($theme, 80), 50%));
             }
 
             .msg__control {
                 color: map-get($theme, 0);
+                color: var(--message__control--#{$modifier}-color, map-get($theme, 0));
             }
         }
     }
