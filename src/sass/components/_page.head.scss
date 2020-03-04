@@ -32,7 +32,7 @@
     a {
         @include link-underline($underline: false);
         color: inherit;
-        color: var(--page-head-link-color, inherit;)
+        color: var(--page-head-link-color, inherit);
     }
 
     @media print {
