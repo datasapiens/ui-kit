@@ -72,7 +72,7 @@ body.theme {
     @include defineColor(--navigation-pagination__item-color, var(--primary-accent-50-color));
     @include defineColor(--navigation-pagination__item--is-active-background-color, var(--primary-accent-50-color-lighten-4));
     @include defineColor(--navigation-pagination__item--is-active-border-color, var(--primary-accent-50-color-lighten-1)); 
-    @include defineColor(--navigation-pagination__item--is-active-color, $white, var(--white-color));
+    @include defineColor(--navigation-pagination__item--is-active-color, var(--white-color));
     @include defineColor(--navigation-pagination__item--is-disabled-background-color, var(--neutral-70-color));
     @include defineColor(--navigation-pagination__item--is-disabled-border-color, var(--neutral-70-color-darken-3));
     @include defineColor(--navigation-pagination__item--is-disabled-color, var(--neutral-40-color));
