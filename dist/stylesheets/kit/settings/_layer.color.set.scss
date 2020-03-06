@@ -102,52 +102,6 @@ $color-set: (
 
 ) !default;
 
-@mixin modifyColor($color, $lightness: 0, $saturation: 0, $opacity: 100) {
-  $color-name: $color;
-  $lightness-value: var(#{$color}-l);
-  $saturation-value: var(#{$color}-s);
-
-  @if $lightness > 0 {
-    $color-name: #{$color-name}-lighten-#{abs($lightness)};
-    $lightness-value: calc(var(#{$color}-l) + #{abs($lightness)}#{'%'});
-  }
-
-  @if $lightness < 0 {
-    $color-name: #{$color-name}-darken-#{abs($lightness)};
-    $lightness-value: calc(var(#{$color}-l) - #{abs($lightness)}#{'%'});
-  }
-
-  @if $saturation > 0 {
-    $color-name: #{$color-name}-desaturate-#{$saturation};
-    $saturation-value: calc(var(#{$color}-s) - #{abs($saturation)}#{'%'});
-  }
-
-  @if $opacity < 100 {
-    $color-name: #{$color-name}-opacity-#{$opacity};
-    #{$color-name}: unquote(
-      "hsla(var(#{$color}-h), #{$saturation-value}, #{$lightness-value}, #{$opacity}#{'%'})"
-    );
-  } @else {
-    #{$color-name}: unquote(
-      'hsl(var(#{$color}-h), #{$saturation-value}, #{$lightness-value})'
-    );
-  }
-}
-
-// defines custom css variable using hsl component variables
-@mixin defineColor($color-name, $default: null) {
-  @if($default){
-  #{$color-name}-tmp : unquote(
-      'hsla(var(#{$color-name}-h), var(#{$color-name}-s), var(#{$color-name}-l), var(#{$color-name}-a, 100%))'
-    );
-  #{$color-name}: unquote('var(#{$color-name}-tmp, #{$default})');
-  }@else{
-    #{$color-name} : unquote(
-      'hsla(var(#{$color-name}-h), var(#{$color-name}-s), var(#{$color-name}-l), var(#{$color-name}-a, 100%))'
-    );
-  }
-}
-
 body.theme {
   $accent-pallete: map-get($color-set, accent);
   $neutral-pallete: map-get($color-set, neutral);
