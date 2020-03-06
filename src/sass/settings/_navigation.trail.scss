@@ -17,5 +17,5 @@ $navigation-trail-spacer: #ccc !default;
 
 
 body.theme {
-    --navigation-trail__spacer-color: #ccc;
+    @include defineColor(--navigation-trail__spacer-color, #ccc);
 }

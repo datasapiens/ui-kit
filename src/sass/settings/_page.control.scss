@@ -37,6 +37,6 @@ $page-control-legend-font-size: 11px !default;
 
 
 body.theme {
-    --page-control-color: inherit;
-    --page-control--is-active-color: inherit;
+    @include defineColor(--page-control-color, inherit);
+    @include defineColor(--page-control--is-active-color, inherit);
 }

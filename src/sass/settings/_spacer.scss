@@ -16,5 +16,5 @@ $spacer-color: map-get(
 $spacer-size: 1px;
 
 body.theme {
-    --spacer-bottom-color: var(--neutral-70-color);
+    @include defineColor(--spacer-bottom-color, var(--neutral-70-color));
 }

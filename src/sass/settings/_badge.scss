@@ -28,10 +28,10 @@ $badge-size: 17px !default;
 $badge-theme: map-get($color-set, accent) !default;
 
 body.theme{
-    --badge-color: var(--white-color);
-    --badge--danger-background-color: var(--danger-accent-50-color);
-    --badge--neutral-background-color: var(--neutral-accent-50-color);
-    --badge--notice-background-color: var(--notice-accent-50-color);
-    --badge--success-background-color: var(--success-accent-50-color);
-    --badge--warning-background-color: var(--warning-accent-50-color);
+    @include defineColor(--badge-color, var(--white-color));
+    @include defineColor(--badge--danger-background-color, var(--danger-accent-50-color));
+    @include defineColor(--badge--neutral-background-color, var(--neutral-accent-50-color));
+    @include defineColor(--badge--notice-background-color, var(--notice-accent-50-color));
+    @include defineColor(--badge--success-background-color, var(--success-accent-50-color));
+    @include defineColor(--badge--warning-background-color, var(--warning-accent-50-color));
 }

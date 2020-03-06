@@ -50,31 +50,31 @@ $sticker-theme: map-get($color-set, accent) !default;
 $sticker--primary-font-size: 12px !default;
 
 body.theme {
-    --sticker-background-color: var(--neutral-80-color-opacity-75);
-    --sticker-color: var(--black-color);
+    @include defineColor(--sticker-background-color, var(--neutral-80-color-opacity-75));
+    @include defineColor(--sticker-color, var(--black-color));
     
-    --sticker--danger-color: var(--white-color);
-    --sticker--danger-background-color: var(--danger-accent-50-color-opacity-75);
-    --sticker--danger-gradient-background-dark-color: var(--danger-accent-50-color-darken-10-opacity-75);
-    --sticker--danger-gradient-background-light-color: var(--danger-accent-50-color-opacity-75);
+    @include defineColor(--sticker--danger-color, var(--white-color));
+    @include defineColor(--sticker--danger-background-color, var(--danger-accent-50-color-opacity-75));
+    @include defineColor(--sticker--danger-gradient-background-dark-color, var(--danger-accent-50-color-darken-10-opacity-75));
+    @include defineColor(--sticker--danger-gradient-background-light-color, var(--danger-accent-50-color-opacity-75));
     
-    --sticker--neutral-color: var(--white-color);
-    --sticker--neutral-background-color: var(--neutral-accent-50-color-opacity-75);
-    --sticker--neutral-gradient-background-dark-color: var(--neutral-accent-50-color-darken-10-opacity-75);
-    --sticker--neutral-gradient-background-light-color: var(--neutral-accent-50-color-opacity-75);
+    @include defineColor(--sticker--neutral-color, var(--white-color));
+    @include defineColor(--sticker--neutral-background-color, var(--neutral-accent-50-color-opacity-75));
+    @include defineColor(--sticker--neutral-gradient-background-dark-color, var(--neutral-accent-50-color-darken-10-opacity-75));
+    @include defineColor(--sticker--neutral-gradient-background-light-color, var(--neutral-accent-50-color-opacity-75));
     
-    --sticker--notice-color: var(--white-color);
-    --sticker--notice-background-color: var(--notice-accent-50-color-opacity-75);
-    --sticker--notice-gradient-background-dark-color: var(--notice-accent-50-color-darken-10-opacity-75);
-    --sticker--notice-gradient-background-light-color: var(--notice-accent-50-color-opacity-75);
+    @include defineColor(--sticker--notice-color, var(--white-color));
+    @include defineColor(--sticker--notice-background-color, var(--notice-accent-50-color-opacity-75));
+    @include defineColor(--sticker--notice-gradient-background-dark-color, var(--notice-accent-50-color-darken-10-opacity-75));
+    @include defineColor(--sticker--notice-gradient-background-light-color, var(--notice-accent-50-color-opacity-75));
     
-    --sticker--success-color: var(--white-color);
-    --sticker--success-background-color: var(--success-accent-50-color-opacity-75);
-    --sticker--success-gradient-background-dark-color: var(--success-accent-50-color-darken-10-opacity-75);
-    --sticker--success-gradient-background-light-color: var(--success-accent-50-color-opacity-75);
+    @include defineColor(--sticker--success-color, var(--white-color));
+    @include defineColor(--sticker--success-background-color, var(--success-accent-50-color-opacity-75));
+    @include defineColor(--sticker--success-gradient-background-dark-color, var(--success-accent-50-color-darken-10-opacity-75));
+    @include defineColor(--sticker--success-gradient-background-light-color, var(--success-accent-50-color-opacity-75));
     
-    --sticker--warning-color: var(--white-color);
-    --sticker--warning-background-color: var(--warning-accent-50-color-opacity-75);
-    --sticker--warning-gradient-background-dark-color: var(--warning-accent-50-color-darken-10-opacity-75);
-    --sticker--warning-gradient-background-light-color: var(--warning-accent-50-color-opacity-75);
+    @include defineColor(--sticker--warning-color, var(--white-color));
+    @include defineColor(--sticker--warning-background-color, var(--warning-accent-50-color-opacity-75));
+    @include defineColor(--sticker--warning-gradient-background-dark-color, var(--warning-accent-50-color-darken-10-opacity-75));
+    @include defineColor(--sticker--warning-gradient-background-light-color, var(--warning-accent-50-color-opacity-75));
 }
