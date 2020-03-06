@@ -19,10 +19,10 @@ $form-radio-size: $form-checkbox-size !default;
 $form-radio-indent: $form-checkbox-indent !default;
 
 body.theme {
-    --form-radio__shape-background-color: var(--white-color);
-    --form-radio__shape-border-color: currentColor;
-    --form-radio__shape-color: var(--primary-accent-50-color);
-    --form-radio__shape--is-disabled-border-color: currentColor;
-    --form-radio__shape--is-disabled-color: var(--neutral-70-color);
-    --form-radio__shape--is-checked-border-color: currentColor;
+    @include defineColor(--form-radio__shape-background-color, var(--white-color));
+    @include defineColor(--form-radio__shape-border-color, currentColor);
+    @include defineColor(--form-radio__shape-color, var(--primary-accent-50-color));
+    @include defineColor(--form-radio__shape--is-disabled-border-color, currentColor);
+    @include defineColor(--form-radio__shape--is-disabled-color, var(--neutral-70-color));
+    @include defineColor(--form-radio__shape--is-checked-border-color, currentColor);
 }

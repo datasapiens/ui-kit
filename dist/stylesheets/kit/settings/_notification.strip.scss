@@ -59,20 +59,20 @@ $notification-strip-item-control-size: 20px !default;
 
 
 body.theme {
-    --notification-strip__item-color: #fff;
+    @include defineColor(--notification-strip__item-color, #fff);
 
-    --notification-strip__item--danger-background-color: var(--danger-accent-50-color);
-    --notification-strip__item--primary--danger-background-color: var(--danger-accent-50-color-opacity-90);
+    @include defineColor(--notification-strip__item--danger-background-color, var(--danger-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--danger-background-color, var(--danger-accent-50-color-opacity-90));
     
-    --notification-strip__item--neutral-background-color: var(--neutral-accent-50-color);
-    --notification-strip__item--primary--neutral-background-color: var(--neutral-accent-50-color-opacity-90);
+    @include defineColor(--notification-strip__item--neutral-background-color, var(--neutral-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--neutral-background-color, var(--neutral-accent-50-color-opacity-90));
     
-    --notification-strip__item--notice-background-color: var(--notice-accent-50-color);
-    --notification-strip__item--primary--notice-background-color: var(--notice-accent-50-color-opacity-90);
+    @include defineColor(--notification-strip__item--notice-background-color, var(--notice-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--notice-background-color, var(--notice-accent-50-color-opacity-90));
     
-    --notification-strip__item--success-background-color: var(--success-accent-50-color);
-    --notification-strip__item--primary--success-background-color: var(--success-accent-50-color-opacity-90);
+    @include defineColor(--notification-strip__item--success-background-color, var(--success-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--success-background-color, var(--success-accent-50-color-opacity-90));
     
-    --notification-strip__item--warning-background-color: var(--warning-accent-50-color);
-    --notification-strip__item--primary--warning-background-color: var(--warning-accent-50-color-opacity-90);
+    @include defineColor(--notification-strip__item--warning-background-color, var(--warning-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--warning-background-color, var(--warning-accent-50-color-opacity-90));
 }

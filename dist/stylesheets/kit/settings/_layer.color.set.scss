@@ -135,10 +135,17 @@ $color-set: (
 }
 
 // defines custom css variable using hsl component variables
-@mixin defineColor($color-name) {
-  #{$color-name}: unquote(
-    'hsl(var(#{$color-name}-h), var(#{$color-name}-s), var(#{$color-name}-l))'
-  );
+@mixin defineColor($color-name, $default: null) {
+  @if($default){
+  #{$color-name}-tmp : unquote(
+      'hsla(var(#{$color-name}-h), var(#{$color-name}-s), var(#{$color-name}-l), var(#{$color-name}-a, 100%))'
+    );
+  #{$color-name}: unquote('var(#{$color-name}-tmp, #{$default})');
+  }@else{
+    #{$color-name} : unquote(
+      'hsla(var(#{$color-name}-h), var(#{$color-name}-s), var(#{$color-name}-l), var(#{$color-name}-a, 100%))'
+    );
+  }
 }
 
 body.theme {

@@ -67,16 +67,16 @@ $navigation-pagination-control-icon: (
 
 
 body.theme {
-    --navigation-pagination__item-background-color: var(--neutral-90-color-darken-1);
-    --navigation-pagination__item-border-color: var(--neutral-60-color);
-    --navigation-pagination__item-color: var(--primary-accent-50-color);
-    --navigation-pagination__item--is-active-background-color: var(--primary-accent-50-color-lighten-4);
-    --navigation-pagination__item--is-active-border-color: var(--primary-accent-50-color-lighten-1); 
-    --navigation-pagination__item--is-active-color: $white, var(--white-color);
-    --navigation-pagination__item--is-disabled-background-color: var(--neutral-70-color);
-    --navigation-pagination__item--is-disabled-border-color: var(--neutral-70-color-darken-3);
-    --navigation-pagination__item--is-disabled-color: var(--neutral-40-color);
-    --navigation-pagination__item--is-hovered-background-color: var(--white-color);
-    --navigation-pagination__item--is-hovered-border-color: var(--primary-accent-50-color-lighten-3);
-    --navigation-pagination__item--is-hovered-color: var(--primary-accent-50-color);
+    @include defineColor(--navigation-pagination__item-background-color, var(--neutral-90-color-darken-1));
+    @include defineColor(--navigation-pagination__item-border-color, var(--neutral-60-color));
+    @include defineColor(--navigation-pagination__item-color, var(--primary-accent-50-color));
+    @include defineColor(--navigation-pagination__item--is-active-background-color, var(--primary-accent-50-color-lighten-4));
+    @include defineColor(--navigation-pagination__item--is-active-border-color, var(--primary-accent-50-color-lighten-1)); 
+    @include defineColor(--navigation-pagination__item--is-active-color, $white, var(--white-color));
+    @include defineColor(--navigation-pagination__item--is-disabled-background-color, var(--neutral-70-color));
+    @include defineColor(--navigation-pagination__item--is-disabled-border-color, var(--neutral-70-color-darken-3));
+    @include defineColor(--navigation-pagination__item--is-disabled-color, var(--neutral-40-color));
+    @include defineColor(--navigation-pagination__item--is-hovered-background-color, var(--white-color));
+    @include defineColor(--navigation-pagination__item--is-hovered-border-color, var(--primary-accent-50-color-lighten-3));
+    @include defineColor(--navigation-pagination__item--is-hovered-color, var(--primary-accent-50-color));
 }

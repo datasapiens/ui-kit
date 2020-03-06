@@ -23,5 +23,5 @@ $form-message-indent: (
 $form-message-theme: ();
 
 body.theme{
-    --form-message-color: var(--danger-accent-20-color);
+    @include defineColor(--form-message-color, var(--danger-accent-20-color));
 }

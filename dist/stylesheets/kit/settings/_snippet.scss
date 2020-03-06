@@ -48,7 +48,7 @@ $snippet--block-indent: (
 
 
 body.theme {
-    --snippet-background-color: var(--tertiary-accent-100-color-lighten-10);
-    --snippet-border-color: var(--tertiary-accent-100-color-darken-30);
-    --snippet-color: var(--base-color);
+    @include defineColor(--snippet-background-color, var(--tertiary-accent-100-color-lighten-10));
+    @include defineColor(--snippet-border-color, var(--tertiary-accent-100-color-darken-30));
+    @include defineColor(--snippet-color, var(--base-color));
 }

@@ -13,5 +13,5 @@ $page-context-background: map-get(map-get($color-set, neutral), 80) !default;
 $page-context-indent: 16px !default;
 
 body.theme {
-    --page-context-background-color: var(--neutral-80-color);
+    @include defineColor(--page-context-background-color, var(--neutral-80-color));
 }

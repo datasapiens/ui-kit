@@ -25,5 +25,5 @@ $list-article-spacer-size: 1px !default;
 
 
 body.theme {
-    --list-article__spacer-border-color: var(--neutral-80-color);
+    @include defineColor(--list-article__spacer-border-color, var(--neutral-80-color));
 }

@@ -196,6 +196,8 @@
 .msg {
     @each $modifier, $theme in $message-theme {
         &.\--#{$modifier} {
+            color: inherit;
+            color: var(--message--#{$modifier}-color, inherit);
             background: {
                 color: lighten(map-get($theme, 80), 10%);
                 color: var(--message--#{$modifier}-background-color, lighten(map-get($theme, 80), 10%));

@@ -13,5 +13,5 @@ $backdrop-background: $white;
 $backdrop-index: 5;
 
 body.theme{
-    --backdrop-background-color: var(--white-color);
+    @include defineColor(--backdrop-background-color, var(--white-color));
 }

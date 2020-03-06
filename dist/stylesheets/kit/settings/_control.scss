@@ -20,10 +20,10 @@ $control-color: (
 
 
 body.theme {
-    --control-color: var(--neutral-60-color);
-    --control--is-active-color: var(--neutral-accent-0-color);
-    --control--is-disabled-color: var(--neutral-60-color);
-    --control--is-hovered-color: var(--neutral-accent-0-color);
-    --control--is-on-color: var(--neutral-accent-0-color);
-    --control--is-off-color: var(--neutral-60-color);
+    @include defineColor(--control-color, var(--neutral-60-color));
+    @include defineColor(--control--is-active-color, var(--neutral-accent-0-color));
+    @include defineColor(--control--is-disabled-color, var(--neutral-60-color));
+    @include defineColor(--control--is-hovered-color, var(--neutral-accent-0-color));
+    @include defineColor(--control--is-on-color, var(--neutral-accent-0-color));
+    @include defineColor(--control--is-off-color, var(--neutral-60-color));
 }
