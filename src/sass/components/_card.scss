@@ -15,6 +15,12 @@
 // Card
 // =============================================================================
 
+.crd {
+    @include defineColor(--card__region--primary-background-color, var(--neutral-accent-100-color));
+    @include defineColor(--card__region--secondary-background-color, var(--neutral-accent-80-color));
+    @include defineColor(--card__figure-color, inherit);
+    }
+
 /**
  * 1. We need to increase specifity.
  */
@@ -231,6 +237,7 @@
 .crd__region {
     &.--primary {
         background-color: map-get($card-background, primary);
+        background-color: var(--card__region--primary-background-color, map-get($card-background, primary));
     }
 }
 
@@ -243,6 +250,7 @@
         @include stretch;
 
         background-color: map-get($card-background, secondary);
+        background-color: var(--card__region--secondary-background-color, map-get($card-background, secondary));
         transform: rotateX(180deg);
 
         .crd__body {
@@ -388,6 +396,7 @@
 .crd__figure {
     background: transparent center / cover no-repeat;
     color: inherit;
+    color: var(--card__figure-color, inherit);
     display: inline-flex;
     flex: 0 0 auto;
     position: relative;

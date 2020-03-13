@@ -12,6 +12,10 @@
 // =============================================================================
 
 .lst-index {
+    @include defineColor(--list-index__item__index-color, var(--neutral-accent-50-color));
+}
+
+.lst-index {
     /* autoprefixer: off */
     display: grid;
     grid-gap: $list-index-gutter;
@@ -71,6 +75,8 @@
 
 .lst-index__item__index {
     color: $list-index-title-index-color;
+    color: var(--list-index__item__index-color, $list-index-title-index-color);
+
     display: inline-block;
     font: {
         size: px-to-rem($list-index-title-index-font-size);

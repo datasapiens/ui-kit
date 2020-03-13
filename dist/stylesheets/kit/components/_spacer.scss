@@ -8,6 +8,10 @@
 // Spacer
 // =============================================================================
 
+.spa {
+    @include defineColor(--spacer-bottom-color, var(--neutral-70-color));
+}
+
 /**
  * TODO: Consider renaming to `divider`
  */
@@ -29,6 +33,7 @@
     @extend %spa;
 
     border-bottom-color: $spacer-color;
+    border-bottom-color: var(--spacer-bottom-color, $spacer-color);
 }
 
 /**

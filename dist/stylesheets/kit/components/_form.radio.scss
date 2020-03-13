@@ -15,6 +15,15 @@
 // =============================================================================
 
 .form-radio {
+    @include defineColor(--form-radio__shape-background-color, var(--white-color));
+    @include defineColor(--form-radio__shape-border-color, currentColor);
+    @include defineColor(--form-radio__shape-color, var(--primary-accent-50-color));
+    @include defineColor(--form-radio__shape--is-disabled-border-color, currentColor);
+    @include defineColor(--form-radio__shape--is-disabled-color, var(--neutral-70-color));
+    @include defineColor(--form-radio__shape--is-checked-border-color, currentColor);
+}
+
+.form-radio {
     align-items: baseline;
     display: inline-flex;
 
@@ -136,8 +145,14 @@
     @extend %form-element !optional;
 
     background: map-get($form-radio-background, initial);
+    background: var(--form-radio__shape-background-color, map-get($form-radio-background, initial));
+    
     border-color: currentColor;
+    border-color: var(--form-radio__shape-border-color, currentColor);
+
     color: map-get($form-radio-color, initial);
+    color: var(--form-radio__shape-color, map-get($form-radio-color, initial));
+
     display: inherit;
     font-size: 1em;
     justify-content: center;
@@ -167,6 +182,7 @@
 
 %form-radio__shape {
     background-color: currentColor;
+
     content: "o";
     display: inline-block;
     line-height: 1;
@@ -189,7 +205,11 @@
 %form-radio__shape {
     &:disabled {
         border-color: currentColor !important;
+        border-color: var(--form-radio__shape--is-disabled-border-color, currentColor) !important;
+
         color: map-get($form-radio-color, disable) !important;
+        color: var(--form-radio__shape--is-disabled-color, map-get($form-radio-color, disable)) !important;
+
         cursor: not-allowed;
         pointer-events: none;
     }
@@ -222,6 +242,7 @@
 %form-radio__shape {
     &:checked {
         border-color: currentColor !important;
+        border-color: var(--form-radio__shape--is-checked-border-color, currentColor) !important;
 
         &[class]::after {       /* 1 */
             animation:

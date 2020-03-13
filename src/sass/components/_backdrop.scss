@@ -5,12 +5,16 @@
 // =============================================================================
 // Backdrop
 // =============================================================================
+.bad {
+    @include defineColor(--backdrop-background-color, var(--white-color));
+}
 
 .bad {
     @include acceleration;
     @include stretch(fixed, 0);
 
     background-color: rgba($backdrop-background, 0.8);
+    background-color: var(--backdrop-background-color, rgba($backdrop-background, 0.8));
     z-index: $backdrop-index;
 }
 

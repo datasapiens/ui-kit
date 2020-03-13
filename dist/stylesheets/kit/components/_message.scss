@@ -25,6 +25,74 @@
 // Message
 // =============================================================================
 
+
+.msg {
+    @include defineColor(--message-border-color, var(--white-color));
+    @include defineColor(--message-color, var(--black-color));
+    @include defineColor(--message-link-color, inherit);
+    
+    
+    @include defineColor(--message--danger-color, inherit);
+    @include defineColor(--message--danger-background-color, var(--danger-accent-80-color-lighten-10));
+    @include defineColor(--message--danger-background-image-color-start, var(--danger-accent-80-color-lighten-10));
+    @include defineColor(--message--danger-background-image-color-end, var(--danger-accent-50-color));
+    @include defineColor(--message--danger-border-color, var(--danger-accent-80-color-desaturate-50));
+    @include defineColor(--message--danger--secondary-icon-color, var(--danger-accent-50-color-opacity-50));
+    @include defineColor(--message--danger--primary-icon-background-color, var(--danger-accent-50-color));
+    @include defineColor(--message--danger--primary-icon-border-color, var(--danger-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--danger-color, var(--danger-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--danger-border-color, var(--danger-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--danger-color, var(--danger-accent-0-color));
+    
+    @include defineColor(--message--neutral-color, inherit);
+    @include defineColor(--message--neutral-background-color, var(--neutral-accent-80-color-lighten-10));
+    @include defineColor(--message--neutral-background-image-color-start, var(--neutral-accent-80-color-lighten-10));
+    @include defineColor(--message--neutral-background-image-color-end, var(--neutral-accent-50-color));
+    @include defineColor(--message--neutral-border-color, var(--neutral-accent-80-color-desaturate-50));
+    @include defineColor(--message--neutral--secondary-icon-color, var(--neutral-accent-50-color-opacity-50));
+    @include defineColor(--message--neutral--primary-icon-background-color, var(--neutral-accent-50-color));
+    @include defineColor(--message--neutral--primary-icon-border-color, var(--neutral-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--neutral-color, var(--neutral-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--neutral-border-color, var(--neutral-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--neutral-color, var(--neutral-accent-0-color));
+    
+    @include defineColor(--message--notice-color, inherit);
+    @include defineColor(--message--notice-background-color, var(--notice-accent-80-color-lighten-10));
+    @include defineColor(--message--notice-background-image-color-start, var(--notice-accent-80-color-lighten-10));
+    @include defineColor(--message--notice-background-image-color-end, var(--notice-accent-50-color));
+    @include defineColor(--message--notice-border-color, var(--notice-accent-80-color-desaturate-50));
+    @include defineColor(--message--notice--secondary-icon-color, var(--notice-accent-50-color-opacity-50));
+    @include defineColor(--message--notice--primary-icon-background-color, var(--notice-accent-50-color));
+    @include defineColor(--message--notice--primary-icon-border-color, var(--notice-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--notice-color, var(--notice-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--notice-border-color, var(--notice-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--notice-color, var(--notice-accent-0-color));
+    
+    @include defineColor(--message--success-color, inherit);
+    @include defineColor(--message--success-background-color, var(--success-accent-80-color-lighten-10));
+    @include defineColor(--message--success-background-image-color-start, var(--success-accent-80-color-lighten-10));
+    @include defineColor(--message--success-background-image-color-end, var(--success-accent-50-color));
+    @include defineColor(--message--success-border-color, var(--success-accent-80-color-desaturate-50));
+    @include defineColor(--message--success--secondary-icon-color, var(--success-accent-50-color-opacity-50));
+    @include defineColor(--message--success--primary-icon-background-color, var(--success-accent-50-color));
+    @include defineColor(--message--success--primary-icon-border-color, var(--success-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--success-color, var(--success-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--success-border-color, var(--success-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--success-color, var(--success-accent-0-color));
+    
+    @include defineColor(--message--warning-color, inherit);
+    @include defineColor(--message--warning-background-color, var(--warning-accent-80-color-lighten-10));
+    @include defineColor(--message--warning-background-image-color-start, var(--warning-accent-80-color-lighten-10));
+    @include defineColor(--message--warning-background-image-color-end, var(--warning-accent-50-color));
+    @include defineColor(--message--warning-border-color, var(--warning-accent-80-color-desaturate-50));
+    @include defineColor(--message--warning--secondary-icon-color, var(--warning-accent-50-color-opacity-50));
+    @include defineColor(--message--warning--primary-icon-background-color, var(--warning-accent-50-color));
+    @include defineColor(--message--warning--primary-icon-border-color, var(--warning-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--warning-color, var(--warning-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--warning-border-color, var(--warning-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--warning-color, var(--warning-accent-0-color));
+}
+
 .msg {
     @extend .msg.\--neutral;
     @include acceleration;
@@ -32,10 +100,15 @@
     animation:
         slide--down-reverse 0.2s 0.4s map-get($animation-easing, in-out-circ) forwards,
         fade--in 0.3s 0.5s both;
+
     border: $message-border-size solid $message-border-color;
+    border: $message-border-size solid var(--message-border-color, $message-border-color);
+
     border-radius: $message-border-radius;
     box-shadow: $message-box-shadow;
+
     color: $message-color;
+    color: var(--message-color, $message-color);
 
     @if $message-font-size != $base-font-size {
         font-size: px-to-rem($message-font-size);
@@ -61,6 +134,7 @@
 
     a {
         color: inherit;
+        color: var(--message-link-color, inherit);
     }
 
     @include ie-gte-10 {
@@ -190,15 +264,26 @@
 .msg {
     @each $modifier, $theme in $message-theme {
         &.\--#{$modifier} {
+            color: inherit;
+            color: var(--message--#{$modifier}-color, inherit);
             background: {
                 color: lighten(map-get($theme, 80), 10%);
+                color: var(--message--#{$modifier}-background-color, lighten(map-get($theme, 80), 10%));
+
                 image: linear-gradient(
                     120deg,
                     lighten(map-get($theme, 80), 10%) 40%,
                     lighten(map-get($theme, 50), 0%)
                 );
+
+                image: linear-gradient(
+                    120deg,
+                    var(--message--#{$modifier}-background-image-color-start, lighten(map-get($theme, 80), 10%)) 40%,
+                    var(--message--#{$modifier}-background-image-color-end, lighten(map-get($theme, 50), 0%))
+                );
             }
             border-color: desaturate(map-get($theme, 80), 50%);
+            border-color: var(--message--#{$modifier}-border-color, desaturate(map-get($theme, 80), 50%));
 
             @if map-has-key($message-theme-icon, $modifier) {
                 &.\--primary::after,
@@ -209,25 +294,30 @@
 
             &.\--secondary::after {
                 color: rgba(map-get($theme, 50), 0.5);
+                color: var(--message--#{$modifier}--secondary-icon-color, rgba(map-get($theme, 50), 0.5));
             }
+
             &.\--primary::before {
                 background-color: rgba(map-get($theme, 50), 1);
+                background-color: var(--message--#{$modifier}--primary-icon-background-color, rgba(map-get($theme, 50), 1));
+
                 border-color: desaturate(map-get($theme, 50), 25%);
+                border-color: var(--message--#{$modifier}--primary-icon-border-color, desaturate(map-get($theme, 50), 25%));
             }
 
             .msg__title {
-                color: desaturate(
-                    map-get($theme, 0),
-                    90%
-                );
+                color: desaturate(map-get($theme, 0), 90%);
+                color: var(--message__title--#{$modifier}-color, desaturate(map-get($theme, 0), 90%));
             }
 
             .msg__spacer {
                 border-color: desaturate(map-get($theme, 80), 50%);
+                border-color: var(--message__spacer--#{$modifier}-border-color, desaturate(map-get($theme, 80), 50%));
             }
 
             .msg__control {
                 color: map-get($theme, 0);
+                color: var(--message__control--#{$modifier}-color, map-get($theme, 0));
             }
         }
     }

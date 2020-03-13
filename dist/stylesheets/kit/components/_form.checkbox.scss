@@ -17,6 +17,18 @@
 // =============================================================================
 
 .form-checkbox {
+    @include defineColor(--form-checkbox--is-hovered-border-color, currentColor);
+    @include defineColor(--form-checkbox__shape-background-color, var(--white-color));
+    @include defineColor(--form-checkbox__shape-border-color, currentColor);
+    @include defineColor(--form-checkbox__shape-color, var(--primary-accent-50-color));
+    @include defineColor(--form-checkbox__shape--is-disabled-border-color, currentColor);
+    @include defineColor(--form-checkbox__shape--is-disabled-color, var(--neutral-70-color));
+    @include defineColor(--form-checkbox__shape--is-hovered-border-color, currentColor);
+    @include defineColor(--form-checkbox__shape--is-hovered-color, var(--notice-accent-50-color));
+    @include defineColor(--form-checkbox__shape--is-checked-color, var(--notice-accent-50-color));
+}
+
+.form-checkbox {
     align-items: baseline;
     display: inline-flex;
 
@@ -68,6 +80,7 @@
 .form-checkbox {
     :hover :not(:disabled):not([readonly]) ~ &__shape {
         border-color: currentColor;
+        border-color: var(--form-checkbox--is-hovered-border-color, currentColor);
         @extend %form-checkbox__shape:hover;
     }
 }
@@ -135,8 +148,14 @@
     @include size(100%);
 
     background: map-get($form-checkbox-background, initial);
+    background: var(--form-checkbox__shape-background-color, map-get($form-checkbox-background, initial));
+    
     border-color: currentColor;
+    border-color: var(--form-checkbox__shape-border-color, currentColor);
+
     color: map-get($form-checkbox-color, initial);
+    color: var(--form-checkbox__shape-color, map-get($form-checkbox-color, initial));
+
     display: inherit;
     font-size: 1em;
     justify-content: center;
@@ -170,7 +189,10 @@
 %form-checkbox__shape {
     &:disabled {
         border-color: currentColor !important;
+        border-color: var(--form-checkbox__shape--is-disabled-border-color, currentColor) !important;
+
         color: map-get($form-checkbox-color, disable) !important;
+        color: var(--form-checkbox__shape--is-disabled-color, map-get($form-checkbox-color, disable)) !important;
         cursor: not-allowed;
         pointer-events: none;
     }
@@ -189,7 +211,10 @@
 %form-checkbox__shape {
     &:hover {
         border-color: currentColor;
+        border-color: var(--form-checkbox__shape--is-hovered-border-color, currentColor);
+
         color: map-get($form-checkbox-color, hover);
+        color: var(--form-checkbox__shape--is-hovered-color, map-get($form-checkbox-color, hover));
     }
 }
 
@@ -200,6 +225,7 @@
 %form-checkbox__shape {
     &:checked {
         color: map-get($form-checkbox-color, active);
+        color: var(--form-checkbox__shape--is-checked-color, map-get($form-checkbox-color, active));
 
         &::before {
             opacity: 1;

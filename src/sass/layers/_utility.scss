@@ -285,6 +285,7 @@
     @each $modifier in (danger, neutral, notice, success, warning) {
         &.--#{$modifier} {
             color: map-fetch($color-set, accent, $modifier, 50);
+            color: var(--u-text--#{$modifier}-color, map-fetch($color-set, accent, $modifier, 50));
         }
     }
 }
@@ -368,4 +369,13 @@
             }
         }
     }
+}
+
+
+body.theme {
+    @include defineColor(--u-text--danger-color, var(--danger-accent-50-color));
+    @include defineColor(--u-text--neutral-color, var(--neutral-accent-50-color));
+    @include defineColor(--u-text--notice-color, var(--notice-accent-50-color));
+    @include defineColor(--u-text--success-color, var(--success-accent-50-color));
+    @include defineColor(--u-text--warning-color, var(--warning-accent-50-color));
 }

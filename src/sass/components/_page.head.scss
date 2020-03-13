@@ -13,9 +13,21 @@
 // =============================================================================
 
 .page-head {
+    @include defineColor(--page-head-background-color, var(--black-color));
+    @include defineColor(--page-head-color, var(--white-color));
+    @include defineColor(--page-head-link-color, inherit);
+    @include defineColor(--page-head__title-color, inherit);
+}
+
+.page-head {
     background-color: $page-head-background;
+    background-color: var(--page-head-background-color, $page-head-background);
+
     box-shadow: $page-head-box-shadow;
+    
     color: $page-head-color;
+    color: var(--page-head-color, $page-head-color);
+
     line-height: $page-head-line-height-ratio;
     min-height: $page-head-size;
     position: relative;
@@ -27,6 +39,7 @@
     a {
         @include link-underline($underline: false);
         color: inherit;
+        color: var(--page-head-link-color, inherit);
     }
 
     @media print {
@@ -159,6 +172,7 @@
 
 .page-head__title {
     color: inherit;
+    color: var(--page-head__title-color, inherit);
     font: {
         size: 1rem;
         weight: 300;

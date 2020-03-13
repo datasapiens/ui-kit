@@ -10,10 +10,20 @@
 // Link
 // =============================================================================
 
+.lnk {
+    @include defineColor(--link-color, var(--primary-accent-50-color));
+    @include defineColor(--link-color--is-active-color, var(--primary-accent-50-color-lighten-5));
+    //--link-color--is-focused-color,
+    @include defineColor(--link-color--is-hovered-color, var(--primary-accent-50-color-lighten-5));
+    @include defineColor(--link-color--is-visited-color, var(--primary-accent-50-color));
+}
+
 %lnk {
     @include link-underline($underline: true);
 
     color: map-get($link-color, initial);
+    color: var(--link-color, map-get($link-color, initial));
+
     cursor: pointer;
     transition: color 0.2s;
 }
@@ -116,6 +126,7 @@
     &:active {
         @if map-get($link-color, active) != map-get($link-color, initial) {
             color: map-get($link-color, active);
+            color: var(--link-color--is-active-color, map-get($link-color, active));
         }
     }
 }
@@ -127,6 +138,7 @@
 %lnk {
     &:focus {
         color: map-get($link-color, focus);
+        color: var(--link-color--is-focused-color, map-get($link-color, focus));
     }
 }
 
@@ -138,6 +150,7 @@
     &:hover {
         @if map-get($link-color, hover) != map-get($link-color, focus) {
             color: map-get($link-color, hover);
+            color: var(--link-color--is-hovered-color, map-get($link-color, hover));
         } @else {
             @extend %lnk:focus;
         }
@@ -152,6 +165,7 @@
     &:visited {
         @if map-get($link-color, visit) != map-get($link-color, initial) {
             color: map-get($link-color, visit);
+            color: var(--link-color--is-visited-color, map-get($link-color, visit));
         }
     }
 }

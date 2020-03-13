@@ -7,10 +7,23 @@
 // =============================================================================
 
 .snp {
+    @include defineColor(--snippet-background-color, var(--tertiary-accent-100-color-lighten-10));
+    @include defineColor(--snippet-border-color, var(--tertiary-accent-100-color-darken-30));
+    @include defineColor(--snippet-color, var(--base-color));
+}
+
+.snp {
     background-color: $snippet-background;
+    background-color: var(--snippet-background-color, $snippet-background);
+
     border: $snippet-border-size solid $snippet-border-color;
+    border: $snippet-border-size solid var(--snippet-border-color, $snippet-border-color);
+
     border-radius: $snippet-border-radius;
+
     color: $snippet-color;
+    color: var(--snippet-color, $snippet-color);
+    
     font: {
         family: "#{$snippet-font-family}", monospace;
         size: px-to-rem($snippet-font-size);

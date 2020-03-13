@@ -10,6 +10,10 @@
 // =============================================================================
 
 .nav-trail {
+    @include defineColor(--navigation-trail__spacer-color, #ccc);
+}
+
+.nav-trail {
     ul {
         @extend %lst--reset !optional;
 
@@ -64,6 +68,7 @@
 
 %nav-trail__spacer {
     color: $navigation-trail-spacer;
+    color: var(--navigation-trail__spacer-color, $navigation-trail-spacer);
     content: "/";
     display: inline-block;
     margin-left: $navigation-trail-item-indent;

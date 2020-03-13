@@ -13,6 +13,116 @@
 // =============================================================================
 // Button switch
 // =============================================================================
+.btn-switch {
+    @include defineColor(--button-switch-background-color, var(--neutral-80-color-lighten-5));
+    @include defineColor(--button-switch-border-color, var(--neutral-60-color));
+    
+    @include defineColor(--button-switch--transparent-background-color, transparent);
+    @include defineColor(--button-switch__item--transparent-color, var(--white-color));
+
+    @include defineColor(--button-switch--primary-background-color, var(--primary-accent-20-color-lighten-60));
+    @include defineColor(--button-switch--primary-border-color, var(--primary-accent-50-color-darken-3));
+    @include defineColor(--button-switch__item--primary-border-color, inherit);
+
+    @include defineColor(--button-switch--secondary-background-color, var(--primary-accent-50-color-lighten-54));
+    @include defineColor(--button-switch--secondary-border-color, var(--notice-accent-80-color-darken-3));
+    @include defineColor(--button-switch__item--secondary-border-color, inherit);
+
+    @include defineColor(--button-switch--tertiary-background-color, transparent);
+    @include defineColor(--button-switch--tertiary-border-color, var(--white-color));
+    @include defineColor(--button-switch__item--tertiary-color, var(--white-color));
+    @include defineColor(--button-switch__item--tertiary-border-color, inherit);
+    
+    
+    @include defineColor(--button-switch--danger-background-color, var(--danger-accent-50-color-lighten-30));
+    @include defineColor(--button-switch--danger-border-color, var(--danger-accent-50-color-darken-3));
+    @include defineColor(--button-switch__item--danger-border-color, inherit);
+    
+    @include defineColor(--button-switch--neutral-background-color, var(--neutral-accent-50-color-lighten-30));
+    @include defineColor(--button-switch--neutral-border-color, var(--neutral-accent-50-color-darken-3));
+    @include defineColor(--button-switch__item--neutral-border-color, inherit);
+    
+    @include defineColor(--button-switch--notice-background-color, var(--notice-accent-50-color-lighten-30));
+    @include defineColor(--button-switch--notice-border-color, var(--notice-accent-50-color-darken-3));
+    @include defineColor(--button-switch__item--notice-border-color, inherit);
+    
+    @include defineColor(--button-switch--success-background-color, var(--success-accent-50-color-lighten-30));
+    @include defineColor(--button-switch--success-border-color, var(--success-accent-50-color-darken-3));
+    @include defineColor(--button-switch__item--success-border-color, inherit);
+    
+    @include defineColor(--button-switch--warning-background-color, var(--warning-accent-50-color-lighten-30));
+    @include defineColor(--button-switch--warning-border-color, var(--warning-accent-50-color-darken-3));
+    @include defineColor(--button-switch__item--warning-border-color, inherit);
+
+    
+    @include defineColor(--button-switch--hover-border-color, var(--neutral-60-color));
+    
+    @include defineColor(--button-switch--hover--primary-border-color, var(--primary-accent-20-color-lighten-3));
+    @include defineColor(--button-switch--hover--secondary-border-color, var(--primary-accent-50-color-lighten-3));
+    @include defineColor(--button-switch--hover--tertiary-border-color, var(--white-color));
+    
+    @include defineColor(--button-switch--hover--danger-border-color, var(--danger-accent-20-color-lighten-5));
+    @include defineColor(--button-switch--hover--neutral-border-color, var(--neutral-accent-20-color-lighten-5));
+    @include defineColor(--button-switch--hover--notice-border-color, var(--notice-accent-20-color-lighten-5));
+    @include defineColor(--button-switch--hover--success-border-color, var(--success-accent-20-color-lighten-5));
+    @include defineColor(--button-switch--hover--warning-border-color, var(--warning-accent-20-color-lighten-5));
+    
+    @include defineColor(--button-switch__item-background-color, transparent);
+    
+    @include defineColor(--button-switch__item--is-active-background-color, var(--neutral-80-color-darken-3));
+    
+    @include defineColor(--button-switch__item--is-active--primary-background-color, var(--primary-accent-20-color-lighten-6));
+    @include defineColor(--button-switch__item--is-active--primary-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-active--secondary-background-color, var(--primary-accent-50-color-lighten-6));
+    @include defineColor(--button-switch__item--is-active--secondary-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-active--tertiary-background-color, var(--white-color-opacity-15));
+    @include defineColor(--button-switch__item--is-active--tertiary-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-active--danger-background-color, var(--danger-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-active--danger-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-active--neutral-background-color, var(--neutral-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-active--neutral-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-active--notice-background-color, var(--notice-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-active--notice-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-active--success-background-color, var(--success-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-active--success-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-active--warning-background-color, var(--warning-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-active--warning-color, var(--white-color));
+  
+    
+    @include defineColor(--button-switch__item--is-focused-background-color, var(--neutral-80-color-darken-3)); 
+    
+    @include defineColor(--button-switch__item--is-focused--primary-background-color, var(--primary-accent-20-color-lighten-6));
+    @include defineColor(--button-switch__item--is-focused--primary-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-focused--secondary-background-color, var(--primary-accent-50-color-lighten-6));
+    @include defineColor(--button-switch__item--is-focused--secondary-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-focused--tertiary-background-color, var(--white-color-opacity-15));
+    @include defineColor(--button-switch__item--is-focused--tertiary-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-focused--danger-background-color, var(--danger-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-focused--danger-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-focused--neutral-background-color, var(--neutral-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-focused--neutral-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-focused--notice-background-color, var(--notice-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-focused--notice-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-focused--success-background-color, var(--success-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-focused--success-color, var(--white-color));
+    
+    @include defineColor(--button-switch__item--is-focused--warning-background-color, var(--warning-accent-20-color-lighten-8));
+    @include defineColor(--button-switch__item--is-focused--warning-color, var(--white-color));
+
+}
 
 .btn-switch {
     @extend %btn-group__item !optional;
@@ -22,8 +132,10 @@
 
     align-items: center;
     background-color: map-get($button-switch-background, initial);
+    background-color: var(--button-switch-background-color, map-get($button-switch-background, initial));
     border: {
         color: map-get($button-switch-border-color, initial);
+        color: var(--button-switch-border-color, map-get($button-switch-border-color, initial));
         radius: $button-switch-border-radius;
         width: $button-switch-border-size;
         style: solid;
@@ -54,9 +166,11 @@
 .btn-switch {
     &.\--transparent {
         background-color: $button-switch--transparent-background !important;
+        background-color: var(--button-switch--transparent-background-color, $button-switch--transparent-background) !important;
 
         .btn-switch__item {
             color: $button-switch--transparent-color;
+            color: var(--button-switch__item--transparent-color, $button-switch--transparent-color);
         }
     }
 }
@@ -82,11 +196,14 @@
 .btn-switch {
     &.\--primary {
         background-color: map-get($button-switch--primary-background, initial);
+        background-color: var(--button-switch--primary-background-color, map-get($button-switch--primary-background, initial));
         border-color: map-get($button-switch--primary-border-color, initial);
+        border-color: var(--button-switch--primary-border-color, map-get($button-switch--primary-border-color, initial));
         // color: map-get($button-switch--primary-color, initial);
 
         .btn-switch__item ~ .btn-switch__item {
             border-color: inherit !important;
+            border-color: var(--button-switch__item--primary-border-color, inherit) !important;
         }
     }
 }
@@ -98,11 +215,14 @@
 .btn-switch {
     &.\--secondary {
         background-color: map-get($button-switch--secondary-background, initial);
+        background-color: var(--button-switch--secondary-background-color, map-get($button-switch--secondary-background, initial));
         border-color: map-get($button-switch--secondary-border-color, initial);
+        border-color: var(--button-switch--secondary-border-color, map-get($button-switch--secondary-border-color, initial));
         // color: map-get($button-switch--secondary-color, initial);
 
         .btn-switch__item ~ .btn-switch__item {
             border-color: inherit !important;
+            border-color: var(--button-switch__item--secondary-border-color, inherit) !important;
         }
     }
 }
@@ -113,18 +233,19 @@
 
 .btn-switch {
     &.\--tertiary {
-        background-color: map-get(
-            $button-switch--tertiary-background,
-            initial
-        );
+        background-color: map-get($button-switch--tertiary-background, initial);
+        background-color: var(--button-switch--tertiary-background-color, map-get($button-switch--tertiary-background, initial));
         border-color: map-get($button-switch--tertiary-border-color, initial);
+        border-color: var(--button-switch--tertiary-border-color, map-get($button-switch--tertiary-border-color, initial));
         // color: map-get($button-switch--tertiary-color, initial);
 
         .btn-switch__item {
             color: map-get($button-switch--tertiary-color, initial);
+            color: var(--button-switch__item--tertiary-color, map-get($button-switch--tertiary-color, initial));
         }
         .btn-switch__item ~ .btn-switch__item {
             border-color: inherit !important;
+            border-color: var(--button-switch__item--tertiary-border-color, inherit) !important;
         }
     }
 }
@@ -140,14 +261,18 @@
         &.\--#{$modifier} {
             @if index(neutral danger, $modifier) {
                 background-color: lighten($color, 30%);
+                background-color: var(--button-switch--#{$modifier}-background-color, lighten($color, 30%));
             } @else {
                 background-color: lighten($color, 36%);
+                background-color: var(--button-switch--#{$modifier}-background-color, lighten($color, 36%));
             }
 
             border-color: darken($color, 3%);
+            border-color: var(--button-switch--#{$modifier}-border-color, darken($color, 3%));
 
             .btn-switch__item ~ .btn-switch__item {
                 border-color: inherit !important;
+                border-color: var(--button-switch__item--#{$modifier}-border-color, inherit) !important;
             }
         }
     }
@@ -180,22 +305,26 @@
         &:not(.is-disabled) {
             // background-color: map-get($button-switch-background, hover);
             border-color: map-get($button-switch-border-color, hover);
+            border-color: var(--button-switch--hover-border-color, map-get($button-switch-border-color, hover));
             // color: map-get($button-switch-color, hover);
             // text-decoration: none;
 
             &.\--primary {
                 // background-color: map-get($button-switch--primary-background, hover);
                 border-color: map-get($button-switch--primary-border-color, hover);
+                border-color: var(--button-switch--hover--primary-border-color, map-get($button-switch--primary-border-color, hover));
                 // color: map-get($button-switch--primary-color, hover);
             }
             &.\--secondary {
                 // background-color: map-get($button-switch--secondary-background, hover);
                 border-color: map-get($button-switch--secondary-border-color, hover);
+                border-color: var(--button-switch--hover--secondary-border-color, map-get($button-switch--secondary-border-color, hover));
                 // color: map-get($button-switch--secondary-color, hover);
             }
             &.\--tertiary {
                 // background-color: map-get($button-switch--tertiary-background, hover);
                 border-color: map-get($button-switch--tertiary-border-color, hover);
+                border-color: var(--button-switch--hover--tertiary-border-color, map-get($button-switch--tertiary-border-color, hover));
                 // color: map-get($button-switch--tertiary-color, hover);
             }
 
@@ -205,6 +334,7 @@
                 &.\--#{$modifier} {
                     // background-color: $color;
                     border-color: darken($color, 3%);
+                    border-color: var(--button-switch--hover--#{$modifier}-border-color, darken($color, 3%));
                     // color: $white;
                 }
             }
@@ -237,6 +367,7 @@
     @extend %btn__event !optional;
 
     background-color: transparent;
+    background-color: var(--button-switch__item-background-color, transparent);
     border: {
         radius: 0;
         width: 0;
@@ -276,24 +407,34 @@
     &.is-active {
         & {
             background-color: map-get($button-switch-background, active);
+            background-color: var(--button-switch__item--is-active-background-color, map-get($button-switch-background, active));
 
             @at-root {
                 // primary
                 .btn-switch.\--primary & {
                     background-color: map-get($button-switch--primary-background, active);
+                    background-color: var(--button-switch__item--is-active--primary-background-color, map-get($button-switch--primary-background, active));
+
                     color: map-get($button-switch--primary-color, active);
+                    color: var(--button-switch__item--is-active--primary-color, map-get($button-switch--primary-color, active));
                 }
 
                 // secondary
                 .btn-switch.\--secondary & {
                     background-color: map-get($button-switch--secondary-background, active);
+                    background-color: var(--button-switch__item--is-active--secondary-background-color, map-get($button-switch--secondary-background, active));
+
                     color: map-get($button-switch--secondary-color, active);
+                    color: var(--button-switch__item--is-active--secondary-color, map-get($button-switch--secondary-color, active));
                 }
 
                 // tertiary
                 .btn-switch.\--tertiary & {
                     background-color: map-get($button-switch--tertiary-background, active);
+                    background-color: var(--button-switch__item--is-active--tertiary-background-color, map-get($button-switch--tertiary-background, active));
+
                     color: map-get($button-switch--tertiary-color, active);
+                    color: var(--button-switch__item--is-active--tertiary-color, map-get($button-switch--tertiary-color, active));
                 }
 
                 // themes
@@ -302,7 +443,10 @@
 
                     .btn-switch.\--#{$modifier} & {
                         background-color: $color;
+                        background-color: var(--button-switch__item--is-active--#{$modifier}-background-color, $color);
+
                         color: $white;
+                        color: var(--button-switch__item--is-active--#{$modifier}-color, $white);
                     }
                 }
             }
@@ -320,24 +464,34 @@
             @at-root {
                 .btn-switch:not(.is-disabled) & {
                     background-color: map-get($button-switch-background, focus);
+                    background-color: var(--button-switch__item--is-focused-background-color, map-get($button-switch-background, focus));
                 }
 
                 // primary
                 .btn-switch.\--primary & {
                     background-color: map-get($button-switch--primary-background, focus);
+                    background-color: var(--button-switch__item--is-focused--primary-background-color, map-get($button-switch--primary-background, focus));
+
                     color: map-get($button-switch--primary-color, focus);
+                    color: var(--button-switch__item--is-focused--primary-color, map-get($button-switch--primary-color, focus));
                 }
 
                 // secondary
                 .btn-switch.\--secondary & {
                     background-color: map-get($button-switch--secondary-background, focus);
+                    background-color: var(--button-switch__item--is-focused--secondary-background-color, map-get($button-switch--secondary-background, focus));
+
                     color: map-get($button-switch--secondary-color, focus);
+                    color: var(--button-switch__item--is-focused--secondary-color, map-get($button-switch--secondary-color, focus));
                 }
 
                 // tertiary
                 .btn-switch.\--tertiary & {
                     background-color: map-get($button-switch--tertiary-background, focus);
+                    background-color: var(--button-switch__item--is-focused--tertiary-background-color, map-get($button-switch--tertiary-background, focus));
+
                     color: map-get($button-switch--tertiary-color, focus);
+                    color: var(--button-switch__item--is-focused--tertiary-color, map-get($button-switch--tertiary-color, focus));
                 }
 
                 // themes
@@ -346,7 +500,10 @@
 
                     .btn-switch.\--#{$modifier} & {
                         background-color: $color;
+                        background-color: var(--button-switch__item--is-focused--#{$modifier}-background-color, $color);
+
                         color: $white;
+                        color: var(--button-switch__item--is-focused--#{$modifier}-color, $white);
                     }
                 }
             }

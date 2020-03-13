@@ -13,6 +13,21 @@
 // =============================================================================
 
 .nav-pagination {
+    @include defineColor(--navigation-pagination__item-background-color, var(--neutral-90-color-darken-1));
+    @include defineColor(--navigation-pagination__item-border-color, var(--neutral-60-color));
+    @include defineColor(--navigation-pagination__item-color, var(--primary-accent-50-color));
+    @include defineColor(--navigation-pagination__item--is-active-background-color, var(--primary-accent-50-color-lighten-4));
+    @include defineColor(--navigation-pagination__item--is-active-border-color, var(--primary-accent-50-color-lighten-1)); 
+    @include defineColor(--navigation-pagination__item--is-active-color, var(--white-color));
+    @include defineColor(--navigation-pagination__item--is-disabled-background-color, var(--neutral-70-color));
+    @include defineColor(--navigation-pagination__item--is-disabled-border-color, var(--neutral-70-color-darken-3));
+    @include defineColor(--navigation-pagination__item--is-disabled-color, var(--neutral-40-color));
+    @include defineColor(--navigation-pagination__item--is-hovered-background-color, var(--white-color));
+    @include defineColor(--navigation-pagination__item--is-hovered-border-color, var(--primary-accent-50-color-lighten-3));
+    @include defineColor(--navigation-pagination__item--is-hovered-color, var(--primary-accent-50-color));
+}
+
+.nav-pagination {
     @extend %nav-pagination__cell;
     @extend .nav-pagination.--left;
 
@@ -161,14 +176,17 @@
         // } @else {
         //     color: $c;
         // }
-        color: map-get($navigation-pagination-item-background, initial)
+        color: map-get($navigation-pagination-item-background, initial);
+        color: var(--navigation-pagination__item-background-color, map-get($navigation-pagination-item-background, initial));
     }
     border: {
         color: map-get($navigation-pagination-item-border-color, initial);
+        color: var(--navigation-pagination__item-border-color, map-get($navigation-pagination-item-border-color, initial));
         radius: $navigation-pagination-item-border-radius;
     }
     box-shadow: $navigation-pagination-item-box-shadow;
     color: map-get($navigation-pagination-item-color, initial);
+    color: var(--navigation-pagination__item-color, map-get($navigation-pagination-item-color, initial));
     cursor: pointer;
     margin: 0.5 * $navigation-pagination-item-indent;
     text-decoration: none;
@@ -222,11 +240,14 @@
                 // } @else {
                 //     color: $c;
                 // }
-                color: map-get($navigation-pagination-item-background, active)
+                color: map-get($navigation-pagination-item-background, active);
+                color: var(--navigation-pagination__item--is-active-background-color, map-get($navigation-pagination-item-background, active));
             }
             border-color: map-get($navigation-pagination-item-border-color, active);
+            border-color: var(--navigation-pagination__item--is-active-border-color, map-get($navigation-pagination-item-border-color, active));
             box-shadow: none;
             color: map-get($navigation-pagination-item-color, active);
+            color: var(--navigation-pagination__item--is-active-color, map-get($navigation-pagination-item-color, active));
         }
     }
 }
@@ -251,11 +272,14 @@
             // } @else {
             //     color: $c;
             // }
-            color: map-get($navigation-pagination-item-background, disable)
+            color: map-get($navigation-pagination-item-background, disable);
+            color: var(--navigation-pagination__item--is-disabled-background-color, map-get($navigation-pagination-item-background, disable));
         }
         border-color: map-get($navigation-pagination-item-border-color, disable);
+        border-color: var(--navigation-pagination__item--is-disabled-border-color, map-get($navigation-pagination-item-border-color, disable));
         box-shadow: none;
         color: map-get($navigation-pagination-item-color, disable);
+        color: var(--navigation-pagination__item--is-disabled-color, map-get($navigation-pagination-item-color, disable));
         cursor: not-allowed;
     }
 }
@@ -290,10 +314,14 @@
             // } @else {
             //     color: $c;
             // }
-            color: map-get($navigation-pagination-item-background, hover)
+            color: map-get($navigation-pagination-item-background, hover);
+            color: var(--navigation-pagination__item--is-hovered-background-color, map-get($navigation-pagination-item-background, hover));
         }
         border-color: map-get($navigation-pagination-item-border-color, hover);
+        border-color: var(--navigation-pagination__item--is-hovered-border-color, map-get($navigation-pagination-item-border-color, hover));
+
         color: map-get($navigation-pagination-item-color, hover);
+        color: var(--navigation-pagination__item--is-hovered-color, map-get($navigation-pagination-item-color, hover));
     }
 }
 

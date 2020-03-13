@@ -12,6 +12,24 @@
 // =============================================================================
 // Strip notification
 // =============================================================================
+.ntf-strip {
+    @include defineColor(--notification-strip__item-color, #fff);
+
+    @include defineColor(--notification-strip__item--danger-background-color, var(--danger-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--danger-background-color, var(--danger-accent-50-color-opacity-90));
+    
+    @include defineColor(--notification-strip__item--neutral-background-color, var(--neutral-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--neutral-background-color, var(--neutral-accent-50-color-opacity-90));
+    
+    @include defineColor(--notification-strip__item--notice-background-color, var(--notice-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--notice-background-color, var(--notice-accent-50-color-opacity-90));
+    
+    @include defineColor(--notification-strip__item--success-background-color, var(--success-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--success-background-color, var(--success-accent-50-color-opacity-90));
+    
+    @include defineColor(--notification-strip__item--warning-background-color, var(--warning-accent-50-color));
+    @include defineColor(--notification-strip__item--primary--warning-background-color, var(--warning-accent-50-color-opacity-90));
+}
 
 .ntf-strip {
     animation: fade--in 0.3s 1s both;
@@ -99,6 +117,8 @@
     @extend .ntf-strip__item.\--neutral;
 
     color: $notification-strip-item-color;
+    color: var(--notification-strip__item-color, $notification-strip-item-color);
+
     display: block;
     margin: 0;
     padding:
@@ -122,6 +142,7 @@
     @each $modifier, $theme in $notification-strip-theme {
         &.\--#{$modifier} {
             background-color: map-get($theme, 50);
+            background-color: var(--notification-strip__item--#{$modifier}-background-color, map-get($theme, 50));
         }
 
         @at-root .ntf-strip {
@@ -129,6 +150,7 @@
             &.\--primary {
                 .ntf-strip__item.\--#{$modifier} {
                     background-color: rgba(map-get($theme, 50), 0.9);
+                    background-color: var(--notification-strip__item--primary--#{$modifier}-background-color, rgba(map-get($theme, 50), 0.9));
                 }
             }
         }

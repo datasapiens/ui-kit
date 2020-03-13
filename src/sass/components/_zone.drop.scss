@@ -9,7 +9,40 @@
 // =============================================================================
 
 .zone-drop {
+    @include defineColor(--zone-drop-background-color, var(--white-color));
+
+    @include defineColor(--zone-drop--danger-border-color, var(--danger-accent-80-color-desaturate-50));
+    @include defineColor(--zone-drop--danger-background-color, var(--danger-accent-50-color-opacity-25));
+    
+    @include defineColor(--zone-drop--neutral-border-color, var(--neutral-accent-80-color-desaturate-50));
+    @include defineColor(--zone-drop--neutral-background-color, var(--neutral-acceent-50-color-opacity-25));
+    
+    @include defineColor(--zone-drop--notice-border-color, var(--notice-accent-80-color-desaturate-50));
+    @include defineColor(--zone-drop--notice-background-color, var(--notice-accent-50-color-opacity-25));
+    
+    @include defineColor(--zone-drop--success-border-color, var(--success-accent-80-color-desaturate-50));
+    @include defineColor(--zone-drop--success-background-color, var(--success-accent-50-color-opacity-25));
+    
+    @include defineColor(--zone-drop--warning-border-color, var(--warning-accent-80-color-desaturate-50));
+    @include defineColor(--zone-drop--warning-background-color, var(--warning-accent-50-color-opacity-25));
+    
+    @include defineColor(--zone-drop--is-active-border-color, transparent);
+    
+    @include defineColor(--zone-drop--is-active--danger-border-color, var(--danger-accent-50-color));
+    
+    @include defineColor(--zone-drop--is-active--neutral-border-color, var(--neutral-accent-50-color));
+    
+    @include defineColor(--zone-drop--is-active--notice-border-color, var(--notice-accent-50-color));
+    
+    @include defineColor(--zone-drop--is-active--success-border-color, var(--success-accent-50-color));
+    
+    @include defineColor(--zone-drop--is-active--warning-border-color, var(--warning-accent-50-color));
+}
+
+.zone-drop {
     background: map-get($zone-drop-background, initial);
+    background: var(--zone-drop-background-color, map-get($zone-drop-background, initial));
+
     position: relative;
     transition:
         background-color 0.2s,
@@ -36,9 +69,11 @@
     @each $modifier, $theme in $zone-drop-theme {
         &.--#{$modifier} {
             border-color: desaturate(map-get($theme, 80), 50%);
+            border-color: var(--zone-drop--#{$modifier}-border-color, desaturate(map-get($theme, 80), 50%));
 
             &::before {
                 background-color: rgba(map-get($theme, 50), 0.25);
+                background-color: var(--zone-drop--#{$modifier}-background-color, rgba(map-get($theme, 50), 0.25));
             }
         }
     }
@@ -55,12 +90,14 @@
 .zone-drop {
     &.is-active {
         border-color: transparent;
+        border-color: var(--zone-drop--is-active-border-color, transparent);
 
         @each $modifier, $theme in $zone-drop-theme {
             &.--#{$modifier} {
                 &::before {
                     border: {
                         color: map-get($theme, 50);
+                        color: var(--zone-drop--is-active--#{$modifier}-border-color, map-get($theme, 50));
                         style: map-get($zone-drop-border-style, active);
                         width: map-get($zone-drop-border-size, active);
                     }

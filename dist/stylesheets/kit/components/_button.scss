@@ -14,6 +14,117 @@
 // =============================================================================
 // Button
 // =============================================================================
+.btn {
+    @include defineColor(--button-background-color, var(--neutral-80-color));
+    @include defineColor(--button-border-color, var(--neutral-60-color));
+    @include defineColor(--button-color, var(--neutral-30-color));
+
+    @include defineColor(--button--primary-background-color, var(--primary-accent-50-color));
+    @include defineColor(--button--primary-border-color, var(--primary-accent-50-color-darken-3)); 
+    @include defineColor(--button--primary-color, var(--white-color));
+    
+    @include defineColor(--button--secondary-background-color, var(--notice-accent-80-color)); 
+    @include defineColor(--button--secondary-border-color, var(--notice-accent-80-color-darken-3));
+    @include defineColor(--button--secondary-color, var(--white-color));
+     
+    @include defineColor(--button--tertiary-background, transparent);
+    @include defineColor(--button--tertiary-border-color, var(--white-color));
+    @include defineColor(--button--tertiary-color, var(--white-color));
+    
+    @include defineColor(--button--danger-background-color, var(--danger-accent-50-color));
+    @include defineColor(--button--danger-border-color, var(--danger-accent-50-color-darken-3));
+    @include defineColor(--button--danger-color, var(--danger-accent-50-color));
+    
+    @include defineColor(--button--neutral-background-color, var(--neutral-accent-50-color));
+    @include defineColor(--button--neutral-border-color, var(--neutral-accent-50-color-darken-3));
+    @include defineColor(--button--neutral-color, var(--neutral-accent-50-color));
+    
+    @include defineColor(--button--notice-background-color, var(--notice-accent-50-color));
+    @include defineColor(--button--notice-border-color, var(--notice-accent-50-color-darken-3));
+    @include defineColor(--button--notice-color, var(--notice-accent-50-color));
+    
+    @include defineColor(--button--success-background-color, var(--success-accent-50-color));
+    @include defineColor(--button--success-border-color, var(--success-accent-50-color-darken-3));
+    @include defineColor(--button--success-color, var(--success-accent-50-color));
+    
+    @include defineColor(--button--warning-background-color, var(--warning-accent-50-color));
+    @include defineColor(--button--warning-border-color, var(--warning-accent-50-color-darken-3));
+    @include defineColor(--button--warning-color, var(--warning-accent-50-color));
+    
+    
+    @include defineColor(--button--is-active-background-color, var(--neutral-accent-80-color-lighten-3));
+    @include defineColor(--button--is-active-border-color, var(--neutral-60-color));
+    @include defineColor(--button--is-active-color, var(--neutral-accent-20-color));
+    
+    
+    @include defineColor(--button--is-active--primary-background-color, var(--primary-accent-20-color-lighten-4));
+    @include defineColor(--button--is-active--primary-border-color, var(--primary-accent-20-color-lighten-1));
+    @include defineColor(--button--is-active--primary-color, var(--white-color));
+    
+    @include defineColor(--button--is-active--secondary-background-color, var(--primary-accent-50-color-lighten-4));
+    @include defineColor(--button--is-active--secondary-border-color, var(--primary-accent-50-color-lighten-1));
+    @include defineColor(--button--is-active--secondary-color, var(--white-color)); 
+    
+    @include defineColor(--button--is-active--tertiary-background-color, var(--black-color-opacity-15));
+    @include defineColor(--button--is-active--tertiary-border-color, var(--white-color));
+    @include defineColor(--button--is-active--tertiary-color, var(--white-color));
+    
+    @include defineColor(--button--is-active--danger-background-color, var(--danger-accent-20-color-lighten-2));
+    @include defineColor(--button--is-active--danger-border-color, var(--danger-accent-20-color-darken-1));
+    @include defineColor(--button--is-active--danger-color, var(--danger-accent-20-color-lighten-2));
+    
+    @include defineColor(--button--is-active--neutral-background-color, var(--neutral-accent-20-color-lighten-2));
+    @include defineColor(--button--is-active--neutral-border-color, var(--neutral-accent-20-color-darken-1));
+    @include defineColor(--button--is-active--neutral-color, var(--neutral-accent-20-color-lighten-2));
+    
+    @include defineColor(--button--is-active--notice-background-color, var(--notice-accent-20-color-lighten-2));
+    @include defineColor(--button--is-active--notice-border-color,  var(--notice-accent-20-color-darken-1));
+    @include defineColor(--button--is-active--notice-color, var(--notice-accent-20-color-lighten-2));
+    
+    @include defineColor(--button--is-active--success-background-color, var(--success-accent-20-color-lighten-2));
+    @include defineColor(--button--is-active--success-border-color,var(--success-accent-20-color-darken-1));
+    @include defineColor(--button--is-active--success-color, var(--success-accent-20-color-lighten-2));
+    
+    @include defineColor(--button--is-active--warning-background-color, var(--warning-accent-20-color-lighten-2));
+    @include defineColor(--button--is-active--warning-border-color, var(--warning-accent-20-color-darken-1));
+    @include defineColor(--button--is-active--warning-color, var(--warning-accent-20-color-lighten-2));
+    
+    @include defineColor(--button--is-focused-background-color, var(--neutral-accent-80-color-lighten-5));
+    @include defineColor(--button--is-focused-border-color, var(--neutral-60-color));
+    @include defineColor(--button--is-focused-color, var(--neutral-accent-20-color));
+    
+    @include defineColor(--button--is-focused--primary-background-color, var(--primary-accent-20-color-lighten-6));
+    @include defineColor(--button--is-focused--primary-border-color, var(--primary-accent-20-color-lighten-3)); 
+    @include defineColor(--button--is-focused--primary-color, var(--white-color));
+    
+    @include defineColor(--button--is-focused--secondary-background-color, var(--primary-accent-50-color-lighten-6));
+    @include defineColor(--button--is-focused--secondary-border-color, var(--primary-accent-50-color-lighten-3));
+    @include defineColor(--button--is-focused--secondary-color, var(--white-color));
+    
+    @include defineColor(--button--is-focused--tertiary-background-color, var(--white-color-opacity-15));
+    @include defineColor(--button--is-focused--tertiary-border-color, var(--white-color));
+    @include defineColor(--button--is-focused--tertiary-color, var(--white-color));
+    
+    @include defineColor(--button--is-focused--danger-background-color, var(--danger-accent-20-color-lighten-8));
+    @include defineColor(--button--is-focused--danger-border-color, var(--danger-accent-20-color-lighten-5));
+    @include defineColor(--button--is-focused--danger-color, var(--white-color));
+    
+    @include defineColor(--button--is-focused--neutral-background-color, var(--neutral-accent-20-color-lighten-8));
+    @include defineColor(--button--is-focused--neutral-border-color, var(--neutral-accent-20-color-lighten-5));
+    @include defineColor(--button--is-focused--neutral-color, var(--white-color));
+    
+    @include defineColor(--button--is-focused--notice-background-color, var(--notice-accent-20-color-lighten-8));
+    @include defineColor(--button--is-focused--notice-border-color, var(--notice-accent-20-color-lighten-5));
+    @include defineColor(--button--is-focused--notice-color, var(--white-color));
+    
+    @include defineColor(--button--is-focused--success-background-color, var(--success-accent-20-color-lighten-8));
+    @include defineColor(--button--is-focused--success-border-color, var(--success-accent-20-color-lighten-5));
+    @include defineColor(--button--is-focused--success-color, var(--white-color));
+    
+    @include defineColor(--button--is-focused--warning-background-color, var(--warning-accent-20-color-lighten-8));
+    @include defineColor(--button--is-focused--warning-border-color, var(--warning-accent-20-color-lighten-5));
+    @include defineColor(--button--is-focused--warning-color, var(--white-color));
+}
 
 %btn {
     @extend %btn--length;
@@ -27,13 +138,16 @@
 
     align-items: center;
     background-color: map-get($button-background, initial);
+    background-color: var(--button-background-color, map-get($button-background, initial));
     border: {
         color: map-get($button-border-color, initial);
+        color: var(--button-border-color, map-get($button-border-color, initial));
         radius: $button-border-radius;
         width: $button-border-size;
         style: solid;
     }
     color: map-get($button-color, initial);
+    color: var(--button-color, map-get($button-color, initial));
     cursor: pointer;
     display: inline-flex;
     justify-content: center;
@@ -104,8 +218,13 @@
 %btn--variant {
     &.\--primary {
         background-color: map-get($button--primary-background, initial);
+        background-color: var(--button--primary-background-color, map-get($button--primary-background, initial));
+        
         border-color: map-get($button--primary-border-color, initial);
+        border-color: var(--button--primary-border-color, map-get($button--primary-border-color, initial));
+
         color: map-get($button--primary-color, initial);
+        color: var(--button--primary-color, map-get($button--primary-color, initial));
     }
 }
 
@@ -116,8 +235,13 @@
 %btn--variant {
     &.\--secondary {
         background-color: map-get($button--secondary-background, initial);
+        background-color: var(--button--secondary-background-color, map-get($button--secondary-background, initial));
+
         border-color: map-get($button--secondary-border-color, initial);
+        border-color: var(--button--secondary-border-color, map-get($button--secondary-border-color, initial));
+        
         color: map-get($button--secondary-color, initial);
+        color: var(--button--secondary-color, map-get($button--secondary-color, initial));
     }
 }
 
@@ -128,8 +252,13 @@
 %btn--variant {
     &.\--tertiary {
         background-color: map-get($button--tertiary-background, initial);
+        background-color: var(--button--tertiary-background, map-get($button--tertiary-background, initial));
+
         border-color: map-get($button--tertiary-border-color, initial);
+        border-color: var(--button--tertiary-border-color, map-get($button--tertiary-border-color, initial));
+
         color: map-get($button--tertiary-color, initial);
+        color: var(--button--tertiary-color, map-get($button--tertiary-color, initial));
     }
 }
 
@@ -143,8 +272,13 @@
 
         &.\--#{$modifier} {
             background-color: $color;
+            background-color: var(--button--#{$modifier}-background-color, $color);
+
             border-color: darken($color, 3%);
+            border-color: var(--button--#{$modifier}-border-color, darken($color, 3%));
+
             color: $white;
+            color: var(--button--#{$modifier}-color, $white);
         }
     }
 }
@@ -162,24 +296,45 @@
     &.is-active {
         &:not(:disabled):not(.is-disabled) {
             background-color: map-get($button-background, active);
-            border-color: map-get($button-border-color, active);
-            box-shadow: none;
-            color: map-get($button-color, active);
+            background-color: var(--button--is-active-background-color, map-get($button-background, active));
 
+            border-color: map-get($button-border-color, active);
+            border-color: var(--button--is-active-border-color, map-get($button-border-color, active));
+            
+            color: map-get($button-color, active);
+            color: var(--button--is-active-color, map-get($button-color, active));
+
+            box-shadow: none;
+            
             &.\--primary {
                 background-color: map-get($button--primary-background, active);
+                background-color: var(--button--is-active--primary-background-color, map-get($button--primary-background, active));
+
                 border-color: map-get($button--primary-border-color, active);
+                border-color: var(--button--is-active--primary-border-color, map-get($button--primary-border-color, active));
+
                 color: map-get($button--primary-color, active);
+                color: var(--button--is-active--primary-color, map-get($button--primary-color, active));
             }
             &.\--secondary {
                 background-color: map-get($button--secondary-background, active);
+                background-color: var(--button--is-active--secondary-background-color, map-get($button--secondary-background, active));
+
                 border-color: map-get($button--secondary-border-color, active);
+                border-color: var(--button--is-active--secondary-border-color, map-get($button--secondary-border-color, active));
+
                 color: map-get($button--secondary-color, active);
+                color: var(--button--is-active--secondary-color, map-get($button--secondary-color, active));
             }
             &.\--tertiary {
                 background-color: map-get($button--tertiary-background, active);
+                background-color: var(--button--is-active--tertiary-background-color, map-get($button--tertiary-background, active));
+
                 border-color: map-get($button--tertiary-border-color, active);
+                border-color: var(--button--is-active--tertiary-border-color, map-get($button--tertiary-border-color, active));
+
                 color: map-get($button--tertiary-color, active);
+                color: var(--button--is-active--tertiary-color, map-get($button--tertiary-color, active));
             }
 
             @each $modifier, $theme in $button-theme {
@@ -187,8 +342,13 @@
 
                 &.\--#{$modifier} {
                     background-color: $color;
+                    background-color: var(--button--is-active--#{$modifier}-background-color, $color);
+
                     border-color: darken($color, 3%);
+                    border-color: var(--button--is-active--#{$modifier}-border-color, darken($color, 3%));
+
                     color: $white;
+                    color: var(--button--is-active--#{$modifier}-color, $white);
                 }
             }
         }
@@ -267,24 +427,45 @@
     &.is-focused {
         &:not(:disabled):not(.is-disabled):not(.is-readonly) {
             background-color: map-get($button-background, focus);
+            background-color: var(--button--is-focused-background-color, map-get($button-background, focus));
+
             border-color: map-get($button-border-color, focus);
+            border-color: var(--button--is-focused-border-color, map-get($button-border-color, focus));
+
             color: map-get($button-color, focus);
+            color: var(--button--is-focused-color, map-get($button-color, focus));
+
             text-decoration: none;
 
             &.\--primary {
                 background-color: map-get($button--primary-background, focus);
+                background-color: var(--button--is-focused--primary-background-color, map-get($button--primary-background, focus));
+
                 border-color: map-get($button--primary-border-color, focus);
+                border-color: var(--button--is-focused--primary-border-color, map-get($button--primary-border-color, focus));
+
                 color: map-get($button--primary-color, focus);
+                color: var(--button--is-focused--primary-color, map-get($button--primary-color, focus));
             }
             &.\--secondary {
                 background-color: map-get($button--secondary-background, focus);
+                background-color: var(--button--is-focused--secondary-background-color, map-get($button--secondary-background, focus));
+
                 border-color: map-get($button--secondary-border-color, focus);
+                border-color: var(--button--is-focused--secondary-border-color, map-get($button--secondary-border-color, focus));
+
                 color: map-get($button--secondary-color, focus);
+                color: var(--button--is-focused--secondary-color, map-get($button--secondary-color, focus));
             }
             &.\--tertiary {
                 background-color: map-get($button--tertiary-background, focus);
+                background-color: var(--button--is-focused--tertiary-background-color, map-get($button--tertiary-background, focus));
+
                 border-color: map-get($button--tertiary-border-color, focus);
+                border-color: var(--button--is-focused--tertiary-border-color, map-get($button--tertiary-border-color, focus));
+
                 color: map-get($button--tertiary-color, focus);
+                color: var(--button--is-focused--tertiary-color, map-get($button--tertiary-color, focus));
             }
 
             @each $modifier, $theme in $button-theme {
@@ -292,8 +473,13 @@
 
                 &.\--#{$modifier} {
                     background-color: $color;
+                    background-color: var(--button--is-focused--#{$modifier}-background-color, $color);
+
                     border-color: darken($color, 3%);
+                    border-color: var(--button--is-focused--#{$modifier}-border-color, darken($color, 3%));
+
                     color: $white;
+                    color: var(--button--is-focused--#{$modifier}-color, $white);
                 }
             }
         }
