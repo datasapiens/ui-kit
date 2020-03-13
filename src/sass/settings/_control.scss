@@ -19,7 +19,7 @@ $control-color: (
 ) !default;
 
 
-body.theme {
+.ctr {
     @include defineColor(--control-color, var(--neutral-60-color));
     @include defineColor(--control--is-active-color, var(--neutral-accent-0-color));
     @include defineColor(--control--is-disabled-color, var(--neutral-60-color));

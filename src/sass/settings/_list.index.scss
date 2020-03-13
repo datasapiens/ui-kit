@@ -24,6 +24,6 @@ $list-index-title-index-font-size: 2.074 * $base-font-size !default;
 $list-index-title-index-font-weight: 400 !default;
 
 
-body.theme{
+.lst-index {
     @include defineColor(--list-index__item__index-color, var(--neutral-accent-50-color));
 }

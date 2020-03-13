@@ -58,7 +58,7 @@ $notification-strip-item-control-icon: "ios-close-outline" !default;
 $notification-strip-item-control-size: 20px !default;
 
 
-body.theme {
+.ntf-strip {
     @include defineColor(--notification-strip__item-color, #fff);
 
     @include defineColor(--notification-strip__item--danger-background-color, var(--danger-accent-50-color));

@@ -149,7 +149,7 @@ $table--secondary-border-size: 1px !default;
 $table--secondary-indent: 8px !default;
 
 
-body.theme {
+.tbl {
     @include defineColor(--table-background-color, var(--white-color));
     @include defineColor(--table-thead-background-color, var(--white-color));
     @include defineColor(--table-thead-color, var(--base-color));

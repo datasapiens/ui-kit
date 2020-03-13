@@ -66,7 +66,7 @@ $navigation-pagination-control-icon: (
 ) !default;
 
 
-body.theme {
+.nav-pagination {
     @include defineColor(--navigation-pagination__item-background-color, var(--neutral-90-color-darken-1));
     @include defineColor(--navigation-pagination__item-border-color, var(--neutral-60-color));
     @include defineColor(--navigation-pagination__item-color, var(--primary-accent-50-color));

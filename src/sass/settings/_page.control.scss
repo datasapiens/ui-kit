@@ -36,7 +36,7 @@ $page-control-figure-size: 1.5em !default;
 $page-control-legend-font-size: 11px !default;
 
 
-body.theme {
+.page-control {
     @include defineColor(--page-control-color, inherit);
     @include defineColor(--page-control--is-active-color, inherit);
 }

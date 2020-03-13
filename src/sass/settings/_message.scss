@@ -80,7 +80,7 @@ $message--compact-font-size: 0.9em !default;
 $message--compact-line-height-ratio: 0.75 !default;
 
 
-body.theme {
+.msg {
     @include defineColor(--message-border-color, var(--white-color));
     @include defineColor(--message-color, var(--black-color));
     @include defineColor(--message-link-color, inherit);

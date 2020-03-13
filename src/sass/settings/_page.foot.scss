@@ -16,7 +16,7 @@ $page-foot-color: $white;
 $page-foot-font-size: 13px;
 
 
-body.theme {
+.page-foot {
     @include defineColor(--page-foot-background-color, var(--neutral-accent-50-color));
     @include defineColor(--page-foot-color, var(--white-color));
     @include defineColor(--page-foot-link-color, var(--white-color));

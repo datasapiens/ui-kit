@@ -27,7 +27,7 @@ $badge-size: 17px !default;
 // Set badge themes map.
 $badge-theme: map-get($color-set, accent) !default;
 
-body.theme{
+.bdg {
     @include defineColor(--badge-color, var(--white-color));
     @include defineColor(--badge--danger-background-color, var(--danger-accent-50-color));
     @include defineColor(--badge--neutral-background-color, var(--neutral-accent-50-color));

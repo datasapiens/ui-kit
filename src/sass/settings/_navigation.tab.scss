@@ -141,7 +141,7 @@ $navigation-tab--secondary-item-color: (
 ) !default;
 
 
-body.themes {
+.nav-tab {
     @include defineColor(--navigation-tab__item__region--primary-background-color, var(--neutral-40-color-darken-20));
     @include defineColor(--navigation-tab__item__region--primary-border-color, var(--neutral-40-color-darken-20));
     @include defineColor(--navigation-tab__item__region--primary-color, var(--white-color));

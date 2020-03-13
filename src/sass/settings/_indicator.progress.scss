@@ -44,7 +44,7 @@ $indicator-progress-size: (
 // Set progress indicator data color.
 $indicator-progress-data-color: $blue--regent !default;
 
-body.theme {
+.ind-progress {
     @include defineColor(--indicator-progress-color, var(--warning-accent-50-color));
     @include defineColor(--ind-progress__scale-background-color, currentColor); 
     @include defineColor(--ind-progress__data-color, var(--neutral-40-color));

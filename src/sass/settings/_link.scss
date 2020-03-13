@@ -22,7 +22,7 @@ $link-icon: (
 ) !default;
 
 
-body.theme {
+.lnk {
     @include defineColor(--link-color, var(--primary-accent-50-color));
     @include defineColor(--link-color--is-active-color, var(--primary-accent-50-color-lighten-5));
     //--link-color--is-focused-color,

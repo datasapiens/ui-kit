@@ -158,7 +158,7 @@ $button--tertiary-color: (
 
 
 
-body.theme {
+.btn {
     @include defineColor(--button-background-color, var(--neutral-80-color));
     @include defineColor(--button-border-color, var(--neutral-60-color));
     @include defineColor(--button-color, var(--neutral-30-color));

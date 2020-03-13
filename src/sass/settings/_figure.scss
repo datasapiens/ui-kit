@@ -73,7 +73,7 @@ $figure-indicator-size: 38px !default;
 $figure--primary-indicator-size: 16px !default;
 
 
-body.theme{
+.fgr {
     @include defineColor(--figure-background-color, var(--white-color));
     @include defineColor(--figure__number--is-monochrome-color, inherit);
     @include defineColor(--figure__number--negative-color, var(--danger-accent-50-color));

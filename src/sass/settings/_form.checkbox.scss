@@ -32,7 +32,7 @@ $form-checkbox-indent: 5px !default;
 // Set form checkbox size.
 $form-checkbox-size: 16px !default;
 
-body.theme{
+.form-checkbox {
     @include defineColor(--form-checkbox--is-hovered-border-color, currentColor);
     @include defineColor(--form-checkbox__shape-background-color, var(--white-color));
     @include defineColor(--form-checkbox__shape-border-color, currentColor);

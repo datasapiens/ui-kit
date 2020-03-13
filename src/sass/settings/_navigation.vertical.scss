@@ -145,7 +145,7 @@ $navigation-vertical--primary-item-color: (
 $navigation-vertical--primary-head-border-color: rgba(white, 0.25) !default;
 
 
-body.theme {
+.nav-vertical {
     @include defineColor(--navigation-vertical-background-color, var(--primary-accent-80-color-lighten-30));
     @include defineColor(--navigation-vertical-color, #666);
     

@@ -49,7 +49,7 @@ $sticker-theme: map-get($color-set, accent) !default;
 // Set primary sticker font size.
 $sticker--primary-font-size: 12px !default;
 
-body.theme {
+.stk {
     @include defineColor(--sticker-background-color, var(--neutral-80-color-opacity-75));
     @include defineColor(--sticker-color, var(--black-color));
     

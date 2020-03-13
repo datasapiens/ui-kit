@@ -58,9 +58,9 @@ $page-head-logo-size: (
 ) !default;
 
 
-body.theme {
-    --page-head-background-color: var(--black-color);
-    --page-head-color: var(--white-color);
-    --page-head-link-color: inherit;
-    --page-head__title-color: inherit;
+.page-head {
+    @include defineColor(--page-head-background-color, var(--black-color));
+    @include defineColor(--page-head-color, var(--white-color));
+    @include defineColor(--page-head-link-color, inherit);
+    @include defineColor(--page-head__title-color, inherit);
 }
