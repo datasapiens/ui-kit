@@ -57,10 +57,3 @@ $page-head-logo-size: (
     width: 45px,
 ) !default;
 
-
-.page-head {
-    @include defineColor(--page-head-background-color, var(--black-color));
-    @include defineColor(--page-head-color, var(--white-color));
-    @include defineColor(--page-head-link-color, inherit);
-    @include defineColor(--page-head__title-color, inherit);
-}

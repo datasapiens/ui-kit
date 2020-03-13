@@ -90,19 +90,3 @@ $widget--secondary-background-gradient: linear-gradient(
 // Set secondary widget color.
 $widget--secondary-color: $base-color !default;
 
-
-.wgt {
-    @include defineColor(--widget-color, var(--base-color));
-    @include defineColor(--widget--primary-background-color, var(--neutral-40-color));
-    @include defineColor(--widget--primary-border-color, var(--neutral-40-color-darken-5));
-    @include defineColor(--widget--primary-color, var(--white-color));
-    @include defineColor(--widget__head--primary-border-bottom-color, var(--white-color-darken-20)); 
-    @include defineColor(--widget__spacer--primary-border-color, var(--white-color-darken-25));
-    @include defineColor(--widget--secondary-background-color, var(--neutral-80-color));
-    @include defineColor(--widget--secondary-border-color, var(--neutral-80-color-darken-5));
-    @include defineColor(--widget--secondary-color, var(--base-color));
-    @include defineColor(--widget__head--secondary-border-bottom-color, var(--neutral-80-color-darken-5));
-    @include defineColor(--widget__spacer--secondary-border-color, var(--neutral-80-color-darken-10));
-    @include defineColor(--widget__head-border-bottom-color, var(--neutral-80-color));
-    @include defineColor(--widget__spacer-border-color, var(--neutral-60-color));
-} 

@@ -373,9 +373,9 @@
 
 
 body.theme {
-    --u-text--danger-color: var(--danger-accent-50-color);
-    --u-text--neutral-color: var(--neutral-accent-50-color);
-    --u-text--notice-color: var(--notice-accent-50-color);
-    --u-text--success-color: var(--success-accent-50-color);
-    --u-text--warning-color: var(--warning-accent-50-color);
+    @include modifyColor(--u-text--danger-color, var(--danger-accent-50-color));
+    @include modifyColor(--u-text--neutral-color, var(--neutral-accent-50-color));
+    @include modifyColor(--u-text--notice-color, var(--notice-accent-50-color));
+    @include modifyColor(--u-text--success-color, var(--success-accent-50-color));
+    @include modifyColor(--u-text--warning-color, var(--warning-accent-50-color));
 }

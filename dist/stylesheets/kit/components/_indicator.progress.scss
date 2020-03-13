@@ -11,6 +11,11 @@
 // =============================================================================
 // Progress indicator
 // =============================================================================
+.ind-progress {
+    @include defineColor(--indicator-progress-color, var(--warning-accent-50-color));
+    @include defineColor(--ind-progress__scale-background-color, currentColor); 
+    @include defineColor(--ind-progress__data-color, var(--neutral-40-color));
+}
 
 .ind-progress {
     animation: fade--in 0.3s both;

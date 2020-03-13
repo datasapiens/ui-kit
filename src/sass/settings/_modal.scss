@@ -66,10 +66,3 @@ $modal-control-icon: ios-close-outline !default;
 // Set modal control size.
 $modal-control-size: 4 * $base-font-size !default;
 
-
-.mod {
-    @include defineColor(--modal-background-color, var(--white-color));
-    @include defineColor(--modal__head-border-color, var(--neutral-70-color));
-    @include defineColor(--modal__control-color, var(--neutral-accent-50-color));
-    @include defineColor(--modal__control--is-hovered-color, var(--primary-accent-50-color-lighten-5));
-}

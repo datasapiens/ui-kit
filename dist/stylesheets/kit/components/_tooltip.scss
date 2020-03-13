@@ -15,6 +15,15 @@
 // =============================================================================
 
 .tip {
+    @include defineColor(--tooltip-background-color, var(--tertiary-accent-100-color-opacity-85));
+    @include defineColor(--tooltip-background-gradient-color1, var(--tertiary-accent-50-color-opacity-25));
+    @include defineColor(--tooltip-background-gradient-color2, var(--tertiary-accent-50-color-opacity-0));
+    @include defineColor(--tooltip-background-gradient-color3, var(--tertiary-accent-50-color-opacity-13));
+    @include defineColor(--tooltip__body-background-color, var(--white-color-opacity-75));
+    @include defineColor(--tooltip__body-color, var(--black-color));
+}
+
+.tip {
     @include acceleration;
     @include font-size(
         $size-to: $tooltip-font-size,

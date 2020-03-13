@@ -7,6 +7,14 @@
 // =============================================================================
 // Form label
 // =============================================================================
+.form-label {
+    @include defineColor(--form-label-color, inherit);
+    @include defineColor(--form-label--is-active-color, var(--primary-accent-20-color));
+    @include defineColor(--form-label--is-disabled-color, var(--base-color-opacity-30));
+    @include defineColor(--form-label--is-hovered-color, var(--primary-accent-20-color));
+    @include defineColor(--form-label--is-invalid-color, var(--danger-accent-50-color));
+    @include defineColor(--form-label--is-required-color, inherit);
+}
 
 %form-label {
     color: map-get($form-label-color, initial);

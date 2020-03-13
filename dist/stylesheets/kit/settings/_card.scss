@@ -45,8 +45,3 @@ $card-figure-size: 50px !default;
 // Set card figure icon size.
 $card-figure-icon-size: 24px !default;
 
-.crd {
-@include defineColor(--card__region--primary-background-color, var(--neutral-accent-100-color));
-@include defineColor(--card__region--secondary-background-color, var(--neutral-accent-80-color));
-@include defineColor(--card__figure-color, inherit);
-}

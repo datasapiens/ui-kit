@@ -11,6 +11,10 @@
 // =============================================================================
 
 .lst-article {
+    @include defineColor(--list-article__spacer-border-color, var(--neutral-80-color));
+}
+
+.lst-article {
     @extend %lst--reset !optional;
 
     margin-bottom: $list-article-gutter;

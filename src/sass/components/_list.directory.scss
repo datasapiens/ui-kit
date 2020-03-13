@@ -12,6 +12,13 @@
 // =============================================================================
 
 .lst-directory {
+    @include defineColor(--list-directory__title--is-hovered-color, var(--notice-accent-50-color));
+    @include defineColor(--list-directory__item__spacer-border-bottom-color, var(--neutral-70-color));
+    @include defineColor(--list-directory__item__region-color, inherit);
+    @include defineColor(--list-directory__item__region--is-hovered-color, var(--notice-accent-50-color));
+}
+
+.lst-directory {
     line-height: $list-directory-line-height-ratio;
     margin-bottom: $list-directory-indent;
 

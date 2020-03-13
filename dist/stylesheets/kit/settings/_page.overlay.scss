@@ -12,7 +12,3 @@ $page-overlay-background: #fff;
 // Set page overlay offset.
 $page-overlay-offset: 10rem;
 
-
-.page-overlay {
-    @include defineColor(--page-overlay-background-color, #fff);
-}

@@ -25,6 +25,74 @@
 // Message
 // =============================================================================
 
+
+.msg {
+    @include defineColor(--message-border-color, var(--white-color));
+    @include defineColor(--message-color, var(--black-color));
+    @include defineColor(--message-link-color, inherit);
+    
+    
+    @include defineColor(--message--danger-color, inherit);
+    @include defineColor(--message--danger-background-color, var(--danger-accent-80-color-lighten-10));
+    @include defineColor(--message--danger-background-image-color-start, var(--danger-accent-80-color-lighten-10));
+    @include defineColor(--message--danger-background-image-color-end, var(--danger-accent-50-color));
+    @include defineColor(--message--danger-border-color, var(--danger-accent-80-color-desaturate-50));
+    @include defineColor(--message--danger--secondary-icon-color, var(--danger-accent-50-color-opacity-50));
+    @include defineColor(--message--danger--primary-icon-background-color, var(--danger-accent-50-color));
+    @include defineColor(--message--danger--primary-icon-border-color, var(--danger-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--danger-color, var(--danger-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--danger-border-color, var(--danger-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--danger-color, var(--danger-accent-0-color));
+    
+    @include defineColor(--message--neutral-color, inherit);
+    @include defineColor(--message--neutral-background-color, var(--neutral-accent-80-color-lighten-10));
+    @include defineColor(--message--neutral-background-image-color-start, var(--neutral-accent-80-color-lighten-10));
+    @include defineColor(--message--neutral-background-image-color-end, var(--neutral-accent-50-color));
+    @include defineColor(--message--neutral-border-color, var(--neutral-accent-80-color-desaturate-50));
+    @include defineColor(--message--neutral--secondary-icon-color, var(--neutral-accent-50-color-opacity-50));
+    @include defineColor(--message--neutral--primary-icon-background-color, var(--neutral-accent-50-color));
+    @include defineColor(--message--neutral--primary-icon-border-color, var(--neutral-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--neutral-color, var(--neutral-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--neutral-border-color, var(--neutral-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--neutral-color, var(--neutral-accent-0-color));
+    
+    @include defineColor(--message--notice-color, inherit);
+    @include defineColor(--message--notice-background-color, var(--notice-accent-80-color-lighten-10));
+    @include defineColor(--message--notice-background-image-color-start, var(--notice-accent-80-color-lighten-10));
+    @include defineColor(--message--notice-background-image-color-end, var(--notice-accent-50-color));
+    @include defineColor(--message--notice-border-color, var(--notice-accent-80-color-desaturate-50));
+    @include defineColor(--message--notice--secondary-icon-color, var(--notice-accent-50-color-opacity-50));
+    @include defineColor(--message--notice--primary-icon-background-color, var(--notice-accent-50-color));
+    @include defineColor(--message--notice--primary-icon-border-color, var(--notice-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--notice-color, var(--notice-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--notice-border-color, var(--notice-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--notice-color, var(--notice-accent-0-color));
+    
+    @include defineColor(--message--success-color, inherit);
+    @include defineColor(--message--success-background-color, var(--success-accent-80-color-lighten-10));
+    @include defineColor(--message--success-background-image-color-start, var(--success-accent-80-color-lighten-10));
+    @include defineColor(--message--success-background-image-color-end, var(--success-accent-50-color));
+    @include defineColor(--message--success-border-color, var(--success-accent-80-color-desaturate-50));
+    @include defineColor(--message--success--secondary-icon-color, var(--success-accent-50-color-opacity-50));
+    @include defineColor(--message--success--primary-icon-background-color, var(--success-accent-50-color));
+    @include defineColor(--message--success--primary-icon-border-color, var(--success-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--success-color, var(--success-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--success-border-color, var(--success-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--success-color, var(--success-accent-0-color));
+    
+    @include defineColor(--message--warning-color, inherit);
+    @include defineColor(--message--warning-background-color, var(--warning-accent-80-color-lighten-10));
+    @include defineColor(--message--warning-background-image-color-start, var(--warning-accent-80-color-lighten-10));
+    @include defineColor(--message--warning-background-image-color-end, var(--warning-accent-50-color));
+    @include defineColor(--message--warning-border-color, var(--warning-accent-80-color-desaturate-50));
+    @include defineColor(--message--warning--secondary-icon-color, var(--warning-accent-50-color-opacity-50));
+    @include defineColor(--message--warning--primary-icon-background-color, var(--warning-accent-50-color));
+    @include defineColor(--message--warning--primary-icon-border-color, var(--warning-accent-50-color-desaturate-25));
+    @include defineColor(--message__title--warning-color, var(--warning-accent-0-color-desaturate-90));
+    @include defineColor(--message__spacer--warning-border-color, var(--warning-accent-80-color-desaturate-50));
+    @include defineColor(--message__control--warning-color, var(--warning-accent-0-color));
+}
+
 .msg {
     @extend .msg.--neutral;
     @include acceleration;
