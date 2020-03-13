@@ -57,10 +57,3 @@ $page-head-logo-size: (
     width: 45px,
 ) !default;
 
-
-body.theme {
-    --page-head-background-color: var(--black-color);
-    --page-head-color: var(--white-color);
-    --page-head-link-color: inherit;
-    --page-head__title-color: inherit;
-}

@@ -10,6 +10,10 @@
 // =============================================================================
 
 .nav-trail {
+    @include defineColor(--navigation-trail__spacer-color, #ccc);
+}
+
+.nav-trail {
     ul {
         @extend %lst--reset !optional;
 

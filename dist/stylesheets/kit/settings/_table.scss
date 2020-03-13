@@ -148,26 +148,3 @@ $table--secondary-border-size: 1px !default;
 // Set secondary table indent.
 $table--secondary-indent: 8px !default;
 
-
-body.theme {
-    @include defineColor(--table-background-color, var(--white-color));
-    @include defineColor(--table-thead-background-color, var(--white-color));
-    @include defineColor(--table-thead-color, var(--base-color));
-    @include defineColor(--table-tbody-color, var(--base-color));
-    @include defineColor(--table-tfoot-color, var(--base-color));
-    @include defineColor(--table-cell-border-color, var(--neutral-80-color));
-    @include defineColor(--table--edge-border-color, var(--neutral-80-color));
-    @include defineColor(--table--line-border-color, var(--neutral-80-color));
-    @include defineColor(--table--stripe--even-row-background-color, var(--neutral-70-color-opacity-23));
-    @include defineColor(--table--stripe--odd-row-background-color, var(--neutral-70-color-opacity-23));
-    @include defineColor(--table--primary-background-color, var(--white-color));
-    @include defineColor(--table-thead--primary-background-color, var(--neutral-90-color)); 
-    @include defineColor(--table--secondary-background-color, var(--white-color));
-    @include defineColor(--table-thead--secondary-background-color, var(--white-color));
-    @include defineColor(--table-cell--is-monochrome-color, var(--neutral-10-color));
-    @include defineColor(--table__group-border-top-color, var(--neutral-70-color));
-    @include defineColor(--table__group--active-background-color, var(--tertiary-100-color));
-    @include defineColor(--table__group--active-color, var(--black-color));
-    @include defineColor(--table__group--bold-background-color, var(--tertiary-100-color-opacity-80));
-    @include defineColor(--table__group--bold-color, var(--black-color));
-}

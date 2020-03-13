@@ -12,6 +12,14 @@
 // Figure
 // =============================================================================
 
+.fgr {
+    @include defineColor(--figure-background-color, var(--white-color));
+    @include defineColor(--figure__number--is-monochrome-color, inherit);
+    @include defineColor(--figure__number--negative-color, var(--danger-accent-50-color));
+    @include defineColor(--figure__number--neutral-color, var(--notice-accent-50-color));
+    @include defineColor(--figure__number--positive-color, var(--success-accent-50-color));
+}
+
 /**
  * 1. We need to increase specifity.
  */

@@ -13,6 +13,13 @@
 // =============================================================================
 
 .page-head {
+    @include defineColor(--page-head-background-color, var(--black-color));
+    @include defineColor(--page-head-color, var(--white-color));
+    @include defineColor(--page-head-link-color, inherit);
+    @include defineColor(--page-head__title-color, inherit);
+}
+
+.page-head {
     background-color: $page-head-background;
     background-color: var(--page-head-background-color, $page-head-background);
 

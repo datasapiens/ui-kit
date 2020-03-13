@@ -17,6 +17,31 @@
 // =============================================================================
 
 .nav-tab {
+    @include defineColor(--navigation-tab__item__region--primary-background-color, var(--neutral-40-color-darken-20));
+    @include defineColor(--navigation-tab__item__region--primary-border-color, var(--neutral-40-color-darken-20));
+    @include defineColor(--navigation-tab__item__region--primary-color, var(--white-color));
+    
+    @include defineColor(--navigation-tab__item__region--secondary-background-color, var(--neutral-70-color));
+    @include defineColor(--navigation-tab__item__region--secondary-border-color, var(--neutral-80-color-darken-5));
+    @include defineColor(--navigation-tab__item__region--secondary-color, var(--primary-accent-50-color));
+    
+    @include defineColor(--navigation-tab__item__region-background-color, var(--neutral-80-color));
+    @include defineColor(--navigation-tab__item__region-border-color, var(--neutral-70-color));
+    @include defineColor(--navigation-tab__item__region-color, var(--primary-accent-50-color));
+     
+    @include defineColor(--navigation-tab__item__region--is-active-background-color, var(--white-color));
+    @include defineColor(--navigation-tab__item__region--is-active-border-color, var(--neutral-70-color));
+    @include defineColor(--navigation-tab__item__region--is-active-color, var(--primary-accent-50-color-lighten-5));
+    
+    @include defineColor(--navigation-tab__item__region--is-disabled-background-color, var(--neutral-80-color));
+    @include defineColor(--navigation-tab__item__region--is-disabled-border-color, var(--neutral-70-color));
+    @include defineColor(--navigation-tab__item__region--is-disabled-color, var(--neutral-40-color));
+    
+    @include defineColor(--navigation-tab__item__region--is-hovered-background-color, var(--white-color));
+    @include defineColor(--navigation-tab__item__region--is-hovered-color, var(--primary-accent-50-color-lighten-5));
+}
+
+.nav-tab {
     @extend %nav-tab:start;
     @extend %nav-tab:top;
 

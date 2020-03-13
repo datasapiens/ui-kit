@@ -14,6 +14,41 @@
 // =============================================================================
 // Vertical navigation
 // =============================================================================
+.nav-vertical {
+    @include defineColor(--navigation-vertical-background-color, var(--primary-accent-80-color-lighten-30));
+    @include defineColor(--navigation-vertical-color, #666);
+    
+    @include defineColor(--navigation-vertical--level-2-background-color, var(--primary-accent-80-color-lighten-24));
+    @include defineColor(--navigation-vertical--level-3-background-color, var(--primary-accent-80-color-lighten-21));
+    @include defineColor(--navigation-vertical--level-4-background-color, var(--primary-accent-80-color-lighten-18));
+    @include defineColor(--navigation-vertical--level-5-background-color, var(--primary-accent-80-color-lighten-15));
+    
+    @include defineColor(--navigation-vertical--primary-background-color, #333);
+    @include defineColor(--navigation-vertical--primary-border-color, #aaa);
+    @include defineColor(--navigation-vertical--primary-color, #aaa);
+    @include defineColor(--navigation-vertical--primary--level-2-background-color, #4d4d4d);
+    @include defineColor(--navigation-vertical--primary--level-3-background-color, #595959);
+    @include defineColor(--navigation-vertical--primary--level-4-background-color, #666666);
+    @include defineColor(--navigation-vertical--primary--level-5-background-color, #737373);
+    
+    
+    @include defineColor(--navigation-vertical__item--primary-color, #ddd);
+    @include defineColor(--navigation-vertical__item--primary-border-color, rgba(white, 0.25));
+    @include defineColor(--navigation-vertical__item__region--primary-color, #ddd);
+    @include defineColor(--navigation-vertical__head--primary-border-color, rgba(white, 0.25));
+    @include defineColor(--navigation-vertical__item-border-color, rgba(black, 0.125));
+    @include defineColor(--navigation-vertical__item__region-color, #666);
+    @include defineColor(--navigation-vertical__item__region--is-active-background-color, var(--primary-accent-80-color-opacity-20));
+    @include defineColor(--navigation-vertical__item__region--is-active-color, black);
+    @include defineColor(--navigation-vertical__item__region--primary--is-active-background-color, #999);  
+    @include defineColor(--navigation-vertical__item__region--primary--is-active-color, white);
+    @include defineColor(--navigation-vertical__item__region--is-disabled-background-color, transparent);
+    @include defineColor(--navigation-vertical__item__region--is-disabled-color, #666);
+    @include defineColor(--navigation-vertical__item__region--primary--is-disabled-background-color, transparent);
+    @include defineColor(--navigation-vertical__item__region--primary--is-disabled-color, #ddd);
+    @include defineColor(--navigation-vertical__item__region--is-checked-background-color, var(--tertiary-accent-100-color));
+    @include defineColor(--navigation-vertical__item__region--is-checked-color, black);
+}
 
 .nav-vertical {
     background-color: $navigation-vertical-background;

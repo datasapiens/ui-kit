@@ -13,6 +13,11 @@
 // Page control
 // =============================================================================
 
+.page-control {
+    @include defineColor(--page-control-color, inherit);
+    @include defineColor(--page-control--is-active-color, inherit);
+}
+
 /**
  * 1. We need to increase specifity.
  */

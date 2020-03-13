@@ -10,6 +10,14 @@
 // Link
 // =============================================================================
 
+.lnk {
+    @include defineColor(--link-color, var(--primary-accent-50-color));
+    @include defineColor(--link-color--is-active-color, var(--primary-accent-50-color-lighten-5));
+    //--link-color--is-focused-color,
+    @include defineColor(--link-color--is-hovered-color, var(--primary-accent-50-color-lighten-5));
+    @include defineColor(--link-color--is-visited-color, var(--primary-accent-50-color));
+}
+
 %lnk {
     @include link-underline($underline: true);
 

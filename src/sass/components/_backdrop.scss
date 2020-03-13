@@ -5,6 +5,9 @@
 // =============================================================================
 // Backdrop
 // =============================================================================
+.bad {
+    @include defineColor(--backdrop-background-color, var(--white-color));
+}
 
 .bad {
     @include acceleration;

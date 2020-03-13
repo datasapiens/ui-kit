@@ -35,8 +35,3 @@ $page-control-figure-size: 1.5em !default;
 // Set page control legend font size.
 $page-control-legend-font-size: 11px !default;
 
-
-body.theme {
-    @include defineColor(--page-control-color, inherit);
-    @include defineColor(--page-control--is-active-color, inherit);
-}

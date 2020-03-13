@@ -18,12 +18,3 @@ $control-color: (
     initial:    $blue--heather,
 ) !default;
 
-
-body.theme {
-    @include defineColor(--control-color, var(--neutral-60-color));
-    @include defineColor(--control--is-active-color, var(--neutral-accent-0-color));
-    @include defineColor(--control--is-disabled-color, var(--neutral-60-color));
-    @include defineColor(--control--is-hovered-color, var(--neutral-accent-0-color));
-    @include defineColor(--control--is-on-color, var(--neutral-accent-0-color));
-    @include defineColor(--control--is-off-color, var(--neutral-60-color));
-}

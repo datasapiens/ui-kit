@@ -9,6 +9,13 @@
 // =============================================================================
 // Trend indicator
 // =============================================================================
+.ind-trend {
+    @include defineColor(--indicator-trend-color, inherit);
+    @include defineColor(--indicator-trend--is-decrease-color, var(--danger-accent-50-color));
+    @include defineColor(--indicator-trend--is-increase-color, var(--success-accent-50-color));
+    @include defineColor(--indicator-trend--is-monochrome-color, inherit);
+    @include defineColor(--indicator-trend--is-steady-color, var(--notice-accent-50-color));
+}
 
 .ind-trend {
     @include acceleration;

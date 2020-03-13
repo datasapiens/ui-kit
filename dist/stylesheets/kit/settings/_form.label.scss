@@ -40,11 +40,3 @@ $form-label-font-weight: 400 !default;
 // Set stacked label line height ratio.
 $form-label--stack-line-height-ratio: 1.3 !default;
 
-body.theme {
-    @include defineColor(--form-label-color, inherit);
-    @include defineColor(--form-label--is-active-color, var(--primary-accent-20-color));
-    @include defineColor(--form-label--is-disabled-color, var(--base-color-opacity-30));
-    @include defineColor(--form-label--is-hovered-color, var(--primary-accent-20-color));
-    @include defineColor(--form-label--is-invalid-color, var(--danger-accent-50-color));
-    @include defineColor(--form-label--is-required-color, inherit);
-}

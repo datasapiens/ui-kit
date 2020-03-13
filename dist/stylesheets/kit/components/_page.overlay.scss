@@ -7,6 +7,10 @@
 // =============================================================================
 
 .page-overlay {
+    @include defineColor(--page-overlay-background-color, #fff);
+}
+
+.page-overlay {
     @include stretch(fixed, 0, 0, 0, 0);
     background-color: $page-overlay-background;
     background-color: var(--page-overlay-background-color, $page-overlay-background);

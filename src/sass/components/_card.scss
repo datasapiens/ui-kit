@@ -15,6 +15,12 @@
 // Card
 // =============================================================================
 
+.crd {
+    @include defineColor(--card__region--primary-background-color, var(--neutral-accent-100-color));
+    @include defineColor(--card__region--secondary-background-color, var(--neutral-accent-80-color));
+    @include defineColor(--card__figure-color, inherit);
+    }
+
 /**
  * 1. We need to increase specifity.
  */

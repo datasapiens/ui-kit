@@ -48,17 +48,3 @@ $form-element-placeholder-color: (
     disable:    $blue--geyser,    // disabled
     initial:    $blue--nepal,
 );
-
-body.theme{
-    @include defineColor(--form-element-background-color, var(--white-color-opacity-85));
-    @include defineColor(--form-element-border-color, var(--neutral-60-color));
-    @include defineColor(--form-element-color, var(--base-color));
-    @include defineColor(--form-element--is-disabled-border-color, var(--neutral-80-color));
-    @include defineColor(--form-element--is-disabled-color, var(--base-color-lighten-30));
-    @include defineColor(--form-element--is-focused-border-color, var(--notice-accent-50-color));
-    @include defineColor(--form-element--is-focused-color, var(--base-color-darken-50));
-    @include defineColor(--form-element--is-hovered-border-color, var(--notice-accent-50-color));
-    @include defineColor(--form-element--is-invalid-background-color, var(--danger-accent-50-color-lighten-35));
-    @include defineColor(--form-element--is-invalid-border-color, var(--danger-accent-50-color));
-    @include defineColor(--form-element--is-invalid-color, var(--base-color));
-}
