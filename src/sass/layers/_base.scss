@@ -258,15 +258,15 @@ body.theme {
     @include modifyColor(--tertiary-accent-50-color, $opacity: 25);
     /*=====================================================================*/
 
-    @include modifyColor(--base-background-color, var(--neutral-90-color));
-    @include modifyColor(--base-color, var(--neutral-30-color-desaturate-100));
-    @include modifyColor(--print-background-color, var(--white-color));
-    @include modifyColor(--print-color, var(--black-color));
-    @include modifyColor(--base-selection-background-color, gold);
-    @include modifyColor(--base-blockquote-background-color, var(--neutral-90-color));
-    @include modifyColor(--base-blockquote-border-color, var(--warning-accent-50-color));
-    @include modifyColor(--form-element-placeholder-color, var(--neutral-50-color));
-    @include modifyColor(--form-element-placeholder--is-disabled-color, var(--neutral-70-color));
+    @include defineColor(--base-background-color, var(--neutral-90-color));
+    @include defineColor(--base-color, var(--neutral-30-color-desaturate-100));
+    @include defineColor(--print-background-color, var(--white-color));
+    @include defineColor(--print-color, var(--black-color));
+    @include defineColor(--base-selection-background-color, gold);
+    @include defineColor(--base-blockquote-background-color, var(--neutral-90-color));
+    @include defineColor(--base-blockquote-border-color, var(--warning-accent-50-color));
+    @include defineColor(--form-element-placeholder-color, var(--neutral-50-color));
+    @include defineColor(--form-element-placeholder--is-disabled-color, var(--neutral-70-color));
   }
 
 body {
