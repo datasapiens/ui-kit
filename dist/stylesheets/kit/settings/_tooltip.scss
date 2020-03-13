@@ -69,7 +69,7 @@ $tooltip-body-background: rgba($white, 0.75) !default;
 $tooltip-body-color: $black !default;
 
 
-body.theme {
+.tip {
     @include defineColor(--tooltip-background-color, var(--tertiary-accent-100-color-opacity-85));
     @include defineColor(--tooltip-background-gradient-color1, var(--tertiary-accent-50-color-opacity-25));
     @include defineColor(--tooltip-background-gradient-color2, var(--tertiary-accent-50-color-opacity-0));

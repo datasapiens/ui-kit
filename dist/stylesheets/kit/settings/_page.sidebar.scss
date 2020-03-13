@@ -87,7 +87,7 @@ $page-sidebar-navigation-item-icon-size: 18px !default;
 // Set page sidebar footer background.
 $page-sidebar-foot-background: #777 !default;
 
-body.theme {
+.page-sidebar {
     @include defineColor(--page-sidebar-background-color, #4d4d4d);
     @include defineColor(--page-sidebar-navbar-background-color, #333);
     @include defineColor(--page-sidebar-navigation__item__region--is-active-background-color, var(--primary-accent-50-color));

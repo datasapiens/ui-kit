@@ -37,7 +37,7 @@ $zone-drop-border-style: (
 $zone-drop-theme: map-get($color-set, accent) !default;
 
 
-body.theme {
+.zone-drop {
     @include defineColor(--zone-drop-background-color, var(--white-color));
 
     @include defineColor(--zone-drop--danger-border-color, var(--danger-accent-80-color-desaturate-50));

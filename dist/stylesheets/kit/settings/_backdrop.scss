@@ -12,6 +12,6 @@ $backdrop-background: $white;
 // Set backdrop z-index (according to `$modal-index`).
 $backdrop-index: 5;
 
-body.theme{
+.bad {
     @include defineColor(--backdrop-background-color, var(--white-color));
 }

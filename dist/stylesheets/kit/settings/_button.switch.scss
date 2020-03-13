@@ -119,8 +119,7 @@ $button-switch--tertiary-border-color: $button--tertiary-border-color !default;
 $button-switch--tertiary-color: $button--tertiary-color !default;
 
 
-body.theme {
-
+.btn-switch {
     @include defineColor(--button-switch-background-color, var(--neutral-80-color-lighten-5));
     @include defineColor(--button-switch-border-color, var(--neutral-60-color));
     

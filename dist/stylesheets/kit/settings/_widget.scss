@@ -91,7 +91,7 @@ $widget--secondary-background-gradient: linear-gradient(
 $widget--secondary-color: $base-color !default;
 
 
-body.theme {
+.wgt {
     @include defineColor(--widget-color, var(--base-color));
     @include defineColor(--widget--primary-background-color, var(--neutral-40-color));
     @include defineColor(--widget--primary-border-color, var(--neutral-40-color-darken-5));

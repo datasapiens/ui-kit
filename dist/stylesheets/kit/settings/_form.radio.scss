@@ -18,7 +18,7 @@ $form-radio-size: $form-checkbox-size !default;
 // Set form radio indent (according to `$form-checkbox-size`).
 $form-radio-indent: $form-checkbox-indent !default;
 
-body.theme {
+.form-radio {
     @include defineColor(--form-radio__shape-background-color, var(--white-color));
     @include defineColor(--form-radio__shape-border-color, currentColor);
     @include defineColor(--form-radio__shape-color, var(--primary-accent-50-color));

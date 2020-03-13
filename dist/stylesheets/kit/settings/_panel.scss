@@ -45,7 +45,7 @@ $panel-indent: (
 $panel--elevate-box-shadow: 0 5px 20px -5px rgba($panel-border-color, 0.5) !default;
 
 
-body.theme {
+.pnl {
     @include defineColor(--panel-background-color, var(--white-color));
     @include defineColor(--panel-border-color, var(--neutral-70-color));
 }

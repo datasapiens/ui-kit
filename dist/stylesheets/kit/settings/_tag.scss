@@ -89,7 +89,7 @@ $tag-control-icon: (
 ) !default;
 
 
-body.theme {
+.tag {
     @include defineColor(--tag-background-color, var(--neutral-80-color));
     @include defineColor(--tag-border-color, var(--neutral-80-color-darken-5));
     @include defineColor(--tag-color, var(--neutral-20-color));
