@@ -246,6 +246,7 @@ body.theme {
     @include modifyColor(--primary-accent-80-color, $lightness: 21);
     @include modifyColor(--primary-accent-80-color, $lightness: 24);
     @include modifyColor(--primary-accent-80-color, $lightness: 30);
+    @include modifyColor(--primary-accent-80-color, $lightness: -3);
     @include modifyColor(--primary-accent-80-color, $opacity: 20);
     /*=====================================================================*/
   

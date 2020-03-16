@@ -25,7 +25,7 @@
     @include defineColor(--button-switch__item--primary-border-color, inherit);
 
     @include defineColor(--button-switch--secondary-background-color, var(--primary-accent-50-color-lighten-54));
-    @include defineColor(--button-switch--secondary-border-color, var(--notice-accent-80-color-darken-3));
+    @include defineColor(--button-switch--secondary-border-color, var(--primary-accent-80-color-darken-3));
     @include defineColor(--button-switch__item--secondary-border-color, inherit);
 
     @include defineColor(--button-switch--tertiary-background-color, transparent);
