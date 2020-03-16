@@ -37,7 +37,7 @@
     
     @include defineColor(--button--neutral-background-color, var(--neutral-accent-50-color));
     @include defineColor(--button--neutral-border-color, var(--neutral-accent-50-color-darken-3));
-    @include defineColor(--button--neutral-color, var(--neutral-accent-50-color));
+    @include defineColor(--button--neutral-color, var(--neutral-accent-100-color));
     
     @include defineColor(--button--notice-background-color, var(--notice-accent-50-color));
     @include defineColor(--button--notice-border-color, var(--notice-accent-50-color-darken-3));
