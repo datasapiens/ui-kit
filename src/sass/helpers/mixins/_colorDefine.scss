@@ -2,12 +2,12 @@
 @mixin defineColor($color-name, $default: null) {
     @if ($default) {
         #{$color-name}-tmp: unquote(
-            "hsla(var(#{$color-name}-h), var(#{$color-name}-s), var(#{$color-name}-l), var(#{$color-name}-a, 100%))"
+            "hsla(var(#{$color-name}-h), var(#{$color-name}-s), var(#{$color-name}-l), var(#{$color-name}-a, 1))"
         );
         #{$color-name}: unquote("var(#{$color-name}-tmp, #{$default})");
     } @else {
         #{$color-name}: unquote(
-            "hsla(var(#{$color-name}-h), var(#{$color-name}-s), var(#{$color-name}-l), var(#{$color-name}-a, 100%))"
+            "hsla(var(#{$color-name}-h), var(#{$color-name}-s), var(#{$color-name}-l), var(#{$color-name}-a, 1))"
         );
     }
 }
@@ -34,12 +34,9 @@
 
     @if $opacity < 100 {
         $color-name: #{$color-name}-opacity-#{$opacity};
-        #{$color-name}: unquote(
-            "hsla(var(#{$color}-h), #{$saturation-value}, #{$lightness-value}, #{$opacity}#{'%'})"
-        );
+        #{$color-name}: hsla(var(#{$color}-h), #{$saturation-value}, #{$lightness-value}, $opacity / 100);
+        ;
     } @else {
-        #{$color-name}: unquote(
-            "hsl(var(#{$color}-h), #{$saturation-value}, #{$lightness-value})"
-        );
+        #{$color-name}: hsl(var(#{$color}-h), #{$saturation-value}, #{$lightness-value});
     }
 }
