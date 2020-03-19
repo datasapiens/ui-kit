@@ -11,14 +11,6 @@
 // =============================================================================
 // Badge
 // =============================================================================
-.bdg {
-    @include defineColor(--badge-color, var(--white-color));
-    @include defineColor(--badge--danger-background-color, var(--danger-accent-50-color));
-    @include defineColor(--badge--neutral-background-color, var(--neutral-accent-50-color));
-    @include defineColor(--badge--notice-background-color, var(--notice-accent-50-color));
-    @include defineColor(--badge--success-background-color, var(--success-accent-50-color));
-    @include defineColor(--badge--warning-background-color, var(--warning-accent-50-color));
-}
 
 .bdg {
     @extend .bdg.--neutral;
@@ -33,7 +25,7 @@
 
     border-radius: $badge-border-radius;
     color: $badge-color;
-    color: var(--badge-color, $badge-color);
+    color: var(--badge-color, var(--white-color), $badge-color);
     display: inline-block;
     font: {
         weight: 300;
@@ -69,7 +61,7 @@
     @each $modifier, $theme in $badge-theme {
         &.--#{$modifier} {
             background-color: map-get($theme, 50);
-            background-color: var(--badge--#{$modifier}-background-color, map-get($theme, 50));
+            background-color: var(--badge--#{$modifier}-background-color, var(--#{$modifier}-accent-50-color), map-get($theme, 50));
         }
     }
 }
