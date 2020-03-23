@@ -33,23 +33,23 @@
     
     @include defineColor(--button--danger-background-color, var(--danger-accent-50-color));
     @include defineColor(--button--danger-border-color, var(--danger-accent-50-color-darken-3));
-    @include defineColor(--button--danger-color, var(--danger-accent-50-color));
+    @include defineColor(--button--danger-color, var(--white-color));
     
     @include defineColor(--button--neutral-background-color, var(--neutral-accent-50-color));
     @include defineColor(--button--neutral-border-color, var(--neutral-accent-50-color-darken-3));
-    @include defineColor(--button--neutral-color, var(--neutral-accent-100-color));
+    @include defineColor(--button--neutral-color, var(--white-color));
     
     @include defineColor(--button--notice-background-color, var(--notice-accent-50-color));
     @include defineColor(--button--notice-border-color, var(--notice-accent-50-color-darken-3));
-    @include defineColor(--button--notice-color, var(--notice-accent-50-color));
+    @include defineColor(--button--notice-color, var(--white-color));
     
     @include defineColor(--button--success-background-color, var(--success-accent-50-color));
     @include defineColor(--button--success-border-color, var(--success-accent-50-color-darken-3));
-    @include defineColor(--button--success-color, var(--success-accent-50-color));
+    @include defineColor(--button--success-color, var(--white-color));
     
     @include defineColor(--button--warning-background-color, var(--warning-accent-50-color));
     @include defineColor(--button--warning-border-color, var(--warning-accent-50-color-darken-3));
-    @include defineColor(--button--warning-color, var(--warning-accent-50-color));
+    @include defineColor(--button--warning-color, var(--white-color));
     
     
     @include defineColor(--button--is-active-background-color, var(--neutral-accent-80-color-lighten-3));
