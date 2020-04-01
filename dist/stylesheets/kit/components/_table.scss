@@ -494,7 +494,7 @@
         th {
             background: none !important;
             color: map-fetch($color-set, neutral, 10) !important;
-            color: var(--table-cell--is-monochrome-color, map-fetch($color-set, neutral, 10) !important);
+            color: var(--table-cell--is-monochrome-color, map-fetch($color-set, neutral, 10)) !important;
         }
     }
 }
