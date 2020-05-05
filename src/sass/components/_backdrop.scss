@@ -6,7 +6,7 @@
 // Backdrop
 // =============================================================================
 .bad {
-    @include defineColor(--backdrop-background-color, var(--white-color));
+    @include defineColor(--backdrop-background-color, var(--white-color-opacity-80));
 }
 
 .bad {

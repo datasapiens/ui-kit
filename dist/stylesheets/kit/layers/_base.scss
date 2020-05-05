@@ -98,6 +98,7 @@ body.theme {
     @include modifyColor(--white-color, $opacity: 15);
     @include modifyColor(--white-color, $opacity: 75);
     @include modifyColor(--white-color, $opacity: 85);
+    @include modifyColor(--white-color, $opacity: 80);
   
     /*=====================================================================*/
     @include modifyColor(--danger-accent-0-color, $saturation: 90);
