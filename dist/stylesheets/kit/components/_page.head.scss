@@ -153,7 +153,7 @@
             map-get($page-head-logo-size, height)
         );
 
-        background: url("../images/datasapiens.svg")
+        background: url("~ui-assets/dist/images/datasapiens.svg")
             0 (-1) * map-get($page-head-logo-size, height)
             no-repeat;
         content: "";
